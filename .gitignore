@@ -56,6 +56,7 @@ docs/session-handoff.md
 docs/visao-geral-do-projeto.md
 skills-lock.json
 CLAUDE.md
+reports/out/
 
 # Logs
 *.log
