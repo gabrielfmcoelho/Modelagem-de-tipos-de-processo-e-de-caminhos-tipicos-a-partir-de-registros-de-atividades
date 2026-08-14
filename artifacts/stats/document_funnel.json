@@ -1,0 +1,142 @@
+{
+  "_meta": {
+    "stage": "document-funnel",
+    "question": "De cada documento baixado, quantos sobreviveram a leitura, a anonimizacao, a extracao de entidades e a vetorizacao — e onde se perderam?",
+    "deterministic": "conditional",
+    "nondeterminism": "conta o disco e o grafo ao vivo; fixo para um estado dado de ambos",
+    "generated_at": "2026-08-13T11:28:00Z",
+    "commit": "8e51165916d00721db38c74c9bd1def6cb02c0f3",
+    "params": {
+      "level": "L0",
+      "subject": "documents",
+      "alphabet": "none"
+    },
+    "inputs": [],
+    "versions": {
+      "numpy": "2.4.6",
+      "scikit-learn": "1.9.0",
+      "hdbscan": "0.8.44",
+      "umap-learn": "0.5.12",
+      "igraph": "1.0.0",
+      "leidenalg": "0.12.0",
+      "torch": "2.13.0",
+      "neo4j": "6.2.0"
+    }
+  },
+  "scope": {
+    "level": "L0",
+    "subject": "documents",
+    "alphabet": "none"
+  },
+  "population": {
+    "name": "corpus",
+    "n_cases": 5244,
+    "definition": "the corpus is the documents of the processos actually loaded into the graph — NOT everything on disk. documentos_sead/ and parsed_documents/ accumulate across runs and hold documents of processos outside the current load; those are counted separately as `orphan_on_disk` and must never be quoted as corpus size"
+  },
+  "members": {
+    "expected": 10,
+    "present": 10,
+    "missing": [],
+    "keys": [
+      "anonymised",
+      "documento_nodes",
+      "downloaded",
+      "embedded",
+      "ner_extracted",
+      "parsed",
+      "parsed_in_corpus",
+      "parsed_with_text",
+      "with_text",
+      "with_topic"
+    ]
+  },
+  "results": {
+    "corpus_documents": {
+      "population": "opening documents whose processo is present in the graph",
+      "funnel": [
+        {
+          "step": "parsed_in_corpus",
+          "n": 5244,
+          "source": "parsed_documents/ ∩ :Processo",
+          "lost_vs_previous": null
+        },
+        {
+          "step": "with_text",
+          "n": 5244,
+          "source": "parsed_documents/*/text.txt ∩ :Processo",
+          "lost_vs_previous": 0
+        },
+        {
+          "step": "anonymised",
+          "n": 5244,
+          "source": "parsed_documents/*/text_anon.txt ∩ :Processo",
+          "lost_vs_previous": 0
+        }
+      ],
+      "n_processos_loaded": 5445,
+      "anonymised_fraction": 1.0
+    },
+    "fetched_on_disk": {
+      "population": "everything the download and parse stages have ever written, over any load; a superset of the corpus",
+      "funnel": [
+        {
+          "step": "downloaded",
+          "n": 12287,
+          "source": "documentos_sead/",
+          "lost_vs_previous": null
+        },
+        {
+          "step": "parsed",
+          "n": 12259,
+          "source": "parsed_documents/",
+          "lost_vs_previous": 28
+        },
+        {
+          "step": "parsed_with_text",
+          "n": 12259,
+          "source": "parsed_documents/*/text.txt",
+          "lost_vs_previous": 0
+        },
+        {
+          "step": "anonymised",
+          "n": 12259,
+          "source": "parsed_documents/*/text_anon.txt",
+          "lost_vs_previous": 0
+        },
+        {
+          "step": "ner_extracted",
+          "n": 12257,
+          "source": "ner_results/",
+          "lost_vs_previous": 2
+        }
+      ],
+      "orphan_on_disk": 7015,
+      "orphan_note": "parsed documents whose processo is not in the current graph; they are residue of a wider or earlier load, not corpus"
+    },
+    "referenced_documents": {
+      "population": "every :Documento node the event log references, most never fetched",
+      "funnel": [
+        {
+          "step": "documento_nodes",
+          "n": 42658,
+          "source": "neo4j",
+          "lost_vs_previous": null
+        },
+        {
+          "step": "embedded",
+          "n": 5244,
+          "source": "neo4j",
+          "lost_vs_previous": 37414
+        },
+        {
+          "step": "with_topic",
+          "n": 5244,
+          "source": "neo4j",
+          "lost_vs_previous": 0
+        }
+      ],
+      "embedded_share_of_referenced": 0.1229
+    },
+    "note": "three populations, never chained: corpus ⊆ fetched, and referenced is a different axis entirely (all documents mentioned, not documents read)"
+  }
+}

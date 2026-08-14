@@ -1,0 +1,42 @@
+{
+  "stage": "temporal-holdout",
+  "phase": "evidence",
+  "question": "O ganho sobrevive quando a particao ve apenas parte do historico de cada caso?",
+  "deterministic": "conditional",
+  "status": "ran",
+  "mode": "neo4j",
+  "started_at": "2026-08-13T09:14:10Z",
+  "ended_at": "2026-08-13T09:14:11Z",
+  "duration_seconds": 1.326,
+  "flags": {
+    "from_date": null,
+    "to_date": null,
+    "workers": null,
+    "batch_size": null,
+    "chunk_size": null,
+    "limit": null,
+    "emit_dir": null,
+    "read_dir": null
+  },
+  "inputs": [
+    {
+      "path": "artifacts/traces/protocol_traces.json.gz",
+      "sha256": "f24e118fc938515f16e2571acde27414ed83681f9e3f9d97e6f87d25494992da"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "artifacts/stats/temporal_holdout_matched.json",
+      "bytes": 1764
+    }
+  ],
+  "n_inputs": 1,
+  "n_outputs": 1,
+  "summary": {
+    "out": "/home/gabrielfmcoelho/Projetos/sead-dev/visualizador-de-processos/ai-pipeline-neo4j/artifacts/stats/temporal_holdout_matched.json",
+    "n_common_cases": 1091,
+    "retained_frac_at_25pct": -0.5876,
+    "rows": 4,
+    "duration_seconds": 1.3
+  }
+}

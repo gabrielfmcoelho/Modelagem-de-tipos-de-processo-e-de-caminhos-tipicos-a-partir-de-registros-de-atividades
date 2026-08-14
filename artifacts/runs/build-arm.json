@@ -1,0 +1,133 @@
+{
+  "stage": "build-arm",
+  "phase": "clustering",
+  "question": "Macro: um braco inteiro, das features ao catalogo auditado.",
+  "deterministic": "conditional",
+  "status": "failed",
+  "mode": "neo4j",
+  "started_at": "2026-08-12T05:18:25Z",
+  "ended_at": "2026-08-12T05:21:54Z",
+  "duration_seconds": 208.914,
+  "flags": {
+    "from_date": null,
+    "to_date": null,
+    "workers": null,
+    "batch_size": null,
+    "chunk_size": null,
+    "limit": null,
+    "emit_dir": null,
+    "read_dir": null,
+    "run_id": "exp-raw"
+  },
+  "inputs": [
+    {
+      "path": "artifacts/features/exp-raw.npz",
+      "sha256": "3b329df775314c6fb9bac56866cdec26cdb0aae0532049502dfbec5ffcb0f475"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "artifacts/cache/topic_embeddings.npz",
+      "bytes": 12856866
+    },
+    {
+      "path": "artifacts/features/exp-raw.npz",
+      "bytes": 956424
+    },
+    {
+      "path": "artifacts/clustering/exp-raw/selection.json",
+      "bytes": 1567
+    },
+    {
+      "path": "artifacts/cache/tipo_procedimento.json",
+      "bytes": 469923
+    },
+    {
+      "path": "artifacts/clustering/exp-raw/hdbscan/labels.json",
+      "bytes": 168170
+    },
+    {
+      "path": "artifacts/clustering/exp-raw/hdbscan/metrics.json",
+      "bytes": 2884
+    },
+    {
+      "path": "artifacts/clustering/exp-raw/kmeans/labels.json",
+      "bytes": 167695
+    },
+    {
+      "path": "artifacts/clustering/exp-raw/kmeans/metrics.json",
+      "bytes": 2523
+    },
+    {
+      "path": "artifacts/clustering/exp-raw/leiden/labels.json",
+      "bytes": 166981
+    },
+    {
+      "path": "artifacts/clustering/exp-raw/leiden/metrics.json",
+      "bytes": 2583
+    },
+    {
+      "path": "artifacts/cache/tipo_procedimento.json",
+      "bytes": 469923
+    },
+    {
+      "path": "artifacts/clustering/exp-raw-kelbow/kmeans/labels.json",
+      "bytes": 167746
+    },
+    {
+      "path": "artifacts/clustering/exp-raw-kelbow/kmeans/metrics.json",
+      "bytes": 2535
+    },
+    {
+      "path": "artifacts/cache/tipo_procedimento.json",
+      "bytes": 469923
+    },
+    {
+      "path": "artifacts/clustering/exp-raw-ksil/kmeans/labels.json",
+      "bytes": 167567
+    },
+    {
+      "path": "artifacts/clustering/exp-raw-ksil/kmeans/metrics.json",
+      "bytes": 2530
+    },
+    {
+      "path": "artifacts/cache/tipo_procedimento.json",
+      "bytes": 469923
+    },
+    {
+      "path": "artifacts/clustering/exp-raw-lres/leiden/labels.json",
+      "bytes": 167642
+    },
+    {
+      "path": "artifacts/clustering/exp-raw-lres/leiden/metrics.json",
+      "bytes": 2592
+    },
+    {
+      "path": "artifacts/cache/tipo_procedimento.json",
+      "bytes": 469923
+    },
+    {
+      "path": "artifacts/clustering/exp-raw-hcoarse/hdbscan/labels.json",
+      "bytes": 167513
+    },
+    {
+      "path": "artifacts/clustering/exp-raw-hcoarse/hdbscan/metrics.json",
+      "bytes": 2893
+    },
+    {
+      "path": "artifacts/clustering/exp-raw/hdbscan/stability.json",
+      "bytes": 10033
+    },
+    {
+      "path": "artifacts/stats/clustering-audit.json",
+      "bytes": 4018
+    }
+  ],
+  "n_inputs": 1,
+  "n_outputs": 24,
+  "summary": {
+    "traceback": "Traceback (most recent call last):\n  File \"/home/gabrielfmcoelho/Projetos/sead-dev/visualizador-de-processos/ai-pipeline-neo4j/pipeline/core/runner.py\", line 291, in run_stages\n    s.call(ctx)\n    ~~~~~~^^^^^\n  File \"/home/gabrielfmcoelho/Projetos/sead-dev/visualizador-de-processos/ai-pipeline-neo4j/pipeline/core/registry.py\", line 16, in call\n    self.func(ctx)\n    ~~~~~~~~~^^^^^\n  File \"/home/gabrielfmcoelho/Projetos/sead-dev/visualizador-de-processos/ai-pipeline-neo4j/pipeline/stages/build_arm.py\", line 99, in run\n    _substage(ctx, cluster_audit, {})\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/gabrielfmcoelho/Projetos/sead-dev/visualizador-de-processos/ai-pipeline-neo4j/pipeline/stages/build_arm.py\", line 28, in _substage\n    module.run(RunContext(\n    ~~~~~~~~~~^^^^^^^^^^^^\n        settings=ctx.settings, mode=ctx.mode, flags=dict(flags),\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        state_dir=ctx.state_dir, cache=ctx.cache, writer=ctx.writer,\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        reader=ctx.reader, driver=ctx.driver, progress=ctx.progress,\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ))\n    ^^\n  File \"/home/gabrielfmcoelho/Projetos/sead-dev/visualizador-de-processos/ai-pipeline-neo4j/pipeline/stages/cluster_audit.py\", line 111, in run\n    raise ValueError(f\"cluster-audit found {len(bad)} non-reproducible clustering(s): {bad}\")\nValueError: cluster-audit found 3 non-reproducible clustering(s): ['exp-anon-hcoarse/hdbscan:MISMATCH', 'exp-raw/hdbscan:MISMATCH', 'exp-raw-hcoarse/hdbscan:MISMATCH']\n",
+    "duration_seconds": 208.9
+  },
+  "error": "cluster-audit found 3 non-reproducible clustering(s): ['exp-anon-hcoarse/hdbscan:MISMATCH', 'exp-raw/hdbscan:MISMATCH', 'exp-raw-hcoarse/hdbscan:MISMATCH']"
+}

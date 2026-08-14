@@ -1,0 +1,37 @@
+\noindent\textbf{Resumo:}
+
+\noindent O direito de acesso à informação e a transparência administrativa pressupõem que o Estado conheça e evidencie o funcionamento de seus próprios procedimentos. Contudo, sistemas eletrônicos como o Sistema Eletrônico de Informações (SEI) geram vastos rastros de atividades diárias sem consolidar o fluxo real dos processos, dificultando auditorias e a otimização da máquina pública. O problema desta pesquisa consiste em determinar se é possível extrair, a partir desses registros brutos, um catálogo auditável e confiável dos processos efetivamente executados. Trata-se de uma pesquisa aplicada e quantitativa, conduzida como estudo de caso na Secretaria de Administração do Estado do Piauí (SEAD-PI), sobre 5.243 processos concluídos em 2025. Utilizando mineração de processos e Inteligência Artificial (IA), construiu-se um grafo de conhecimento de eventos. Os processos foram agrupados combinando o texto do documento inicial ao histórico de tramitação. Para ajustar o caminho típico de cada processo, foram avaliadas seis famílias de modelos, incluindo cadeias de Markov e redes neurais recorrentes (como a arquitetura GRU), testadas em três alfabetos de traço (ação por unidade, roteamento e procedimento). Os resultados revelam um ganho positivo e consistente em 252 comparações contra partições-controle embaralhadas. Na modelagem global, observou-se eficácia preditiva no alfabeto de procedimento (ganho de 0,109 com Markov de terceira ordem e 0,131 com redes neurais GRU). Embora as métricas internas de clusterização não tenham isolado um único agrupamento ideal, a aplicação destas técnicas gerou uma entrega concreta: um catálogo validado de 60 tipos de processos com cobertura de 75,1% no alfabeto de roteamento, preservando as margens de anonimização exigidas. Conclui-se que o uso de IA sobre logs administrativos supre a lacuna empírica dos registros, viabilizando a governança orientada a dados.
+
+\vspace{0.6\baselineskip}
+\noindent\textbf{Palavras-chave:} \textit{mineração de processos; inteligência artificial; redes neurais; otimização; transparência administrativa.}.
+
+\vspace{1.2\baselineskip}
+\noindent\textbf{Abstract:}
+
+\noindent Access-to-information law presumes a record of how administrative procedures run, yet
+empirical work on open-records requests finds that the binding obstacle is not refusal but the fact
+that this record was never created. The problem is whether an auditable catalogue of the process
+types an administration actually executes, and of the typical path of each, can be derived from the
+administration's own event log, and on what evidence it may be considered trustworthy. This is
+applied, quantitative research conducted as a single case study at the Secretariat of
+Administration of the State of Piaui, over the 5,243 cases concluded during 2025 in the Electronic
+Information System: an event knowledge graph is built, cases are grouped by opening-document text
+together with routing and action history, and the typical path of each type is fitted by six model
+families within each of three trace alphabets --- action-by-unit, routing and procedure ---,
+against three controls. The gain over the shuffled control partition, which preserves cluster
+count, size distribution and evaluated population, is positive in all 252 comparisons of the
+lattice, in all three alphabets. Over a single global model, with the model family held fixed,
+there is an effect only in the procedure alphabet --- 0.109 for a third-order Markov chain and
+0.131 for the GRU ---, whereas in action-by-unit and in routing the measured gain is
+indistinguishable from the residual of the evidence load itself. Accuracy separates the fourteen
+candidate clusterings by 0.0055, and none of the eight internal indices tested predicts downstream
+quality in a sample that resolves only $|\rho| \geq 0.53$: there is no best clustering to elect.
+The delivered catalogue has 60 types and coverage of 0.751 in the routing alphabet; the
+anonymisation the authorising instrument requires is non-inferior at the pre-registered margin in
+all 54 comparisons.
+
+\vspace{0.6\baselineskip}
+\noindent\textbf{Keywords:} \textit{process mining; clustering; graphs;
+administrative transparency}.
+
+\newpage

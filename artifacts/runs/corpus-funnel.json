@@ -1,0 +1,82 @@
+{
+  "stage": "corpus-funnel",
+  "phase": "ingest",
+  "question": "Quantos processos foram abertos, quantos concluiram no ano e quantas atividades geraram?",
+  "deterministic": "conditional",
+  "status": "ran",
+  "mode": "neo4j",
+  "started_at": "2026-08-13T16:40:34Z",
+  "ended_at": "2026-08-13T16:40:49Z",
+  "duration_seconds": 15.246,
+  "flags": {
+    "from_date": null,
+    "to_date": null,
+    "workers": null,
+    "batch_size": null,
+    "chunk_size": null,
+    "limit": null,
+    "emit_dir": null,
+    "read_dir": null
+  },
+  "inputs": [],
+  "outputs": [
+    {
+      "path": "artifacts/stats/corpus_funnel.json",
+      "bytes": 3531
+    }
+  ],
+  "n_inputs": 0,
+  "n_outputs": 1,
+  "summary": {
+    "_meta": {
+      "stage": "corpus-funnel",
+      "question": "Quantos processos foram abertos, quantos concluiram no ano e quantas atividades geraram?",
+      "deterministic": "conditional",
+      "nondeterminism": "consulta o Trino ao vivo; o lakehouse esta sob curadoria ativa",
+      "generated_at": "2026-08-13T16:40:49Z",
+      "commit": "8e51165916d00721db38c74c9bd1def6cb02c0f3",
+      "params": {
+        "year": 2025,
+        "table": "iceberg.sei_bronze.sei_atividades",
+        "orgao": "SEAD-PI",
+        "gold_table": "iceberg.sei_gold.processos_metadados"
+      },
+      "inputs": [],
+      "versions": {
+        "numpy": "2.4.6",
+        "scikit-learn": "1.9.0",
+        "hdbscan": "0.8.44",
+        "umap-learn": "0.5.12",
+        "igraph": "1.0.0",
+        "leidenalg": "0.12.0",
+        "torch": "2.13.0",
+        "neo4j": "6.2.0"
+      }
+    },
+    "year": 2025,
+    "orgao": "SEAD-PI",
+    "source_table": "iceberg.sei_bronze.sei_atividades",
+    "n_documents_all_activity": 150428,
+    "n_documents_activity_within_year": 131837,
+    "n_opening_documents_parsed": 5243,
+    "n_parsed_dirs_on_disk": 12259,
+    "n_corpus_protocolos": 5445,
+    "corpus_source": "graph",
+    "n_corpus_in_gold_now": 5444,
+    "corpus_source_table": "iceberg.sei_gold.processos_metadados",
+    "document_number_pattern": "(\\d{7,})\\s*\\([^@)]+?( \\d+)?\\)",
+    "concluded_predicate": "lower(descricao_replace) LIKE '%conclus%'",
+    "n_generated": 12621,
+    "n_conclusion_event_logged_same_year": 7920,
+    "n_not_concluded_same_year": 4701,
+    "n_activities_in_concluded": 518786,
+    "lakehouse_span": {
+      "first_event": "2021-01-04 08:57:44",
+      "last_event": "2026-08-12 23:56:11",
+      "n_activities_total": 21063844
+    },
+    "generated_at": "2026-08-13T16:40:49+00:00",
+    "caveat": "n_generated counts protocols whose 'Processo gerado' event was executed by a SEAD-PI/... unidade inside the year -- the born-in-orgao definition the article uses. It is not the SEI autuacao field. n_conclusion_event_logged_same_year applies the descricao_replace predicate above and is NOT the article's concluded population. n_corpus_protocolos is PINNED to the corpus the graph actually loaded when corpus_source == 'graph'; n_corpus_in_gold_now re-derives it from the live gold table and will drift, because a case concluded in 2025 can receive a new andamento later and then fail dt_ultimo_andamento < next-year. Report the pinned number: it is what every downstream figure was computed on. The article's corpus is graph-derived: the situacao stage calls a case concluded when it has no EM_ABERTO_NA_UNIDADE edge left at year end. The text predicate used here answers a different question -- 'did a conclusion event get logged' -- and returns a larger number. Report them as two measures, never as one. Neither figure is reconcilable with artifacts/traces, which hold a different slice. n_documents_all_activity counts distinct document numbers over every activity of those cases; n_documents_activity_within_year restricts the activity side to the year, which is the scope the graph load used. The manuscripts' 148,178 is a Neo4j :Documento node count taken from a graph state and a lakehouse snapshot that no longer exist; it sits between these two and reproduces as neither. n_opening_documents_parsed counts parsed_documents/ on disk, the artifact the 12,259 figure refers to. Two counts the article reports and this stage still does NOT produce -- processos concluded without an embedded opening document, and opening documents cancelled at source -- live in the document pipeline, not in sei_atividades.",
+    "duration_seconds": 15.2
+  }
+}

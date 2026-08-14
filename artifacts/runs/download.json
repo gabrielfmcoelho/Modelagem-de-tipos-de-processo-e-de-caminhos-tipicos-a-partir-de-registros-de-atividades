@@ -1,0 +1,36 @@
+{
+  "stage": "download",
+  "phase": "ingest",
+  "question": "Qual o documento de abertura de cada processo?",
+  "deterministic": "conditional",
+  "status": "ran",
+  "mode": "fs",
+  "started_at": "2026-08-12T00:56:04Z",
+  "ended_at": "2026-08-12T00:57:50Z",
+  "duration_seconds": 106.21,
+  "flags": {
+    "from_date": null,
+    "to_date": null,
+    "workers": null,
+    "batch_size": null,
+    "chunk_size": null,
+    "limit": null,
+    "emit_dir": null,
+    "read_dir": null,
+    "orgao": "SEAD-PI",
+    "only_first_doc": "true"
+  },
+  "inputs": [],
+  "outputs": [],
+  "n_inputs": 0,
+  "n_outputs": 0,
+  "summary": {
+    "total": 5343,
+    "downloaded": 0,
+    "failed": 2,
+    "skipped": 5341,
+    "cancelled": 0,
+    "processos": 5343,
+    "duration_seconds": 106.2
+  }
+}

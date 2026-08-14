@@ -1,0 +1,32 @@
+{
+  "stage": "results",
+  "phase": "delivery",
+  "question": "O que os artefatos, juntos, dizem — como tabelas geradas.",
+  "deterministic": true,
+  "status": "ran",
+  "mode": "neo4j",
+  "started_at": "2026-08-14T13:19:15Z",
+  "ended_at": "2026-08-14T13:20:07Z",
+  "duration_seconds": 52.438,
+  "flags": {
+    "from_date": null,
+    "to_date": null,
+    "workers": null,
+    "batch_size": null,
+    "chunk_size": null,
+    "limit": null,
+    "emit_dir": null,
+    "read_dir": null,
+    "check": "true"
+  },
+  "inputs": [],
+  "outputs": [],
+  "n_inputs": 0,
+  "n_outputs": 0,
+  "summary": {
+    "checked": true,
+    "blocks": 22,
+    "latex_tables": 34,
+    "duration_seconds": 52.4
+  }
+}

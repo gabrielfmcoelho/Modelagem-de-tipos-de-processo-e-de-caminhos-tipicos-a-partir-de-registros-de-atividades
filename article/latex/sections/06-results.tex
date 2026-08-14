@@ -1,0 +1,547 @@
+\section{Results}\label{sec:results}
+
+\subsection{A catalogue the declared taxonomy does not supply (RQ1)}\label{sec:res-rq1}
+
+Clustering the 5{,}243 cases yields between 40 and 120 types across the sixteen configurations,
+with no singleton clusters under any of them. On the raw arm, density-based clustering produces
+64 types with a median size of 50 cases and 879 cases left unassigned; centroid clustering
+produces 64 types with a median size of 70 and no unassigned cases; consensus produces 120 types
+with a median size of 33. Cluster-wise stability, assessed by drawing 25 subsamples of 80\% of
+the cases, refitting, and matching each original cluster to its best Jaccard overlap
+\citep{hennig2007stability}, gives a mean recovery of 0.7526 on the raw arm and 0.7724 on the
+anonymised arm, with 47 of 64 and 47 of 61 types recovered above 0.60. Two limits attach to that
+figure. It is a lower bound, because the clusterer is refit on each subsample but the
+dimensionality reduction is not; and it was computed for the two density-based clusterings only,
+so the remaining fourteen carry no stability estimate.
+
+Against the administration's own taxonomy, the emergent partitions agree moderately, and the
+level depends on which clustering is used. Across the eight main clusterings, ARI ranges from
+0.086 to 0.202 and purity from 0.732 to 0.759. The majority-class baseline differs by scope and
+both are reported: 0.302 for the six clusterings scored on all 5{,}243 cases, and 0.276 for the
+two density-based ones, which are scored only on the cases they assign (4{,}364 and 4{,}504 of
+5{,}243, the remainder being unassigned as noise). The upper end of the ARI range belongs to the
+density-based clusterings; the algorithms that assign every case reach ARI 0.086 to 0.129. The
+population confound identified in Section~\ref{sec:res-rq2} applies here as well, and we report
+both rather than quoting the flattered figure alone.
+
+The result that does not depend on that choice is what happens when one label is removed. A
+single catch-all --- covering official documents of every kind, and applied to 30.5\% of the
+5{,}445 concluded cases and 30.2\% of the 5{,}243 analysed --- accounts for most of the
+disagreement. Excluding it, ARI rises to 0.352 for the density clusterings and to 0.166--0.256
+for the full-coverage ones: a relative increase of 74\% to 110\%, in every case.
+
+That increase needs a null before it can carry the reading we give it, because removing any
+large class changes the index. Table~\ref{tab:catch-all-null} supplies one: for each clustering
+we drop a randomly chosen set of whole declared classes totalling within 10\% of the catch-all's
+size, and rescore. Removing random classes of that size \emph{lowers} agreement --- null means
+of 0.064 to 0.160 against unrestricted ARI of 0.086 to 0.202 --- while removing the catch-all
+raises it to 0.166--0.352. Across eight clusterings and roughly seven hundred draws each,
+\textbf{no null draw reaches the observed value}, at $z$ between 7.3 and 17.2.
+
+That null has a limitation we should name rather than let a reader discover. The catch-all holds
+1{,}663 cases and no other declared class exceeds 764, so a size-matched draw is necessarily a
+\emph{union} of many classes --- a median of twenty-seven. The comparison it makes is therefore
+between removing one large heterogeneous class and removing many small ones, which is not
+cleanly a test of \emph{which} class was removed.
+
+The contrast that does isolate that is simpler, and it is unanimous. Dropping each of the three
+next-largest declared classes on its own \emph{lowers} agreement in every case --- 24 of 24
+single-class drops across the eight clusterings --- while dropping the catch-all raises it in
+8 of 8. On the raw-arm centroid clustering, agreement is 0.128 unrestricted, 0.246 without the
+catch-all, and 0.107, 0.122 and 0.118 without each of the next three classes in turn. Removing a
+large class is not what produces the effect, and removing a large class is in fact mildly
+harmful; removing \emph{this} class is what produces it.
+
+The declared taxonomy is therefore not uninformative. It degrades concentrated in one class,
+which is what a filing classification does when it is maintained for routing paperwork rather
+than for describing procedure. The reading that class is a defect of the taxonomy is ours and
+should be resisted: a classification maintained to route documents is fit for the purpose it
+serves, and we are scoring it against an analytical purpose it was never designed for.
+
+\input{tables/catch-all-null}
+
+\subsubsection{What an entry looks like}
+
+An artefact offered as a transparency instrument should be shown, not only measured.
+Table~\ref{tab:catalogue} gives ten entries from the partition Section~\ref{sec:selection}
+selects as the deliverable --- the six largest evaluated types and the four smallest --- with
+the generated name, the number of cases assigned, and the support measures for that type's own
+typical path. Names are reproduced as the pipeline produced them, and are unvalidated
+(Section~\ref{sec:naming}).
+
+The table is included because the averages elsewhere in this section conceal how unevenly
+evidenced the entries are, and a reader deciding whether to trust the artefact needs to see the
+spread rather than the mean. The best entries are very good: a company-registration type over
+325 cases reaches 0.974 next-step accuracy with complete unit recall over a four-visit path and
+no fabricated transitions. Others are weak in ways a published catalogue would have to disclose.
+A leave-and-indemnity type over 261 cases reaches 0.522 with unit recall 0.515, and a ponto-justification type over 137 cases reaches 0.424 --- both summarising in three or four
+visits a set of cases that evidently do more than that. A property-rental payment type covers
+296 cases with a 28-visit path that recovers 0.917 of what its cases do and is the only entry in
+the sample that fabricates at all.
+
+Two things follow for anyone publishing such a catalogue. An entry is not a uniform object, so
+case counts and support measures belong beside every published type rather than in an appendix.
+And the weak entries are not the small ones --- three of the four weakest here have more than
+130 cases each --- so size alone is not a usable proxy for whether an entry can be trusted.
+
+\input{tables/catalogue}
+
+We do not claim the emergent catalogue is correct. There is no ground truth against which it
+could be scored --- the absence of a trustworthy classification is the premise of the work.
+What can be established is that it is not arbitrary (Section~\ref{sec:res-rq3}) and that it is
+reproducible: all nineteen clusterings defined as a function of the feature matrix refit exactly
+from their stamped inputs (the two consensus partitions are derived from other labels, not from
+features, and are outside that check).
+
+\input{tables/taxonomy}
+
+\subsection{Feature blocks and temporal dependency}\label{sec:res-ablation}
+
+Cases are clustered from their complete activity history. This is a design choice rather than an
+oversight: the catalogue is a retrospective account, and because the study declines to rely on
+the declared type, the partition must use whatever signal the record affords. The ablation in
+Table~\ref{tab:ablation} asks a different question --- when does that signal become available?
+
+Removing the keyword block perturbs the partition about as much as discarding half of every
+case's history (ARI 0.414 against 0.430), so the controlled vocabulary contributes signal the
+other blocks do not carry. Removing the topic block costs less (0.577), which is expected: topic
+and semantic representations are both derived from the same opening document.
+
+Truncating each case's features at 75\%, 50\% and 25\% of its own timeline degrades agreement
+with the full-history partition smoothly --- ARI 0.581, 0.430 and 0.296 --- rather than
+collapsing. A partition built from partial histories is still substantially the same partition,
+but a real share of the evidence arrives late. Read as a statement about administrative work
+rather than about method, this says that what a case \emph{is} becomes progressively clearer as
+it runs: routing history and accumulated actions carry type information that the opening
+document does not fully determine.
+
+Two consequences follow, both of them scope statements. The catalogue is retrospective by
+construction, which is what an as-is instrument should be. And assigning a type at intake is a
+distinct and harder problem: at a 25\% cutoff the partition retains ARI 0.296 against the
+full-history one, informative but far from equivalent. Doing that well would require richer
+early-stage features than the single opening document embedded here.
+
+\subsubsection{Does the partition predict the future because it has seen it?}\label{sec:holdout}
+
+Clustering on complete histories raises a sharper objection than scope, and it bears directly on
+RQ3 rather than on RQ1. Two of the six feature blocks are built from the organisational units a
+case visits and the transitions between them, so on the routing alphabet a held-out case is
+assigned to a cluster partly by the very sequence the model is then asked to predict. If that is
+what produces the routing gain, the gain measures circularity rather than process structure.
+Held-out splitting does not address this, because the leak is inside the feature construction
+rather than across the split.
+
+The ablation clusterings make the objection partly testable. Each truncated variant builds its
+features from the first fraction of every case's own timeline; we then predict on the \emph{full}
+held-out traces. The test is weaker than it first appears and we state its limit before its
+result: truncating at 25\% still lets the unit blocks see the first quarter of the sequence the
+model is scored on from step one, so the leak is reduced rather than removed. What the
+comparison can show is whether the gain depends on the \emph{later} part of the history, not
+whether it is free of the earlier part.
+
+It does not, and the naive reading of the gradient is wrong in a way worth reporting. Scored as
+each truncation was evaluated, the routing gain falls from 0.0381 on full histories to 0.0145 at
+25\%. But those four rows are computed on four different populations --- 962, 946, 897 and 889
+held-out cases --- and the fall is almost entirely the baseline moving, not the partition losing
+information. Per-cluster accuracy is flat across the four truncations (0.6576 to 0.6572, a
+change of 0.0004), while the global model \emph{rises} from 0.6195 to 0.6427. A single global
+chain cannot change with the clustering, so that rise is the evaluated population becoming
+easier as truncation shrinks it.
+
+Rescoring every truncation on the 637 cases all four evaluate --- the same correction this
+section applies to the algorithm comparison --- gives gains of 0.0380, 0.0400, 0.0289 and
+0.0310. Roughly \textbf{82\% of the routing gain survives when the partition is built from the
+first quarter of each case}, and the residual gradient is not monotone: the 25\% truncation
+scores above the 50\% one. The action gain stays near zero throughout, consistent with
+Section~\ref{sec:res-rq3}.
+
+Three limits bound what this establishes. The truncation is partial, as stated above. The
+matched population is the easier subset that survives every truncation, so it is not the corpus.
+And the test runs on one arm and one algorithm. Our conclusion is correspondingly narrow: the
+routing result is not primarily an artefact of clustering on the later history, and we cannot
+show it is free of the early history at all.
+
+\input{tables/temporal-holdout}
+
+\input{tables/ablation}
+
+\subsection{What separates one partition from another, and what does not (RQ2)}\label{sec:res-rq2}
+
+\subsubsection{Three distinct discards, and why raw comparison is invalid}
+
+Coverage is lost three times, and conflating them produces the wrong conclusion. Density-based
+clustering leaves 739 to 879 cases unassigned; centroid, modularity and consensus clustering
+assign every case. Separately, the requirement of at least 30 traces per cluster removes
+clusters from evaluation for every algorithm equally. And on the routing alphabet only, a case
+whose itinerary contains fewer than two organisational units carries no transition to predict
+and is dropped before either of the other two applies: \textbf{1{,}082 of the 5{,}243 cases,
+20.6\%}, never enter that arm at all.
+
+That third discard is alphabet-specific and it is the reason the two arms are not scored on the
+same population --- the action alphabet is evaluated over all 5{,}243 cases, the routing
+alphabet over 4{,}161. It also reapportions the loss the floor appears to cause. On the routing
+alphabet, of the 1{,}187 to 2{,}207 cases absent from evaluation, roughly 1{,}082 are
+single-unit cases rather than casualties of the floor, which leaves 58--77\% of the corpus
+evaluated; consensus discards nothing at clustering time yet evaluates only about 60\%, because
+fragmenting into 120 clusters puts many of them below the floor, while centroid clustering
+reaches 77\%. On the action alphabet the floor removes only 105 to 1{,}156 cases and coverage
+runs 77--98\%, so for most action-alphabet cells the floor costs \emph{less} than density
+clustering's noise rather than more.
+
+Because density-based clustering is scored only on the cases it chose to keep, comparing raw
+per-algorithm numbers compares different populations. Rescoring every clustering on the 824
+cases that all sixteen evaluate removes the confound without re-running anything, since
+per-case correctness is stored alongside the held-out identifiers.
+
+One property of that rescoring must be stated, because Section~\ref{sec:res-rq3} makes a great
+deal of the same issue. The per-case record used here is the one belonging to whichever of the
+five model families scored highest in that cluster, selected on the held-out data it is then
+scored on. Every common-set figure in this subsection is therefore a per-cluster best-of-five,
+and is an upper bound in the same sense as the selected-best figures of
+Section~\ref{sec:res-rq3}. It is applied identically to all sixteen clusterings, so it does not
+bias the comparison \emph{between} them, which is what this subsection uses it for; it would
+bias any reading of the absolute level, and we do not offer one.
+
+The apparent advantage disappears. On its own evaluated set the raw-arm density clustering
+scores 0.6891, the best of the sixteen; on the common set it scores 0.6908, second-worst, with
+only the coarse-parameter density clustering of the same arm below it. Every other clustering
+gains between 0.020 and 0.033 under the restriction, because the restriction removes the
+difficult cases that clustering had already discarded, while it gains 0.002 --- its own set was
+already the easier subset.
+
+The mechanism is narrower than ``density-based clustering'' as a family. Of the four density
+clusterings, only the raw-arm one at 16.8\% noise shows the near-zero gain; the other three gain
+0.020 to 0.023, indistinguishable from the partitional methods. What produces the reversal is a
+high discard rate, not the algorithm family. Across all sixteen the spread on the common set is \textbf{0.008}.
+
+Two qualifications bound what that number can be made to say. First, the comparison is made on
+the cases every algorithm can model, which by the analysis in the next paragraph are the easier
+ones --- restricting to the intersection removes precisely the cases on which the algorithms
+might have differed, so this is a statement about the shared population, not about the corpus.
+
+Second, and more restrictive, a small spread is not by itself evidence of equivalence, and this
+study cannot convert it into one. A case-level bootstrap over the 824 common cases, 2{,}000
+replicates, puts the spread at 0.0079 with a 95\% interval of $[0.0064, 0.0139]$ and a one-sided
+90\% upper bound of 0.0124. An equivalence claim requires the bound, not the point estimate, to
+fall inside a margin. Against the only margin this study registered --- 0.01 absolute top-1, and
+registered for the anonymisation comparison on the action alphabet rather than for a sixteen-way
+range on the routing one --- the bound does not fall inside it. We therefore report the spread
+descriptively and make no equivalence claim: on the cases all algorithms can model, the observed
+differences between clusterings are small, and this design cannot establish that they are
+immaterial. Doing so would need a margin specified for this comparison and enough common cases
+to tighten the interval, which is the same standard we hold the anonymisation result to in
+Section~\ref{sec:res-rq5}.
+
+That the discarded cases are harder, rather than unmodellable, can be checked directly. The
+algorithms that assign every case score 0.556--0.585 on the cases density clustering rejects,
+against 0.675--0.692 on the rest: a gap of roughly 0.10 to 0.14, or 14--20\% relatively worse.
+For an artefact intended to describe an administration's actual work, silently omitting 14--17\%
+of it is a real cost that buys no accuracy, and the discard should be read as a limitation of
+that algorithm rather than as evidence of its quality.
+
+\input{tables/common-set}
+
+\subsubsection{Internal validity indices}
+
+Table~\ref{tab:intrinsic} reports each index against downstream quality across the sixteen
+clusterings. Both results in this subsection --- the index correlations and the common-set
+comparison above --- are computed on the routing alphabet, and we state them as such rather than
+as general claims about clustering. All sixteen indices are computed in the same space, the
+reduced embedding in which clustering is performed. This is not automatic: the two consensus
+partitions are derived from the other algorithms' label assignments rather than from the feature
+matrix, and indices computed in that co-association representation are not on the same scale as
+the rest --- a one-hot encoding of agreement makes members of a consensus cluster nearly
+coincident, which inflates every compactness measure. We therefore recompute the consensus
+partitions' indices in the shared embedding, and the evidence pipeline refuses to pool indices
+carrying different space stamps.
+
+Taken at face value the correlations are moderate and point the way the indices intend:
+$\rho = 0.36$ for DBCV, $0.35$ for silhouette, $-0.48$ for Davies--Bouldin. None is significant
+--- a permutation test over 20{,}000 draws rejects nothing, the smallest $p$ being 0.059 --- and
+at sixteen observations the design rejects only for $|\rho| \geq 0.497$, so associations of the
+size observed are exactly the ones it cannot resolve. Read no further and the result is an
+underpowered null.
+
+Reading further is what the data reward, because the association that does exist is not with
+utility. Table~\ref{tab:index-mechanism} traces it. Across all sixteen clusterings, silhouette
+is strongly related to \emph{how much a partition throws away}: $\rho = 0.61$ with the share of
+cases discarded as noise. Discarding raises the score on the partition's own evaluated set
+($\rho = 0.68$), because the cases a density method declines to assign are the hard ones
+(Section~\ref{sec:res-rq2}). An index that rewards discarding, scored against a metric computed
+on what survives the discarding, will correlate with it for reasons that have nothing to do with
+cluster quality.
+
+Restricting to the twelve clusterings that assign every case closes that channel by
+construction, and one relationship in that subset is strong enough to survive the scrutiny a
+sample of twelve deserves. Silhouette tracks granularity almost deterministically:
+$\rho = 0.87$ with median cluster size and $-0.84$ with the number of clusters, and the
+association holds on every subset we can form --- dropping the consensus partitions gives 0.92,
+dropping the modularity ones 0.93, and the six centroid clusterings alone 0.83. On this corpus,
+what silhouette measures is how coarse the partition is.
+
+That finding is conditional on how the twelve were produced, and the condition is not incidental.
+They are six centroid clusterings at different $k$, four modularity clusterings at different
+resolutions, and two consensus partitions at a fixed $k$ --- so granularity is the variable the
+parameter sweep deliberately manipulates. Finding that a compactness index tracks the knob the
+sweep turns is closer to a property of that design than to a discovery about the corpus, and on
+the six configuration-level points the association is $\rho = 0.77$ at $p = 0.10$ under an exact
+permutation test over all orderings, which does not clear significance. What we can say is that on partitions generated this
+way the index is a granularity measure; whether it would separate partitions of equal
+granularity is a question this design cannot pose.
+
+Two things that look like further findings are not, and we set them aside rather than count
+them. Silhouette also correlates with coverage at $\rho = 0.84$, but coverage is determined by
+how many clusters clear a size floor, so this is a restatement of the granularity result rather
+than an addition to it: controlling for median cluster size, the partial correlation between
+silhouette and coverage is 0.125. And silhouette correlates with accuracy at
+$\rho = 0.35$ against $\rho = 0.84$ for coverage, which invites the reading that it predicts one
+and not the other --- but twelve clusterings are six raw/anonymised pairs, and a bootstrap that
+resamples configurations rather than clusterings puts the difference between those two
+correlations at $[-0.02, +0.99]$ over 5{,}000 draws. The interval includes zero. We cannot distinguish them.
+
+The same discipline applies to the null. At twelve observations the design resolves only
+$|\rho| \geq 0.58$, so $\rho = 0.35$ is not evidence of a weak association any more than it is
+evidence of a strong one; it is the range this design cannot see into. Stratifying by cluster
+size leaves the parent partition's silhouette with no association with accuracy in any band
+($-0.10$, $-0.01$, $-0.12$), but silhouette is a partition-level constant, so those bands
+contain twelve distinct values rather than 488 independent ones, and the bands do not fully hold
+size fixed --- cluster size still predicts accuracy within the smallest and largest of them.
+
+What RQ2 supports is therefore one positive finding and one unchanged negative. The positive
+finding is that on this corpus these indices are substantially a measure of granularity, which
+is a real property and not the one they are usually invoked for. The negative finding is the
+same as before: no evidence that they predict downstream utility, at a design that could not
+have detected a moderate association had one existed. We do not claim to have shown they fail to
+predict it. The practical consequence follows from the positive half alone --- selecting a
+clustering on silhouette here selects, in substance, for coarseness, and
+Section~\ref{sec:selection} therefore selects on the quantities directly.
+
+\input{tables/index-mechanism}
+
+This result concerns indices computed on a reduced embedding, which is where clustering is
+performed; it is not a claim about the embedding itself. It also does not contradict work
+certifying these indices against recovery of a known partition, since no known partition exists
+here.
+
+\input{tables/intrinsic}
+
+\subsection{Typical paths against three controls (RQ3)}\label{sec:res-rq3}
+
+\subsubsection{The partition carries the signal}
+
+Permuting cluster membership while preserving cluster count, size distribution and evaluated
+population reduces best next-step accuracy from 0.726 to 0.494 on the action alphabet, and from
+0.672 to 0.457 on the routing alphabet. Nothing about the \emph{shape} of a partition produces
+23 points; only membership does. The same conclusion holds without any learned model: the
+within-cluster most-frequent-successor lookup scores 0.643 on real clusters and 0.447 on
+shuffled ones, which is evidence of coherence independent of the sequence models entirely.
+
+\subsubsection{What per-cluster modelling adds, measured honestly}
+
+Table~\ref{tab:controls} reports all three baselines, and the comparison must be made carefully,
+because the obvious way to make it is wrong.
+
+Taking the best of the five model families in each cluster gives 0.726 on actions and 0.672 on
+routing, against 0.713 and 0.610 for a single global third-order Markov chain: apparent gains of
+0.013 and 0.063. That comparison is not like-for-like. The clustered figure is a per-cluster
+\emph{maximum} over five families, selected using held-out data, while the global baseline is
+one fixed family. Part of the apparent gain is the selection, not the partitioning.
+
+Matching the families removes it. A third-order Markov chain fitted per cluster, against the
+same chain fitted globally, gains \textbf{0.004} on actions and \textbf{0.035} on routing.
+Fixing any single family throughout rather than choosing per cluster gives at most 0.005 on
+actions and 0.053 on routing. On actions a per-cluster LSTM is \emph{worse} than the global
+model \((-0.004)\).
+
+We report both: the selected-best figures because they are what a practitioner choosing freely
+would obtain, and the family-matched figures because they are what the partition itself
+contributes. The honest statement of the second is that \textbf{on the action alphabet,
+partitioning contributes almost nothing} --- 0.004 against a baseline of 0.713.
+
+This exposes a symmetry worth naming. The paper's own argument is that the conventional
+within-cluster baseline inflates the apparent contribution of clustering roughly sixfold;
+selecting the best of five families against a single-family baseline inflates it again, roughly
+threefold on actions. The same discipline has to apply at both levels.
+
+The gap between the two alphabets is the substantive finding, and it must be measured on one
+population before it can be stated. As reported so far the two arms are scored on different
+populations: the 1{,}082 single-unit cases that carry no itinerary are absent from the routing
+arm by construction (Section~\ref{sec:res-rq2}). Those are the simplest cases in the corpus, so
+excluding them from routing while retaining them in actions biases the comparison in the
+direction that flatters routing, and a ratio computed across the two is not interpretable.
+
+We therefore re-fitted the action-alphabet models on the 4{,}161 multi-unit cases, so that both
+alphabets are scored over the identical 323 clusters and 27{,}795 traces.
+Table~\ref{tab:shared-population} reports the result, and the correction does not weaken the
+finding --- it inverts one half of it. On all cases, a per-cluster Markov chain beats a global
+one on actions by 0.0032 over these eight clusterings, the same near-zero gain the full sixteen
+put at 0.004. On the shared population it \emph{loses} to the global model by 0.0087, and it
+does so in all eight clusterings individually, from $-0.0020$ to $-0.0133$. Routing on that same
+population gains 0.0359.
+
+The mechanism is visible in the same table. Removing the single-unit cases costs the global model
+0.011 of accuracy and the per-cluster models 0.023 --- twice as much. The small positive gain
+that per-cluster action models showed was drawn disproportionately from the easiest cases in the
+corpus; on the cases that actually have a routing decision to make, partitioning does not help
+action prediction, it hurts it.
+
+The substantive claim is therefore signed rather than scaled: \textbf{on one population,
+per-cluster modelling helps on routing and does not help on actions}. Both magnitudes depend on
+a choice we must expose rather than bury, and we expose it for both rather than only where it
+is convenient.
+
+Aggregating per-cluster accuracies to a corpus figure requires a weight, and the two defensible
+weights disagree. Weighting each cluster by its membership --- which asks how a randomly chosen
+\emph{case} is served --- gives $+0.0032$ on actions over all cases, $-0.0087$ on actions over
+the shared population, and $+0.0359$ on routing. Weighting by held-out prediction steps --- the
+pooled accuracy over every prediction actually made --- gives $-0.0044$, $-0.0047$ and
+$+0.0292$. Two things follow. On actions the second weighting removes the sign change entirely:
+per-cluster modelling is slightly negative on both populations, and restricting the population
+moves it by 0.0003 rather than by 0.012, so the apparent inversion is an artefact of the weight
+and not a population effect. On routing the gain is real under both weights but 18\% smaller
+under the second, so the headline figure is weight-dependent in the same way and to a
+comparable degree.
+
+What survives either choice is the contrast and its direction: routing gains something between
+0.029 and 0.036, actions gain nothing and may lose a little. That is the finding; the third
+decimal place is not.
+
+Re-fitting every family on the restricted population shows this is not a property of the Markov
+chain (Table~\ref{tab:families-shared}). Membership-weighted, all five are negative there. The
+selected-best figure behaves the same way: the per-cluster maximum over five families gains
+0.0116 over a global model on all cases and \textbf{0.0007} on the shared population --- and
+that maximum is an oracle, chosen on the same held-out data it is scored on, so it is an upper
+bound rather than an estimate. An oracle over five families barely reaching parity with one
+pooled chain is the clearest statement of the result.
+
+We do not report an interval on the action deficit, and it is small enough that one is needed
+before any strong claim rests on it; what the evidence supports is a sign and a recommendation,
+not a magnitude. Which unit handles a case next depends on the procedure; which action is recorded
+largely follows conventions shared across procedures. For an instrument whose purpose is to show
+how work moves through an administration, the routing representation is both the more
+informative and the better supported.
+
+Size changes the picture on actions and not on routing. On actions the selected-best gain over a
+global model is 0.003, 0.010 and 0.024 for small, medium and large clusters; since the pooled
+selected-best gain of 0.013 corresponds to a family-matched 0.004, the family-matched gain below
+150 traces is indistinguishable from zero, and a per-cluster action model is not worth training
+there. On routing it is 0.055, 0.072 and 0.052 ---
+essentially size-independent, and worth training throughout. Fabrication follows the same
+split: unseen transitions fall from 6.04 to 1.10 with size on actions, but are already low on
+routing and reach 0.038 on large clusters, where the generated path invents essentially nothing.
+
+\input{tables/controls}
+
+\input{tables/shared-population}
+
+\input{tables/families-shared}
+
+\subsubsection{Against a real case}
+
+The medoid is a strong baseline, and we report it on the same footing as the models rather than
+as a foil. Its construction should be stated precisely, because it bears on how strong: it is
+the trace with the smallest mean normalised edit distance to a random sample of at most twenty
+traces drawn from the cluster's training split, not to the cluster as a whole. For clusters well
+above that size the medoid is therefore a weaker representative than the name implies, and the
+comparisons below understate it. On the five support measures of Section~\ref{sec:protocol} it
+wins three on the action alphabet; on routing it retains the best unit recall (0.763 against
+0.740 for the best model).
+
+The measure on which the generated paths win is the one that matters for the claim, and it wins
+on one alphabet only. Counting transitions that occur in \emph{no} sampled member of the cluster
+--- fabrication rather than variation --- the third-order Markov path scores 0.227 on routing
+against the medoid's 0.352. Normalising by path length, which prevents a short path from
+appearing faithful merely by generating less, gives 0.0194 unseen transitions per visit for
+Markov against 0.0252 for the medoid. A generated \emph{routing} path is less idiosyncratic than
+any single real case.
+
+The same normalisation reverses on the action alphabet, and reporting it only where it favours
+the models would be the selective reporting this paper argues against elsewhere. There the
+medoid fabricates 0.187 unseen transitions per visit against 0.327 for the best model
+(Transformer), 0.351 for the LSTM and 0.630 for the Markov chain --- the medoid is better by a
+factor of 1.8 to 3.4, on the same measure and the same normalisation. The claim that a generated
+path is less idiosyncratic than a real one therefore holds for the routing representation and
+not for the action one. That is the narrower claim the evidence supports, and it is the
+representation the rest of the paper argues matters for transparency; but the qualifier is
+required, and the medoid remains the better representative where actions are concerned.
+
+Model behaviour follows their capacity. The Markov chain is the most conservative generator; the
+Transformer produces the longest paths (12.6 visits against the medoid's 13.9) with the best
+unit recall and nearly the lowest per-visit fabrication. On large clusters the neural models
+overtake Markov, which its third-order memory cannot represent; on small clusters they overfit
+and fabricate more, and the short memory acts as a regulariser. Every model under-generates:
+matched visit fractions cluster around 0.45, meaning fewer than half of a real case's visits are
+covered by any generated path. This is the clearest open weakness in the task.
+
+\input{tables/size-trend}
+
+\subsection{Rule compliance and the value of a guarantee (RQ4)}\label{sec:res-rq4}
+
+Unconstrained generation is already largely valid against the send/receive pairing rule that
+governs case movement. Between 98.8\% and 99.8\% of generated steps satisfy it, and between
+89.2\% and 96.3\% of whole generated traces do.
+
+The comparison that gives this meaning is the event log itself, which satisfies the rule on
+92.06\% of its traces. Roughly one real case in twelve breaks it. The generators fall on both
+sides of that line and the split should be given in full rather than by its favourable half:
+the three neural families are \emph{less} rule-compliant than observed practice (Transformer
+89.40\%, LSTM 89.18\%, GRU 90.93\%), while the Markov chain at 95.65\% and the directly-follows
+graph at 96.32\% are more so. On the routing alphabet the question does not arise: validity is
+1.0 for every model and for the log, because that alphabet carries no pairing to violate.
+
+The contribution of constrained decoding is therefore not rescuing models from widespread
+invalidity. It is converting a high but uncertain compliance rate into a guarantee that holds by
+construction for the property the automaton encodes, which is what an artefact intended for
+audit requires: a catalogue entry that might violate the procedure's own rules is not auditable.
+Two limits belong in the same breath. The constraint enforces a rule that observed practice
+breaks about 8\% of the time, so a constrained path describes the procedure as it is meant to
+run, not always as it does. And the guarantee is by construction rather than by measurement:
+Table~\ref{tab:flow} reports unconstrained generation, because a constrained path satisfies the
+automaton by definition and rescoring it would measure the decoder rather than the model. That
+makes the claim analytic, and it therefore inherits exactly the bounds set out in
+Section~\ref{sec:method} --- no unmatched receive and no unopened conclusion, over the five
+action types the rules govern, with termination itself unconstrained.
+
+What the constraint costs can be measured, and on the conservative generator the answer is that
+it costs nothing because it does nothing. Walking the held-out traces of one clustering and
+comparing, at each of 69{,}012 decision points, the third-order Markov chain's top-eight
+candidates with and without the automaton's filter: the filter alters the candidate set at
+\textbf{0.0\%} of steps, changes the most likely candidate at 0.0\%, and never leaves the model
+with no admissible move. The unconstrained argmax is never illegal. The reason is structural
+rather than fortunate --- a Markov chain's next-state distribution contains only transitions
+observed in training, and observed transitions are overwhelmingly legal, so the model rarely has
+an illegal continuation to propose in the first place.
+
+This sharpens rather than undercuts the section's claim, and it also bounds it. The guarantee is
+free for this generator, which is why constrained decoding can be adopted without an accuracy
+argument. But a guarantee that never binds is also not what is rescuing the artefact, and the
+invalidity the flow table does record --- 4\% to 11\% of whole generated traces --- arises when
+generation runs free of a real prefix and compounds its own output, not from single illegal
+steps. The measurement above covers the Markov generator at real prefixes on one clustering; the
+neural families, whose whole-trace validity falls below the log's, are where the constraint
+would be expected to bind, and we have not measured them.
+
+\input{tables/flow}
+
+\subsection{Anonymisation (RQ5)}\label{sec:res-rq5}
+
+Comparing the raw and anonymised arms case by case, over 1{,}143 to 1{,}515 cases held out in
+both depending on the clustering, a
+paired bootstrap with 2{,}000 replicates finds all 20 model-by-clustering comparisons
+non-inferior at the pre-registered margin $\delta = 0.01$, registered before the data existed.
+
+At the tighter sensitivity margin $\delta = 0.005$ the result is \textbf{17 of 20}. The three
+failures are the neural models on the centroid clustering --- GRU, LSTM and Transformer, with
+one-sided 90\% lower bounds of $-0.0059$, $-0.0063$ and $-0.0072$ against a threshold of
+$-0.005$. They fail narrowly, and only under a margin half the pre-registered one, but they
+fail; reporting the sensitivity analysis as though it had passed would be the selective
+reporting this paper argues against elsewhere.
+
+The claim this supports is narrow, and prior work sets its bounds. The utility cost of event-log
+sanitisation for process discovery is established \citep{fahrenkrogpetersen2019pretsa}, and the
+effect of anonymisation on clustering quality has been measured on administrative data
+\citep{ferrao2022utility}. What we add is the effect on \emph{downstream next-activity
+prediction}, tested against a pre-registered non-inferiority margin rather than reported as a
+difference in indices. Within that scope, and at the pre-registered margin, anonymisation
+applied before clustering costs no measurable utility; at half that margin the conclusion holds
+for 17 of 20 comparisons.

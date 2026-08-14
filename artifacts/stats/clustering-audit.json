@@ -1,0 +1,169 @@
+{
+  "_meta": {
+    "stage": "cluster-audit",
+    "question": "Cada clustering armazenado se reproduz a partir das features que ele declara?",
+    "deterministic": true,
+    "nondeterminism": null,
+    "generated_at": "2026-08-12T05:43:35Z",
+    "commit": "8e51165916d00721db38c74c9bd1def6cb02c0f3",
+    "params": {
+      "tolerance": 0.999,
+      "strict": true
+    },
+    "inputs": [],
+    "versions": {
+      "numpy": "2.4.6",
+      "scikit-learn": "1.9.0",
+      "hdbscan": "0.8.44",
+      "umap-learn": "0.5.12",
+      "igraph": "1.0.0",
+      "leidenalg": "0.12.0",
+      "torch": "2.13.0",
+      "neo4j": "6.2.0"
+    }
+  },
+  "audited": 14,
+  "problems": 0,
+  "rows": [
+    {
+      "run_id": "exp-anon",
+      "algo": "hdbscan",
+      "status": "OK",
+      "agreement": 1.0,
+      "clusters_stored": 64,
+      "clusters_refit": 64,
+      "digest": "0db561a705b8ddae",
+      "text_variant": "anon"
+    },
+    {
+      "run_id": "exp-anon",
+      "algo": "kmeans",
+      "status": "OK",
+      "agreement": 1.0,
+      "clusters_stored": 64,
+      "clusters_refit": 64,
+      "digest": "0db561a705b8ddae",
+      "text_variant": "anon"
+    },
+    {
+      "run_id": "exp-anon",
+      "algo": "leiden",
+      "status": "OK",
+      "agreement": 1.0,
+      "clusters_stored": 75,
+      "clusters_refit": 75,
+      "digest": "0db561a705b8ddae",
+      "text_variant": "anon"
+    },
+    {
+      "run_id": "exp-anon-hcoarse",
+      "algo": "hdbscan",
+      "status": "OK",
+      "agreement": 1.0,
+      "clusters_stored": 40,
+      "clusters_refit": 40,
+      "digest": "0db561a705b8ddae",
+      "text_variant": "anon"
+    },
+    {
+      "run_id": "exp-anon-kelbow",
+      "algo": "kmeans",
+      "status": "OK",
+      "agreement": 1.0,
+      "clusters_stored": 70,
+      "clusters_refit": 70,
+      "digest": "0db561a705b8ddae",
+      "text_variant": "anon"
+    },
+    {
+      "run_id": "exp-anon-ksil",
+      "algo": "kmeans",
+      "status": "OK",
+      "agreement": 1.0,
+      "clusters_stored": 60,
+      "clusters_refit": 60,
+      "digest": "0db561a705b8ddae",
+      "text_variant": "anon"
+    },
+    {
+      "run_id": "exp-anon-lres",
+      "algo": "leiden",
+      "status": "OK",
+      "agreement": 1.0,
+      "clusters_stored": 108,
+      "clusters_refit": 108,
+      "digest": "0db561a705b8ddae",
+      "text_variant": "anon"
+    },
+    {
+      "run_id": "exp-raw",
+      "algo": "hdbscan",
+      "status": "OK",
+      "agreement": 1.0,
+      "clusters_stored": 66,
+      "clusters_refit": 66,
+      "digest": "280a87b123744c2d",
+      "text_variant": "raw"
+    },
+    {
+      "run_id": "exp-raw",
+      "algo": "kmeans",
+      "status": "OK",
+      "agreement": 1.0,
+      "clusters_stored": 66,
+      "clusters_refit": 66,
+      "digest": "280a87b123744c2d",
+      "text_variant": "raw"
+    },
+    {
+      "run_id": "exp-raw",
+      "algo": "leiden",
+      "status": "OK",
+      "agreement": 1.0,
+      "clusters_stored": 71,
+      "clusters_refit": 71,
+      "digest": "280a87b123744c2d",
+      "text_variant": "raw"
+    },
+    {
+      "run_id": "exp-raw-hcoarse",
+      "algo": "hdbscan",
+      "status": "OK",
+      "agreement": 1.0,
+      "clusters_stored": 42,
+      "clusters_refit": 42,
+      "digest": "280a87b123744c2d",
+      "text_variant": "raw"
+    },
+    {
+      "run_id": "exp-raw-kelbow",
+      "algo": "kmeans",
+      "status": "OK",
+      "agreement": 1.0,
+      "clusters_stored": 70,
+      "clusters_refit": 70,
+      "digest": "280a87b123744c2d",
+      "text_variant": "raw"
+    },
+    {
+      "run_id": "exp-raw-ksil",
+      "algo": "kmeans",
+      "status": "OK",
+      "agreement": 1.0,
+      "clusters_stored": 60,
+      "clusters_refit": 60,
+      "digest": "280a87b123744c2d",
+      "text_variant": "raw"
+    },
+    {
+      "run_id": "exp-raw-lres",
+      "algo": "leiden",
+      "status": "OK",
+      "agreement": 1.0,
+      "clusters_stored": 98,
+      "clusters_refit": 98,
+      "digest": "280a87b123744c2d",
+      "text_variant": "raw"
+    }
+  ]
+}

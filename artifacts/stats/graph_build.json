@@ -1,0 +1,353 @@
+{
+  "_meta": {
+    "stage": "graph-census",
+    "question": "Que grafo existe apos a carga: quantos nos por rotulo, quantas arestas por tipo, e quantos processos sobreviveram a cada filtro?",
+    "deterministic": "conditional",
+    "nondeterminism": "le o grafo ao vivo; o resultado e fixo para um estado dado do banco",
+    "generated_at": "2026-08-13T11:28:04Z",
+    "commit": "8e51165916d00721db38c74c9bd1def6cb02c0f3",
+    "params": {
+      "level": "L0",
+      "subject": "graph",
+      "alphabet": "none"
+    },
+    "inputs": [],
+    "versions": {
+      "numpy": "2.4.6",
+      "scikit-learn": "1.9.0",
+      "hdbscan": "0.8.44",
+      "umap-learn": "0.5.12",
+      "igraph": "1.0.0",
+      "leidenalg": "0.12.0",
+      "torch": "2.13.0",
+      "neo4j": "6.2.0"
+    }
+  },
+  "scope": {
+    "level": "L0",
+    "subject": "graph",
+    "alphabet": "none"
+  },
+  "population": {
+    "name": "corpus",
+    "n_cases": 5445,
+    "definition": "the graph as loaded at the moment of the census; every count is a live read, not a running total kept by the ETL"
+  },
+  "members": {
+    "expected": 11,
+    "present": 11,
+    "missing": [],
+    "keys": [
+      "Atividade",
+      "CategoriaProcesso",
+      "Ciclo",
+      "Coorte",
+      "Documento",
+      "Orgao",
+      "Processo",
+      "TipoAcao",
+      "TipoProcedimento",
+      "Unidade",
+      "Usuario"
+    ]
+  },
+  "results": {
+    "totals": {
+      "nodes": 367318,
+      "relationships": 2092528
+    },
+    "nodes_by_label": {
+      "Processo": 5445,
+      "Atividade": 283841,
+      "Documento": 42658,
+      "Unidade": 708,
+      "Orgao": 48,
+      "Usuario": 1443,
+      "TipoProcedimento": 75,
+      "TipoAcao": 48,
+      "Ciclo": 32772,
+      "CategoriaProcesso": 269,
+      "Coorte": 0
+    },
+    "relationships_by_type": {
+      "DO_PROCESSO": 316613,
+      "SEGUIDA_POR": 260817,
+      "PRECEDIDA_POR": 260817,
+      "INICIOU_PROCESSO": 5445,
+      "EXECUTADO_PELA_UNIDADE": 283841,
+      "PASSOU_PELA_UNIDADE": 23429,
+      "PASSOU_PELO_ORGAO": 6247,
+      "CRIADO_NO_ORGAO": 5445,
+      "CONTEM_DOCUMENTO": 42658,
+      "REFERENCIA_DOCUMENTO": 121778,
+      "SIMILAR_DOC": 0,
+      "TEM_TIPO": 5445,
+      "EM_ABERTO_NA_UNIDADE": 0,
+      "CATEGORIZADO_COMO": 9412,
+      "MEMBRO_DA_COORTE": 0
+    },
+    "schema_triples": [
+      {
+        "src": "Atividade",
+        "rel": "DO_PROCESSO",
+        "dst": "Processo",
+        "n": 283841,
+        "flow": false
+      },
+      {
+        "src": "Atividade",
+        "rel": "EXECUTADO_PELA_UNIDADE",
+        "dst": "Unidade",
+        "n": 283841,
+        "flow": false
+      },
+      {
+        "src": "Atividade",
+        "rel": "EXECUTADO_PELO_USUARIO",
+        "dst": "Usuario",
+        "n": 283841,
+        "flow": false
+      },
+      {
+        "src": "Atividade",
+        "rel": "TIPO_ACAO",
+        "dst": "TipoAcao",
+        "n": 283841,
+        "flow": false
+      },
+      {
+        "src": "Atividade",
+        "rel": "PRECEDIDA_POR",
+        "dst": "Atividade",
+        "n": 260817,
+        "flow": true
+      },
+      {
+        "src": "Atividade",
+        "rel": "SEGUIDA_POR",
+        "dst": "Atividade",
+        "n": 260817,
+        "flow": true
+      },
+      {
+        "src": "Atividade",
+        "rel": "REFERENCIA_DOCUMENTO",
+        "dst": "Documento",
+        "n": 121778,
+        "flow": false
+      },
+      {
+        "src": "Processo",
+        "rel": "CONTEM_DOCUMENTO",
+        "dst": "Documento",
+        "n": 42658,
+        "flow": false
+      },
+      {
+        "src": "Ciclo",
+        "rel": "DO_PROCESSO",
+        "dst": "Processo",
+        "n": 32772,
+        "flow": false
+      },
+      {
+        "src": "Ciclo",
+        "rel": "NA_UNIDADE",
+        "dst": "Unidade",
+        "n": 32772,
+        "flow": false
+      },
+      {
+        "src": "Ciclo",
+        "rel": "ABERTO_POR",
+        "dst": "Atividade",
+        "n": 32122,
+        "flow": true
+      },
+      {
+        "src": "Ciclo",
+        "rel": "FECHADO_POR",
+        "dst": "Atividade",
+        "n": 30795,
+        "flow": true
+      },
+      {
+        "src": "Atividade",
+        "rel": "REMETIDO_PELA_UNIDADE",
+        "dst": "Unidade",
+        "n": 24046,
+        "flow": true
+      },
+      {
+        "src": "Processo",
+        "rel": "PASSOU_PELA_UNIDADE",
+        "dst": "Unidade",
+        "n": 23429,
+        "flow": true
+      },
+      {
+        "src": "Processo",
+        "rel": "SITUACAO_PROCESSO_UNIDADE",
+        "dst": "Unidade",
+        "n": 23429,
+        "flow": false
+      },
+      {
+        "src": "Atividade",
+        "rel": "SEGUIDO_INDEPENDENTEMENTE_POR",
+        "dst": "Atividade",
+        "n": 19535,
+        "flow": true
+      },
+      {
+        "src": "Processo",
+        "rel": "CATEGORIZADO_COMO",
+        "dst": "CategoriaProcesso",
+        "n": 9412,
+        "flow": false
+      },
+      {
+        "src": "Processo",
+        "rel": "PASSOU_PELO_ORGAO",
+        "dst": "Orgao",
+        "n": 6247,
+        "flow": true
+      },
+      {
+        "src": "Processo",
+        "rel": "SITUACAO_PROCESSO_ORGAO",
+        "dst": "Orgao",
+        "n": 6247,
+        "flow": false
+      },
+      {
+        "src": "Processo",
+        "rel": "ATIVIDADE_MAIS_RECENTE",
+        "dst": "Atividade",
+        "n": 5445,
+        "flow": true
+      },
+      {
+        "src": "Processo",
+        "rel": "CRIADO_NA_UNIDADE",
+        "dst": "Unidade",
+        "n": 5445,
+        "flow": false
+      },
+      {
+        "src": "Processo",
+        "rel": "CRIADO_NO_ORGAO",
+        "dst": "Orgao",
+        "n": 5445,
+        "flow": false
+      },
+      {
+        "src": "Processo",
+        "rel": "INICIOU_PROCESSO",
+        "dst": "Atividade",
+        "n": 5445,
+        "flow": true
+      },
+      {
+        "src": "Processo",
+        "rel": "TEM_TIPO",
+        "dst": "TipoProcedimento",
+        "n": 5445,
+        "flow": false
+      },
+      {
+        "src": "Usuario",
+        "rel": "PERTENCE_AO_ORGAO",
+        "dst": "Orgao",
+        "n": 1442,
+        "flow": false
+      },
+      {
+        "src": "Unidade",
+        "rel": "PERTENCE_AO_ORGAO",
+        "dst": "Orgao",
+        "n": 708,
+        "flow": false
+      },
+      {
+        "src": "Unidade",
+        "rel": "SUBUNIDADE_DE",
+        "dst": "Unidade",
+        "n": 660,
+        "flow": false
+      },
+      {
+        "src": "CategoriaProcesso",
+        "rel": "SUBCATEGORIA_DE",
+        "dst": "CategoriaProcesso",
+        "n": 205,
+        "flow": false
+      },
+      {
+        "src": "TipoAcao",
+        "rel": "PERTENCE_AO_GRUPO",
+        "dst": "GrupoAtividade",
+        "n": 48,
+        "flow": false
+      }
+    ],
+    "flow_relationship_types": [
+      "ABERTO_POR",
+      "ATIVIDADE_MAIS_RECENTE",
+      "FECHADO_POR",
+      "INICIOU_PROCESSO",
+      "PASSOU_PELA_UNIDADE",
+      "PASSOU_PELO_ORGAO",
+      "PRECEDIDA_POR",
+      "REMETIDO_PELA_UNIDADE",
+      "SEGUIDA_POR",
+      "SEGUIDO_INDEPENDENTEMENTE_POR"
+    ],
+    "nodes_by_producing_stage": {
+      "precreate": {
+        "Processo": 5445,
+        "Unidade": 708,
+        "Orgao": 48,
+        "Usuario": 1443,
+        "TipoProcedimento": 75,
+        "TipoAcao": 48
+      },
+      "atividades": {
+        "Atividade": 283841,
+        "Documento": 42658
+      },
+      "situacao": {
+        "Ciclo": 32772
+      },
+      "processo-cluster": {
+        "CategoriaProcesso": 269
+      },
+      "cohort": {
+        "Coorte": 0
+      }
+    },
+    "processo": {
+      "total": 5445,
+      "concluded": 5445,
+      "open": 0,
+      "with_declared_tipo": 5445,
+      "with_cluster_features": 5243
+    },
+    "concluded_reconciliation": {
+      "readings": {
+        "declared_situacao": 5445,
+        "zero_open_units": 5445,
+        "no_open_unit_edge": 5445
+      },
+      "predicates": {
+        "declared_situacao": "p.situacao = 'concluido'",
+        "zero_open_units": "coalesce(p.unidades_em_aberto_count, 0) = 0",
+        "no_open_unit_edge": "NOT (p)-[:EM_ABERTO_NA_UNIDADE]->()"
+      },
+      "n_disagreeing": 0,
+      "disagreeing": [],
+      "truncated": false,
+      "reading": "Three independent readings of 'concluded': the situacao our flow rules compute from the loaded event log, the open-unit count those same rules derive, and the EM_ABERTO_NA_UNIDADE edges the loader writes. The corpus is selected upstream in Trino by the gold status field, so on a graph loaded that way all three agree by construction and n_disagreeing is 0 — that is expected, not a check that passed. The block exists so that a processo our rules call open while the source calls it concluded is recorded case by case instead of silently dropped, and can be reconciled against the estoque-de-processos rules maintained in the other repos."
+    }
+  }
+}

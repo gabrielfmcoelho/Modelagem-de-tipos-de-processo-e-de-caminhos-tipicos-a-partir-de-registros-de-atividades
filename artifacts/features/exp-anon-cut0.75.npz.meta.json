@@ -1,0 +1,30 @@
+{
+  "_meta": {
+    "stage": "processo-embed",
+    "question": "Que vetor representa cada processo, fundindo conteudo e forma?",
+    "deterministic": "conditional",
+    "nondeterminism": "UMAP fixado por seed; dois blocos de feature vem de LLM a montante",
+    "generated_at": "2026-08-13T09:10:24Z",
+    "commit": "8e51165916d00721db38c74c9bd1def6cb02c0f3",
+    "params": {
+      "n_processos": 5243,
+      "dim": 50,
+      "feature_hash": "6e3e36d22195ea8a",
+      "text_variant": "anon"
+    },
+    "inputs": [],
+    "versions": {
+      "numpy": "2.4.6",
+      "scikit-learn": "1.9.0",
+      "hdbscan": "0.8.44",
+      "umap-learn": "0.5.12",
+      "igraph": "1.0.0",
+      "leidenalg": "0.12.0",
+      "torch": "2.13.0",
+      "neo4j": "6.2.0"
+    }
+  },
+  "describes": "artifacts/features/exp-anon-cut0.75.npz",
+  "sha256": "aa442bf9ed1746d2694704c126e8ac4df18d5f39d4a5a1d3280ff9cef4e9a48f",
+  "bytes": 954804
+}

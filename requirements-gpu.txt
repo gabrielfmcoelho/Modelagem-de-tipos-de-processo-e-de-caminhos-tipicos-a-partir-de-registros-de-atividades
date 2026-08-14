@@ -1,0 +1,21 @@
+# GPU acceleration — install on top of requirements.txt:
+#
+#   pip install -r requirements.txt
+#   pip install -r requirements-gpu.txt
+#
+# This upgrades the CPU torch wheel (pulled in transitively by
+# sentence-transformers / gliner2) to a CUDA build. Adjust the index URL
+# for your CUDA version (cu121 = CUDA 12.1, cu118 = CUDA 11.8, etc.).
+#
+# Verify with:
+#   python -c "import torch; print(torch.__version__, torch.cuda.is_available(), torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'no cuda')"
+
+--extra-index-url https://download.pytorch.org/whl/cu121
+
+torch>=2.3,<3.0
+
+# Graph neural network for the `gcn-distill` stage (DFG node-importance +
+# "ideal" graph distillation). Lazy-imported by pipeline/gcn.py, so the rest of
+# the pipeline runs without it; if absent, gcn-distill falls back to the
+# PageRank baseline.
+torch-geometric>=2.5

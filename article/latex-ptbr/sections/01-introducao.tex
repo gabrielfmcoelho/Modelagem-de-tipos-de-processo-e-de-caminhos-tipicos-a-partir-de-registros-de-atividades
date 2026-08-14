@@ -1,0 +1,38 @@
+\section{INTRODUÇÃO}
+
+O direito de acesso à informação pressupõe que a administração pública conheça os seus próprios fluxos de trabalho. Regimes de transparência ativa e mandatos de dados abertos frequentemente operam sob a premissa de que os relatos da prática administrativa já existem e aguardam apenas publicação. Contudo, \citeonline{brauneis2018algorithmic} testaram esse pressuposto empiricamente e constataram que o maior obstáculo à transparência não é o sigilo, mas a inexistência prévia desses registros consolidados.
+
+Os sistemas eletrônicos de processo administrativo mitigam parcialmente esse problema. O Sistema Eletrônico de Informações (SEI), por exemplo, registra eventos atômicos para cada processo, como a unidade recebedora e a ação executada. Embora o rastro transacional exista, falta a consolidação que traduza esses dados agregados em conhecimento útil sobre quais procedimentos a administração de fato executa e como tramitam. As administrações mantêm uma taxonomia oficial de tipos de processo, mas esta é aplicada manualmente no momento da abertura do caso. Consequentemente, a sua precisão em relação à prática efetiva é uma questão empírica. 
+
+Há uma limitação técnica no SEI que inviabiliza presumir a validade dessa taxonomia: o sistema não impõe restrições de sequência de atividades por tipo de processo. Dois casos de um mesmo tipo declarado podem seguir fluxos inteiramente distintos. Por essa razão, a taxonomia oficial entra neste trabalho como uma hipótese a ser testada, exigindo que o catálogo de processos seja derivado diretamente dos registros transacionais (Seção 2.2.7).
+
+No ordenamento brasileiro, a relevância dessa derivação é acentuada pelo dever legal de publicar as principais etapas de cada procedimento em formato legível por máquina. A discussão sobre o alcance material desse dever sobre o corpus estudado é aprofundada na Seção 2.2.5.
+
+A motivação desta pesquisa advém de um contexto prático. Atuo como analista de dados da Secretaria de Administração do Estado do Piauí (SEAD-PI) e sou graduando em Engenharia de Software pelo iCEV. No exercício dessa função, observei a referida assimetria entre o volume de registros gerados no SEI e a ausência de mapeamentos estruturados. Dado que o estudo analisa a organização à qual estou vinculado, com acesso funcional aos dados, faz-se necessária a declaração de potencial conflito de interesses. Para mitigar vieses e garantir o rigor metodológico, adotaram-se três providências: (i) a pesquisa é regida por um instrumento jurídico formal da SEAD-PI que impõe a anonimização dos dados \cite{seadpi2026termo}; (ii) todos os resultados são regerados de forma automatizada por um \emph{pipeline} versionado; e (iii) as limitações do estudo estão explicitamente mapeadas na Seção 4.11. A SEAD-PI também reteve o direito de aprovação prévia sobre a divulgação dos resultados (Seção 3.1).
+
+O objeto da pesquisa é a extração dos tipos de processo administrativo e de seus respectivos caminhos típicos, derivados dos registros do SEI, totalizando 5.243 processos concluídos em 2025. O estudo foca no mapeamento da forma e fluxo dos procedimentos, excluindo expressamente a análise de mérito das decisões administrativas ou do desempenho de servidores.
+
+O problema de pesquisa formulado é: \emph{é possível derivar dos próprios registros de atividades da administração um catálogo auditável dos tipos de processo efetivamente executados e de seus caminhos típicos, e sob qual evidência este catálogo pode ser considerado confiável?}
+
+Para responder a essa pergunta, formulam-se três hipóteses, que serão testadas e avaliadas com base nas evidências da Seção 4 e retomadas na Seção 5:
+
+\begin{description}
+  \item[H1] O agrupamento emergente, derivado da vetorização do documento inicial combinada ao histórico de tramitação, capta estruturas reais do acervo não contempladas pela taxonomia declarada. A hipótese será refutada se uma partição-controle embaralhada obtiver desempenho a jusante equivalente, ou se a redundância com a taxonomia oficial for substancial.
+  \item[H2] A escolha do algoritmo de agrupamento e o uso de índices internos de validade são suficientes para selecionar a melhor partição a ser publicada. A hipótese será refutada se as métricas não conseguirem separar algoritmos distintos quanto à utilidade a jusante, ou se os índices internos apresentarem baixa correlação com a qualidade final.
+  \item[H3] Modelar o caminho típico especializado por tipo de processo melhora a predição da próxima atividade em comparação a um modelo global único treinado sobre o corpus inteiro. A hipótese será refutada se o ganho preditivo desaparecer ou for negativo na comparação direta entre modelos da mesma família.
+\end{description}
+
+O objetivo geral é produzir e validar um catálogo auditável dos tipos de processo administrativo da SEAD-PI e de seus caminhos típicos, visando instrumentalizar a transparência ativa. São objetivos específicos:
+
+\begin{description}
+  \item[a)] Construir um grafo de conhecimento de eventos a partir dos \emph{logs} do SEI e derivar tipos de processo emergentes;
+  \item[b)] Verificar se os agrupamentos capturam estruturas latentes não registradas pela taxonomia oficial;
+  \item[c)] Avaliar se os índices internos de validade e algoritmos de agrupamento conseguem isolar partições candidatas;
+  \item[d)] Treinar e avaliar modelos de caminhos típicos comparando-os contra três controles: sucessor mais frequente, modelo global único e partição embaralhada, incluindo avaliação qualitativa sobre um processo real;
+  \item[e)] Quantificar o impacto preditivo decorrente do requisito de anonimização;
+  \item[f)] Selecionar a configuração ideal de partição, alfabeto de traço e arquitetura de modelo para o catálogo final.
+\end{description}
+
+A justificativa técnica e teórica do trabalho baseia-se em duas contribuições. A primeira é a entrega de um artefato reprodutível: um catálogo empírico validado, demandado pela literatura de auditoria do setor público \cite{vanderaalst2010auditing,nai2026procurement,araujo2023mineracao,limaesilva2026analise}. A segunda contribuição é o protocolo de avaliação externa. A confiabilidade do artefato gerado fundamenta-se nos controles rigorosos adotados na Seção~\ref{sec:protocolo}. O uso de partições embaralhadas e \emph{baselines} fixas delimita as afirmações do método, evitando o viés de confirmação e atestando que os ganhos observados derivam da estrutura dos dados, e não da modelagem em si.
+
+O artigo está organizado da seguinte forma: a Seção 2 apresenta a revisão de literatura sobre mineração de processos, clusterização e privacidade, contextualizando o marco legal brasileiro \cite{vanderaalst2016processmining,song2009trace,brasil1988cf,state2016procedurelaw,brasil2018lgpd}. A Seção 3 detalha a metodologia, desde a extração do \emph{log} até o protocolo experimental. A Seção 4 apresenta os resultados das predições e discute as limitações. A Seção 5 conclui o estudo respondendo às hipóteses testadas. O Apêndice A documenta as medidas e o Apêndice B traz tabelas adicionais. O Anexo A reproduz a autorização institucional para uso dos dados.

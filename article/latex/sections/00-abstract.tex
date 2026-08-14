@@ -1,0 +1,31 @@
+\abstract{Access-to-information law presumes that public administrations hold an account of how
+their procedures actually run. Empirical work on open-records requests finds that this account
+is frequently absent: the binding obstacle is not exemption but that the record was never
+created. We derive such a record from an administration's own event log. From 5{,}243 concluded
+administrative cases at a state-level secretariat of a Brazilian state administration, we build
+an event knowledge graph, group cases into emergent process types from opening-document text
+together with routing and action history, and learn a typical path for each type using
+sequence models over two trace alphabets: recorded actions, and the itinerary of organisational
+units a case visits. The catalogue is reproducible --- every clustering refittable from a feature
+matrix reproduces exactly from its stamped features, every reported table is regenerated from
+artefacts, and a register of the load-bearing figures in the running text is checked against
+those artefacts in both directions. Evaluating it required controls that this
+literature does not routinely report. A shuffled partition, preserving cluster count, size
+distribution and evaluated population, reduces next-step accuracy from 0.726 to 0.494,
+establishing that the grouping carries signal. What per-cluster modelling then contributes
+depends on how it is measured, and the conventional measurement overstates it roughly sixfold.
+Against the usual within-cluster baseline the apparent gain on action prediction is 0.083;
+against a single global model with the model family held fixed it is 0.004; and once both trace
+alphabets are scored on one population it is negative, between $-0.009$ and $-0.005$ depending
+on whether clusters are weighted by membership or by prediction steps. Routing gains 0.029 to
+0.036 on the same population and under the same choice. Two further results constrain the
+method: sixteen clusterings across four algorithm families fall within 0.0079 once scored on a
+common set of cases, on an interval too wide to call them equivalent; and the internal validity
+indices that would ordinarily choose between them track cluster granularity rather than
+downstream utility, correlating at 0.87 with median cluster size while their association with
+accuracy cannot be resolved at this sample size. Anonymisation applied before clustering, as the
+governing instrument requires, costs no measurable next-activity utility against a pre-registered
+margin.}
+
+\keywords{process mining, administrative transparency, trace clustering, access to information,
+data protection, public administration}

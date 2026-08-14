@@ -1,0 +1,37 @@
+\section{CONSIDERAÇÕES FINAIS}\label{sec:consideracoes}
+
+Este trabalho demonstrou a viabilidade de derivar, a partir de registros transacionais brutos do sistema SEI, um catálogo auditável e estruturado dos tipos de processo administrativo executados pela SEAD-PI. A evidência produzida sustenta que o catálogo não é um artefato arbitrário: ele emerge de uma estrutura de dados real, validada em 252 comparações contra partições-controle embaralhadas.
+
+\subsection*{Síntese das Hipóteses}
+
+\begin{itemize}
+    \item \textbf{H1 (Sinal estrutural):} Sustentada. O agrupamento emergente captura variações procedimentais que a taxonomia declarada não registra. O excesso de acurácia preditiva em relação às partições embaralhadas ($\Delta^* > 0$) confirmou que a pertença aos grupos carrega um sinal estrutural consistente, independente da forma da partição.
+    \item \textbf{H2 (Critérios de decisão):} Refutada como critério automático. Os índices internos de validade (como Silhouette e DBCV) não se correlacionaram de forma robusta com a utilidade preditiva a jusante. A seleção da partição final exigiu, portanto, uma decisão baseada em pesos ponderados sobre os objetivos operativos do catálogo, e não em uma busca algorítmica autônoma.
+    \item \textbf{H3 (Ganho preditivo):} Sustentada parcialmente. O ganho da modelagem por tipo sobre um modelo global foi positivo e significativo apenas no alfabeto de \emph{procedimento}. Nos demais alfabetos, o ganho não superou o resíduo de agregação, indicando que a especialização por tipo é útil para predizer a sequência de ações, mas não necessariamente para descrever a estrutura de roteamento entre unidades.
+\end{itemize}
+
+\subsection*{Contribuição Técnica e Instrumento de Transparência}
+
+A principal contribuição deste estudo não reside apenas na acurácia preditiva, mas na entrega de um objeto auditável e regerável. Diferente da publicação de dados brutos, o catálogo produzido é atribuível: cada afirmação sobre o fluxo processual pode ser rastreada até os processos que a sustentam. Esta característica é fundamental para atender ao dever legal de transparência ativa em formato legível por máquina, permitindo que o controle externo e as unidades de otimização administrativa operem sobre um modelo do "o que de fato ocorre", em vez de apenas sobre o "o que deveria ocorrer".
+
+Ressalta-se que este artefato tem natureza descritiva e não normativa. Ele descreve o comportamento recorrente, mas não constitui, por si, um padrão de conformidade ou uma métrica de eficiência. O uso do catálogo para fins de ranqueamento, avaliação de desempenho individual ou sanções disciplinares seria metodologicamente incorreto, dado o viés de duração detectado no corpus (que sub-representa processos longos) e a natureza técnica da predição por agrupamento.
+
+\subsection*{Considerações sobre a Adoção e Governança}
+
+A viabilidade técnica do \emph{pipeline} não depende de infraestrutura de alto desempenho, mas de governança de dados. A modelagem por cadeias de Markov, que apresentou desempenho competitivo frente a arquiteturas neurais complexas, torna o custo computacional de manutenção do catálogo irrelevante. O desafio real para a adoção reside na governança:
+\begin{enumerate}
+    \item É necessário definir a cadência de atualização do catálogo, evitando a obsolescência de fluxos.
+    \item Recomenda-se a adoção de um limiar de volume mínimo para publicação de tipos de processo, protegendo o sigilo e a privacidade de unidades administrativas pequenas.
+    \item O catálogo deve ser tratado como um documento vivo, revisado periodicamente contra os novos registros de atividades, garantindo que o "típico" acompanhe a mudança da prática administrativa.
+\end{enumerate}
+
+\subsection*{Trabalhos Futuros}
+
+A modelagem de processos administrativos pode evoluir a partir de três direções:
+\begin{enumerate}
+    \item \textbf{Análise Temporal:} Expansão da janela de coleta para além de um exercício civil, eliminando o viés de censura à direita e permitindo medições precisas de duração (SLA).
+    \item \textbf{Agrupamento por Objetos (OCPM):} Investigação de técnicas de mineração centradas em objetos para modelar explicitamente a concorrência e a ramificação de processos, superando a linearização cronológica.
+    \item \textbf{Validação por Especialistas:} Avaliação qualitativa e crítica dos nomes e descrições dos tipos de processo por servidores de carreira, garantindo que a semântica gerada pelo modelo esteja alinhada à realidade administrativa institucional.
+\end{enumerate}
+
+Este trabalho oferece, portanto, a base técnica e o protocolo metodológico necessários para que a administração pública transforme seus registros eletrônicos em conhecimento gerencial auditável e transparente.

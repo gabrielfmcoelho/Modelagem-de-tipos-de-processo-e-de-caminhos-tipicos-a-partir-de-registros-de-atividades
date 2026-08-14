@@ -1,0 +1,1113 @@
+{
+  "_meta": {
+    "stage": "processo-cluster",
+    "question": "Que familias de processo emergem, e como se chamam?",
+    "deterministic": false,
+    "nondeterminism": "a nomeacao dos grupos e feita por LLM",
+    "generated_at": "2026-08-12T05:40:39Z",
+    "commit": "8e51165916d00721db38c74c9bd1def6cb02c0f3",
+    "params": {
+      "run_id": "exp-raw",
+      "algo": "hdbscan"
+    },
+    "inputs": [],
+    "versions": {
+      "numpy": "2.4.6",
+      "scikit-learn": "1.9.0",
+      "hdbscan": "0.8.44",
+      "umap-learn": "0.5.12",
+      "igraph": "1.0.0",
+      "leidenalg": "0.12.0",
+      "torch": "2.13.0",
+      "neo4j": "6.2.0"
+    }
+  },
+  "meta": {
+    "run": "exp-raw",
+    "algo": "hdbscan"
+  },
+  "catalog": {
+    "34": {
+      "n": 30,
+      "concl": 30,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Pessoal: Controle de Frequência/Abono de Falta",
+          "n": 28
+        },
+        {
+          "tipo": "Demanda Interna: Informação, Solicitação ou Administ",
+          "n": 2
+        }
+      ]
+    },
+    "45": {
+      "n": 194,
+      "concl": 194,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 103
+        },
+        {
+          "tipo": "Ouvidoria: Solicitação de Providências",
+          "n": 16
+        },
+        {
+          "tipo": "Pessoal: Controle de Frequência/Abono de Falta",
+          "n": 11
+        }
+      ]
+    },
+    "10": {
+      "n": 229,
+      "concl": 229,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 123
+        },
+        {
+          "tipo": "Licitação: Consulta",
+          "n": 89
+        },
+        {
+          "tipo": "Encaminhamento de Documento / Informação",
+          "n": 4
+        }
+      ]
+    },
+    "39": {
+      "n": 305,
+      "concl": 305,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Encaminhamento de Documento / Informação",
+          "n": 116
+        },
+        {
+          "tipo": "Pessoal: Desconto de Contribuição Associativa",
+          "n": 70
+        },
+        {
+          "tipo": "Demanda Interna: Informação, Solicitação ou Administ",
+          "n": 51
+        }
+      ]
+    },
+    "37": {
+      "n": 155,
+      "concl": 155,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Encaminhamento de Documento / Informação",
+          "n": 76
+        },
+        {
+          "tipo": "Demanda Interna: Informação, Solicitação ou Administ",
+          "n": 30
+        },
+        {
+          "tipo": "Pessoal: Desconto de Contribuição Associativa",
+          "n": 28
+        }
+      ]
+    },
+    "21": {
+      "n": 69,
+      "concl": 69,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Gestão de Contrato: Processo de Empenho/Pagamento",
+          "n": 49
+        },
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 13
+        },
+        {
+          "tipo": "Gestão de Contrato: Outras Alterações Contratuais nã",
+          "n": 5
+        }
+      ]
+    },
+    "0": {
+      "n": 326,
+      "concl": 326,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Licitação: Consulta",
+          "n": 325
+        },
+        {
+          "tipo": "Gestão de Contrato: Outras Alterações Contratuais nã",
+          "n": 1
+        }
+      ]
+    },
+    "59": {
+      "n": 50,
+      "concl": 50,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Pessoal: Férias - Solicitação",
+          "n": 41
+        },
+        {
+          "tipo": "Pessoal: Controle de Frequência/Abono de Falta",
+          "n": 5
+        },
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 3
+        }
+      ]
+    },
+    "61": {
+      "n": 63,
+      "concl": 63,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 63
+        }
+      ]
+    },
+    "38": {
+      "n": 46,
+      "concl": 46,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Encaminhamento de Documento / Informação",
+          "n": 21
+        },
+        {
+          "tipo": "Demanda Interna: Informação, Solicitação ou Administ",
+          "n": 9
+        },
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 7
+        }
+      ]
+    },
+    "18": {
+      "n": 24,
+      "concl": 24,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Pessoal: Controle de Frequência/Abono de Falta",
+          "n": 24
+        }
+      ]
+    },
+    "13": {
+      "n": 60,
+      "concl": 60,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Gestão de Contrato: Processo de Empenho/Pagamento",
+          "n": 24
+        },
+        {
+          "tipo": "Demanda Interna: Informação, Solicitação ou Administ",
+          "n": 21
+        },
+        {
+          "tipo": "Encaminhamento de Documento / Informação",
+          "n": 6
+        }
+      ]
+    },
+    "40": {
+      "n": 53,
+      "concl": 53,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Pessoal: Controle de Frequência/Abono de Falta",
+          "n": 41
+        },
+        {
+          "tipo": "Pessoal: Controle de Frequência/Folha de Ponto",
+          "n": 8
+        },
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 4
+        }
+      ]
+    },
+    "4": {
+      "n": 53,
+      "concl": 53,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "RELATÓRIO _DE_VISITA_TÉCNICO",
+          "n": 53
+        }
+      ]
+    },
+    "11": {
+      "n": 24,
+      "concl": 24,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Pessoal: Folha de Pagamento",
+          "n": 12
+        },
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 12
+        }
+      ]
+    },
+    "50": {
+      "n": 67,
+      "concl": 67,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Pessoal: Controle de Frequência/Abono de Falta",
+          "n": 39
+        },
+        {
+          "tipo": "Pessoal: Férias - Solicitação",
+          "n": 14
+        },
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 10
+        }
+      ]
+    },
+    "51": {
+      "n": 173,
+      "concl": 173,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Pessoal: Controle de Frequência/Abono de Falta",
+          "n": 87
+        },
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 49
+        },
+        {
+          "tipo": "Pessoal: Controle de Frequência/Folha de Ponto",
+          "n": 16
+        }
+      ]
+    },
+    "42": {
+      "n": 134,
+      "concl": 134,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 81
+        },
+        {
+          "tipo": "Solicitação de Diárias e/ou Passagens",
+          "n": 50
+        },
+        {
+          "tipo": "PC_REQUISIÇÃO DE DIÁRIAS",
+          "n": 1
+        }
+      ]
+    },
+    "41": {
+      "n": 119,
+      "concl": 119,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Pessoal: Controle de Frequência/Abono de Falta",
+          "n": 106
+        },
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 5
+        },
+        {
+          "tipo": "Pessoal: Controle de Frequência/Folha de Ponto",
+          "n": 4
+        }
+      ]
+    },
+    "58": {
+      "n": 160,
+      "concl": 160,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Pessoal: Férias - Solicitação",
+          "n": 115
+        },
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 21
+        },
+        {
+          "tipo": "Pessoal: Controle de Frequência/Abono de Falta",
+          "n": 12
+        }
+      ]
+    },
+    "33": {
+      "n": 42,
+      "concl": 42,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Pessoal: Controle de Frequência/Abono de Falta",
+          "n": 29
+        },
+        {
+          "tipo": "Pessoal: Controle de Frequência/Folha de Ponto",
+          "n": 10
+        },
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 3
+        }
+      ]
+    },
+    "17": {
+      "n": 22,
+      "concl": 22,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Pessoal: Saúde - Atestado de Comparecimento",
+          "n": 10
+        },
+        {
+          "tipo": "Pessoal: Controle de Frequência/Abono de Falta",
+          "n": 9
+        },
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 3
+        }
+      ]
+    },
+    "48": {
+      "n": 35,
+      "concl": 35,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Gestão de Contrato: Processo de Empenho/Pagamento",
+          "n": 16
+        },
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 15
+        },
+        {
+          "tipo": "Encaminhamento de Documento / Informação",
+          "n": 3
+        }
+      ]
+    },
+    "32": {
+      "n": 81,
+      "concl": 81,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Encaminhamento de Documento / Informação",
+          "n": 46
+        },
+        {
+          "tipo": "Demanda Interna: Informação, Solicitação ou Administ",
+          "n": 10
+        },
+        {
+          "tipo": "Pessoal: Desconto de Contribuição Associativa",
+          "n": 10
+        }
+      ]
+    },
+    "52": {
+      "n": 91,
+      "concl": 91,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Encaminhamento de Documento / Informação",
+          "n": 34
+        },
+        {
+          "tipo": "Demanda Interna: Informação, Solicitação ou Administ",
+          "n": 28
+        },
+        {
+          "tipo": "Pessoal: Contagem de Tempo de Serviço",
+          "n": 20
+        }
+      ]
+    },
+    "54": {
+      "n": 38,
+      "concl": 38,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Gestão de Contrato: Outras Alterações Contratuais nã",
+          "n": 20
+        },
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 14
+        },
+        {
+          "tipo": "Demanda Interna: Informação, Solicitação ou Administ",
+          "n": 1
+        }
+      ]
+    },
+    "43": {
+      "n": 38,
+      "concl": 38,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 15
+        },
+        {
+          "tipo": "Demanda Interna: Informação, Solicitação ou Administ",
+          "n": 13
+        },
+        {
+          "tipo": "Encaminhamento de Documento / Informação",
+          "n": 6
+        }
+      ]
+    },
+    "46": {
+      "n": 87,
+      "concl": 87,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 56
+        },
+        {
+          "tipo": "Encaminhamento de Documento / Informação",
+          "n": 11
+        },
+        {
+          "tipo": "Pessoal: Solicitação para Renovação de Contrato de E",
+          "n": 6
+        }
+      ]
+    },
+    "60": {
+      "n": 35,
+      "concl": 35,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 35
+        }
+      ]
+    },
+    "53": {
+      "n": 73,
+      "concl": 73,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Pessoal: Férias - Solicitação",
+          "n": 38
+        },
+        {
+          "tipo": "Pessoal: Controle de Frequência/Abono de Falta",
+          "n": 19
+        },
+        {
+          "tipo": "Pessoal: Licença Prêmio por Assiduidade",
+          "n": 7
+        }
+      ]
+    },
+    "19": {
+      "n": 27,
+      "concl": 27,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Gestão de Contrato: Processo de Empenho/Pagamento",
+          "n": 23
+        },
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 4
+        }
+      ]
+    },
+    "28": {
+      "n": 85,
+      "concl": 85,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 28
+        },
+        {
+          "tipo": "Demanda Externa: Judiciário",
+          "n": 21
+        },
+        {
+          "tipo": "Demanda Externa: Ministério Público Estadual",
+          "n": 16
+        }
+      ]
+    },
+    "65": {
+      "n": 33,
+      "concl": 33,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 31
+        },
+        {
+          "tipo": "Aquisição de Equipamentos, Software, APIs, Aplicativ",
+          "n": 1
+        },
+        {
+          "tipo": "Demanda Interna: Informação, Solicitação ou Administ",
+          "n": 1
+        }
+      ]
+    },
+    "15": {
+      "n": 145,
+      "concl": 145,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "RELATÓRIO _DE_VISITA_TÉCNICO",
+          "n": 144
+        },
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 1
+        }
+      ]
+    },
+    "55": {
+      "n": 99,
+      "concl": 99,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 98
+        },
+        {
+          "tipo": "Pessoal: Emissão de Certidões e Declarações",
+          "n": 1
+        }
+      ]
+    },
+    "27": {
+      "n": 41,
+      "concl": 41,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Demanda Externa: Judiciário",
+          "n": 31
+        },
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 6
+        },
+        {
+          "tipo": "Solicitação de pagamento de terceiros - PF",
+          "n": 1
+        }
+      ]
+    },
+    "8": {
+      "n": 90,
+      "concl": 90,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 90
+        }
+      ]
+    },
+    "63": {
+      "n": 78,
+      "concl": 78,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 73
+        },
+        {
+          "tipo": "Demanda Externa: Orgãos Governamentais Estaduais",
+          "n": 3
+        },
+        {
+          "tipo": "Gestão de Projetos: Planejamento e Execução",
+          "n": 1
+        }
+      ]
+    },
+    "30": {
+      "n": 144,
+      "concl": 144,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Gestão de Contrato: Processo de Empenho/Pagamento",
+          "n": 138
+        },
+        {
+          "tipo": "Solicitação de pagamento de terceiros - PJ",
+          "n": 4
+        },
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 1
+        }
+      ]
+    },
+    "23": {
+      "n": 126,
+      "concl": 126,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "RELATÓRIO _DE_VISITA_TÉCNICO",
+          "n": 125
+        },
+        {
+          "tipo": "Pessoal: Solicitação para Renovação de Contrato de E",
+          "n": 1
+        }
+      ]
+    },
+    "62": {
+      "n": 70,
+      "concl": 70,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 69
+        },
+        {
+          "tipo": "Demanda Externa: Outros Orgãos Públicos",
+          "n": 1
+        }
+      ]
+    },
+    "57": {
+      "n": 90,
+      "concl": 90,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 66
+        },
+        {
+          "tipo": "Encaminhamento de Documento / Informação",
+          "n": 9
+        },
+        {
+          "tipo": "Demanda Externa: Orgãos Governamentais Estaduais",
+          "n": 9
+        }
+      ]
+    },
+    "25": {
+      "n": 46,
+      "concl": 46,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Gestão de Contrato: Processo de Empenho/Pagamento",
+          "n": 46
+        }
+      ]
+    },
+    "64": {
+      "n": 25,
+      "concl": 25,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 25
+        }
+      ]
+    },
+    "26": {
+      "n": 28,
+      "concl": 28,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Gestão de Contrato: Processo de Empenho/Pagamento",
+          "n": 28
+        }
+      ]
+    },
+    "36": {
+      "n": 269,
+      "concl": 269,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 150
+        },
+        {
+          "tipo": "Pessoal: Controle de Frequência/Abono de Falta",
+          "n": 80
+        },
+        {
+          "tipo": "Demanda Interna: Informação, Solicitação ou Administ",
+          "n": 21
+        }
+      ]
+    },
+    "9": {
+      "n": 39,
+      "concl": 39,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 25
+        },
+        {
+          "tipo": "Ouvidoria: Pedido de Informação",
+          "n": 12
+        },
+        {
+          "tipo": "Ouvidoria: Solicitação de Providências",
+          "n": 2
+        }
+      ]
+    },
+    "31": {
+      "n": 60,
+      "concl": 60,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 51
+        },
+        {
+          "tipo": "Encaminhamento de Documento / Informação",
+          "n": 6
+        },
+        {
+          "tipo": "Pessoal: Requisição de Servidor Externo",
+          "n": 1
+        }
+      ]
+    },
+    "22": {
+      "n": 29,
+      "concl": 29,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Gestão de Contrato: Processo de Empenho/Pagamento",
+          "n": 24
+        },
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 4
+        },
+        {
+          "tipo": "Demanda Interna: Informação, Solicitação ou Administ",
+          "n": 1
+        }
+      ]
+    },
+    "5": {
+      "n": 23,
+      "concl": 23,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Gestão de Contrato: Processo de Empenho/Pagamento",
+          "n": 23
+        }
+      ]
+    },
+    "29": {
+      "n": 46,
+      "concl": 46,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Gestão de Contrato: Processo de Empenho/Pagamento",
+          "n": 44
+        },
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 2
+        }
+      ]
+    },
+    "16": {
+      "n": 31,
+      "concl": 31,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Gestão de Contrato: Processo de Empenho/Pagamento",
+          "n": 31
+        }
+      ]
+    },
+    "24": {
+      "n": 52,
+      "concl": 52,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "RELATÓRIO _DE_VISITA_TÉCNICO",
+          "n": 52
+        }
+      ]
+    },
+    "14": {
+      "n": 22,
+      "concl": 22,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 19
+        },
+        {
+          "tipo": "Demanda Interna: Informação, Solicitação ou Administ",
+          "n": 2
+        },
+        {
+          "tipo": "Demanda Externa: Orgãos Governamentais Estaduais",
+          "n": 1
+        }
+      ]
+    },
+    "49": {
+      "n": 70,
+      "concl": 70,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Encaminhamento de Documento / Informação",
+          "n": 31
+        },
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 21
+        },
+        {
+          "tipo": "Solicitação de pagamento de terceiros - PJ",
+          "n": 12
+        }
+      ]
+    },
+    "56": {
+      "n": 65,
+      "concl": 65,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 43
+        },
+        {
+          "tipo": "Encaminhamento de Documento / Informação",
+          "n": 7
+        },
+        {
+          "tipo": "Demanda Externa: Cidadão (Pessoa Física)",
+          "n": 7
+        }
+      ]
+    },
+    "47": {
+      "n": 42,
+      "concl": 42,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Gestão de Contrato: Prorrogação Contratual",
+          "n": 16
+        },
+        {
+          "tipo": "Encaminhamento de Documento / Informação",
+          "n": 12
+        },
+        {
+          "tipo": "Solicitação de pagamento de terceiros - PJ",
+          "n": 11
+        }
+      ]
+    },
+    "12": {
+      "n": 51,
+      "concl": 51,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "RELATÓRIO _DE_VISITA_TÉCNICO",
+          "n": 51
+        }
+      ]
+    },
+    "20": {
+      "n": 46,
+      "concl": 46,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "RELATÓRIO _DE_VISITA_TÉCNICO",
+          "n": 46
+        }
+      ]
+    },
+    "44": {
+      "n": 37,
+      "concl": 37,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 20
+        },
+        {
+          "tipo": "Solicitação de Transporte",
+          "n": 16
+        },
+        {
+          "tipo": "Demanda Interna: Informação, Solicitação ou Administ",
+          "n": 1
+        }
+      ]
+    },
+    "35": {
+      "n": 62,
+      "concl": 62,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 58
+        },
+        {
+          "tipo": "Pessoal: Solicitação de Contratação de Estagiário",
+          "n": 2
+        },
+        {
+          "tipo": "Pessoal: Ressarcimento e Restituição das Quantias In",
+          "n": 1
+        }
+      ]
+    },
+    "1": {
+      "n": 60,
+      "concl": 60,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "RELATÓRIO _DE_VISITA_TÉCNICO",
+          "n": 56
+        },
+        {
+          "tipo": "Documento Oficial: Ofício, Memorando, Portaria, Edit",
+          "n": 3
+        },
+        {
+          "tipo": "Pessoal: Controle de Frequência/Abono de Falta",
+          "n": 1
+        }
+      ]
+    },
+    "7": {
+      "n": 116,
+      "concl": 116,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "RELATÓRIO _DE_VISITA_TÉCNICO",
+          "n": 116
+        }
+      ]
+    },
+    "3": {
+      "n": 25,
+      "concl": 25,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "RELATÓRIO _DE_VISITA_TÉCNICO",
+          "n": 25
+        }
+      ]
+    },
+    "2": {
+      "n": 30,
+      "concl": 30,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "RELATÓRIO _DE_VISITA_TÉCNICO",
+          "n": 30
+        }
+      ]
+    },
+    "6": {
+      "n": 65,
+      "concl": 65,
+      "micro": 0,
+      "tipos": [
+        {
+          "tipo": "RELATÓRIO _DE_VISITA_TÉCNICO",
+          "n": 65
+        }
+      ]
+    }
+  }
+}

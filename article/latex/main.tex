@@ -1,0 +1,74 @@
+%% ===================================================================
+%% main.tex — Artificial Intelligence and Law (Springer), double-blind.
+%%
+%% EVERY NUMBER comes from docs/research/RESULTS.md, whose tables are
+%% generated from artifacts by `pipeline run results` and verified with
+%% `--flag check=true`. No figure in this file is hand-maintained.
+%%
+%% Numbers from the retired study must never appear here — see
+%% the forbidden-numbers table in docs/paper/PAPER-MAP.md §0.
+%% ===================================================================
+
+\documentclass[sn-mathphys-num]{sn-jrnl}      % Springer Nature template
+%\documentclass[11pt]{article}                % FALLBACK: flip these two lines
+
+\makeatletter
+\@ifclassloaded{sn-jrnl}{%
+}{%
+  \usepackage[round,authoryear]{natbib}
+  \bibliographystyle{plainnat}
+  \newcommand{\fnm}[1]{#1}\newcommand{\sur}[1]{#1}
+  \newcommand{\orgname}[1]{#1}\newcommand{\orgdiv}[1]{#1}%
+  \newcommand{\orgaddress}[1]{#1}\newcommand{\city}[1]{#1}\newcommand{\country}[1]{#1}
+  \newcommand{\affil}[2][]{}
+  \let\snfallback@title\title
+  \renewcommand{\title}[2][]{\snfallback@title{#2}}
+  \let\snfallback@author\author
+  \renewcommand{\author}[2][]{\snfallback@author{#2}}
+  \def\snfallback@abs{}\long\def\abstract#1{\long\def\snfallback@abs{#1}}
+  \def\snfallback@kw{}\newcommand{\keywords}[1]{\def\snfallback@kw{#1}}
+  \let\snfallback@maketitle\maketitle
+  \renewcommand{\maketitle}{\snfallback@maketitle
+    \begin{quote}\small\noindent\textbf{Abstract.}\ \snfallback@abs\par\medskip
+    \noindent\textbf{Keywords:}\ \snfallback@kw\end{quote}}
+}
+\makeatother
+
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{url}
+\usepackage{longtable}
+\graphicspath{{figures/}{../figures/}}
+
+\title[Modelling administrative process types and typical paths]{Modelling administrative
+process types and typical paths from an event log: an auditable catalogue for administrative
+transparency and optimisation}
+
+%% DOUBLE-BLIND: no names, no affiliation, no identifying sigla.
+\author[1]{\fnm{Anonymous} \sur{Authors}}
+\affil[1]{\orgname{Anonymised for double-blind review}, \country{Brazil}}
+
+\input{sections/00-abstract}
+
+\begin{document}
+\maketitle
+
+\input{sections/01-introduction}
+\input{sections/02-related-work}
+\input{sections/03-legal-framing}
+\input{sections/04-data-and-method}
+\input{sections/05-experimental-setup}
+\input{sections/06-results}
+\input{sections/07-discussion}
+\input{sections/08-threats}
+\input{sections/09-conclusion}
+\input{sections/10-declarations}
+
+\bibliography{references}
+
+\appendix
+\input{sections/A-appendix}
+
+\end{document}

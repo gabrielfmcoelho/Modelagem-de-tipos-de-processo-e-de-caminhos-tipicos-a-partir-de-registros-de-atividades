@@ -1,0 +1,229 @@
+{
+  "stage": "ablation",
+  "phase": "evidence",
+  "question": "Quanto cada bloco de feature e cada corte temporal contribui para a particao?",
+  "deterministic": "conditional",
+  "status": "ran",
+  "mode": "neo4j",
+  "started_at": "2026-08-13T09:09:05Z",
+  "ended_at": "2026-08-13T09:14:08Z",
+  "duration_seconds": 303.513,
+  "flags": {
+    "from_date": null,
+    "to_date": null,
+    "workers": null,
+    "batch_size": null,
+    "chunk_size": null,
+    "limit": null,
+    "emit_dir": null,
+    "read_dir": null,
+    "run_id": "exp-anon",
+    "algo": "hdbscan"
+  },
+  "inputs": [
+    {
+      "path": "artifacts/features/exp-anon-cut0.75.npz",
+      "sha256": "aa442bf9ed1746d2694704c126e8ac4df18d5f39d4a5a1d3280ff9cef4e9a48f"
+    },
+    {
+      "path": "artifacts/features/exp-anon-cut0.5.npz",
+      "sha256": "69712407c8575b760c36c52e7d77b769d48f1cb2bb808540614f9d919f993cfe"
+    },
+    {
+      "path": "artifacts/features/exp-anon-cut0.25.npz",
+      "sha256": "031fb35917df939f4bcd26860c3b79652a9ba0437a398080ed41e1c6c5ba6482"
+    },
+    {
+      "path": "artifacts/features/exp-anon-nokeyword.npz",
+      "sha256": "1b7788cac50e3931ae60e04a0ee8d34817a1bbcd58450f422948c1744c47fe6e"
+    },
+    {
+      "path": "artifacts/features/exp-anon-notopic.npz",
+      "sha256": "70fba58a47cf52ca0122849eae34bfc8462399ba92704b5d99f78723cc3d5c57"
+    },
+    {
+      "path": "artifacts/features/exp-anon.npz",
+      "sha256": "92ff01f95c16b8809f59bd52a458a3175836c469b0eac56c0fa6e9619e4f0891"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "artifacts/cache/topic_embeddings.npz",
+      "bytes": 12856866
+    },
+    {
+      "path": "artifacts/features/exp-anon-cut0.75.npz",
+      "bytes": 954804
+    },
+    {
+      "path": "artifacts/cache/tipo_procedimento.json",
+      "bytes": 469923
+    },
+    {
+      "path": "artifacts/clustering/exp-anon-cut0.75/hdbscan/labels.json",
+      "bytes": 167989
+    },
+    {
+      "path": "artifacts/clustering/exp-anon-cut0.75/hdbscan/metrics.json",
+      "bytes": 2915
+    },
+    {
+      "path": "artifacts/cache/topic_embeddings.npz",
+      "bytes": 12856866
+    },
+    {
+      "path": "artifacts/features/exp-anon-cut0.5.npz",
+      "bytes": 962336
+    },
+    {
+      "path": "artifacts/cache/tipo_procedimento.json",
+      "bytes": 469923
+    },
+    {
+      "path": "artifacts/clustering/exp-anon-cut0.5/hdbscan/labels.json",
+      "bytes": 168100
+    },
+    {
+      "path": "artifacts/clustering/exp-anon-cut0.5/hdbscan/metrics.json",
+      "bytes": 2898
+    },
+    {
+      "path": "artifacts/cache/topic_embeddings.npz",
+      "bytes": 12856866
+    },
+    {
+      "path": "artifacts/features/exp-anon-cut0.25.npz",
+      "bytes": 951202
+    },
+    {
+      "path": "artifacts/cache/tipo_procedimento.json",
+      "bytes": 469923
+    },
+    {
+      "path": "artifacts/clustering/exp-anon-cut0.25/hdbscan/labels.json",
+      "bytes": 167388
+    },
+    {
+      "path": "artifacts/clustering/exp-anon-cut0.25/hdbscan/metrics.json",
+      "bytes": 2910
+    },
+    {
+      "path": "artifacts/cache/topic_embeddings.npz",
+      "bytes": 12856866
+    },
+    {
+      "path": "artifacts/features/exp-anon-nokeyword.npz",
+      "bytes": 961958
+    },
+    {
+      "path": "artifacts/cache/tipo_procedimento.json",
+      "bytes": 469923
+    },
+    {
+      "path": "artifacts/clustering/exp-anon-nokeyword/hdbscan/labels.json",
+      "bytes": 167911
+    },
+    {
+      "path": "artifacts/clustering/exp-anon-nokeyword/hdbscan/metrics.json",
+      "bytes": 2912
+    },
+    {
+      "path": "artifacts/cache/topic_embeddings.npz",
+      "bytes": 12856866
+    },
+    {
+      "path": "artifacts/features/exp-anon-notopic.npz",
+      "bytes": 959278
+    },
+    {
+      "path": "artifacts/cache/tipo_procedimento.json",
+      "bytes": 469923
+    },
+    {
+      "path": "artifacts/clustering/exp-anon-notopic/hdbscan/labels.json",
+      "bytes": 168356
+    },
+    {
+      "path": "artifacts/clustering/exp-anon-notopic/hdbscan/metrics.json",
+      "bytes": 2899
+    },
+    {
+      "path": "artifacts/stats/ablation.json",
+      "bytes": 2725
+    }
+  ],
+  "n_inputs": 6,
+  "n_outputs": 26,
+  "summary": {
+    "generated_at": "2026-08-13T09:14:08Z",
+    "reference": {
+      "run_id": "exp-anon",
+      "algo": "hdbscan",
+      "n_processos": 5243,
+      "n_clusters": 64
+    },
+    "variants": [
+      {
+        "n_compared": 5243,
+        "ari": 0.7979,
+        "nmi": 0.8946,
+        "n_clusters_reference": 64,
+        "n_clusters_cut": 68,
+        "noise_reference": 0,
+        "noise_cut": 0,
+        "variant": "cut0.75",
+        "flag": "cutoff_frac=0.75",
+        "run_id": "exp-anon-cut0.75"
+      },
+      {
+        "n_compared": 5243,
+        "ari": 0.6494,
+        "nmi": 0.8164,
+        "n_clusters_reference": 64,
+        "n_clusters_cut": 70,
+        "noise_reference": 0,
+        "noise_cut": 0,
+        "variant": "cut0.5",
+        "flag": "cutoff_frac=0.5",
+        "run_id": "exp-anon-cut0.5"
+      },
+      {
+        "n_compared": 5243,
+        "ari": 0.4667,
+        "nmi": 0.7172,
+        "n_clusters_reference": 64,
+        "n_clusters_cut": 53,
+        "noise_reference": 0,
+        "noise_cut": 0,
+        "variant": "cut0.25",
+        "flag": "cutoff_frac=0.25",
+        "run_id": "exp-anon-cut0.25"
+      },
+      {
+        "n_compared": 5243,
+        "ari": 0.5959,
+        "nmi": 0.8376,
+        "n_clusters_reference": 64,
+        "n_clusters_cut": 65,
+        "noise_reference": 0,
+        "noise_cut": 0,
+        "variant": "nokeyword",
+        "flag": "keyword_weight=0",
+        "run_id": "exp-anon-nokeyword"
+      },
+      {
+        "n_compared": 5243,
+        "ari": 0.8403,
+        "nmi": 0.9049,
+        "n_clusters_reference": 64,
+        "n_clusters_cut": 71,
+        "noise_reference": 0,
+        "noise_cut": 0,
+        "variant": "notopic",
+        "flag": "topic_weight=0",
+        "run_id": "exp-anon-notopic"
+      }
+    ],
+    "duration_seconds": 303.5
+  }
+}

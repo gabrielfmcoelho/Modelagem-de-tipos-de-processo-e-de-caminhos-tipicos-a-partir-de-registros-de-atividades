@@ -1,0 +1,33 @@
+{
+  "stage": "evaluate",
+  "phase": "documents",
+  "question": "Sobre o que trata cada documento de abertura?",
+  "deterministic": false,
+  "status": "ran",
+  "mode": "neo4j",
+  "started_at": "2026-08-12T03:17:40Z",
+  "ended_at": "2026-08-12T03:17:43Z",
+  "duration_seconds": 2.191,
+  "flags": {
+    "from_date": null,
+    "to_date": null,
+    "workers": null,
+    "batch_size": null,
+    "chunk_size": null,
+    "limit": null,
+    "emit_dir": null,
+    "read_dir": null
+  },
+  "inputs": [],
+  "outputs": [],
+  "n_inputs": 0,
+  "n_outputs": 0,
+  "summary": {
+    "total": 12259,
+    "evaluated": 0,
+    "skipped": 12259,
+    "failed": 0,
+    "model": "Qwen/Qwen3.6-35B-A3B",
+    "duration_seconds": 2.2
+  }
+}

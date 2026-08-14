@@ -1,0 +1,31 @@
+{
+  "stage": "etl",
+  "phase": "graph",
+  "question": "Macro: qual o grafo de fluxo de cada processo a partir do event log?",
+  "deterministic": true,
+  "status": "ran",
+  "mode": "neo4j",
+  "started_at": "2026-08-12T00:54:07Z",
+  "ended_at": "2026-08-12T00:54:07Z",
+  "duration_seconds": 0.006,
+  "flags": {
+    "from_date": "2025-01-01",
+    "to_date": "2026-01-01",
+    "workers": null,
+    "batch_size": null,
+    "chunk_size": null,
+    "limit": null,
+    "emit_dir": null,
+    "read_dir": null,
+    "orgao": "SEAD-PI",
+    "status": "concluido",
+    "concluded_before": "2026-01-01"
+  },
+  "inputs": [],
+  "outputs": [],
+  "n_inputs": 0,
+  "n_outputs": 0,
+  "summary": {
+    "duration_seconds": 0.0
+  }
+}

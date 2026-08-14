@@ -1,0 +1,36 @@
+\begin{figure}[htbp]
+\centering
+\fbox{\begin{minipage}{0.93\textwidth}
+\vspace{2pt}
+\raggedright\footnotesize
+\textbf{Alfabeto de ação por unidade} --- excerto dos dezoito estados:
+
+\vspace{2pt}
+\texttt{GERACAO-PROCEDIMENTO@UNIDADE-A} · \texttt{GERACAO-DOCUMENTO@UNIDADE-A} ·
+\texttt{ASSINATURA-DOCUMENTO@UNIDADE-A} · \texttt{CONCLUSAO-AUTOMATICA@UNIDADE-A} ·
+\texttt{PROCESSO-REMETIDO@UNIDADE-B} · \texttt{PROCESSO-RECEBIDO@UNIDADE-B} ·
+\texttt{GERACAO-DOCUMENTO@UNIDADE-B} · \ldots ·
+\texttt{CONCLUSAO-PROCESSO@UNIDADE-A}
+
+\vspace{6pt}
+\textbf{Alfabeto de roteamento} --- os mesmos dezoito estados, colapsados em três:
+
+\vspace{2pt}
+\texttt{UNIDADE-A} $\rightarrow$ \texttt{UNIDADE-B} $\rightarrow$ \texttt{UNIDADE-A}
+
+\vspace{6pt}
+\textbf{Alfabeto de procedimento} --- os mesmos dezoito estados, abstraídos do organograma:
+
+\vspace{2pt}
+\texttt{GERACAO-PROCEDIMENTO} $\rightarrow$ \texttt{GERACAO-DOCUMENTO} $\rightarrow$
+\texttt{ASSINATURA-DOCUMENTO} $\rightarrow$ \texttt{PROCESSO-REMETIDO} $\rightarrow$
+\texttt{PROCESSO-RECEBIDO} $\rightarrow$ \texttt{GERACAO-DOCUMENTO} $\rightarrow$ \ldots
+$\rightarrow$ \texttt{CONCLUSAO-PROCESSO}
+\vspace{3pt}
+\end{minipage}}
+\caption{Um mesmo processo administrativo renderizado nos três alfabetos de traço. O alfabeto de
+ação por unidade conserva o que se fez e onde; o de roteamento conserva apenas por onde o processo
+passou; o de procedimento conserva apenas o que se fez. Os dois últimos colapsam repetições
+consecutivas, e é por isso que avaliam populações distintas.}
+\label{fig:alfabetos}
+\end{figure}

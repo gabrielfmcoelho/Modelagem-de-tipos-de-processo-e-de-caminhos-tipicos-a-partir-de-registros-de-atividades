@@ -1,0 +1,674 @@
+\section{Data and method}\label{sec:method}
+
+Three of the design decisions below were not ours to make. Each was imposed by the
+data-processing authorisation under which the study was conducted, an instrument issued by the
+administration acting as data controller, and each is stated where it arises rather than
+justified after the fact. The distinction matters and we hold to it throughout: the
+\emph{obligation} in each case is contractual, arising from that instrument; the statutes
+supply the standards the instrument implements and the interests it protects. We do not claim
+that any statute independently compelled these choices.
+
+One property of the design carries the auditability claim, and it is a property of the
+artefacts rather than of this prose: every stage declares the question it answers, and that
+declaration is copied into each artefact the stage writes, beside the code version, the
+versions of the numerical libraries, the resolved parameters and a digest of every input
+consumed. A reader who disputes a conclusion can locate the artefact that produced it, read the
+question it claims to answer, and re-run the stage over the same inputs.
+Figure~\ref{fig:pipeline} lays out the whole route; the subsections below follow it stage by
+stage.
+
+\subsection{Corpus}\label{sec:corpus}
+
+The corpus is drawn from the electronic process system of a state-level secretariat of a
+Brazilian state administration, read through the administration's analytical mirror of that
+system rather than through its transactional database. The mirror holds 21{,}063{,}844 recorded
+activities between January 2021 and the extraction date, so restricting the study to one
+calendar year is a design decision and not a limit of the source.
+
+The entry predicate is \emph{born in the body}, and the distinction is not cosmetic: a case
+counts when its creation event was executed by a unit of that secretariat inside the year, not
+when it merely passed through, and not by the filing field the source system records. A case
+enters the analysis if it satisfies that predicate, concluded within the same year, and has a
+retrievable opening document. The full funnel matters more than its last step and we give it
+here: \textbf{12{,}621} cases were born at that secretariat during the year; \textbf{5{,}445}
+of them also concluded within it and make up the loaded corpus; and \textbf{5{,}243} of those
+carry a readable opening document and enter the analysis. The 7{,}176 cases that had not
+concluded by 31 December are excluded by construction rather than by estimate, and they are
+structurally the long ones. Of the documents that were sought and not obtained, 96 opening
+documents were cancelled in the source system and can never be retrieved.
+
+Two measures of ``concluded'' coexist in the sources and \textbf{cannot be added or presented
+as one}. The graph's measure requires that no unit still hold the case open at the end of the
+window; the mirror's is textual, recognising a conclusion from the description of the recorded
+step. The second counts 7{,}920 conclusions logged inside the year against 4{,}701 cases that
+logged none --- figures that answer a different question from the one the corpus answers, and
+that are reported here so the difference stays visible rather than to be reconciled.
+
+The corpus is pinned to what the graph actually loaded. Re-deriving it live from the curated
+mirror returns 5{,}444 cases rather than 5{,}445, because a case concluded inside the year can
+receive a later step and then fail the recency test the mirror applies. That re-derivation is a
+drift check on a source under active curation, not a second measurement of the corpus, and
+every downstream figure was computed on the pinned population.
+
+What the corpus contains bears on how far the artefact reaches, and it should be stated plainly
+rather than left to be inferred. The secretariat is responsible for personnel and general
+administration, and its caseload is predominantly \emph{internal} administrative procedure ---
+leave, intern placement, payroll deductions, contracting and the like. Some procedures cross
+into other secretariats, other levels of government or municipalities. The party to a case is
+therefore typically a public servant rather than a member of the public. Section~\ref{sec:legal}
+states what follows for the normative claim; the short version is that the catalogue derived
+here instantiates the service-charter duty only for that subset of procedures which are services
+rendered to an external user, and the corpus is not principally composed of those.
+
+Restricting to a single year was in part a cost decision for an initial study: five years of
+event log would multiply ingestion, embedding, the clustering parameter sweeps and an
+evaluation matrix that already runs for about eleven hours. The restriction is not only
+economic, though. The authorisation delimits its object to cases born and moved at that
+secretariat within the same twelve months, so the study window and the authorised window
+coincide by construction.
+
+\subsubsection{Right-censoring, measured}\label{sec:bias}
+
+Requiring a case to open \emph{and} conclude within one calendar year truncates the sample in a
+way that must be quantified rather than assumed benign. The time available to conclude shrinks
+month by month: a case opened in January has 365 days, one opened in December has 31. The
+observed maxima track that ceiling almost exactly --- 343 days against 365 available in January,
+29 against 31 in December --- which is the signature of censoring rather than of how long these
+procedures actually take.
+
+\input{tables/corpus-bias}
+
+Taking the least-truncated month as a reference distribution, the number of cases that would
+have concluded within a full-length window is estimated at 6{,}658 against the 5{,}445 observed,
+so an estimated 1{,}213 cases --- 18.2\% of the \emph{concluded} population --- are missing, and
+those are systematically the long ones. The scope of that figure should be stated precisely,
+because it is easy to read as more than it is: it is a shortfall within the cases that conclude,
+estimated from month-by-month censoring. It says nothing about the 7{,}176 cases that never
+concluded inside the window at all, which are excluded outright. It is also a lower bound within
+its own scope, since the reference month is itself truncated. Three consequences bind the rest of
+the paper, and are restated in Section~\ref{sec:threats}: the corpus is not ``cases opened in one
+year'' but ``cases opened in that year that also concluded quickly enough''; no duration or
+efficiency statistic derived from it is admissible; and long, multi-unit procedures are
+under-represented.
+
+\subsection{Event knowledge graph}\label{sec:ekg}
+
+Event data are modelled following established process-mining practice
+\citep{vanderaalst2016processmining}. Extraction reads three sets from the analytical mirror ---
+the recorded activities, the register of organisational units, and the metadata of each case ---
+and applies the corpus predicate at read time, so nothing outside it is materialised.
+
+The load proceeds in five chained steps, and the order between them is not indifferent.
+Dimension nodes come first --- organisational units, users and declared procedure types --- so
+that later loads merge into stable nodes instead of duplicating them. Activities are then
+attached, each linked to its case, to the unit that executed it, to the user who performed it
+and to its action type; case nodes are created from the case's own creation event, which fixes
+one root per case before any activity hangs off it, and documents produced or referenced are
+linked to the case that contains them. The third step is what turns a log into a process: the
+activities of one case are chained by a directly-follows relation in recorded chronological
+order \citep{esser2021ekg}. Holding quantities are derived over that chain --- how long each
+unit retained each case and how often it received the case back, which is where rework becomes
+visible --- and the status of each case at the end of the window is decided last, by the absence
+of an open link in any unit rather than by a logged closing event.
+
+The loaded graph holds 5{,}445 cases, 283{,}841 activities over 48 action types and 708
+organisational units, and 42{,}658 documents that the event log references. Only one document
+per case is read: its opening document. Deriving traces from a graph rather than a flat log
+keeps the unit and action perspectives available simultaneously, which all three trace alphabets
+of Section~\ref{sec:alphabets} draw on, and the same traversal yields the structural feature
+blocks of Section~\ref{sec:features}. A dedicated stage then freezes that trace substrate to
+disk, so the evaluation matrix and every later re-analysis run over exactly the same traces with
+no database. We nevertheless chose a case notion --- the administrative case --- so the
+divergence and convergence concerns that motivate object-centric process mining still apply
+\citep{vanderaalst2019ocpm}.
+
+\subsection{The opening document: reading, anonymisation, distillation}\label{sec:anon}
+
+The opening document is converted to plain text first --- direct extraction where the file is
+structured, reading by a locally executed vision model where it is not --- and suppression acts
+on that text.
+
+Personal data are pseudonymised or anonymised before any clustering or vectorisation step. This
+ordering is not a robustness check: the governing instrument requires anonymisation to precede
+those stages, and it invokes art.~12 of the Brazilian data protection law
+\citep{brasil2018lgpd} in doing so. The reading matters. Article~12 is a
+\emph{scope-delimiting} provision --- anonymised data fall outside the statute unless the
+process can be reversed by reasonable means --- rather than a duty to anonymise. The duty here
+is contractual; what art.~12 supplies is the standard against which the result is judged, and
+the consequence that failing it returns the data to the statute's full scope. Precisely because
+the transformation is imposed rather than chosen, whether it costs analytical utility is a
+question the study must answer rather than assume, and Section~\ref{sec:res-rq5} answers it. The
+entire pipeline is run twice, once on raw text and once on the anonymised variant, and the two
+arms are compared case by case.
+
+Detection combines two layers. The first is rule-based, in the spirit of engines built from
+declarative recognisers \citep{microsoftpresidio}: national taxpayer identifiers for natural and
+legal persons are recognised in punctuated and bare forms and \emph{validated by their own check
+digits}, which stops protocol and document numbers from being suppressed by format resemblance;
+e-mail addresses follow the standard character classes; and a staff registration number is
+recognised only in context, preceded by the term that names it and above a minimum length. The
+second layer is an open-schema neural entity extractor \citep{zaratiana2025gliner2}, whose spans
+are mapped onto the same typed labels plus a catch-all for the identity and finance documents
+the extractor emits under free-form keys --- an unmapped key would mean personal data left in
+place, which is why the mapping is deliberately wide.
+
+Replacement preserves referential integrity: the placeholder is derived from a digest of the
+label and the entity in canonical form, so the same person receives the same placeholder in
+every document in which they appear while the surface form disappears. Occurrences are replaced
+longest span first, with each detector's own boundary guards --- digit lookarounds for the
+numeric labels, word characters for the nominal ones --- because a single uniform guard would
+silently miss the occurrences adjacent to digits. A verification mode re-runs the rule layer
+\emph{over the output} and fails the run if any hit remains.
+
+Removing names does not by itself anonymise an event log: a trace is itself a behavioural
+fingerprint \citep{mannhardt2019privacy, elkoumy2022privacy}, and a sequence of dated moves
+between named organisational units remains a behavioural record of the officials who handled
+the case. We therefore state what the transformation does and does not cover, rather than
+claiming anonymity as achieved.
+
+\textbf{What it covers.} Direct and indirect identifiers in the free text of the opening
+document --- personal names, national identifiers, addresses, contact details, registration
+numbers --- are detected and replaced with typed placeholders before any embedding is computed.
+\textbf{What it does not cover.} The trace itself is untouched: the sequence of organisational
+units, the action types and their timestamps are all preserved, because they are the object of
+study. A reader with access to the source system could re-identify a case from its routing
+sequence alone. The arms therefore differ in the \emph{textual} channel only, which is the
+scope within which the comparison in Section~\ref{sec:res-rq5} should be read. Calling the
+result ``anonymised'' throughout is shorthand for this specific transformation, not a claim
+that the statutory standard for anonymity has been met for the corpus as a whole.
+
+From the treated text the method distils two shorter representations. An open-weight language
+model produces, for each opening document, a \textbf{topic} --- the subject in a few words ---
+and a one-sentence \textbf{summary}, both kept beside the text. The distillation exists because
+the vector of the full text carries, alongside the subject, the administrative form the subject
+arrives wrapped in; topic and summary are a subject signal with less of that noise, and they
+enter the representation of Section~\ref{sec:features} as a block of their own. Because the
+topic is derived from the text it differs between arms, so it is recomputed at every arm switch
+rather than reused: reusing it would let the anonymised arm inherit the subject extracted from
+raw text, and the comparison between arms would stop measuring what it claims to measure.
+
+\subsection{Controlled keyword vocabulary}\label{sec:keywords}
+
+From the same text comes an object of a different nature, and the only one in the whole method
+a person can read: a controlled vocabulary of keywords. It is the bridge between the vector that
+groups and the prose that names, and without it the naming step of Section~\ref{sec:naming}
+regresses to document samples. The question it answers is which terms the collection itself uses
+to describe its contents, without the list being written by hand, so the vocabulary is
+\emph{growing} rather than fixed in advance: the language model proposes terms document by
+document, and each proposed term either merges into a term already present or enters as new.
+
+A term passes three chained filters. \textbf{Normalisation} lower-cases, strips accents and
+punctuation, collapses whitespace, reduces unit paths to their final acronym and rejects merely
+temporal expressions such as a bare year. \textbf{Two discard sets} follow --- the stopwords of
+the language, and the terms that describe the administration itself: the body's own name, its
+units, the vocabulary of case movement. Those appear in almost every document and therefore
+separate nothing; keeping them would give the block a constant axis. \textbf{Variant merging}
+comes last: two terms whose Dice similarity over character bigrams reaches 0.9 are treated as
+one, and the first observed becomes the canonical form. A second pass re-annotates the documents
+processed while the vocabulary was still being built, so no document is annotated against a
+partial vocabulary. Over the 5{,}243 analysed cases, 2{,}297 controlled terms occur at least
+once and 567 occur in at least three cases, which is the requirement for entering the feature
+block and therefore fixes its width.
+
+Three properties of that procedure are limitations rather than features. The similarity is
+\textbf{lexical}, and errs in two predictable directions: it merges morphological variants of one
+term, which is intended, but does not merge synonyms spelled differently and can merge short
+terms that merely resemble each other. The choice of canonical form \textbf{depends on the
+arrival order} of the documents, which makes the step non-deterministic across runs; the
+vocabulary is therefore persisted as an artefact and reused, and it is the artefact rather than
+the procedure that makes the dependent blocks reproducible. And the step must run \textbf{once,
+before} both arms are built: run afterwards, the keyword block reaches vectorisation empty,
+clustering proceeds over a null block and no check registers the absence.
+
+\subsection{Features}\label{sec:features}
+
+The substantive claim of the method sits in this step: procedural form and documentary content
+are both signal, and neither alone identifies a process type. Each case is therefore represented
+by six blocks that fuse what the case \emph{says} with how it \emph{moved}:
+
+\begin{itemize}
+  \item the opening document embedded with a multilingual sentence encoder \citep{chen2024bgem3} (1{,}024 dimensions);
+  \item an LLM-produced topic and summary of that document, embedded the same way (1{,}024);
+  \item binary TF--IDF over the organisational units a case visits (at most 500) and TF--IDF over
+    consecutive unit pairs after collapsing repetitions (at most 1{,}000);
+  \item a normalised histogram over the 48 action types;
+  \item binary TF--IDF over the controlled keyword vocabulary of the opening document (567
+    columns).
+\end{itemize}
+
+The two content blocks use \textbf{the opening document only}, and the restriction is
+deliberate: later documents are mostly transmittal boilerplate that looks alike across thousands
+of unrelated cases and dilutes the centroid, whereas the opening document is what the case
+declares itself to be before the procedure has done anything to it. A case with no readable
+document receives zero content blocks and is still grouped by its structural signature. Among the
+structural blocks, the first records the presence of each unit on the route rather than how often
+it appears; the second takes consecutive unit pairs after collapsing repetitions, so it describes
+transition rather than dwell; and both are fitted over the batch itself, so a term's weight
+reflects the set being clustered.
+
+Each block is $L^2$-normalised per row before concatenation and all six carry weight 1.0, so the
+scheme weights blocks equally regardless of their width: the 48-bin action histogram contributes
+as much mass as the 1{,}024-dimensional document embedding. Every weight is exposed as a
+parameter, and that is what makes the fusion claim testable by the ablation of
+Section~\ref{sec:res-ablation}: a block can be zeroed with nothing else changing.
+
+The concatenated vector, of several thousand dimensions, is reduced to \textbf{50} by UMAP
+\citep{mcinnes2018umap} under cosine distance --- the metric that matches a space of normalised
+embeddings --- with 15 neighbours and a fixed seed. The reduction reproduces bit for bit on the
+same machine but not across processors and library versions; the stage declares that condition in
+the artefact it writes, beside the seed, so a reader knows in advance which quantities reproduce
+exactly and which reproduce only in distribution.
+
+Both the language model that produces topics and keywords and the embedding model run
+\emph{locally}, from open weights, on the administration's own high-performance computing
+environment. This is a legal requirement rather than an engineering preference: the
+authorisation confines processing to the administration's computing environment and forbids
+external interfaces that would move case data outside it. A hosted commercial model was not an
+option available to this study.
+
+\subsection{Clustering}\label{sec:clustering}
+
+\subsubsection{Three families, and why three}\label{sec:families}
+
+Clustering runs with three algorithm families: density-based
+\citep{campello2013hdbscan, mcinnes2017hdbscan}, centroid (\textit{k}-means) and modularity
+\citep{traag2019leiden}. Running three is not methodological indecision: it is what separates a
+property of the data from the inductive bias of one algorithm. Structure that appears under only
+one of the three is a finding about that algorithm; structure that appears under all three is a
+finding about the collection.
+
+The three operate on the same 50-dimensional matrix, and parameters are swept rather than fixed.
+The density family needs no declared number of clusters: it builds the density hierarchy of the
+points and extracts the most stable partition from it, with a minimum cluster size of 20 and
+excess-of-mass selection; a coarser variant merges clusters separated by less than
+$\varepsilon = 0.5$. One implementation nuance binds the reading: the cosine metric describes the
+\emph{reduction}, while density clustering runs in Euclidean distance over the already-reduced
+space --- usual practice, since the projection preserves neighbourhood rather than angle, but not
+to be read as cosine clustering. The modularity family operates over a $k$-nearest-neighbour
+graph ($k = 15$, cosine) with the resolution swept and selected by cosine silhouette. The
+centroid family sweeps $k$ over a grid with ten restarts per value and a fixed seed, under the
+two stopping criteria described next. The sweep yields \textbf{seven} parameterisations per
+textual arm --- the three families in a reference configuration plus four parameter variants ---
+and therefore \textbf{fourteen} real clusterings across the two arms.
+
+\subsubsection{Choosing \texorpdfstring{$k$}{k} and the resolution, swept and reported}\label{sec:selectk}
+
+The number of clusters is not chosen by inspection. A dedicated stage sweeps the grid of $k$ and
+reports, side by side, the elbow criterion --- defined as the maximum perpendicular distance to
+the chord joining the endpoints of the inertia curve, with both axes normalised to the unit
+interval, rather than read off a plot --- and the silhouette. Both values are carried forward as
+distinct parameterisations instead of one being elected \emph{a priori}: the two criteria
+optimise different objectives, compactness relative to separation in one case and marginal
+inertia gain in the other, and before measuring there is no ground for preferring either. Carrying
+both turns the choice of $k$ from a premise into an object of evaluation. Where computing the
+silhouette over the full matrix exceeds a fixed time budget it switches to a fixed-size,
+fixed-seed subsample, and the scope used is recorded in the artefact itself, so a subsample value
+is never read as a full-matrix one. The whole sweep is persisted as an auditable artefact, not
+only its winner.
+
+\subsubsection{Density noise is assigned}\label{sec:noise}
+
+The density family is the only one of the three that can refuse to assign a case to any cluster.
+The refusal is informative, but it has a consequence that would make cross-family comparison
+impossible: validity indices and downstream accuracy would be computed over \emph{different
+populations}, and a family that evaluates only the easy cases is rewarded for it.
+
+By default, therefore, each refused point is assigned to the cluster whose centroid is nearest,
+in the same space in which the metrics are computed. Every family is then evaluated over the same
+cases and the comparison between them becomes legitimate. The choice has a cost, which we state
+rather than omit: a case that belongs to no family is filed under the nearest one, which is the
+right trade for evaluation and the wrong one for a catalogue an official browses. What density
+\emph{would} have refused is not lost --- it is recorded per clustering as the fraction refused
+before assignment, and it is that quantity, rather than the final noise rate, that answers for
+abstention in any analysis. Assigning to the nearest centroid is \emph{one} defensible choice
+among others; the alternative of reclassifying the refused points into subclusters of their own
+remains implemented and recoverable by parameter.
+
+\subsubsection{One shuffled control per clustering}\label{sec:controls}
+
+Each of the fourteen real clusterings is paired with a \textbf{control partition}: labels are
+permuted across cases, preserving the cluster count, the size distribution and the evaluated
+population exactly, and destroying only membership. It is against that control, and not against
+a global model alone, that the gain is measured (Section~\ref{sec:estimand}).
+
+The control is built \emph{per clustering} rather than as one shared null, for a substantive
+reason: the shape of a partition --- how many clusters, of what sizes --- moves accuracy on its
+own, independently of membership meaning anything. A control derived from a \emph{different}
+clustering would measure a difference in granularity instead of a difference in grouping. The
+control partition is therefore an artefact of the clustering phase, not of the evaluation phase.
+
+\subsection{Naming}\label{sec:naming}
+
+A catalogue entry needs a name, and the name is the part a reader sees first. Ours are generated
+rather than authored, and naming runs in \textbf{two passes} --- a design that answers a failure
+mode of the naive procedure. Naming each cluster in isolation from its most \emph{frequent}
+keywords guarantees similar names for similar clusters, because within a family of neighbouring
+procedures the most frequent terms are precisely the \emph{shared} ones, and a model that never
+sees the competitors has no way to tell them apart.
+
+In the first pass, therefore, each cluster reaches the locally executed language model with
+\emph{two} keyword sets rather than one: the most frequent, which give the theme, and the
+\textbf{distinctive} ones --- those over-represented in that cluster relative to the rest of the
+collection, ranked by the ratio between the term's probability inside and outside the cluster,
+with smoothing for rare terms. The latter separate; the former unite. Alongside them go a sample
+of the most central cases --- the topic and summary of each opening document --- the
+organisational units visited and the action types; and the model returns a name, a one-sentence
+factual description and three distinguishing markers. It is instructed to anchor the name in the
+cluster's own content and flow, to prefer a concrete subject over a generic label, and \emph{not}
+to use the declared classification, so that the emergent type is not silently relabelled with the
+taxonomy the study declines to rely on --- using it would make agreement against the declared
+type circular, and that agreement is the external instrument by which the partition is assessed.
+
+The second pass renames \emph{only} the clusters whose names collided, now with the rivals in
+view: each receives the name, size and distinctive terms of its homonyms and an explicit
+instruction to produce a name that separates them. Names whose embeddings remain near-duplicates
+are merged by agglomerative clustering over name-embedding cosine similarity. Naming runs for
+\emph{every} partition rather than only the one presumed to win, since the selection criterion is
+applied afterwards and a partition without names would render an empty catalogue.
+
+Two consequences follow and both are limitations rather than features. The names are unvalidated
+machine output over administrative subject matter, which is a distinct artefact from the
+partition itself and carries distinct risk; Section~\ref{sec:threats} states this alongside the
+absence of specialist assessment of the types. And near-duplicate naming was an observed failure
+mode during development rather than a hypothetical one, which is why the merge step exists.
+
+\subsection{Trace alphabets}\label{sec:alphabets}
+
+A case's trace is rendered in \textbf{three} alphabets, and the distinction delimits what each
+number downstream can assert. The \textbf{action-by-unit} alphabet pairs each recorded action
+with the unit that performed it --- the unit's full acronym, with no roll-up to a directorate ---
+and is the raw state; the other two are projections of it, obtained by taking one of the two axes
+and collapsing consecutive repetitions. The \textbf{routing} alphabet keeps only the sequence of
+organisational units a case visits, abstracting what happened inside each; analysing the sequence
+of units is an established organisational perspective \citep{song2008organizational}. The
+\textbf{procedure} alphabet does the inverse, keeping the sequence of actions and abstracting the
+organisational chart, which makes it the most transferable of the three because it does not
+depend on this administration's unit names --- the generated tables label it the \emph{action}
+alphabet, after the axis it retains.
+
+Collapsing repetitions is the point of the two projections rather than an incidental loss: a case
+that stays four events in one unit made \emph{one} visit, not four, and a unit that reappears
+non-consecutively is a genuine return. Dwell does not leave the method --- the event count per
+visit is kept beside the trace --- it only leaves the alphabet. Each trace also receives a
+terminal sentinel state, without which a generator would have no way to learn \emph{when} a case
+ends and would stop at the first conclusion state it met.
+
+\subsubsection*{The alphabets are not compared with each other}
+
+Each alphabet receives its own complete evaluation matrix, and the best model is elected
+\emph{within} each. No number crosses alphabets at any point in this paper. The decision is one
+of scope, and rests on three independent reasons:
+
+\begin{enumerate}
+  \item \textbf{The populations differ.} The two projections collapse consecutive repetitions, so
+    a case handled entirely inside one unit reduces to a single routing state and is dropped for
+    having no transition to predict. The routing alphabet therefore evaluates multi-unit cases,
+    not the corpus.
+  \item \textbf{The lengths differ.} Every measure sensitive to trace length --- and the suffix
+    measures are --- changes scale between alphabets with nothing having changed in the
+    collection.
+  \item \textbf{The vocabularies differ by orders of magnitude.} A higher next-step accuracy over
+    a smaller alphabet may mean only fewer candidates per step. Comparing accuracies over
+    vocabularies of different sizes compares the difficulty of the task, not the quality of the
+    method.
+\end{enumerate}
+
+A routing result is a claim about the route between units; a procedure result is a claim about
+what gets done. With the alphabet declared beside each number there is nothing to correct; with
+it omitted there is no way to correct.
+
+One property of the source system constrains the rendering and belongs where the representation
+is defined. A case records its actions in chronological order, but it can run in \emph{parallel}
+across more than one organisational unit: once opened, it may be sent to several units at the
+same time, each acting on it without the others having finished. A case's route is therefore not
+a strictly linear queue of units but a set of stretches that can branch and reconverge. The
+routing alphabet is a \emph{linearisation} of that route by the timestamp of each event, not a
+reproduction of its concurrency structure. Two units acting simultaneously appear in the trace as
+though one had followed the other, with the order decided by when each event was recorded. The
+simplification is deliberate --- it keeps the trace in the sequence form the models of
+Section~\ref{sec:typical-paths} require --- and its cost is stated in Section~\ref{sec:threats}.
+
+\subsection{Typical-path models}\label{sec:typical-paths}
+
+For each cluster we fit \textbf{six} generators, spread over three distinct ways of estimating
+the next state. Two are \textbf{local counters}: a third-order Markov chain and a
+directly-follows graph. Three are \textbf{neural sequence models}: GRU \citep{cho2014gru}, LSTM
+\citep{hochreiter1997lstm} and Transformer \citep{vaswani2017attention}. The sixth is
+\textbf{graph-convolutional} \citep{kipf2017gcn}, and generalises by a route none of the other
+five uses. Clusters with fewer than 30 traces are not evaluated. Rolling a trained sequence model
+forward to generate a whole trace, rather than scoring one-step predictions, is the arrangement
+of \citet{camargo2019lstm}, and the realism of the generated sequence is what the path-support
+measures of Section~\ref{sec:protocol} exist to gauge.
+
+The three neural families are not chosen by architectural preference: they are the three lineages
+that the next-activity literature consolidated --- the recurrent \citep{tax2017lstm}, the gated
+recurrent, and the attention-based \citep{bukhsh2021processtransformer} --- and the reason to
+compare all three rather than elect one is that under a common protocol no architecture dominates
+across logs \citep{ramamaneiro2023dlppm}. Which one wins is therefore an empirical question
+addressed to the corpus rather than a premise of the method. The three share one configuration,
+fixed once and identical across every cluster and every evaluation cell with no per-cluster
+tuning: state embeddings of 32 dimensions, a hidden state of 64, a context window of 8 states,
+dropout 0.2, and 30 epochs of Adam at learning rate 0.01, weight decay $10^{-4}$, batches of
+2{,}048 and a fixed seed. Fixing the configuration in advance is what stops the comparison
+between families from measuring tuning effort instead of architecture.
+
+The Markov generator is third-order with back-off: where a third-order context is unseen it falls
+back to second and then first order, which is what keeps it usable on clusters near the 30-trace
+floor. We use a directly-follows graph as one path learner --- first-order, restricted to the
+training set's transitions --- while noting that this representation has documented pathologies
+as a process model \citep{vanderaalst2019dfg}.
+
+The graph-convolutional generator enters for a reason the other five do not cover. Markov and
+directly-follows are strictly local estimators: the prediction for a state uses only the
+transitions observed out of it, so a state seen three times in the partition has a three-sample
+estimate and nothing corrects it. Over the training set's transition graph --- nodes are states,
+edges are counted transitions, adjacency symmetrised, self-looped and symmetrically normalised
+--- two rounds of propagation make a state's prediction incorporate its neighbours', so a rare
+state borrows from structurally similar ones. It is the only family in the set that generalises
+\emph{through the graph} rather than through the sequence, and it pays for that by conditioning on
+the last state alone, with no context window: it gains neighbourhood and loses memory. It is
+trained by cross-entropy over the observed pairs, with Adam, a hidden state of 64, 200 epochs,
+learning rate 0.01, weight decay $10^{-4}$ and a fixed seed. Bit-for-bit reproducibility takes one
+further precaution that is not obvious: linear-algebra parallelism is reduced to a single thread
+during fitting, because sums in varying order diverge enough to swap the order of the top
+predictions. Everything else --- prediction, next-state distribution, generation, beam, sampling
+and constrained decoding --- is inherited from the counters, and the inheritance is deliberate:
+the comparison measures the \emph{estimator}, not the decoder.
+
+The directly-follows generator shares its estimator with one of the baselines. Under top-1
+prediction it selects the most frequent observed successor, which is exactly the within-cluster
+successor baseline of Section~\ref{sec:protocol}; the two are the same estimator and score
+identically. There are therefore five distinct trained predictors plus a baseline that also
+appears in the generator set, and the per-cluster maximum over ``six families'' is taken over a
+set containing its own floor. Whether that overlap changes the selected-best figures is an
+empirical question, answered in Section~\ref{sec:res-rq3}.
+
+Generation is decoded under an automaton encoding the movement rules of the process system. What
+the automaton guarantees should be stated at the strength the construction supports, because it
+is a safety property rather than an acceptance condition. At every step the decoder admits only
+states the automaton allows, so a produced path cannot receive a case that was never sent, nor
+conclude a lane that was never opened. It does not guarantee that every send is matched before
+the path terminates: termination is unconstrained, so a path may end with a transfer outstanding.
+The constraint also binds only the six action types that participate in the movement rules ---
+generation, remittance, receipt, reopening and the two conclusion types --- leaving the remaining
+forty-two unconstrained. Section~\ref{sec:res-rq4} reports what the guarantee, so bounded,
+actually buys.
+
+\subsection{Evaluation protocol}\label{sec:protocol}
+
+\subsubsection*{The unit of evaluation: the cell}
+
+The elementary unit of evaluation is the \textbf{cell}: the crossing of a textual arm, a
+parameterisation, a clustering algorithm and an alphabet. Inside a cell, each model family is
+fitted \emph{separately in each cluster} and scored over the held-out traces of that same
+cluster. A case enters a cell if it satisfies three chained conditions: it has a trace of at
+least two states in that cell's alphabet; it has a label in that partition; and it belongs to a
+cluster with at least thirty traces. The floor of thirty exists because a cluster split 70/30
+needs enough evaluation cases for an accuracy to mean anything.
+
+A reading trap follows from those conditions: the number of clusters a cell evaluates is
+\textbf{not} the $k$ of the clustering that produced it. Clusters below the floor are excluded
+from the evaluation without being excluded from the partition, and the first condition depends on
+the alphabet --- so the same partition evaluates different populations in different alphabets.
+
+\subsubsection*{The train/test split}
+
+Cases are split 70/30 into training and held-out sets. The split is a deterministic hash of the
+case identifier rather than a function of position in a list, so a case falls on the same side of
+the split regardless of which subset it is drawn from --- within its own cluster, within the
+global baseline, in any cell and in any alphabet. That property is what prevents leakage: the
+global baseline trains on the union of the evaluated clusters' training sets, and because
+membership does not depend on the list, no held-out trace can enter the pooled training set.
+Without it the global baseline would be optimistic and the comparison worthless.
+
+\subsubsection*{The measures, and the axis each one requires}
+
+The primary measure is \textbf{next-step accuracy}, computed over \emph{decision steps} rather
+than over traces: given the prefix of a held-out trace, what the next state is. A trace of $n$
+states contributes $n-1$ steps, so long traces weigh more inside their cluster. Top-1 and top-3
+are both reported. Beside it, generation quality is measured by an edit distance with
+transpositions between the generated and the real suffix, conditioned on the true prefix of half
+the trace --- the model receives what actually happened up to that point and completes the rest,
+an arrangement in which lower is better.
+
+High next-activity accuracy does not by itself demonstrate that process structure has been
+captured \citep{peeperkorn2023rnnstructure}. We therefore report path-support measures alongside
+accuracy: the fraction of units a real case visits that the generated path also visits, the
+fraction of the generated path's units that real cases visit, the mean number of occurrences of
+each generated transition per cluster member, and the count of transitions occurring in
+\emph{no} sampled cluster member --- fabrication rather than variation. Complete generations are
+also scored for \textbf{structural validity}, the degree of compliance with the movement rules the
+decoder of Section~\ref{sec:typical-paths} enforces. Three further measures describe the partition
+rather than the model and therefore take one value per cell, shared by all six families: the
+fraction of held-out transitions already present in the training set's directly-follows graph, its
+converse, and the harmonic mean of the two.
+
+Two scope notes belong with those definitions. Transition support counts occurrences rather than
+distinct members, so it may exceed 1 where a transition recurs within a case, and it is not a
+proportion. Unseen transitions are counted against a sample of at most thirty held-out traces per
+cluster rather than against the whole cluster, so the measure over-counts fabrication for clusters
+larger than that. Appendix~\ref{app:glossary} defines every measure used.
+
+One rule governs which of those measures a cell emits, and it follows directly from the alphabets:
+\textbf{a measure is computed when, and only when, the axis it measures exists in that cell's
+alphabet}. The action-by-unit alphabet carries both axes and emits everything. The procedure
+alphabet carries only the action, so it emits structural validity and no unit measure. The routing
+alphabet carries only the unit, so it emits the unit measures and \emph{no} structural validity.
+Where the axis does not exist the key simply does not appear in the artefact. The alternative ---
+computing the measure anyway --- returns not a wrong value but a value \emph{empty of referent}
+that renders as legitimate: a movement constraint applied to states carrying no action never
+binds, and would report perfect compliance by construction. Absence is honest; a maximum obtained
+by vacuity is not.
+
+\subsubsection*{Three baselines}
+
+Three baselines, each answering a different question. The \textbf{within-cluster successor}
+baseline predicts the most frequent next state inside the cluster, and asks whether the model
+learned anything. The \textbf{global model} is a single third-order Markov chain trained on the
+pooled training set of the whole corpus and evaluated on the same held-out traces; it asks
+whether one model would have done as well. The \textbf{shuffled partition} permutes cluster
+membership while preserving cluster count, size distribution and evaluated population; it asks
+whether the grouping, rather than the shape of the partition, is doing the work.
+
+Evaluating a clustering by the downstream model it enables is an established principle
+\citep{deweerdt2013actitrac}. We extend it from process-model fitness to next-activity
+prediction, apply it externally to partitions produced independently rather than inside a
+clustering wrapper, and add the last two controls, which this literature does not routinely
+report. The comparison against the global model is made with the model family fixed on both
+sides --- per-cluster Markov chain against global Markov chain --- rather than by taking the best
+of six families in each cluster against a single global family. Both forms are computed and
+reported separately, so a reader can see what each choice of comparator produces.
+
+\subsubsection*{Aggregation: two readings}
+
+Each cluster produces its own accuracy; the cell aggregates those accuracies in two ways, and
+both are reported. The \textbf{macro} reading is the simple mean over clusters, in which each
+\emph{process type} counts the same however large. The \textbf{weighted} reading weights each
+cluster by its number of traces, in which each \emph{case} counts the same. They are not two
+versions of one quantity: they answer different administrative questions --- how well the method
+serves the catalogue of types, and how well it serves the collection of cases.
+
+The weighted reading carries an asymmetry. The weight is the cluster's number of traces, while
+each cluster's accuracy is computed over \emph{decision steps}. A cluster of long traces
+contributes many steps to its own accuracy but enters the aggregation only with its number of
+cases. Where the length distribution varies sharply between clusters the two readings diverge,
+and the divergence between them is the signal that it is happening.
+
+\subsection{The estimand: gain against the control partition}\label{sec:estimand}
+
+The quantity the study sets out to estimate is defined before any measurement, and the priority
+counts as a commitment: it is against this that the results are read.
+
+\subsubsection*{The partition dividend}
+
+Fitting one model per cluster, rather than one model for the whole collection, changes what each
+model faces. A cluster's effective alphabet is a subset of the global alphabet, and predicting the
+next step within a smaller alphabet is easier; against that, each model now has a fraction of the
+training data. Neither effect depends on the partition meaning anything: both follow only from how
+many clusters there are and what sizes they have. Call the net effect of that change of shape the
+\textbf{partition dividend}.
+
+A gain measured against a global model therefore mixes two things: the dividend and whatever
+cluster membership actually carries. Since the sign of the dividend is not known \emph{a priori}
+--- it depends on which of the two effects predominates in the collection at hand --- a raw gain
+cannot even be asserted to be a lower bound on the effect of interest.
+
+\subsubsection*{The decomposition and the estimand}
+
+Let $A(\Pi)$ be the aggregated accuracy of the per-cluster models under the real partition $\Pi$,
+and $A(\tilde{\Pi})$ the same quantity under the shuffled control partition of
+Section~\ref{sec:controls}, which preserves cluster count, size distribution and population. The
+raw gain over the global model $B$ decomposes as
+
+\[
+\underbrace{A(\Pi) - B(\Pi)}_{\text{raw gain}} \;=\;
+\underbrace{\left[A(\tilde{\Pi}) - B(\tilde{\Pi})\right]}_{\text{partition dividend}} \;+\;
+\underbrace{\left[A(\Pi) - A(\tilde{\Pi})\right]}_{\text{partition signal}} \;+\;
+\underbrace{\left[B(\tilde{\Pi}) - B(\Pi)\right]}_{\text{residual}} .
+\]
+
+\noindent \textbf{The estimand of this study is the second term.} For a model family $m$ and a
+partition $\Pi$, with $A_w$ denoting the accuracy aggregated by each cluster's number of traces,
+
+\[
+\boxed{\;\Delta^{*}(m,\Pi) \;=\; A_w\!\left(m,\Pi\right) \;-\; A_w\!\left(m,\tilde{\Pi}\right)\;}
+\]
+
+\noindent and the adjusted variant, which subtracts the global model under both partitions,
+
+\[
+\Delta^{*}_{\mathrm{adj}}(m,\Pi) \;=\;
+\left[A_w(m,\Pi) - B(\Pi)\right] \;-\; \left[A_w(m,\tilde{\Pi}) - B(\tilde{\Pi})\right] .
+\]
+
+\noindent The residual $B(\tilde{\Pi}) - B(\Pi)$ is the same global model scored over the same
+held-out steps under both partitions, differing only through the weighting, and it therefore
+serves as a free sanity check on the aggregation: an appreciable difference means the weighting is
+doing work it should not. $\Delta^{*}$ is thus the difference between the real partition and a
+shuffle of identical shape, and it is positive only if cluster membership carries information that
+the shape of the partition does not.
+
+\subsubsection*{\texorpdfstring{$\Delta^{*}$}{Delta-star} is an admission gate, not a ranking}
+
+One property of $\Delta^{*}$ must be declared before any result, because it restricts the
+quantity's legitimate use. The control preserves the shape of the partition but does not equalise
+the \emph{marginal cost} of fragmenting the training data: a cluster formed at random has training
+data with no internal structure, and its model degrades with size differently from a coherent
+cluster's. $\Delta^{*}$ therefore grows with granularity --- a finer partition has more to gain
+over its own shuffle, because specialising pays more when clusters are small --- and it is not
+invariant to the number of clusters.
+
+The legitimate use is as an \textbf{admission criterion}: a partition whose $\Delta^{*}$ is not
+positive carries no signal beyond its shape and should not enter the study, whatever its internal
+validity. To \emph{choose} among admitted partitions we use the explicit selection score of
+Section~\ref{sec:setup}, which weighs downstream performance, coverage and quality. Comparisons at
+matched cluster count remain valid under $\Delta^{*}$.
+
+\subsubsection*{The two comparators answer different questions}
+
+Neither the global model nor the shuffle is dispensable, because the questions are not the same.
+The global model asks \emph{would a single model have done as well?} --- an engineering question,
+whose answer guides whoever decides if a model per type is worth maintaining. The shuffle asks
+\emph{does this grouping mean anything?} --- a validity question, whose answer guides whoever
+decides if the catalogue is a real object. Both are computed and reported side by side, per
+alphabet, and neither is presented as a substitute for the other.

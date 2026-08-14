@@ -1,0 +1,117 @@
+{
+  "stage": "export-traces",
+  "phase": "typical-path",
+  "question": "Qual a sequencia de estados de cada processo do corpus?",
+  "deterministic": "conditional",
+  "status": "ran",
+  "mode": "neo4j",
+  "started_at": "2026-08-13T09:08:11Z",
+  "ended_at": "2026-08-13T09:08:15Z",
+  "duration_seconds": 3.927,
+  "flags": {
+    "from_date": null,
+    "to_date": null,
+    "workers": null,
+    "batch_size": null,
+    "chunk_size": null,
+    "limit": null,
+    "emit_dir": null,
+    "read_dir": null
+  },
+  "inputs": [
+    {
+      "path": "artifacts/clustering/exp-raw/hdbscan/labels.json",
+      "sha256": "1c4d2ff90a125457a22acd9267377cfbbf94c10edfcb94f976cb5fe71a60f67f"
+    },
+    {
+      "path": "artifacts/traces/protocol_traces.json.gz",
+      "sha256": "f24e118fc938515f16e2571acde27414ed83681f9e3f9d97e6f87d25494992da"
+    },
+    {
+      "path": "artifacts/clustering/exp-raw/kmeans/labels.json",
+      "sha256": "8c65a131b3a538f2847064b4dd894414e8963b2654cbe946a0576581f5f7d8fb"
+    },
+    {
+      "path": "artifacts/clustering/exp-raw/leiden/labels.json",
+      "sha256": "264f47396a368b89b6e31af8f4dc1d689aa2d8a632204868d1d3edef4b7df3fe"
+    },
+    {
+      "path": "artifacts/clustering/exp-anon/hdbscan/labels.json",
+      "sha256": "b46f14b643fd9a42f3d37ce97b62f02370019fd91822c4cb23943a433d42317f"
+    },
+    {
+      "path": "artifacts/clustering/exp-anon/kmeans/labels.json",
+      "sha256": "c5a104a85d1a2ecd3f6310d61941c03fc3f1af3231d39220bf361ed359167ab1"
+    },
+    {
+      "path": "artifacts/clustering/exp-anon/leiden/labels.json",
+      "sha256": "afd8bc8ddc58391aaac5a54a94bb980a7bd523371660084598b95c743ef70e0d"
+    },
+    {
+      "path": "artifacts/traces/exp-anon/hdbscan/grouping.json.gz",
+      "sha256": "f4057ba6609f6d49755d194377f989f4cd11cba850ddf79fe3ac77e87bcb932c"
+    },
+    {
+      "path": "artifacts/traces/exp-anon/kmeans/grouping.json.gz",
+      "sha256": "dade52f88b32b9abdceba53d6539b2d5f8842ccbd2510f8eda79a2d9458dbe1d"
+    },
+    {
+      "path": "artifacts/traces/exp-anon/leiden/grouping.json.gz",
+      "sha256": "e57337a30309cc2c542c2b360bb59fb6d3a49b8625b9af2fe058f796cd042ef5"
+    },
+    {
+      "path": "artifacts/traces/exp-raw/hdbscan/grouping.json.gz",
+      "sha256": "867a312d1b29422a883e2eee25e3c0e972fbaeb1a58d45bb95dd9947512940ba"
+    },
+    {
+      "path": "artifacts/traces/exp-raw/kmeans/grouping.json.gz",
+      "sha256": "e99814544b41622b73714d1fd2ce6238efd14fd5f20870e3181538569d736571"
+    },
+    {
+      "path": "artifacts/traces/exp-raw/leiden/grouping.json.gz",
+      "sha256": "cc7967627193913c1050d3ea70f60f9dd332deec74d3df1f0b7464d0ef53f644"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "artifacts/traces/protocol_traces.json.gz",
+      "bytes": 570792
+    },
+    {
+      "path": "artifacts/traces/exp-raw/hdbscan/grouping.json.gz",
+      "bytes": 24259
+    },
+    {
+      "path": "artifacts/traces/exp-raw/kmeans/grouping.json.gz",
+      "bytes": 24294
+    },
+    {
+      "path": "artifacts/traces/exp-raw/leiden/grouping.json.gz",
+      "bytes": 24296
+    },
+    {
+      "path": "artifacts/traces/exp-anon/hdbscan/grouping.json.gz",
+      "bytes": 24247
+    },
+    {
+      "path": "artifacts/traces/exp-anon/kmeans/grouping.json.gz",
+      "bytes": 24318
+    },
+    {
+      "path": "artifacts/traces/exp-anon/leiden/grouping.json.gz",
+      "bytes": 24389
+    },
+    {
+      "path": "artifacts/traces/index.json",
+      "bytes": 4379
+    }
+  ],
+  "n_inputs": 13,
+  "n_outputs": 8,
+  "summary": {
+    "out_dir": "/home/gabrielfmcoelho/Projetos/sead-dev/visualizador-de-processos/ai-pipeline-neo4j/artifacts/traces",
+    "n_processos": 5445,
+    "cells": 6,
+    "duration_seconds": 3.9
+  }
+}

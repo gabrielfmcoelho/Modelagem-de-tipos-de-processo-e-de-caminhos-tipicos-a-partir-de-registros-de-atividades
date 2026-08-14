@@ -1,0 +1,143 @@
+{
+  "_meta": {
+    "stage": "export-traces",
+    "question": "Qual a sequencia de estados de cada processo do corpus?",
+    "deterministic": "conditional",
+    "nondeterminism": "reflete o estado do grafo no momento da leitura",
+    "generated_at": "2026-08-13T09:08:15Z",
+    "commit": "8e51165916d00721db38c74c9bd1def6cb02c0f3",
+    "params": {
+      "min_traces": 30,
+      "out_dir": "/home/gabrielfmcoelho/Projetos/sead-dev/visualizador-de-processos/ai-pipeline-neo4j/artifacts/traces"
+    },
+    "inputs": [
+      {
+        "path": "artifacts/traces/protocol_traces.json.gz",
+        "sha256": "f24e118fc938515f16e2571acde27414ed83681f9e3f9d97e6f87d25494992da"
+      },
+      {
+        "path": "artifacts/traces/exp-anon/hdbscan/grouping.json.gz",
+        "sha256": "f4057ba6609f6d49755d194377f989f4cd11cba850ddf79fe3ac77e87bcb932c"
+      },
+      {
+        "path": "artifacts/traces/exp-anon/kmeans/grouping.json.gz",
+        "sha256": "dade52f88b32b9abdceba53d6539b2d5f8842ccbd2510f8eda79a2d9458dbe1d"
+      },
+      {
+        "path": "artifacts/traces/exp-anon/leiden/grouping.json.gz",
+        "sha256": "e57337a30309cc2c542c2b360bb59fb6d3a49b8625b9af2fe058f796cd042ef5"
+      },
+      {
+        "path": "artifacts/traces/exp-raw/hdbscan/grouping.json.gz",
+        "sha256": "867a312d1b29422a883e2eee25e3c0e972fbaeb1a58d45bb95dd9947512940ba"
+      },
+      {
+        "path": "artifacts/traces/exp-raw/kmeans/grouping.json.gz",
+        "sha256": "e99814544b41622b73714d1fd2ce6238efd14fd5f20870e3181538569d736571"
+      },
+      {
+        "path": "artifacts/traces/exp-raw/leiden/grouping.json.gz",
+        "sha256": "cc7967627193913c1050d3ea70f60f9dd332deec74d3df1f0b7464d0ef53f644"
+      }
+    ],
+    "versions": {
+      "numpy": "2.4.6",
+      "scikit-learn": "1.9.0",
+      "hdbscan": "0.8.44",
+      "umap-learn": "0.5.12",
+      "igraph": "1.0.0",
+      "leidenalg": "0.12.0",
+      "torch": "2.13.0",
+      "neo4j": "6.2.0"
+    }
+  },
+  "generated_at": "2026-08-13T09:08:15.307555+00:00",
+  "min_traces": 30,
+  "n_processos": 5445,
+  "cells": [
+    {
+      "run_id": "exp-raw",
+      "algo": "hdbscan",
+      "clusters_total": 66,
+      "clusters_kept": 56,
+      "clusters_below_floor": 10,
+      "processos_labelled": 5243,
+      "processos_kept": 4994,
+      "processos_below_floor": 249,
+      "processos_unlabelled": 202,
+      "coverage_of_labelled": 0.9525,
+      "coverage_of_corpus": 0.9172,
+      "min_traces": 30
+    },
+    {
+      "run_id": "exp-raw",
+      "algo": "kmeans",
+      "clusters_total": 66,
+      "clusters_kept": 52,
+      "clusters_below_floor": 14,
+      "processos_labelled": 5243,
+      "processos_kept": 4980,
+      "processos_below_floor": 263,
+      "processos_unlabelled": 202,
+      "coverage_of_labelled": 0.9498,
+      "coverage_of_corpus": 0.9146,
+      "min_traces": 30
+    },
+    {
+      "run_id": "exp-raw",
+      "algo": "leiden",
+      "clusters_total": 71,
+      "clusters_kept": 59,
+      "clusters_below_floor": 12,
+      "processos_labelled": 5243,
+      "processos_kept": 4962,
+      "processos_below_floor": 281,
+      "processos_unlabelled": 202,
+      "coverage_of_labelled": 0.9464,
+      "coverage_of_corpus": 0.9113,
+      "min_traces": 30
+    },
+    {
+      "run_id": "exp-anon",
+      "algo": "hdbscan",
+      "clusters_total": 64,
+      "clusters_kept": 54,
+      "clusters_below_floor": 10,
+      "processos_labelled": 5243,
+      "processos_kept": 4995,
+      "processos_below_floor": 248,
+      "processos_unlabelled": 202,
+      "coverage_of_labelled": 0.9527,
+      "coverage_of_corpus": 0.9174,
+      "min_traces": 30
+    },
+    {
+      "run_id": "exp-anon",
+      "algo": "kmeans",
+      "clusters_total": 64,
+      "clusters_kept": 52,
+      "clusters_below_floor": 12,
+      "processos_labelled": 5243,
+      "processos_kept": 5015,
+      "processos_below_floor": 228,
+      "processos_unlabelled": 202,
+      "coverage_of_labelled": 0.9565,
+      "coverage_of_corpus": 0.921,
+      "min_traces": 30
+    },
+    {
+      "run_id": "exp-anon",
+      "algo": "leiden",
+      "clusters_total": 75,
+      "clusters_kept": 55,
+      "clusters_below_floor": 20,
+      "processos_labelled": 5243,
+      "processos_kept": 4798,
+      "processos_below_floor": 445,
+      "processos_unlabelled": 202,
+      "coverage_of_labelled": 0.9151,
+      "coverage_of_corpus": 0.8812,
+      "min_traces": 30
+    }
+  ]
+}

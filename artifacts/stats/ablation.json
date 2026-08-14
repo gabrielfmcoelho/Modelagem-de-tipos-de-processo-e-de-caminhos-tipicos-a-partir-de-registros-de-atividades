@@ -1,0 +1,107 @@
+{
+  "_meta": {
+    "stage": "ablation",
+    "question": "Quanto cada bloco de feature e cada corte temporal contribui para a particao?",
+    "deterministic": "conditional",
+    "nondeterminism": "clustering com seed; o bloco de topico vem de LLM a montante",
+    "generated_at": "2026-08-13T09:14:08Z",
+    "commit": "8e51165916d00721db38c74c9bd1def6cb02c0f3",
+    "params": {
+      "run_id": "exp-anon",
+      "algo": "hdbscan",
+      "only_situacao": "concluido",
+      "variants": [
+        "cut0.75:cutoff_frac=0.75",
+        "cut0.5:cutoff_frac=0.5",
+        "cut0.25:cutoff_frac=0.25",
+        "nokeyword:keyword_weight=0",
+        "notopic:topic_weight=0"
+      ]
+    },
+    "inputs": [
+      {
+        "path": "artifacts/features/exp-anon.npz",
+        "sha256": "92ff01f95c16b8809f59bd52a458a3175836c469b0eac56c0fa6e9619e4f0891"
+      }
+    ],
+    "versions": {
+      "numpy": "2.4.6",
+      "scikit-learn": "1.9.0",
+      "hdbscan": "0.8.44",
+      "umap-learn": "0.5.12",
+      "igraph": "1.0.0",
+      "leidenalg": "0.12.0",
+      "torch": "2.13.0",
+      "neo4j": "6.2.0"
+    }
+  },
+  "generated_at": "2026-08-13T09:14:08Z",
+  "reference": {
+    "run_id": "exp-anon",
+    "algo": "hdbscan",
+    "n_processos": 5243,
+    "n_clusters": 64
+  },
+  "variants": [
+    {
+      "n_compared": 5243,
+      "ari": 0.7979,
+      "nmi": 0.8946,
+      "n_clusters_reference": 64,
+      "n_clusters_cut": 68,
+      "noise_reference": 0,
+      "noise_cut": 0,
+      "variant": "cut0.75",
+      "flag": "cutoff_frac=0.75",
+      "run_id": "exp-anon-cut0.75"
+    },
+    {
+      "n_compared": 5243,
+      "ari": 0.6494,
+      "nmi": 0.8164,
+      "n_clusters_reference": 64,
+      "n_clusters_cut": 70,
+      "noise_reference": 0,
+      "noise_cut": 0,
+      "variant": "cut0.5",
+      "flag": "cutoff_frac=0.5",
+      "run_id": "exp-anon-cut0.5"
+    },
+    {
+      "n_compared": 5243,
+      "ari": 0.4667,
+      "nmi": 0.7172,
+      "n_clusters_reference": 64,
+      "n_clusters_cut": 53,
+      "noise_reference": 0,
+      "noise_cut": 0,
+      "variant": "cut0.25",
+      "flag": "cutoff_frac=0.25",
+      "run_id": "exp-anon-cut0.25"
+    },
+    {
+      "n_compared": 5243,
+      "ari": 0.5959,
+      "nmi": 0.8376,
+      "n_clusters_reference": 64,
+      "n_clusters_cut": 65,
+      "noise_reference": 0,
+      "noise_cut": 0,
+      "variant": "nokeyword",
+      "flag": "keyword_weight=0",
+      "run_id": "exp-anon-nokeyword"
+    },
+    {
+      "n_compared": 5243,
+      "ari": 0.8403,
+      "nmi": 0.9049,
+      "n_clusters_reference": 64,
+      "n_clusters_cut": 71,
+      "noise_reference": 0,
+      "noise_cut": 0,
+      "variant": "notopic",
+      "flag": "topic_weight=0",
+      "run_id": "exp-anon-notopic"
+    }
+  ]
+}

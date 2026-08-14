@@ -1,0 +1,1134 @@
+\section{PROCEDIMENTOS METODOLÓGICOS}\label{sec:metodologia}
+
+Três decisões de projeto decorrem do instrumento que autorizou o tratamento dos dados --- termo
+firmado pela administração na condição de controladora \cite{seadpi2026termo}. A distinção é
+mantida ao longo de todo o trabalho: a
+\emph{obrigação}, em cada caso, é contratual e decorre daquele instrumento; a legislação fornece
+os padrões que o instrumento implementa e os interesses que ele protege.
+
+A Figura~\ref{fig:pipeline} exibe o \emph{pipeline} inteiro, e o percurso que ela desenha é o mesmo
+que as subseções seguintes detalham. Da extração sobre o espelho analítico do sistema
+de origem, que aplica o recorte da seção~\ref{sec:corpus}, os eventos são carregados em um grafo de
+conhecimento de eventos (seção~\ref{sec:ekg}); o documento inicial de cada processo administrativo é
+recuperado, convertido a texto e submetido à etapa de supressão de dados pessoais que o instrumento
+autorizador exige antes de qualquer vetorização (seção~\ref{sec:documento}); dele sai também o
+vocabulário controlado de palavras-chave (seção~\ref{sec:keywords}), que é a única ponte legível
+entre o vetor e a prosa do catálogo. Desse material saem os seis blocos de atributos que representam
+cada processo (seção~\ref{sec:atributos}), sobre os quais três famílias de agrupamento derivam os
+tipos (seção~\ref{sec:agrupamento}). Do mesmo grafo sai o traço de cada processo,
+renderizado nos três alfabetos da seção~\ref{sec:alfabetos}, e é sobre esses traços que se ajustam,
+por tipo, os modelos de caminho típico e a decodificação restrita da seção~\ref{sec:caminhos}. Cada
+tipo recebe também nome e descrição gerados a partir de seus próprios membros
+(seção~\ref{sec:nomeacao}), o que fecha a entrada de catálogo. O
+protocolo de avaliação (seção~\ref{sec:protocolo}), o estimando que ele produz
+(seção~\ref{sec:estimando}) e a camada de evidência que tenta quebrá-lo
+(seção~\ref{sec:evidencia}) fecham o percurso, e é dele que saem as tabelas e o catálogo entregues.
+
+\textbf{Cada etapa declara a pergunta que responde, e essa pergunta é copiada para dentro de cada
+artefato que a etapa escreve}, ao lado do
+identificador da versão do código e do resumo criptográfico de cada entrada consumida. Um leitor
+que discorde de uma conclusão pode localizar o artefato que a produziu, ler a pergunta que ele diz
+responder e reexecutar a etapa sobre as mesmas entradas.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{pipeline-macro.pdf}
+\caption{Etapas do \emph{pipeline} de processamento, das fontes de dados ao catálogo de tipos de
+processo e de seus caminhos típicos, com os artefatos que cada etapa produz.}
+\label{fig:pipeline}
+\end{figure}
+
+\subsection{Caracterização da pesquisa}\label{sec:caracterizacao}
+
+Quanto à natureza, esta é uma \textbf{pesquisa científica aplicada}: o produto não é uma
+proposição teórica sobre agrupamento de traços, e sim um artefato --- um catálogo de tipos de
+processo administrativo e de seus caminhos típicos --- destinado a ser operado por uma
+administração pública concreta. Quanto à abordagem, é \textbf{quantitativa}: todas as afirmações
+substantivas são medidas, comparadas contra controles explícitos e acompanhadas de intervalo ou de
+teste. Quanto aos objetivos, é \textbf{exploratória e descritiva} na etapa de derivação dos tipos,
+uma vez que não há taxonomia prévia confiável contra a qual comparar, e \textbf{explicativa} na
+etapa de avaliação, na qual se procura estabelecer qual componente do método carrega o sinal
+observado. Quanto ao procedimento, é um \textbf{estudo de caso único}, na acepção corrente em
+Engenharia de Software: uma organização, um sistema de origem, uma janela temporal.
+
+O caráter de caso único decorre do instrumento autorizador. Um segundo órgão exigiria um
+segundo instrumento autorizador, e o existente delimita o objeto a esta administração e ao ano de
+2025 (cláusula 2.1, seção~\ref{sec:corpus}). O estudo descreve a SEAD-PI no período autorizado; a
+seção 4.11 delimita o alcance.
+
+\subsubsection*{Sujeitos}
+
+Os \emph{sujeitos} desta pesquisa, em sentido estrito, são os processos administrativos ---
+registros de tramitação, não pessoas. O cenário em que eles correm, e as três propriedades da
+implantação do SEI que determinam o que o registro pode mostrar, são descritos na
+seção~\ref{sec:cenario}.
+
+\subsubsection*{Posicionalidade}
+
+Sou servidor da SEAD-PI, atuando como analista de dados, e graduando em Engenharia de
+Software. A declaração é dupla e as duas faces precisam ser lidas juntas. De um lado, foi esse
+vínculo que tornou o acesso possível e que permitiu interpretar as unidades organizacionais e os
+tipos de ação sem o intermédio de documentação incompleta. De outro, o mesmo vínculo é fonte
+potencial de viés no enquadramento e na interpretação, e a Secretaria deteve --- por força da
+cláusula 4.4.1 do instrumento autorizador --- direito de aprovação prévia sobre a divulgação
+acadêmica dos resultados aqui reportados.
+
+\subsubsection*{Convenção terminológica}
+
+Em português, a palavra ``processo'' colide de forma particularmente danosa: designa ao mesmo tempo
+o caso administrativo, o procedimento genérico e o objeto da disciplina que se aplica a ele. A
+convenção abaixo é fixada aqui e mantida em todo o trabalho, sem exceção; ela também consta do
+Apêndice A.
+
+\begin{itemize}
+  \item \textbf{Processo administrativo} --- o caso individual, unidade de análise deste trabalho:
+    um processo gerado no SEI, com número próprio, documento inicial e histórico de tramitação. Quando o
+    contexto for inequívoco, admite-se a forma abreviada ``processo''; nunca no sentido de tipo nem
+    no de disciplina.
+  \item \textbf{Tipo de processo} --- o agrupamento emergente, isto é, o conjunto de processos
+    administrativos que o método reúne por semelhança. É o objeto que o catálogo cataloga. Não se
+    confunde com o \emph{tipo de processo declarado} do SEI, que é o rótulo escolhido pelo servidor
+    no momento da autuação, e cuja confiabilidade é justamente o que este trabalho põe à prova.
+  \item \textbf{Mineração de processos} --- a disciplina \cite{vanderaalst2016processmining,
+    ieee2012manifesto}, e apenas ela.
+  \item \textbf{Traço} --- tradução de \emph{trace}: a sequência ordenada de eventos de um único
+    processo administrativo, renderizada em um dos três alfabetos da seção~\ref{sec:alfabetos}.
+  \item \textbf{Ação por unidade} --- o alfabeto não projetado, em que cada estado é o par
+    \emph{ação@unidade}. Os outros dois alfabetos são projeções dele. Adverte-se que no código este
+    alfabeto se chama \texttt{unit}, embora seja o único dos três que carrega \emph{ambos} os eixos.
+  \item \textbf{Roteamento} --- tradução de \emph{routing}: o \emph{alfabeto de traço} que conserva
+    o itinerário de unidades organizacionais por onde o processo administrativo passa, abstraído do
+    que ocorreu dentro de cada uma.
+  \item \textbf{Procedimento} --- o \emph{alfabeto de traço} que conserva a sequência de ações,
+    abstraída do organograma. É a representação mais transferível dos três, por não depender dos
+    nomes de unidade desta administração.
+  \item \textbf{Tramitação} --- o movimento administrativo em si, isto é, o envio de um processo
+    administrativo de uma unidade a outra. Os dois termos são próximos e a distinção entre eles é
+    mantida sem exceção em todo o trabalho: roteamento é a representação, tramitação é o que a
+    administração faz.
+  \item \textbf{Registros de atividades} --- tradução de \emph{event log}: o conjunto das
+    atividades que o sistema de origem registrou, isto é, a base sobre a qual todo o método
+    opera. Prefere-se essa forma a ``registro de atividades de eventos'' por ser a que a própria administração
+    emprega ao se referir ao que o SEI armazena.
+  \item \textbf{Ação} --- tradução de \emph{action}: o tipo de andamento registrado pelo sistema
+    (gerar documento, assinar, concluir, enviar). \textbf{Atividade} designa a ocorrência
+    individual de uma ação em um processo administrativo, isto é, a linha dos registros de atividades.
+\end{itemize}
+
+\subsection{Cenário da pesquisa: a SEAD-PI e o processo eletrônico}\label{sec:cenario}
+
+A Secretaria de Administração do Estado do Piauí é o órgão central dos sistemas de pessoal e de
+administração geral do Poder Executivo estadual. Sua carga de trabalho é predominantemente
+\emph{interna}: licenças, cessões, estágio, consignações e descontos em folha, contratações e
+matérias correlatas. Parte dos procedimentos atravessa outras secretarias, outros entes federativos
+ou municípios. A parte interessada em um processo administrativo da SEAD-PI é, portanto, tipicamente
+um servidor público, e não um cidadão na condição de usuário externo de serviço. A consequência
+normativa dessa composição é discutida na seção 2.2 e delimita o alcance da afirmação jurídica que
+o trabalho sustenta; a consequência metodológica é declarada aqui, no ponto em que o cenário é
+caracterizado.
+
+O procedimento administrativo estadual é regido pela Lei estadual n\textordmasculine{} 6.782, de 28
+de março de 2016 \cite{state2016procedurelaw}, que disciplina o processo administrativo no âmbito
+da Administração Pública do Estado do Piauí. É essa norma que estabelece as garantias
+procedimentais --- forma, prazo, motivação, publicidade --- cuja verificação empírica pressupõe
+justamente o registro que este trabalho produz.
+
+O suporte material desse procedimento é o Sistema Eletrônico de Informações (SEI). O SEI é a
+solução oficial do Governo Federal para produção e gestão de documentos e processos administrativos
+eletrônicos, desenvolvida pelo Tribunal Regional Federal da 4\textordfeminine{} Região e cedida
+gratuitamente a instituições públicas desde 2013 \cite{brasil2024sei}, no âmbito da infraestrutura
+do Processo Eletrônico Nacional \cite{brasil2024pen}; o marco normativo que tornou obrigatório o
+processo administrativo eletrônico na esfera federal, e que deu origem institucional a essa
+infraestrutura, é o Decreto n\textordmasculine{} 8.539, de 8 de outubro de 2015
+\cite{brasil2015decreto8539}. A cessão gratuita a órgãos estaduais e municipais fez do SEI o
+substrato de fato do processo administrativo eletrônico brasileiro, e é nele que a SEAD-PI gera, instrui e conclui seus processos.
+
+Três achados da literatura sobre o SEI sustentam premissas deste trabalho. Primeiro, o SEI já foi objeto de
+revisão sistemática, que consolida os ganhos de eficiência e sustentabilidade relatados e, mais
+relevante aqui, os problemas persistentes de interoperabilidade, segurança da informação e
+preservação digital \cite{soriano2025sei}. Segundo, estudo de caso em universidade federal conclui
+por ganho de eficiência na tramitação, mas registra que o SEI \emph{não} é um sistema informatizado
+de gestão arquivística de documentos, do que decorrem risco de preservação e inconsistências de
+classificação \cite{silva2020gestao}; é exatamente essa fragilidade que torna insuficiente confiar
+no tipo de processo declarado no momento da autuação. Terceiro, a análise jurídica do processo
+administrativo eletrônico brasileiro, com foco explícito no SEI, sustenta que a digitalização não
+resolveu os problemas burocráticos anteriores e pode consistir em mera transposição de burocracia
+para o meio eletrônico \cite{baptista2023processo} --- o que reforça a necessidade de tornar o
+comportamento efetivo do procedimento inspecionável antes de automatizá-lo.
+
+Há ainda um recorte útil do estado da arte: a literatura empírica sobre o SEI mediu sobretudo
+\emph{percepção de usuário} --- adoção, vantagem relativa percebida, satisfação
+\cite{fulton2018adocao} ---, e não o \emph{comportamento} do processo administrativo consignado nos registros de atividades. Trabalhos brasileiros de mineração de processos sobre registros de atividades extraídos do próprio SEI
+existem, mas são raros \cite{limaesilva2026analise}. É nessa lacuna que este estudo se situa.
+
+Três traços da implantação do SEI na Secretaria determinam o que o registro pode e não pode
+mostrar, e condicionam as decisões de método das seções seguintes.
+
+O primeiro é a \textbf{estrutura de unidades}. No SEI, \emph{unidade} é a entidade organizacional
+que recebe, movimenta e conclui um processo: na SEAD-PI, correspondem a setores, diretorias e
+gerências, dispostos em hierarquia e segmentados por objetivo e área de atuação. É essa entidade,
+e não a pessoa, que figura no registro de tramitação --- razão pela qual o alfabeto de roteamento
+da seção~\ref{sec:alfabetos} é composto de unidades, e não de servidores.
+
+O segundo é que \textbf{um mesmo usuário pode atuar em nome de mais de uma unidade}. O vínculo
+entre pessoa e unidade é de múltipla lotação, e não de correspondência um a um. Disso decorre que
+uma transição entre unidades no registro não implica, necessariamente, transferência entre
+pessoas distintas: o que o traço descreve é o percurso organizacional do processo, não a cadeia
+de agentes que o conduziram.
+
+O terceiro tem consequência direta sobre a representação adotada. Um protocolo do SEI ---
+comumente chamado de processo --- guarda suas ações em ordem cronológica, mas pode correr
+\emph{em paralelo} em mais de uma unidade: aberto um processo, ele pode ser enviado a várias
+unidades ao mesmo tempo, cada uma praticando atos sobre ele sem que a outra conclua os seus. O
+percurso de um processo não é, portanto, uma fila estritamente linear de unidades, e sim um
+conjunto de trechos que pode ramificar e reconvergir. O alfabeto de roteamento da
+seção~\ref{sec:alfabetos} é uma \emph{linearização} desse percurso pela ordem cronológica dos
+eventos, e não uma reprodução de sua estrutura de concorrência. É uma simplificação assumida:
+duas unidades que atuam simultaneamente aparecem no traço como se uma tivesse sucedido a outra,
+com a ordem decidida pelo instante de cada evento. A escolha mantém o traço na forma de sequência
+que os modelos da seção~\ref{sec:caminhos} exigem, ao custo de não distinguir sucessão de
+simultaneidade --- limitação retomada na seção 4.11.
+
+\subsection{Corpus e recorte}\label{sec:corpus}
+
+O corpus provém do \emph{data lakehouse} da SEAD-PI sobre o SEI institucional do governo do
+Estado do Piauí, hospedado pela ETIPI. A leitura se dá sobre esse espelho analítico --- as tabelas
+Iceberg \texttt{sei\_bronze.sei\_atividades} e \texttt{sei\_gold.processos\_metadados}, consultadas
+via Trino ---, e não sobre a base transacional do sistema de origem. O acervo ali disponível abrange
+mais de vinte e um milhões de atividades entre 2021 e 2026; o recorte de um único ano adotado neste
+trabalho é, portanto, escolha de projeto, e não limite da fonte --- ponto retomado na seção 4.11.
+
+O predicado de entrada é \emph{nascido no órgão}: conta-se o processo
+cujo evento de geração foi executado por uma unidade da SEAD-PI dentro do ano, e não todo processo
+que apenas passou por ela, nem o campo de autuação do SEI. Um processo administrativo entra na
+análise se satisfaz esse predicado, se foi concluído dentro do mesmo ano e se possui documento
+inicial recuperável. O funil completo importa mais do que a sua última etapa, e é por isso dado
+na íntegra: \textbf{12.621} processos nasceram na Secretaria durante o ano; \textbf{5.445}
+compõem o corpus carregado; e \textbf{5.243} carregam documento inicial legível e entram na análise.
+
+Duas medidas de ``concluído'' convivem nas fontes e respondem a perguntas distintas; cada uma é
+reportada em separado. A do grafo (seção~\ref{sec:ekg}) exige que nenhuma unidade mantenha o processo em
+aberto ao fim da janela; a do \emph{lakehouse} é textual, e reconhece a conclusão pela descrição do
+andamento. A segunda registra \textbf{7.920} conclusões dentro do ano, contra os \textbf{4.701} que
+não concluíram --- números que respondem a uma pergunta diferente da do corpus carregado. O
+artefato que produz este funil carrega a mesma advertência junto dos valores.
+
+Os processos que não haviam sido concluídos até 31 de dezembro são excluídos por construção,
+e não por estimativa, e são estruturalmente os longos. A seção~\ref{sec:vies} quantifica uma segunda
+perda, distinta desta, ocorrida \emph{dentro} da população concluída; ela não limita a primeira.
+
+O que o corpus contém condiciona o alcance do artefato. Como registrado na seção~\ref{sec:cenario}, a Secretaria responde por pessoal e
+administração geral, e sua carga é predominantemente de procedimento administrativo interno. A
+versão curta da consequência normativa é que o catálogo aqui derivado instancia o dever
+decorrente da carta de serviços apenas para o subconjunto de procedimentos que sejam serviços
+prestados a usuário externo --- e o corpus não é principalmente composto por eles.
+
+Restringir a análise a um único ano foi, em parte, decisão de custo para um estudo inicial: cinco anos de registros de atividades multiplicariam a ingestão, a vetorização, as varreduras de parâmetros de
+agrupamento e uma matriz de avaliação que já leva cerca de onze horas para ser executada. Mas a
+restrição não é apenas econômica: a cláusula 2.1 do instrumento autorizador delimita o objeto aos
+processos nascidos e movimentados na SEAD-PI no período de janeiro a dezembro de 2025 (Anexo A). A
+janela do estudo e a janela da autorização coincidem por construção.
+
+\subsubsection{Censura à direita, medida}\label{sec:vies}
+
+Exigir que um processo administrativo seja gerado \emph{e} concluído dentro de um mesmo ano civil
+trunca a amostra, e o efeito desse truncamento é medido. O tempo
+disponível para concluir encolhe mês a mês: um processo gerado em janeiro dispõe de 365 dias; um gerado em dezembro, de 31. Os máximos observados acompanham esse teto quase exatamente --- 343
+dias contra 365 disponíveis em janeiro, 29 contra 31 em dezembro ---, o que é a assinatura da
+censura, e não de quanto esses procedimentos de fato duram. A Tabela~\ref{tab:corpus-bias} dá o
+quadro mês a mês.
+
+\input{tables/corpus-bias}
+
+Tomando o mês menos truncado como distribuição de referência, o número de processos que teriam sido
+concluídos dentro de uma janela de comprimento pleno é estimado em 6.658, contra os 5.445
+observados; estima-se, portanto, que 18,2\% da população \emph{concluída} esteja ausente, e que
+sejam sistematicamente os processos longos. A cifra é um déficit \emph{dentro} dos
+processos que concluem, estimado a partir da censura mês a mês. Nada diz sobre os 7.176 processos
+que jamais concluíram dentro da janela, que são excluídos de saída (seção~\ref{sec:corpus}). É também um limite
+inferior dentro do seu próprio alcance, já que o mês de referência é ele próprio truncado. Três
+consequências vinculam o restante do trabalho e são retomadas na seção 4.11: o corpus não é ``processos gerados em 2025'', e sim ``processos gerados em 2025 que também concluíram rápido o
+bastante''; nenhuma estatística de duração ou de eficiência derivada dele é admissível; e
+procedimentos longos, que atravessam várias unidades, estão sub-representados.
+
+\subsection{Grafo de conhecimento de eventos}\label{sec:ekg}
+
+Os dados de eventos são modelados segundo a prática consolidada em mineração de processos
+\cite{vanderaalst2016processmining}. \textbf{O que entra.} A etapa de extração lê, do espelho
+analítico descrito na seção~\ref{sec:corpus}, três conjuntos: as atividades registradas pelo sistema
+de origem, o cadastro de unidades organizacionais e os metadados de cada processo administrativo. O
+recorte ali definido é aplicado já na leitura --- órgão, ano civil e condição de conclusão ---, de
+modo que nada além dele é materializado.
+
+\textbf{O que o grafo materializa.} A carga procede em cinco passos encadeados, em ordem fixa.
+Primeiro os nós-dimensão --- unidades organizacionais, usuários e tipos de
+procedimento declarados --- são pré-criados, e assim as cargas seguintes se fundem a nós
+estáveis em vez de duplicá-los. Em seguida as atividades são anexadas: cada uma é ligada ao seu
+processo administrativo, à unidade que a executou, ao usuário que a praticou e ao seu tipo de ação.
+Os nós de processo nascem do evento de geração do próprio processo, o que fixa uma raiz por caso
+antes de qualquer atividade ser ligada a ela, e os documentos produzidos ou referenciados são
+ligados ao processo que os contém. O terceiro passo é o que faz do registro um processo: as
+atividades de um mesmo caso são encadeadas por uma relação de precedência direta, na ordem
+cronológica do registro \cite{esser2021ekg}. Sobre essa cadeia derivam-se, por fim, as grandezas de
+posse --- quanto tempo cada unidade reteve cada processo e quantas vezes o recebeu de volta, que é
+onde o retrabalho se torna visível --- e a situação de cada caso ao fim da janela. É neste último
+passo que se decide a conclusão pela ausência de vínculo em aberto em qualquer unidade, e não pelo
+registro textual de um evento de encerramento: são as duas medidas incompatíveis da
+seção~\ref{sec:corpus}, e o grafo adota a primeira.
+
+\textbf{O que sai.} O grafo é a fonte única das etapas seguintes: dele saem, por travessia da
+cadeia de precedência, os traços nos três alfabetos da seção~\ref{sec:alfabetos}, e dele saem também
+os blocos de atributos que descrevem o percurso --- unidades visitadas, transições entre unidades e
+histograma de tipos de ação --- da seção~\ref{sec:atributos}. Derivar os traços de um grafo, em vez
+de um registro de atividades plano, é o que mantém simultaneamente disponíveis as perspectivas de
+unidade e de ação, das quais os três alfabetos dependem. Uma etapa dedicada congela ainda esse
+substrato de traços em disco antes da avaliação, de modo que a matriz inteira e qualquer
+reanálise posterior corram sem banco de dados, sobre exatamente os mesmos traços. Ainda assim,
+adotou-se uma noção de caso
+--- o processo administrativo ---, de modo que as preocupações com divergência e convergência que
+motivam a mineração de processos centrada em objetos permanecem aplicáveis
+\cite{vanderaalst2019ocpm}.
+
+\subsection{O documento inicial: leitura, supressão de dados pessoais e destilação}\label{sec:documento}
+
+A anonimização é requisito do instrumento que autoriza o estudo, e o requisito alcança inclusive a
+\emph{ordem} das etapas. A cláusula 5.1 do Termo de
+Ciência e Responsabilidade \cite{seadpi2026termo} dispõe:
+
+\begin{citacao}
+5.1. A metodologia incluirá etapa de pseudonimização e/ou anonimização dos dados pessoais, de
+forma automatizada sempre que identificáveis, antes das fases de clusterização e vetorização.
+\end{citacao}
+
+O Anexo A reproduz a cláusula em seu contexto, ao lado das demais que vinculam este trabalho. Dela
+decorrem duas obrigações distintas: que exista uma etapa automatizada de supressão de dados
+pessoais, e que ela \emph{preceda} a vetorização e o agrupamento. Ambas são condições de licitude
+do tratamento, tal como pactuadas.
+
+O instrumento invoca, ao fazê-lo, o art. 12 da Lei Geral de Proteção de Dados
+\cite{brasil2018lgpd}, e a leitura desse dispositivo importa. O art. 12 é uma norma
+\emph{delimitadora de escopo} --- dados anonimizados ficam fora do alcance da lei, salvo quando o
+processo puder ser revertido por meios razoáveis --- e não um dever autônomo de anonimizar. O dever,
+aqui, é contratual; o que o art. 12 fornece é o padrão contra o qual o resultado é julgado, e a
+consequência de não atendê-lo, que é a devolução dos dados ao alcance integral da lei.
+
+O custo analítico da transformação é medido: o \emph{pipeline} é executado duas vezes --- uma sobre
+o texto bruto, outra sobre a variante anonimizada --- e os dois braços são comparados processo a
+processo. A seção 4.6 reporta o resultado dessa comparação.
+
+O documento inicial é primeiro convertido a texto plano --- extração direta quando o arquivo é
+estruturado, leitura por modelo de visão computacional executado localmente quando não é ---, e é
+sobre esse texto que a supressão incide. A detecção de dados pessoais combina duas camadas. A
+primeira é de regras, inspirada em mecanismos baseados em reconhecedores declarativos
+\cite{microsoftpresidio}: identificadores fiscais de pessoa física e jurídica são reconhecidos nas
+formas com e sem pontuação e \emph{validados pelos próprios dígitos verificadores}, o que impede
+que números de protocolo e de documento sejam suprimidos por semelhança de formato; endereços de
+correio eletrônico seguem o padrão da especificação; e a matrícula funcional só é reconhecida em
+contexto, isto é, precedida do termo que a designa e com extensão mínima. A segunda camada é um
+extrator neural de entidades nomeadas com esquema aberto \cite{zaratiana2025gliner2}, cujas
+extensões detectadas são mapeadas sobre o mesmo conjunto de rótulos tipados. O mapeamento é largo:
+qualquer chave livre de identidade ou de finança que o extrator emita recai em um rótulo genérico.
+
+A substituição preserva a integridade referencial: o marcador é derivado do resumo criptográfico do
+par rótulo-entidade em forma canônica, de modo que a mesma pessoa recebe o mesmo marcador em todos
+os documentos em que apareça, ao passo que a forma de superfície desaparece. As ocorrências são
+substituídas da extensão mais longa para a mais curta, com as guardas de fronteira de cada detector
+--- dígito para os rótulos numéricos, caractere de palavra para os nominais ---, porque uma guarda
+única deixaria escapar em silêncio as ocorrências adjacentes a dígitos. Um modo de verificação
+reexecuta a camada de regras \emph{sobre a saída} e reprova a execução se restar qualquer
+ocorrência.
+
+Suprimir nomes, porém, não anonimiza por si só registros de atividades: um traço é, ele próprio, uma
+impressão digital comportamental \cite{mannhardt2019privacy, elkoumy2022privacy}, e uma sequência
+datada de movimentações entre unidades organizacionais nominadas permanece um registro do
+comportamento dos servidores que trataram do caso.
+
+\textbf{O que ela cobre.} Identificadores diretos e indiretos presentes no texto livre do documento
+inicial --- nomes de pessoas, identificadores nacionais, endereços, dados de contato, números de
+matrícula --- são detectados e substituídos por marcadores tipados antes que qualquer vetorização
+seja computada. \textbf{O que ela não cobre.} O traço permanece intocado: a sequência de unidades
+organizacionais, os tipos de ação e seus carimbos de tempo são todos preservados, porque são o
+objeto de estudo. Um leitor com acesso ao sistema de origem poderia reidentificar um processo
+administrativo apenas pela sua sequência de roteamento. Os dois braços diferem, portanto, apenas no
+canal \emph{textual}, e é dentro desse escopo que a comparação da seção 4.6 deve ser lida.
+``Anonimizado'', ao longo do texto, designa essa transformação específica.
+
+Do texto assim tratado o método destila, por fim, duas representações mais curtas. Um modelo de
+linguagem de pesos abertos produz, para cada documento inicial, um \textbf{tópico} --- o assunto em
+poucas palavras --- e um \textbf{resumo} de uma frase, ambos conservados ao lado do texto. A
+destilação existe porque o vetor do texto integral carrega, além do assunto, o formulário
+administrativo em que ele vem embrulhado; tópico e resumo são um sinal de assunto com menos ruído,
+e entram como bloco próprio na representação da seção~\ref{sec:atributos}. Como o tópico é derivado
+do texto, ele difere entre os dois braços, e por isso é recomputado a cada troca de braço em vez de
+reaproveitado --- reaproveitá-lo faria o braço anonimizado herdar o assunto extraído do texto
+bruto, e a comparação entre braços deixaria de medir o que declara medir.
+
+\subsection{Vocabulário controlado de palavras-chave}\label{sec:keywords}
+
+Do mesmo texto de que sai a vetorização sai também um objeto de natureza distinta, e é o único de
+todo o método que uma pessoa consegue ler: o vocabulário controlado de palavras-chave. Ele é a
+ponte entre o vetor que agrupa e a prosa que nomeia, e sem ele a nomeação da
+seção~\ref{sec:nomeacao} regride a amostras de documentos. A pergunta que ele responde é que termos
+o próprio acervo usa para se descrever, sem que a lista seja escrita à mão por quem analisa; por
+isso o vocabulário é \emph{crescente}, e não fixado a priori: o modelo de linguagem propõe termos
+documento a documento, e cada termo proposto ou se funde a um termo já existente ou entra como
+novo. O vocabulário resultante é, por construção, idêntico nos dois braços.
+
+Um termo entra no vocabulário por três filtros encadeados. Primeiro, a \textbf{normalização}:
+redução a minúsculas, remoção de acentos, descarte de pontuação, colapso de espaços, caminhos de
+unidade reduzidos à sigla final e rejeição de expressões meramente temporais, como um ano isolado
+ou o exercício a que ele se refere. Em seguida, o \textbf{descarte de dois conjuntos} --- as
+palavras vazias da língua e os termos que descrevem a própria administração: o nome do órgão, as
+suas unidades, o vocabulário de tramitação. Estes aparecem em quase todo documento e por isso não
+separam coisa alguma; mantê-los daria ao bloco um eixo constante. Por fim, a \textbf{fusão de
+variantes}: dois termos cuja similaridade de Dice sobre bigramas de caracteres alcance o limiar de
+0,9 são tratados como um só, e o primeiro a ser observado torna-se a forma canônica. É esse limiar
+que decide se duas grafias próximas de um mesmo assunto são um termo ou dois. Uma segunda passagem
+reanota os documentos processados enquanto o vocabulário ainda se construía, de modo que nenhum
+documento fique anotado contra um vocabulário parcial. Entra no bloco de atributos apenas o termo
+que ocorra em ao menos três processos administrativos, e é essa exigência que fixa a largura do
+bloco.
+
+Três propriedades decorrem desse procedimento. A similaridade é
+\textbf{léxica}, e erra em duas direções previsíveis: funde variações morfológicas de um mesmo
+termo, o que se pretende, mas não funde sinônimos de grafia distinta e pode fundir termos curtos
+que apenas se parecem. A escolha da forma canônica \textbf{depende da ordem de chegada} dos
+documentos, o que torna a etapa não determinística entre execuções; por isso o vocabulário é
+persistido como artefato e reutilizado, e é ele --- e não o procedimento --- que garante a
+reprodutibilidade dos blocos que dele dependem. E a etapa precisa ser executada \textbf{uma única
+vez, antes} da construção de ambos os braços: executada depois, o bloco de palavras-chave chega
+vazio à vetorização, o agrupamento prossegue sobre um bloco nulo e nenhuma verificação acusa a
+falta --- razão pela qual a ordem entre esta etapa e a construção dos braços é tratada como
+invariante do procedimento, e não como conveniência de execução.
+
+\subsection{Blocos de atributos}\label{sec:atributos}
+
+A afirmação substantiva do método está nesta etapa: forma procedimental e conteúdo documental são
+ambos sinal, e nenhum dos dois isoladamente identifica um tipo de processo. Cada processo
+administrativo é, portanto, representado por seis blocos que fundem o que o caso \emph{diz} com o
+modo como ele \emph{se moveu}:
+
+\begin{itemize}
+  \item o documento inicial vetorizado por um codificador multilíngue de sentenças
+    \cite{chen2024bgem3} (1.024 dimensões);
+  \item um tópico e um resumo desse documento produzidos por modelo de linguagem, vetorizados do
+    mesmo modo (1.024);
+  \item TF--IDF sobre as unidades organizacionais que o processo visita (500) e sobre as transições
+    entre unidades (1.000);
+  \item um histograma sobre os tipos de ação (48);
+  \item TF--IDF sobre um vocabulário controlado de palavras-chave extraído do documento inicial
+    (517).
+\end{itemize}
+
+Os dois blocos de conteúdo usam \textbf{apenas o documento inicial}: os
+documentos posteriores são majoritariamente formulário de tramitação --- encaminhamentos, despachos
+de rotina --- que se parecem entre milhares de processos sem relação alguma e diluem o centroide,
+ao passo que o documento de abertura é aquilo que o caso declara ser antes de o procedimento ter
+feito qualquer coisa com ele. Um processo sem documento legível recebe blocos de conteúdo nulos e
+ainda assim é agrupado pela sua assinatura estrutural. Nos blocos estruturais, o primeiro registra a
+presença de cada unidade no percurso, e não quantas vezes ela aparece; o segundo toma os pares
+consecutivos de unidades depois de colapsadas as repetições, de modo a descrever transição e não
+permanência; e ambos são ajustados sobre o próprio lote, o que faz a importância de um termo
+refletir o conjunto agrupado.
+
+Cada bloco é normalizado em $L^2$ por linha antes da concatenação e todos os seis carregam peso
+1,0, e assim o esquema pondera igualmente os blocos, independentemente de sua largura: o
+histograma de 48 tipos de ação contribui com tanta massa quanto a vetorização de 1.024 dimensões do
+documento. Cada peso é exposto como parâmetro, e é isso que torna a afirmação de fusão testável
+pela remoção controlada de blocos da seção~\ref{sec:evidencia}: um bloco pode ser zerado sem que
+nada mais mude.
+
+O vetor concatenado, com mais de três mil dimensões, é então reduzido a \textbf{50} por UMAP
+\cite{mcinnes2018umap} sob distância de cosseno --- a métrica que corresponde ao espaço de
+vetorizações normalizadas ---, com 15 vizinhos e semente fixa. A redução reproduz-se bit a bit na
+mesma máquina, mas não entre processadores e versões de biblioteca distintos; a etapa declara essa
+condição no artefato que escreve, junto da semente, de modo que o leitor saiba de antemão quais
+grandezas reproduzem exatamente e quais reproduzem apenas em distribuição.
+
+Tanto o modelo de linguagem que produz tópicos e palavras-chave quanto o modelo de vetorização são executados, a partir de pesos abertos, na infraestrutura computacional do próprio Estado: a inferência ocorre no \textbf{Mandu}, o \emph{cluster} de alto desempenho com GPUs NVIDIA do Governo do Estado do Piauí, que expõe uma API compatível com o padrão OpenAI. A compatibilidade de API é conveniência de integração, e não indício de externalização. Isso é requisito jurídico, e não preferência de engenharia: a cláusula 4.1 do instrumento autorizador exige que o tratamento permaneça dentro da infraestrutura do Estado, e a cláusula 4.5, alínea b, veda interfaces externas que impliquem saída de dados. Reapontar o endereço-base da API para um provedor externo violaria o termo.
+
+\subsection{Agrupamento}\label{sec:agrupamento}
+
+\subsubsection{Três famílias, e por que três}\label{sec:familias}
+
+O agrupamento é conduzido com três famílias de algoritmo: baseada em \textbf{densidade}
+\cite{campello2013hdbscan, mcinnes2017hdbscan}, baseada em \textbf{centroides}
+(\textit{k}-médias) e baseada em \textbf{modularidade} \cite{traag2019leiden}. Executar três
+famílias distingue uma propriedade dos dados do viés indutivo de um algoritmo particular. Uma estrutura que só aparece sob uma das três é um achado sobre o
+algoritmo; uma que aparece sob as três é um achado sobre o acervo.
+
+As três operam sobre a mesma matriz de 50 dimensões da seção~\ref{sec:atributos}, e os parâmetros
+são varridos, e não fixados. A família de densidade dispensa que se declare o número de grupos:
+ela constrói a hierarquia de densidade dos pontos e dela extrai a partição mais estável, com
+tamanho mínimo de grupo igual a 20 e seleção por \emph{excess of mass}; uma variante mais grossa
+funde grupos separados por menos que $\varepsilon = 0{,}5$. A métrica de cosseno descreve a \emph{redução}, ao passo que o agrupamento por
+densidade corre em distância euclidiana sobre o espaço já reduzido --- prática usual, uma vez que a
+projeção preserva vizinhança e não ângulo, mas que não deve ser lida como agrupamento por cosseno.
+A família de modularidade opera sobre um grafo de $k$ vizinhos mais próximos ($k = 15$, cosseno),
+com a resolução varrida entre 0,4 e 2,0 em passos de 0,2. A família de centroides varre $k$ de 20 a
+320 em passos de 10, com dez reinicializações por valor e semente fixa, sob os dois critérios de
+parada descritos a seguir. A varredura produz \textbf{sete} parametrizações por braço ---
+\textbf{catorze} ao todo ---, detalhadas na seção~\ref{sec:desenho}.
+
+\subsubsection{A escolha de $k$ e da resolução, varrida e reportada}\label{sec:selecaok}
+
+O número de grupos é escolhido por varredura: uma etapa dedicada percorre a grade de $k$ e reporta,
+lado a lado, o critério do cotovelo --- definido como a máxima distância perpendicular à corda que
+liga os extremos da curva de inércia, com ambos os eixos normalizados ao intervalo unitário, e não
+por leitura visual --- e a \emph{silhouette}. Ambos os valores são conservados como parametrizações
+distintas, em vez de se eleger um deles \emph{a
+priori}: os dois critérios otimizam objetivos diferentes --- compacidade relativa à separação, num
+caso; ganho marginal de inércia, no outro.
+Levar os dois adiante transforma a escolha de $k$ de premissa em objeto de avaliação. A resolução da
+família de modularidade é varrida do mesmo modo, e pelo mesmo motivo, elegendo-se a que maximiza a
+\emph{silhouette} de cosseno. Onde o cálculo da \emph{silhouette} sobre a matriz completa exceda o
+orçamento de tempo fixado, ele passa a ser feito sobre uma subamostra de tamanho fixo e semente
+fixa, e o escopo empregado é registrado no próprio artefato --- de modo que um valor de subamostra
+nunca seja lido como se fosse de matriz completa. A varredura inteira é persistida como artefato
+auditável, e não apenas o seu vencedor.
+
+\subsubsection{O ruído da família de densidade é atribuído}\label{sec:ruido}
+
+A família de densidade é a única das três que pode recusar-se a atribuir um processo administrativo
+a qualquer grupo. Essa recusa é informativa, mas tem uma consequência que inviabiliza a comparação
+entre famílias: os índices de validade e a acurácia a jusante passariam a ser calculados sobre
+\emph{populações diferentes}, e uma família que avalia apenas os casos fáceis é premiada por isso.
+
+Por omissão, portanto, cada ponto recusado é atribuído ao grupo cujo centróide lhe é mais próximo,
+no mesmo espaço em que as métricas são calculadas. Todas as famílias passam a ser avaliadas sobre os
+mesmos casos, e a comparação entre elas torna-se legítima. A escolha tem um custo: um processo que
+não pertence a família alguma passa a ser arquivado na mais
+próxima, o que é a troca correta para a avaliação e a errada para um catálogo que um servidor
+folheia. O que a densidade \emph{teria} recusado não se perde --- fica registrado, por agrupamento,
+como a fração recusada antes da atribuição, e é essa grandeza, e não a taxa de ruído final, que
+responde por abstenção em qualquer análise. A alternativa de reclassificar os recusados em
+subgrupos próprios permanece implementada e recuperável por parâmetro.
+
+\subsubsection{Partições-controle embaralhadas, uma por agrupamento}\label{sec:controles}
+
+Para cada um dos catorze agrupamentos reais é construída uma \textbf{partição-controle}: os rótulos
+são permutados entre os processos administrativos, preservando exatamente o número de grupos, a
+distribuição de tamanhos e a população avaliada, e destruindo apenas a pertença. É contra ela, e não
+apenas contra um modelo global, que o ganho é medido (seção~\ref{sec:estimando}).
+
+O controle é construído \emph{por agrupamento}, e não como um único nulo compartilhado, por uma
+razão substantiva: a forma de uma partição --- quantos grupos, de que tamanhos --- desloca a
+acurácia por si só, independentemente de a pertença significar alguma coisa. Um controle derivado de
+\emph{outro} agrupamento mediria diferença de granularidade em vez de diferença de agrupamento. Por
+isso a partição-controle é artefato da fase de agrupamento, e não da fase de avaliação.
+
+\subsection{Alfabetos de traço}\label{sec:alfabetos}
+
+O traço de um processo administrativo é renderizado em \textbf{três} alfabetos, e a distinção
+delimita o que cada número adiante pode afirmar. O alfabeto de \textbf{ação por unidade} emparelha
+cada ação registrada com a unidade que a executou --- a sigla completa da unidade, sem qualquer
+agregação por diretoria ---, e é o estado não projetado; os outros dois são projeções dele, obtidas
+tomando um dos dois eixos e colapsando repetições consecutivas. O alfabeto de \textbf{roteamento}
+conserva apenas
+a sequência de unidades organizacionais que o processo visita, abstraindo o que ocorreu dentro de
+cada uma --- uma perspectiva organizacional consolidada \cite{song2008organizational}. O alfabeto
+de \textbf{procedimento} faz o inverso: conserva a sequência de ações e abstrai o organograma, o que
+o torna a mais transferível das três representações, por não depender dos nomes de unidade desta
+administração.
+
+Colapsar repetições define o roteamento: um caso que permanece
+quatro eventos na mesma unidade fez \emph{uma} visita, não quatro, e uma unidade que reaparece de
+forma não consecutiva é um retorno de verdade. A permanência não desaparece do método por isso ---
+a contagem de eventos por visita é conservada ao lado do traço ---, apenas sai do alfabeto. Cada
+traço recebe ainda um estado sentinela de encerramento, sem o qual um gerador não teria como
+aprender \emph{quando} um caso termina, e pararia no primeiro estado de conclusão que encontrasse.
+Três alfabetos, e não um, porque respondem a perguntas administrativas distintas --- o que se faz,
+onde se faz e por onde o caso anda --- e um método que sirva bem a uma delas pode falhar nas
+outras.
+
+\subsubsection*{Cada alfabeto é avaliado dentro de si}
+
+Cada alfabeto recebe a sua própria matriz completa de avaliação, e o melhor modelo é eleito
+\emph{dentro} de cada um. Nenhum número atravessa alfabetos em nenhum ponto deste trabalho. A
+decisão assenta em três razões independentes:
+
+\begin{enumerate}
+  \item \textbf{As populações diferem.} As duas projeções colapsam repetições consecutivas, de modo
+    que um processo administrativo tratado inteiramente dentro de uma única unidade reduz-se a um
+    só estado de roteamento e é descartado por não ter transição alguma a prever. O alfabeto de
+    roteamento avalia, portanto, os processos multiunidade --- não o corpus.
+  \item \textbf{Os comprimentos diferem.} Toda medida sensível ao comprimento do traço, e as
+    medidas de sufixo o são, muda de escala entre alfabetos sem que nada tenha mudado no acervo.
+  \item \textbf{Os vocabulários diferem por ordens de grandeza.} Uma acurácia de próximo passo
+    maior sobre um alfabeto menor pode significar apenas menos candidatos por passo. Comparar
+    acurácias sobre vocabulários de tamanhos distintos compara a dificuldade da tarefa, e não a
+    qualidade do método.
+\end{enumerate}
+
+Um resultado de roteamento é uma afirmação sobre percurso entre unidades; um resultado de
+procedimento é uma afirmação sobre o que se faz.
+
+Um exemplo torna a diferença concreta. Um processo do corpus é gerado em uma unidade, tem
+documentos gerados e assinados ali, segue para uma segunda unidade, recebe novo documento, retorna
+à unidade de origem e é concluído. A Figura~\ref{fig:alfabetos} mostra como esse mesmo processo é
+renderizado nos três alfabetos; as unidades reais foram substituídas por rótulos genéricos, e a
+unidade de origem reaparece como \texttt{UNIDADE-A} nos dois pontos em que o processo passa por ela.
+
+\begin{figure}[htbp]
+\centering
+\fbox{\begin{minipage}{0.93\textwidth}
+\vspace{2pt}
+\raggedright\footnotesize
+\textbf{Alfabeto de ação por unidade} --- excerto dos dezoito estados:
+
+\vspace{2pt}
+\texttt{GERACAO-PROCEDIMENTO@UNIDADE-A} · \texttt{GERACAO-DOCUMENTO@UNIDADE-A} ·
+\texttt{ASSINATURA-DOCUMENTO@UNIDADE-A} · \texttt{CONCLUSAO-AUTOMATICA@UNIDADE-A} ·
+\texttt{PROCESSO-REMETIDO@UNIDADE-B} · \texttt{PROCESSO-RECEBIDO@UNIDADE-B} ·
+\texttt{GERACAO-DOCUMENTO@UNIDADE-B} · \ldots ·
+\texttt{CONCLUSAO-PROCESSO@UNIDADE-A}
+
+\vspace{6pt}
+\textbf{Alfabeto de roteamento} --- os mesmos dezoito estados, colapsados em três:
+
+\vspace{2pt}
+\texttt{UNIDADE-A} $\rightarrow$ \texttt{UNIDADE-B} $\rightarrow$ \texttt{UNIDADE-A}
+
+\vspace{6pt}
+\textbf{Alfabeto de procedimento} --- os mesmos dezoito estados, abstraídos do organograma:
+
+\vspace{2pt}
+\texttt{GERACAO-PROCEDIMENTO} $\rightarrow$ \texttt{GERACAO-DOCUMENTO} $\rightarrow$
+\texttt{ASSINATURA-DOCUMENTO} $\rightarrow$ \texttt{PROCESSO-REMETIDO} $\rightarrow$
+\texttt{PROCESSO-RECEBIDO} $\rightarrow$ \texttt{GERACAO-DOCUMENTO} $\rightarrow$ \ldots
+$\rightarrow$ \texttt{CONCLUSAO-PROCESSO}
+\vspace{3pt}
+\end{minipage}}
+\caption{Um mesmo processo administrativo renderizado nos três alfabetos de traço. O alfabeto de
+ação por unidade conserva o que se fez e onde; o de roteamento conserva apenas por onde o processo
+passou; o de procedimento conserva apenas o que se fez. Os dois últimos colapsam repetições
+consecutivas, e é por isso que avaliam populações distintas.}
+\label{fig:alfabetos}
+\end{figure}
+
+\noindent O retorno à unidade de origem permanece visível nos alfabetos que conservam a unidade --- é essa repetição
+que os modelos de caminho típico da seção~\ref{sec:caminhos} precisam aprender.
+
+A convenção fixada na seção~\ref{sec:caracterizacao} vale aqui sem exceção: o alfabeto é o de
+\emph{roteamento}; \emph{tramitação} fica reservada ao movimento administrativo que ele representa.
+
+A motivação é que a unidade carrega significado que a ação não carrega. Saber que um processo
+administrativo foi de um protocolo para uma unidade de parecer jurídico e desta para uma unidade
+orçamentária descreve o procedimento; saber que um documento foi gerado, assinado e concluído
+descreve convenções do sistema, comuns a quase todo procedimento.
+
+\subsection{Modelos de caminho típico e decodificação restrita}\label{sec:caminhos}
+
+Para cada grupo são ajustados \textbf{seis} geradores, que se distribuem por três modos distintos de
+estimar o próximo estado. Dois são \textbf{contadores locais}: uma cadeia de Markov de terceira
+ordem e um grafo de precedência direta (DFG, rótulo \texttt{dfg} nas tabelas). Três são
+\textbf{sequenciais neurais}: GRU \cite{cho2014gru}, LSTM \cite{hochreiter1997lstm} e Transformer
+\cite{vaswani2017attention}. O sexto é \textbf{convolucional sobre grafo} (GNN, rótulo \texttt{gnn}
+nas tabelas) \cite{kipf2017gcn}, e generaliza por uma via que nenhum dos outros cinco usa.
+
+As três famílias neurais são as três linhagens que a literatura de predição de próxima atividade
+consolidou --- a recorrente \cite{tax2017lstm}, a recorrente com portas e a baseada em atenção
+\cite{bukhsh2021processtransformer} ---, e as três são comparadas porque
+sob protocolo comum nenhuma arquitetura domina em todos os registros de atividades
+\cite{ramamaneiro2023dlppm}. Qual delas vence é, portanto, pergunta empírica endereçada ao corpus, e
+não premissa do método. As três compartilham a mesma configuração, fixada uma única vez e idêntica
+em todos os grupos e em todas as células de avaliação, sem ajuste por grupo: vetorização de estados
+em 32 dimensões, estado oculto de 64, janela de contexto de 8 estados, \emph{dropout} de 0,2 e 30
+épocas de Adam com taxa de aprendizado 0,01, decaimento de peso $10^{-4}$, lotes de 2.048 e semente
+fixa; a GRU e a LSTM com uma camada recorrente, o Transformer com duas camadas de codificação e
+quatro cabeças de atenção. Fixar a configuração de antemão é o que impede que a comparação entre
+famílias meça esforço de ajuste em vez de arquitetura. Grupos com menos de 30 traços não são
+avaliados. Rolar um
+modelo sequencial treinado adiante para gerar um traço inteiro, em vez de pontuar predições de um
+passo, é o arranjo de \citeonline{camargo2019lstm}, e o realismo da sequência gerada é o que as
+medidas de sustentação de caminho, definidas na seção~\ref{sec:protocolo}, existem para aferir.
+
+O gerador de
+Markov é de terceira ordem com retrocesso: onde um contexto de terceira ordem não foi observado, ele
+recua para segunda e depois para primeira ordem, o que é o que o mantém utilizável em grupos
+próximos ao piso de 30 traços. Emprega-se um grafo de precedência direta como um dos aprendizes de
+caminho --- de primeira ordem, restrito às transições do conjunto de treino que alcancem um piso de
+cobertura de 0{,}05 --- a transição deve ocorrer em ao menos 5\% dos traços de treino do grupo ---,
+registrando-se que essa representação tem patologias documentadas enquanto modelo de
+processo \cite{vanderaalst2019dfg}.
+
+O gerador convolucional entra por uma razão que os outros cinco não cobrem. Markov e precedência
+direta são estimadores estritamente locais: a previsão para um estado usa apenas as transições
+observadas a partir dele, de modo que um estado visto três vezes na partição tem uma estimativa de
+três amostras e nada a corrige. Sobre o grafo de transições do conjunto de treino --- nós são
+estados, arestas são transições contadas, a adjacência simetrizada e acrescida de laços próprios,
+normalizada de forma simétrica --- duas rodadas de propagação fazem a previsão de um estado
+incorporar a de seus vizinhos, de modo que um estado raro toma emprestado de estados
+estruturalmente semelhantes. É a única família do conjunto que generaliza \emph{pelo grafo}, e não
+pela sequência, e ela paga por isso condicionando apenas no último estado, sem janela de contexto:
+ganha vizinhança e perde memória. Treina-se por entropia cruzada sobre os pares observados, com
+Adam, estado oculto de 64, 200 épocas, taxa de aprendizado 0,01, decaimento de peso $10^{-4}$ e
+semente fixa. A reprodutibilidade bit a bit exige ainda uma providência que não é óbvia: a
+paralelização de álgebra linear é reduzida a uma única linha de execução durante o ajuste, porque
+somas em ordem variável divergem o bastante para trocar a ordem das melhores predições. Herda dos
+contadores todo o resto --- predição, distribuição do próximo estado, geração, feixe, amostragem e
+decodificação restrita ---, o que mantém a comparação sobre a \emph{estimativa}.
+
+O gerador de precedência direta compartilha estrutura com uma das linhas de base. Sob predição de
+primeira escolha, ele seleciona o sucessor observado mais frequente, que é exatamente a linha de
+base do sucessor intragrupo descrita na seção~\ref{sec:protocolo}; os dois são o mesmo estimador e
+pontuam de forma idêntica. Há, portanto, cinco preditores treinados distintos mais uma linha de
+base que também
+comparece ao conjunto de geradores, e o máximo por grupo sobre ``seis famílias'' é tomado sobre um
+conjunto que contém o seu próprio piso. Se essa sobreposição altera as cifras de melhor modelo
+selecionado é questão empírica, respondida na seção~\ref{sec:res-sinal}.
+
+A geração é decodificada sob uma máquina de estados que codifica as regras de movimentação do sistema de
+processo eletrônico. A máquina de estados garante uma propriedade de segurança, e não uma condição de aceitação. A cada passo,
+o decodificador admite apenas os estados que a máquina de estados permite, e assim um caminho produzido
+não pode receber um processo que nunca lhe foi enviado, nem concluir uma raia que nunca foi aberta.
+Ele não garante que todo envio seja correspondido antes de o caminho terminar: a terminação é
+irrestrita, de modo que um caminho pode encerrar com uma transferência pendente. A restrição também
+vincula apenas os cinco tipos de ação que participam das regras de movimentação, permanecendo
+irrestritos os quarenta e três restantes. A seção 4.5 reporta o que a garantia, assim delimitada,
+efetivamente compra.
+
+\subsection{Nomeação dos tipos}\label{sec:nomeacao}
+
+Uma entrada de catálogo precisa de nome, e o nome é a parte que o leitor vê primeiro. Os nomes aqui
+são gerados, e não redigidos, e a nomeação corre em \textbf{duas passagens}. Nomear cada grupo
+isoladamente a partir das suas
+palavras-chave mais \emph{frequentes} garante nomes parecidos para grupos parecidos, porque numa
+família de procedimentos vizinhos os termos mais frequentes são justamente os \emph{partilhados},
+e o modelo, que nunca vê os concorrentes, não tem como diferenciá-los.
+
+Na primeira passagem, portanto, cada grupo é apresentado ao modelo de linguagem executado
+localmente por \emph{dois} conjuntos de palavras-chave em vez de um: as mais frequentes, que dão o
+tema, e as \textbf{distintivas} --- as sobre-representadas naquele grupo em relação ao resto do
+acervo, ordenadas pela razão entre a probabilidade do termo dentro e fora do grupo, com suavização
+para os termos raros. São estas últimas que separam, ao passo que as primeiras unem. Junto delas
+seguem uma amostra dos processos administrativos mais centrais --- o tópico e o resumo de cada
+documento inicial ---, as unidades organizacionais visitadas e os tipos de ação; e o modelo devolve
+um nome em português, uma descrição factual de uma frase e três marcadores
+distintivos. O modelo é instruído a ancorar o nome no conteúdo e no fluxo do próprio grupo, a
+preferir um assunto concreto a um rótulo genérico e a \emph{não} utilizar a classificação
+declarada, para que o tipo emergente não seja silenciosamente rerrotulado com a taxonomia da qual o
+estudo declina depender --- usá-la tornaria circular a concordância contra o tipo declarado, que é
+justamente o instrumento externo de avaliação da partição.
+
+A segunda passagem renomeia \emph{apenas} os grupos cujos nomes colidiram, e agora com as rivais à
+vista: cada um recebe o nome, o tamanho e os termos distintivos dos seus homônimos, e a instrução
+explícita de produzir um nome que os distinga. Nomes cujas vetorizações permaneçam quase duplicatas
+são fundidos por agrupamento aglomerativo sobre a similaridade de cosseno entre as vetorizações dos
+nomes; a fusão é uma etapa do procedimento. A nomeação é executada para \emph{todas} as partições, e não apenas para aquela que se
+julgue vencedora, uma vez que o critério de seleção da seção~\ref{sec:desenho} só é aplicado depois
+--- e uma partição sem nomes renderizaria um catálogo vazio.
+
+Duas limitações se seguem. Os nomes são saída de máquina
+não validada sobre matéria administrativa, o que constitui artefato distinto da própria partição e
+carrega risco distinto; a seção 4.11 enuncia esse ponto ao lado da ausência de avaliação por
+especialistas dos tipos obtidos. A nomeação quase duplicada foi observada durante o
+desenvolvimento; a etapa de fusão a mitiga.
+
+\subsection{Protocolo de avaliação e os três controles}\label{sec:protocolo}
+
+\subsubsection*{A unidade de avaliação: a célula}
+
+A unidade elementar de avaliação é a \textbf{célula}: o cruzamento de um braço textual, uma
+parametrização, um algoritmo de agrupamento e um alfabeto. Dentro de uma célula, cada família de
+modelo é ajustada \emph{separadamente em cada grupo} e pontuada sobre os traços retidos daquele
+mesmo grupo. Um processo administrativo entra numa célula se satisfaz três condições encadeadas:
+possuir traço com ao menos dois estados no alfabeto daquela célula; possuir rótulo naquela partição;
+e pertencer a um grupo com ao menos trinta traços. O piso de trinta existe porque um grupo dividido
+em 70/30 precisa de casos de avaliação suficientes para que uma acurácia signifique alguma coisa.
+
+O número de grupos avaliados por uma célula difere do $k$ do agrupamento que a originou. Grupos
+abaixo do piso são excluídos da avaliação sem serem excluídos da partição, e a primeira condição depende do
+alfabeto --- de modo que a mesma partição avalia populações distintas em alfabetos distintos.
+
+\subsubsection*{A divisão treino/avaliação}
+
+Os processos administrativos são divididos em 70/30 entre conjunto de treino e conjunto de avaliação. A
+divisão é função determinística do identificador do processo, e não da sua posição em uma lista, de
+modo que um processo cai do mesmo lado da divisão independentemente do subconjunto de que seja
+extraído --- propriedade que o controle de modelo global, adiante, exige, pois de outro modo um
+processo retido do seu próprio grupo poderia comparecer ao conjunto de treino agregado.
+
+\subsubsection*{As medidas, e o eixo que cada uma exige}
+
+A medida primária é a \textbf{acurácia de próximo passo}, calculada sobre \emph{passos de decisão}
+e não sobre traços: dado o prefixo de um traço retido, qual é o estado seguinte. Um traço de $n$
+estados contribui com $n-1$ passos, de modo que traços longos pesam mais dentro do seu grupo.
+Reporta-se a primeira escolha e as três melhores. Ao lado dela mede-se a qualidade da \emph{geração}
+por uma distância de edição com transposições entre o sufixo gerado e o sufixo real, condicionada ao
+prefixo verdadeiro de metade do traço --- o modelo recebe o que de fato ocorreu até ali e completa o
+restante, arranjo em que valores menores são melhores.
+
+Acurácia elevada de próxima atividade não demonstra, por si só, que a estrutura do processo tenha
+sido capturada \cite{peeperkorn2023rnnstructure}. Por isso são reportadas, ao lado da acurácia,
+medidas de sustentação de caminho: a fração das unidades que um processo real visita e que o
+caminho gerado também visita; a fração das unidades do caminho gerado que processos reais visitam;
+o número médio de ocorrências de cada transição gerada por membro do grupo; e a contagem de
+transições que não ocorrem em \emph{nenhum} membro amostrado do grupo --- fabricação, e não
+variação. Mede-se ainda a \textbf{validade estrutural} das gerações completas, isto é, o grau de
+conformidade às regras de movimentação que a decodificação da seção~\ref{sec:caminhos} impõe. Três
+medidas descrevem a partição e não o modelo, e por isso assumem um único valor por célula, o mesmo
+para as seis famílias: a fração das transições do conjunto de avaliação já presentes no grafo de
+precedência do conjunto de treino, a sua conversa, e a média harmônica das duas.
+
+Duas ressalvas de alcance acompanham essas definições. A sustentação de transição conta
+ocorrências, e não membros distintos, de modo que pode exceder 1 quando uma transição se repete
+dentro de um mesmo processo; não é, portanto, uma proporção. As transições não observadas são
+contadas contra uma amostra de no máximo trinta traços retidos por grupo, e não contra o grupo
+inteiro. O Apêndice A (Tabela~\ref{tab:glossary}) define todas as medidas utilizadas.
+
+Uma regra governa quais dessas medidas cada célula emite, e ela decorre diretamente dos alfabetos
+da seção~\ref{sec:alfabetos}: \textbf{uma medida é calculada quando, e somente quando, o eixo que
+ela mede existe no alfabeto daquela célula}. O alfabeto de ação por unidade carrega os dois eixos e
+emite tudo. O de procedimento carrega apenas a ação, logo emite validade estrutural e não emite
+medida alguma de unidade. O de roteamento carrega apenas a unidade, logo emite as medidas de
+unidade e \emph{não} emite validade estrutural. Onde o eixo não existe, a chave simplesmente não
+aparece no artefato. A alternativa --- calcular a medida assim mesmo --- não devolve um valor
+errado, e sim um valor \emph{vazio de referente} que se renderiza como legítimo: uma restrição de
+movimentação aplicada a estados que não carregam ação nunca prende, e reportaria conformidade
+perfeita por construção.
+
+São três as linhas de base, cada uma respondendo a uma pergunta diferente. A linha de base do
+\textbf{sucessor intragrupo} prediz o próximo estado mais frequente dentro do grupo, e pergunta se
+o modelo aprendeu alguma coisa. O \textbf{modelo global} é uma única cadeia de Markov de terceira
+ordem treinada sobre o conjunto de treino agregado do corpus inteiro e avaliada sobre os mesmos
+traços retidos; ele pergunta se um único modelo teria ido igualmente bem. A \textbf{partição
+embaralhada} permuta a filiação aos grupos preservando a quantidade de grupos, a distribuição de
+tamanhos e a população avaliada; ela pergunta se é o agrupamento, e não a forma da partição, que
+está fazendo o trabalho. A esses três controles quantitativos soma-se, na seção 4.4.3, um confronto
+qualitativo do caminho gerado contra um processo administrativo real e integralmente conhecido; ele
+não substitui nenhuma das linhas de base acima, e serve para expor o que as medidas agregadas não
+tornam visível.
+
+Avaliar um agrupamento pelo modelo que ele habilita jusante é princípio consolidado
+\cite{deweerdt2013actitrac}. Aqui ele é estendido da aderência do modelo de processo para a predição
+de próxima atividade, aplicado externamente a partições produzidas de forma independente --- e não
+dentro de um invólucro de agrupamento --- e acrescido dos dois últimos controles, que essa
+literatura não reporta rotineiramente. A comparação contra o modelo global é feita com a família de modelos fixada dos dois lados --- cadeia de Markov por grupo contra cadeia de Markov global ---, e não tomando o melhor de seis famílias em cada grupo contra uma única família global. As duas formas são calculadas e reportadas em separado na seção~\ref{sec:res-sinal}, para que o leitor compare o que cada escolha de comparador produz.
+
+\subsubsection*{Agregação: duas leituras, e o que separa uma da outra}
+
+Cada grupo produz a sua própria acurácia; a célula agrega essas acurácias de duas maneiras, e ambas
+são reportadas. A leitura \textbf{macro} é a média simples sobre os grupos, e nela cada \emph{tipo de
+processo} vale o mesmo, por maior ou menor que seja. A leitura \textbf{ponderada} pesa cada grupo
+pelo seu número de traços, e nela cada \emph{processo administrativo} vale o mesmo. Não são duas
+versões da mesma grandeza: respondem a perguntas administrativas diferentes --- quão bem o método
+serve o catálogo de tipos, e quão bem serve o acervo de casos.
+
+A leitura ponderada carrega uma assimetria: o peso é o número de traços do grupo,
+enquanto a acurácia de cada grupo é calculada sobre \emph{passos de decisão}. Um grupo de traços
+longos contribui com muitos passos para a sua própria acurácia, mas entra na agregação apenas com o
+seu número de processos. Onde a distribuição de comprimentos variar muito entre grupos, as duas
+leituras divergem, e a divergência entre elas é o sinal de que isso está ocorrendo.
+
+\subsection{O estimando: ganho contra a partição-controle}\label{sec:estimando}
+
+A grandeza estimada é definida antes de qualquer medição.
+
+\subsubsection*{O dividendo da partição}
+
+Ajustar um modelo por grupo, em vez de um modelo para todo o acervo, altera aquilo que cada modelo
+enfrenta. O alfabeto efetivo de um grupo é um subconjunto do alfabeto global, e prever o próximo
+passo dentro de um alfabeto menor é mais fácil; em contrapartida, cada modelo passa a dispor de uma
+fração dos dados de treino. Nenhum desses dois efeitos depende de a partição significar coisa
+alguma: ambos decorrem apenas de quantos grupos existem e de que tamanhos são. Chame-se
+\textbf{dividendo da partição} ao efeito líquido dessa mudança de forma.
+
+Um ganho medido contra um modelo global mistura, portanto, duas coisas: o dividendo da partição e o
+que a pertença aos grupos de fato carrega. Como o sinal do dividendo não é conhecido \emph{a
+priori} --- ele depende de qual dos dois efeitos predomina no acervo em questão --- não é possível
+sequer afirmar que um ganho bruto seja um limite inferior do efeito de interesse.
+
+\subsubsection*{A decomposição e o estimando}
+
+Seja $A(\Pi)$ a acurácia agregada dos modelos por grupo sob a partição real $\Pi$, e
+$A(\tilde{\Pi})$ a mesma grandeza sob a partição-controle embaralhada da seção~\ref{sec:controles},
+que preserva quantidade de grupos, distribuição de tamanhos e população. O ganho bruto contra o
+modelo global $B$ decompõe-se em
+
+\[
+\underbrace{A(\Pi) - B}_{\text{ganho bruto}} \;=\;
+\underbrace{\left[A(\tilde{\Pi}) - B\right]}_{\text{dividendo da partição}} \;+\;
+\underbrace{\left[A(\Pi) - A(\tilde{\Pi})\right]}_{\text{sinal da partição}} .
+\]
+
+O \textbf{estimando deste trabalho é o segundo termo}. Para uma família de modelo $m$ e uma partição
+$\Pi$, com $A_w$ denotando a acurácia agregada ponderada pelo número de traços de cada grupo,
+
+\[
+\boxed{\;\Delta^{*}(m,\Pi) \;=\; A_w\!\left(m,\Pi\right) \;-\; A_w\!\left(m,\tilde{\Pi}\right)\;}
+\]
+
+\noindent e a variante ajustada, que subtrai o modelo global sob ambas as partições,
+
+\[
+\Delta^{*}_{\mathrm{aj}}(m,\Pi) \;=\;
+\left[A_w(m,\Pi) - B(\Pi)\right] \;-\; \left[A_w(m,\tilde{\Pi}) - B(\tilde{\Pi})\right],
+\qquad
+r \;=\; B(\Pi) - B(\tilde{\Pi}) \;\approx\; 0 ,
+\]
+
+\noindent em que $r$ é o resíduo: o mesmo modelo global pontuado sobre os mesmos passos retidos sob
+as duas partições, que difere de zero apenas pelo efeito da ponderação e por isso serve de teste de
+sanidade da agregação. $\Delta^{*}$ é, portanto, a diferença entre a partição real e um
+embaralhamento de forma idêntica. É o único dos dois do qual o dividendo foi
+subtraído, e é positivo apenas se a pertença aos grupos carregar informação que a forma da partição
+não carrega.
+
+\subsubsection*{$\Delta^{*}$ é portão de admissão, não ordenação}
+
+O controle preserva a forma da partição, mas não equaliza o \emph{custo
+marginal} de fragmentar os dados de treino: um grupo formado ao acaso tem dados de treino sem
+estrutura interna, e o seu modelo degrada-se com a redução de tamanho de modo distinto do de um
+grupo coerente. Logo, $\Delta^{*}$ não é invariante à granularidade e não pode ser usado para
+ordenar partições com números de grupos diferentes.
+
+O uso legítimo é como \textbf{critério de admissão}: uma partição cujo $\Delta^{*}$ não seja
+positivo não carrega sinal além da sua forma e não deve integrar o estudo, qualquer que seja a sua
+validade interna. Para \emph{escolher} entre partições admitidas emprega-se o critério de seleção da
+seção~\ref{sec:desenho}, que pondera desempenho a jusante, cobertura e qualidade. Comparações a
+número de grupos emparelhado permanecem válidas sob $\Delta^{*}$.
+
+\subsubsection*{Os dois comparadores respondem a perguntas diferentes}
+
+Nem o modelo global nem o embaralhamento é dispensável, porque as perguntas não são a mesma. O
+modelo global pergunta \emph{um único modelo teria ido igualmente bem?} --- uma questão de
+engenharia, cuja resposta orienta quem decide se vale a pena manter um modelo por tipo. O
+embaralhamento pergunta \emph{este agrupamento significa alguma coisa?} --- uma questão de validade,
+cuja resposta orienta quem decide se o catálogo é um objeto real. Os dois são calculados e
+reportados lado a lado, por alfabeto, e nenhum é apresentado como substituto do outro.
+
+\subsection{A camada de evidência: o que cada verificação tenta quebrar}\label{sec:evidencia}
+
+As etapas descritas até aqui produzem o artefato. As etapas seguintes o testam, e cada uma responde
+a uma objeção específica. Todas são executadas por alfabeto, quando a grandeza que medem depender do alfabeto.
+
+\begin{itemize}
+  \item \textbf{Remoção controlada de blocos e de histórico} --- \emph{é o conteúdo documental que agrupa, ou
+    qualquer coisa agruparia?} Blocos de atributos são zerados um a um e o histórico de cada
+    processo é truncado, medindo-se quanto a partição se desloca.
+  \item \textbf{Viés do corpus} --- \emph{os processos que concluem dentro do ano representam os
+    que foram abertos nele?} A censura à direita é estimada mês a mês (seção~\ref{sec:vies}).
+  \item \textbf{Retenção temporal} --- \emph{a vantagem sobrevive quando a partição vê apenas parte
+    da história de cada caso?} Os cortes são reavaliados sobre os casos que todos eles avaliam,
+    porque de outro modo comparar-se-iam populações distintas.
+  \item \textbf{Conformidade} --- \emph{quanto do comportamento observado o modelo descoberto
+    reproduz, e quanto a mais ele permite?}
+  \item \textbf{Custo da restrição} --- \emph{o que a garantia de validade cobra do gerador?}
+  \item \textbf{Não inferioridade} --- \emph{a supressão de dados pessoais custa utilidade, contra
+    uma margem fixada antes de medir?} Reamostragem pareada por processo, por alfabeto.
+  \item \textbf{Estabilidade} --- \emph{a partição sobrevive à reamostragem dos seus próprios
+    membros?}
+  \item \textbf{Auditoria de reajuste} --- \emph{cada agrupamento armazenado se reproduz a partir da
+    matriz de atributos que ele próprio declara?} A verificação reexecuta a receita declarada, o que
+    inclui a política de ruído da seção~\ref{sec:ruido}.
+  \item \textbf{Partição-controle} --- introduzida na seção~\ref{sec:controles} e formalizada na
+    seção~\ref{sec:estimando}, é a que decide se qualquer das anteriores tem sobre o que incidir.
+\end{itemize}
+
+\textbf{O comparador decide a resposta}: os mesmos modelos, sobre os mesmos casos, produzem
+afirmações distintas conforme aquilo contra o que são medidos. O estimando é fixado antes de medir,
+e o comparador é reportado ao lado de cada número.
+
+\subsection{Desenho experimental, reprodutibilidade e verificação}\label{sec:desenho}
+
+\textbf{Braços e células.} O \emph{pipeline} é executado duas vezes, produzindo dois braços que
+diferem em uma única coisa: o texto de entrada. O braço \textbf{sem anonimização} usa o documento
+inicial como ele consta do sistema; o braço \textbf{anonimizado} usa o mesmo documento após a etapa de
+pseudonimização e anonimização da seção~\ref{sec:documento}. Todo o restante --- blocos de atributos,
+parâmetros, sementes, protocolo de avaliação --- é idêntico, o que torna a diferença entre os
+braços atribuível à anonimização e não a outra escolha.
+
+Cada braço produz \textbf{sete} agrupamentos, resultado de três famílias algorítmicas em
+configuração de referência mais quatro variantes de parâmetro:
+
+\begin{itemize}
+  \item \textbf{HDBSCAN} --- agrupamento por densidade, que não exige número de grupos declarado; a
+    variante \emph{hcoarse} funde grupos separados por menos que um limiar de distância, produzindo
+    partição mais grosseira.
+  \item \textbf{k-means} --- agrupamento por centroide, com $k$ declarado; entram duas variantes,
+    uma com $k$ escolhido pelo método do cotovelo (\emph{kelbow}) e outra por \emph{silhouette}
+    (\emph{ksil}).
+  \item \textbf{Leiden} --- agrupamento por modularidade sobre grafo de vizinhança; a variante
+    \emph{lres} altera o parâmetro de resolução.
+\end{itemize}
+
+\noindent São, portanto, \textbf{catorze} agrupamentos reais --- sete por braço ---, cada um com a
+sua própria partição-controle embaralhada (seção~\ref{sec:controles}), o que perfaz \textbf{vinte e
+oito} partições. Cada uma é avaliada nos \textbf{três} alfabetos de traço da
+seção~\ref{sec:alfabetos}, totalizando \textbf{84} células de avaliação.
+
+Dentro de cada célula, as \textbf{seis} famílias de gerador de caminho típico da
+seção~\ref{sec:caminhos} são treinadas por grupo, acima do piso de trinta traços.
+
+\textbf{Controles.} O controle de partição embaralhada é gerado por permutação dos rótulos de um
+agrupamento real, o que preserva a quantidade de grupos, a distribuição de tamanhos e a população
+que sobrevive ao piso de avaliação; a única diferença em relação à partição real é, portanto, a
+filiação. A lista das células de controle é derivada da lista das células reais pela própria etapa
+que as executa, e não escrita em paralelo a ela, de modo que as duas não possam divergir sem
+falhar.
+
+\textbf{A escolha entre partições admitidas.} $\Delta^{*}$ decide quais partições entram no estudo
+(seção~\ref{sec:estimando}), mas não as ordena. O critério que as ordena pontua os catorze
+agrupamentos sobre quatro grandezas escalonadas por mínimo--máximo entre os candidatos: a acurácia
+sobre o \emph{conjunto comum} --- os processos administrativos que \emph{todas} as partições
+avaliam, sem o qual se compararia desempenho sobre populações distintas ---, a \textbf{cobertura},
+a \emph{silhouette} e o \textbf{tamanho mediano} de grupo. Todo agrupamento é candidato, sem filtro
+prévio de cobertura, uma vez que atribuir o ruído da densidade ao grupo mais próximo
+(seção~\ref{sec:ruido}) já fechou o canal de descarte a montante. O escore é calculado sob quatro
+ponderações, uma delas ignorando por completo os índices de validade, e apenas no alfabeto de
+roteamento --- os alfabetos nunca são agregados entre si, de modo que aquele sobre o qual se
+seleciona é decisão de escopo, e não propriedade dos dados. Um candidato que vença sob as quatro
+vence sem depender de qual delas se adote.
+
+Um segundo escore, restrito aos seis agrupamentos principais, serve de verificação de sensibilidade:
+três termos com pesos declarados de antemão --- \textbf{desempenho a jusante}, com peso 0,5, medido
+sobre o conjunto comum e escalado a partir do piso que a melhor partição embaralhada atinge;
+\textbf{cobertura}, com peso 0,3, a fração do corpus que sobrevive ao piso de trinta traços; e
+\textbf{qualidade interna}, com peso 0,2, a média de dois índices de validade reescalados ---,
+varridos sobre cinco esquemas de ponderação: equilibrado, jusante em primeiro, cobertura em
+primeiro, qualidade em primeiro e terços iguais. Os dois critérios são reportados lado a lado, com o
+vencedor sob cada esquema. Uma escolha que só sobrevive a um esquema de pesos é uma escolha do
+esquema.
+
+\textbf{Reprodutibilidade.} Cada etapa declara a pergunta que responde, se é ou não determinística
+e, quando não é, por quê; e copia essa declaração para dentro de cada artefato que escreve, ao lado
+do identificador da versão do código, das versões das bibliotecas numéricas empregadas, dos
+parâmetros resolvidos e do resumo criptográfico de cada entrada consumida. As matrizes de atributos
+carregam o mesmo carimbo, e as etapas de agrupamento e de avaliação recusam-se a executar contra
+atributos cujo carimbo não corresponda ao braço que declaram --- guarda, e não convenção. Uma etapa
+de auditoria reajusta cada agrupamento armazenado a partir da sua própria matriz carimbada, replica
+a receita que ele declara, inclusive a política de ruído da seção~\ref{sec:ruido}, e compara o
+resultado aos rótulos armazenados; o desfecho dessa auditoria é reportado na
+seção~\ref{sec:res-entrada}. Uma segunda auditoria percorre a árvore inteira de artefatos e verifica
+que cada arquivo ainda declara a etapa que o produziu e que as entradas declaradas continuam a
+resumir do mesmo modo. É esse encadeamento --- pergunta, versão, entradas, reajuste --- que
+converte ``isto foi executado'' em ``qualquer pessoa pode reexecutar isto''.
+
+As vetorizações de documento e de tópico são mantidas em cache em disco, e assim alternar entre
+braços restaura vetores idênticos em vez de recomputá-los. Um documento cujo texto anonimizado seja
+idêntico ao bruto conserva o vetor que já possui, em vez de ser reprocessado; ele não é excluído,
+mas tampouco contribui com sinal de anonimização, e a etapa registra quantos documentos estão nessa
+condição.
+
+\textbf{Dos artefatos a este texto.} Toda tabela quantitativa deste trabalho é gerada a partir de
+artefatos armazenados por uma única etapa do pipeline, que também regenera as tabelas
+correspondentes no documento interno de resultados do projeto. Um modo de verificação re-renderiza
+tanto as tabelas do manuscrito quanto as do documento interno e falha se qualquer uma delas houver
+divergido dos artefatos, de modo que uma cifra não pode ser editada dentro de uma tabela sem que a
+evidência subjacente mude primeiro. A grade completa de combinações de parâmetros não é impressa
+aqui; ela é regerável a partir dos artefatos armazenados.
+
+Uma verificação de regeneração alcança as tabelas geradas, mas não o texto corrido, que é
+escrito à mão. Mantém-se, por isso, uma segunda verificação, executada com a suíte de testes:
+um registro explícito das grandezas que sustentam o argumento na prosa, que resolve cada uma
+até o seu caminho na árvore de artefatos e falha nos dois sentidos --- se uma cifra do texto
+deixa de arredondar para o artefato que cita, ou se o artefato muda e a frase não é atualizada
+com ele. O registro cobre as duas versões do manuscrito e inclui asserções de sinal, de modo
+que uma redação que preserve a magnitude mas apague o sinal do resultado seja reprovada. Ele não é
+exaustivo: as cifras que ele cobre não podem derivar silenciosamente; qualquer cifra fora dele
+está verificada apenas pela leitura.
+
+\subsection{Procedimentos estatísticos}\label{sec:estatistica}
+
+A comparação entre os braços sem anonimização e anonimizado emprega \emph{bootstrap} pareado sobre os processos
+administrativos que os dois braços avaliam, com 2.000 replicações, e é conduzida por alfabeto,
+jamais entre alfabetos. O par é o processo, e não a célula, o que remove do intervalo a variação
+que se deve à dificuldade do caso. A conclusão de não inferioridade exige que o limite inferior
+unilateral de 90\% da diferença supere uma margem de $0{,}01$ ponto de acurácia, registrada antes
+de os dados existirem, e uma margem de sensibilidade de $0{,}005$ é reportada ao lado, de modo que
+a robustez da conclusão à escolha da margem fique visível em vez de precisar ser suposta.
+
+A relação entre a qualidade interna de uma partição e a sua qualidade a jusante é testada por
+correlação de postos, sob teste de permutação de Monte Carlo com 20.000 sorteios, sobre as catorze
+parametrizações reais de um mesmo alfabeto. São testadas oito grandezas: quatro índices internos
+de validade --- DBCV, \emph{silhouette}, Davies--Bouldin e Calinski--Harabasz --- e quatro
+descritores da forma da partição --- número de grupos, tamanho mediano de grupo, taxa de ruído
+final e fração que a densidade recusaria antes da atribuição da seção~\ref{sec:ruido}. Todas são
+testadas sem correção para multiplicidade, e todas exigem que os índices provenham de um \emph{mesmo
+espaço métrico}: índices calculados em espaços distintos não são comparáveis e não podem ser
+reunidos numa única correlação, pelo que o procedimento interrompe a execução em vez de agregar
+silenciosamente uma partição fora do espaço comum.
+
+A regra de enunciado desse teste é fixada antes de o resultado ser conhecido: na ausência de
+rejeição, reporta-se ausência de evidência, e não se formula afirmação de equivalência a respeito
+dos índices. O procedimento, sozinho, não estabelece nem uma coisa nem a outra. O poder do teste,
+dado o número de observações disponíveis, é quantificado ao lado do resultado na
+seção~\ref{sec:res-indices}.
+
+\subsection{Aspectos éticos, instrumento autorizador e disponibilidade dos
+dados}\label{sec:etica}
+
+\textbf{Financiamento.} Nenhuma bolsa ou financiamento externo apoiou este trabalho. A
+administração participante prestou apoio institucional em espécie: acesso ao seu \emph{data lake} e
+a servidores que explicaram o significado das unidades organizacionais e dos tipos de ação.
+
+\textbf{Ética.} Não foram coletados dados de participantes humanos, pelas razões detalhadas na
+seção~\ref{sec:caracterizacao}. Sobre essa base, o estudo não foi submetido a comitê de ética em
+pesquisa. A consulta informal a servidores sobre o significado de unidades organizacionais e de
+tipos de ação é divulgada aqui.
+
+\textbf{Instrumento autorizador.} O estudo foi conduzido sob autorização formal de tratamento de
+dados, expedida pelo titular da administração participante na condição de controladora, nos termos
+da Lei Geral de Proteção de Dados \cite{brasil2018lgpd}, e vigente para o período que abrange este
+trabalho \cite{seadpi2026termo}. O instrumento autoriza o tratamento de registros de processos
+administrativos para fins acadêmicos (cláusula 2.1); exige pseudonimização ou anonimização antes
+das fases de clusterização e vetorização (cláusula 5.1); exige que o tratamento ocorra inteiramente
+dentro do ambiente computacional da administração, com modelos de pesos abertos executados
+localmente e sem transferência a serviços externos (cláusulas 4.1 e 4.5); e restringe a divulgação
+acadêmica a nomes de grupos, exemplos genéricos ou sintéticos, métricas agregadas e código-base sem
+segredos (cláusula 4.4.1). Todos os resultados aqui reportados situam-se dentro desse escopo. O
+Anexo A reproduz o documento na íntegra, com tarja sobre os identificadores pessoais.
+
+Duas consequências desse instrumento incidem diretamente sobre a forma deste trabalho e devem ser
+lidas em conjunto com a declaração de posicionalidade da seção~\ref{sec:caracterizacao}. A primeira é a cláusula 4.4.1,
+que submete a divulgação acadêmica à aprovação prévia da SEAD-PI, na qualidade de camada adicional
+de controle; essa aprovação foi solicitada e concedida para este trabalho. A segunda é a cláusula
+7.2, que atribui à Secretaria a titularidade da base de dados e do grafo derivado, com licença de
+uso acadêmico ao servidor --- o que restringe, e não meramente organiza, o que pode ser
+disponibilizado.
+
+\textbf{Base legal do tratamento.} A autorização descrita acima é o instrumento sob o qual este
+estudo transcorreu, mas uma autorização expedida por controlador não é, ela própria, base legal de
+tratamento sob a lei geral de proteção de dados. O instrumento aloca responsabilidade pela etapa
+que importa: dispõe que o grafo inicial de exploração poderá conter dados não anonimizados, que
+essa etapa integra o tratamento sob responsabilidade da controladora, restrita ao ambiente seguro,
+e que não constitui uso acadêmico autônomo (cláusula 5.2, transcrita no Anexo A). O que ele não faz
+é identificar qual hipótese legal a controladora invocou --- e este trabalho tampouco o faz. Uma administração que pretenda reproduzir este trabalho
+precisaria estabelecer essa base antes de começar, e a seção 4.10 expõe por que essa é a primeira
+pergunta que tal administração deveria responder.
+
+\textbf{Disponibilidade dos dados.} Sob o instrumento vigente, a cláusula 7.1 atribui a mim a
+metodologia e o código-base, ao passo que a base de dados e o grafo derivado são da
+Secretaria (cláusula 7.2). Podem, por isso, ser disponibilizados o código-fonte e os artefatos
+agregados derivados --- métricas em nível de grupo, as tabelas de resultados geradas e o pipeline
+de avaliação. Não podem sê-lo os registros de atividades subjacentes, os documentos dos processos
+administrativos e a base de grafo: contêm dados pessoais, e o instrumento veda a sua transferência
+a terceiros. Toda afirmação quantitativa deste trabalho é
+regerada de artefatos armazenados por uma única etapa do pipeline, que falha se o manuscrito e os
+artefatos divergirem.
+
+\textbf{Uso de ferramentas de inteligência artificial.} Modelos de linguagem de grande porte foram
+utilizados em dois papéis distintos, ambos aqui divulgados; cada um suscita questões diferentes.
+
+Como \emph{componentes do método}: um modelo de visão computacional executado localmente realizou a
+leitura estruturada dos documentos iniciais; um extrator neural de entidades nomeadas
+\cite{zaratiana2025gliner2} participou da detecção de dados pessoais descrita na seção~\ref{sec:documento}; um
+modelo de linguagem de pesos abertos produziu o tópico e o resumo de cada documento inicial, o
+vocabulário controlado de palavras-chave e os nomes dos tipos de processo da seção~\ref{sec:nomeacao}; e um modelo
+de vetorização produziu os vetores de documento. Todos foram executados na infraestrutura do
+Estado, como exposto na seção~\ref{sec:atributos} --- exigência do instrumento autorizador, não preferência técnica
+---, e nenhum dado de processo administrativo foi enviado a qualquer serviço externo. Esses
+componentes são objeto de avaliação, e não de confiança: a seção 4.11 registra que os nomes gerados
+são saída de máquina não validada.
+
+Como \emph{assistência de revisão adversarial}: houve emprego de assistência de inteligência
+artificial na revisão do texto do manuscrito e do código de análise e de testes, em especial na
+identificação de lacunas lógicas --- afirmações não sustentadas pela evidência citada, números
+divergentes entre prosa e artefato, e passos do argumento omitidos. Esse uso é distinto do
+anterior: não produziu texto, e sim objeções a ele. Diversas correções registradas neste trabalho
+--- entre elas a retratação de resultados descrita na seção 4.11 --- originaram-se dessa revisão.
+Avaliei cada objeção individualmente, e as acolhidas foram conferidas contra os artefatos.
+
+Conferi cada cifra reportada contra os artefatos gerados e respondo por todas as afirmações aqui
+feitas.

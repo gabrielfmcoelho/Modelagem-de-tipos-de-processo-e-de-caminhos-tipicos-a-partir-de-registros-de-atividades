@@ -1,0 +1,88 @@
+%% Artigo TCC -- iCEV, Engenharia de Software.
+%% Formatacao conforme "Manual do TCC" (iCEV, Setembro/2025), Anexo I:
+%% Times New Roman 12, espacamento 1,5, texto justificado, recuo de paragrafo
+%% 1,25cm, margens superior e esquerda 3cm, inferior e direita 2cm.
+%% Esta versao NAO e cega: identifica autor, orientador e a instituicao estudada.
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazilian]{babel}
+\usepackage{newtxtext,newtxmath}
+\usepackage[top=3cm,left=3cm,bottom=2cm,right=2cm]{geometry}
+\usepackage{setspace}
+\usepackage{indentfirst}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{graphicx}
+\graphicspath{{figures/}{../figures/}}
+\usepackage{amsmath}
+\usepackage{ragged2e}
+\usepackage{footmisc}
+\usepackage{xurl}
+\usepackage{pdfpages}
+\usepackage[hidelinks]{hyperref}
+\usepackage[alf]{abntex2cite}
+
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{3em}
+
+%% Citacao longa: mais de 3 linhas -> fonte 10, recuo 4cm, espacamento simples.
+\newenvironment{citacao}
+  {\begin{list}{}{\setlength{\leftmargin}{4cm}\setlength{\rightmargin}{0pt}}%
+   \item[]\begin{singlespace}\fontsize{10}{12}\selectfont}
+  {\end{singlespace}\end{list}}
+
+%% Titulos de secao em corpo 12, sem numeracao automatica -- o Anexo I usa
+%% "Introducao", "Capitulo de Desenvolvimento", "Consideracoes Finais".
+\usepackage{titlesec}
+\titleformat{\section}{\normalsize\bfseries}{\thesection}{0.5em}{}
+\titleformat{\subsection}{\normalsize\bfseries\itshape}{\thesubsection}{0.5em}{}
+\titleformat{\subsubsection}{\normalsize\itshape}{\thesubsubsection}{0.5em}{}
+\titlespacing*{\section}{0pt}{1.5\baselineskip}{0.5\baselineskip}
+\titlespacing*{\subsection}{0pt}{1.2\baselineskip}{0.4\baselineskip}
+\titlespacing*{\subsubsection}{0pt}{1.0\baselineskip}{0.3\baselineskip}
+
+\newcommand{\TITULO}{Modelagem de tipos de processo administrativo e de caminhos típicos
+a partir de registros de atividades}
+\newcommand{\SUBTITULO}{um catálogo auditável para a transparência e otimização administrativa}
+\newcommand{\AUTOR}{Gabriel Feitosa Melo Coelho}
+\newcommand{\ORIENTADOR}{Prof. Dr. Dimmy Karson Soares Magalhães}
+
+\begin{document}
+\onehalfspacing
+\justifying
+
+\begin{center}
+{\bfseries\large \TITULO}\\[2pt]
+{\large \SUBTITULO}
+\end{center}
+
+\vspace{1.5\baselineskip}
+
+\begin{flushright}
+\AUTOR\footnote{Graduando em Engenharia de Software pelo Instituto de Ensino Superior
+iCEV. E-mail: gabrielcoelho09gc@gmail.com.}\\
+\ORIENTADOR\footnote{Orientador. Doutor. Docente do curso de Engenharia de Software do
+Instituto de Ensino Superior iCEV. Email: }
+\end{flushright}
+
+\vspace{1.5\baselineskip}
+
+\input{sections/00-resumo}
+
+\input{sections/01-introducao}
+\input{sections/02-revisao}
+\input{sections/03-metodologia}
+\input{sections/04-resultados}LaTeX
+\input{sections/05-consideracoes-finais}
+
+\bibliographystyle{abntex2-alf}
+\bibliography{references-abnt}
+
+\input{sections/06-apendices}
+\input{sections/04-anexos}
+
+\end{document}

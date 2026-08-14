@@ -1,0 +1,71 @@
+{
+  "_meta": {
+    "stage": "select-k",
+    "question": "Que k e que resolucao as varreduras selecionam, e algum optimo caiu na borda da grade?",
+    "deterministic": "conditional",
+    "nondeterminism": "varreduras fixadas pelo seed registrado em params",
+    "generated_at": "2026-08-12T05:09:08Z",
+    "commit": "8e51165916d00721db38c74c9bd1def6cb02c0f3",
+    "params": {
+      "run_id": "exp-anon",
+      "seed": 42,
+      "redundancy_lambda": 0.05,
+      "k_grid": [
+        20,
+        320,
+        10
+      ],
+      "res_grid": [
+        0.4,
+        4.0,
+        0.2
+      ]
+    },
+    "inputs": [
+      {
+        "path": "artifacts/features/exp-anon.npz",
+        "sha256": "92ff01f95c16b8809f59bd52a458a3175836c469b0eac56c0fa6e9619e4f0891"
+      }
+    ],
+    "versions": {
+      "numpy": "2.4.6",
+      "scikit-learn": "1.9.0",
+      "hdbscan": "0.8.44",
+      "umap-learn": "0.5.12",
+      "igraph": "1.0.0",
+      "leidenalg": "0.12.0",
+      "torch": "2.13.0",
+      "neo4j": "6.2.0"
+    }
+  },
+  "run_id": "exp-anon",
+  "n": 5243,
+  "digest": "0db561a705b8ddae",
+  "text_variant": "anon",
+  "seed": 42,
+  "redundancy_lambda": 0.05,
+  "kmeans": {
+    "k_elbow": 70,
+    "k_best_silhouette": 60,
+    "k_combined": 60,
+    "grid": {
+      "min": 20,
+      "max": 320,
+      "step": 10
+    }
+  },
+  "leiden": {
+    "best_resolution": 3.4,
+    "best_resolution_combined": 3.4,
+    "grid": {
+      "min": 0.4,
+      "max": 4.0,
+      "step": 0.2
+    }
+  },
+  "at_grid_edge": {
+    "k_elbow": false,
+    "k_combined": false,
+    "resolution_combined": false
+  }
+}

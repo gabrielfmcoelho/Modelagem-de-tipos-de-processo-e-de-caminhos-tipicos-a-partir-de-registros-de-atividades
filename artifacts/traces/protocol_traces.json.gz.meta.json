@@ -1,0 +1,28 @@
+{
+  "_meta": {
+    "stage": "export-traces",
+    "question": "Qual a sequencia de estados de cada processo do corpus?",
+    "deterministic": "conditional",
+    "nondeterminism": "reflete o estado do grafo no momento da leitura",
+    "generated_at": "2026-08-13T09:08:15Z",
+    "commit": "8e51165916d00721db38c74c9bd1def6cb02c0f3",
+    "params": {
+      "n_processos": 5445,
+      "source": "neo4j"
+    },
+    "inputs": [],
+    "versions": {
+      "numpy": "2.4.6",
+      "scikit-learn": "1.9.0",
+      "hdbscan": "0.8.44",
+      "umap-learn": "0.5.12",
+      "igraph": "1.0.0",
+      "leidenalg": "0.12.0",
+      "torch": "2.13.0",
+      "neo4j": "6.2.0"
+    }
+  },
+  "describes": "artifacts/traces/protocol_traces.json.gz",
+  "sha256": "f24e118fc938515f16e2571acde27414ed83681f9e3f9d97e6f87d25494992da",
+  "bytes": 570792
+}

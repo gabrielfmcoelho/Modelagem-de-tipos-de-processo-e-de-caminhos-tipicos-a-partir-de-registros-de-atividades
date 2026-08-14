@@ -1,0 +1,185 @@
+\section{Related work}\label{sec:related}
+
+\subsection{Trace clustering}\label{subsec:rw-clustering}
+
+Mining a single model from a heterogeneous log yields a structure that describes no actual
+behaviour, and the established remedy is to partition the log first and discover a specialised
+model for each group \citep{greco2006clustering}. Partitioning needs a representation. Trace
+profiles over activities, transitions, originators and case attributes make vector-space
+clustering applicable to event data, and different profiles yield materially different partitions
+\citep{song2009trace}; features built from conserved subsequences restore the order information
+that bag-of-activities profiles discard \citep{bose2009context}; learned dense representations of
+activities and traces outperform hand-crafted profiles on the same task
+\citep{dekoninck2018act2vec}. A systematic review organises fifteen years of this work into four
+interchangeable dimensions, namely representation, algorithm, use of non-control-flow information,
+and evaluation strategy, and it already lists downstream model quality among the recognised
+evaluation strategies \citep{zandkarimi2020generic}. The clearest instance is ActiTraC, which
+admits a trace into a cluster only when the fitness of the process model discovered for that
+cluster does not significantly degrade, so that the downstream artefact drives the grouping rather
+than a distance in feature space \citep{deweerdt2013actitrac}. What that literature calls a
+variant is close to what we call a process type \citep{taymouri2021variant}.
+
+The difference here is one of placement. ActiTraC uses the downstream score inside the clustering
+loop, as a wrapper; we use it afterwards, on partitions that four algorithm families produced
+independently over two text arms, which is what allows the question of whether the algorithm
+matters at all to be posed. We evaluate emergent process-type partitions by the predictive
+performance of per-cluster sequence models, extending the model-driven evaluation principle of
+\citet{deweerdt2013actitrac} from process-model fitness to next-activity prediction, and adding
+shuffled-partition and global-model controls that this literature does not routinely report.
+
+\subsection{Per-cluster sequence models}\label{subsec:rw-percluster}
+
+Learning one sequence model per cluster is not a recent arrangement. \citet{ferreira2007sequence}
+treat clustering as a mixture of first-order Markov chains, so that each cluster \emph{is} a
+sequence model and a trace belongs to the cluster whose model most probably generated it;
+clustering and per-cluster estimation are a single expectation--maximisation procedure.
+\citet{difrancescomarino2019clusteringppm} separate the two stages: prefixes of completed cases
+are clustered by control flow, a classifier is trained for each cluster, and a running case is
+routed at runtime to the classifier of the cluster it matches. How the sequence is encoded is a
+first-order determinant of how such per-cluster predictors perform \citep{teinemaa2019outcome},
+and a cross-field comparison of next-element prediction methods finds that the techniques aiming
+at interpretable models are the ones that give up accuracy \citep{tax2020interdisciplinary}.
+
+We claim none of this. Our departures are narrow, and each is stated as such: third-order Markov
+chains alongside a directly-follows graph and three neural families, rather than a single
+first-order chain; complete concluded cases rather than prefixes; a separate extraction step that
+turns each per-cluster model into one inspectable path; and, in place of the assumption that the
+arrangement pays for itself, a shuffled-partition null and a global-model baseline that measure
+how much of the apparent gain survives. Prediction is a measuring instrument here, not the
+product.
+
+\subsection{Representative and canonical traces}\label{subsec:rw-representative}
+
+Summarising a cluster by a single execution has formal machinery behind it. Multiple-sequence
+alignment, borrowed from bioinformatics, aligns traces column-wise so that the conserved core and
+the deviations can be read off directly \citep{bose2012diagnostics}. \citet{chatain2017alignment}
+go further and make model traces the centroids of the clusters, so that model explanations of
+observed behaviour drive the partition instead of vector-space similarity; later work generalises
+the centroid from a single run to a sub-model \citep{boltenhagen2021modelbased}. The idea of one
+canonical execution per cluster belongs to that line. A single path is also a deliberate move to
+the simplicity corner of the fitness/precision/generalisation/simplicity frame, bought at the cost
+of generalisation \citep{buijs2014quality}, and the directly-follows graph we use as one of the
+path learners carries its own documented distortions \citep{vanderaalst2019dfg}.
+
+What differs is what the method is allowed to assume. Alignment-based centroids require a process
+model as input, and the absence of any documented as-is model is the premise of this study rather
+than an inconvenience within it. Our representative is derived from a learned sequence model over
+the cluster's own traces, carries a likelihood, is comparable across two trace alphabets and five
+model families, and is scored against the medoid of the cluster's real traces, which we report as
+the strong baseline it turns out to be. The alignment consensus remains the alternative
+representative we did not compute, and we say so where it bears on the interpretation of our
+results.
+
+\subsection{Predictive process monitoring and its critiques}\label{subsec:rw-ppm}
+
+Next-activity prediction from event logs is mature. A single recurrent network predicts the next
+activity, its timestamp and the remaining case suffix \citep{tax2017lstm}; treating traces as
+language licenses the sequence-modelling apparatus wholesale \citep{evermann2017predicting};
+attention-based encoders followed \citep{bukhsh2021processtransformer}. The benchmarks matter more
+than the architectures. Under a common protocol, reported superiority frequently fails to
+reproduce and no architecture dominates across logs \citep{ramamaneiro2023dlppm}, and the splits
+in standard use leak information between training and test in ways that inflate reported
+performance \citep{weytjens2022leakage}. Both observations are reasons to read a single accuracy
+figure as a statement about a particular log and protocol rather than about a method, and they set
+the standard of evidence we hold our own comparison to.
+
+The critique we take most seriously is that of \citet{peeperkorn2023rnnstructure}, who show that a
+network reaching good next-activity accuracy can still fail to capture the structure of the
+underlying process, particularly when generalising to unseen variants. That result shapes our
+design rather than threatening it. Fitness and next-activity objectives can disagree, so one
+cannot be substituted for the other without argument. We therefore use accuracy retrospectively,
+as a measure of how learnable a cluster is, report path-support measures alongside it, and draw no
+conclusion about the process itself from an accuracy figure.
+
+\subsection{Cluster validity}\label{subsec:rw-validity}
+
+The indices we compute were introduced as \emph{relative} instruments, that is, devices for
+ranking candidate partitions produced under comparable conditions, not absolute measures of
+quality \citep{rousseeuw1987silhouettes, daviesbouldin1979measure, calinski1974dendrite,
+moulavi2014dbcv}. Read instead as objectives, they misbehave: partitions that directly maximise
+popular indices frequently disagree with expert reference labellings \citep{gagolewski2021invalid}.
+Over 2.7 million partitions, \citet{yerbury2025rvi} find relative validity indices empirically
+unsuitable for choosing between clustering approaches, and recommend outcome-oriented criteria
+informed by domain requirements. A further asymmetry bears directly on cross-algorithm
+comparison: no established index evaluates whether noise assignments are \emph{correct}, so a
+density-based clustering that emits noise and a partitional one that labels every point are not
+scored on the same population \citep{beer2026disco}. The genre is familiar from topic modelling,
+where a field's consensus intrinsic metric proved negatively correlated with human judgement of
+the same models \citep{chang2009teahaves}, and from the argument that clustering admits no
+application-independent quality procedure at all \citep{vonluxburg2012clustering}.
+
+The counter-case is \citet{chicco2025dbcv}, who find DBCV more informative than three competing
+density-based indices on synthetic data and on health records. We do not contest that finding. It
+compares indices within one paradigm on recovery of cluster geometry, where agreement with an
+external index reached 60\%, and informativeness about geometry is a different quantity from
+predictiveness of downstream utility. Our contribution to this thread is an instance rather than a
+theory: sixteen partitions of one administrative corpus, with the indices and a downstream measure
+reported side by side, and the resulting null stated at the strength sixteen partitions can
+support.
+
+\subsection{Privacy and public-sector process mining}\label{subsec:rw-privacy-public}
+
+Event logs are personal data in their own right, because a trace is a behavioural fingerprint that
+survives the removal of names \citep{mannhardt2019privacy, elkoumy2022privacy}. The response has
+been sanitisation designed around what the downstream analysis needs: $k$-anonymity over trace
+variants \citep{fahrenkrogpetersen2019pretsa}, extension to the contextual attributes attached to
+events \citep{fahrenkrogpetersen2020pripel}, and an optimisation formulation of the
+privacy--utility frontier \citep{fahrenkrogpetersen2023optimal}. Closest to our own experiment,
+\citet{ferrao2022utility} re-cluster an anonymised administrative cohort and compare the resulting
+solutions with three of the indices we use. Prior work therefore quantifies the utility cost of
+event-log sanitisation for process discovery \citep{fahrenkrogpetersen2019pretsa,
+fahrenkrogpetersen2023optimal}, of anonymisation for clustering low-dimensional tabular microdata
+\citep{ferrao2022utility}, and of text de-identification for supervised NLP
+\citep{lothritz2023evaluating}; to our knowledge the effect of free-text de-identification on
+unsupervised trace clustering quality and on next-activity prediction has not been reported, and
+it is that narrow question we answer against a pre-registered margin.
+
+Process mining has been applied to public administration and to courts, and to auditing before
+either \citep{vanderaalst2010auditing, jans2014fieldstudy}. Two precedents sit closest.
+\citet{unger2021jurimetrics} build an event log from business-law lawsuits at a Brazilian state
+court and find that proceedings follow an ad hoc rather than a designed sequence flow;
+\citet{nai2026procurement} reconstruct public-procurement workflows from official European tender
+records, extract case attributes from legal texts with language models, and have the discovered
+models validated by domain experts. Brazilian work has likewise argued for process mining as a
+transparency instrument and analysed an electronic process system in the judiciary
+\citep{araujo2023mineracao, limaesilva2026analise}, alongside e-government case studies and
+adoption studies elsewhere \citep{delgado2022discovery, racis2025donot, trottier2025using}. Every
+one of these analyses a procedure whose identity is known in advance. Our unit of analysis is the
+set of procedure types itself, because the administration's own declared taxonomy does not record
+it reliably, and the catalogue that results is the object we then put under evaluation.
+
+\subsection{Transparency, auditability and administrative procedure}\label{subsec:rw-legal}
+
+Scholarship on administrative transparency has largely given up the equation of disclosure with
+accountability. \citet{ananny2018seeing} set out why seeing a system amounts neither to knowing
+nor to governing it, and \citet{janssen2012benefits} find the same confusion in open government,
+where publication is routinely mistaken for use. \citet{bovens2007analysing} supplies the
+vocabulary the distinction needs: accountability is a relation in which an actor explains conduct
+to a forum competent to question and to judge. A catalogue on that reading is not a disclosure
+but the explanatory content such a forum requires, which makes naming the forum part of the
+claim rather than an afterthought.
+
+This venue's own literature treats administrative procedure at that level.
+\citet{suksi2021administrative} argues, from one national legal order, that due-process
+safeguards written for human civil servants thin out as procedure is automated, and that the
+safeguards worth having are preventive rather than reactive, which is an argument for making an
+as-is procedure inspectable before anything is automated on top of it.
+\citet{branting2025sensitive} work on government records under freedom-of-information
+obligations with a system in operational use at federal agencies, and \citet{tinarrage2025empirical}
+assess an institutional device of Brazilian law empirically, pairing classification results with a
+legal reading of why it underperforms. Closest in method and jurisdiction at once, \citet{araujo2025trace} apply trace clustering to
+Brazilian judicial process data in this journal, for the purpose of simplifying those
+procedures and identifying patterns in them. We were unable to obtain the full text and do not
+compare results against it; we record it because it is the nearest published pairing of this
+technique with this jurisdiction, and a reader assessing novelty should start there. The
+difference in setting is nonetheless substantive: judicial procedure is externally codified,
+so a partition of it can be checked against a procedural code, whereas the administrative
+routing studied here has no such external specification --- which is precisely why the record
+has to be derived rather than looked up.
+Closest to our method on the evidence we could read, \citet{vianna2024topic} discover
+topic structure without supervision over Brazilian Portuguese legal documents and have the
+result assessed by legal specialists, a step our catalogue has not been through
+(Section~\ref{sec:threats}). Two constraints follow. What the records contain decides which task
+may be attempted on them \citep{medvedeva2023rethinking}, and a taxonomy offered for legal use
+is more defensible when produced by a stated procedure with explicit ending conditions
+\citep{nickerson2013taxonomy}.

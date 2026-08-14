@@ -1,0 +1,95 @@
+{
+  "_meta": {
+    "stage": "cluster-eval",
+    "question": "Que particao cada algoritmo produz, e com que validade interna?",
+    "deterministic": "conditional",
+    "nondeterminism": "UMAP e HDBSCAN sao fixados pelo seed registrado em params",
+    "generated_at": "2026-08-12T05:09:14Z",
+    "commit": "8e51165916d00721db38c74c9bd1def6cb02c0f3",
+    "params": {
+      "run_id": "exp-anon",
+      "algo": "kmeans",
+      "k": 64,
+      "n_init": 10,
+      "random_state": 42
+    },
+    "inputs": [
+      {
+        "path": "artifacts/features/exp-anon.npz",
+        "sha256": "92ff01f95c16b8809f59bd52a458a3175836c469b0eac56c0fa6e9619e4f0891"
+      }
+    ],
+    "versions": {
+      "numpy": "2.4.6",
+      "scikit-learn": "1.9.0",
+      "hdbscan": "0.8.44",
+      "umap-learn": "0.5.12",
+      "igraph": "1.0.0",
+      "leidenalg": "0.12.0",
+      "torch": "2.13.0",
+      "neo4j": "6.2.0"
+    }
+  },
+  "dbcv": -0.06587553951322958,
+  "silhouette": 0.732292411672461,
+  "davies_bouldin": 0.5864855289236651,
+  "calinski_harabasz": 19722.078738031174,
+  "noise_ratio": 0.0,
+  "n_clusters": 64,
+  "n_samples": 5243,
+  "space": "umap50-cosine",
+  "full_population": {
+    "dbcv": -0.06587553951322958,
+    "silhouette": 0.732292411672461,
+    "davies_bouldin": 0.5864855289236651,
+    "calinski_harabasz": 19722.078738031174,
+    "noise_ratio": 0.0,
+    "n_clusters": 64,
+    "n_samples": 5243,
+    "space": "umap50-cosine",
+    "n_reassigned": 0
+  },
+  "size_stats": {
+    "min": 11,
+    "p50": 75.0,
+    "mean": 81.921875,
+    "p90": 168.20000000000002,
+    "max": 264,
+    "n_singletons": 0
+  },
+  "separation": {
+    "mean_ratio": 291.37876862461684,
+    "min_ratio": 1.32934132690239,
+    "n_touching": 0,
+    "n_overlapping": 0,
+    "n_clusters": 64
+  },
+  "extrinsic": {
+    "purity": 0.7345031470532138,
+    "nmi": 0.5314859662944273,
+    "ari": 0.13169305085850597,
+    "n_evaluated": 5243,
+    "n_reference_missing": 0
+  },
+  "meta": {
+    "algo": "kmeans",
+    "params": {
+      "k": 64,
+      "n_init": 10,
+      "random_state": 42
+    },
+    "space": "umap50-cosine",
+    "n": 5243,
+    "seed": 42,
+    "versions": {
+      "numpy": "2.4.6",
+      "sklearn": "1.9.0",
+      "hdbscan": "0.8.44",
+      "umap-learn": "0.5.12",
+      "igraph": "1.0.0",
+      "leidenalg": "0.12.0"
+    },
+    "caveat": "internal metrics computed on UMAP-reduced space; valid for relative comparison between methods on the same embedding, not as absolute cluster-quality claims",
+    "generated_at": "2026-08-12T05:09:14.702104+00:00"
+  }
+}

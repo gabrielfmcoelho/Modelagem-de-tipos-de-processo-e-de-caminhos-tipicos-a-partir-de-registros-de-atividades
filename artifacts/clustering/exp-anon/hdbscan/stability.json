@@ -1,0 +1,509 @@
+{
+  "_meta": {
+    "stage": "cluster-stability",
+    "question": "Quanto de cada cluster sobrevive a reamostragem do corpus?",
+    "deterministic": "conditional",
+    "nondeterminism": "bootstrap por reamostragem, fixado pelo seed registrado em params",
+    "generated_at": "2026-08-12T05:09:38Z",
+    "commit": "8e51165916d00721db38c74c9bd1def6cb02c0f3",
+    "params": {
+      "run_id": "exp-anon",
+      "algo": "hdbscan",
+      "params": {
+        "min_cluster_size": 20
+      },
+      "draws": 25,
+      "sample_frac": 0.8,
+      "seed": 42
+    },
+    "inputs": [
+      {
+        "path": "artifacts/features/exp-anon.npz",
+        "sha256": "92ff01f95c16b8809f59bd52a458a3175836c469b0eac56c0fa6e9619e4f0891"
+      }
+    ],
+    "versions": {
+      "numpy": "2.4.6",
+      "scikit-learn": "1.9.0",
+      "hdbscan": "0.8.44",
+      "umap-learn": "0.5.12",
+      "igraph": "1.0.0",
+      "leidenalg": "0.12.0",
+      "torch": "2.13.0",
+      "neo4j": "6.2.0"
+    }
+  },
+  "meta": {
+    "algo": "hdbscan",
+    "params": {
+      "min_cluster_size": 20
+    },
+    "draws": 25,
+    "sample_frac": 0.8,
+    "seed": 42,
+    "n_reference_clusters": 64,
+    "limitation": "clusterer refit only; UMAP not refit -> lower bound",
+    "generated_at": "2026-08-12T05:09:38Z",
+    "run_id": "exp-anon",
+    "features_file": "artifacts/features/exp-anon.npz",
+    "digest": "0db561a705b8ddae"
+  },
+  "aggregate": {
+    "jaccard_mean": 0.7548,
+    "jaccard_median": 0.8926,
+    "n_stable_above_0.75": 43,
+    "n_stable_above_0.60": 49,
+    "n_unstable_below_0.60": 15,
+    "n_clusters_scored": 64
+  },
+  "clusters": [
+    {
+      "cluster": 8,
+      "size": 224,
+      "draws": 25,
+      "jaccard_mean": 1.0,
+      "jaccard_p10": 1.0
+    },
+    {
+      "cluster": 4,
+      "size": 325,
+      "draws": 25,
+      "jaccard_mean": 1.0,
+      "jaccard_p10": 1.0
+    },
+    {
+      "cluster": 3,
+      "size": 53,
+      "draws": 25,
+      "jaccard_mean": 1.0,
+      "jaccard_p10": 1.0
+    },
+    {
+      "cluster": 25,
+      "size": 35,
+      "draws": 25,
+      "jaccard_mean": 1.0,
+      "jaccard_p10": 1.0
+    },
+    {
+      "cluster": 9,
+      "size": 90,
+      "draws": 25,
+      "jaccard_mean": 1.0,
+      "jaccard_p10": 1.0
+    },
+    {
+      "cluster": 19,
+      "size": 264,
+      "draws": 25,
+      "jaccard_mean": 1.0,
+      "jaccard_p10": 1.0
+    },
+    {
+      "cluster": 13,
+      "size": 144,
+      "draws": 25,
+      "jaccard_mean": 0.9973,
+      "jaccard_p10": 0.9916
+    },
+    {
+      "cluster": 38,
+      "size": 55,
+      "draws": 25,
+      "jaccard_mean": 0.9965,
+      "jaccard_p10": 0.987
+    },
+    {
+      "cluster": 48,
+      "size": 47,
+      "draws": 25,
+      "jaccard_mean": 0.9877,
+      "jaccard_p10": 0.9733
+    },
+    {
+      "cluster": 42,
+      "size": 71,
+      "draws": 25,
+      "jaccard_mean": 0.9861,
+      "jaccard_p10": 0.9663
+    },
+    {
+      "cluster": 52,
+      "size": 45,
+      "draws": 25,
+      "jaccard_mean": 0.9858,
+      "jaccard_p10": 0.9709
+    },
+    {
+      "cluster": 28,
+      "size": 40,
+      "draws": 25,
+      "jaccard_mean": 0.9857,
+      "jaccard_p10": 0.9691
+    },
+    {
+      "cluster": 16,
+      "size": 54,
+      "draws": 25,
+      "jaccard_mean": 0.9832,
+      "jaccard_p10": 1.0
+    },
+    {
+      "cluster": 39,
+      "size": 86,
+      "draws": 25,
+      "jaccard_mean": 0.981,
+      "jaccard_p10": 0.9698
+    },
+    {
+      "cluster": 12,
+      "size": 43,
+      "draws": 25,
+      "jaccard_mean": 0.9771,
+      "jaccard_p10": 0.9644
+    },
+    {
+      "cluster": 29,
+      "size": 74,
+      "draws": 25,
+      "jaccard_mean": 0.9769,
+      "jaccard_p10": 0.9511
+    },
+    {
+      "cluster": 40,
+      "size": 119,
+      "draws": 25,
+      "jaccard_mean": 0.9711,
+      "jaccard_p10": 0.923
+    },
+    {
+      "cluster": 44,
+      "size": 40,
+      "draws": 25,
+      "jaccard_mean": 0.9682,
+      "jaccard_p10": 0.9648
+    },
+    {
+      "cluster": 51,
+      "size": 113,
+      "draws": 25,
+      "jaccard_mean": 0.9666,
+      "jaccard_p10": 0.9544
+    },
+    {
+      "cluster": 17,
+      "size": 32,
+      "draws": 25,
+      "jaccard_mean": 0.964,
+      "jaccard_p10": 0.9553
+    },
+    {
+      "cluster": 43,
+      "size": 31,
+      "draws": 25,
+      "jaccard_mean": 0.9626,
+      "jaccard_p10": 0.9572
+    },
+    {
+      "cluster": 21,
+      "size": 49,
+      "draws": 25,
+      "jaccard_mean": 0.9586,
+      "jaccard_p10": 0.9219
+    },
+    {
+      "cluster": 56,
+      "size": 61,
+      "draws": 25,
+      "jaccard_mean": 0.9492,
+      "jaccard_p10": 0.9065
+    },
+    {
+      "cluster": 55,
+      "size": 36,
+      "draws": 25,
+      "jaccard_mean": 0.9446,
+      "jaccard_p10": 0.9074
+    },
+    {
+      "cluster": 36,
+      "size": 139,
+      "draws": 25,
+      "jaccard_mean": 0.9444,
+      "jaccard_p10": 0.9246
+    },
+    {
+      "cluster": 37,
+      "size": 129,
+      "draws": 25,
+      "jaccard_mean": 0.9435,
+      "jaccard_p10": 0.9272
+    },
+    {
+      "cluster": 57,
+      "size": 34,
+      "draws": 25,
+      "jaccard_mean": 0.9332,
+      "jaccard_p10": 0.9296
+    },
+    {
+      "cluster": 20,
+      "size": 33,
+      "draws": 25,
+      "jaccard_mean": 0.931,
+      "jaccard_p10": 0.9289
+    },
+    {
+      "cluster": 18,
+      "size": 74,
+      "draws": 25,
+      "jaccard_mean": 0.9231,
+      "jaccard_p10": 0.8714
+    },
+    {
+      "cluster": 14,
+      "size": 31,
+      "draws": 25,
+      "jaccard_mean": 0.92,
+      "jaccard_p10": 1.0
+    },
+    {
+      "cluster": 23,
+      "size": 37,
+      "draws": 25,
+      "jaccard_mean": 0.9004,
+      "jaccard_p10": 0.8207
+    },
+    {
+      "cluster": 41,
+      "size": 32,
+      "draws": 25,
+      "jaccard_mean": 0.8967,
+      "jaccard_p10": 0.9192
+    },
+    {
+      "cluster": 58,
+      "size": 49,
+      "draws": 25,
+      "jaccard_mean": 0.8885,
+      "jaccard_p10": 0.8279
+    },
+    {
+      "cluster": 47,
+      "size": 145,
+      "draws": 25,
+      "jaccard_mean": 0.8871,
+      "jaccard_p10": 0.8264
+    },
+    {
+      "cluster": 34,
+      "size": 275,
+      "draws": 25,
+      "jaccard_mean": 0.8793,
+      "jaccard_p10": 0.8379
+    },
+    {
+      "cluster": 46,
+      "size": 42,
+      "draws": 25,
+      "jaccard_mean": 0.8754,
+      "jaccard_p10": 0.4742
+    },
+    {
+      "cluster": 27,
+      "size": 116,
+      "draws": 25,
+      "jaccard_mean": 0.8549,
+      "jaccard_p10": 0.6042
+    },
+    {
+      "cluster": 59,
+      "size": 48,
+      "draws": 25,
+      "jaccard_mean": 0.8509,
+      "jaccard_p10": 0.7699
+    },
+    {
+      "cluster": 54,
+      "size": 99,
+      "draws": 25,
+      "jaccard_mean": 0.8442,
+      "jaccard_p10": 0.8209
+    },
+    {
+      "cluster": 26,
+      "size": 40,
+      "draws": 25,
+      "jaccard_mean": 0.8166,
+      "jaccard_p10": 0.2188
+    },
+    {
+      "cluster": 24,
+      "size": 28,
+      "draws": 25,
+      "jaccard_mean": 0.7823,
+      "jaccard_p10": 0.0899
+    },
+    {
+      "cluster": 45,
+      "size": 44,
+      "draws": 25,
+      "jaccard_mean": 0.7724,
+      "jaccard_p10": 0.439
+    },
+    {
+      "cluster": 2,
+      "size": 151,
+      "draws": 25,
+      "jaccard_mean": 0.7584,
+      "jaccard_p10": 0.4966
+    },
+    {
+      "cluster": 50,
+      "size": 39,
+      "draws": 25,
+      "jaccard_mean": 0.7367,
+      "jaccard_p10": 0.5
+    },
+    {
+      "cluster": 32,
+      "size": 67,
+      "draws": 25,
+      "jaccard_mean": 0.7209,
+      "jaccard_p10": 0.6421
+    },
+    {
+      "cluster": 63,
+      "size": 50,
+      "draws": 25,
+      "jaccard_mean": 0.6875,
+      "jaccard_p10": 0.5404
+    },
+    {
+      "cluster": 35,
+      "size": 28,
+      "draws": 25,
+      "jaccard_mean": 0.687,
+      "jaccard_p10": 0.0675
+    },
+    {
+      "cluster": 53,
+      "size": 90,
+      "draws": 25,
+      "jaccard_mean": 0.6396,
+      "jaccard_p10": 0.4746
+    },
+    {
+      "cluster": 61,
+      "size": 27,
+      "draws": 25,
+      "jaccard_mean": 0.608,
+      "jaccard_p10": 0.3255
+    },
+    {
+      "cluster": 0,
+      "size": 30,
+      "draws": 25,
+      "jaccard_mean": 0.5302,
+      "jaccard_p10": 0.0864
+    },
+    {
+      "cluster": 49,
+      "size": 24,
+      "draws": 25,
+      "jaccard_mean": 0.3863,
+      "jaccard_p10": 0.016
+    },
+    {
+      "cluster": 11,
+      "size": 24,
+      "draws": 25,
+      "jaccard_mean": 0.36,
+      "jaccard_p10": 0.0
+    },
+    {
+      "cluster": 10,
+      "size": 24,
+      "draws": 25,
+      "jaccard_mean": 0.36,
+      "jaccard_p10": 0.0
+    },
+    {
+      "cluster": 6,
+      "size": 42,
+      "draws": 25,
+      "jaccard_mean": 0.3498,
+      "jaccard_p10": 0.1336
+    },
+    {
+      "cluster": 60,
+      "size": 25,
+      "draws": 25,
+      "jaccard_mean": 0.3497,
+      "jaccard_p10": 0.0184
+    },
+    {
+      "cluster": 1,
+      "size": 29,
+      "draws": 25,
+      "jaccard_mean": 0.3446,
+      "jaccard_p10": 0.0669
+    },
+    {
+      "cluster": 22,
+      "size": 24,
+      "draws": 25,
+      "jaccard_mean": 0.32,
+      "jaccard_p10": 0.0
+    },
+    {
+      "cluster": 33,
+      "size": 21,
+      "draws": 25,
+      "jaccard_mean": 0.2611,
+      "jaccard_p10": 0.1759
+    },
+    {
+      "cluster": 15,
+      "size": 24,
+      "draws": 25,
+      "jaccard_mean": 0.2451,
+      "jaccard_p10": 0.0
+    },
+    {
+      "cluster": 62,
+      "size": 23,
+      "draws": 25,
+      "jaccard_mean": 0.2314,
+      "jaccard_p10": 0.011
+    },
+    {
+      "cluster": 7,
+      "size": 29,
+      "draws": 25,
+      "jaccard_mean": 0.2249,
+      "jaccard_p10": 0.0933
+    },
+    {
+      "cluster": 5,
+      "size": 23,
+      "draws": 25,
+      "jaccard_mean": 0.12,
+      "jaccard_p10": 0.0
+    },
+    {
+      "cluster": 31,
+      "size": 22,
+      "draws": 25,
+      "jaccard_mean": 0.0,
+      "jaccard_p10": 0.0
+    },
+    {
+      "cluster": 30,
+      "size": 22,
+      "draws": 25,
+      "jaccard_mean": 0.0,
+      "jaccard_p10": 0.0
+    }
+  ]
+}

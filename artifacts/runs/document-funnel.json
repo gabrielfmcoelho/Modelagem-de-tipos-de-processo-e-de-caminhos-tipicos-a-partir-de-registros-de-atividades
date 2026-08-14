@@ -1,0 +1,33 @@
+{
+  "stage": "document-funnel",
+  "phase": "documents",
+  "question": "De cada documento baixado, quantos sobreviveram a leitura, a anonimizacao, a extracao de entidades e a vetorizacao — e onde se perderam?",
+  "deterministic": "conditional",
+  "status": "ran",
+  "mode": "neo4j",
+  "started_at": "2026-08-13T11:28:00Z",
+  "ended_at": "2026-08-13T11:28:00Z",
+  "duration_seconds": 0.782,
+  "flags": {
+    "from_date": null,
+    "to_date": null,
+    "workers": null,
+    "batch_size": null,
+    "chunk_size": null,
+    "limit": null,
+    "emit_dir": null,
+    "read_dir": null
+  },
+  "inputs": [],
+  "outputs": [
+    {
+      "path": "artifacts/stats/document_funnel.json",
+      "bytes": 4226
+    }
+  ],
+  "n_inputs": 0,
+  "n_outputs": 1,
+  "summary": {
+    "duration_seconds": 0.8
+  }
+}

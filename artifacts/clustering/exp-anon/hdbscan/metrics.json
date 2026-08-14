@@ -1,0 +1,89 @@
+{
+  "_meta": {
+    "stage": "processo-cluster",
+    "question": "Que familias de processo emergem, e como se chamam?",
+    "deterministic": false,
+    "nondeterminism": "a nomeacao dos grupos e feita por LLM",
+    "generated_at": "2026-08-12T05:42:17Z",
+    "commit": "8e51165916d00721db38c74c9bd1def6cb02c0f3",
+    "params": {
+      "run_id": "exp-anon",
+      "algo": "hdbscan"
+    },
+    "inputs": [],
+    "versions": {
+      "numpy": "2.4.6",
+      "scikit-learn": "1.9.0",
+      "hdbscan": "0.8.44",
+      "umap-learn": "0.5.12",
+      "igraph": "1.0.0",
+      "leidenalg": "0.12.0",
+      "torch": "2.13.0",
+      "neo4j": "6.2.0"
+    }
+  },
+  "dbcv": -0.10091011005258392,
+  "silhouette": 0.6171824627635114,
+  "davies_bouldin": 0.7644188020320124,
+  "calinski_harabasz": 4260.022752327843,
+  "noise_ratio": 0.0,
+  "n_clusters": 64,
+  "n_samples": 5243,
+  "space": "umap50-cosine",
+  "full_population": {
+    "dbcv": -0.10091011005258392,
+    "silhouette": 0.6171824627635114,
+    "davies_bouldin": 0.7644188020320124,
+    "calinski_harabasz": 4260.022752327843,
+    "noise_ratio": 0.0,
+    "n_clusters": 64,
+    "n_samples": 5243,
+    "space": "umap50-cosine",
+    "n_reassigned": 0
+  },
+  "size_stats": {
+    "min": 22,
+    "p50": 56.0,
+    "mean": 81.921875,
+    "p90": 154.8,
+    "max": 325,
+    "n_singletons": 0
+  },
+  "separation": {
+    "mean_ratio": 12.807421120638184,
+    "min_ratio": 0.7862191554755619,
+    "n_touching": 1,
+    "n_overlapping": 0,
+    "n_clusters": 64
+  },
+  "extrinsic": {
+    "purity": 0.7297348846080488,
+    "nmi": 0.5305447818193875,
+    "ari": 0.1449597061052518,
+    "n_evaluated": 5243,
+    "n_reference_missing": 0
+  },
+  "meta": {
+    "algo": "hdbscan",
+    "params": {
+      "min_cluster_size": 20,
+      "macro_dedup_threshold": 0.0,
+      "assign_noise": true,
+      "noise_ratio_before_assignment": 0.1677,
+      "n_reassigned": 879
+    },
+    "space": "umap50-cosine",
+    "n": 5243,
+    "seed": 42,
+    "versions": {
+      "numpy": "2.4.6",
+      "sklearn": "1.9.0",
+      "hdbscan": "0.8.44",
+      "umap-learn": "0.5.12",
+      "igraph": "1.0.0",
+      "leidenalg": "0.12.0"
+    },
+    "caveat": "internal metrics computed on UMAP-reduced space; valid for relative comparison between methods on the same embedding, not as absolute cluster-quality claims",
+    "generated_at": "2026-08-12T05:42:17.276968+00:00"
+  }
+}

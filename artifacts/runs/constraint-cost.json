@@ -1,0 +1,90 @@
+{
+  "stage": "constraint-cost",
+  "phase": "evidence",
+  "question": "Quanto o automato de fluxo custa ao gerador em cada ponto de decisao?",
+  "deterministic": "conditional",
+  "status": "ran",
+  "mode": "neo4j",
+  "started_at": "2026-08-13T11:25:32Z",
+  "ended_at": "2026-08-13T11:25:33Z",
+  "duration_seconds": 0.614,
+  "flags": {
+    "from_date": null,
+    "to_date": null,
+    "workers": null,
+    "batch_size": null,
+    "chunk_size": null,
+    "limit": null,
+    "emit_dir": null,
+    "read_dir": null
+  },
+  "inputs": [
+    {
+      "path": "artifacts/clustering/exp-raw/kmeans/labels.json",
+      "sha256": "8c65a131b3a538f2847064b4dd894414e8963b2654cbe946a0576581f5f7d8fb"
+    },
+    {
+      "path": "artifacts/traces/protocol_traces.json.gz",
+      "sha256": "f24e118fc938515f16e2571acde27414ed83681f9e3f9d97e6f87d25494992da"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "artifacts/stats/constraint_cost.json",
+      "bytes": 1470
+    }
+  ],
+  "n_inputs": 2,
+  "n_outputs": 1,
+  "summary": {
+    "_meta": {
+      "stage": "constraint-cost",
+      "question": "Quanto o automato de fluxo custa ao gerador em cada ponto de decisao?",
+      "deterministic": "conditional",
+      "nondeterminism": "particao treino/teste fixada pelo seed registrado em params",
+      "generated_at": "2026-08-13T11:25:33Z",
+      "commit": "8e51165916d00721db38c74c9bd1def6cb02c0f3",
+      "params": {
+        "order": 3,
+        "top_k": 8,
+        "min_traces": 30,
+        "train_frac": 0.7,
+        "seed": 42,
+        "alphabet": "unit",
+        "run_id": "exp-raw",
+        "algo": "kmeans"
+      },
+      "inputs": [
+        {
+          "path": "artifacts/clustering/exp-raw/kmeans/labels.json",
+          "sha256": "8c65a131b3a538f2847064b4dd894414e8963b2654cbe946a0576581f5f7d8fb"
+        },
+        {
+          "path": "artifacts/traces/protocol_traces.json.gz",
+          "sha256": "f24e118fc938515f16e2571acde27414ed83681f9e3f9d97e6f87d25494992da"
+        }
+      ],
+      "versions": {
+        "numpy": "2.4.6",
+        "scikit-learn": "1.9.0",
+        "hdbscan": "0.8.44",
+        "umap-learn": "0.5.12",
+        "igraph": "1.0.0",
+        "leidenalg": "0.12.0",
+        "torch": "2.13.0",
+        "neo4j": "6.2.0"
+      }
+    },
+    "cell": "exp-raw/kmeans",
+    "alphabet": "unit",
+    "model": "markov3",
+    "top_k": 8,
+    "n_clusters": 52,
+    "n_decision_steps": 78130,
+    "constraint_alters_topk_frac": 0.109011,
+    "constraint_changes_argmax_frac": 0.010687,
+    "unconstrained_argmax_illegal_frac": 0.017266,
+    "no_legal_candidate_frac": 0.006579,
+    "duration_seconds": 0.6
+  }
+}

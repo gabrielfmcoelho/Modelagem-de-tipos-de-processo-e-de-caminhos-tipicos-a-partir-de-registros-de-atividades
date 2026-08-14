@@ -1,0 +1,52 @@
+# GPU-enabled image — same pipeline, CUDA-backed torch.
+#
+# Build:
+#   docker build -f Dockerfile.gpu -t ai-pipeline-neo4j:gpu .
+#
+# Run (requires nvidia-container-toolkit on host):
+#   docker run --rm --gpus all -v $(pwd)/.env:/app/.env ai-pipeline-neo4j:gpu run --help
+#
+# Or via docker compose (uncomment the deploy.resources block in
+# docker-compose.yml's pipeline service to expose GPUs).
+
+FROM nvidia/cuda:12.1.1-runtime-ubuntu22.04
+
+# Python 3.11 from deadsnakes-equivalent + system deps
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        software-properties-common \
+        ca-certificates \
+        curl \
+        gnupg \
+    && add-apt-repository -y ppa:deadsnakes/ppa \
+    && apt-get update && apt-get install -y --no-install-recommends \
+        python3.11 python3.11-venv python3.11-dev python3-pip \
+        poppler-utils \
+        build-essential \
+        libpq-dev \
+    && rm -rf /var/lib/apt/lists/* \
+    && ln -sf /usr/bin/python3.11 /usr/local/bin/python \
+    && ln -sf /usr/bin/python3.11 /usr/local/bin/python3
+
+WORKDIR /app
+
+# Install CPU deps first (sentence-transformers, gliner2, etc.)
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Upgrade torch to CUDA wheel
+COPY requirements-gpu.txt ./
+RUN pip install --no-cache-dir -r requirements-gpu.txt
+
+# Copy pipeline code last for layer caching
+COPY pipeline/ ./pipeline/
+
+RUN mkdir -p /app/parsed_documents /app/ner_results /app/graphify-out /app/.pipeline-state
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PIPELINE_DEVICE=auto \
+    PIPELINE_DTYPE=bf16 \
+    PIPELINE_EMBED_BATCH_SIZE=64
+
+ENTRYPOINT ["python", "-m", "pipeline"]
+CMD ["--help"]

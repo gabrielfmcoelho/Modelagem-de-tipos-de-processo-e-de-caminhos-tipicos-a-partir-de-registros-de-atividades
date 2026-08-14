@@ -1,0 +1,33 @@
+{
+  "stage": "graph-census",
+  "phase": "graph",
+  "question": "Que grafo existe apos a carga: quantos nos por rotulo, quantas arestas por tipo, e quantos processos sobreviveram a cada filtro?",
+  "deterministic": "conditional",
+  "status": "ran",
+  "mode": "neo4j",
+  "started_at": "2026-08-13T11:28:01Z",
+  "ended_at": "2026-08-13T11:28:04Z",
+  "duration_seconds": 2.763,
+  "flags": {
+    "from_date": null,
+    "to_date": null,
+    "workers": null,
+    "batch_size": null,
+    "chunk_size": null,
+    "limit": null,
+    "emit_dir": null,
+    "read_dir": null
+  },
+  "inputs": [],
+  "outputs": [
+    {
+      "path": "artifacts/stats/graph_build.json",
+      "bytes": 8685
+    }
+  ],
+  "n_inputs": 0,
+  "n_outputs": 1,
+  "summary": {
+    "duration_seconds": 2.8
+  }
+}

@@ -1,0 +1,284 @@
+\section{Discussion}\label{sec:discussion}
+
+\subsection{What a transparency instrument requires that an accuracy figure does not}
+
+A single global model predicts the next step in an administrative case about as well as the
+per-cluster models do: 0.713 against 0.726 on the action alphabet. If prediction were the goal,
+the clustering would be close to unnecessary.
+
+Prediction is not the goal. What the global model cannot produce is an object. It has no
+inventory of process types, no name for any of them, no representative flow a civil servant can
+be shown and asked whether it matches what they do. The catalogue is attributable: each case
+belongs to a named type, each type has a path, and a reader can move from a claim about
+procedure to the cases that support it. That property is what the machine-readable publication
+duty contemplates, and it is not measured by next-step accuracy at all.
+
+This is why the two contributions were kept independent. Had the catalogue's value been argued
+from the downstream gain, the honest 0.013 would have undermined it. The catalogue's value rests
+instead on the shuffled control, which shows the grouping is real, and on regenerability, which
+makes it auditable. The downstream evaluation answers a narrower question --- is per-cluster
+modelling worth the effort, and where --- and it answers it partly in the negative.
+
+\subsection{What the validity indices are actually measuring}
+
+The indices are not broken and they are not silent. They measure partition geometry, which is a
+real property, and on this corpus geometry turns out to be very nearly a restatement of how
+coarse the partition is. That is the finding, and it is more useful than the null it replaced.
+
+The evidence is a chain rather than a correlation (Section~\ref{sec:res-rq2}). Across the full
+set of clusterings, silhouette rises with the share of cases a method declines to assign, and
+declining to assign the hard cases raises the score on whatever remains. Restricting to the
+methods that assign everything removes that channel and exposes a second: silhouette rises with
+median cluster size and falls with cluster count, and cluster count is what determines how much
+of the corpus clears the evaluation floor. Both channels end in \emph{how much data survives},
+neither in \emph{how well the survivors are modelled}. Holding cluster size fixed, the index has
+no residual association with accuracy in any size band.
+
+The practical consequence is specific, and it is not the familiar advice to distrust the
+indices. What each index encodes is a preference over granularity, and the indices do not agree
+on which preference. Sweeping $k$ from 20 to 320 for the centroid clustering, silhouette peaks
+at $k = 40$ on one arm and $k = 60$ on the other, in a curve that declines only weakly and
+jitters by as much as the margin separating its winner from its runner-up; Calinski--Harabasz
+rises monotonically across the same sweep and would select the largest $k$ offered; the elbow
+criterion picks 70. Three indices, one dataset, selections an order of magnitude apart.
+
+So we do not conclude that silhouette is the right instrument for choosing $k$, only that
+choosing $k$ is the kind of decision it speaks to, and ranking partitions by expected downstream
+utility is not. On this corpus a practitioner using silhouette for the latter would in effect be
+ranking by coverage without knowing it. Report the indices next to a downstream measure and a
+coverage figure, and the substitution stops being tempting. Our
+contribution here is an instance and a mechanism rather than a theory, and it is consistent with
+much better-powered work finding these indices unsuitable for choosing between clustering
+approaches \citep{yerbury2025rvi} and with the older observation that a model's internal fit can
+move opposite to human judgement of the same output \citep{chang2009teahaves}.
+
+Two corrections we made to our own analysis belong here, because both were errors of exactly the
+kind the section warns about. We had earlier read a reversal into this corpus --- the
+best-scoring partition producing the worst paths --- and it was an artefact of computing the
+consensus partitions' indices in the co-association representation rather than in the embedding
+the other fourteen are scored in; it does not survive putting all sixteen on one scale. And the
+apparent association between the indices and utility, once that was fixed, turned out to be the
+coverage confound described above. An index computed on a population the partition selected,
+scored against a metric computed on that same population, will agree with itself.
+
+A second methodological point generalises beyond this venue. Comparing clustering algorithms on
+their own evaluated populations is invalid whenever one of them can decline to assign a case.
+The reversal we observed --- best on its own set, worst on a common set --- is not a small
+correction; it inverts the ranking. Any comparison involving a density-based method that emits
+noise should either restrict to a common set or report coverage alongside every figure.
+
+\subsection{When per-cluster modelling earns its keep}
+
+The evidence supports a specific and limited recommendation, and the sharpest form of it comes
+from the one comparison made on a single population. For routing --- which unit handles a case
+next --- per-cluster models gain 0.063 over a global model when the best family is selected, and
+0.036 family-matched, consistently across cluster sizes; on large clusters they invent
+essentially nothing (0.038 unseen transitions). For actions within a unit, per-cluster modelling
+is not merely unprofitable but counter-productive: family-matched, on the cases both alphabets
+can be scored on, it \emph{loses} 0.009 to a single global chain, in every one of the eight main
+clusterings. The recommendation is therefore not ``train action models only on large clusters''
+but ``do not partition for action prediction at all; pool the corpus''.
+
+That asymmetry has a plain reading, and the sign change makes it plainer. Organisational routing
+is procedure-specific: which unit receives a case encodes what kind of case it is. The actions
+recorded inside a unit follow conventions of the electronic process system that are shared
+across procedures, so a model pooling all cases learns them better --- it sees every procedure's
+instances of the same convention, where a per-cluster model sees only its own. For an instrument
+meant to show how work moves through an administration, this is a convenient result: the
+representation that matters most for transparency is the one where modelling per type pays, and
+the one where it does not pay is the one a transparency artefact needs least.
+
+\subsection{Which of the sixteen is the catalogue}\label{sec:selection}
+
+A study may report sixteen partitions; an administration cannot publish sixteen incompatible
+inventories of its own procedures. Section~\ref{sec:res-rq2} makes the choice tractable in two
+ways. Accuracy barely separates the clusterings, so it cannot carry the decision alone; and the
+validity indices, which would ordinarily be asked to, turn out to be a restatement of
+granularity rather than an independent quality signal. What is left is to select on the
+quantities themselves.
+
+We therefore restrict the candidates to the twelve clusterings that assign every case. This is
+not a preference for partitional methods but the removal of a confound: a method that can
+decline to assign is scored on a population it chose, and no weighting over such a mixed field
+is interpretable. Table~\ref{tab:selection} scores the twelve on accuracy over the common set,
+coverage, silhouette and median cluster size, min--max scaled, under four weightings.
+
+One candidate wins all four --- the raw-arm centroid clustering whose $k$ was chosen by
+silhouette, at 40 clusters of median size 116. It has the highest coverage of any full-coverage
+partition (0.774), the second-highest common-set accuracy (0.6963 against a best of 0.6965), and
+it wins even under the weighting that ignores the indices entirely. The two consensus partitions
+come last under every weighting. We report the criterion because the alternative --- naming the
+best-performing configuration from a sweep --- is the method-shopping this paper objects to
+elsewhere.
+
+That the winner is the silhouette-selected $k$ looks like a contradiction of
+Section~\ref{sec:res-rq2} and is not, but it should not be read as a vindication of the index
+either. Silhouette prefers coarse partitions on this data; coarse partitions leave more cases
+above the evaluation floor; coverage is what our criterion rewards. The agreement is a
+coincidence of direction, not evidence that the index identified a better partition --- and
+Calinski--Harabasz, applied to the same sweep, prefers the opposite extreme and would have
+selected a partition this criterion ranks near the bottom. We report which $k$ won and why the
+criterion chose it; we do not claim the index chose it for the right reason.
+
+\input{tables/selection}
+
+Three honest qualifications. Selecting on coverage rather than accuracy is a judgement about what
+a transparency artefact is for, not a result. The entry-level quality of the chosen catalogue is
+uneven: on the size analysis of Section~\ref{sec:res-rq3}, 52.9\% of cases sit in clusters large
+enough for their typical path to reach the quality band where fabrication is low, so nearly half
+the caseload receives an entry the paper's own evidence says fabricates more freely. That share
+is a property of the partition and not of the corpus --- it ranges from about a quarter to about
+a half across the twelve candidates --- which is a further reason to state which partition a
+catalogue came from whenever a figure like this is quoted. And the criterion is applied after the fact rather than pre-registered: we did not
+commit to these weights before seeing the candidates, and a different reader might weight
+interpretability, which we do not measure, above any of them. What the criterion buys is that
+the choice is stated and reproducible, not that it is the only defensible one. The entries
+illustrated in Table~\ref{tab:catalogue} are drawn from the partition it selects, so the
+catalogue shown and the catalogue recommended are the same object.
+
+\subsection{The record that was absent}
+
+Returning to the premise: \citet{brauneis2018algorithmic} found that transparency requests fail
+most often because the record does not exist. The catalogue described here is an attempt to
+produce that record from material administrations already hold, without asking them to document
+anything new.
+
+Two properties make it a candidate for the machine-readable publication duty rather than a
+research artefact. It regenerates: the pipeline rebuilds every reported figure from stored
+artefacts, and a verification step fails if the document and the artefacts disagree, so the
+published account cannot silently drift from the evidence. And it is bounded honestly: the
+limits in Section~\ref{sec:threats} --- particularly the duration bias --- are measured and
+reported rather than left for a reader to discover.
+
+What it is not is a process model. A typical path maximises simplicity at the cost of
+generalisation \citep{buijs2014quality}, and a directly-follows representation carries known
+pathologies \citep{vanderaalst2019dfg}. The catalogue is a description of what recurs, offered
+as a starting point for the people who run these procedures to confirm, dispute or redesign ---
+which is the use the transparency principles contemplate.
+
+\subsection{What an as-is catalogue means for accountability, and what it does not license}
+
+The artefact has an addressee, and saying who it is belongs to the claim. In the accountability
+relation of \citet{bovens2007analysing} the actor is the administration that runs the
+procedures, and the forum is plural: the internal control and ombudsman units that receive
+users' complaints, the external body that audits administrative performance, and the units
+charged with redesigning procedures. The service-charter duty in art.~7, \S~2, III
+\citep{brasil2017cdu} adds the user of the service and fixes what the account must contain,
+namely the main steps by which a service is processed. A catalogue derived from the log supplies
+that content in a form that regenerates and that attributes: a statement about a procedure can
+be traced to the cases behind it, which is the difference between releasing an event log and
+giving an account of one \citep{ananny2018seeing, janssen2012benefits}.
+
+The scope limits in Section~\ref{sec:legal} bind that use. One of them deserves restating here
+because it is the limit a forum will most want to cross: this is not a duration assessment.
+The corpus cannot support one (Section~\ref{sec:threats}), and a principle satisfied in degrees
+would not yield a breach finding even from a corpus that could.
+
+Which of the four the artefact actually serves today should be said rather than left to the
+reader. Redesign units are served: an inventory of what recurs, with a representative flow per
+type, is directly usable input to procedure redesign, and it is the use every scope limit
+survives. An external auditor is served for inventory only, since no duration or efficiency
+statistic from this corpus is admissible. Internal control and ombudsman units are \emph{not}
+served in the way the framing suggests, because they act on individual complaints and this paper
+forbids per-case use of an entry. And publication to the service user is not yet defensible:
+a path that matches under half of a real case's visits, drawn from a corpus that excludes the
+slow cases, with an unvalidated generated name, would understate what a user must go through and
+would understate it most where the understatement misleads. One forum of four, conditionally, is
+the honest count.
+
+\subsection{Legibility, and the record as a thing to be managed}
+
+Making an administration's operation legible from its own records is not a neutral act, and the
+standing objection is \citet{scott1998seeing}: schemes that render practice legible to a centre
+simplify it, and the simplification then acts back on the practice it claimed only to describe.
+Our own measurements are what give that objection force here rather than deflecting it. The
+generated paths cover fewer than half of a real case's visits, so the artefact simplifies, and
+in a measured direction. Constrained decoding enforces a movement rule that observed practice
+breaks about 8\% of the time, so the published account is normalised relative to the conduct it
+describes. And the artefact is offered to the units that redesign procedures, which is precisely
+the mechanism by which a description becomes a template.
+
+Three consequences follow for anyone adopting it, and they are design constraints rather than
+caveats. A catalogue entry must be labelled descriptive and partial, with its case count and its
+support measures travelling beside it, so that a weak entry cannot be read as a strong one.
+It must not be used as a conformance standard: a case that departs from its type's typical path
+has not thereby deviated from anything, because the path is a summary of what recurred and not a
+rule. And the classification itself becomes an object of management once published --- what
+\citet{espeland2007rankings} call reactivity --- so the types should be expected to shape the
+practice they describe, and be revised against the log rather than defended. The disclaimer in
+Section~\ref{sec:legal} that these types are descriptive and revisable is the right instinct;
+this is the literature explaining why that disclaimer erodes unless the revision is built in.
+
+\subsection{What adoption would require}\label{sec:adoption}
+
+The eleven-hour figure quoted in Section~\ref{sec:corpus} is the cost of the \emph{study}, not of
+the artefact, and conflating them overstates what adoption costs by an order of magnitude. That
+figure covers sixteen clusterings across two text arms, both trace alphabets, five model families
+per cluster and forty evaluation cells --- 8{,}985 trained models whose purpose was to establish
+which parts of the method are load-bearing. An administration producing a catalogue does not
+repeat that. It needs ingestion into an event knowledge graph, the feature blocks, \emph{one}
+clustering, the naming step, \emph{one} path learner, and the constrained decoder. On the
+evidence here it should choose the routing alphabet; the model family is a cost decision the
+paper reports on both sides rather than settling. The strongest family on routing is the GRU,
+gaining 0.053 over the global model against the third-order Markov chain's 0.035 --- half as
+much again, and not a rounding difference. Markov is the recommendation only where the GPU
+infrastructure the neural families require is not already in place, at the cost of roughly a
+third of the gain. On actions per-cluster modelling should not be done at all. That configuration is a small fraction
+of the study's compute and needs no training hardware beyond what the document embedding
+requires.
+
+What does not shrink is everything around the models, and it is the harder half. The method
+presumes an electronic process system whose event log is complete enough to reconstruct
+per-case routing; a graph database and the engineering to maintain it; a document store from
+which opening documents can be retrieved and parsed; and locally executed embedding and
+language models, which in this study was a legal requirement rather than a preference and
+therefore sets a hardware floor an administration cannot avoid by using a hosted service. That
+floor was met here without procurement: the embedding and language models ran on GPU
+infrastructure the state administration already owned and operates, reached over an
+OpenAI-compatible interface that never leaves its network. The requirement is therefore
+demanding but not exotic --- an administration that has already built shared computing capacity
+can satisfy it, and one that has not must treat that, and not the modelling, as the first cost.
+The method also presumes an instrument authorising the processing, which took longer to obtain
+than any computation reported here.
+
+Two consequences follow that bear on who can use this. Scale matters, because the method is
+useless below the point where types have enough cases to model: at the size threshold observed
+here, an administration handling a few hundred cases a year would populate no entry at all, and
+the catalogue is an instrument for bodies with caseloads in the thousands. And the artefact must
+be refreshed, since a published account of processing steps that silently ages is worse than
+none; the regenerability described in Section~\ref{sec:setup} is what makes a refresh cheap, but
+someone must own the cadence, and entries that appear or vanish between refreshes are a
+governance question we do not answer.
+
+\subsection{Governance of the unit-level record}\label{sec:governance}
+
+The artefact is a behavioural record of two populations, and only one of them receives any
+protective treatment in the method. The parties to the cases are covered by the de-identification
+of Section~\ref{sec:anon}. The public servants who processed those cases are not: the routing
+alphabet is, by construction, a record of which organisational unit handled what and in what
+order, and it is the representation this paper argues is the more informative of the two. The
+paper's best result is therefore also its most sensitive artefact, and a disclaimer that the
+catalogue is not a basis for action against identified staff binds the present authors and
+nobody who later inherits the pipeline.
+
+Four requirements follow for an administration adopting this, and we state them as requirements
+because the study itself did not have to meet them and a deployment would. First, unit-level
+statistics approach individual-level statistics as unit headcount falls, and leaf units in a
+secretariat are frequently staffed by one to three people; a published figure attributed to such
+a unit is a productivity record for named individuals. A headcount or case-volume threshold
+below which no unit-level figure is published is the direct analogue of the 30-trace evaluation
+floor this study already applies for a statistical reason. Second, the artefact should be
+separated into a published catalogue, an internal catalogue carrying full unit attribution under
+a stated purpose limitation, and the underlying graph, with distinct access regimes and a named
+decision-maker for each. Third, the foreseeable misuses --- unit ranking, individual performance
+assessment, disciplinary use --- should be named in the instrument authorising the work rather
+than left to be discovered, since nothing technical in the method prevents them. Fourth, a
+per-unit routing catalogue is a matter on which staff representative bodies have a legitimate
+interest; this study did not consult them, and an administration deploying it should.
+
+We flag one further gap rather than fill it. The legal basis on which a public body processes
+these records for analysis of this kind is a question of data-protection law that
+Section~\ref{sec:legal} does not resolve, because this study proceeded under a controller's
+authorisation and had no occasion to identify the statutory hypothesis an adopting body would
+need to rely on. That question would be the first one asked of any administration attempting to
+reproduce this work, and it deserves a treatment we are not in a position to give it.

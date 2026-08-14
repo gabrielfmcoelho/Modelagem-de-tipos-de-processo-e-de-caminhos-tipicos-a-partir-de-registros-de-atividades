@@ -1,0 +1,88 @@
+\section{Introduction}\label{sec:intro}
+
+Access-to-information law assumes that public administrations know how they work. Freedom of
+information regimes, open data mandates and machine-readable publication duties are all written
+as though an accurate account of administrative practice sits somewhere in a filing system,
+waiting to be released. \citet{brauneis2018algorithmic} tested that assumption directly, filing
+42 open-records requests across 23 states, and found the binding obstacle was not trade secrecy
+or exemption. It was that the records had never been created. There was nothing to disclose.
+
+Administrative process systems make the gap partially solvable. A modern electronic process
+system records every action taken on every case: which unit received it, what was done, when it
+moved on. The trace exists. What does not exist is the account of what those traces mean in
+aggregate: which kinds of procedure the administration actually runs, and how each of them
+actually flows. Administrations do maintain a declared taxonomy of procedure types, but that
+taxonomy is a classification applied at opening, by the person opening the case, and its
+relationship to observed practice is an empirical question rather than a given.
+
+In the corpus studied here, that relationship is weak in a specific and diagnosable way. A
+single catch-all label covers 30.5\% of the concluded cases. Compare an emergent partition derived from the
+event log against the declared taxonomy and the agreement is modest (ARI 0.202); remove that one
+label and agreement rises to 0.352. The official taxonomy is not uninformative everywhere. Its
+disagreement with practice is concentrated in a junk drawer, which is the characteristic failure
+of a classification maintained for filing rather than for analysis.
+
+This paper derives the missing record and shows how such a record has to be evaluated. From the
+event log of a state-level secretariat of a Brazilian state administration, we build an event
+knowledge graph of 5{,}243 concluded administrative cases, group them into emergent process
+types using the text of each case's opening document together with its routing and action
+history, and learn a typical path for each type. The result is a catalogue: a set of named
+process types, each with a representative flow, derived from the administration's own records
+and regenerable from them.
+
+\subsection*{Contributions}
+
+\textbf{An auditable as-is catalogue of process types, offered as a transparency instrument.}
+The artefact is what the machine-readable publication duty in Brazil's access-to-information
+law contemplates, and what \citeauthor{brauneis2018algorithmic}'s requesters could not obtain.
+Two properties make it usable rather than merely produced. It is non-random: permuting cluster
+membership while holding cluster count, size distribution and evaluated population fixed drops
+downstream next-step accuracy from 0.726 to 0.494, so the grouping carries the signal rather
+than the shape of the partition. And it is reproducible: every clustering that is defined as a function of the feature matrix refits exactly
+from its stamped feature matrix, and every number reported in this paper is regenerated from
+artefacts by a pipeline stage that fails if a generated table drifts, and the load-bearing
+figures in the running text are held to the artefacts by a second check that fails in either
+direction.
+
+\textbf{An external evaluation protocol, with controls, for judging such a catalogue.} The
+principle of scoring a clustering by the downstream model it enables is established
+\citep{deweerdt2013actitrac}; we extend it from process-model fitness to next-activity
+prediction, apply it externally to partitions produced independently by four algorithm families
+across two trace alphabets, and add two controls this literature does not routinely report. The
+controls matter more than the extension. Measured against the conventional within-cluster
+baseline, per-cluster modelling appears to gain 0.083; measured against a single global model
+trained on the pooled corpus, the gain is 0.013. Both numbers are correct measurements of
+different quantities, and reporting only the first is what makes a modest result look strong.
+
+The two contributions are deliberately independent. The catalogue claim rests on the shuffled
+control and on reproducibility, not on the size of the downstream gain, so the modest gain does
+not undercut it.
+
+\subsection*{Research questions}
+
+\begin{description}
+  \item[RQ1] Can an auditable catalogue of emergent process types be derived from the event log
+    and opening-document text, and does it capture structure the declared taxonomy misses?
+  \item[RQ2] Does the choice of clustering algorithm matter to downstream utility, and do
+    internal cluster validity indices predict it --- or do they measure something else?
+  \item[RQ3] Do per-cluster typical paths generalise --- covering what real cases do without
+    fabricating steps --- and do they improve on a global model, a random partition, and a real
+    representative case?
+  \item[RQ4] Does constrained decoding provide the compliance guarantee an audit artefact
+    requires, and at what cost?
+  \item[RQ5] Does anonymisation degrade the structure or its downstream utility?
+\end{description}
+
+Several answers are negative, and they are reported as findings. Algorithm choice separates the
+clusterings very little: sixteen spanning four algorithm families fall within 0.0079 of each
+other once scored on the cases all of them evaluate, though the interval around that spread is
+too wide for an equivalence claim. The internal validity indices that would ordinarily choose
+between them measure something else: silhouette tracks how much of the corpus a partition
+retains, and has no association with accuracy once cluster size is held fixed. A real
+representative case remains a strong baseline that the generated paths do not dominate. These results constrain what the method can claim, and they
+are the reason the positive results are credible.
+
+Section~\ref{sec:related} situates the work; Section~\ref{sec:legal} sets out the normative
+framing; Sections~\ref{sec:method} and \ref{sec:setup} describe the corpus, the method and the
+experimental design; Section~\ref{sec:results} reports results by research question;
+Sections~\ref{sec:discussion}--\ref{sec:conclusion} discuss, bound and conclude.

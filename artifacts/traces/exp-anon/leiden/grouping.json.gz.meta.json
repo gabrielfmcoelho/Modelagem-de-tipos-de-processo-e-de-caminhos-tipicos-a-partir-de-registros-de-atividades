@@ -1,0 +1,38 @@
+{
+  "_meta": {
+    "stage": "export-traces",
+    "question": "Qual a sequencia de estados de cada processo do corpus?",
+    "deterministic": "conditional",
+    "nondeterminism": "reflete o estado do grafo no momento da leitura",
+    "generated_at": "2026-08-13T09:08:15Z",
+    "commit": "8e51165916d00721db38c74c9bd1def6cb02c0f3",
+    "params": {
+      "run_id": "exp-anon",
+      "algo": "leiden",
+      "min_traces": 30
+    },
+    "inputs": [
+      {
+        "path": "artifacts/clustering/exp-anon/leiden/labels.json",
+        "sha256": "afd8bc8ddc58391aaac5a54a94bb980a7bd523371660084598b95c743ef70e0d"
+      },
+      {
+        "path": "artifacts/traces/protocol_traces.json.gz",
+        "sha256": "f24e118fc938515f16e2571acde27414ed83681f9e3f9d97e6f87d25494992da"
+      }
+    ],
+    "versions": {
+      "numpy": "2.4.6",
+      "scikit-learn": "1.9.0",
+      "hdbscan": "0.8.44",
+      "umap-learn": "0.5.12",
+      "igraph": "1.0.0",
+      "leidenalg": "0.12.0",
+      "torch": "2.13.0",
+      "neo4j": "6.2.0"
+    }
+  },
+  "describes": "artifacts/traces/exp-anon/leiden/grouping.json.gz",
+  "sha256": "e57337a30309cc2c542c2b360bb59fb6d3a49b8625b9af2fe058f796cd042ef5",
+  "bytes": 24389
+}

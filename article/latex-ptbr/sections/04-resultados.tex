@@ -1,0 +1,118 @@
+\section{RESULTADOS E DISCUSSÃO}\label{sec:res}
+
+Esta seção apresenta os resultados empíricos da aplicação do \emph{pipeline} sobre o corpus de 5.243 processos concluídos na SEAD-PI em 2025. A análise divide-se na avaliação do catálogo emergente frente à taxonomia oficial, no impacto dos atributos, na validação das partições via índices internos e no desempenho preditivo dos caminhos típicos. 
+
+A avaliação foi estruturada em 14 agrupamentos, distribuídos por três alfabetos de traço (ação por unidade, roteamento e procedimento) e testados contra seis famílias de modelo, totalizando 84 células de avaliação, 4.323 grupos e 25.938 modelos treinados.
+
+\subsection{O Catálogo Emergente vs. Taxonomia Declarada}\label{sec:res-catalogo}
+
+O agrupamento dos 5.243 processos produziu entre 40 e 108 tipos ao longo das 14 configurações (com tamanho mediano variando de 39 a 94 processos). Nenhum processo ficou sem atribuição, visto que o ruído dos algoritmos de densidade foi realocado ao grupo mais próximo. A etapa de auditoria confirmou a regerabilidade exata (1,0) de todas as 14 partições a partir dos seus atributos.
+
+Ao confrontar as partições emergentes com a taxonomia declarada pela administração, a concordância demonstrou-se moderada (Tabela~\ref{tab:taxonomy}). O Adjusted Rand Index (ARI) variou de 0,116 a 0,145 nos seis agrupamentos principais. 
+
+\input{tables/taxonomy}
+
+Essa discordância é impulsionada majoritariamente por uma única classe genérica ("documentos oficiais"), que abrange 30,2\% do corpus. Ao removê-la, o ARI salta para a faixa de 0,230 a 0,283. Para validar se o impacto advém do tamanho da classe ou de sua natureza, a Tabela~\ref{tab:catch-all-null} testa essa remoção contra uma hipótese nula pareada por volume. O resultado indica que remover partições aleatórias de tamanho equivalente degrada o ARI, confirmando que a taxonomia oficial perde precisão justamente por utilizar rótulos "guarda-chuva" de caráter arquivístico, em vez de capturar o fluxo procedimental real.
+
+\input{tables/catch-all-null}
+
+\subsection{Impacto dos Blocos de Atributos e Dependência Temporal}\label{sec:res-blocos}
+
+A Tabela~\ref{tab:ablation} documenta o estudo de ablação realizado sobre o agrupamento por densidade (braço anonimizado). A remoção do bloco de palavras-chave reduz o ARI (0,596) a níveis comparáveis ao descarte de metade do histórico transacional de cada processo (0,649). Truncar a linha do tempo dos casos a 25\% reduz o ARI para 0,467, indicando que a caracterização precisa do processo se consolida no seu histórico de tramitação, e não apenas no documento de abertura.
+
+\input{tables/ablation}
+
+\subsubsection{Impacto da Estrutura Temporal na Classificação}\label{sec:res-holdout}
+
+Para avaliar o quanto a estrutura temporal do processo afeta sua classificação e afastar a hipótese de que a predição possui alto desempenho apenas porque a partição agrupa processos com base em seu histórico tardio, os modelos foram testados contra agrupamentos construídos exclusivamente com os primeiros 25\% dos traços. A Tabela~\ref{tab:temporal-holdout} demonstra que no alfabeto de procedimento (o único onde a modelagem especializada supera consistentemente um modelo global), 92,5\% do ganho de acurácia sobrevive mesmo quando o agrupador ignora o futuro do processo. Nos demais alfabetos, o ganho aproxima-se do ruído residual, confirmando a robustez da classificação temporal e estrutural do método.
+
+\input{tables/temporal-holdout}
+
+\subsection{Diferenciação entre Partições e Índices Internos}\label{sec:res-particoes}
+
+A exigência de tamanho mínimo (30 traços por grupo) e o colapso de repetições afetam a cobertura do corpus de maneira desigual. No alfabeto de roteamento, processos que tramitaram em uma única unidade perdem as transições e são descartados. Para equalizar a comparação entre as 14 configurações de agrupamento, todas foram repontuadas exclusivamente sobre o conjunto de 967 processos que sobrevivem aos cortes de todas elas (Tabela~\ref{tab:common-set}). A amplitude de acurácia observada entre a melhor e a pior partição foi de apenas \textbf{0,0055}, evidenciando que não há um agrupamento nitidamente superior com base exclusiva na acurácia preditiva.
+
+\input{tables/common-set}
+
+\subsubsection{Limitações dos Índices Internos de Validade}\label{sec:res-indices}
+
+As Tabelas~\ref{tab:intrinsic-rows} e \ref{tab:intrinsic} reportam os índices internos de validação (Silhouette, DBCV, Davies-Bouldin, Calinski-Harabasz) e a utilidade a jusante. 
+
+\input{tables/intrinsic-rows}
+\input{tables/intrinsic}
+
+Nenhum dos oito índices geométricos testados conseguiu prever de forma confiável a utilidade final dos caminhos típicos gerados (o menor $p$-valor sob permutação foi 0,053 para o DBCV). Métricas clássicas de compacidade, como DBCV e Silhouette, correlacionaram-se com a predição a jusante em sentidos opostos. A Tabela~\ref{tab:index-mechanism} demonstra que a forte correlação dos índices restringe-se apenas a características dimensionais, como o número de grupos (granularidade), e não à fidelidade comportamental. Por consequência, a seleção do modelo a ser publicado não deve ser delegada cegamente a métricas internas.
+
+\input{tables/index-mechanism}
+
+\subsection{Avaliação Preditiva contra Linhas de Base}\label{sec:res-caminhos}
+
+A capacidade preditiva das seis famílias de modelos foi submetida a 252 comparações contra controles estritos (Tabelas~\ref{tab:controls}, \ref{tab:delta-star}). 
+
+\subsubsection{Comparação contra Partições Embaralhadas (\texorpdfstring{$\Delta^*$}{Delta*})}\label{sec:res-sinal}
+
+Para isolar o valor informacional do agrupamento em relação ao mero "dividendo de partição" (facilidade de prever classes em vocabulários menores), utilizou-se a métrica $\Delta^*$: a diferença de acurácia entre a partição real e uma versão com os mesmos tamanhos e populações, porém com a pertinência dos rótulos embaralhada.
+
+O $\Delta^*$ mostrou-se positivo em \textbf{100\% das 252 comparações}. No alfabeto de ação por unidade, atingiu de 0,165 a 0,328; em roteamento, de 0,143 a 0,285; e em procedimento, de 0,119 a 0,177. A pertença aos grupos carrega, portanto, um sinal estrutural latente válido que a taxonomia oficial não reflete. 
+
+\input{tables/controls}
+\input{tables/delta-star}
+
+Contudo, observou-se que o $\Delta^*$ cresce monotonicamente junto com a granularidade dos agrupamentos: grupos menores geram controles embaralhados mais fracos. Portanto, o $\Delta^*$ atua como um teste de admissibilidade estatística (comprova que há padrão), e não como uma função de ordenação para eleger a melhor partição candidata.
+
+\subsubsection{Desempenho das Famílias de Modelos e Fidelidade de Arestas}\label{sec:res-familias}
+
+A diferença de desempenho preditivo entre modelos estocásticos clássicos e arquiteturas neurais complexas foi marginal nos três alfabetos. No alfabeto de roteamento, a cadeia de Markov de 3ª ordem alcançou 0,698 de acurácia, ficando a apenas 1,3 ponto percentual do Transformer (0,711). No alfabeto de procedimento, a cadeia de Markov marcou 0,733 contra 0,754 da arquitetura GRU (diferença de 2,2 pontos). Esses resultados indicam que modelos de menor custo computacional (baseados em matrizes de transição) entregam resultados competitivos frente a redes neurais neste domínio específico.
+
+A métrica de fidelidade de arestas (Edge-F1), que avalia a topologia do grafo gerado, revelou que o ganho preditivo de próximo passo não se traduz necessariamente em ganho estrutural. No alfabeto de procedimento, o Edge-F1 da partição real foi 0,729 contra 0,734 do controle embaralhado ($\Delta^* = -0{,}006$). Isso demonstra que o valor do particionamento, neste caso, incide sobre a previsão da sequência linear de ações (o modelo de linguagem do traço), e não sobre a descoberta de fluxos de trabalho estruturalmente distintos.
+
+\subsubsection{Estratificação por Tamanho de Grupo e Comparação com Processos Reais}\label{sec:res-tamanho}
+
+O desempenho dos modelos foi estratificado pelo número de instâncias contidas em cada \emph{cluster}. Conforme detalhado nas tabelas de tendência por tamanho, grupos maiores tendem a gerar caminhos preditivos com menor taxa de fabricação de transições inéditas, especialmente nos alfabetos de roteamento e ação por unidade. 
+
+\input{tables/size-trend}
+
+Para avaliar o grau de realismo das predições, os caminhos gerados foram confrontados com o medoide (o traço real mais central de cada grupo). Constatou-se uma subgeração sistemática: os caminhos sintéticos cobrem apenas cerca de 52\% a 54\% das visitas de um processo real e são estruturalmente mais curtos. No alfabeto de roteamento, os modelos generativos (como Markov e GRU) produziram rotas mais "limpas" (menos idiossincráticas e com menor fabricação de arestas) que o próprio medoide. No alfabeto de procedimento, entretanto, o medoide superou todos os geradores sintéticos ao apresentar uma fabricação quase nula de arestas inéditas (0,415 transições não observadas, contra 2,993 da GRU).
+
+\subsection{Conformidade com as Regras de Tramitação}\label{sec:res-conformidade}
+
+A viabilidade técnica de um catálogo auditável exige que os caminhos gerados não violem as lógicas fundamentais do sistema de origem. A Tabela~\ref{tab:flow} consolida os testes de conformidade em relação às regras de pareamento (envio e recebimento) do SEI.
+
+\input{tables/flow}
+
+No alfabeto de ação por unidade, a geração irrestrita obteve alta aderência: entre 86,4\% e 94,9\% dos traços gerados respeitaram nativamente as regras de fluxo. No entanto, no alfabeto de procedimento, as próprias instâncias reais violam a regra em larga escala (apenas 24,40\% de conformidade no log original). A aplicação da decodificação restrita via máquina de estados mitigou esse problema, garantindo a validade estrutural por construção ao custo de alterar o candidato preditivo ótimo em cerca de 1,07\% das decisões de roteamento.
+
+\subsection{Anonimização e Custo de Utilidade}\label{sec:res-anon}
+
+O impacto da supressão de dados pessoais (exigida pela LGPD e pelo termo de autorização) sobre a acurácia preditiva foi avaliado comparando-se o braço bruto e o braço anonimizado processo a processo, via \emph{bootstrap} pareado com 2.000 replicações. 
+
+Os resultados mostram que todas as 54 comparações de modelo por agrupamento foram não inferiores na margem pré-registrada $\delta = 0{,}01$. Sob a margem de sensibilidade mais restrita de $\delta = 0{,}005$, obteve-se sucesso em 49 das 54 medições. Conclui-se que a anonimização textual aplicada previamente não impõe custo estatisticamente relevante à utilidade preditiva a jusante.
+
+\subsection{Seleção da Configuração do Catálogo Final}\label{sec:selecao}
+
+Como a amplitude de acurácia entre as 14 partições sobre o conjunto comum foi estatisticamente mínima (0,0055) e os índices geométricos internos demonstraram-se falhos para ordenação, a seleção da partição final exigiu critérios heurísticos alinhados ao objetivo do artefato de transparência.
+
+A Tabela~\ref{tab:selection} ilustra a pontuação dos candidatos baseada na composição de cobertura, tamanho mediano, acurácia e \emph{silhouette}.
+
+\input{tables/selection}
+
+A configuração selecionada para a entrega metodológica foi o \textbf{agrupamento por centroides (K-means) do braço sem anonimização com $k$ definido pela \emph{silhouette}}. Essa parametrização assegura a formação de 60 grupos com um tamanho mediano robusto (71,5 processos) e 75,1\% de cobertura do corpus avaliável. A geração dos caminhos típicos foi parametrizada utilizando a arquitetura \textbf{GRU} sob o alfabeto de \textbf{roteamento}, priorizando a interpretabilidade organizacional exigida por relatórios de conformidade pública.
+
+\subsection{Estrutura do Catálogo Entregue}\label{sec:res-entrada}
+
+Com a configuração final estabelecida, a Tabela~\ref{tab:catalogue} ilustra dez das 60 entradas nomeadas que compõem o artefato entregue. A tabela evidencia a dispersão intrínseca na qualidade de predição entre diferentes tipos processuais: categorias estruturadas, como "alterações contratuais" (210 processos), atingem 0,984 de acurácia de próximo passo; em contraste, agrupamentos mais difusos, como o de "justificativa de ponto", apresentam acurácia na faixa de 0,570. Por essa razão, as métricas de suporte e o tamanho do grupo devem obrigatoriamente acompanhar a publicação de cada entrada no catálogo real.
+
+\input{tables/catalogue}
+
+\subsection{Considerações de Accountability, Governança e Limitações}\label{sec:res-accountability}
+
+A transposição de um \emph{pipeline} de \emph{machine learning} para a esfera da auditoria pública exige salvaguardas estritas de governança. O catálogo gerado fornece um inventário rastreável e atribuível do "que de fato ocorre" na administração, atendendo às demandas de transparência ativa (LAI). 
+
+Entretanto, sua natureza é estritamente \textbf{descritiva}. Ele não deve ser instituído como norma ou padrão punitivo para avaliar desvios individuais de servidores, dado que captura variações estatísticas, e não determinações legais. Ademais, a interpretação dos resultados reportados nesta seção deve ponderar as seguintes ameaças à validade e limitações do desenho experimental:
+
+\begin{itemize}
+    \item \textbf{Censura à Direita e Viés de Duração:} O recorte de analisar processos iniciados e concluídos dentro de uma única janela anual impõe um subdimensionamento de processos longos (estimado em 18,2\% de déficit). Métricas absolutas de eficiência de tempo não são deriváveis deste corpus.
+    \item \textbf{Subgeração Sistêmica:} Conforme medido, os modelos sintéticos sintetizam rotas que cobrem apenas cerca de metade das transições de um processo real complexo. Utilizá-los diretamente como "cartas de serviço" ao cidadão subestimaria o trâmite enfrentado.
+    \item \textbf{Dependência de Estágio Tardio:} A vetorização dos processos incluiu todo o histórico de tramitação. Logo, os modelos não são capazes de prever com precisão a tipologia do processo \emph{zero-shot} (no exato momento da autuação), atuando primordialmente como ferramenta \emph{post-mortem} de auditoria.
+    \item \textbf{Validação Humana e Linearização:} Os rótulos do catálogo foram gerados algoritmicamente (LLMs locais) e carecem de homologação por especialistas no domínio jurídico-administrativo. Além disso, a conversão de processos concorrentes em sequências cronológicas lineares pode mascarar ramificações paralelas genuínas da arquitetura do SEI.
+\end{itemize}

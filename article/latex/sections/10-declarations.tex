@@ -1,0 +1,81 @@
+\section*{Declarations}
+
+\paragraph{Funding.}
+No grant or external funding supported this work. The participating administration provided
+in-kind institutional support: access to its data lake and to staff who explained the meaning of
+organisational units and action types.
+
+\paragraph{Ethics and data-processing authorisation.}
+No data were collected from human participants. Staff of the participating administration were
+consulted, in the course of the authors' ordinary working contact with them, on what particular
+organisational units and action types signify in the source system; no interview was recorded,
+transcribed or analysed, no personal data were collected from them, and no statement by any
+member of staff is reported as a finding. On that basis the study was not submitted to an ethics
+committee. Readers who take a broader view of what constitutes research involving human
+participants should treat that consultation as the point at issue, and it is disclosed here for
+that reason.
+
+The study was conducted under a formal data-processing authorisation issued by the head of the
+participating administration acting as data controller under the Brazilian General Data
+Protection Law, in force for the period covering this work. The instrument authorises processing of
+administrative case records for academic purposes, requires pseudonymisation or anonymisation
+before the clustering and vectorisation stages, requires that processing occur entirely within
+the administration's own computing environment using locally executed open-weight models with
+no transfer to external services, and restricts academic disclosure to cluster names, generic or
+synthetic process examples, aggregate metrics, and source code without credentials. All results
+reported here fall within that scope.
+
+\paragraph{Positionality and competing interests.}
+The authors have no financial competing interests. Two non-financial ones are declared. The
+research team has an institutional relationship with the administration studied, which bears
+both on the access that made this work possible and on the potential for bias in framing and
+interpretation. And the administration held a right of prior clearance over publication of the
+aggregate results reported here, which is a competing interest rather than a form of support:
+findings unfavourable to the administration are structurally less likely to survive to
+publication than favourable ones, and a reader should weigh the negative results reported
+throughout this paper against the fact that they were published with its consent. That
+clearance was sought and granted for this manuscript; the paper reports results the
+administration was free to withhold, including the ones least favourable to the case for
+adopting the method. A positionality
+statement setting out both has been provided to the editors separately; it is withheld here
+because it would identify the authors during double-blind review, and it will appear in full at
+camera-ready.
+
+\paragraph{Legal basis for the processing.}
+The authorisation described above is the instrument under which this study proceeded, but an
+authorisation issued by a controller is not itself a basis for processing under the general data
+protection statute. The instrument does allocate responsibility for the stage that matters: it
+provides that the exploratory graph may contain non-anonymised data, that this stage forms part
+of the processing carried out under the controller's responsibility and confined to its secure
+environment, and that it does not constitute autonomous academic use. What it does not do is
+identify which statutory hypothesis the controller relied on, and neither do we. We record that
+gap rather than paper over it: an administration seeking to reproduce this work would need to
+establish that basis before beginning, and Section~\ref{sec:governance} states why we regard it
+as the first question such an administration should answer.
+
+\paragraph{Data availability.}
+Under the governing instrument, the methodology and source code are the researcher's property
+and the derived graph database is the administration's. Source code and derived aggregate
+artefacts --- cluster-level metrics, the generated result tables, and the evaluation pipeline
+--- can therefore be released. The underlying event log, case documents and graph database
+cannot: they contain personal data whose transfer to third parties the instrument forbids, and
+they are not the researcher's to release. Every quantitative claim in this paper is regenerated
+from stored artefacts by a single pipeline stage, which fails if the manuscript and the
+artefacts disagree.
+
+\paragraph{Use of AI tools.}
+Large language models were used in two distinct roles, both disclosed. As components of the
+method: a locally executed open-weight model produced the topic and summary of each opening
+document and the controlled keyword vocabulary, and a local embedding model produced document
+vectors; the governing instrument requires that such models run locally, and no case data was
+sent to any external service. As adversarial review assistance: AI assistance
+was used to review the manuscript text and the analysis and test code, particularly to identify
+logical gaps --- claims unsupported by the evidence cited, figures disagreeing between prose and
+artefact, and missing steps in an argument. That use is distinct from the previous one: it
+produced objections to the text rather than text. Several claims made in earlier drafts of this
+paper were withdrawn or restated as a result. Every objection was assessed individually, and those accepted were accepted on verification against
+the artefacts rather than by deference to the tool. The authors verified every reported figure
+against the generated artefacts and are responsible for all claims.
+
+\paragraph{Author contributions.}
+Withheld for double-blind review; to be supplied in CRediT taxonomy form at camera-ready.

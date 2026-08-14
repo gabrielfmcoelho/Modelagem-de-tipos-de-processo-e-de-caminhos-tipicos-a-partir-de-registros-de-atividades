@@ -1,0 +1,29 @@
+{
+  "stage": "typical-cells",
+  "phase": "typical-path",
+  "question": "Quanto do ganho por cluster sobrevive quando o modelo só vê o começo do histórico do processo?",
+  "deterministic": true,
+  "status": "ran",
+  "mode": "neo4j",
+  "started_at": "2026-08-13T09:14:12Z",
+  "ended_at": "2026-08-13T09:19:54Z",
+  "duration_seconds": 342.055,
+  "flags": {
+    "from_date": null,
+    "to_date": null,
+    "workers": null,
+    "batch_size": null,
+    "chunk_size": null,
+    "limit": null,
+    "emit_dir": null,
+    "read_dir": null
+  },
+  "inputs": [],
+  "outputs": [],
+  "n_inputs": 0,
+  "n_outputs": 0,
+  "summary": {
+    "failed": [],
+    "duration_seconds": 342.1
+  }
+}

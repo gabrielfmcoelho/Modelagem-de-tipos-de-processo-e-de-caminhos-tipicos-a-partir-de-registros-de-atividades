@@ -1,0 +1,57 @@
+\section{REVISÃO DE LITERATURA E MARCO NORMATIVO}
+\label{sec:revisao}
+
+Este trabalho situa-se na interseção de duas literaturas distintas: o Direito Administrativo, que estabelece os requisitos de transparência e inteligibilidade dos procedimentos públicos, e a Ciência da Computação (Mineração de Processos), que fornece as técnicas para reconstruir o fluxo desses procedimentos a partir de registros transacionais. 
+
+\subsection{Transparência, auditabilidade e procedimento administrativo}
+\label{sec:rev-transparencia}
+
+A literatura sobre transparência administrativa demonstra que a simples disponibilização de dados não garante \emph{accountability} \cite{ananny2018seeing, janssen2012benefits}. A doutrina brasileira reforça que a transparência exige "publicidade qualificada", na qual a informação deve ser não apenas acessível, mas inteligível \cite[p.~245]{brbaptista2023transparencia}. Essa exigência demanda a materialização clara do percurso procedimental percorrido pelos agentes públicos \cite[p.~255--256]{brbaptista2023transparencia}.
+
+No escopo dos sistemas automatizados, \citeonline{suksi2021administrative} argumenta que as salvaguardas processuais tradicionais se perdem se o fluxo não for inspecionável. Embora pesquisas anteriores já apliquem extração de informações em documentos jurídicos \cite{branting2025sensitive, tinarrage2025empirical, vianna2024topic}, a geração de taxonomias não supervisionadas requer mecanismos claros para lidar com as limitações dos registros originais \cite{medvedeva2023rethinking, nickerson2013taxonomy}.
+
+\subsection{Marco normativo brasileiro}
+\label{sec:rev-normativo}
+
+\subsubsection{Princípios constitucionais e o dever de transparência ativa}
+
+A administração pública brasileira subordina-se aos princípios do art.~37 da Constituição de 1988 \cite{brasil1988cf}: legalidade, impessoalidade, moralidade, publicidade e eficiência. Para fins de avaliação de registros de atividades, a eficiência traduz-se na celeridade e economia processual, coibindo laços de retrabalho e paralisações desnecessárias \cite[p.~180-185]{brchicoski2004eficiencia}. Grandezas contínuas capturadas nos \emph{logs} (como tempo decorrido e repetições) funcionam como indicadores empíricos desses princípios.
+
+Em âmbito estadual, a lei de processo administrativo do Piauí (Lei n\textordmasculine{} 6.782/2016) posiciona a transparência e a oficialidade como princípios basilares \cite[art.~2\textordmasculine{}]{state2016procedurelaw}, reforçando que o tempo ocioso do sistema é responsabilidade da Administração, e não apenas do requerente.
+
+Duas legislações operacionais detalham esse dever: a Lei de Acesso à Informação (LAI) \cite{brasil2011lai}, que exige a disponibilização de dados estruturados e legíveis por máquina (art.~8\textordmasculine{}, \S~3\textordmasculine{}, III), e o Código de Defesa dos Usuários de Serviços Públicos \cite{brasil2017cdu}, que obriga a publicação proativa das "principais etapas para processamento do serviço" (art.~7\textordmasculine{}, \S~2\textordmasculine{}, III). Juntos, esses diplomas estabelecem o requisito legal que o catálogo proposto neste artigo visa atender tecnicamente.
+
+\subsubsection{O alcance material sobre procedimentos internos}
+\label{sec:rev-alcance}
+
+Há debate doutrinário sobre a extensão da Lei n\textordmasculine{} 13.460/2017 a procedimentos essencialmente internos, como os da SEAD-PI, onde o servidor atua como parte \cite{brcgu2018ouvidoria, brmarrara2018cdusp, brcgu2024portaria116, brjuruena2021usuario}. Independentemente de interpretações extensivas ou restritivas da norma, a construção metodológica de um catálogo inspecionável encontra respaldo direto no princípio de publicidade proativa da LAI e no imperativo de otimização de processos estabelecido pela Lei do Governo Digital \cite{brasil2021govdigital}. Omitir a rastreabilidade do fluxo processual inviabiliza a detecção de gargalos e, consequentemente, o cumprimento do dever de otimização.
+
+Conforme demonstrado por \citeonline{brauneis2018algorithmic}, a maior barreira para a auditoria de processos não é a recusa em fornecer informações, mas o fato de que a consolidação desses dados frequentemente nunca foi realizada. O presente trabalho preenche essa lacuna ao gerar um catálogo rastreável e legível por máquina, diretamente derivado dos eventos reais.
+
+\subsubsection{Anonimização e Proteção de Dados (LGPD)}
+
+O art.~12 da Lei Geral de Proteção de Dados (LGPD) \cite{brasil2018lgpd} delimita que dados anonimizados não são considerados dados pessoais, desde que o processo de anonimização seja irreversível por meios razoáveis. Como um traço de eventos pode atuar como uma "impressão digital comportamental" \cite{mannhardt2019privacy}, a técnica de anonimização implementada nesta pesquisa atua no texto livre dos documentos (substituindo entidades por marcadores), configurando-se como um requisito legal estrito avaliado em relação ao custo de utilidade do modelo preditivo.
+
+\subsubsection{Limitação sistêmica: a ausência de restrição de percurso}
+\label{sec:rev-naorestringe}
+
+Um fator arquitetural fundamental justifica a necessidade de derivar o catálogo (abordagem \emph{bottom-up}) em vez de adotar a classificação oficial do SEI. O sistema registra ações, mas não impõe validações rígidas de sequência com base no tipo de processo declarado. Dois processos idênticos na taxonomia podem possuir trajetórias disjuntas. Consequentemente, a variação não é uma anomalia, mas o comportamento nativo de um sistema flexível. Sem uma especificação de fluxo \emph{hard-coded}, a única representação confiável do estado atual (\emph{as-is}) é aquela extraída do \emph{log} efetivo.
+
+\subsection{Mineração de processos e clusterização de traços}
+\label{sec:rev-clustering}
+
+Devido à alta heterogeneidade, a mineração de um único modelo a partir de \emph{logs} administrativos produz resultados imprecisos ("espaguete"). A solução consolidada na literatura consiste em particionar os registros primeiramente e, em seguida, descobrir modelos especializados para cada agrupamento \cite{greco2006clustering}. Diferentes representações de perfil de traços resultam em partições distintas \cite{song2009trace, bose2009context, dekoninck2018act2vec}. 
+
+A diferença metodológica deste trabalho reside no posicionamento da métrica de utilidade: estende-se o princípio de avaliar um agrupamento pela qualidade do modelo que ele habilita a jusante (como visto no ActiTraC \cite{deweerdt2013actitrac}), aplicando-o à predição externa de próxima atividade. Em contexto brasileiro, \citeonline{araujo2025trace} aplicaram técnicas similares a processos judiciais. No entanto, ao contrário do judiciário, que possui códigos processuais estritos, a tramitação administrativa aqui estudada carece de uma especificação canônica correspondente, reforçando a necessidade da descoberta empírica.
+
+\subsection{Modelos sequenciais e métricas de avaliação}
+\label{sec:rev-sequencia}
+
+O treinamento de modelos sequenciais especializados por grupo já foi explorado utilizando misturas de cadeias de Markov \cite{ferreira2007sequence} e agrupamento de prefixos para predição em tempo de execução \cite{difrancescomarino2019clusteringppm}. A literatura aponta que a codificação da sequência afeta significativamente o desempenho \cite{teinemaa2019outcome}, e frequentemente modelos mais interpretáveis sacrificam acurácia \cite{tax2020interdisciplinary}. O diferencial do presente artigo inclui o uso de casos concluídos completos, a avaliação cruzada de cinco famílias de modelos neurais e estocásticos (incluindo RNNs \cite{tax2017lstm} e baseados em atenção \cite{bukhsh2021processtransformer}), e a confrontação contra controles embaralhados.
+
+\subsection{Índices internos e privacidade no setor público}
+\label{sec:rev-indices}
+
+Índices internos de clusterização (como Silhouette, Davies-Bouldin e DBCV) foram originalmente concebidos como ferramentas relativas \cite{rousseeuw1987silhouettes, moulavi2014dbcv}. Recentes estudos empíricos indicam que otimizar partições guiando-se exclusivamente por essas métricas muitas vezes não reflete utilidade real em tarefas a jusante \cite{yerbury2025rvi, gagolewski2021invalid, vonluxburg2012clustering}. A contribuição deste trabalho nesse debate é demonstrar o comportamento destas métricas sobre um corpus administrativo operado sob distintas famílias algorítmicas.
+
+Por fim, no que tange à mineração no setor público \cite{vanderaalst2010auditing, araujo2023mineracao}, a preservação de utilidade analítica frente a restrições de privacidade ganha destaque. Autores exploraram garantias de $k$-anonimato em atributos contextuais \cite{fahrenkrogpetersen2020pripel, ferrao2022utility} e desidentificação textual para tarefas supervisionadas \cite{lothritz2023evaluating}. Aqui, mede-se o impacto da desidentificação automatizada de texto livre sobre o agrupamento de traços e a predição da próxima atividade.

@@ -1,0 +1,103 @@
+{
+  "_meta": {
+    "stage": "cluster-eval",
+    "question": "Que particao cada algoritmo produz, e com que validade interna?",
+    "deterministic": "conditional",
+    "nondeterminism": "UMAP e HDBSCAN sao fixados pelo seed registrado em params",
+    "generated_at": "2026-08-12T05:09:32Z",
+    "commit": "8e51165916d00721db38c74c9bd1def6cb02c0f3",
+    "params": {
+      "run_id": "exp-anon-hcoarse",
+      "algo": "hdbscan",
+      "min_cluster_size": 20,
+      "cluster_selection_epsilon": 0.5,
+      "cluster_selection_method": "eom",
+      "min_samples": null,
+      "assign_noise": true,
+      "noise_ratio_before_assignment": 0.1101,
+      "n_reassigned": 577
+    },
+    "inputs": [
+      {
+        "path": "artifacts/features/exp-anon.npz",
+        "sha256": "92ff01f95c16b8809f59bd52a458a3175836c469b0eac56c0fa6e9619e4f0891"
+      }
+    ],
+    "versions": {
+      "numpy": "2.4.6",
+      "scikit-learn": "1.9.0",
+      "hdbscan": "0.8.44",
+      "umap-learn": "0.5.12",
+      "igraph": "1.0.0",
+      "leidenalg": "0.12.0",
+      "torch": "2.13.0",
+      "neo4j": "6.2.0"
+    }
+  },
+  "dbcv": -0.07464753875964138,
+  "silhouette": 0.5726944276454085,
+  "davies_bouldin": 0.7332884439289687,
+  "calinski_harabasz": 4745.980807062481,
+  "noise_ratio": 0.0,
+  "n_clusters": 40,
+  "n_samples": 5243,
+  "space": "umap50-cosine",
+  "full_population": {
+    "dbcv": -0.07464753875964138,
+    "silhouette": 0.5726944276454085,
+    "davies_bouldin": 0.7332884439289687,
+    "calinski_harabasz": 4745.980807062481,
+    "noise_ratio": 0.0,
+    "n_clusters": 40,
+    "n_samples": 5243,
+    "space": "umap50-cosine",
+    "n_reassigned": 0
+  },
+  "size_stats": {
+    "min": 22,
+    "p50": 94.0,
+    "mean": 131.075,
+    "p90": 271.70000000000005,
+    "max": 519,
+    "n_singletons": 0
+  },
+  "separation": {
+    "mean_ratio": 17.985302127521862,
+    "min_ratio": 1.0271453043177177,
+    "n_touching": 0,
+    "n_overlapping": 0,
+    "n_clusters": 40
+  },
+  "extrinsic": {
+    "purity": 0.7201983597177188,
+    "nmi": 0.5590978617587002,
+    "ari": 0.23155499684688363,
+    "n_evaluated": 5243,
+    "n_reference_missing": 0
+  },
+  "meta": {
+    "algo": "hdbscan",
+    "params": {
+      "min_cluster_size": 20,
+      "cluster_selection_epsilon": 0.5,
+      "cluster_selection_method": "eom",
+      "min_samples": null,
+      "assign_noise": true,
+      "noise_ratio_before_assignment": 0.1101,
+      "n_reassigned": 577
+    },
+    "space": "umap50-cosine",
+    "n": 5243,
+    "seed": 42,
+    "versions": {
+      "numpy": "2.4.6",
+      "sklearn": "1.9.0",
+      "hdbscan": "0.8.44",
+      "umap-learn": "0.5.12",
+      "igraph": "1.0.0",
+      "leidenalg": "0.12.0"
+    },
+    "caveat": "internal metrics computed on UMAP-reduced space; valid for relative comparison between methods on the same embedding, not as absolute cluster-quality claims",
+    "generated_at": "2026-08-12T05:09:32.480511+00:00"
+  }
+}

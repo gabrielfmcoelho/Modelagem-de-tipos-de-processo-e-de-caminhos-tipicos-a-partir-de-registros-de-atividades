@@ -1,0 +1,38 @@
+{
+  "_meta": {
+    "stage": "export-traces",
+    "question": "Qual a sequencia de estados de cada processo do corpus?",
+    "deterministic": "conditional",
+    "nondeterminism": "reflete o estado do grafo no momento da leitura",
+    "generated_at": "2026-08-13T09:08:15Z",
+    "commit": "8e51165916d00721db38c74c9bd1def6cb02c0f3",
+    "params": {
+      "run_id": "exp-anon",
+      "algo": "hdbscan",
+      "min_traces": 30
+    },
+    "inputs": [
+      {
+        "path": "artifacts/clustering/exp-anon/hdbscan/labels.json",
+        "sha256": "b46f14b643fd9a42f3d37ce97b62f02370019fd91822c4cb23943a433d42317f"
+      },
+      {
+        "path": "artifacts/traces/protocol_traces.json.gz",
+        "sha256": "f24e118fc938515f16e2571acde27414ed83681f9e3f9d97e6f87d25494992da"
+      }
+    ],
+    "versions": {
+      "numpy": "2.4.6",
+      "scikit-learn": "1.9.0",
+      "hdbscan": "0.8.44",
+      "umap-learn": "0.5.12",
+      "igraph": "1.0.0",
+      "leidenalg": "0.12.0",
+      "torch": "2.13.0",
+      "neo4j": "6.2.0"
+    }
+  },
+  "describes": "artifacts/traces/exp-anon/hdbscan/grouping.json.gz",
+  "sha256": "f4057ba6609f6d49755d194377f989f4cd11cba850ddf79fe3ac77e87bcb932c",
+  "bytes": 24247
+}

@@ -1,0 +1,122 @@
+\section{Threats to validity}\label{sec:threats}
+
+The limitations below are stated twice over: as measurement caveats, and as risks for anyone
+relying on the catalogue for the purpose Section~\ref{sec:legal} proposes.
+
+\paragraph{Duration bias, and the bound it places on every claim.}
+The corpus admits a case only if it both opened and concluded within the same calendar year.
+The admissible lifetime therefore shrinks month by month: a January case has 365 days to
+conclude, a December case has 31, and the observed maxima track that ceiling almost exactly
+(343 days against 365 in January; 29 against 31 in December). Two losses stack, and they are of
+different kinds. Of the 12{,}621 cases opened in the year, 7{,}176 had not concluded by
+31 December and are excluded outright; the analysed corpus is 41.5\% of the year's openings.
+Within the concluded population, taking the least-truncated month as a reference, a further
+18.2\% is estimated missing. Both losses fall on the long cases. Three consequences bind the
+paper. The corpus is not
+``cases opened in the year'' but ``cases opened in the year that also finished quickly enough'';
+no duration or efficiency statistic from it is admissible, and the observed median of 14 days is
+biased downward by construction; and the catalogue under-represents long, multi-unit
+procedures --- procurement, contracting, payment chains --- which are precisely the types where
+routing analysis would have most operational value. The one-year scope was a cost decision for
+an initial study rather than a methodological preference. For legal use the bias runs in the
+worst available direction: the cases the corpus loses are the slow ones, which are the cases
+that generate complaints about duration and the cases a reasonable-duration guarantee exists to
+address. A service charter populated from this corpus would understate the expected time, and
+would understate it most where the understatement misleads.
+
+\paragraph{Temporal dependency is a scope boundary, not a defect.}
+The partition uses each case's complete history by design (Section~\ref{sec:res-ablation}), and
+a real share of its signal arrives late. Nothing reported here transfers to assigning a type at
+intake, which would require early-stage features the study does not have. An entry says what a
+concluded case turned out to be.
+
+\paragraph{All models under-generate.}
+Generated paths match roughly 45\% of a real case's visits, and are shorter than the medoid
+(11.6--12.6 visits against 13.9). The typical paths capture what recurs, not the full extent of
+what a case does. Published as a statement of the main processing steps, a path that omits steps
+understates what a user must go through, and the omission is systematic rather than random.
+
+\paragraph{The internal-validity result is underpowered.}
+Sixteen clusterings; no index reaches $p < 0.05$ under permutation. The finding is absence of
+evidence, and a properly powered replication is future work.
+
+\paragraph{Validity indices are computed on noise-free subsets.}
+The internal indices mask unassigned cases, so density-based clustering is scored on the
+83--86\% it retained while the other algorithms are scored on everything. Neither the intrinsic
+nor the downstream comparison is valid without correcting for this, which
+Section~\ref{sec:res-rq2} does for the latter.
+
+\paragraph{Cluster stability is a lower bound.}
+The clusterer is refit inside the bootstrap; the dimensionality reduction is not, so the
+reported Jaccard recovery understates total variability. It is also a subsample estimate over
+25 draws, and it exists only for the two density-based clusterings.
+
+\paragraph{Indices computed on a reduced embedding.}
+Clustering and validity are both computed in the reduced space. This supports comparison between
+methods on the same embedding rather than absolute claims about structure in the original
+feature space. The concern is documented for two dimensions and we extend it cautiously to
+fifty.
+
+\paragraph{Only the opening document is embedded.}
+The document pipeline ran over every case opened in the year, embedding 12{,}259 opening
+documents --- one per case at that scope --- of which the 5{,}243 belonging to analysed cases
+enter the feature matrix. Against 148{,}178 documents held for those cases, the semantic block
+is therefore temporally safe by construction but sees a small fraction of the documentary
+record.
+
+\paragraph{Small clusters dominate the counts.}
+278 of the evaluated clusters on the action alphabet fall in the smallest band, evaluated on
+about eleven held-out cases each. All size-dependent results are reported stratified for this
+reason, and the pooled averages should not be read alone. Entries differ in how well they are
+evidenced, which is why case counts travel with each type in the catalogue.
+
+\paragraph{A strong baseline we do not dominate, and beat on one alphabet only.}
+The medoid outperforms the generated paths on several support measures, and on the action
+alphabet it also fabricates less per visit than every generator --- by a factor of 1.8 against
+the best of them. The fabrication argument for generated paths therefore holds for the routing
+representation and not for the action one (Section~\ref{sec:res-rq3}). The medoid is also
+computed against a sample of at most twenty training traces rather than the whole cluster, so
+on large clusters the baseline reported here is weaker than a full-cluster medoid would be, and
+the comparison understates it.
+
+\paragraph{The motivating premise is imported, not tested here.}
+That transparency regimes fail because the record was never created is established for a
+different jurisdiction, disclosure regime and subject matter \citep{brauneis2018algorithmic}.
+We did not establish it for the administration studied (Section~\ref{sec:legal}). The method
+stands or falls on its own evidence either way, but the argument that the artefact is
+\emph{needed} rests on an extrapolation this study does not close.
+
+\paragraph{Single administration, single system.}
+One state secretariat, one electronic process system, one year. Whether the catalogue structure
+or the size threshold transfers to other administrations is untested. The normative claim is
+bounded no less tightly: it runs where a proactive duty to publish processing steps in
+machine-readable form exists, as Section~\ref{sec:legal} sets out for this jurisdiction. Where
+disclosure is request-driven instead, the case for producing the artefact unprompted must be
+made on other grounds.
+
+\paragraph{The types and their names have not been assessed by specialists.}
+Names and typical paths were produced by the pipeline and read by the authors; the in-venue
+precedent validates such structure with domain specialists \citep{vianna2024topic}, and no
+comparable study is reported here. The names deserve separate mention from the types. They are
+generated by a language model from a sample of each cluster's cases (Section~\ref{sec:naming}),
+in Portuguese, over administrative subject matter, and no domain expert has checked that any of
+them describes what the cluster contains. Since the name is what a reader of a published
+catalogue encounters first and often only, an unvalidated name is the component most likely to
+mislead, and near-duplicate naming was an observed failure mode during development. Until an
+assessment exists, an entry is a hypothesis evidenced by the cases assigned to it, not a
+description on which a decision about a case may rest.
+
+\paragraph{Parallel routing, linearised.}
+A case can run in more than one organisational unit at once, and the routing alphabet represents
+it as a single sequence ordered by event timestamp (Section~\ref{sec:alphabets}). Concurrent
+stretches therefore appear as though they were successive. Two consequences follow. An observed
+transition between two units is not always a handover from one to the other: it may be only the
+order in which two parallel stretches happened to record their events. And the typical paths
+inherit the simplification --- they describe a plausible order of visits rather than the
+procedure's concurrency structure --- so nothing here about precedence between units should be
+read as a claim of dependency between them. Modelling concurrency explicitly would require a
+trace representation other than a sequence, and is future work.
+
+\paragraph{Uncollectable documents.}
+96 opening documents were cancelled in the source system and can never be retrieved; 202 cases
+have no embedded document and are excluded from clustering.

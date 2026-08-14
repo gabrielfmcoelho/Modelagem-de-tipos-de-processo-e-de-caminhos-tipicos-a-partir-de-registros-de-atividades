@@ -1,0 +1,153 @@
+{
+  "_meta": {
+    "stage": "feature-census",
+    "question": "Que matrizes de atributos existem, com que dimensao, que digest e de qual braco?",
+    "deterministic": true,
+    "nondeterminism": null,
+    "generated_at": "2026-08-13T11:28:05Z",
+    "commit": "8e51165916d00721db38c74c9bd1def6cb02c0f3",
+    "params": {
+      "level": "L0",
+      "subject": "features",
+      "alphabet": "none"
+    },
+    "inputs": [],
+    "versions": {
+      "numpy": "2.4.6",
+      "scikit-learn": "1.9.0",
+      "hdbscan": "0.8.44",
+      "umap-learn": "0.5.12",
+      "igraph": "1.0.0",
+      "leidenalg": "0.12.0",
+      "torch": "2.13.0",
+      "neo4j": "6.2.0"
+    }
+  },
+  "scope": {
+    "level": "L0",
+    "subject": "features",
+    "alphabet": "none"
+  },
+  "population": {
+    "name": "corpus",
+    "n_cases": null,
+    "definition": "every feature matrix on disk; the matrix is what every clustering is refit from, so its digest is the reproducibility anchor"
+  },
+  "members": {
+    "expected": 7,
+    "present": 7,
+    "missing": [],
+    "keys": [
+      "exp-anon",
+      "exp-anon-cut0.25",
+      "exp-anon-cut0.5",
+      "exp-anon-cut0.75",
+      "exp-anon-nokeyword",
+      "exp-anon-notopic",
+      "exp-raw"
+    ]
+  },
+  "results": {
+    "n_matrices": 7,
+    "matrices": {
+      "exp-anon-cut0.25": {
+        "n_processos": 5243,
+        "dim": 50,
+        "dtype": "float32",
+        "digest": "0e17e8205eeca7ac",
+        "text_variant": "anon",
+        "params": {
+          "n_processos": 5243,
+          "dim": 50,
+          "feature_hash": "0e17e8205eeca7ac",
+          "text_variant": "anon"
+        },
+        "sha256": "031fb35917df939f4bcd26860c3b79652a9ba0437a398080ed41e1c6c5ba6482"
+      },
+      "exp-anon-cut0.5": {
+        "n_processos": 5243,
+        "dim": 50,
+        "dtype": "float32",
+        "digest": "e5ec53a1b24fe7bd",
+        "text_variant": "anon",
+        "params": {
+          "n_processos": 5243,
+          "dim": 50,
+          "feature_hash": "e5ec53a1b24fe7bd",
+          "text_variant": "anon"
+        },
+        "sha256": "69712407c8575b760c36c52e7d77b769d48f1cb2bb808540614f9d919f993cfe"
+      },
+      "exp-anon-cut0.75": {
+        "n_processos": 5243,
+        "dim": 50,
+        "dtype": "float32",
+        "digest": "6e3e36d22195ea8a",
+        "text_variant": "anon",
+        "params": {
+          "n_processos": 5243,
+          "dim": 50,
+          "feature_hash": "6e3e36d22195ea8a",
+          "text_variant": "anon"
+        },
+        "sha256": "aa442bf9ed1746d2694704c126e8ac4df18d5f39d4a5a1d3280ff9cef4e9a48f"
+      },
+      "exp-anon-nokeyword": {
+        "n_processos": 5243,
+        "dim": 50,
+        "dtype": "float32",
+        "digest": "5ef2ed645cc99f23",
+        "text_variant": "anon",
+        "params": {
+          "n_processos": 5243,
+          "dim": 50,
+          "feature_hash": "5ef2ed645cc99f23",
+          "text_variant": "anon"
+        },
+        "sha256": "1b7788cac50e3931ae60e04a0ee8d34817a1bbcd58450f422948c1744c47fe6e"
+      },
+      "exp-anon-notopic": {
+        "n_processos": 5243,
+        "dim": 50,
+        "dtype": "float32",
+        "digest": "b91af56f5e4f7319",
+        "text_variant": "anon",
+        "params": {
+          "n_processos": 5243,
+          "dim": 50,
+          "feature_hash": "b91af56f5e4f7319",
+          "text_variant": "anon"
+        },
+        "sha256": "70fba58a47cf52ca0122849eae34bfc8462399ba92704b5d99f78723cc3d5c57"
+      },
+      "exp-anon": {
+        "n_processos": 5243,
+        "dim": 50,
+        "dtype": "float32",
+        "digest": "0db561a705b8ddae",
+        "text_variant": "anon",
+        "params": {
+          "n_processos": 5243,
+          "dim": 50,
+          "feature_hash": "0db561a705b8ddae",
+          "text_variant": "anon"
+        },
+        "sha256": "92ff01f95c16b8809f59bd52a458a3175836c469b0eac56c0fa6e9619e4f0891"
+      },
+      "exp-raw": {
+        "n_processos": 5243,
+        "dim": 50,
+        "dtype": "float32",
+        "digest": "280a87b123744c2d",
+        "text_variant": "raw",
+        "params": {
+          "n_processos": 5243,
+          "dim": 50,
+          "feature_hash": "280a87b123744c2d",
+          "text_variant": "raw"
+        },
+        "sha256": "3b329df775314c6fb9bac56866cdec26cdb0aae0532049502dfbec5ffcb0f475"
+      }
+    }
+  }
+}

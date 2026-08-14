@@ -1,0 +1,63 @@
+{
+  "stage": "processo-cluster",
+  "phase": "clustering",
+  "question": "Que familias de processo emergem, e como se chamam?",
+  "deterministic": false,
+  "status": "ran",
+  "mode": "neo4j",
+  "started_at": "2026-08-12T05:42:12Z",
+  "ended_at": "2026-08-12T05:43:01Z",
+  "duration_seconds": 48.876,
+  "flags": {
+    "from_date": null,
+    "to_date": null,
+    "workers": null,
+    "batch_size": null,
+    "chunk_size": null,
+    "limit": null,
+    "emit_dir": null,
+    "read_dir": null,
+    "run_id": "exp-anon",
+    "features_file": "artifacts/features/exp-anon.npz",
+    "naming_workers": "8"
+  },
+  "inputs": [],
+  "outputs": [
+    {
+      "path": "artifacts/clustering/exp-anon/hdbscan/labels.json",
+      "bytes": 167556
+    },
+    {
+      "path": "artifacts/clustering/exp-anon/hdbscan/metrics.json",
+      "bytes": 2372
+    },
+    {
+      "path": "artifacts/clustering/exp-anon/hdbscan/cluster_catalog.json",
+      "bytes": 22888
+    },
+    {
+      "path": "artifacts/clustering/exp-anon/hdbscan/names.json",
+      "bytes": 34120
+    }
+  ],
+  "n_inputs": 0,
+  "n_outputs": 4,
+  "summary": {
+    "run_id": "exp-anon",
+    "catalog_artifacts": [
+      "/home/gabrielfmcoelho/Projetos/sead-dev/visualizador-de-processos/ai-pipeline-neo4j/artifacts/clustering/exp-anon/hdbscan/cluster_catalog.json",
+      "/home/gabrielfmcoelho/Projetos/sead-dev/visualizador-de-processos/ai-pipeline-neo4j/artifacts/clustering/exp-anon/hdbscan/names.json"
+    ],
+    "total_processos": 5243,
+    "macro_clusters": 64,
+    "macro_clusters_before_dedup": 64,
+    "macro_dedup_threshold": 0.0,
+    "macro_outliers": 0,
+    "micro_clusters": 205,
+    "reclassificados": 0,
+    "dbcv_macro": -0.10091011005258392,
+    "categorias_criadas": 269,
+    "edges_criadas": 9412,
+    "duration_seconds": 48.9
+  }
+}

@@ -1,0 +1,91 @@
+# Pipeline runtime artifacts — large, regeneratable, not source
+parsed_documents/
+ner_results/
+graphify-out/
+.pipeline-state/
+
+# Documents downloaded from SEI (raw input)
+documentos_sead/
+documents/
+raw/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.eggs/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Virtualenvs
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment
+.env
+.env.local
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Claude Code local state
+.claude/
+.harness-mem/
+.superpowers/
+docs/superpowers/plans/
+docs/research/
+docs/paper/
+docs/superpowers/
+docs/architecture/
+article/POSITIONALITY-camera-ready.md
+.agents/
+.playwright-mcp/
+article/README.md
+docs/README.md
+docs/session-handoff.md
+docs/visao-geral-do-projeto.md
+skills-lock.json
+CLAUDE.md
+
+# Logs
+*.log
+logs/
+article/out/
+
+# Regenerable caches and backups — large, reproducible from the pipeline
+artifacts/cache/
+!artifacts/cache/tipo_procedimento.json
+artifacts/_backup/
+
+# LaTeX build output
+article/latex/*.aux
+article/latex/*.bbl
+article/latex/*.blg
+article/latex/*.fdb_latexmk
+article/latex/*.fls
+article/latex/*.out
+article/latex/*.synctex.gz
+article/latex/*.pdf
+
+# LaTeX build output — TCC pt-BR. main.pdf fica versionado de propósito: é o que
+# um leitor sem TeX instalado precisa abrir.
+article/latex-ptbr/*.aux
+article/latex-ptbr/*.bbl
+article/latex-ptbr/*.blg
+article/latex-ptbr/*.fdb_latexmk
+article/latex-ptbr/*.fls
+article/latex-ptbr/*.out
+article/latex-ptbr/*.synctex.gz
+
+# Vendor package archive
+*.zip

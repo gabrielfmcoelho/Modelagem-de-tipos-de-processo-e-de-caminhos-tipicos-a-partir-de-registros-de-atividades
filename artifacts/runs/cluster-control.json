@@ -1,0 +1,230 @@
+{
+  "stage": "cluster-control",
+  "phase": "clustering",
+  "question": "Quanto do ganho vem do agrupamento e nao apenas do numero e tamanho dos grupos?",
+  "deterministic": "conditional",
+  "status": "ran",
+  "mode": "neo4j",
+  "started_at": "2026-08-12T15:03:54Z",
+  "ended_at": "2026-08-12T15:03:55Z",
+  "duration_seconds": 0.13,
+  "flags": {
+    "from_date": null,
+    "to_date": null,
+    "workers": null,
+    "batch_size": null,
+    "chunk_size": null,
+    "limit": null,
+    "emit_dir": null,
+    "read_dir": null,
+    "sources": "exp-anon-hcoarse/hdbscan,exp-anon/hdbscan,exp-anon-kelbow/kmeans,exp-anon/kmeans,exp-anon-ksil/kmeans,exp-anon/leiden,exp-anon-lres/leiden,exp-raw-hcoarse/hdbscan,exp-raw/hdbscan,exp-raw-kelbow/kmeans,exp-raw/kmeans,exp-raw-ksil/kmeans,exp-raw/leiden,exp-raw-lres/leiden"
+  },
+  "inputs": [
+    {
+      "path": "artifacts/clustering/exp-anon-hcoarse/hdbscan/hdbscan/labels.json",
+      "sha256": null
+    },
+    {
+      "path": "artifacts/clustering/exp-anon/hdbscan/hdbscan/labels.json",
+      "sha256": null
+    },
+    {
+      "path": "artifacts/clustering/exp-anon-kelbow/kmeans/kmeans/labels.json",
+      "sha256": null
+    },
+    {
+      "path": "artifacts/clustering/exp-anon/kmeans/kmeans/labels.json",
+      "sha256": null
+    },
+    {
+      "path": "artifacts/clustering/exp-anon-ksil/kmeans/kmeans/labels.json",
+      "sha256": null
+    },
+    {
+      "path": "artifacts/clustering/exp-anon/leiden/leiden/labels.json",
+      "sha256": null
+    },
+    {
+      "path": "artifacts/clustering/exp-anon-lres/leiden/leiden/labels.json",
+      "sha256": null
+    },
+    {
+      "path": "artifacts/clustering/exp-raw-hcoarse/hdbscan/hdbscan/labels.json",
+      "sha256": null
+    },
+    {
+      "path": "artifacts/clustering/exp-raw/hdbscan/hdbscan/labels.json",
+      "sha256": null
+    },
+    {
+      "path": "artifacts/clustering/exp-raw-kelbow/kmeans/kmeans/labels.json",
+      "sha256": null
+    },
+    {
+      "path": "artifacts/clustering/exp-raw/kmeans/kmeans/labels.json",
+      "sha256": null
+    },
+    {
+      "path": "artifacts/clustering/exp-raw-ksil/kmeans/kmeans/labels.json",
+      "sha256": null
+    },
+    {
+      "path": "artifacts/clustering/exp-raw/leiden/leiden/labels.json",
+      "sha256": null
+    },
+    {
+      "path": "artifacts/clustering/exp-raw-lres/leiden/leiden/labels.json",
+      "sha256": null
+    }
+  ],
+  "outputs": [
+    {
+      "path": "artifacts/clustering/exp-anon-hcoarse-shuffled/hdbscan/labels.json",
+      "bytes": 167490
+    },
+    {
+      "path": "artifacts/clustering/exp-anon-shuffled/hdbscan/labels.json",
+      "bytes": 167918
+    },
+    {
+      "path": "artifacts/clustering/exp-anon-kelbow-shuffled/kmeans/labels.json",
+      "bytes": 167583
+    },
+    {
+      "path": "artifacts/clustering/exp-anon-shuffled/kmeans/labels.json",
+      "bytes": 167351
+    },
+    {
+      "path": "artifacts/clustering/exp-anon-ksil-shuffled/kmeans/labels.json",
+      "bytes": 167482
+    },
+    {
+      "path": "artifacts/clustering/exp-anon-shuffled/leiden/labels.json",
+      "bytes": 167237
+    },
+    {
+      "path": "artifacts/clustering/exp-anon-lres-shuffled/leiden/labels.json",
+      "bytes": 167862
+    },
+    {
+      "path": "artifacts/clustering/exp-raw-hcoarse-shuffled/hdbscan/labels.json",
+      "bytes": 167464
+    },
+    {
+      "path": "artifacts/clustering/exp-raw-shuffled/hdbscan/labels.json",
+      "bytes": 168097
+    },
+    {
+      "path": "artifacts/clustering/exp-raw-kelbow-shuffled/kmeans/labels.json",
+      "bytes": 167869
+    },
+    {
+      "path": "artifacts/clustering/exp-raw-shuffled/kmeans/labels.json",
+      "bytes": 167797
+    },
+    {
+      "path": "artifacts/clustering/exp-raw-ksil-shuffled/kmeans/labels.json",
+      "bytes": 167684
+    },
+    {
+      "path": "artifacts/clustering/exp-raw-shuffled/leiden/labels.json",
+      "bytes": 167050
+    },
+    {
+      "path": "artifacts/clustering/exp-raw-lres-shuffled/leiden/labels.json",
+      "bytes": 167726
+    }
+  ],
+  "n_inputs": 14,
+  "n_outputs": 14,
+  "summary": {
+    "seed": 42,
+    "partitions": [
+      {
+        "source": "exp-anon-hcoarse/hdbscan",
+        "target": "exp-anon-hcoarse-shuffled/hdbscan",
+        "n": 5243,
+        "reassigned": 5007
+      },
+      {
+        "source": "exp-anon/hdbscan",
+        "target": "exp-anon-shuffled/hdbscan",
+        "n": 5243,
+        "reassigned": 5110
+      },
+      {
+        "source": "exp-anon-kelbow/kmeans",
+        "target": "exp-anon-kelbow-shuffled/kmeans",
+        "n": 5243,
+        "reassigned": 5141
+      },
+      {
+        "source": "exp-anon/kmeans",
+        "target": "exp-anon-shuffled/kmeans",
+        "n": 5243,
+        "reassigned": 5129
+      },
+      {
+        "source": "exp-anon-ksil/kmeans",
+        "target": "exp-anon-ksil-shuffled/kmeans",
+        "n": 5243,
+        "reassigned": 5124
+      },
+      {
+        "source": "exp-anon/leiden",
+        "target": "exp-anon-shuffled/leiden",
+        "n": 5243,
+        "reassigned": 5151
+      },
+      {
+        "source": "exp-anon-lres/leiden",
+        "target": "exp-anon-lres-shuffled/leiden",
+        "n": 5243,
+        "reassigned": 5177
+      },
+      {
+        "source": "exp-raw-hcoarse/hdbscan",
+        "target": "exp-raw-hcoarse-shuffled/hdbscan",
+        "n": 5243,
+        "reassigned": 5014
+      },
+      {
+        "source": "exp-raw/hdbscan",
+        "target": "exp-raw-shuffled/hdbscan",
+        "n": 5243,
+        "reassigned": 5113
+      },
+      {
+        "source": "exp-raw-kelbow/kmeans",
+        "target": "exp-raw-kelbow-shuffled/kmeans",
+        "n": 5243,
+        "reassigned": 5137
+      },
+      {
+        "source": "exp-raw/kmeans",
+        "target": "exp-raw-shuffled/kmeans",
+        "n": 5243,
+        "reassigned": 5133
+      },
+      {
+        "source": "exp-raw-ksil/kmeans",
+        "target": "exp-raw-ksil-shuffled/kmeans",
+        "n": 5243,
+        "reassigned": 5116
+      },
+      {
+        "source": "exp-raw/leiden",
+        "target": "exp-raw-shuffled/leiden",
+        "n": 5243,
+        "reassigned": 5135
+      },
+      {
+        "source": "exp-raw-lres/leiden",
+        "target": "exp-raw-lres-shuffled/leiden",
+        "n": 5243,
+        "reassigned": 5177
+      }
+    ],
+    "duration_seconds": 0.1
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "stage": "atividades",
+  "phase": "graph",
+  "question": "Quais atividades cada processo registrou, e sob que unidade?",
+  "deterministic": "conditional",
+  "status": "ran",
+  "mode": "neo4j",
+  "started_at": "2026-08-12T00:52:27Z",
+  "ended_at": "2026-08-12T00:53:15Z",
+  "duration_seconds": 48.606,
+  "flags": {
+    "from_date": "2025-01-01",
+    "to_date": "2026-01-01",
+    "workers": null,
+    "batch_size": null,
+    "chunk_size": null,
+    "limit": null,
+    "emit_dir": null,
+    "read_dir": null,
+    "orgao": "SEAD-PI",
+    "status": "concluido",
+    "concluded_before": "2026-01-01"
+  },
+  "inputs": [],
+  "outputs": [],
+  "n_inputs": 0,
+  "n_outputs": 0,
+  "summary": {
+    "atividades_loaded": 283841,
+    "failed_chunks": 0,
+    "chunks": 28,
+    "duration_seconds": 48.6
+  }
+}

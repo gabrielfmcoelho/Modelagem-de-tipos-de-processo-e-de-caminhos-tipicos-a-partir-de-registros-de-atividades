@@ -1,0 +1,2081 @@
+% Verified 2026-08-03 against Crossref/DOI — see article/bib-verification.md
+% 43 VERIFIED · 18 CORRECTED · 0 NOT_FOUND · 0 FABRICATED
+
+%% ===================================================================
+%% references-abnt.bib — bibliografia ABNT (NBR 6023) para a versão pt-BR.
+%% Derivado de article/latex/references.bib. NÃO editar aquele arquivo:
+%% ele continua servindo a versão em inglês (sn-mathphys-num).
+%%
+%% Uso:  \usepackage[alf]{abntex2cite}  +  \bibliographystyle{abntex2-alf}
+%%
+%% Regras aplicadas nesta conversão:
+%%  - as CHAVES de citação são idênticas às do arquivo de origem (117 entradas);
+%%  - títulos em língua estrangeira NÃO foram traduzidos (NBR 6023);
+%%  - legislação brasileira: a jurisdição ocupa a posição de autor
+%%    (federal = BRASIL; estadual = nome do estado; municipal = Cidade/UF);
+%%  - at-misc com URL: howpublished = {Disponível em: \url{...}} e
+%%    note = {Acesso em: <data>}. O prefixo "Disponível em:" fica no
+%%    howpublished porque abntex2-alf só o emite a partir do campo `url`,
+%%    que aqui é deixado vazio para não duplicar o endereço.
+%%  - campo `doi` não existe em abntex2-alf.bst e é ignorado; foi mantido
+%%    no arquivo apenas como dado de proveniência.
+%%
+%% Compilação verificada (pdflatex + bibtex + pdflatex, TeX Live 2025):
+%% 117/117 entradas geradas, 0 erro e 0 aviso do BibTeX vindos deste arquivo.
+%% CAVEAT: \nocite{*} produz ~40 erros do BibTeX que NÃO vêm daqui — ele varre
+%% também abntex2-options.bib, cujas pseudo-entradas de opção não têm autor nem
+%% ano e estouram o contador de rótulos do estilo. Reproduz-se igual com um .bib
+%% de uma única entrada. Cite por chave (como faz o texto) e a saída fica limpa.
+%% ===================================================================
+
+%% ---- Core method / process mining ----
+
+%% CORRECTED: at-article -> at-inproceedings (booktitle was being silently dropped);
+%% venue is EMNLP-IJCNLP; added pages + DOI + publisher/address.
+@inproceedings{reimers2019sbert,
+  author    = {Reimers, Nils and Gurevych, Iryna},
+  title     = {Sentence-{BERT}: sentence embeddings using {Siamese} {BERT}-networks},
+  booktitle = {Proceedings of the 2019 Conference on Empirical Methods in Natural Language
+               Processing and the 9th International Joint Conference on Natural Language
+               Processing (EMNLP-IJCNLP)},
+  publisher = {Association for Computational Linguistics},
+  address   = {Hong Kong, China},
+  month     = nov,
+  pages     = {3982--3992},
+  year      = {2019},
+  doi       = {10.18653/v1/D19-1410},
+  url       = {https://aclanthology.org/D19-1410/},
+  urlaccessdate = {4 ago. 2026},
+}
+
+@inproceedings{gunther2007fuzzy,
+  author    = {G{\"u}nther, Christian W. and van der Aalst, Wil M. P.},
+  title     = {Fuzzy mining -- adaptive process simplification based on multi-perspective metrics},
+  booktitle = {Business Process Management (BPM 2007), LNCS 4714},
+  publisher = {Springer},
+  pages     = {328--343},
+  year      = {2007},
+  doi       = {10.1007/978-3-540-75183-0_24}
+}
+
+@article{hochreiter1997lstm,
+  author  = {Hochreiter, Sepp and Schmidhuber, J{\"u}rgen},
+  title   = {Long short-term memory},
+  journal = {Neural Computation},
+  volume  = {9},
+  number  = {8},
+  pages   = {1735--1780},
+  year    = {1997},
+  doi     = {10.1162/neco.1997.9.8.1735}
+}
+
+@book{vanderaalst2016processmining,
+  author    = {van der Aalst, Wil M. P.},
+  title     = {Process mining: data science in action},
+  edition   = {2nd},
+  publisher = {Springer},
+  year      = {2016},
+  doi       = {10.1007/978-3-662-49851-4}
+}
+
+%% CORRECTED: publisher is the IEEE Computer Society imprint.
+%% pages OMITTED DELIBERATELY — DBLP says 287--300, the TU/e repository says
+%% 287--298, and IEEE deposited a start-page-only record. Not confirmable;
+%% the DOI is a complete locator. See "NEEDS MANUAL RETRIEVAL".
+@inproceedings{pesic2007declare,
+  author    = {Pesic, Maja and Schonenberg, Helen and van der Aalst, Wil M. P.},
+  title     = {{DECLARE}: full support for loosely-structured processes},
+  booktitle = {11th IEEE International Enterprise Distributed Object Computing Conference (EDOC 2007)},
+  publisher = {IEEE Computer Society},
+  year      = {2007},
+  doi       = {10.1109/EDOC.2007.14}
+}
+
+@article{traag2019leiden,
+  author  = {Traag, Vincent A. and Waltman, Ludo and van Eck, Nees Jan},
+  title   = {From {Louvain} to {Leiden}: guaranteeing well-connected communities},
+  journal = {Scientific Reports},
+  volume  = {9},
+  pages   = {5233},
+  year    = {2019},
+  doi     = {10.1038/s41598-019-41695-z}
+}
+
+%% CORRECTED: 'and others' expanded to the full 24-author list.
+@article{benchcapon2012history,
+  author  = {Bench-Capon, Trevor and Araszkiewicz, Micha{\l} and Ashley, Kevin
+             and Atkinson, Katie and Bex, Floris and Borges, Filipe
+             and Bourcier, Dani{\`e}le and Bourgine, Paul and Conrad, Jack G.
+             and Francesconi, Enrico and Gordon, Thomas F. and Governatori, Guido
+             and Leidner, Jochen L. and Lewis, David D. and Loui, Ronald P.
+             and McCarty, L. Thorne and Prakken, Henry and Schilder, Frank
+             and Schweighofer, Erich and Thompson, Paul and Tyrrell, Alex
+             and Verheij, Bart and Walton, Douglas N. and Wyner, Adam Z.},
+  title     = {A history of {AI} and {Law} in 50 papers: 25 years of the international
+               conference on {AI} and {Law}},
+  journal   = {Artificial Intelligence and Law},
+  volume    = {20},
+  number    = {3},
+  pages     = {215--319},
+  year      = {2012},
+  publisher = {Springer},
+  doi       = {10.1007/s10506-012-9131-x}
+}
+
+%% Preprint only — DBLP indexes it solely as CoRR; no peer-reviewed venue exists.
+@misc{bukhsh2021processtransformer,
+  author  = {Bukhsh, Zaharah A. and Saeed, Aaqib and Dijkman, Remco M.},
+  title   = {{ProcessTransformer}: predictive business process monitoring with transformer network},
+  year    = {2021},
+  howpublished = {Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2104.00721}},
+  note    = {Preprint arXiv:2104.00721. Acesso em: 4 ago. 2026}
+}
+
+@inproceedings{campello2013hdbscan,
+  author    = {Campello, Ricardo J. G. B. and Moulavi, Davoud and Sander, J{\"o}rg},
+  title     = {Density-based clustering based on hierarchical density estimates},
+  booktitle = {Advances in Knowledge Discovery and Data Mining (PAKDD 2013), Part II, LNCS 7819},
+  publisher = {Springer},
+  pages     = {160--172},
+  year      = {2013},
+  doi       = {10.1007/978-3-642-37456-2_14}
+}
+
+%% CORRECTED: title had a spurious "BGE" prefix and said "multi-lingual" where the
+%% paper says "Multi-Linguality"; it was NOT preprint-only — published at Findings
+%% of ACL 2024 with pages and a DOI. First author's given name is "Jianlyu" in the
+%% published version ("Jianlv" on arXiv).
+@inproceedings{chen2024bgem3,
+  author    = {Chen, Jianlyu and Xiao, Shitao and Zhang, Peitian and Luo, Kun
+               and Lian, Defu and Liu, Zheng},
+  title     = {{M3}-embedding: multi-linguality, multi-functionality, multi-granularity
+               text embeddings through self-knowledge distillation},
+  booktitle = {Findings of the Association for Computational Linguistics: ACL 2024},
+  publisher = {Association for Computational Linguistics},
+  address   = {Bangkok, Thailand},
+  month     = aug,
+  pages     = {2318--2335},
+  year      = {2024},
+  doi       = {10.18653/v1/2024.findings-acl.137},
+  url       = {https://aclanthology.org/2024.findings-acl.137/},
+  urlaccessdate = {4 ago. 2026},
+}
+
+%% CORRECTED: 'and others' expanded to 7 authors; added pages + DOI.
+@inproceedings{cho2014gru,
+  author    = {Cho, Kyunghyun and van Merri{\"e}nboer, Bart and Gulcehre, Caglar
+               and Bahdanau, Dzmitry and Bougares, Fethi and Schwenk, Holger
+               and Bengio, Yoshua},
+  title     = {Learning phrase representations using {RNN} encoder--decoder for
+               statistical machine translation},
+  booktitle = {Proceedings of the 2014 Conference on Empirical Methods in Natural
+               Language Processing (EMNLP)},
+  publisher = {Association for Computational Linguistics},
+  address   = {Doha, Qatar},
+  month     = oct,
+  pages     = {1724--1734},
+  year      = {2014},
+  doi       = {10.3115/v1/D14-1179},
+  url       = {https://aclanthology.org/D14-1179/},
+  urlaccessdate = {4 ago. 2026},
+}
+
+@book{dumas2018bpm,
+  author    = {Dumas, Marlon and La Rosa, Marcello and Mendling, Jan and Reijers, Hajo A.},
+  title     = {Fundamentals of business process management},
+  edition   = {2nd},
+  publisher = {Springer},
+  year      = {2018},
+  doi       = {10.1007/978-3-662-56509-4}
+}
+
+@article{esser2021ekg,
+  author  = {Esser, Stefan and Fahland, Dirk},
+  title   = {Multi-dimensional event data in graph databases},
+  journal = {Journal on Data Semantics},
+  volume  = {10},
+  number  = {1--2},
+  pages   = {109--141},
+  year    = {2021},
+  doi     = {10.1007/s13740-021-00122-1}
+}
+
+@article{evermann2017predicting,
+  author  = {Evermann, Joerg and Rehse, Jana-Rebecca and Fettke, Peter},
+  title   = {Predicting process behaviour using deep learning},
+  journal = {Decision Support Systems},
+  volume  = {100},
+  pages   = {129--140},
+  year    = {2017},
+  doi     = {10.1016/j.dss.2017.04.003}
+}
+
+@article{greco2006clustering,
+  author  = {Greco, Gianluigi and Guzzo, Antonella and Pontieri, Luigi and Sacc{\`a}, Domenico},
+  title   = {Discovering expressive process models by clustering log traces},
+  journal = {IEEE Transactions on Knowledge and Data Engineering},
+  volume  = {18},
+  number  = {8},
+  pages   = {1010--1027},
+  year    = {2006},
+  doi     = {10.1109/TKDE.2006.123}
+}
+
+%% CORRECTED: added articleno 93 (ACM cites this as Article 93, 42 pages).
+%% YEAR AMBIGUITY: online-first 2018-08-22, print issue 2019-09-30; DBLP says 2019.
+@article{guidotti2018survey,
+  author    = {Guidotti, Riccardo and Monreale, Anna and Ruggieri, Salvatore
+               and Turini, Franco and Giannotti, Fosca and Pedreschi, Dino},
+  title     = {A survey of methods for explaining black box models},
+  journal   = {ACM Computing Surveys},
+  volume    = {51},
+  number    = {5},
+  articleno = {93},
+  pages     = {93:1--93:42},
+  year      = {2018},
+  doi       = {10.1145/3236009}
+}
+
+%% CORRECTED: the canonical record does NOT use a corporate author. Crossref and
+%% Springer list 76 individual authors led by van der Aalst; the IEEE Task Force is
+%% the body that produced the manifesto, credited in the text.
+%% !! This changes the in-text citation from (IEEE Task Force...) to (van der Aalst et al.)
+@inproceedings{ieee2012manifesto,
+  author    = {van der Aalst, Wil and Adriansyah, Arya and Alves de Medeiros, Ana Karla
+               and others},
+  title     = {Process mining manifesto},
+  booktitle = {Business Process Management Workshops (BPM 2011), Part I, LNBIP 99},
+  publisher = {Springer},
+  pages     = {169--194},
+  year      = {2012},
+  doi       = {10.1007/978-3-642-28108-2_19}
+}
+
+@inproceedings{lison2021anonymisation,
+  author    = {Lison, Pierre and Pil{\'a}n, Ildik{\'o} and S{\'a}nchez, David
+               and Batet, Montserrat and {\O}vrelid, Lilja},
+  title     = {Anonymisation models for text data: state of the art, challenges and
+               future directions},
+  booktitle = {Proceedings of the 59th Annual Meeting of the Association for Computational
+               Linguistics and the 11th International Joint Conference on Natural Language
+               Processing (Volume 1: Long Papers)},
+  publisher = {Association for Computational Linguistics},
+  pages     = {4188--4203},
+  year      = {2021},
+  doi       = {10.18653/v1/2021.acl-long.323}
+}
+
+%% CORRECTED: this was NOT preprint-only. Published at IEEE ICDMW 2017, pp. 33--42.
+@inproceedings{mcinnes2017hdbscan,
+  author    = {McInnes, Leland and Healy, John},
+  title     = {Accelerated hierarchical density based clustering},
+  booktitle = {2017 IEEE International Conference on Data Mining Workshops (ICDMW)},
+  publisher = {IEEE},
+  pages     = {33--42},
+  year      = {2017},
+  doi       = {10.1109/ICDMW.2017.12}
+}
+
+%% Genuinely preprint-only: arXiv reports no journal reference. Distinct from the
+%% JOSS software paper (mcinnes2018umapsoftware) — do not merge them.
+@misc{mcinnes2018umap,
+  author  = {McInnes, Leland and Healy, John and Melville, James},
+  title   = {{UMAP}: uniform manifold approximation and projection for dimension reduction},
+  year    = {2018},
+  howpublished = {Dispon{\'\i}vel em: \url{https://arxiv.org/abs/1802.03426}},
+  note    = {Preprint arXiv:1802.03426. Acesso em: 4 ago. 2026}
+}
+
+@inproceedings{moulavi2014dbcv,
+  author    = {Moulavi, Davoud and Jaskowiak, Pablo A. and Campello, Ricardo J. G. B.
+               and Zimek, Arthur and Sander, J{\"o}rg},
+  title     = {Density-based clustering validation},
+  booktitle = {Proceedings of the 2014 SIAM International Conference on Data Mining (SDM)},
+  publisher = {SIAM},
+  pages     = {839--847},
+  year      = {2014},
+  doi       = {10.1137/1.9781611973440.96}
+}
+
+@article{ramamaneiro2023dlppm,
+  author  = {Rama-Maneiro, Efr{\'e}n and Vidal, Juan C. and Lama, Manuel},
+  title   = {Deep learning for predictive business process monitoring: review and benchmark},
+  journal = {IEEE Transactions on Services Computing},
+  volume  = {16},
+  number  = {1},
+  pages   = {739--756},
+  year    = {2023},
+  doi     = {10.1109/TSC.2021.3139807}
+}
+
+@article{rozinat2008conformance,
+  author  = {Rozinat, Anne and van der Aalst, Wil M. P.},
+  title   = {Conformance checking of processes based on monitoring real behavior},
+  journal = {Information Systems},
+  volume  = {33},
+  number  = {1},
+  pages   = {64--95},
+  year    = {2008},
+  doi     = {10.1016/j.is.2007.07.001}
+}
+
+@inproceedings{song2009trace,
+  author    = {Song, Minseok and G{\"u}nther, Christian W. and van der Aalst, Wil M. P.},
+  title     = {Trace clustering in process mining},
+  booktitle = {Business Process Management Workshops (BPM 2008), LNBIP 17},
+  publisher = {Springer},
+  pages     = {109--120},
+  year      = {2009},
+  doi       = {10.1007/978-3-642-00328-8_11}
+}
+
+@article{suriadi2017imperfection,
+  author  = {Suriadi, Suriadi and Andrews, Robert and ter Hofstede, Arthur H. M.
+             and Wynn, Moe T.},
+  title   = {Event log imperfection patterns for process mining: towards a systematic
+             approach to cleaning event logs},
+  journal = {Information Systems},
+  volume  = {64},
+  pages   = {132--150},
+  year    = {2017},
+  doi     = {10.1016/j.is.2016.07.011}
+}
+
+@inproceedings{tax2017lstm,
+  author    = {Tax, Niek and Verenich, Ilya and La Rosa, Marcello and Dumas, Marlon},
+  title     = {Predictive business process monitoring with {LSTM} neural networks},
+  booktitle = {Advanced Information Systems Engineering (CAiSE 2017), LNCS 10253},
+  publisher = {Springer},
+  pages     = {477--492},
+  year      = {2017},
+  doi       = {10.1007/978-3-319-59536-8_30}
+}
+
+%% CORRECTED: 'and others' expanded to 8 authors; added pages; the 2017 conference
+%% was named NIPS (the rename to NeurIPS happened in 2018). No DOI exists.
+@inproceedings{vaswani2017attention,
+  author    = {Vaswani, Ashish and Shazeer, Noam and Parmar, Niki
+               and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N.
+               and Kaiser, {\L}ukasz and Polosukhin, Illia},
+  title     = {Attention is all you need},
+  booktitle = {Advances in Neural Information Processing Systems 30 (NIPS 2017)},
+  pages     = {5998--6008},
+  year      = {2017},
+  note      = {arXiv:1706.03762}
+}
+
+%% ---- PII anonymization / de-identification ----
+
+%% ABNT: lei federal -> jurisdicao BRASIL na posicao de autor (NBR 6023).
+%% Publicada no DOU de 15 ago. 2018; altera a Lei n. 12.965/2014 (Marco Civil).
+@misc{brasil2018lgpd,
+  author       = {BRASIL},
+  title        = {Lei n\textordmasculine{} 13.709, de 14 de agosto de 2018. Lei Geral de
+                  Prote\c{c}\~ao de Dados Pessoais (LGPD). Disp\~oe sobre o tratamento de
+                  dados pessoais, inclusive nos meios digitais, por pessoa natural ou por
+                  pessoa jur\'idica de direito p\'ublico ou privado},
+  address      = {Bras\'ilia, DF},
+  publisher    = {Presid\^encia da Rep\'ublica},
+  year         = {2018},
+  howpublished = {Dispon{\'\i}vel em: \url{https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm}},
+  note         = {Acesso em: 4 ago. 2026}
+}
+
+@article{pilan2022text,
+  author    = {Pil{\'a}n, Ildik{\'o} and Lison, Pierre and {\O}vrelid, Lilja
+               and Papadopoulou, Anthi and S{\'a}nchez, David and Batet, Montserrat},
+  title     = {The text anonymization benchmark ({TAB}): a dedicated corpus and evaluation
+               framework for text anonymization},
+  journal   = {Computational Linguistics},
+  volume    = {48},
+  number    = {4},
+  pages     = {1053--1101},
+  year      = {2022},
+  publisher = {MIT Press},
+  doi       = {10.1162/coli_a_00458},
+  url       = {https://aclanthology.org/2022.cl-4.19/},
+  urlaccessdate = {4 ago. 2026},
+}
+
+%% No DOI exists for this paper — the ACL Anthology assigns none. Do not add one.
+@inproceedings{lothritz2023evaluating,
+  author    = {Lothritz, Cedric and Lebichot, Bertrand and Allix, Kevin and Ezzini, Saad
+               and Bissyand{\'e}, Tegawend{\'e} and Klein, Jacques and Boytsov, Andrey
+               and Lefebvre, Cl{\'e}ment and Goujon, Anne},
+  title     = {Evaluating the impact of text de-identification on downstream {NLP} tasks},
+  booktitle = {Proceedings of the 24th Nordic Conference on Computational Linguistics (NoDaLiDa)},
+  publisher = {University of Tartu Library},
+  address   = {T{\'o}rshavn, Faroe Islands},
+  month     = may,
+  pages     = {10--16},
+  year      = {2023},
+  url       = {https://aclanthology.org/2023.nodalida-1.2/},
+  urlaccessdate = {4 ago. 2026},
+}
+
+@inproceedings{bencheikhlarbi2023clinical,
+  author    = {Ben Cheikh Larbi, Iyadh and Burchardt, Aljoscha and Roller, Roland},
+  title     = {Clinical text anonymization, its influence on downstream {NLP} tasks and
+               the risk of re-identification},
+  booktitle = {Proceedings of the 17th Conference of the European Chapter of the Association
+               for Computational Linguistics: Student Research Workshop},
+  publisher = {Association for Computational Linguistics},
+  pages     = {105--111},
+  year      = {2023},
+  doi       = {10.18653/v1/2023.eacl-srw.11},
+  url       = {https://aclanthology.org/2023.eacl-srw.11/},
+  urlaccessdate = {4 ago. 2026},
+}
+
+@article{stubbs2015automated,
+  author  = {Stubbs, Amber and Kotfila, Christopher and Uzuner, {\"O}zlem},
+  title   = {Automated systems for the de-identification of longitudinal clinical narratives:
+             overview of 2014 i2b2/{UTH}ealth shared task track 1},
+  journal = {Journal of Biomedical Informatics},
+  volume  = {58},
+  pages   = {S11--S19},
+  year    = {2015},
+  doi     = {10.1016/j.jbi.2015.06.007}
+}
+
+@article{dernoncourt2017deidentification,
+  author  = {Dernoncourt, Franck and Lee, Ji Young and Uzuner, {\"O}zlem and Szolovits, Peter},
+  title   = {De-identification of patient notes with recurrent neural networks},
+  journal = {Journal of the American Medical Informatics Association},
+  volume  = {24},
+  number  = {3},
+  pages   = {596--606},
+  year    = {2017},
+  doi     = {10.1093/jamia/ocw156}
+}
+
+%% CORRECTED: github.com/microsoft/presidio now 301-redirects to
+%% github.com/data-privacy-stack/presidio (project moved to community governance).
+%% Year 2020 was wrong: repo created 2018-05-04, first release v0.1.0 2018-12-18.
+%% Title replaced with the project's own name from its README.
+@misc{microsoftpresidio,
+  author       = {{MICROSOFT}},
+  title        = {Presidio: data protection and de-identification {SDK}},
+  howpublished = {Dispon{\'\i}vel em: \url{https://github.com/data-privacy-stack/presidio}},
+  year         = {2018},
+  note         = {Software livre (MIT); reconhecedores NER + regex + checksum.
+                  Desenvolvido originalmente pela Microsoft, hoje sob governan\c{c}a
+                  comunit\'aria da Data Privacy Stack. Acesso em: 4 ago. 2026}
+}
+
+@inproceedings{zaratiana2024gliner,
+  author    = {Zaratiana, Urchade and Tomeh, Nadi and Holat, Pierre and Charnois, Thierry},
+  title     = {{GLiNER}: generalist model for named entity recognition using bidirectional
+               transformer},
+  booktitle = {Proceedings of the 2024 Conference of the North American Chapter of the
+               Association for Computational Linguistics: Human Language Technologies
+               (Volume 1: Long Papers)},
+  publisher = {Association for Computational Linguistics},
+  pages     = {5364--5376},
+  year      = {2024},
+  doi       = {10.18653/v1/2024.naacl-long.300},
+  url       = {https://aclanthology.org/2024.naacl-long.300/},
+  urlaccessdate = {4 ago. 2026},
+}
+
+%% CORRECTED: the title changed between preprint and publication — the entry cited the
+%% arXiv title against an EMNLP booktitle. Author is George, not "Georgi", Hurn-Maloney.
+%% Added the confirmed DOI. Pages 130--140 and the EMNLP 2025 Demos venue were correct.
+@inproceedings{zaratiana2025gliner2,
+  author    = {Zaratiana, Urchade and Pasternak, Gil and Boyd, Oliver
+               and Hurn-Maloney, George and Lewis, Ash},
+  title     = {{GLiNER2}: schema-driven multi-task learning for structured information extraction},
+  booktitle = {Proceedings of the 2025 Conference on Empirical Methods in Natural Language
+               Processing: System Demonstrations},
+  publisher = {Association for Computational Linguistics},
+  address   = {Suzhou, China},
+  month     = nov,
+  pages     = {130--140},
+  year      = {2025},
+  doi       = {10.18653/v1/2025.emnlp-demos.10},
+  url       = {https://aclanthology.org/2025.emnlp-demos.10/},
+  urlaccessdate = {4 ago. 2026},
+  note      = {Preprint: arXiv:2507.18546}
+}
+
+%% ---- Graph / clustering algorithms ----
+
+@article{blondel2008fast,
+  author  = {Blondel, Vincent D. and Guillaume, Jean-Loup and Lambiotte, Renaud
+             and Lefebvre, Etienne},
+  title   = {Fast unfolding of communities in large networks},
+  journal = {Journal of Statistical Mechanics: Theory and Experiment},
+  volume  = {2008},
+  number  = {10},
+  pages   = {P10008},
+  year    = {2008},
+  doi     = {10.1088/1742-5468/2008/10/P10008}
+}
+
+@article{rousseeuw1987silhouettes,
+  author  = {Rousseeuw, Peter J.},
+  title   = {Silhouettes: a graphical aid to the interpretation and validation of
+             cluster analysis},
+  journal = {Journal of Computational and Applied Mathematics},
+  volume  = {20},
+  pages   = {53--65},
+  year    = {1987},
+  doi     = {10.1016/0377-0427(87)90125-7}
+}
+
+%% CORRECTED: volume is PAMI-1, not 1. IEEE used the PAMI-n designation until it
+%% switched to plain numbering.
+@article{daviesbouldin1979measure,
+  author  = {Davies, David L. and Bouldin, Donald W.},
+  title   = {A cluster separation measure},
+  journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  volume  = {PAMI-1},
+  number  = {2},
+  pages   = {224--227},
+  year    = {1979},
+  doi     = {10.1109/TPAMI.1979.4766909}
+}
+
+%% Journal name confirmed correct: the split into "Communications in Statistics -
+%% Theory and Methods" happened in 1976, after this 1974 vol. 3 article.
+%% Given names left as initials: the publisher record prints initials only and the
+%% second author's given name is contested (Jerzy vs Joachim). See report.
+@article{calinski1974dendrite,
+  author  = {Cali{\'n}ski, T. and Harabasz, J.},
+  title   = {A dendrite method for cluster analysis},
+  journal = {Communications in Statistics},
+  volume  = {3},
+  number  = {1},
+  pages   = {1--27},
+  year    = {1974},
+  doi     = {10.1080/03610927408827101}
+}
+
+@article{mcinnes2017hdbscanjoss,
+  author  = {McInnes, Leland and Healy, John and Astels, Steve},
+  title   = {hdbscan: hierarchical density based clustering},
+  journal = {Journal of Open Source Software},
+  volume  = {2},
+  number  = {11},
+  pages   = {205},
+  year    = {2017},
+  doi     = {10.21105/joss.00205}
+}
+
+@article{mcinnes2018umapsoftware,
+  author  = {McInnes, Leland and Healy, John and Saul, Nathaniel and Gro{\ss}berger, Lukas},
+  title   = {{UMAP}: uniform manifold approximation and projection},
+  journal = {Journal of Open Source Software},
+  volume  = {3},
+  number  = {29},
+  pages   = {861},
+  year    = {2018},
+  doi     = {10.21105/joss.00861}
+}
+
+%% ---- Cluster ensembles / consensus clustering ----
+
+%% CORRECTED: the DOI was REMOVED. 10.1162/153244303321897735 is a withdrawn Crossref
+%% DOI that resolves to crossref.org/deleted_DOI.html. JMLR assigns this article no DOI.
+@article{strehl2002ensembles,
+  author  = {Strehl, Alexander and Ghosh, Joydeep},
+  title   = {Cluster ensembles --- a knowledge reuse framework for combining multiple partitions},
+  journal = {Journal of Machine Learning Research},
+  volume  = {3},
+  pages   = {583--617},
+  year    = {2002},
+  url     = {https://www.jmlr.org/papers/v3/strehl02a.html},
+  urlaccessdate = {4 ago. 2026},
+}
+
+@article{fred2005evidence,
+  author  = {Fred, Ana L. N. and Jain, Anil K.},
+  title   = {Combining multiple clusterings using evidence accumulation},
+  journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  volume  = {27},
+  number  = {6},
+  pages   = {835--850},
+  year    = {2005},
+  doi     = {10.1109/TPAMI.2005.113}
+}
+
+%% ---- Process mining in public administration / e-government ----
+
+%% Diacritics restored from the published record.
+@article{limaesilva2026analise,
+  author  = {{LIMA E SILVA}, Fernando Jorge Ebrahim and Rocha, Marcelo Lisboa
+             and Barbosa, Gentil Veloso and Lisboa, Marcelo da Silva},
+  title   = {An{\'a}lise de processos administrativos no setor p{\'u}blico via
+             minera{\c{c}}{\~a}o de processos: um estudo de caso no Tribunal Regional
+             Eleitoral do Tocantins},
+  journal = {Revista DCS},
+  volume  = {23},
+  number  = {88},
+  pages   = {e4864},
+  year    = {2026},
+  issn    = {2224-4131},
+  doi     = {10.54899/dcs.v23i88.4864},
+  url     = {https://ojs.revistadcs.com/index.php/revista/article/view/4864},
+  urlaccessdate = {4 ago. 2026},
+}
+
+%% CORRECTED: added the missing page range 203--218 (read off the PDF's own page headers).
+%% NB the published PDF misprints its own DOI as v14i27.567; v15i27.567 is the DOI
+%% actually registered at Crossref and is the one that resolves.
+@article{araujo2023mineracao,
+  author  = {de Araujo, Renata Mendes and Peres, Sarajane Marques and Fantinato, Marcelo
+             and Unger, Adriana Jacoto and Neubauer, Thais Rodrigues},
+  title   = {Minera{\c{c}}{\~a}o de processos como ferramenta para promo{\c{c}}{\~a}o da
+             transpar{\^e}ncia: oportunidades e desafios},
+  journal = {Revista da CGU},
+  volume  = {15},
+  number  = {27},
+  pages   = {203--218},
+  year    = {2023},
+  doi     = {10.36428/revistadacgu.v15i27.567}
+}
+
+%% CORRECTED: added pages 1--10 (HICSS paginates each paper independently from 1).
+%% Subtitle is lowercase "a case study" in the source.
+@inproceedings{delgado2022discovery,
+  author    = {Delgado, Andrea and Calegari, Daniel},
+  title     = {Discovery and analysis of e-government business processes with process
+               mining: a case study},
+  booktitle = {Proceedings of the 55th Hawaii International Conference on System Sciences (HICSS)},
+  pages     = {1--10},
+  year      = {2022},
+  doi       = {10.24251/HICSS.2022.296},
+  url       = {http://hdl.handle.net/10125/79629},
+  urlaccessdate = {4 ago. 2026},
+}
+
+%% CORRECTED: added the missing LNBIP volume 554; title is "Do not Stay Behind"
+%% (lowercase "not"); full conference name supplied.
+@inproceedings{racis2025donot,
+  author    = {Racis, Serena and Spano, Alessandro},
+  title     = {Do not stay behind: embracing process mining in the {Italian} public sector},
+  booktitle = {Business Information Systems -- 25th International Conference, BIS 2025,
+               Pozna{\'n}, Poland, June 25--27, 2025, Proceedings},
+  series    = {Lecture Notes in Business Information Processing},
+  volume    = {554},
+  address   = {Pozna\'n},
+  publisher = {Springer},
+  pages     = {152--164},
+  year      = {2025},
+  doi       = {10.1007/978-3-031-94193-1_12}
+}
+
+%% CORRECTED: booktitle was missing entirely. Venue is the ICPM 2024 Workshops
+%% (Revised Selected Papers, published 2025), LNBIP 533, pp. 572--585.
+@inproceedings{trottier2025using,
+  author    = {Trottier, Jacques and Van Woensel, William and Wang, Xiaoyang
+               and Mallur, Kavya and El-Gharib, Najah and Amyot, Daniel},
+  title     = {Using process mining with pre- and post-intervention analysis to improve
+               digital service delivery: a governmental case study},
+  booktitle = {Process Mining Workshops -- ICPM 2024 International Workshops, Lyngby,
+               Denmark, October 14--18, 2024, Revised Selected Papers},
+  series    = {Lecture Notes in Business Information Processing},
+  volume    = {533},
+  address   = {Lyngby},
+  publisher = {Springer},
+  pages     = {572--585},
+  year      = {2025},
+  doi       = {10.1007/978-3-031-82225-4_42},
+  note      = {Preprint: arXiv:2409.05869}
+}
+
+%% ---- Trace clustering & LLMs in process mining ----
+
+@inproceedings{bose2009context,
+  author    = {Bose, R. P. Jagadeesh Chandra and van der Aalst, Wil M. P.},
+  title     = {Context aware trace clustering: towards improving process mining results},
+  booktitle = {Proceedings of the 2009 SIAM International Conference on Data Mining (SDM)},
+  publisher = {SIAM},
+  pages     = {401--412},
+  year      = {2009},
+  doi       = {10.1137/1.9781611972795.35}
+}
+
+@article{deleoni2016general,
+  author  = {de Leoni, Massimiliano and van der Aalst, Wil M. P. and Dees, Marcus},
+  title   = {A general process mining framework for correlating, predicting and clustering
+             dynamic behavior based on event logs},
+  journal = {Information Systems},
+  volume  = {56},
+  pages   = {235--257},
+  year    = {2016},
+  doi     = {10.1016/j.is.2015.07.003}
+}
+
+%% Year 2023 follows DBLP/the workshop date; Springer's imprint year is 2024.
+@inproceedings{berti2023abstractions,
+  author    = {Berti, Alessandro and Schuster, Daniel and van der Aalst, Wil M. P.},
+  title     = {Abstractions, scenarios, and prompt definitions for process mining with
+               {LLMs}: a case study},
+  booktitle = {Business Process Management Workshops (BPM 2023)},
+  series    = {Lecture Notes in Business Information Processing},
+  volume    = {492},
+  publisher = {Springer},
+  pages     = {427--439},
+  year      = {2023},
+  doi       = {10.1007/978-3-031-50974-2_32},
+  note      = {arXiv:2307.02194}
+}
+
+@inproceedings{vidgof2023large,
+  author    = {Vidgof, Maxim and Bachhofner, Stefan and Mendling, Jan},
+  title     = {Large language models for business process management: opportunities and
+               challenges},
+  booktitle = {Business Process Management Forum (BPM Forum 2023)},
+  series    = {Lecture Notes in Business Information Processing},
+  volume    = {490},
+  publisher = {Springer},
+  pages     = {107--123},
+  year      = {2023},
+  doi       = {10.1007/978-3-031-41623-1_7},
+  note      = {arXiv:2304.04309}
+}
+
+%% ---- Predictive process monitoring ----
+
+@article{teinemaa2019outcome,
+  author    = {Teinemaa, Irene and Dumas, Marlon and La Rosa, Marcello and Maggi, Fabrizio Maria},
+  title     = {Outcome-oriented predictive process monitoring: review and benchmark},
+  journal   = {ACM Transactions on Knowledge Discovery from Data},
+  volume    = {13},
+  number    = {2},
+  articleno = {17},
+  pages     = {1--57},
+  year      = {2019},
+  publisher = {ACM},
+  doi       = {10.1145/3301300}
+}
+
+%% ---- Brazilian public administration / LGPD legal context ----
+
+@article{rocha2024critical,
+  author  = {Rocha, N{\'u}bia Augusto de Sousa and de Almeida, Alexandre Nascimento
+             and Nunes, Andr{\'e} and Angelo, Humberto},
+  title   = {Critical points for the processing of personal data by the government:
+             an empirical study in {Brazil}},
+  journal = {Computer Law \& Security Review},
+  volume  = {54},
+  pages   = {106023},
+  year    = {2024},
+  doi     = {10.1016/j.clsr.2024.106023}
+}
+
+%% ABNT: lei federal -> jurisdicao BRASIL na posicao de autor (NBR 6023).
+%% Publicada no DOU de 18 nov. 2011, Edicao extra (mesmo dia da sancao).
+@misc{brasil2011lai,
+  author       = {BRASIL},
+  title        = {Lei n\textordmasculine{} 12.527, de 18 de novembro de 2011. Lei de Acesso
+                  \`a Informa\c{c}\~ao (LAI). Regula o acesso a informa\c{c}\~oes previsto no
+                  inciso XXXIII do art. 5\textordmasculine{}, no inciso II do \S~3\textordmasculine{}
+                  do art. 37 e no \S~2\textordmasculine{} do art. 216 da Constitui\c{c}\~ao Federal},
+  address      = {Bras\'ilia, DF},
+  publisher    = {Presid\^encia da Rep\'ublica},
+  year         = {2011},
+  howpublished = {Dispon{\'\i}vel em: \url{https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm}},
+  note         = {Acesso em: 4 ago. 2026}
+}
+
+%% LNBIP volume 455 CONFIRMED — the previous "% TODO verify series/volume" is resolved.
+@incollection{canedo2022evaluating,
+  author    = {Canedo, Edna Dias and Ribeiro, Vanessa Coelho and Cerqueira, Anderson Jefferson
+               and Gravina, Rog{\'e}rio Machado and Cam{\~o}es, Renato and dos Reis, Vinicius Eloy
+               and Mendon{\c{c}}a, F{\'a}bio L{\'u}cio Lopes and de Sousa~J{\'u}nior, Rafael T.},
+  title     = {Evaluating and evolving the compliance to the Brazilian general data protection
+               law in a federal government agency},
+  booktitle = {Enterprise Information Systems: 23rd International Conference, ICEIS 2021,
+               Virtual Event, April 26--28, 2021, Revised Selected Papers},
+  series    = {Lecture Notes in Business Information Processing},
+  volume    = {455},
+  publisher = {Springer},
+  pages     = {3--27},
+  year      = {2022},
+  doi       = {10.1007/978-3-031-08965-7_1}
+}
+
+%% Start page 859 confirmed. End page deliberately omitted — the repository stores only
+%% the first page and the PDF is bot-blocked. Start-page-only is correct Bluebook form
+%% for a law review cite anyway.
+@article{erickson2019comparative,
+  author  = {Erickson, Abigayle},
+  title   = {Comparative analysis of the {EU}'s {GDPR} and {Brazil}'s {LGPD}: enforcement
+             challenges with the {LGPD}},
+  journal = {Brooklyn Journal of International Law},
+  volume  = {44},
+  number  = {2},
+  pages   = {859},
+  year    = {2019},
+  url     = {https://brooklynworks.brooklaw.edu/bjil/vol44/iss2/9/},
+  urlaccessdate = {4 ago. 2026},
+}
+
+%% CORRECTED: the title contained a literal "..." ellipsis and omitted "of 27 April 2016"
+%% and "and repealing Directive 95/46/EC". Full official English title supplied.
+%% The OJ reference and the ELI URL were already correct.
+%% Titulo em ingles mantido no original (NBR 6023 nao traduz titulos).
+@misc{eu2016gdpr,
+  author       = {{EUROPEAN PARLIAMENT AND COUNCIL OF THE EUROPEAN UNION}},
+  title        = {Regulation ({EU}) 2016/679 of the European Parliament and of the Council
+                  of 27 April 2016 on the protection of natural persons with regard to the
+                  processing of personal data and on the free movement of such data, and
+                  repealing Directive 95/46/{EC} (General Data Protection Regulation)},
+  publisher    = {Official Journal of the European Union, OJ L 119, 4.5.2016, p. 1--88},
+  year         = {2016},
+  howpublished = {Dispon{\'\i}vel em: \url{https://eur-lex.europa.eu/eli/reg/2016/679/oj}},
+  note         = {Acesso em: 4 ago. 2026}
+}
+
+%% ---- Uncited in main.tex (kept for the .qd reference lists) ----
+
+@inproceedings{kipf2017gcn,
+  author    = {Kipf, Thomas N. and Welling, Max},
+  title     = {Semi-supervised classification with graph convolutional networks},
+  booktitle = {5th International Conference on Learning Representations (ICLR 2017)},
+  publisher = {OpenReview.net},
+  year      = {2017},
+  note      = {arXiv:1609.02907}
+}
+
+%% `number` deliberately omitted: Springer's own metadata says issue 3, Crossref says 3-4
+%% (combined May 1992 issue). Omitting sidesteps an unresolvable source conflict.
+@article{williams1992reinforce,
+  author  = {Williams, Ronald J.},
+  title   = {Simple statistical gradient-following algorithms for connectionist
+             reinforcement learning},
+  journal = {Machine Learning},
+  volume  = {8},
+  pages   = {229--256},
+  year    = {1992},
+  doi     = {10.1007/BF00992696}
+}
+
+%% ===================================================================
+%% Added for §2 Related work. Every entry below is copied verbatim from
+%% the repository's verified reference files:
+%%   article/lit-process-mining.md   (Crossref-resolved)
+%%   article/lit-cluster-validity.md (Crossref-resolved)
+%%   article/lit-ai-law.md           (Crossref-resolved)
+%% Nothing here is reconstructed from memory. See lit-process-mining.md §10.
+%% ===================================================================
+
+@article{deweerdt2013actitrac,
+  author  = {De Weerdt, Jochen and vanden Broucke, Seppe and Vanthienen, Jan and Baesens, Bart},
+  title   = {Active Trace Clustering for Improved Process Discovery},
+  journal = {IEEE Transactions on Knowledge and Data Engineering},
+  volume  = {25},
+  number  = {12},
+  pages   = {2708--2720},
+  year    = {2013},
+  doi     = {10.1109/TKDE.2013.64}
+}
+
+@inproceedings{zandkarimi2020generic,
+  author    = {Zandkarimi, Fareed and Rehse, Jana-Rebecca and Soudmand, Pouya and Hoehle, Hartmut},
+  title     = {A Generic Framework for Trace Clustering in Process Mining},
+  booktitle = {2020 2nd International Conference on Process Mining (ICPM)},
+  publisher = {IEEE},
+  pages     = {177--184},
+  year      = {2020},
+  doi       = {10.1109/ICPM49681.2020.00034}
+}
+
+@incollection{dekoninck2018act2vec,
+  author    = {De Koninck, Pieter and vanden Broucke, Seppe and De Weerdt, Jochen},
+  title     = {act2vec, trace2vec, log2vec, and model2vec: Representation Learning for Business Processes},
+  booktitle = {Business Process Management (BPM 2018)},
+  series    = {Lecture Notes in Computer Science},
+  publisher = {Springer},
+  pages     = {305--321},
+  year      = {2018},
+  doi       = {10.1007/978-3-319-98648-7_18},
+  isbn      = {978-3-319-98648-7}
+}
+
+@article{taymouri2021variant,
+  author  = {Taymouri, Farbod and La Rosa, Marcello and Dumas, Marlon and Maggi, Fabrizio Maria},
+  title   = {Business process variant analysis: Survey and classification},
+  journal = {Knowledge-Based Systems},
+  volume  = {211},
+  pages   = {106557},
+  year    = {2021},
+  doi     = {10.1016/j.knosys.2020.106557}
+}
+
+@incollection{ferreira2007sequence,
+  author    = {Ferreira, Diogo and Zacarias, Marielba and Malheiros, Miguel and Ferreira, Pedro},
+  title     = {Approaching Process Mining with Sequence Clustering: Experiments and Findings},
+  booktitle = {Business Process Management (BPM 2007)},
+  series    = {Lecture Notes in Computer Science},
+  publisher = {Springer},
+  pages     = {360--374},
+  year      = {2007},
+  doi       = {10.1007/978-3-540-75183-0_26},
+  isbn      = {978-3-540-75183-0}
+}
+
+@article{difrancescomarino2019clusteringppm,
+  author  = {Di Francescomarino, Chiara and Dumas, Marlon and Maggi, Fabrizio Maria and Teinemaa, Irene},
+  title   = {Clustering-Based Predictive Process Monitoring},
+  journal = {IEEE Transactions on Services Computing},
+  volume  = {12},
+  number  = {6},
+  pages   = {896--909},
+  year    = {2019},
+  doi     = {10.1109/TSC.2016.2645153}
+}
+
+@article{tax2020interdisciplinary,
+  author  = {Tax, Niek and Teinemaa, Irene and van Zelst, Sebastiaan J.},
+  title   = {An interdisciplinary comparison of sequence modeling methods for next-element prediction},
+  journal = {Software and Systems Modeling},
+  volume  = {19},
+  number  = {6},
+  pages   = {1345--1365},
+  year    = {2020},
+  doi     = {10.1007/s10270-020-00789-3}
+}
+
+@article{bose2012diagnostics,
+  author  = {Jagadeesh Chandra Bose, R. P. and van der Aalst, Wil M. P.},
+  title   = {Process diagnostics using trace alignment: Opportunities, issues, and challenges},
+  journal = {Information Systems},
+  volume  = {37},
+  number  = {2},
+  pages   = {117--141},
+  year    = {2012},
+  doi     = {10.1016/j.is.2011.08.003}
+}
+
+@incollection{chatain2017alignment,
+  author    = {Chatain, Thomas and Carmona, Josep and van Dongen, Boudewijn},
+  title     = {Alignment-Based Trace Clustering},
+  booktitle = {Conceptual Modeling (ER 2017)},
+  series    = {Lecture Notes in Computer Science},
+  publisher = {Springer},
+  pages     = {295--308},
+  year      = {2017},
+  doi       = {10.1007/978-3-319-69904-2_24},
+  isbn      = {978-3-319-69904-2}
+}
+
+@article{boltenhagen2021modelbased,
+  author  = {Boltenhagen, Mathilde and Chatain, Thomas and Carmona, Josep},
+  title   = {Model-based trace variant analysis of event logs},
+  journal = {Information Systems},
+  volume  = {102},
+  pages   = {101675},
+  year    = {2021},
+  doi     = {10.1016/j.is.2020.101675}
+}
+
+@article{buijs2014quality,
+  author  = {Buijs, J. C. A. M. and van Dongen, B. F. and van der Aalst, W. M. P.},
+  title   = {Quality Dimensions in Process Discovery: The Importance of Fitness, Precision, Generalization and Simplicity},
+  journal = {International Journal of Cooperative Information Systems},
+  volume  = {23},
+  number  = {1},
+  pages   = {1440001},
+  year    = {2014},
+  doi     = {10.1142/S0218843014400012}
+}
+
+@book{scott1998seeing,
+  author    = {Scott, James C.},
+  title     = {Seeing Like a State: How Certain Schemes to Improve the Human Condition Have Failed},
+  publisher = {Yale University Press},
+  address   = {New Haven},
+  year      = {1998}
+}
+
+@article{espeland2007rankings,
+  author  = {Espeland, Wendy Nelson and Sauder, Michael},
+  title   = {Rankings and Reactivity: How Public Measures Recreate Social Worlds},
+  journal = {American Journal of Sociology},
+  volume  = {113},
+  number  = {1},
+  pages   = {1--40},
+  year    = {2007},
+  doi     = {10.1086/517897}
+}
+
+@inproceedings{vanderaalst2019ocpm,
+  author    = {van der Aalst, Wil M. P.},
+  title     = {Object-Centric Process Mining: Dealing with Divergence and Convergence in Event Data},
+  booktitle = {Software Engineering and Formal Methods (SEFM 2019)},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {11724},
+  pages     = {3--25},
+  publisher = {Springer},
+  year      = {2019},
+  doi       = {10.1007/978-3-030-30446-1_1}
+}
+
+@inproceedings{camargo2019lstm,
+  author    = {Camargo, Manuel and Dumas, Marlon and Gonz\'alez-Rojas, Oscar},
+  title     = {Learning Accurate {LSTM} Models of Business Processes},
+  booktitle = {Business Process Management (BPM 2019)},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {11675},
+  pages     = {286--302},
+  publisher = {Springer},
+  year      = {2019},
+  doi       = {10.1007/978-3-030-26619-6_19}
+}
+
+@article{hennig2007stability,
+  author  = {Hennig, Christian},
+  title   = {Cluster-wise assessment of cluster stability},
+  journal = {Computational Statistics \& Data Analysis},
+  volume  = {52},
+  number  = {1},
+  pages   = {258--271},
+  year    = {2007},
+  doi     = {10.1016/j.csda.2006.11.025}
+}
+
+@article{vanderaalst2019dfg,
+  author  = {van der Aalst, Wil M. P.},
+  title   = {A practitioner's guide to process mining: Limitations of the directly-follows graph},
+  journal = {Procedia Computer Science},
+  volume  = {164},
+  pages   = {321--328},
+  year    = {2019},
+  doi     = {10.1016/j.procs.2019.12.189}
+}
+
+@incollection{weytjens2022leakage,
+  author    = {Weytjens, Hans and De Weerdt, Jochen},
+  title     = {Creating Unbiased Public Benchmark Datasets with Data Leakage Prevention for Predictive Process Monitoring},
+  booktitle = {Business Process Management Workshops},
+  series    = {Lecture Notes in Business Information Processing},
+  publisher = {Springer},
+  pages     = {18--29},
+  year      = {2022},
+  doi       = {10.1007/978-3-030-94343-1_2},
+  isbn      = {978-3-030-94343-1}
+}
+
+@article{peeperkorn2023rnnstructure,
+  author  = {Peeperkorn, Jari and vanden Broucke, Seppe and De Weerdt, Jochen},
+  title   = {Can recurrent neural networks learn process model structure?},
+  journal = {Journal of Intelligent Information Systems},
+  volume  = {61},
+  number  = {1},
+  pages   = {27--51},
+  year    = {2023},
+  doi     = {10.1007/s10844-022-00765-x}
+}
+
+@article{gagolewski2021invalid,
+  author  = {Gagolewski, Marek and Bartoszuk, Maciej and Cena, Anna},
+  title   = {Are cluster validity measures (in)valid?},
+  journal = {Information Sciences},
+  volume  = {581},
+  pages   = {620--636},
+  year    = {2021},
+  doi     = {10.1016/j.ins.2021.10.004}
+}
+
+@article{yerbury2025rvi,
+  author  = {Yerbury, Luke W. and Campello, Ricardo J. G. B. and
+             Livingston, Jr., G. C. and Goldsworthy, Mark and O'Neil, Lachlan},
+  title   = {On the Use of Relative Validity Indices for Comparing Clustering Approaches},
+  journal = {ACM Transactions on Knowledge Discovery from Data},
+  volume  = {19},
+  number  = {8},
+  pages   = {1--53},
+  year    = {2025},
+  doi     = {10.1145/3748726}
+}
+
+@inproceedings{beer2026disco,
+  author    = {Beer, Anna and Krieger, Lena and Weber, Pascal and Ritzert, Martin and
+               Assent, Ira and Plant, Claudia},
+  title     = {Internal Evaluation of Density-Based Clusterings with Noise},
+  booktitle = {International Conference on Learning Representations (ICLR 2026)},
+  year      = {2026},
+  eprint    = {2503.00127},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  url       = {https://arxiv.org/abs/2503.00127},
+  urlaccessdate = {4 ago. 2026},
+}
+
+@inproceedings{chang2009teahaves,
+  author    = {Chang, Jonathan and Boyd-Graber, Jordan and Gerrish, Sean and
+               Wang, Chong and Blei, David M.},
+  title     = {Reading Tea Leaves: How Humans Interpret Topic Models},
+  booktitle = {Advances in Neural Information Processing Systems 22 (NIPS 2009)},
+  pages     = {288--296},
+  year      = {2009},
+  url       = {https://papers.nips.cc/paper_files/paper/2009/hash/f92586a25bb3145facd64ab20fd554ff-Abstract.html},
+  urlaccessdate = {4 ago. 2026},
+}
+
+@inproceedings{vonluxburg2012clustering,
+  author    = {von Luxburg, Ulrike and Williamson, Robert C. and Guyon, Isabelle},
+  title     = {Clustering: Science or Art?},
+  booktitle = {Proceedings of ICML Workshop on Unsupervised and Transfer Learning},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {27},
+  pages     = {65--79},
+  year      = {2012},
+  publisher = {PMLR},
+  url       = {https://proceedings.mlr.press/v27/luxburg12a.html},
+  urlaccessdate = {4 ago. 2026},
+}
+
+@article{chicco2025dbcv,
+  author  = {Chicco, Davide and Sabino, Giuseppe and Oneto, Luca and Jurman, Giuseppe},
+  title   = {The {DBCV} index is more informative than {DCSI}, {CDbw}, and {VIASCKDE} indices for
+             unsupervised clustering internal assessment of concave-shaped and density-based clusters},
+  journal = {PeerJ Computer Science},
+  volume  = {11},
+  pages   = {e3095},
+  year    = {2025},
+  doi     = {10.7717/peerj-cs.3095}
+}
+
+@article{mannhardt2019privacy,
+  author  = {Mannhardt, Felix and Koschmider, Agnes and Baracaldo, Nathalie and Weidlich, Matthias and Michael, Judith},
+  title   = {Privacy-Preserving Process Mining: Differential Privacy for Event Logs},
+  journal = {Business \& Information Systems Engineering},
+  volume  = {61},
+  number  = {5},
+  pages   = {595--614},
+  year    = {2019},
+  doi     = {10.1007/s12599-019-00613-3}
+}
+
+@article{elkoumy2022privacy,
+  author  = {Elkoumy, Gamal and Fahrenkrog-Petersen, Stephan A. and Fani Sani, Mohammadreza and Koschmider, Agnes and Mannhardt, Felix and von Voigt, Saskia Nu{\~n}ez and Rafiei, Majid and von Waldthausen, Leopold},
+  title   = {Privacy and Confidentiality in Process Mining: Threats and Research Challenges},
+  journal = {ACM Transactions on Management Information Systems},
+  volume  = {13},
+  number  = {1},
+  pages   = {1--17},
+  year    = {2022},
+  doi     = {10.1145/3468877}
+}
+
+@inproceedings{fahrenkrogpetersen2019pretsa,
+  author    = {Fahrenkrog-Petersen, Stephan A. and van der Aa, Han and Weidlich, Matthias},
+  title     = {{PRETSA}: Event Log Sanitization for Privacy-aware Process Discovery},
+  booktitle = {2019 International Conference on Process Mining (ICPM)},
+  publisher = {IEEE},
+  pages     = {1--8},
+  year      = {2019},
+  doi       = {10.1109/ICPM.2019.00012}
+}
+
+@incollection{fahrenkrogpetersen2020pripel,
+  author    = {Fahrenkrog-Petersen, Stephan A. and van der Aa, Han and Weidlich, Matthias},
+  title     = {{PRIPEL}: Privacy-Preserving Event Log Publishing Including Contextual Information},
+  booktitle = {Business Process Management (BPM 2020)},
+  series    = {Lecture Notes in Computer Science},
+  publisher = {Springer},
+  pages     = {111--128},
+  year      = {2020},
+  doi       = {10.1007/978-3-030-58666-9_7},
+  isbn      = {978-3-030-58666-9}
+}
+
+@article{fahrenkrogpetersen2023optimal,
+  author  = {Fahrenkrog-Petersen, Stephan A. and van der Aa, Han and Weidlich, Matthias},
+  title   = {Optimal event log sanitization for privacy-preserving process mining},
+  journal = {Data \& Knowledge Engineering},
+  volume  = {145},
+  pages   = {102175},
+  year    = {2023},
+  doi     = {10.1016/j.datak.2023.102175}
+}
+
+@article{ferrao2022utility,
+  author  = {Ferr{\~a}o, Maria Eug{\'e}nia and Prata, Paula and Fazendeiro, Paulo},
+  title   = {Utility-driven assessment of anonymized data via clustering},
+  journal = {Scientific Data},
+  volume  = {9},
+  number  = {1},
+  pages   = {456},
+  year    = {2022},
+  doi     = {10.1038/s41597-022-01561-6}
+}
+
+@inproceedings{unger2021jurimetrics,
+  author    = {Unger, Adriana Jacoto and dos Santos Neto, Jos\'e Francisco and
+               Fantinato, Marcelo and Peres, Sarajane Marques and
+               Trecenti, Julio and Hirota, Renata},
+  title     = {Process mining-enabled jurimetrics: analysis of a {Brazilian} court's judicial
+               performance in the business law processing},
+  booktitle = {Proceedings of the Eighteenth International Conference on Artificial
+               Intelligence and Law (ICAIL '21)},
+  pages     = {240--244},
+  publisher = {ACM},
+  year      = {2021},
+  doi       = {10.1145/3462757.3466137}
+}
+
+@article{nai2026procurement,
+  author  = {Nai, Roberto and Sulis, Emilio and Audrito, Davide and
+             Trifiletti, Vittoria Margherita Sofia and Di Caro, Luigi and Genga, Laura},
+  title   = {Legal process mining for the analysis of public procurement workflows},
+  journal = {Computer Law \& Security Review},
+  volume  = {61},
+  pages   = {106283},
+  year    = {2026},
+  doi     = {10.1016/j.clsr.2026.106283}
+}
+
+@article{vanderaalst2010auditing,
+  author  = {van der Aalst, Wil M. P. and van Hee, Kees M. and van der Werf, Jan Martijn and Verdonk, Marc},
+  title   = {Auditing 2.0: Using Process Mining to Support Tomorrow's Auditor},
+  journal = {Computer},
+  volume  = {43},
+  number  = {3},
+  pages   = {90--93},
+  year    = {2010},
+  doi     = {10.1109/MC.2010.61}
+}
+
+@article{jans2014fieldstudy,
+  author  = {Jans, Mieke and Alles, Michael G. and Vasarhelyi, Miklos A.},
+  title   = {A Field Study on the Use of Process Mining of Event Logs as an Analytical Procedure in Auditing},
+  journal = {The Accounting Review},
+  volume  = {89},
+  number  = {5},
+  pages   = {1751--1773},
+  year    = {2014},
+  doi     = {10.2308/accr-50807}
+}
+
+%% ABNT: Constituicao federal -> jurisdicao BRASIL na posicao de autor (NBR 6023).
+%% Provisoes usadas no texto: art. 5, XXXIV, "a" e LXXVIII; art. 37, caput.
+@misc{brasil1988cf,
+  author       = {BRASIL},
+  title        = {Constitui\c{c}\~ao da Rep\'ublica Federativa do Brasil de 1988. Texto
+                  compilado, com as altera\c{c}\~oes das Emendas Constitucionais
+                  n\textordmasculine{} 19/1998 e n\textordmasculine{} 45/2004},
+  address      = {Bras\'ilia, DF},
+  publisher    = {Presid\^encia da Rep\'ublica},
+  year         = {1988},
+  howpublished = {Dispon{\'\i}vel em: \url{https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm}},
+  note         = {Acesso em: 4 ago. 2026}
+}
+
+@article{brauneis2018algorithmic,
+  author  = {Brauneis, Robert and Goodman, Ellen P.},
+  title   = {Algorithmic transparency for the smart city},
+  journal = {Yale Journal of Law \& Technology},
+  volume  = {20},
+  pages   = {103--176},
+  year    = {2018}
+}
+
+%% from lit-process-mining.md (Crossref-verified)
+@article{song2008organizational,
+  author  = {Song, Minseok and van der Aalst, Wil M. P.},
+  title   = {Towards comprehensive support for organizational mining},
+  journal = {Decision Support Systems},
+  volume  = {46},
+  number  = {1},
+  pages   = {300--317},
+  year    = {2008},
+  doi     = {10.1016/j.dss.2008.07.002}
+}
+
+%% !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+%% ATIVADA em 4 ago. 2026 por decisao editorial: a versao pt-BR e IDENTIFICADA.
+%% Identidade verificada na fonte oficial (SAPL/ALEPI), ver article/lit-ai-law.md 7.5.
+%%
+%% >> RESSALVA DE TRANSCRICAO, ainda aberta: o PDF da ALEPI e digitalizacao do
+%% >> original assinado e o OCR corrompe os algarismos romanos do art. 35 (inciso I
+%% >> como "1 -", inciso III como "II -", "10 (dez)" como "1 O (dez)"). A
+%% >> reconstrucao e defensavel -- o par. 2 remete ao "inciso III do caput", o que
+%% >> exige tres incisos -- mas CONFERIR contra a imagem da pagina antes da defesa
+%% >> se o art. 35 for citado com pinpoint.
+%%
+%% NAO CITAR a LC 13/1994 art. 114 para prazo de decisao: a redacao foi alterada
+%% pela LC 261/2021 e hoje fixa prazo para o INTERESSADO recorrer, nao para a
+%% administracao decidir (lit-ai-law.md 7.6). A Lei 6.782/2016 art. 35 cobre isso.
+%%
+%% Historico da entrada (versao EN, duplo-cego):
+%%
+%% Esta e uma LEI ESTADUAL. Pela NBR 6023 / manual iCEV, o autor deve ser o NOME
+%% DO ESTADO em caixa alta (ex.: author = {TOCANTINS}), e nao "BRASIL".
+%%
+%% A versao em ingles anonimizou o estado, a assembleia legislativa e o numero da
+%% lei por exigencia da revisao duplo-cega. A versao pt-BR NAO e cega.
+%%
+%% A identidade NAO foi adivinhada: ela consta, ja verificada na fonte oficial
+%% (SAPL/ALEPI), em article/lit-ai-law.md secao 7.5. A DES-ANONIMIZACAO E UMA
+%% DECISAO EDITORIAL HUMANA -- enquanto a versao em ingles estiver em revisao
+%% cega neste mesmo repositorio, a entrada fica marcada. Para fechar, apagar os
+%% campos TODO-ESTADO abaixo e descomentar o bloco seguinte, conferindo antes a
+%% ressalva de transcricao registrada em lit-ai-law.md secao 7.5:
+%%
+%%   author       = {PIAU\'I},
+%%   title        = {Lei n\textordmasculine{} 6.782, de 28 de mar\c{c}o de 2016. Regula o
+%%                   processo administrativo no \^ambito da Administra\c{c}\~ao P\'ublica
+%%                   do Estado do Piau\'i},
+%%   address      = {Teresina, PI},
+%%   publisher    = {Assembleia Legislativa do Estado do Piau\'i},
+%%   year         = {2016},
+%%   howpublished = {Dispon{\'\i}vel em: \url{https://sapl.al.pi.leg.br/norma/3878}},
+%%   note         = {Acesso em: 4 ago. 2026}
+%% !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+@misc{state2016procedurelaw,
+  author       = {PIAU\'I},
+  title        = {Lei n\textordmasculine{} 6.782, de 28 de mar\c{c}o de 2016. Regula o
+                  processo administrativo no \^ambito da Administra\c{c}\~ao P\'ublica
+                  do Estado do Piau\'i},
+  address      = {Teresina, PI},
+  publisher    = {Assembleia Legislativa do Estado do Piau\'i},
+  year         = {2016},
+  howpublished = {Dispon{\'\i}vel em: \url{https://sapl.al.pi.leg.br/norma/3878}},
+  note         = {Acesso em: 4 ago. 2026}
+}
+
+%% ABNT: lei federal -> jurisdicao BRASIL na posicao de autor (NBR 6023).
+%% Verificada na fonte oficial, ver article/legal-verification.md, secao 1.
+%% Publicada no DOU de 27 jun. 2017. Provisao usada no texto: art. 7, par. 2, III
+%% (divulgacao das principais etapas para processamento do servico).
+@misc{brasil2017cdu,
+  author       = {BRASIL},
+  title        = {Lei n\textordmasculine{} 13.460, de 26 de junho de 2017. C\'odigo de
+                  Defesa do Usu\'ario dos Servi\c{c}os P\'ublicos. Disp\~oe sobre
+                  participa\c{c}\~ao, prote\c{c}\~ao e defesa dos direitos do usu\'ario dos
+                  servi\c{c}os p\'ublicos da administra\c{c}\~ao p\'ublica},
+  address      = {Bras\'ilia, DF},
+  publisher    = {Presid\^encia da Rep\'ublica},
+  year         = {2017},
+  howpublished = {Dispon{\'\i}vel em: \url{https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13460.htm}},
+  note         = {Acesso em: 4 ago. 2026}
+}
+
+%% verified at official source, see article/legal-verification.md
+%% Art. 41 (right to good administration) is addressed to the institutions, bodies,
+%% offices and agencies of the Union -- see legal-verification.md.
+@misc{eu2012charter,
+  author       = {{EUROPEAN UNION}},
+  title        = {Charter of Fundamental Rights of the European Union},
+  publisher    = {Official Journal of the European Union, C 326, 26 Oct. 2012, p. 391--407},
+  year         = {2012},
+  howpublished = {Dispon{\'\i}vel em: \url{https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:12012P/TXT}},
+  note         = {Acesso em: 4 ago. 2026}
+}
+
+%% verified at official source, see article/legal-verification.md
+%% Para. 67: Article 41 of the Charter is addressed not to the Member States but
+%% solely to the institutions, bodies, offices and agencies of the European Union.
+@misc{cjeu2014ys,
+  author       = {{COURT OF JUSTICE OF THE EUROPEAN UNION}},
+  title        = {Joined Cases C-141/12 and C-372/12, {YS} v. {Minister voor
+                  Immigratie, Integratie en Asiel} and {Minister voor Immigratie,
+                  Integratie en Asiel} v. {M} and {S}. Judgment of the Court (Third
+                  Chamber) of 17 July 2014, ECLI:EU:C:2014:2081},
+  year         = {2014},
+  howpublished = {Dispon{\'\i}vel em: \url{https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:62012CJ0141}},
+  note         = {Acesso em: 4 ago. 2026}
+}
+
+%% verified at official source, see article/legal-verification.md
+%% Para. 44 confirms that Article 41 of the Charter does not bind Member State
+%% authorities; para. 45 preserves the rights of the defence as a general principle.
+@misc{cjeu2014mukarubega,
+  author       = {{COURT OF JUSTICE OF THE EUROPEAN UNION}},
+  title        = {Case C-166/13, {Sophie Mukarubega} v. {Pr\'efet de police} and
+                  {Pr\'efet de la Seine-Saint-Denis}. Judgment of the Court (Fifth
+                  Chamber) of 5 November 2014, ECLI:EU:C:2014:2336},
+  year         = {2014},
+  howpublished = {Dispon{\'\i}vel em: \url{https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:62013CJ0166}},
+  note         = {Acesso em: 4 ago. 2026}
+}
+
+%% verified at official source, see article/legal-verification.md
+%% Para. 28, obiter, in a ruling declining jurisdiction: Article 41(2)(c) of the
+%% Charter is addressed not to the Member States but solely to the EU institutions
+%% and bodies. Cite as antecedent to C-141/12, not as primary authority.
+@misc{cjeu2011cicala,
+  author       = {{COURT OF JUSTICE OF THE EUROPEAN UNION}},
+  title        = {Case C-482/10, {Teresa Cicala} v. {Regione Siciliana}. Judgment of the
+                  Court (Third Chamber) of 21 December 2011, ECLI:EU:C:2011:868},
+  year         = {2011},
+  howpublished = {Dispon{\'\i}vel em: \url{https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:62010CJ0482}},
+  note         = {Acesso em: 4 ago. 2026}
+}
+
+%% ===================================================================
+%% Legal and governance scholarship
+%% Entries below transcribed verbatim from article/lit-ai-law.md,
+%% whose DOIs were resolved against the Crossref REST API.
+%% ===================================================================
+
+@article{ananny2018seeing,
+  author  = {Ananny, Mike and Crawford, Kate},
+  title   = {Seeing without knowing: limitations of the transparency ideal and its
+             application to algorithmic accountability},
+  journal = {New Media \& Society},
+  volume  = {20},
+  number  = {3},
+  pages   = {973--989},
+  year    = {2018},
+  doi     = {10.1177/1461444816676645}
+}
+
+@article{bovens2007analysing,
+  author  = {Bovens, Mark},
+  title   = {Analysing and assessing accountability: a conceptual framework},
+  journal = {European Law Journal},
+  volume  = {13},
+  number  = {4},
+  pages   = {447--468},
+  year    = {2007},
+  doi     = {10.1111/j.1468-0386.2007.00378.x}
+}
+
+@article{janssen2012benefits,
+  author  = {Janssen, Marijn and Charalabidis, Yannis and Zuiderwijk, Anneke},
+  title   = {Benefits, adoption barriers and myths of open data and open government},
+  journal = {Information Systems Management},
+  volume  = {29},
+  number  = {4},
+  pages   = {258--268},
+  year    = {2012},
+  doi     = {10.1080/10580530.2012.716740}
+}
+
+@article{oswald2018algorithm,
+  author  = {Oswald, Marion},
+  title   = {Algorithm-assisted decision-making in the public sector: framing the issues
+             using administrative law rules governing discretionary power},
+  journal = {Philosophical Transactions of the Royal Society A},
+  volume  = {376},
+  number  = {2128},
+  pages   = {20170359},
+  year    = {2018},
+  doi     = {10.1098/rsta.2017.0359}
+}
+
+@incollection{craig2022article41,
+  author    = {Craig, Paul},
+  title     = {Article 41 -- the right to good administration},
+  booktitle = {The {EU} {Charter} of {Fundamental} {Rights}: a Commentary},
+  editor    = {Peers, Steve and Hervey, Tamara and Kenner, Jeff and Ward, Angela},
+  edition   = {2},
+  publisher = {Nomos/Hart},
+  pages     = {1125--1152},
+  year      = {2022},
+  doi       = {10.5771/9783748913245-1125}
+}
+
+@article{bousta2013goodadministration,
+  author  = {Bousta, Rhita},
+  title   = {Who said there is a `right to good administration'? {A} critical analysis of
+             {Article} 41 of the {Charter} of {Fundamental} {Rights} of the {European Union}},
+  journal = {European Public Law},
+  volume  = {19},
+  number  = {3},
+  pages   = {481--488},
+  year    = {2013},
+  doi     = {10.54648/euro2013030}
+}
+
+@article{suksi2021administrative,
+  author  = {Suksi, Markku},
+  title   = {Administrative due process when using automated decision-making in public
+             administration: some notes from a {Finnish} perspective},
+  journal = {Artificial Intelligence and Law},
+  volume  = {29},
+  number  = {1},
+  pages   = {87--110},
+  year    = {2021},
+  doi     = {10.1007/s10506-020-09269-x}
+}
+
+@article{branting2025sensitive,
+  author  = {Branting, Karl and Brown, Bradford and Giannella, Chris and Van Guilder, James and
+             Harrold, Jeff and Howell, Sarah and Baron, Jason R.},
+  title   = {Decision support for detecting sensitive text in government records},
+  journal = {Artificial Intelligence and Law},
+  volume  = {33},
+  number  = {1},
+  pages   = {171--197},
+  year    = {2025},
+  doi     = {10.1007/s10506-023-09383-6}
+}
+
+@article{tinarrage2025empirical,
+  author  = {Tinarrage, Rapha\"el and Ennes, Henrique and Resck, Lucas and Gomes, Lucas T. and
+             Ponciano, Jean R. and Poco, Jorge},
+  title   = {Empirical analysis of binding precedent efficiency in {Brazilian} {Supreme Court}
+             via case classification},
+  journal = {Artificial Intelligence and Law},
+  year    = {2025},
+  doi     = {10.1007/s10506-025-09458-6}
+}
+
+@article{vianna2024topic,
+  author  = {Vianna, Daniela and de Moura, Edleno Silva and da Silva, Altigran Soares},
+  title   = {A topic discovery approach for unsupervised organization of legal document collections},
+  journal = {Artificial Intelligence and Law},
+  volume  = {32},
+  number  = {4},
+  pages   = {1045--1074},
+  year    = {2024},
+  doi     = {10.1007/s10506-023-09371-w}
+}
+
+@article{medvedeva2023rethinking,
+  author  = {Medvedeva, Masha and Wieling, Martijn and Vols, Michel},
+  title   = {Rethinking the field of automatic prediction of court decisions},
+  journal = {Artificial Intelligence and Law},
+  volume  = {31},
+  number  = {1},
+  pages   = {195--212},
+  year    = {2023},
+  doi     = {10.1007/s10506-021-09306-3}
+}
+
+@article{nickerson2013taxonomy,
+  author  = {Nickerson, Robert C. and Varshney, Upkar and Muntermann, Jan},
+  title   = {A method for taxonomy development and its application in information systems},
+  journal = {European Journal of Information Systems},
+  volume  = {22},
+  number  = {3},
+  pages   = {336--359},
+  year    = {2013},
+  doi     = {10.1057/ejis.2012.26}
+}
+
+@misc{seadpi2026termo,
+  author       = {{PIAU{\'I}. Secretaria de Administra{\c{c}}{\~a}o do Estado do Piau{\'i}}},
+  title        = {Termo de Ci{\^e}ncia e Responsabilidade para o Tratamento dos Dados Pessoais - SEAD/PI},
+  year         = {2026},
+  address      = {Teresina, PI},
+  howpublished = {Documento institucional assinado digitalmente em 10 jul. 2026. Vig{\^e}ncia at{\'e} dezembro de 2027},
+  note         = {Reproduzido no Anexo A deste trabalho, com tarja sobre identificadores pessoais}
+}
+
+%% Verificada via Crossref e Semantic Scholar em 4 ago. 2026: titulo, autores,
+%% periodico e data conferem. O RESUMO NAO ESTA DISPONIVEL em nenhuma das duas
+%% APIs e o texto completo e pago -- nao foi lido. Caracterizar apenas pelo titulo.
+%% O erro de grafia "anaslysis" e do proprio periodico; corrigi-lo quebra a busca por DOI.
+@article{araujo2025trace,
+  author  = {Ara{\'u}jo, Thiago and Carmo, Danilo and Lima, Ricardo and Oliveira, Adriano},
+  title   = {Trace clustering for judicial process simplification: identifying patterns
+             and enhancing anaslysis},
+  journal = {Artificial Intelligence and Law},
+  year    = {2025},
+  doi     = {10.1007/s10506-025-09481-7},
+  howpublished = {Dispon{\'\i}vel em: \url{https://doi.org/10.1007/s10506-025-09481-7}},
+  note    = {Acesso em: 4 ago. 2026}
+}
+
+%% ---- Doutrina administrativista brasileira (levantamento ago/2026) ----
+@incollection{brgabardo2017eficiencia,
+  author       = {Gabardo, Emerson},
+  title        = {Princ\'ipio da efici\^encia},
+  booktitle    = {Enciclop\'edia Jur\'idica da {PUCSP}, tomo Direito Administrativo e Constitucional},
+  edition      = {2},
+  year         = {2017},
+  publisher    = {Pontif\'icia Universidade Cat\'olica de S\~ao Paulo},
+  address      = {S\~ao Paulo},
+  note         = {Verbete. Trata a efici\^encia como norma constitucional expressa de
+                  efic\'acia direta; identifica racionaliza\c{c}\~ao, produtividade,
+                  economicidade e celeridade como atributos; inclui entre os controles o
+                  organizativo espec\'ifico (m\'etodos de trabalho e procedimento). Rejeita
+                  expressamente a leitura dos princ\'ipios como mandados de otimiza\c{c}\~ao
+                  como sendo a efetivamente adotada pela doutrina brasileira},
+  url          = {https://enciclopediajuridica.pucsp.br/verbetes/principio-da-eficiencia/},
+  urldate      = {2026-08-04}
+}
+
+@article{brfranca2000eficiencia,
+  author       = {{FRANÇA}, Vladimir da Rocha},
+  title        = {Efici\^encia administrativa na {Constitui\c{c}\~ao} {Federal}},
+  journal      = {Revista de Direito Administrativo},
+  volume       = {220},
+  pages        = {165--177},
+  year         = {2000},
+  month        = {abr./jun.},
+  doi          = {10.12660/rda.v220.2000.47532},
+  note         = {A p.~169 reproduz verbatim a recusa de Celso Ant\^onio Bandeira de Mello
+                  ao car\'ater jur\'idico do princ\'ipio (``simples adorno agregado ao
+                  art.~37''); o \S~3.3 (pp.~170--171) liga a efici\^encia ao art.~37,
+                  \S~3\textordmasculine{} da {CF}, dispositivo que a Lei 13.460/2017
+                  regulamenta},
+  url          = {https://periodicos.fgv.br/rda/article/view/47532},
+  urldate      = {2026-08-04}
+}
+
+@article{brchicoski2004eficiencia,
+  author       = {Chic\'oski, Davi},
+  title        = {O princ\'ipio da efici\^encia e o procedimento administrativo},
+  journal      = {A\&C --- Revista de Direito Administrativo \& Constitucional},
+  volume       = {4},
+  number       = {18},
+  pages        = {169--196},
+  year         = {2004},
+  month        = {out./dez.},
+  doi          = {10.21056/aec.v4i18.621},
+  note         = {P.~180 reproduz a defini\c{c}\~ao de Di Pietro dos dois aspectos da
+                  efici\^encia e sustenta que \'e no aspecto organizativo que reside a
+                  rela\c{c}\~ao \'intima com o procedimento administrativo, ``dada a
+                  necessidade de previsibilidade da atua\c{c}\~ao administrativa''.
+                  Pp.~184--185 sintetizam os cinco atributos da efici\^encia no processo
+                  administrativo segundo Egon Bockmann Moreira, incluindo veda\c{c}\~ao a
+                  paralisa\c{c}\~oes desnecess\'arias e a repeti\c{c}\~ao desnecess\'aria de
+                  atos ou fases},
+  url          = {https://revistaaec.com/index.php/revistaaec/article/view/621},
+  urldate      = {2026-08-04}
+}
+
+@article{brbaptista2023transparencia,
+  author       = {Baptista, Patricia Ferreira and Antoun Netto, Leonardo Silveira},
+  title        = {Par\^ametros para o dever de transpar\^encia da administra\c{c}\~ao p\'ublica},
+  journal      = {Revista da AGU},
+  volume       = {22},
+  number       = {4},
+  pages        = {243--259},
+  year         = {2023},
+  month        = {dez.},
+  doi          = {10.25109/2525-328X.v.22.n.04.2023.3397},
+  note         = {``A transpar\^encia \'e a publicidade qualificada'' (p.~245); ``n\~ao se pode
+                  conceber a publicidade sem que se materialize o \'iter procedimental
+                  percorrido pelos agentes... at\'e a edi\c{c}\~ao do ato administrativo''
+                  (pp.~255--256). P\'agina inicial 243 inferida do rodap\'e 244 da p\'agina
+                  seguinte; a primeira p\'agina n\~ao traz numera\c{c}\~ao impressa},
+  url          = {https://revistaagu.agu.gov.br/index.php/AGU/article/view/3397},
+  urldate      = {2026-08-04}
+}
+
+@article{brrodrigues2014publicidade,
+  author       = {Rodrigues, Jo\~ao Gaspar},
+  title        = {Publicidade, transpar\^encia e abertura na administra\c{c}\~ao p\'ublica},
+  journal      = {Revista de Direito Administrativo},
+  volume       = {266},
+  pages        = {89--123},
+  year         = {2014},
+  month        = {maio/ago.},
+  note         = {P.~108 distingue publicidade proativa (identificada \`a ``transpar\^encia
+                  ativa'') de publicidade reativa ou passiva; pp.~107--108 sustentam que \`a
+                  publica\c{c}\~ao oficial ``falta... a visibilidade real e a inteligibilidade
+                  geral da a\c{c}\~ao administrativa''},
+  url          = {https://periodicos.fgv.br/rda/article/view/32142},
+  urldate      = {2026-08-04}
+}
+
+@article{brjuruena2021usuario,
+  author       = {Juruena, Cynthia Gruendling and Valle, Vivian Cristina Lima L\'opez},
+  title        = {O usu\'ario do servi\c{c}o p\'ublico e a aplica\c{c}\~ao da {Lei} 13.460/2017
+                  sob o enfoque dos {Poderes} {Executivo} e {Judici\'ario}},
+  journal      = {Seq\"u\^encia --- Estudos Jur\'idicos e Pol\'iticos},
+  volume       = {42},
+  number       = {87},
+  year         = {2021},
+  doi          = {10.5007/2177-7055.2021.e76786},
+  note         = {Levantamento no {TJPR} entre 17/06/2018 e 17/06/2020: apenas duas
+                  decis\~oes mencionaram a Lei 13.460/2017; 14 de 15 ac\'ord\~aos analisados
+                  aplicaram o {CDC}; buscas por ``Carta de Servi\c{c}os ao Usu\'ario'' nos
+                  portais estadual e municipais frequentemente n\~ao retornaram resultado},
+  url          = {https://periodicos.ufsc.br/index.php/sequencia/article/view/76786},
+  urldate      = {2026-08-04}
+}
+
+@misc{brmarrara2018cdusp,
+  author       = {Marrara, Thiago},
+  title        = {O {C\'odigo} de {Defesa} do {Usu\'ario} de {Servi\c{c}os} {P\'ublicos}
+                  ({Lei} n.~13.460/2017): seis par\^ametros de aplicabilidade},
+  year         = {2018},
+  howpublished = {Colunistas --- Direito do Estado, 15 jan. 2018},
+  note         = {Sustenta que a express\~ao ``atividade administrativa'' no art.~2\textordmasculine{},
+                  II inclui os servi\c{c}os p\'ublicos administrativos, entre os quais os
+                  prestados por certos \'org\~aos p\'ublicos a outros; delimita, por\'em, o
+                  C\'odigo \`a fun\c{c}\~ao administrativa prestativa},
+  url          = {http://www.direitodoestado.com.br/colunistas/thiago-marrara/o-codigo-de-defesa-do-usuario-de-servicos-publicos-lei-n-13460-2017-seis-parametros-de-aplicabilidade},
+  urldate      = {2026-08-04}
+}
+
+@misc{brcgu2018ouvidoria,
+  author       = {{BRASIL. Minist\'erio da Transpar\^encia e Controladoria-Geral da Uni\~ao}},
+  title        = {Manual de ouvidoria p\'ublica: rumo ao sistema participativo},
+  year         = {2018},
+  howpublished = {Bras\'ilia: CGU, nov. 2018. Revista e ampliada, atualizada pela Lei
+                  n\textordmasculine{} 13.460 e Decreto n\textordmasculine{} 9.492/2018},
+  note         = {P.~68: ``servi\c{c}o p\'ublico compreende tanto uma atividade administrativa
+                  (ato voltado para organiza\c{c}\~ao e funcionamento das estruturas
+                  estatais)... quanto uma atividade de presta\c{c}\~ao direta ou indireta de
+                  bens ou servi\c{c}os''; p.~69: ``conceito amplo de servi\c{c}o p\'ublico'';
+                  p.~70 destaca o art.~6\textordmasculine{}, VI, ``d'' (situa\c{c}\~ao da
+                  tramita\c{c}\~ao dos processos administrativos em que o usu\'ario figure
+                  como interessado)},
+  url          = {https://repositorio.cgu.gov.br/bitstream/1/29959/14/manual_de_ouvidoria_publica.pdf},
+  urldate      = {2026-08-04}
+}
+
+@misc{brcgu2024portaria116,
+  author       = {{BRASIL. Controladoria-Geral da Uni\~ao}},
+  title        = {Portaria Normativa {CGU} n\textordmasculine{} 116, de 18 de mar\c{c}o de 2024},
+  year         = {2024},
+  howpublished = {Di\'ario Oficial da Uni\~ao, se\c{c}\~ao 1, Bras\'ilia, DF, ed.~55, p.~134,
+                  20 mar. 2024},
+  note         = {Art.~48: as manifesta\c{c}\~oes oriundas de agentes p\'ublicos internos
+                  ``receber\~ao o mesmo tratamento das manifesta\c{c}\~oes provenientes de
+                  usu\'arios de servi\c{c}os p\'ublicos''; \S~2\textordmasculine{}:
+                  ``aplicam-se aos agentes p\'ublicos internos as mesmas garantias e
+                  prote\c{c}\~oes destinadas aos usu\'arios''. Equipara\c{c}\~ao expressa que
+                  pressup\~oe distin\c{c}\~ao: argumenta nos dois sentidos e n\~ao resolve a
+                  quest\~ao},
+  url          = {https://basedeconhecimento-h.cgu.gov.br/handle/1/18642},
+  urldate      = {2026-08-04}
+}
+
+@misc{brbrasil2017decreto9094,
+  author       = {{BRASIL}},
+  title        = {Decreto n\textordmasculine{} 9.094, de 17 de julho de 2017: disp\~oe sobre a
+                  simplifica\c{c}\~ao do atendimento prestado aos usu\'arios dos servi\c{c}os
+                  p\'ublicos... e institui a Carta de Servi\c{c}os ao Usu\'ario},
+  year         = {2017},
+  howpublished = {Di\'ario Oficial da Uni\~ao, se\c{c}\~ao 1, Bras\'ilia, DF, 18 jul. 2017},
+  note         = {Art.~11, \S~2\textordmasculine{}, III (``\`as etapas para processamento do
+                  servi\c{c}o''); \S~3\textordmasculine{}, VI (``as etapas, presentes e
+                  futuras, esperadas para a realiza\c{c}\~ao dos servi\c{c}os, inclu\'idas a
+                  estimativas de prazos'') e VII (mecanismos de consulta ``acerca das etapas,
+                  cumpridas e pendentes''). \S\S~2\textordmasculine{} e 3\textordmasculine{}
+                  na reda\c{c}\~ao original e em vigor, conferidos na norma atualizada do
+                  LEGIN; \S~1\textordmasculine{} alterado pelos Decretos 9.723/2019 e
+                  10.332/2020 e \S~4\textordmasculine{} acrescido pelo Decreto 10.178/2019.
+                  Vincula apenas o Poder Executivo federal},
+  url          = {https://www2.camara.leg.br/legin/fed/decret/2017/decreto-9094-17-julho-2017-785213-normaatualizada-pe.html},
+  urldate      = {2026-08-04}
+}
+
+@misc{brcgu2019gta,
+  author       = {{BRASIL. Controladoria-Geral da Uni\~ao}},
+  year         = {{[s.d.]}},
+  title        = {Guia de Transpar\^encia Ativa ({GTA}) para os \'org\~aos e entidades do
+                  Poder Executivo Federal},
+  edition      = {6},
+  howpublished = {Bras\'ilia: CGU},
+  note         = {Arrola a Carta de Servi\c{c}os como conte\'udo m\'inimo obrigat\'orio da
+                  se\c{c}\~ao ``Acesso \`a Informa\c{c}\~ao'', remetendo seu conte\'udo ao
+                  art.~11 do Decreto n\textordmasculine{} 9.094/2017, mas restringindo o
+                  dever aos \'org\~aos ``que prestam servi\c{c}os diretamente ao p\'ublico''.
+                  Existe 7\textordfeminine{} vers\~ao (dez. 2022) n\~ao consultada},
+  url          = {https://basedeconhecimento.cgu.gov.br/server/api/core/bitstreams/e8b8a692-3367-4807-b667-2ff7a02d98b9/content},
+  urldate      = {2026-08-04}
+}
+
+%% ===================================================================
+%% Adicionadas para a secao 3.2 (Cenario da pesquisa: a SEAD-PI e o SEI).
+%% Copiadas VERBATIM de article/lit-brasil-pm.md, secao "Entradas BibTeX
+%% propostas" -- todas verificadas na fonte, ver as notas daquele arquivo.
+%% ===================================================================
+
+@article{soriano2025sei,
+  author  = {Soriano, Fabiano and Dias, Carina Santos and
+             Valeriano, Mariangela Oliveira Gomes and Santos, Matheus Silva},
+  title   = {Sistema {Eletr{\^o}nico} de {Informa{\c{c}}{\~o}es} ({SEI}) na
+             administra{\c{c}}{\~a}o p{\'u}blica: avan{\c{c}}os, desafios e perspectivas
+             a partir de uma revis{\~a}o sistem{\'a}tica da literatura},
+  journal = {P2P e Inova{\c{c}}{\~a}o},
+  volume  = {12},
+  number  = {1},
+  pages   = {e-7637},
+  year    = {2025},
+  doi     = {10.21728/p2p.2025v12n1e-7637},
+  url     = {https://revista.ibict.br/p2p/article/view/7637},
+  urlaccessdate = {4 ago. 2026},
+}
+
+@article{fulton2018adocao,
+  author  = {Fulton, Denise de Carvalho Pires and Farias, Josivania Silva and
+             Alfinito, Solange and de Almeida, Juliana Pascualote Lemos},
+  title   = {Ado{\c{c}}{\~a}o do Sistema Eletr{\^o}nico de Informa{\c{c}}{\~o}es ({SEI})
+             pelo {Minist{\'e}rio da Justi{\c{c}}a}: uma avalia{\c{c}}{\~a}o na {\'o}tica
+             de usu{\'a}rios},
+  journal = {Revista do Servi{\c{c}}o P{\'u}blico},
+  volume  = {69},
+  number  = {4},
+  pages   = {1015--1036},
+  year    = {2018},
+  doi     = {10.21874/rsp.v69i4.3624},
+  url     = {https://revista.enap.gov.br/index.php/RSP/article/view/3624},
+  urlaccessdate = {4 ago. 2026},
+}
+
+@article{silva2020gestao,
+  author  = {Silva, Leandro Gon{\c{c}}alves and de Souza, Ros{\'a}lia Beber},
+  title   = {A gest{\~a}o de documentos e tramita{\c{c}}{\~a}o de processos na
+             administra{\c{c}}{\~a}o p{\'u}blica, com a utiliza{\c{c}}{\~a}o do Sistema
+             Eletr{\^o}nico de Informa{\c{c}}{\~o}es -- {SEI}: um estudo de caso na
+             {Universidade Federal de Vi{\c{c}}osa}},
+  journal = {M{\'u}ltiplos Olhares em Ci{\^e}ncia da Informa{\c{c}}{\~a}o},
+  volume  = {10},
+  year    = {2020},
+  doi     = {10.35699/2237-6658.2020.25838},
+  url     = {https://periodicos.ufmg.br/index.php/moci/article/view/25838},
+  urlaccessdate = {4 ago. 2026},
+}
+
+@article{baptista2023processo,
+  author  = {Baptista, Patr{\'i}cia Ferreira and Antoun Netto, Leonardo Silveira},
+  title   = {O processo administrativo eletr{\^o}nico e sua disciplina no direito
+             administrativo brasileiro: entre novos desafios e velhos problemas},
+  journal = {Revista de Direito Administrativo},
+  volume  = {282},
+  number  = {3},
+  pages   = {85--110},
+  year    = {2023},
+  doi     = {10.12660/rda.v282.2023.90156},
+  url     = {https://periodicos.fgv.br/rda/article/view/90156},
+  urlaccessdate = {4 ago. 2026},
+}
+
+%% Ementa e data verificadas na pagina oficial do CONARQ. ARTICULADO NAO LIDO --
+%% nao citar artigo especifico sem abrir o texto no Planalto.
+@misc{brasil2015decreto8539,
+  author       = {BRASIL},
+  title        = {Decreto n\textordmasculine{} 8.539, de 8 de outubro de 2015. Disp{\~o}e
+                  sobre o uso do meio eletr{\^o}nico para a realiza{\c{c}}{\~a}o do processo
+                  administrativo no {\^a}mbito dos {\'o}rg{\~a}os e das entidades da
+                  administra{\c{c}}{\~a}o p{\'u}blica federal direta, aut{\'a}rquica e
+                  fundacional},
+  address      = {Bras\'ilia, DF},
+  publisher    = {Presid\^encia da Rep\'ublica},
+  year         = {2015},
+  howpublished = {Dispon{\'\i}vel em: \url{https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/decreto/d8539.htm}},
+  note         = {Acesso em: 4 ago. 2026}
+}
+
+@misc{brasil2024sei,
+  author       = {{BRASIL. Minist{\'e}rio da Gest{\~a}o e da Inova{\c{c}}{\~a}o em
+                  Servi{\c{c}}os P{\'u}blicos}},
+  title        = {Sistema Eletr{\^o}nico de Informa{\c{c}}{\~o}es -- {SEI}},
+  year         = {2024},
+  howpublished = {Portal Servi{\c{c}}os Compartilhados. Dispon{\'\i}vel em:
+                  \url{https://www.gov.br/servicoscompartilhados/pt-br/assuntos/gestao-documental/sistema-eletronico-de-informacoes-sei}},
+  note         = {Sistema desenvolvido pelo Tribunal Regional Federal da 4\textordfeminine{}
+                  Regi{\~a}o e cedido gratuitamente a institui{\c{c}}{\~o}es p{\'u}blicas
+                  desde 2013. Acesso em: 4 ago. 2026}
+}
+
+@misc{brasil2024pen,
+  author       = {{BRASIL. Minist{\'e}rio da Gest{\~a}o e da Inova{\c{c}}{\~a}o em
+                  Servi{\c{c}}os P{\'u}blicos}},
+  title        = {Processo Eletr{\^o}nico Nacional ({PEN})},
+  year         = {2024},
+  howpublished = {Portal gov.br. Dispon{\'\i}vel em:
+                  \url{https://www.gov.br/gestao/pt-br/assuntos/gestaoeinovacao/informacoes-sistemas-e-servicos-de-gestao/processo-eletronico-nacional/conteudo/processo-eletronico-nacional-pen}},
+  note         = {Acesso em: 4 ago. 2026}
+}
+
+%% ---- Mineracao de processos no Brasil (lit-brasil-pm.md, ago/2026) ----
+@inproceedings{dinkowski2025fifteen,
+  author    = {Dinkowski, Tassiane Giacomelli and Avila, Diego Toralles and
+               Thom, Lucin{\'e}ia Heloisa},
+  title     = {Fifteen years of process mining in {Brazil}: current contributions,
+               most used techniques, and challenges},
+  booktitle = {Anais do XXI Simp{\'o}sio Brasileiro de Sistemas de Informa{\c{c}}{\~a}o
+               (SBSI 2025)},
+  publisher = {Sociedade Brasileira de Computa{\c{c}}{\~a}o},
+  address   = {Porto Alegre},
+  pages     = {409--418},
+  year      = {2025},
+  doi       = {10.5753/sbsi.2025.246519},
+  url       = {https://sol.sbc.org.br/index.php/sbsi/article/view/34357}
+}
+
+@inproceedings{neubauer2022transparency,
+  author    = {Neubauer, Thais Rodrigues and de Araujo, Renata Mendes and
+               Fantinato, Marcelo and Peres, Sarajane Marques},
+  title     = {Transparency promoted by process mining: an exploratory study in a
+               public health product management process},
+  booktitle = {Anais do X Workshop de Computa{\c{c}}{\~a}o Aplicada em Governo
+               Eletr{\^o}nico (WCGE 2022)},
+  publisher = {Sociedade Brasileira de Computa{\c{c}}{\~a}o},
+  address   = {Porto Alegre},
+  pages     = {37--48},
+  year      = {2022},
+  doi       = {10.5753/wcge.2022.223131},
+  url       = {https://sol.sbc.org.br/index.php/wcge/article/view/20709}
+}
+
+@article{melan2020mineracao,
+  author  = {Melan, Rodrigo Libanez and da Silva, Hewerton Fernandes and
+             Am{\^a}ncio-Vieira, Saulo Fabiano and Baccarin, Evandro},
+  title   = {Minera{\c{c}}{\~a}o de processos em um {\'o}rg{\~a}o p{\'u}blico: estudo da
+             diretoria de loteamentos da {Prefeitura Municipal de Londrina (PR)}},
+  journal = {Revista Inova{\c{c}}{\~a}o, Projetos e Tecnologias (IPTEC)},
+  volume  = {8},
+  number  = {2},
+  pages   = {221--234},
+  year    = {2020},
+  doi     = {10.5585/iptec.v8i2.17620},
+  url     = {https://periodicos.uninove.br/iptec/article/view/17620}
+}
+
+@inproceedings{xavier2025suporte,
+  author    = {Xavier, Rafael C. and Southier, Luiz F. P. and Capello, Cinglair A. and
+               Scalabrin, Edson E. and Ferronato, Jair J. and Teixeira, Marcelo},
+  title     = {Suporte {\`a} tomada de decis{\~o}es em gest{\~a}o p{\'u}blica municipal por
+               meio de minera{\c{c}}{\~a}o de processos reativa e preditiva},
+  booktitle = {Anais do VIII Workshop-Escola de Inform{\'a}tica Te{\'o}rica (WEIT 2025)},
+  publisher = {Sociedade Brasileira de Computa{\c{c}}{\~a}o},
+  address   = {Porto Alegre},
+  pages     = {162--171},
+  year      = {2025},
+  doi       = {10.5753/weit.2025.40454},
+  url       = {https://sol.sbc.org.br/index.php/weit/article/view/40454}
+}
+
+@inproceedings{vasconcelos2025ogd,
+  author    = {Vasconcelos, Gyslla and Viterbo, Jos{\'e} and Bernardini, Flavia},
+  title     = {Assessing the capability of open government data for process mining:
+               a study on a {Brazilian} open data portal},
+  booktitle = {Proceedings of the 26th Annual International Conference on Digital
+               Government Research (dg.o 2025)},
+  publisher = {TU Delft OPEN Publishing},
+  year      = {2025},
+  doi       = {10.59490/dgo.2025.1041},
+  url       = {https://proceedings.open.tudelft.nl/DGO2025/article/view/1041}
+}
+
+@mastersthesis{fujiwara2021mineracao,
+  author  = {Fujiwara, Ricardo Shigueru},
+  title   = {Minera{\c{c}}{\~a}o de processos como ferramenta de mitiga{\c{c}}{\~a}o e
+             preven{\c{c}}{\~a}o de fraudes na gest{\~a}o p{\'u}blica},
+  school  = {Universidade Federal do Paran{\'a}, Programa de P{\'o}s-Gradua{\c{c}}{\~a}o
+             em Gest{\~a}o da Informa{\c{c}}{\~a}o},
+  address = {Curitiba},
+  year    = {2021},
+  type    = {Disserta{\c{c}}{\~a}o (Mestrado)},
+  url     = {https://hdl.handle.net/1884/72005}
+}
+
+@misc{rozinat2019brazilexec,
+  author       = {Rozinat, Anne},
+  title        = {Government process mining in the {Brazilian} executive branch},
+  howpublished = {{IEEE} Task Force on Process Mining, case study},
+  year         = {2019},
+  note         = {Atualizado em 7 jan. 2020},
+  url          = {https://www.tf-pm.org/resources/casestudy/government-process-mining-in-the-brazilian-executive-branch},
+  urldate      = {2026-08-04}
+}
+
+@inproceedings{neubauer2019agrupamento,
+  author    = {Neubauer, Thais Rodrigues and Fantinato, Marcelo and Peres, Sarajane Marques},
+  title     = {Agrupamento interativo aplicado {\`a} minera{\c{c}}{\~a}o de processos},
+  booktitle = {Anais Estendidos do XV Simp{\'o}sio Brasileiro de Sistemas de
+               Informa{\c{c}}{\~a}o (SBSI 2019) -- Workshop de Teses e Disserta{\c{c}}{\~o}es
+               em Sistemas de Informa{\c{c}}{\~a}o},
+  publisher = {Sociedade Brasileira de Computa{\c{c}}{\~a}o},
+  address   = {Porto Alegre},
+  pages     = {45--48},
+  year      = {2019},
+  doi       = {10.5753/sbsi.2019.7438},
+  url       = {https://sol.sbc.org.br/index.php/sbsi_estendido/article/view/7438}
+}
+
+@inproceedings{neubauer2021visualization,
+  author    = {Neubauer, Thais Rodrigues and Pamponet Sobrinho, Glaucia and
+               Fantinato, Marcelo and Peres, Sarajane Marques},
+  title     = {Visualization for enabling human-in-the-loop in trace clustering-based
+               process mining tasks},
+  booktitle = {2021 {IEEE} International Conference on Big Data (Big Data)},
+  publisher = {IEEE},
+  address   = {Orlando, FL, USA},
+  pages     = {3548--3556},
+  year      = {2021},
+  doi       = {10.1109/BigData52589.2021.9671985}
+}
+
+@misc{yamate2025textsql,
+  author       = {Yamate, Bruno Yui and Neubauer, Thais Rodrigues and
+                  Fantinato, Marcelo and Peres, Sarajane Marques},
+  title        = {Text-to-{SQL} oriented to the process mining domain:
+                  a {PT-EN} dataset for query translation},
+  year         = {2025},
+  howpublished = {arXiv preprint},
+  note         = {arXiv:2509.09684},
+  url          = {https://arxiv.org/abs/2509.09684}
+}
+
+@mastersthesis{nowak2018utilizacao,
+  author  = {Nowak, Mary Anne Muraski},
+  title   = {A utiliza{\c{c}}{\~a}o do Sistema Eletr{\^o}nico de Informa{\c{c}}{\~o}es --
+             {SEI} no servi{\c{c}}o p{\'u}blico: inova{\c{c}}{\~a}o tecnol{\'o}gica para
+             melhoria na efici{\^e}ncia administrativa e no conhecimento institucional},
+  school  = {Universidade Federal do Paran{\'a}, Programa de P{\'o}s-Gradua{\c{c}}{\~a}o
+             em Desenvolvimento Econ{\^o}mico},
+  address = {Curitiba},
+  year    = {2018},
+  type    = {Disserta{\c{c}}{\~a}o (Mestrado)},
+  url     = {https://hdl.handle.net/1884/55992}
+}
+
+@misc{brasil2021govdigital,
+  author       = {{BRASIL}},
+  title        = {Lei n\textordmasculine{} 14.129, de 29 de mar{\c{c}}o de 2021. Disp{\~o}e
+                  sobre princ{\'i}pios, regras e instrumentos para o Governo Digital e para
+                  o aumento da efici{\^e}ncia p{\'u}blica},
+  year         = {2021},
+  howpublished = {Di\'ario Oficial da Uni\~ao, Bras\'ilia, DF},
+  note         = {Altera as Leis n\textordmasculine{} 7.116/1983, 12.527/2011 (LAI),
+                  12.682/2012 e 13.460/2017},
+  url          = {http://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/L14129.htm},
+  urldate      = {2026-08-04}
+}
+
+@book{nunes2019jurimetria,
+  author    = {Nunes, Marcelo Guedes},
+  title     = {Jurimetria: como a estat{\'i}stica pode reinventar o direito},
+  edition   = {2},
+  publisher = {Revista dos Tribunais},
+  address   = {S{\~a}o Paulo},
+  pages     = {190},
+  year      = {2019},
+  isbn      = {978-85-5321-999-5},
+  url       = {https://www.lexml.gov.br/urn/urn:lex:br:rede.virtual.bibliotecas:livro:2019;001163005}
+}
+
+@techreport{cnj2025justicaemnumeros,
+  author      = {{CONSELHO NACIONAL DE JUSTI{\c{C}}A}},
+  title       = {Justi{\c{c}}a em n{\'u}meros 2025},
+  institution = {Conselho Nacional de Justi{\c{c}}a},
+  address     = {Bras{\'i}lia},
+  year        = {2025},
+  pages       = {650},
+  note        = {S{\'e}rie Relat{\'o}rios e dados estat{\'i}sticos do Poder Judici{\'a}rio.
+                 ISBN 978-65-5972-195-5},
+  url         = {https://bibliotecadigital.cnj.jus.br/xmlui/handle/123456789/1060},
+  urldate     = {2026-08-04}
+}
+
+@misc{cnj2020resolucao331,
+  author       = {{CONSELHO NACIONAL DE JUSTI{\c{C}}A}},
+  title        = {Resolu{\c{c}}{\~a}o n\textordmasculine{} 331, de 20 de agosto de 2020.
+                  Institui a Base Nacional de Dados do Poder Judici{\'a}rio -- {DataJud}},
+  year         = {2020},
+  howpublished = {DJe/CNJ, n. 274, 25 ago. 2020, p. 2--4},
+  url          = {https://atos.cnj.jus.br/atos/detalhar/3428},
+  urldate      = {2026-08-04}
+}
+
+@techreport{tcu2020referencial,
+  author      = {{BRASIL. Tribunal de Contas da Uni{\~a}o}},
+  title       = {Referencial b{\'a}sico de governan{\c{c}}a aplic{\'a}vel a organiza{\c{c}}{\~o}es
+                 p{\'u}blicas e outros entes jurisdicionados ao {TCU}},
+  institution = {Tribunal de Contas da Uni{\~a}o, Secretaria de Controle Externo da
+                 Administra{\c{c}}{\~a}o do Estado},
+  address     = {Bras{\'i}lia},
+  edition     = {3},
+  year        = {2020},
+  pages       = {242},
+  url         = {https://portal.tcu.gov.br/referencial-basico-de-governanca-organizacional.htm},
+  urldate     = {2026-08-04}
+}

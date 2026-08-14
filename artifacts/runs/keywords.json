@@ -1,0 +1,49 @@
+{
+  "stage": "keywords",
+  "phase": "documents",
+  "question": "Que termos controlados descrevem o documento de abertura de cada processo?",
+  "deterministic": false,
+  "status": "ran",
+  "mode": "fs",
+  "started_at": "2026-08-12T03:42:32Z",
+  "ended_at": "2026-08-12T04:00:38Z",
+  "duration_seconds": 1086.032,
+  "flags": {
+    "from_date": null,
+    "to_date": null,
+    "workers": "10",
+    "batch_size": null,
+    "chunk_size": null,
+    "limit": null,
+    "emit_dir": null,
+    "read_dir": null,
+    "passes": "1",
+    "batch": "10"
+  },
+  "inputs": [],
+  "outputs": [
+    {
+      "path": "artifacts/cache/keyword_vocab.json",
+      "bytes": 123257
+    },
+    {
+      "path": "artifacts/cache/keywords_by_processo.json",
+      "bytes": 1612059
+    }
+  ],
+  "n_inputs": 0,
+  "n_outputs": 2,
+  "summary": {
+    "processos": 12257,
+    "extracted": 12200,
+    "skipped": 0,
+    "failed": 0,
+    "empty_llm_response": 55,
+    "empty_after_normalization": 2,
+    "passes": 1,
+    "vocab_terms": 5068,
+    "vocab_singletons": 2986,
+    "model": "Qwen/Qwen3.6-35B-A3B",
+    "duration_seconds": 1086.0
+  }
+}

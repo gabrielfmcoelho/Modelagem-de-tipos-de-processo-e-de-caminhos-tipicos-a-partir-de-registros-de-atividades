@@ -1,0 +1,57 @@
+services:
+  neo4j:
+    image: neo4j:5
+    container_name: ai-pipeline-neo4j
+    ports:
+      - "7474:7474"   # HTTP browser
+      - "7687:7687"   # Bolt
+    environment:
+      NEO4J_AUTH: "${NEO4J_USER:-neo4j}/${NEO4J_PASSWORD:-changeme}"
+      NEO4J_PLUGINS: '["apoc"]'
+      NEO4J_apoc_export_file_enabled: "true"
+      NEO4J_apoc_import_file_enabled: "true"
+      NEO4J_dbms_security_procedures_unrestricted: "apoc.*"
+      # Sized for the atividades bulk load (~1.2M nodes + ~5M edges): heap holds
+      # tx-state during the serial edge phase, pagecache keeps the dimension
+      # indexes + store hot. Lower these if your host has <12GB; raise heap to 6G
+      # / pagecache to 4G if you have the RAM. Do NOT exceed host memory.
+      NEO4J_server_memory_heap_initial__size: "4G"
+      NEO4J_server_memory_heap_max__size: "4G"
+      NEO4J_server_memory_pagecache_size: "3G"
+    volumes:
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+      - neo4j_plugins:/plugins
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:7474 >/dev/null || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  pipeline:
+    build: .
+    container_name: ai-pipeline-runner
+    depends_on:
+      neo4j:
+        condition: service_healthy
+    env_file: .env
+    environment:
+      # Override URI to use the docker network instead of localhost
+      NEO4J_URI: "bolt://neo4j:7687"
+    volumes:
+      # Persist artifacts across runs
+      - ./parsed_documents:/app/parsed_documents
+      - ./ner_results:/app/ner_results
+      - ./graphify-out:/app/graphify-out
+      - ./.pipeline-state:/app/.pipeline-state
+      # Bind-mount source for dev (comment out for prod immutable images)
+      - ./pipeline:/app/pipeline
+    # No CMD here — invoke explicitly:
+    #   docker compose run --rm pipeline run download
+    #   docker compose run --rm pipeline run etl
+    profiles: ["runner"]
+
+volumes:
+  neo4j_data:
+  neo4j_logs:
+  neo4j_plugins:

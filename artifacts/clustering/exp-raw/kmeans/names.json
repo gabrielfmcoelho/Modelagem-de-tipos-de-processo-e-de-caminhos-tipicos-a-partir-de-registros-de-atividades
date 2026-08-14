@@ -1,0 +1,705 @@
+{
+  "_meta": {
+    "stage": "cluster-name",
+    "question": "Que nome em linguagem natural descreve cada grupo?",
+    "deterministic": false,
+    "nondeterminism": "chamada de LLM; a saida varia entre execucoes identicas",
+    "generated_at": "2026-08-13T11:47:02Z",
+    "commit": "8e51165916d00721db38c74c9bd1def6cb02c0f3",
+    "params": {
+      "run_id": "exp-raw",
+      "algo": "kmeans"
+    },
+    "inputs": [
+      {
+        "path": "artifacts/clustering/exp-raw/kmeans/labels.json",
+        "sha256": "8c65a131b3a538f2847064b4dd894414e8963b2654cbe946a0576581f5f7d8fb"
+      }
+    ],
+    "versions": {
+      "numpy": "2.4.6",
+      "scikit-learn": "1.9.0",
+      "hdbscan": "0.8.44",
+      "umap-learn": "0.5.12",
+      "igraph": "1.0.0",
+      "leidenalg": "0.12.0",
+      "torch": "2.13.0",
+      "neo4j": "6.2.0"
+    }
+  },
+  "meta": {
+    "run_id": "exp-raw",
+    "algo": "kmeans",
+    "n_clusters": 66,
+    "samples_per_cluster": 5,
+    "redundancy": {
+      "mean_nn_cosine": 0.7541,
+      "n_pairs_ge_threshold": 10,
+      "threshold": 0.9,
+      "n_names": 66
+    },
+    "generated_at": "2026-08-13T11:47:02Z"
+  },
+  "names": {
+    "exp-raw|macro|18": {
+      "nome": "Solicitação e Concessão de Gozo de Férias de Servidores",
+      "descricao": "Processos administrativos voltados para o requerimento, análise e autorização do período de descanso remunerado (férias) de servidores estatutários e estagiários.",
+      "marcadores": [
+        "Férias",
+        "SGP",
+        "Solicitação de Gozo"
+      ],
+      "n_members": 209
+    },
+    "exp-raw|macro|2": {
+      "nome": "Registro de Alterações Contratuais e Consolidação Societária de Empresas",
+      "descricao": "Processos administrativos voltados ao registro, análise e homologação de alterações contratuais, inclusão de filiais, transferência de quotas e consolidação societária de pessoas jurídicas.",
+      "marcadores": [
+        "alteração contratual",
+        "SLC/CADUF",
+        "consolidação societária"
+      ],
+      "n_members": 210
+    },
+    "exp-raw|macro|3": {
+      "nome": "Suporte Técnico Remoto e Presencial para Sistemas de Ponto Eletrônico",
+      "descricao": "Processos de atendimento técnico voltados à resolução de falhas de conexão VPN, configuração de leitores biométricos e regularização de registros de frequência em sistemas de ponto eletrônico.",
+      "marcadores": [
+        "ponto eletrônico",
+        "SEAD-PI/GAB/NTGD/GIS/SUPEL",
+        "visita técnica"
+      ],
+      "n_members": 181
+    },
+    "exp-raw|macro|30": {
+      "nome": "Reserva de Auditórios e Gestão de Normas de Convivência do Centro Administrativo",
+      "descricao": "Processos relacionados à solicitação de uso de espaços físicos institucionais, como auditórios, e à regulamentação do comportamento e ocupação do Centro Administrativo de Teresina.",
+      "marcadores": [
+        "Reserva de auditório",
+        "Normas de Convivência",
+        "Diretoria Geral de Logística"
+      ],
+      "n_members": 152
+    },
+    "exp-raw|macro|7": {
+      "nome": "Solicitação de Autorização para Adesão a Ata de Registro de Preços",
+      "descricao": "Processos administrativos voltados para a análise e concessão de autorização para que órgãos ou empresas adiram às Atas de Registro de Preços geridas pela Secretaria de Administração do Piauí.",
+      "marcadores": [
+        "Adesão a Ata de Registro de Preços",
+        "SEAD-PI/GAB/SLC",
+        "Autorização de adesão"
+      ],
+      "n_members": 229
+    },
+    "exp-raw|macro|60": {
+      "nome": "Gestão de Pessoal de Apoio, Estagiários e Terceirizados",
+      "descricao": "Processos administrativos voltados para a contratação, nomeação, fiscalização, devolução e pagamento de pessoal não efetivo, incluindo estagiários, servidores terceirizados e equipes técnicas temporárias.",
+      "marcadores": [
+        "Estagiários e Terceirizados",
+        "SEAD-PI/GAB/SGACG",
+        "Nomeação e Devolução"
+      ],
+      "n_members": 192
+    },
+    "exp-raw|macro|49": {
+      "nome": "Solicitação de Retirada ou Atualização de Descontos em Folha de Pagamento",
+      "descricao": "Processos administrativos voltados para a correção, suspensão ou atualização de dados financeiros na folha de pagamento de servidores, incluindo a retirada de descontos indevidos, desligamento de consignados e alteração de dados bancários.",
+      "marcadores": [
+        "desconto em contracheque",
+        "SEAD-PI/SGP/DPP",
+        "solicitação de atualização bancária"
+      ],
+      "n_members": 189
+    },
+    "exp-raw|macro|26": {
+      "nome": "Retirada de Descontos Indevidos em Contracheque por Fraude ou Erro",
+      "descricao": "Processos administrativos voltados à suspensão e ressarcimento de valores descontados indevidamente da folha de pagamento de servidores, geralmente decorrentes de fraudes com cartões de crédito ou cobranças não autorizadas.",
+      "marcadores": [
+        "Desconto indevido em contracheque",
+        "SEAD-PI/SGP/DPP/GEFP/CSCCSA",
+        "Boletim de Ocorrência"
+      ],
+      "n_members": 167
+    },
+    "exp-raw|macro|27": {
+      "nome": "Suporte Técnico e Manutenção do Sistema de Ponto Eletrônico",
+      "descricao": "Processos relativos a visitas técnicas, diagnósticos e resolução de falhas no sistema de controle de ponto eletrônico em diversas unidades governamentais.",
+      "marcadores": [
+        "ponto eletrônico",
+        "SUPEL",
+        "relatório de visita técnica"
+      ],
+      "n_members": 144
+    },
+    "exp-raw|macro|34": {
+      "nome": "Solicitação de Pagamento de Serviços de Mão de Obra Terceirizada",
+      "descricao": "Processos administrativos voltados para a instrução e aprovação de requisições de pagamento referentes a contratos de prestação de serviços continuados de mão de obra terceirizada ou especializada.",
+      "marcadores": [
+        "mão de obra terceirizada",
+        "DFIN/GEO",
+        "solicitação de pagamento"
+      ],
+      "n_members": 152
+    },
+    "exp-raw|macro|4": {
+      "nome": "Gestão de Retirada de Descontos em Contracheques de Servidores",
+      "descricao": "Processos administrativos voltados para a solicitação e execução da exclusão de descontos específicos (como consignados, sindicais ou cartões) dos proventos ou vencimentos de servidores e pensionistas.",
+      "marcadores": [
+        "contracheque",
+        "SEAD-PI/SGP/DPP/GEFP",
+        "retirada de desconto"
+      ],
+      "n_members": 147
+    },
+    "exp-raw|macro|46": {
+      "nome": "Inscrição e Habilitação de Empresas no CADUF",
+      "descricao": "Processos administrativos voltados ao cadastro, atualização e verificação de regularidade fiscal de empresas junto ao Cadastro Unificado de Fornecedores.",
+      "marcadores": [
+        "CADUF",
+        "Superintendência de Licitações e Contratos",
+        "Certidões Negativas de Débitos"
+      ],
+      "n_members": 116
+    },
+    "exp-raw|macro|22": {
+      "nome": "Concessão de Diárias para Servidores em Missões Oficiais",
+      "descricao": "Processos administrativos voltados à autorização e pagamento de diárias para servidores públicos que realizam viagens ou deslocamentos internos para cumprimento de tarefas específicas, como perícias, audiências públicas, diligências e elaboração de laudos técnicos.",
+      "marcadores": [
+        "Autorização de diárias",
+        "SEAD-PI",
+        "Memorando de solicitação"
+      ],
+      "n_members": 132
+    },
+    "exp-raw|macro|21": {
+      "nome": "Solicitação de Abono de Faltas por Servidores",
+      "descricao": "Processos administrativos voltados para a regularização de ausências injustificadas de servidores públicos mediante apresentação de justificativas como atestados médicos, recesso ou esquecimento de registro de ponto.",
+      "marcadores": [
+        "Justificativa de faltas",
+        "SGP/DDP/CPE",
+        "Abono de falta"
+      ],
+      "n_members": 119
+    },
+    "exp-raw|macro|19": {
+      "nome": "Justificativa de Faltas e Licenças de Saúde de Servidores",
+      "descricao": "Processos administrativos voltados ao registro de justificativas de ausências laborais por motivos de saúde, óbito familiar ou comparecimento médico, bem como à concessão de licenças de tratamento de saúde para servidores públicos.",
+      "marcadores": [
+        "Justificativa de faltas",
+        "Licença de tratamento de saúde",
+        "CCOF"
+      ],
+      "n_members": 130
+    },
+    "exp-raw|macro|25": {
+      "nome": "Gestão de Pagamentos e Prorrogação de Contratos de Serviços Contínuos",
+      "descricao": "Processos administrativos voltados para a execução financeira de despesas contratuais, incluindo pagamentos de serviços terceirizados, aluguel e regularização de vencimentos, bem como a gestão documental para prorrogação de vigência de contratos de serviços contínuos.",
+      "marcadores": [
+        "prorrogação de contratos",
+        "pagamento de serviços",
+        "SGACG/DLOG"
+      ],
+      "n_members": 119
+    },
+    "exp-raw|macro|15": {
+      "nome": "Autorização e Realização de Cursos de Capacitação de Servidores",
+      "descricao": "Processos voltados para a solicitação de autorização, planejamento e execução de treinamentos internos ou externos para a qualificação profissional de servidores públicos estaduais.",
+      "marcadores": [
+        "Curso de Capacitação",
+        "SEAD-PI/DEGEPI",
+        "Autorização de Treinamento"
+      ],
+      "n_members": 95
+    },
+    "exp-raw|macro|42": {
+      "nome": "Solicitação de Recursos Humanos e Suporte Técnico Operacional",
+      "descricao": "Processos que envolvem a demanda por contratação de pessoal especializado, atualização de acessos digitais e provisionamento de infraestrutura física ou técnica para suporte às atividades fim e meio da administração.",
+      "marcadores": [
+        "Contratação de assistentes sociais",
+        "Atualização de certificado digital",
+        "Solicitação de espaço físico"
+      ],
+      "n_members": 110
+    },
+    "exp-raw|macro|40": {
+      "nome": "Protocolo de Peticionamento Eletrônico Externo",
+      "descricao": "Processos iniciados ou acompanhados por meio de peticionamento eletrônico realizado por usuários externos, caracterizados pela emissão de recibos de protocolo e anexação de ofícios de resposta ou esclarecimento.",
+      "marcadores": [
+        "Peticionamento Eletrônico",
+        "Recibo de Protocolo",
+        "SEAD-PI/GAB"
+      ],
+      "n_members": 92
+    },
+    "exp-raw|macro|50": {
+      "nome": "Realização de Masterclasses e Cursos de Inteligência Artificial",
+      "descricao": "Processos administrativos voltados para a organização, convite e autorização de eventos de capacitação específicos sobre fundamentos de prompt e inteligência artificial aplicada, no âmbito do Programa CapacitIA.",
+      "marcadores": [
+        "Masterclass Fundamentos de Prompt de IA",
+        "Programa CapacitIA",
+        "Secretaria de Inteligência Artificial"
+      ],
+      "n_members": 99
+    },
+    "exp-raw|macro|1": {
+      "nome": "Suporte Técnico e Manutenção de Sistemas de Ponto Eletrônico",
+      "descricao": "Processos relativos a visitas técnicas e resolução de falhas em equipamentos e softwares de registro de frequência, incluindo problemas de conexão, biométricos e transmissão de dados.",
+      "marcadores": [
+        "ponto eletrônico",
+        "SEAD-PI/GAB/NTGD/GIS/SUPEL",
+        "Relatório de visita técnica"
+      ],
+      "n_members": 98
+    },
+    "exp-raw|macro|32": {
+      "nome": "Gestão de Cadastro e Movimentação de Pessoal",
+      "descricao": "Processos administrativos voltados para a manutenção dos registros funcionais, contratação, renovação de contratos e inclusão de servidores na folha de pagamento.",
+      "marcadores": [
+        "Renovação de contrato de estágio",
+        "Alteração cadastral por casamento",
+        "Inclusão na folha de pagamento"
+      ],
+      "n_members": 86
+    },
+    "exp-raw|macro|11": {
+      "nome": "Gestão de Nomeações e Exonerações de Servidores Comissionados",
+      "descricao": "Processos administrativos voltados para a designação e destituição de agentes públicos em cargos de confiança (DAS), envolvendo solicitações formais de nomeação ou exoneração encaminhadas à Chefia de Gabinete do Governador.",
+      "marcadores": [
+        "Servidor Comissionado",
+        "SEAD-PI/GAB/ASTECGAB",
+        "Exoneração"
+      ],
+      "n_members": 90
+    },
+    "exp-raw|macro|47": {
+      "nome": "Gestão de Procedimentos Administrativos Internos e Modelos Padrão",
+      "descricao": "Categoria dedicada aos processos que envolvem a criação, padronização ou gestão de instrumentos administrativos internos, como modelos de comunicação, termos de referência genéricos, relatórios financeiros de suporte e controle de períodos de férias, sem foco em contratações externas ou licitações específicas.",
+      "marcadores": [
+        "Modelo de e-mail institucional",
+        "SEAD-PI/GAB",
+        "Termo de Referência para Licitação de Bens Comuns"
+      ],
+      "n_members": 87
+    },
+    "exp-raw|macro|36": {
+      "nome": "Solicitação de Abono e Justificativa de Faltas Servidores",
+      "descricao": "Processos administrativos voltados ao pedido de regularização de registros de ponto mediante abono ou justificativa de ausências por motivos diversos como saúde, falecimento, trabalho remoto ou eventos institucionais.",
+      "marcadores": [
+        "Abono de Ponto",
+        "Coordenação de Pessoal",
+        "Justificativa de Faltas"
+      ],
+      "n_members": 72
+    },
+    "exp-raw|macro|12": {
+      "nome": "Solicitação de Abono de Faltas e Justificativas de Ausência de Servidores",
+      "descricao": "Processos administrativos voltados à regularização da frequência de servidores e contratados, envolvendo a concessão de abono de faltas por participação em eventos externos, doenças ou justificativas de ausência não registrada no sistema de ponto.",
+      "marcadores": [
+        "Abono de faltas",
+        "Justificativa de ausência",
+        "SEAD-PI/GAB/SGACG"
+      ],
+      "n_members": 78
+    },
+    "exp-raw|macro|38": {
+      "nome": "Emissão de Certidões e Comprovação de Tempo de Serviço",
+      "descricao": "Processos administrativos voltados à solicitação, emissão e validação de documentos comprobatórios de vínculo empregatício, tempo de serviço público e histórico previdenciário para fins de direitos funcionais ou concursos.",
+      "marcadores": [
+        "Certidão de tempo de serviço",
+        "Unidade CDB (Certidões)",
+        "Extrato CNIS"
+      ],
+      "n_members": 71
+    },
+    "exp-raw|macro|23": {
+      "nome": "Encaminhamento de Ofícios e Respostas a Demandas Externas",
+      "descricao": "Processos administrativos caracterizados pelo fluxo de correspondência oficial (ofícios) entre a administração estadual e órgãos externos, como Ministério Público, Poder Judiciário ou outras secretarias, visando o cumprimento de solicitações, expedições de informações ou respostas a procedimentos investigatórios.",
+      "marcadores": [
+        "Encaminhamento de Ofício",
+        "Ministério Público / Vara Judicial",
+        "Resposta por meio eletrônico"
+      ],
+      "n_members": 83
+    },
+    "exp-raw|macro|48": {
+      "nome": "Gestão de Revisões e Atualizações de Benefícios e Vencimentos de Servidores",
+      "descricao": "Processos administrativos voltados para a análise, atualização ou revisão de direitos financeiros dos servidores, incluindo pensões alimentícias, aposentadorias, reajustes salariais e reposições de valores retroativos.",
+      "marcadores": [
+        "Atualização de pensão alimentícia",
+        "Unidade SEAD-PI/SGP/DPP/GICFTP",
+        "Revisão de Aposentadoria"
+      ],
+      "n_members": 85
+    },
+    "exp-raw|macro|6": {
+      "nome": "Gestão de Abono de Falta e Regularização de Ponto Eletrônico",
+      "descricao": "Processos administrativos voltados à correção de registros de frequência, incluindo abono de faltas por erro no ponto eletrônico e justificativas de ausência em regime de home office.",
+      "marcadores": [
+        "Abono de falta",
+        "Erro de ponto",
+        "SEAD-PI/GAB/SGACG/DFIN"
+      ],
+      "n_members": 67
+    },
+    "exp-raw|macro|14": {
+      "nome": "Solicitação de Pagamento de Aluguel de Imóveis",
+      "descricao": "Processos administrativos voltados para a autorização e execução do pagamento mensal de aluguéis de imóveis comerciais locados pelo Estado, conforme contratos vigentes.",
+      "marcadores": [
+        "pagamento de aluguel",
+        "DFIN/GEO",
+        "contrato de locação"
+      ],
+      "n_members": 66
+    },
+    "exp-raw|macro|53": {
+      "nome": "Ressarcimento de Valores e Apuração de Responsabilidades Administrativas",
+      "descricao": "Processos voltados para o recolhimento de valores devidos ao Tesouro, incluindo ressarcimento de 13º salário de servidores e custos funcionais de cedência, bem como a instauração de procedimentos para apuração de responsabilidades por irregularidades.",
+      "marcadores": [
+        "Ressarcimento de 13º salário",
+        "Nota de Débito",
+        "Apuração de Responsabilidade"
+      ],
+      "n_members": 67
+    },
+    "exp-raw|macro|58": {
+      "nome": "Processamento de Aposentadoria por Tempo de Contribuição",
+      "descricao": "Fluxo administrativo voltado à análise, instrução e concessão de pedidos de aposentadoria de servidores estaduais pela regra de tempo de contribuição, envolvendo a Fundação Piauí Previdência e a Secretaria de Administração.",
+      "marcadores": [
+        "Requerimento de Aposentadoria",
+        "PIAUIPREV-PI",
+        "Regra de transição"
+      ],
+      "n_members": 65
+    },
+    "exp-raw|macro|31": {
+      "nome": "Contratação e Gestão de Estagiários",
+      "descricao": "Processos administrativos voltados para a solicitação de autorização, formalização de contratos, pagamento de bolsas e substituição de estagiários em diversas unidades do governo estadual.",
+      "marcadores": [
+        "Contratação de estagiários",
+        "SEAD-PI/SGP",
+        "Termo de Estágio"
+      ],
+      "n_members": 62
+    },
+    "exp-raw|macro|5": {
+      "nome": "Contratação e Gestão de Serviços de Tecnologia da Informação",
+      "descricao": "Processos relativos à contratação direta, execução, fiscalização e pagamento de serviços técnicos continuados de TIC, incluindo manutenção de infraestrutura e suporte a usuários.",
+      "marcadores": [
+        "Tecnologia da Informação e Comunicação",
+        "SEAD-PI/GAB/NTGD/PIAUILINK",
+        "Contrato de prestação de serviços"
+      ],
+      "n_members": 60
+    },
+    "exp-raw|macro|59": {
+      "nome": "Solicitação de Apoio Logístico e Material para Eventos Oficiais",
+      "descricao": "Processos voltados para a requisição de suporte operacional, como fornecimento de alimentos, equipamentos eletrônicos e itens de premiação, destinados à realização de eventos institucionais e cerimônias de reconhecimento.",
+      "marcadores": [
+        "apoio logístico",
+        "SEAD-PI/GAB/ASTECGAB",
+        "ofício de solicitação"
+      ],
+      "n_members": 63
+    },
+    "exp-raw|macro|62": {
+      "nome": "Suporte Técnico e Manutenção de Ponto Eletrônico",
+      "descricao": "Processos referentes a visitas técnicas e suporte remoto para diagnóstico e resolução de falhas em sistemas de controle de ponto eletrônico, incluindo problemas de conexão VPN e recuperação de registros.",
+      "marcadores": [
+        "Ponto Eletrônico",
+        "SUPEL",
+        "Relatório de Visita Técnica"
+      ],
+      "n_members": 54
+    },
+    "exp-raw|macro|52": {
+      "nome": "Suporte Técnico e Justificativa de Ausências no Sistema de Ponto Eletrônico",
+      "descricao": "Processos relacionados à manutenção técnica de equipamentos de ponto eletrônico, incluindo correção de sincronização de VPN e batidas, bem como a autorização de justificativas de ausências de servidores terceirizados.",
+      "marcadores": [
+        "Sistema de ponto eletrônico",
+        "SEAD-PI/GAB/NTGD/GIS/SUPEL",
+        "Justificativa de ausências de batidas"
+      ],
+      "n_members": 62
+    },
+    "exp-raw|macro|24": {
+      "nome": "Gestão de Contratos Temporários e Controle de Frequência de Servidores",
+      "descricao": "Processos administrativos voltados para a prorrogação de contratos de trabalho temporário e o acompanhamento da frequência, faltas e requerimentos pessoais de servidores públicos.",
+      "marcadores": [
+        "Prorrogação de contrato temporário",
+        "Controle de ponto e faltas",
+        "Requerimento pessoal de servidor"
+      ],
+      "n_members": 59
+    },
+    "exp-raw|macro|20": {
+      "nome": "Solicitação de Empenho de Despesa para Contratos Vigentes",
+      "descricao": "Processos administrativos voltados à autorização e emissão de empenhos de despesa para execução orçamentária de contratos de serviços e produtos já celebrados e em vigência.",
+      "marcadores": [
+        "emissão de empenho",
+        "DFIN/GPO",
+        "contratos vigentes"
+      ],
+      "n_members": 58
+    },
+    "exp-raw|macro|41": {
+      "nome": "Justificativas de Falta e Regularização de Registro de Ponto",
+      "descricao": "Processos administrativos voltados à apresentação de justificativas para ausências ou atrasos no registro de frequência e à emissão de relatórios de batidas funcionais.",
+      "marcadores": [
+        "Justificativa de falta",
+        "Registro de batidas",
+        "Relatório de ponto"
+      ],
+      "n_members": 53
+    },
+    "exp-raw|macro|8": {
+      "nome": "Manutenção e Reparo de Computadores e Sistemas de Ponto Eletrônico",
+      "descricao": "Processos administrativos voltados para o diagnóstico, reparo, substituição de componentes e manutenção corretiva de unidades processadoras (CPUs) e sistemas de registro de ponto eletrônico.",
+      "marcadores": [
+        "Manutenção de CPU",
+        "SUPEL",
+        "Relatório técnico de visita"
+      ],
+      "n_members": 53
+    },
+    "exp-raw|macro|29": {
+      "nome": "Concessão de Licença Prêmio, Férias e Abono de Permanência de Servidores",
+      "descricao": "Processos administrativos voltados à análise e concessão de benefícios de gozo de tempo e vantagens pecuniárias específicas para servidores públicos estatutários.",
+      "marcadores": [
+        "Licença Prêmio",
+        "Férias de Servidor",
+        "Abono de Permanência"
+      ],
+      "n_members": 53
+    },
+    "exp-raw|macro|35": {
+      "nome": "Suporte Técnico ao Sistema de Ponto Eletrônico e Biométrico",
+      "descricao": "Processos de atendimento técnico para resolução de falhas de conexão VPN e sincronização incorreta de registros de ponto em equipamentos biométricos.",
+      "marcadores": [
+        "ponto eletrônico",
+        "SEAD-PI/GAB/NTGD/GIS/SUPEL",
+        "relatório de visita técnica"
+      ],
+      "n_members": 53
+    },
+    "exp-raw|macro|0": {
+      "nome": "Gestão de Infraestrutura e Espaços Físicos do Governo do Estado",
+      "descricao": "Processos voltados para o planejamento, diagnóstico, manutenção e disponibilização de espaços físicos, infraestrutura predial e unidades de atendimento ao cidadão, incluindo a criação de grupos de trabalho para análise técnica e atualização cadastral de instalações.",
+      "marcadores": [
+        "Infraestrutura e Espaços Físicos",
+        "DINFRA ou GCIAC",
+        "Criação de Grupo de Trabalho"
+      ],
+      "n_members": 53
+    },
+    "exp-raw|macro|64": {
+      "nome": "Realização de Visitas Técnicas para Suporte ao Sistema de Ponto Eletrônico",
+      "descricao": "Processos originados pela Coordenação de Suporte ao Ponto Eletrônico (SUPEL) para registro de diagnósticos e intervenções técnicas em equipamentos de marcação de ponto nas secretarias estaduais.",
+      "marcadores": [
+        "ponto eletrônico",
+        "SUPEL",
+        "relatório de visita técnica"
+      ],
+      "n_members": 52
+    },
+    "exp-raw|macro|61": {
+      "nome": "Solicitação de Pagamento de Contratos Administrativos",
+      "descricao": "Processos administrativos voltados para a instrução e encaminhamento de requisições de pagamento referentes a serviços prestados por empresas contratadas, como gestão de frota, locação de veículos e programas sociais, para liquidação conforme a Lei 4.320/64.",
+      "marcadores": [
+        "Solicitação de pagamento",
+        "DFIN/GEO",
+        "Contrato Administrativo"
+      ],
+      "n_members": 46
+    },
+    "exp-raw|macro|39": {
+      "nome": "Gestão do Regime Jurídico e Remuneração dos Servidores Públicos Civis",
+      "descricao": "Processos relacionados à aplicação da Lei Complementar nº 13/1994 (Estatuto dos Servidores), incluindo questões de provimento, regime disciplinar, pagamento de horas extras e reorganização de cargos e cursos.",
+      "marcadores": [
+        "Estatuto dos Servidores Públicos Civis",
+        "SEAD-PI/SGP/DPP",
+        "Pagamento de horas extras"
+      ],
+      "n_members": 46
+    },
+    "exp-raw|macro|28": {
+      "nome": "Lançamento de Folha de Pagamento de Estagiários",
+      "descricao": "Processos administrativos voltados para o registro mensal na folha de pagamento das contratações, renovações e desligamentos de estagiários.",
+      "marcadores": [
+        "Lançamento folha",
+        "Estagiários",
+        "GEFP"
+      ],
+      "n_members": 24
+    },
+    "exp-raw|macro|56": {
+      "nome": "Realização de Visitas Técnicas ao Sistema de Ponto Eletrônico",
+      "descricao": "Processos originados pela Coordenação de Suporte ao Ponto Eletrônico para registro de diagnósticos, inventários de equipamentos e soluções aplicadas em visitas técnicas a órgãos do governo.",
+      "marcadores": [
+        "Relatório de Visita Técnica",
+        "SUPEL/SEAD",
+        "Ponto Eletrônico"
+      ],
+      "n_members": 43
+    },
+    "exp-raw|macro|43": {
+      "nome": "Autorização de Recebimento de Bens Arrematados em Leilão",
+      "descricao": "Processos administrativos voltados à formalização da entrega e transferência de propriedade de veículos, móveis, equipamentos e sucatas arrematados em leilões públicos realizados pela SEAD-PI.",
+      "marcadores": [
+        "arrematação",
+        "DGPAT/GCP/CBM",
+        "Nota de Venda"
+      ],
+      "n_members": 38
+    },
+    "exp-raw|macro|55": {
+      "nome": "Solicitação de Pagamento de Fornecimento de Água Tratada",
+      "descricao": "Processos administrativos voltados para a liquidação e pagamento de contas de água tratada fornecida por concessionárias ou empresas públicas para unidades do governo estadual.",
+      "marcadores": [
+        "Fornecimento de água tratada",
+        "Unidade DFIN/GEO",
+        "Solicitação de pagamento"
+      ],
+      "n_members": 31
+    },
+    "exp-raw|macro|63": {
+      "nome": "Cumprimento de Mandados de Intimação em Mandados de Segurança",
+      "descricao": "Processos administrativos originados ou vinculados a intimações judiciais expedidas pelo Tribunal de Justiça do Piauí para que a Administração Pública preste informações ou saneie dúvidas em ações de Mandado de Segurança Cível.",
+      "marcadores": [
+        "Mandado de intimação",
+        "Mandado de Segurança Cível",
+        "Prestação de informações"
+      ],
+      "n_members": 42
+    },
+    "exp-raw|macro|45": {
+      "nome": "Solicitação de Abono de Faltas por Justificativa de Servidor",
+      "descricao": "Processos administrativos voltados à regularização de registros de ponto ou faltas não justificadas, mediante apresentação de justificativas como viagens, esquecimento de registro ou consultas médicas.",
+      "marcadores": [
+        "Abono de Faltas",
+        "SEAD-PI/GAB/SGP/DDP/CPE",
+        "Justificativa de Ausência"
+      ],
+      "n_members": 24
+    },
+    "exp-raw|macro|37": {
+      "nome": "Processamento e Fechamento da Folha de Pagamento Mensal",
+      "descricao": "Fluxo administrativo dedicado ao cálculo, emissão de créditos, correção de erros e fechamento mensal da folha de pagamento dos servidores estaduais.",
+      "marcadores": [
+        "Folha de Pagamento",
+        "Gerência de Folha de Pagamento",
+        "Folha Suplementar"
+      ],
+      "n_members": 24
+    },
+    "exp-raw|macro|9": {
+      "nome": "Solicitação de Pagamento de Serviços Especializados de Tecnologia da Informação",
+      "descricao": "Processos administrativos voltados para a requisição de pagamentos referentes a contratos de manutenção, evolução e customização do Sistema Integrado de Gestão de Pessoal (SIAPE) com empresas terceirizadas.",
+      "marcadores": [
+        "Solicitação de pagamento",
+        "SEAD-PI/SGACG/DFIN",
+        "Contrato 134/2023"
+      ],
+      "n_members": 23
+    },
+    "exp-raw|macro|16": {
+      "nome": "Lotação de Servidores no Gabinete da Secretaria de Administração",
+      "descricao": "Processos administrativos referentes à designação e registro da lotação de servidores analistas governamentais especificamente no Gabinete da Secretaria de Administração (SEAD).",
+      "marcadores": [
+        "Lotação de servidor",
+        "Gabinete da SEAD",
+        "Analista Governamental"
+      ],
+      "n_members": 15
+    },
+    "exp-raw|macro|51": {
+      "nome": "Justificativa de Faltas e Ajustes de Ponto Eletrônico de Servidores",
+      "descricao": "Processos administrativos voltados à regularização de registros de frequência, incluindo apresentação de justificativas para faltas, saídas antecipadas e consultas sobre registros de ponto eletrônico.",
+      "marcadores": [
+        "Justificativa de Faltas",
+        "Ponto Eletrônico",
+        "Coordenação de Acúmulo de Cargos"
+      ],
+      "n_members": 22
+    },
+    "exp-raw|macro|54": {
+      "nome": "Realização de Visitas Técnicas ao Sistema de Ponto Eletrônico — SEAD-PI/GAB/NTGD/GIS/SUPEL",
+      "descricao": "Processos relativos à execução de atendimentos técnicos remotos ou presenciais para diagnóstico e resolução de falhas de conectividade (VPN) e funcionamento de máquinas do sistema de controle de ponto eletrônico.",
+      "marcadores": [
+        "ponto eletrônico",
+        "SEAD-PI/GAB/NTGD/GIS/SUPEL",
+        "Relatório de visita técnica"
+      ],
+      "n_members": 16
+    },
+    "exp-raw|macro|65": {
+      "nome": "Justificativa de Faltas e Presenças com Ressalva de Servidores",
+      "descricao": "Processos administrativos voltados à regularização e análise de registros de frequência, envolvendo a apresentação de justificativas para faltas e presenças com ressalva de servidores públicos em meses específicos.",
+      "marcadores": [
+        "Justificativa de faltas",
+        "Coordenação de Ponto Eletrônico",
+        "Presenças com ressalva"
+      ],
+      "n_members": 20
+    },
+    "exp-raw|macro|57": {
+      "nome": "Protocolização e Autuação de Demandas Administrativas Internas",
+      "descricao": "Processos iniciados pela SEAD-PI para registro formal de documentos originais, classificando-os como demandas internas do tipo informação, solicitação ou administrativa.",
+      "marcadores": [
+        "Protocolo de documento administrativo SEI",
+        "SEAD-PI/SGP/DPP/GEFP",
+        "Processo Recebido Unidade"
+      ],
+      "n_members": 20
+    },
+    "exp-raw|macro|44": {
+      "nome": "Solicitação de Reserva de Hospedagem para Servidores em Eventos Oficiais",
+      "descricao": "Processos administrativos voltados para a reserva de acomodações em hotéis para servidores públicos, especificamente secretários, que necessitam participar de eventos, fóruns ou reuniões oficiais em outras localidades, muitas vezes em razão da ausência de contrato de hospedagem vigente.",
+      "marcadores": [
+        "Reserva de hospedagem",
+        "GAMIL-PI",
+        "Evento oficial"
+      ],
+      "n_members": 22
+    },
+    "exp-raw|macro|17": {
+      "nome": "Respostas a Solicitações de Acesso à Informação sobre Projetos de Parceria Público-Privada",
+      "descricao": "Processos administrativos voltados ao atendimento de pedidos de informação, com base na Lei de Acesso à Informação, referentes ao status, viabilidade e detalhes de projetos de infraestrutura e serviços públicos estruturados como Parcerias Público-Privadas (PPP).",
+      "marcadores": [
+        "Lei de Acesso à Informação",
+        "SUPARC/DEP",
+        "Solicitação de informações"
+      ],
+      "n_members": 15
+    },
+    "exp-raw|macro|10": {
+      "nome": "Gestão de Processos Administrativos de Pessoal e Concursos Públicos",
+      "descricao": "Categoria dedicada ao trâmite de demandas relacionadas à remuneração, benefícios e situação funcional de servidores, bem como à formalização de atos de provimento em concursos públicos.",
+      "marcadores": [
+        "Remuneração e Benefícios",
+        "SEAD-PI/SGP/DDP",
+        "Desbloqueio de Pagamento"
+      ],
+      "n_members": 14
+    },
+    "exp-raw|macro|13": {
+      "nome": "Gestão de Processos Administrativos de Licitação e Contratação",
+      "descricao": "Categoria dedicada ao trâmite interno de procedimentos administrativos voltados para licitações, contratações públicas e gestão documental correlata, com foco na análise normativa e arquivamento.",
+      "marcadores": [
+        "Licitação e Contratação",
+        "SEAD-PI/GAB/NTGD/GIS/SUPEL",
+        "Arquivo-Anexado"
+      ],
+      "n_members": 13
+    },
+    "exp-raw|macro|33": {
+      "nome": "Pagamento de Serviços de Confecção e Instalação de Painéis Luminosos",
+      "descricao": "Processos administrativos voltados para a liquidação e pagamento de notas fiscais referentes à confecção e instalação de painéis e letreiros luminosos, vinculados a contratos específicos e empenhos de serviços terceirizados.",
+      "marcadores": [
+        "Solicitação de pagamento de serviço de painéis",
+        "SSP-PI/SUPEG/DADM/GOBRE",
+        "Nota Fiscal vinculada a Contrato"
+      ],
+      "n_members": 11
+    }
+  }
+}

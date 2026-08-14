@@ -1,0 +1,33 @@
+{
+  "stage": "feature-census",
+  "phase": "features",
+  "question": "Que matrizes de atributos existem, com que dimensao, que digest e de qual braco?",
+  "deterministic": true,
+  "status": "ran",
+  "mode": "neo4j",
+  "started_at": "2026-08-13T11:28:05Z",
+  "ended_at": "2026-08-13T11:28:05Z",
+  "duration_seconds": 0.046,
+  "flags": {
+    "from_date": null,
+    "to_date": null,
+    "workers": null,
+    "batch_size": null,
+    "chunk_size": null,
+    "limit": null,
+    "emit_dir": null,
+    "read_dir": null
+  },
+  "inputs": [],
+  "outputs": [
+    {
+      "path": "artifacts/stats/feature_build.json",
+      "bytes": 4278
+    }
+  ],
+  "n_inputs": 0,
+  "n_outputs": 1,
+  "summary": {
+    "duration_seconds": 0.0
+  }
+}

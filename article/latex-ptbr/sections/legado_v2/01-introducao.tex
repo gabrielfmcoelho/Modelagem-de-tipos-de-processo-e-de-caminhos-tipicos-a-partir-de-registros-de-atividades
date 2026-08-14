@@ -1,0 +1,142 @@
+\section{INTRODUÇÃO}
+
+O direito de acesso à informação pressupõe que a administração pública saiba como ela própria
+funciona. Regimes de transparência ativa, mandatos de dados abertos e deveres de publicação em
+formato legível por máquina são redigidos como se um relato fiel da prática administrativa já
+repousasse em algum arquivo, à espera de ser liberado. \citeonline{brauneis2018algorithmic}
+submeteram esse pressuposto a teste direto e verificaram que o obstáculo determinante não era o
+segredo comercial, mas o fato de que os registros jamais haviam sido produzidos --- não havia o
+que divulgar.
+
+Os sistemas eletrônicos de processo administrativo tornam essa lacuna parcialmente solucionável. Um
+sistema como o Sistema Eletrônico de Informações (SEI) registra cada ação praticada em cada
+processo: qual unidade o recebeu, o que nele se fez, quando ele seguiu adiante. O rastro existe.
+O que não existe é o relato do que esses rastros significam em agregado --- quais espécies de
+procedimento a administração de fato executa e como cada uma delas efetivamente corre. As
+administrações mantêm, é certo, uma taxonomia declarada de tipos de processo; ela é, porém, uma
+classificação aplicada no momento da abertura, pela pessoa que abre o caso, e sua relação com a
+prática observada é questão empírica, não dado prévio.
+
+Há uma razão técnica para que essa relação não possa ser presumida, e ela decide o desenho deste
+trabalho: o SEI não impõe, por tipo de processo, qual sequência de atividades é admissível. A
+seção 2.2.7 desenvolve o argumento e suas consequências; o que dele importa desde já é que a
+taxonomia declarada entra neste trabalho como hipótese a ser testada, e não como dado de partida,
+e que o catálogo é \emph{derivado} do registro em vez de transcrito de classificação
+preexistente.
+
+O pressuposto enunciado de início é, no ordenamento brasileiro, ainda mais visível, porque aqui
+há dever expresso de publicar as principais etapas de cada procedimento, em formato legível por
+máquina --- a seção 2.2.3 reúne os dispositivos. Que tal dever alcance materialmente o corpus aqui estudado é,
+entretanto, questão em aberto, examinada na seção 2.2.5: o argumento é registrado, mas o trabalho
+não se apoia nele.
+
+A origem do tema é prática. Sou analista de dados da Secretaria de Administração do Estado
+do Piauí (SEAD-PI) e graduando em Engenharia de Software pelo iCEV; foi no exercício dessa função,
+junto ao acervo do SEI da própria secretaria, que a assimetria descrita acima se apresentou de
+modo concreto --- há rastro de tudo e relato de quase nada. Essa mesma trajetória é a motivação da
+pesquisa e a razão pela qual ela exige declaração de conflito de interesses: estuda-se a
+organização em que se trabalha, sobre dados a que se tem acesso funcional, e a Secretaria deteve
+direito de aprovação prévia sobre a divulgação destes resultados. A seção 3.1 expõe as duas faces
+dessa condição e o que ela implica para a leitura dos achados negativos. Três providências
+limitam o risco daí decorrente e são descritas onde surgem: o estudo
+corre sob instrumento assinado pela SEAD-PI, que rege o tratamento dos dados pessoais e impõe ---
+e não apenas recomenda --- parte das escolhas metodológicas \cite{seadpi2026termo}; todo número
+relatado é regerado dos artefatos por uma etapa versionada do \emph{pipeline} e conferido
+automaticamente contra o texto nos dois sentidos; e as limitações remanescentes são enunciadas
+por extenso na seção 4.11.
+
+O objeto da pesquisa é o conjunto de tipos de processo administrativo que a SEAD-PI efetivamente
+executa e o caminho típico de cada um deles, tal como derivados dos registros de atividades do SEI ---
+5.243 processos concluídos, predominantemente procedimento interno cuja parte é, em regra, um
+servidor, e não um cidadão. Não são objeto deste trabalho o mérito das decisões administrativas
+nem o desempenho de unidades ou de pessoas: descreve-se a forma dos procedimentos, não a
+qualidade de quem os conduz.
+
+Formulado como pergunta única, o problema é o seguinte: \emph{é possível derivar dos próprios registros de atividades da administração um catálogo auditável dos tipos de processo que ela de fato executa e
+do caminho típico de cada um, e sob que evidência tal catálogo pode ser considerado confiável?}
+
+Três hipóteses respondem provisoriamente a essa pergunta. Foram redigidas de modo a poderem ser
+confirmadas \emph{ou} refutadas pela evidência produzida na seção 4, e a seção 5 as retoma uma a
+uma.
+
+\begin{description}
+  \item[H1] O agrupamento emergente, derivado do texto do documento inicial somado ao histórico
+    de tramitação e de ações, capta estrutura real do acervo --- e não apenas o formato da
+    partição --- e capta estrutura que a taxonomia declarada não registra. Estará refutada se
+    destruir a correspondência entre processos e grupos, preservando quantidade de grupos,
+    distribuição de tamanhos e população avaliada, não degradar a utilidade a jusante; ou se a
+    concordância com a taxonomia declarada for alta a ponto de tornar o catálogo redundante.
+  \item[H2] A escolha do algoritmo de agrupamento e os índices internos de validade são
+    suficientes para decidir qual partição publicar. Estará refutada se partições candidatas
+    produzidas por famílias algorítmicas distintas não se separarem quanto à utilidade a jusante,
+    ou se os índices internos medirem outra coisa --- granularidade ou cobertura, por exemplo ---
+    em lugar dessa utilidade.
+  \item[H3] Modelar o caminho típico por tipo de processo melhora a predição do próximo passo em
+    relação a um único modelo global ajustado sobre o corpus inteiro. Estará refutada, no todo ou
+    em parte, se o ganho desaparecer ou inverter de sinal quando a comparação se fizer sobre uma
+    mesma população e com a família de modelos fixada.
+\end{description}
+
+O objetivo geral é produzir e avaliar um catálogo auditável dos tipos de processo administrativo
+e de seus caminhos típicos, derivado dos registros de atividades da SEAD-PI, como instrumento de
+transparência administrativa. São objetivos específicos:
+
+\begin{description}
+  \item[a)] construir um grafo de conhecimento de eventos a partir dos registros de atividades do SEI e dele derivar
+    tipos de processo emergentes;
+  \item[b)] verificar se esses tipos captam estrutura ausente da taxonomia declarada pela própria
+    administração;
+  \item[c)] medir se a escolha do algoritmo de agrupamento e os índices internos de validade
+    separam as partições candidatas;
+  \item[d)] treinar e avaliar um caminho típico por tipo de processo contra três controles ---
+    o sucessor mais frequente dentro do grupo, um modelo global único e uma partição embaralhada
+    ---, e confrontá-lo ainda, qualitativamente, com um processo administrativo real e
+    integralmente conhecido;
+  \item[e)] medir o custo, em utilidade, da anonimização exigida pelo instrumento autorizador;
+  \item[f)] selecionar, entre as configurações avaliadas, a partição, o alfabeto de traço e a
+    família de modelo a serem entregues como catálogo.
+\end{description}
+
+Os objetivos específicos organizam a seção 4 na ordem em que foram enunciados: (a) e (b)
+correspondem à subseção 4.1; (c), à 4.3; (d), à 4.4; (e), à 4.6; e (f), à 4.7. As subseções 4.2 e
+4.5 não correspondem a objetivo específico algum: reúnem verificações adicionais --- a
+contribuição de cada bloco de atributos à partição e a conformidade dos caminhos gerados com as
+regras de tramitação.
+
+A justificativa teórica do trabalho está em duas contribuições deliberadamente independentes. A
+primeira é o artefato: um catálogo do que a administração faz, tal como ela faz, derivado dos
+seus próprios registros e regerável a partir deles --- precisamente o gênero de relato que a
+literatura de mineração de processos vem oferecendo ao controle e à auditoria do setor público
+\cite{vanderaalst2010auditing,nai2026procurement} e que a produção brasileira sobre o tema
+identifica como promessa ainda pouco realizada em matéria de transparência
+\cite{araujo2023mineracao,limaesilva2026analise}. A segunda é um protocolo de avaliação externa,
+com controles, para julgar catálogos dessa espécie: o princípio de pontuar um agrupamento pelo
+modelo que ele viabiliza é estabelecido \cite{deweerdt2013actitrac}, e aqui é estendido da
+aderência do modelo de processo para a predição da próxima atividade, aplicado externamente a
+partições produzidas por famílias algorítmicas distintas e acrescido de dois controles que essa
+literatura não reporta rotineiramente. A independência entre as duas contribuições é deliberada e
+tem consequência: a pretensão do catálogo repousa sobre o controle embaralhado e sobre a
+regerabilidade, e não sobre o tamanho do ganho preditivo.
+
+Uma hipótese que só admitisse confirmação não seria hipótese, e um protocolo de avaliação cuja
+única função fosse ratificar o artefato de quem o construiu não seria protocolo: os controles
+adotados na seção~\ref{sec:protocolo} existem justamente para poderem falhar. São eles que delimitam o que o
+método pode afirmar, e é essa delimitação que torna críveis as afirmações que ele sustenta.
+
+O trabalho se organiza como segue. A seção 2 situa a pesquisa na literatura de mineração de
+processos, de agrupamento de traços e de privacidade em registros de atividades
+\cite{vanderaalst2016processmining,song2009trace,esser2021ekg} e expõe o marco normativo
+brasileiro aplicável --- os princípios do art. 37 da Constituição \cite{brasil1988cf}, a lei
+estadual que regula o processo administrativo no Piauí \cite{state2016procedurelaw}, os deveres
+de publicação já referidos e o art. 12 da Lei Geral de Proteção de Dados \cite{brasil2018lgpd}
+---, além do dever de otimizar enunciado na Lei do Governo Digital e da razão técnica pela qual o
+percurso de um processo não pode ser presumido a partir do tipo declarado, encerrando com o que
+permanece em aberto quanto ao alcance material desses deveres sobre este corpus. A seção 3 descreve os procedimentos metodológicos: caracterização da pesquisa,
+cenário, corpus e recorte, construção do grafo de conhecimento de eventos, anonimização,
+agrupamento, modelos de caminho típico, protocolo de avaliação e seus três controles, desenho
+experimental e aspectos éticos. A seção 4 apresenta e discute os resultados, na ordem dos
+objetivos específicos acima mapeada, e encerra, em 4.11, com as limitações e ameaças à validade. A seção 5 traz
+as considerações finais, respondendo às três hipóteses e apontando desdobramentos. Completam o
+trabalho o Apêndice A (definições das medidas e convenções terminológicas), o Apêndice B (tabelas
+complementares) e o Anexo A, que reproduz, com tarja sobre identificadores pessoais, a
+autorização institucional assinada sob a qual a pesquisa foi conduzida.

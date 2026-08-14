@@ -1,0 +1,41 @@
+\section{Conclusion and future work}\label{sec:conclusion}
+
+Transparency law presupposes that administrations hold an account of how they operate. Often
+they do not. We derived one from an administration's own event log: a catalogue of emergent
+process types, each with a typical path, reproducible from stored artefacts and bounded by
+measured limits rather than asserted ones.
+
+The evaluation is what the catalogue rests on. Permuting cluster membership while holding the
+partition's shape fixed destroys 23 points of downstream accuracy, so the grouping is real. All
+nineteen feature-derived clusterings refit exactly, so the artefact is auditable. Against the declared
+taxonomy, agreement rises sharply once a single catch-all class covering 30.5\% of the concluded cases is set
+aside, which locates the official classification's weakness rather than merely asserting it.
+
+Three results constrain what the method may claim, and they were the reason to run the controls.
+What per-cluster modelling contributes depends on how it is measured, and each correction
+reduces it. Over the full evaluated population it gains 0.013 on action prediction and 0.063 on
+routing when the best of five families is selected per cluster, and 0.004 and 0.035 when the
+family is held fixed --- against the 0.083 and 0.156 the conventional within-cluster baseline
+suggests. Scored instead on the single population both trace alphabets can be evaluated on, it
+gains 0.036 on routing and \emph{loses} 0.009 on actions, in every model family. The
+choice of clustering algorithm separates the result very little: sixteen clusterings across four
+algorithm families fall within 0.0079 once scored on a common set of cases, on an interval that
+is nonetheless too wide to call them equivalent. And the internal validity indices that would
+ordinarily choose between them do not measure what they are used for: silhouette tracks how much
+a partition discards and how coarse it is --- $\rho = 0.84$ with coverage among the clusterings
+that assign every case --- and carries no association with accuracy once cluster size is held
+fixed. It is a defensible instrument for choosing $k$ and not for predicting downstream utility.
+
+Four directions follow. Widening the corpus beyond one year is the most valuable and is limited
+by cost rather than method: at the observed cluster-size distribution, three years would move
+the share of cases sitting in clusters large enough for their path to reach the quality band
+where fabrication is low --- 52.9\% in the selected catalogue today, against a threshold of
+about 150 traces. We do not project that share forward: a longer window does not simply
+multiply cluster sizes, because it also relaxes the right-censoring that shapes which
+procedures appear at all, and we have no basis for assuming the type mixture is stationary.
+Second, and with the clearest operational payoff, richer early-stage features would support type
+inference at intake --- the point at which knowing a case's type could change how it is handled
+--- which the temporal-dependency result shows is a harder problem than retrospective
+assignment. Third, closing the under-generation gap, where paths currently match under half of a
+real case's visits. Fourth, a properly powered test of whether internal validity indices predict
+downstream utility, which sixteen partitions cannot settle.

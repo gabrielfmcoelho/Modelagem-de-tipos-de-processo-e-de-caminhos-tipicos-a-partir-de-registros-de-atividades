@@ -1,0 +1,37 @@
+{
+  "stage": "situacao",
+  "phase": "graph",
+  "question": "Cada processo e cada unidade esta em aberto ou concluido?",
+  "deterministic": true,
+  "status": "ran",
+  "mode": "neo4j",
+  "started_at": "2026-08-12T03:16:55Z",
+  "ended_at": "2026-08-12T03:17:05Z",
+  "duration_seconds": 10.884,
+  "flags": {
+    "from_date": null,
+    "to_date": null,
+    "workers": null,
+    "batch_size": null,
+    "chunk_size": null,
+    "limit": null,
+    "emit_dir": null,
+    "read_dir": null
+  },
+  "inputs": [],
+  "outputs": [],
+  "n_inputs": 0,
+  "n_outputs": 0,
+  "summary": {
+    "processos": 5445,
+    "ciclos": 32772,
+    "ciclos_concluidos": 30795,
+    "situacao_unidade": 23429,
+    "em_aberto_unidade": 0,
+    "situacao_orgao": 6247,
+    "em_aberto_orgao": 0,
+    "ultima_atividade_em_aberto": 0,
+    "atividade_mais_recente": 5445,
+    "duration_seconds": 10.9
+  }
+}

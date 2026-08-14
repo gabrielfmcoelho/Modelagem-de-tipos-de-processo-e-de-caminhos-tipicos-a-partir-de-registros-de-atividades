@@ -1,0 +1,41 @@
+{
+  "stage": "matrix",
+  "phase": "typical-path",
+  "question": "Quanto um modelo por familia preve melhor o proximo passo que os baselines?",
+  "deterministic": "conditional",
+  "status": "ran",
+  "mode": "neo4j",
+  "started_at": "2026-08-13T08:58:14Z",
+  "ended_at": "2026-08-13T08:58:22Z",
+  "duration_seconds": 8.434,
+  "flags": {
+    "from_date": null,
+    "to_date": null,
+    "workers": "4",
+    "batch_size": null,
+    "chunk_size": null,
+    "limit": null,
+    "emit_dir": null,
+    "read_dir": null
+  },
+  "inputs": [],
+  "outputs": [
+    {
+      "path": "artifacts/typical/run_manifest.json",
+      "bytes": 7776
+    }
+  ],
+  "n_inputs": 0,
+  "n_outputs": 1,
+  "summary": {
+    "cells": 84,
+    "alphabets": [
+      "unit",
+      "itinerary",
+      "procedure"
+    ],
+    "workers": 4,
+    "failed": [],
+    "duration_seconds": 8.4
+  }
+}

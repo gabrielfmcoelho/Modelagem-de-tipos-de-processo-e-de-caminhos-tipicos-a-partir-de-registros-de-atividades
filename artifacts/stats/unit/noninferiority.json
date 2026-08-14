@@ -1,0 +1,389 @@
+{
+  "_meta": {
+    "stage": "noninferiority",
+    "question": "O braco anonimizado e nao-inferior ao bruto, contra a margem pre-registrada?",
+    "deterministic": "conditional",
+    "nondeterminism": "bootstrap pareado, fixado pelo seed registrado em params",
+    "generated_at": "2026-08-13T12:56:48Z",
+    "commit": "8e51165916d00721db38c74c9bd1def6cb02c0f3",
+    "params": {
+      "margin": 0.01,
+      "sensitivity_margin": 0.005,
+      "topk": 1,
+      "alphabet": "unit",
+      "replicates": 2000,
+      "models": [
+        "markov",
+        "dfg",
+        "gnn",
+        "gru",
+        "lstm",
+        "transformer"
+      ]
+    },
+    "inputs": [],
+    "versions": {
+      "numpy": "2.4.6",
+      "scikit-learn": "1.9.0",
+      "hdbscan": "0.8.44",
+      "umap-learn": "0.5.12",
+      "igraph": "1.0.0",
+      "leidenalg": "0.12.0",
+      "torch": "2.13.0",
+      "neo4j": "6.2.0"
+    }
+  },
+  "meta": {
+    "generated_at": "2026-08-13T12:56:48Z",
+    "topk": 1,
+    "replicates": 2000,
+    "alphabet": "unit",
+    "margin": 0.01,
+    "sensitivity_margin": 0.005,
+    "preregistration": "docs/research/non-inferiority-preregistration.md"
+  },
+  "results": [
+    {
+      "cell_a": "exp-raw/hdbscan",
+      "cell_b": "exp-anon/hdbscan",
+      "model": "markov",
+      "topk": 1,
+      "n_paired": 1494,
+      "diff_point": 0.0013,
+      "diff_ci95": [
+        -0.0009,
+        0.0041
+      ],
+      "ci90_one_sided_lower": -0.0007,
+      "point_a": 0.6851,
+      "point_b": 0.6864,
+      "margin": 0.01,
+      "sensitivity_margin": 0.005,
+      "non_inferior": true,
+      "non_inferior_sensitivity": true
+    },
+    {
+      "cell_a": "exp-raw/hdbscan",
+      "cell_b": "exp-anon/hdbscan",
+      "model": "dfg",
+      "topk": 1,
+      "n_paired": 1494,
+      "diff_point": -0.0034,
+      "diff_ci95": [
+        -0.0072,
+        0.0003
+      ],
+      "ci90_one_sided_lower": -0.0065,
+      "point_a": 0.5435,
+      "point_b": 0.54,
+      "margin": 0.01,
+      "sensitivity_margin": 0.005,
+      "non_inferior": true,
+      "non_inferior_sensitivity": false
+    },
+    {
+      "cell_a": "exp-raw/hdbscan",
+      "cell_b": "exp-anon/hdbscan",
+      "model": "gnn",
+      "topk": 1,
+      "n_paired": 1494,
+      "diff_point": -0.0023,
+      "diff_ci95": [
+        -0.0057,
+        0.0007
+      ],
+      "ci90_one_sided_lower": -0.0052,
+      "point_a": 0.569,
+      "point_b": 0.5667,
+      "margin": 0.01,
+      "sensitivity_margin": 0.005,
+      "non_inferior": true,
+      "non_inferior_sensitivity": false
+    },
+    {
+      "cell_a": "exp-raw/hdbscan",
+      "cell_b": "exp-anon/hdbscan",
+      "model": "gru",
+      "topk": 1,
+      "n_paired": 1494,
+      "diff_point": 0.0,
+      "diff_ci95": [
+        -0.0034,
+        0.0034
+      ],
+      "ci90_one_sided_lower": -0.0029,
+      "point_a": 0.6951,
+      "point_b": 0.6951,
+      "margin": 0.01,
+      "sensitivity_margin": 0.005,
+      "non_inferior": true,
+      "non_inferior_sensitivity": true
+    },
+    {
+      "cell_a": "exp-raw/hdbscan",
+      "cell_b": "exp-anon/hdbscan",
+      "model": "lstm",
+      "topk": 1,
+      "n_paired": 1494,
+      "diff_point": -0.0025,
+      "diff_ci95": [
+        -0.006,
+        0.0012
+      ],
+      "ci90_one_sided_lower": -0.0055,
+      "point_a": 0.688,
+      "point_b": 0.6856,
+      "margin": 0.01,
+      "sensitivity_margin": 0.005,
+      "non_inferior": true,
+      "non_inferior_sensitivity": false
+    },
+    {
+      "cell_a": "exp-raw/hdbscan",
+      "cell_b": "exp-anon/hdbscan",
+      "model": "transformer",
+      "topk": 1,
+      "n_paired": 1494,
+      "diff_point": 0.0003,
+      "diff_ci95": [
+        -0.003,
+        0.0036
+      ],
+      "ci90_one_sided_lower": -0.0025,
+      "point_a": 0.6918,
+      "point_b": 0.6922,
+      "margin": 0.01,
+      "sensitivity_margin": 0.005,
+      "non_inferior": true,
+      "non_inferior_sensitivity": true
+    },
+    {
+      "cell_a": "exp-raw/kmeans",
+      "cell_b": "exp-anon/kmeans",
+      "model": "markov",
+      "topk": 1,
+      "n_paired": 1507,
+      "diff_point": 0.0023,
+      "diff_ci95": [
+        -0.0002,
+        0.0055
+      ],
+      "ci90_one_sided_lower": 0.0003,
+      "point_a": 0.6851,
+      "point_b": 0.6875,
+      "margin": 0.01,
+      "sensitivity_margin": 0.005,
+      "non_inferior": true,
+      "non_inferior_sensitivity": true
+    },
+    {
+      "cell_a": "exp-raw/kmeans",
+      "cell_b": "exp-anon/kmeans",
+      "model": "dfg",
+      "topk": 1,
+      "n_paired": 1507,
+      "diff_point": -0.0001,
+      "diff_ci95": [
+        -0.0031,
+        0.0026
+      ],
+      "ci90_one_sided_lower": -0.0026,
+      "point_a": 0.5443,
+      "point_b": 0.5442,
+      "margin": 0.01,
+      "sensitivity_margin": 0.005,
+      "non_inferior": true,
+      "non_inferior_sensitivity": true
+    },
+    {
+      "cell_a": "exp-raw/kmeans",
+      "cell_b": "exp-anon/kmeans",
+      "model": "gnn",
+      "topk": 1,
+      "n_paired": 1507,
+      "diff_point": 0.0004,
+      "diff_ci95": [
+        -0.0023,
+        0.0028
+      ],
+      "ci90_one_sided_lower": -0.0017,
+      "point_a": 0.5673,
+      "point_b": 0.5677,
+      "margin": 0.01,
+      "sensitivity_margin": 0.005,
+      "non_inferior": true,
+      "non_inferior_sensitivity": true
+    },
+    {
+      "cell_a": "exp-raw/kmeans",
+      "cell_b": "exp-anon/kmeans",
+      "model": "gru",
+      "topk": 1,
+      "n_paired": 1507,
+      "diff_point": 0.0042,
+      "diff_ci95": [
+        0.0009,
+        0.0077
+      ],
+      "ci90_one_sided_lower": 0.0015,
+      "point_a": 0.6956,
+      "point_b": 0.6999,
+      "margin": 0.01,
+      "sensitivity_margin": 0.005,
+      "non_inferior": true,
+      "non_inferior_sensitivity": true
+    },
+    {
+      "cell_a": "exp-raw/kmeans",
+      "cell_b": "exp-anon/kmeans",
+      "model": "lstm",
+      "topk": 1,
+      "n_paired": 1507,
+      "diff_point": 0.0035,
+      "diff_ci95": [
+        0.0004,
+        0.0068
+      ],
+      "ci90_one_sided_lower": 0.0009,
+      "point_a": 0.6865,
+      "point_b": 0.6901,
+      "margin": 0.01,
+      "sensitivity_margin": 0.005,
+      "non_inferior": true,
+      "non_inferior_sensitivity": true
+    },
+    {
+      "cell_a": "exp-raw/kmeans",
+      "cell_b": "exp-anon/kmeans",
+      "model": "transformer",
+      "topk": 1,
+      "n_paired": 1507,
+      "diff_point": 0.0036,
+      "diff_ci95": [
+        0.0006,
+        0.0068
+      ],
+      "ci90_one_sided_lower": 0.001,
+      "point_a": 0.6914,
+      "point_b": 0.695,
+      "margin": 0.01,
+      "sensitivity_margin": 0.005,
+      "non_inferior": true,
+      "non_inferior_sensitivity": true
+    },
+    {
+      "cell_a": "exp-raw/leiden",
+      "cell_b": "exp-anon/leiden",
+      "model": "markov",
+      "topk": 1,
+      "n_paired": 1440,
+      "diff_point": 0.0006,
+      "diff_ci95": [
+        -0.0011,
+        0.0024
+      ],
+      "ci90_one_sided_lower": -0.0008,
+      "point_a": 0.6869,
+      "point_b": 0.6875,
+      "margin": 0.01,
+      "sensitivity_margin": 0.005,
+      "non_inferior": true,
+      "non_inferior_sensitivity": true
+    },
+    {
+      "cell_a": "exp-raw/leiden",
+      "cell_b": "exp-anon/leiden",
+      "model": "dfg",
+      "topk": 1,
+      "n_paired": 1440,
+      "diff_point": -0.0,
+      "diff_ci95": [
+        -0.0018,
+        0.0018
+      ],
+      "ci90_one_sided_lower": -0.0015,
+      "point_a": 0.5456,
+      "point_b": 0.5456,
+      "margin": 0.01,
+      "sensitivity_margin": 0.005,
+      "non_inferior": true,
+      "non_inferior_sensitivity": true
+    },
+    {
+      "cell_a": "exp-raw/leiden",
+      "cell_b": "exp-anon/leiden",
+      "model": "gnn",
+      "topk": 1,
+      "n_paired": 1440,
+      "diff_point": -0.0008,
+      "diff_ci95": [
+        -0.0024,
+        0.0008
+      ],
+      "ci90_one_sided_lower": -0.0021,
+      "point_a": 0.57,
+      "point_b": 0.5692,
+      "margin": 0.01,
+      "sensitivity_margin": 0.005,
+      "non_inferior": true,
+      "non_inferior_sensitivity": true
+    },
+    {
+      "cell_a": "exp-raw/leiden",
+      "cell_b": "exp-anon/leiden",
+      "model": "gru",
+      "topk": 1,
+      "n_paired": 1440,
+      "diff_point": 0.0008,
+      "diff_ci95": [
+        -0.002,
+        0.0035
+      ],
+      "ci90_one_sided_lower": -0.0016,
+      "point_a": 0.6991,
+      "point_b": 0.6999,
+      "margin": 0.01,
+      "sensitivity_margin": 0.005,
+      "non_inferior": true,
+      "non_inferior_sensitivity": true
+    },
+    {
+      "cell_a": "exp-raw/leiden",
+      "cell_b": "exp-anon/leiden",
+      "model": "lstm",
+      "topk": 1,
+      "n_paired": 1440,
+      "diff_point": -0.0003,
+      "diff_ci95": [
+        -0.003,
+        0.0023
+      ],
+      "ci90_one_sided_lower": -0.0026,
+      "point_a": 0.6927,
+      "point_b": 0.6924,
+      "margin": 0.01,
+      "sensitivity_margin": 0.005,
+      "non_inferior": true,
+      "non_inferior_sensitivity": true
+    },
+    {
+      "cell_a": "exp-raw/leiden",
+      "cell_b": "exp-anon/leiden",
+      "model": "transformer",
+      "topk": 1,
+      "n_paired": 1440,
+      "diff_point": 0.0025,
+      "diff_ci95": [
+        -0.0005,
+        0.0053
+      ],
+      "ci90_one_sided_lower": -0.0,
+      "point_a": 0.6964,
+      "point_b": 0.6989,
+      "margin": 0.01,
+      "sensitivity_margin": 0.005,
+      "non_inferior": true,
+      "non_inferior_sensitivity": true
+    }
+  ]
+}

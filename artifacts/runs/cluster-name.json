@@ -1,0 +1,44 @@
+{
+  "stage": "cluster-name",
+  "phase": "clustering",
+  "question": "Que nome em linguagem natural descreve cada grupo?",
+  "deterministic": false,
+  "status": "ran",
+  "mode": "neo4j",
+  "started_at": "2026-08-13T11:47:18Z",
+  "ended_at": "2026-08-13T11:47:33Z",
+  "duration_seconds": 15.469,
+  "flags": {
+    "from_date": null,
+    "to_date": null,
+    "workers": "8",
+    "batch_size": null,
+    "chunk_size": null,
+    "limit": null,
+    "emit_dir": null,
+    "read_dir": null,
+    "run_id": "exp-raw-lres",
+    "algo": "leiden"
+  },
+  "inputs": [
+    {
+      "path": "artifacts/clustering/exp-raw-lres/leiden/labels.json",
+      "sha256": "21616cf88ee093c28e3da03cf37add7a2a69f127ecd15b9428a304ab04936e77"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "artifacts/clustering/exp-raw-lres/leiden/names.json",
+      "bytes": 50901
+    }
+  ],
+  "n_inputs": 1,
+  "n_outputs": 1,
+  "summary": {
+    "run_id": "exp-raw-lres",
+    "algo": "leiden",
+    "n_clusters": 98,
+    "n_macros": null,
+    "duration_seconds": 15.5
+  }
+}

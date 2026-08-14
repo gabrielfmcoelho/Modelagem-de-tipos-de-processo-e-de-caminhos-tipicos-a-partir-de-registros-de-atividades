@@ -1,0 +1,70 @@
+{
+  "_meta": {
+    "stage": "temporal-holdout",
+    "question": "O ganho sobrevive quando a particao ve apenas parte do historico de cada caso?",
+    "deterministic": "conditional",
+    "nondeterminism": "particao treino/teste fixada pelo seed registrado em params",
+    "generated_at": "2026-08-13T09:14:11Z",
+    "commit": "8e51165916d00721db38c74c9bd1def6cb02c0f3",
+    "params": {
+      "algo": "hdbscan",
+      "min_traces": 30,
+      "train_frac": 0.7,
+      "seed": 42
+    },
+    "inputs": [
+      {
+        "path": "artifacts/traces/protocol_traces.json.gz",
+        "sha256": "f24e118fc938515f16e2571acde27414ed83681f9e3f9d97e6f87d25494992da"
+      }
+    ],
+    "versions": {
+      "numpy": "2.4.6",
+      "scikit-learn": "1.9.0",
+      "hdbscan": "0.8.44",
+      "umap-learn": "0.5.12",
+      "igraph": "1.0.0",
+      "leidenalg": "0.12.0",
+      "torch": "2.13.0",
+      "neo4j": "6.2.0"
+    }
+  },
+  "algo": "hdbscan",
+  "arm": "exp-anon",
+  "model": "markov3",
+  "min_traces": 30,
+  "train_frac": 0.7,
+  "seed": 42,
+  "n_common_cases": 1091,
+  "rows": [
+    {
+      "features": "full history",
+      "per_cluster_top1": 0.7081,
+      "global_model": 0.6984,
+      "gain_vs_global": 0.0097,
+      "n_steps": 23514
+    },
+    {
+      "features": "first 75%",
+      "per_cluster_top1": 0.7052,
+      "global_model": 0.6989,
+      "gain_vs_global": 0.0063,
+      "n_steps": 23514
+    },
+    {
+      "features": "first 50%",
+      "per_cluster_top1": 0.7028,
+      "global_model": 0.6987,
+      "gain_vs_global": 0.004,
+      "n_steps": 23514
+    },
+    {
+      "features": "first 25%",
+      "per_cluster_top1": 0.6929,
+      "global_model": 0.6986,
+      "gain_vs_global": -0.0057,
+      "n_steps": 23514
+    }
+  ],
+  "retained_frac_at_25pct": -0.5876
+}

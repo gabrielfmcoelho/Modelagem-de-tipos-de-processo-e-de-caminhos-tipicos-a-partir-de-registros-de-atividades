@@ -1,0 +1,46 @@
+[project]
+name = "ai-pipeline-neo4j"
+version = "0.1.0"
+description = "AI pipeline that ingests SEI activity data from the D-1 datalake mirror, parses documents, extracts entities, and builds a Neo4j knowledge graph."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Proprietary" }
+
+[project.scripts]
+pipeline = "pipeline.app:app"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["pipeline*"]
+exclude = ["notebooks*", "docs*", "tests*"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120
+extend-exclude = ["notebooks"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = ["E501", "E402", "B905"]
+
+[tool.ruff.lint.per-file-ignores]
+"article/figures/*.py" = ["E701", "E702"]
+"reports/*.py" = ["B023", "E731"]
+"pipeline/apps/*.py" = ["B008", "F401"]
+"pipeline/writers/base.py" = ["B027"]
+# Phase 1 comment strip removed the inline `# noqa` directives; the equivalent
+# suppressions are relocated here to preserve behavior with no code change:
+# side-effect registry imports (F401), intentional lambdas (E731), and import
+# blocks whose isort grouping comments were stripped (I001).
+"pipeline/app.py" = ["F401"]
+"pipeline/stages/__init__.py" = ["F401"]
+"pipeline/predict.py" = ["E731"]
+"pipeline/stages/download.py" = ["I001"]
+"scripts/debug/*.py" = ["I001"]
+
+[tool.pytest.ini_options]
+testpaths = ["pipeline/tests", "reports/tests"]
+addopts = "-q"
