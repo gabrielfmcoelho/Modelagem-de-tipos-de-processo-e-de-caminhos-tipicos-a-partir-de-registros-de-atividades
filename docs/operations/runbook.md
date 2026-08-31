@@ -259,3 +259,22 @@ Note: `embed` keeps a `sha256(model + text)` hash on each `:Documento`, so
 deleting `parsed_documents/` does NOT trigger re-embedding — but it does
 make the source un-auditable. Move them to cold storage rather than
 deleting if you need traceability.
+
+## Experimento ad-hoc: famílias no corpus VIVO do lake
+
+O estudo agrupou processos **concluídos**. A operação precisa saber a família de
+um processo que ainda está **correndo** — justamente aquele cujo trace está
+incompleto. `scripts/lake_cluster_experiment.py` (run id `exp-lake`) reusa a
+varredura de `k`, o cotovelo e a nomeação contrastiva deste repositório sobre os
+dados do lake, e treina um classificador sobre PREFIXOS de trace para inferir a
+família dos que estão em andamento.
+
+```bash
+PY=.venv/bin/python
+$PY scripts/lake_cluster_experiment.py --limit 400 --skip-naming   # ensaio
+$PY scripts/lake_cluster_experiment.py --run-id exp-lake           # completo
+```
+
+Protocolo, baselines, como ler a curva e a limitação conhecida:
+[`lake-cluster-experiment.md`](lake-cluster-experiment.md). Nada dele entra no
+pipeline reprodutível, e nenhum número dele vai para `RESULTS.md`.
