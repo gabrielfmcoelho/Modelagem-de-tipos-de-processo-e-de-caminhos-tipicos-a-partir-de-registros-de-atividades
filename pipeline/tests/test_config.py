@@ -50,7 +50,7 @@ def test_from_env_resolves_new_fields_with_defaults(monkeypatch) -> None:
     assert s.pipeline_device == "auto"
     assert s.pipeline_dtype == "bf16"
     assert s.pipeline_embed_batch_size == 64
-    assert s.openai_base_url == "https://api.sobdemanda.mandu.piaui.pro/v1"
+    assert s.openai_base_url == "https://new-plataforma.sobdemanda.mandu.piaui.pro/v1"
     assert s.openai_api_key == ""
     assert s.openai_model is None
     assert s.openai_model_embedding is None

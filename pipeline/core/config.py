@@ -75,7 +75,7 @@ class Settings:
     pipeline_dtype: str = "bf16"
     pipeline_embed_batch_size: int = 64
 
-    openai_base_url: str = "https://api.sobdemanda.mandu.piaui.pro/v1"
+    openai_base_url: str = "https://new-plataforma.sobdemanda.mandu.piaui.pro/v1"
     openai_api_key: str = ""
     openai_model: str | None = None
     openai_model_embedding: str | None = None
