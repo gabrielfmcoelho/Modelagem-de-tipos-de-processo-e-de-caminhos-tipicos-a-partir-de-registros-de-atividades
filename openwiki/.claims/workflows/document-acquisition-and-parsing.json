@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:36bc7485a4330f1abd7018a6a6d99ecd30c97752461a65dffb352991ddc33468",
+  "claims": [
+    {
+      "id": "claim_aaecadab50d747eb8bd6faf128c770b9",
+      "statement": "The download stage declares itself conditionally deterministic because its result depends on whether a document is still available in the source system at call time, while the parse stage declares itself outright non-deterministic because its vision and OCR paths vary between identical runs.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/download.py#L339-L351",
+          "version": "repo-lines-v1:sha256:ab126992fc59141c78a323c2122b675f50882873efab462cd0107ca7d1f31988:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjOWZjMDEwYmQ2ZmZhM2JlY2ZkNTFhYWIxYzJlNzVhOWRiZTIyNzhkNGY2NjljYjkyOWI1MzRiMTE0N2ZlMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZTE3OTFjNjViNWE4MjJhY2RjNGVkMjAzZGQ2Y2E2NjhiNjAyZDNhNDMyMmRmZWJmZTUxN2VlODRjYmUxZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJmZjU4ZmE3MDAzZDc0MWI1OTRiNDYyNjc5ZTgwNjUzZmI1NzY2MWU2MjNmOTRhMDE2OTI5ZTM3NTJkZGNmYWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcyNGU0ZWY5NzI1NGRmYzY2NDFiODI5MjFiMjJmMGQ1ZjQxM2QwZmI2NDFjYmMxZDE2YzgyZmZhZTdlYjYwYzMifQ"
+        },
+        {
+          "resource": "repo://pipeline/stages/parse.py#L364-L375",
+          "version": "repo-lines-v1:sha256:807dec96e8341f287999624c1ab712c8c1f106c8e931980e18e9f8e50ad3e6dd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjOWZjMDEwYmQ2ZmZhM2JlY2ZkNTFhYWIxYzJlNzVhOWRiZTIyNzhkNGY2NjljYjkyOWI1MzRiMTE0N2ZlMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZTE3OTFjNjViNWE4MjJhY2RjNGVkMjAzZGQ2Y2E2NjhiNjAyZDNhNDMyMmRmZWJmZTUxN2VlODRjYmUxZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAyMWFhNDRiZjc5ZDE5NmRhN2FkZTE3NmI0OGJmZDM1M2M1Y2VkOGNhYzA2YTk4Mzg3NDUzYzcwZjVmYjI1NDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg2NWNhYmY3YzdmNzQzNWM3OGM1ZjZiOWFhMTY1Mjk1NzQ2MDAzZGNlZTc5MWIwYjk1ZTMyNzAzNjRmZjE1ODIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e5381ad1a4ee4f76ad8795f000c72dfe",
+      "statement": "SEI login terminates the process on invalid credentials, any non-200 response, or a response missing the token field, while connection and timeout errors are retried three times with linearly increasing backoff.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/sei_client.py#L163-L197",
+          "version": "repo-lines-v1:sha256:389232803fa66035af4fccb99797502b371b6f8c8ce88bba333aa36cb21455ea:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkZDFiODU2YmM4ZDM2N2U3NjA5N2UwNWZjM2E0MDc0Y2IxZDRhOWEwYjU4MzAwMDE5N2RhMjg1NGVjYjViNDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhlMDU2N2YxN2E5MWVjYTU0MTM4ODk2YjBkNTUwYjhjYzBiNWIzMDhiNmEzYTY2ODFhOTA0YzE4NTA1YmI0N2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRjNjdjMjQyOTlhYWMyYmMzOGI2YTMxZGFhNTNlNTU4YjJhMTM1Zjk0OGQ3OTVlMDRjNzhjMzJkOGE5ZjFjMzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI2NGI1MTEwNWNkNzdmYmRiNTk1YjYyMDJjOTk0Mzg0ODkwYjIwYzY5NTI2NThmMzNmOGQ4N2Y5MDZhMmU5ZjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_43068887d9c9468783b5c87ed634be84",
+      "statement": "A SEI document is served on behalf of an administrative unit rather than addressable on its own, so the downloader tries candidate units in order until one succeeds.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/sei_client.py#L122-L160",
+          "version": "repo-lines-v1:sha256:aebb2cc2a4f5cde5de11a7e7655cc1eec03c25c5c7b52b99b36f9c05f6980c75:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyMzk3MTQ2YjU5NTg2OWNiZjQ3M2U2NDk4OTUxZGQ0MjlmZmQyY2RhZjQ1ZmZlNThhMTc3MzNjZThmOTA1NmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0MDg5ZGQzYTI1ZmQ1NWE3ZWQwNDYyMzdiN2E5NDEyNjYyMTFhMTM1NTI4MDkzODA3ODUxZjE0YTExYWZiMTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMzYTZmNTAyNzQyMDYyMjM3MjRmYjIyM2EzZGJjMjgxMWQ4MjEyN2FhNzEwNDc5MGMwYjI1YmNiZDViNjA1Y2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY1YzgwYzZjOTgwNGE2MTJlM2ViZDVlMTg4YmVhODMxZWMwOWRlNWVhZDYwYmM3ZWQxZTc3NjhkYWJlZThhMGIifQ"
+        },
+        {
+          "resource": "repo://pipeline/core/sei_client.py#L50-L59",
+          "version": "repo-lines-v1:sha256:0c2e913af0815492629b17ca2eae6e76b7254b7abc67ea4c63f6941ec9c24df5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkOWQ4NmQwMTc3YjE5ZTgxOGYxYjEyMWM5ZDYyODgwNjQ4MzBmYmQzZmMyODA4MDlmMWNkMDhkZWFhMmYyMGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5ZTMzNDEyZGFlZDY4NjFjZmU4MDEwYjU0ZTBmMDM4M2VmMWVlMWNkNWRkMWJlNTU1NDJhNWE1NzA5OTgwNzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg1NDEyNzMwOWZkZTJiZWUxOWQzODY1MWRkOWU5ZmJiZmQzM2E5MGM2Yjc1ODk4NjY4MzM3N2U1YmNjNzUyOWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNhYzUxYzViZjE2M2I3NzM5OTg1ZDE4YWU0MmFjMWI1MDllYmE5YjUyMzNkMTM1YjExOWI3NWFhZjRlOTY4YzMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_efd92cc1fe964e179fa45771c3ae1a07",
+      "statement": "Candidate units are restricted to those belonging to the caller's own agency, matched exactly or by agency prefix, with the document's creating unit appended when it qualifies and is not already present.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/sei_client.py#L91-L107",
+          "version": "repo-lines-v1:sha256:6c47b536d3a830a73fd61cbcd269bea5df9bf75926331b12e321652fad98886e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5ZjhiZDk3MTUzZDczYWZmZTAyNTEyMTEwODYyNzY4OGI3ODc0ZWE1NjNlNjkyYjEzYjRiOTY1ZmZmYWZjNDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1NzliOWY3YTkxOWFhN2I1ZTNkNDlmMWU1MzU5ZjkyMTZmYmU4YmEyNDNmYTJkNTkwMDIwYzhiODViM2EyNTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmYmQwMDkzMTRiYzI3MDg0MTY3MzRhMDJhZTVmZjM5YTFlNDhhMDUwYmU5MWY0M2IyZmFhOTIwMDJjNjJiZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEwZTk1MjIyNjkxYzBiOGM3ZWQxZWIzNzQ4NmNlMjRkNTg1ZDAxNmRjNTYyOGZjY2ZjNTg4ZjQ5ZmQ5YThjNDcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_71f810dbd5784363a8f175ccc4dd5dd2",
+      "statement": "Unit ordering is adaptive within a run: the creating unit sorts first and the remainder sort by descending historical success count, with the success counter incremented on every successful download so units that have worked before are tried earlier for subsequent documents.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/sei_client.py#L109-L119",
+          "version": "repo-lines-v1:sha256:789fe066a7f745ec01bcceccc8dd2243394653faf657c6c88c9f7874fa883d26:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMjdhODhhZTcwNjNmZGUyNmViNTE4ZjlmZTFkZDgyYzFkNmIzOWY1ZmNkYWUyODNkMjA0NzcxN2NmMTQ5Y2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1ZTA3OWE2NmU1NGUxYWUwMjRkMjQ1N2FhZDIzZWYxOWFhNjdmNjljYjVjMzc1ODI5NTVmYzgyOTNkYzg1ODIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU0OTVlOTEzODk4NDBkNmE4YWRmOTJhYjIyNjBhM2U5NzEzOWQ5MmI2MjE2MTA2MWFhNWMyYTBmMGJjMzJhZjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkZWNlNGJjMzdhZjliNWQyOGVlNWVkMGEyNzhkYmVlMGZlMWMwMjg1NmZhM2RkYjRmMzE5NWIwMTk5MzlmOWMifQ"
+        },
+        {
+          "resource": "repo://pipeline/core/sei_client.py#L150-L154",
+          "version": "repo-lines-v1:sha256:30af8c27d1d03e8ae82384f91a9a687f7e14c704e434693c6c07be98917a56dd:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTFiMDQzNmQzNjQ3ODA3YTljZDEwZjQyYzJmZjlhNjIwNmU2MTI4ZDBhZDVhNjc0NDY3YjZmZGQyMzk4ZWE5OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTQ4YjBjZjhhNDIwNzEwNDEwYTliNTZmNGFlNGEyNDJkNTE4YTZjNTMyOTNkZDE4OTViODBlMjZhNTA1YWE0NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGIwMjkxOWM1OTRjMTdmMWMzYTc0ZjQ4ZWFkZmFkMzQwNzg0MmI3NWQ4ODI5ZDI0NmNiMDc3MGQyZjRlY2YxZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWU4NDJlNzNjMjgwYmIzYzljOTM4YzgzN2YxZDU4NjA1NjAyMDM5MzZlMjE3ZGI1MTVlMjQ0NmU0MzllNzAzMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_496c30f64618428bbe97acc505cde9e3",
+      "statement": "A response body reporting that the document was cancelled abandons the remaining units immediately rather than continuing, because a cancellation is a property of the document rather than of the unit being asked.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/sei_client.py#L141-L149",
+          "version": "repo-lines-v1:sha256:13a5ff747fc3cdef3b246caba4e73335fef19d71199da1b251f67f7105946729:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjU2OWNiMDkyODBlZTA3ODE5NDVlNDhkNDA0MWJkMmRmYWFlNjkxYWQyZWFiZjVkM2NiYTA4NDZjNzIxNmNhYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZhZDA1MmM0NGI5NTNmMGQ4MzI4NmEyZGRkZWMyMTg1ZTdmMTg5ZGIwZTRmNTAyYzZmMDZmMzQ3NTg0NTRhNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWNkNmJhZWYxNjViMzhkNTZkNjU4MzNlNDM4ZjI1ODI3MTgzOThjMzAwYWU2YjRiYTc2ZDc2NzlkYTNjOGViOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTdjNGQzNzhiYmU3NzE3YzM2NTVjMzE2OWMyNWNhNDUyNTZlNmQyMjZjNDIyYTJhMTFiMTMzNjY3YmRmNWZjZiJ9"
+        },
+        {
+          "resource": "repo://pipeline/core/sei_client.py#L67-L77",
+          "version": "repo-lines-v1:sha256:ccc8fe3ffc84b96162eee6cba940196d5a2f99535e1689ad2a2f249c2437f749:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4MzljMjI5YWM5ZTk5ZjNiZjk0ZDRiNmJhNjE4OGI2MzE0NzEyNjRiZWMzNjFiYTA0MGFjYTQzMDc4ODE3ZGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlN2M5NTdiY2I0NGZiNjczYzk4YjAwNTBhNzVkMzgwODJkYjgxZDkxOGRlMzEzYTNmMDdjMTIzNTMwNmQ3ZWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgwZDEyNWFlZWUxZjk5ODlmYTg5YzA5M2M5Mjk0ZDBmZmViYjRjNDFhYmVjMzk0M2ZmNTM2ODY3NTQ4NzcxNDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIwNTZlZWI0NDYxMTM3MTFjNTk1NTBhYTU0MmNkNTAzYjBmMjQ2YjQyZGZhOTg3ZmQ1NWFkY2Q3OTQ3YTY0ZDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a128ec0a5d9445c7a1a78b4abfc2503b",
+      "statement": "A denied-access response moves to the next candidate unit while recording the one attempted, and the download function returns a status of ok, cancelled or failed alongside the payload.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/sei_client.py#L141-L160",
+          "version": "repo-lines-v1:sha256:c89a12875562b32280346027832a19815a4c55ab03aed179bc633dab378dba6e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1NjljYjA5MjgwZWUwNzgxOTQ1ZTQ4ZDQwNDFiZDJkZmFhZTY5MWFkMmVhYmY1ZDNjYmEwODQ2YzcyMTZjYWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0MDg5ZGQzYTI1ZmQ1NWE3ZWQwNDYyMzdiN2E5NDEyNjYyMTFhMTM1NTI4MDkzODA3ODUxZjE0YTExYWZiMTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFjZDZiYWVmMTY1YjM4ZDU2ZDY1ODMzZTQzOGYyNTgyNzE4Mzk4YzMwMGFlNmI0YmE3NmQ3Njc5ZGEzYzhlYjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY1YzgwYzZjOTgwNGE2MTJlM2ViZDVlMTg4YmVhODMxZWMwOWRlNWVhZDYwYmM3ZWQxZTc3NjhkYWJlZThhMGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c51593be4aa04523811ef70ce809db9c",
+      "statement": "The downloaded filename is recovered from the content-disposition header and falls back to a synthesised name derived from the document number when the header carries none.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/sei_client.py#L79-L88",
+          "version": "repo-lines-v1:sha256:5759524c9c3fbe949b5b10fb347e069c17a11a67e0781e3b3f5f3b3ea9a54767:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExYzQ3OGU4YTI4NzNiMWZkMWZlMzBlNGFjMzUyNjJhZTUxMTcxNDA2MzcyZDBlZmI2MWNkYzM2N2E3ZWRmYTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRjNzNmZmI5YWJkMTlhMTdkZGI5YzMyZjk3YThlNzc4ZWU3MDQyZjFjNjY5YmYzYTgzOWVlMjY0M2Y0ODA1MTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRhZWY3N2U3MzYxNWNhYWM5YzY2NWYyZjIzZTM2MmZjOGY1ZTcwZGJlMjdmYmFlNmNmZmYyYjkzMGU2Y2JhNTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cdea3c6fb59a438b99682f35ad8e3fc7",
+      "statement": "The outcome ledger is an append-only NDJSON log recording timestamp, process and document numbers, status, HTTP code, units tried and a detail field for every download attempt.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/doc_store.py#L74-L100",
+          "version": "repo-lines-v1:sha256:777bb08900ff3f7e9d41d89f684f778214ed97dcb26ee9e1c23e5683712eeed0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3YTUyNDhmZDFmOGY5YjlkMzdjMmYyNWE0Mjg3ODI4MzRmNmNiMzZjYzdkMjc4MTAzMmIwYjViMzNmYTU0MzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE0MDZjZjgxMWEwODUzZjIxM2IwYTI0Y2FkYzhiYzNmNjcxMmQyZmM0YTg1YThhMWM5ZDI2MGEzM2JhZmJlYzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e95f4263601443e890b2e62d4f3b2bdf",
+      "statement": "The ledger replays its file on construction but retains only statuses it treats as terminal, namely ok and cancelled, so a failed download is retried on the next run while a cancelled one never is.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/doc_store.py#L44-L72",
+          "version": "repo-lines-v1:sha256:3f8eceb0809376fce7be714baa73883c6ad93ad458a15b6c70b7177cefa1a901:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3OGYwMzA4MTVlMDM4NzNkZjI0NDk3Y2QwYTJmYmFkNDQxZjA4ZWQyN2U4N2MzZjBhNTg3ZWJiMGM2MjIxMzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY1ZjFjMGNhNzA1MzEwNDM1ZWU0MzcwNGNmMzFjNDNlYWI0YWY1OTNhZGQwZTk0ODk0MDE0MGIxNWI0ODkyMDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQzMWE3YTg4MzA3ODA0MzUzODhmMmZmZWY2YThlNTk4MDgxMTU3OGRhM2FiYmE4Y2RkNjZhZmZlNTE1ZWJhMmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a8992a6c222a4935be7b602b7facb4b4",
+      "statement": "Ledger writes take a lock, create the parent directory, append a single JSON line and update the in-memory terminal map, making the ledger safe to share across the download worker threads.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/doc_store.py#L84-L100",
+          "version": "repo-lines-v1:sha256:fc36ff7c6623f9d48e6407956441dc9261af1dea262fe5f7a6b5e65b3213ccb8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwYWQyODc2NzJjMGNlNTgyMzRkODUzODU5ZWMxMjU0MWQ0ODM0YjZiMDMxZjQ3YTExMmRkZmNjYWNhYTM0ZTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3YTUyNDhmZDFmOGY5YjlkMzdjMmYyNWE0Mjg3ODI4MzRmNmNiMzZjYzdkMjc4MTAzMmIwYjViMzNmYTU0MzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMwMTEwYWRlMDNiMzc5Y2Y3ZWZkOWJlYjc4MjFkODA1NmEwZmE4MTkzOGJjY2E4YjdhNmRkYzg5YTU5YzU4Y2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_06e474df56e64d3091759acc1a654fa8",
+      "statement": "Each document is guarded by two independent skip gates before any request is made: the document store already holding bytes for it, and the ledger reporting it as known-cancelled.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/download.py#L176-L186",
+          "version": "repo-lines-v1:sha256:21c881dcc1ab102f8ff4caa3edb8e12da3adaaa0a50ddefa87b068b2d86b6d19:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVkYjg0YzhjZWNiMTZkNWYyZTg4ZDM3YjQxY2Y1N2VhZWEwMDg3ZWQ1NDU1ZGJiOWFiNDk4OGVkZjgyZTliZjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNiOTRmN2MxMzRkOTA2ZTY0Y2IyZDI0ZjhiZDMwY2U2NTY4MzJhYzZhM2RkMjVkNDNiYTQyMWE4Yjc2NjYxMGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImViYjMzOTZhN2IwNWU5ZGNkN2UwMWM1Y2Q3NmMxMzRkNTNjYzhjYTI4Yzg3ODEzYjhlMmE0YjgwZWJjYjI3OWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8363f5000e93428bb5b07b8260d142e8",
+      "statement": "A process carrying no administrative units is skipped wholesale with a warning and counted as skipped rather than attempted, and a dry run short-circuits after reporting what would have been attempted.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/download.py#L162-L172",
+          "version": "repo-lines-v1:sha256:6b8df2d7f68b742baa10db88aef154b4f1188691718883ec3489ca8d251972cf:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmNWJmOWFhYThkYzUwNjI2YzQxNzIzOTU3M2ZhM2VhODYwMjIyYzEzODZjMzEzNjQ4ZjZiZjEwNGFkYmJjYmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1ZDNlMjRiMDJjYWFlOWFlZDNmZTI4YTQ3ZTE3Y2E5MTA0YWMzMDU2ZDJiMDE2YjdkNjkwNjYwMjFjZmUxYzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3N2Q0ZjM3MGJmOWFhN2M3YjYzYmFkNTAwMWRmYzc2NjY2OWI5ZmMxZDVlMTM1MTVhYTM5YmUwNDA0YzY4N2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNiOTRmN2MxMzRkOTA2ZTY0Y2IyZDI0ZjhiZDMwY2U2NTY4MzJhYzZhM2RkMjVkNDNiYTQyMWE4Yjc2NjYxMGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_27c0a77283bd44438916318d81cc28fc",
+      "statement": "Processes are downloaded in parallel through a thread pool sized by the workers flag, with each per-process call opening its own HTTP client.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/download.py#L173-L175",
+          "version": "repo-lines-v1:sha256:3b94f7c134d906e64cb2d24f8bd30ce656832ac6a3dd25d43ba421a8b766610d:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWE0Zjg2OGY1MGJhOTdiZjdjMWZjMzk0MGYwMjBjNGI3MDViZGFhYmQ0ZTc5ODg1OGVhYjFlY2U5N2UzMGU5YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGZjMjJiNjA0YzhkYzM0YzYyODk3YTI1N2Q0OTEwMDU5ZTQyNmI2OGEyYTkzZWEwNmM3MjZhNjFiODliZGUyZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGVkM2UwZDdjZjRmMGJlYjQ0ZmQzM2FiOGUwYjQyYjllOGM4ZTgxNzVjODFhNTUwN2MzMWRiNjE4YjlmNjAxYyJ9"
+        },
+        {
+          "resource": "repo://pipeline/stages/download.py#L280-L280",
+          "version": "repo-lines-v1:sha256:ab45666c3bc86b56b9d5ddcd0af9cdcf27b9d576479dac5fbb19309e68ef5111:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWI0NTY2NmMzYmM4NmI1NmI5ZDVkZGNkMGFmOWNkY2YyN2I5ZDU3NjQ3OWRhYzVmYmIxOTMwOWU2OGVmNTExMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWI0NTY2NmMzYmM4NmI1NmI5ZDVkZGNkMGFmOWNkY2YyN2I5ZDU3NjQ3OWRhYzVmYmIxOTMwOWU2OGVmNTExMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDc0ODhmZTdjYTE4NWUwZjQ1MmI5OGMxZmFkNzkwOGIxMzFhMTVjM2QxMDBmMmI1OGM4ZTA1MmNmMzcwNTcyMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjJlYjBkNWFhMTcyY2U5MjYxYzFlMjRkODZiMmFmZTAxZjg0Y2U3NGQzYzc0Y2ZjMDM3OTQzZTM2NmYwNmY4NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_354acae10e714032a57e70a9f2d921f3",
+      "statement": "The download stage soft-depends on atividades rather than hard-depending on it, because the document list is normally read from the graph but can also be supplied directly by flag.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/download.py#L339-L357",
+          "version": "repo-lines-v1:sha256:939ece70660932646b5c32401d7ff6840b89a580480655de5ab3cb50b6b8630e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjOWZjMDEwYmQ2ZmZhM2JlY2ZkNTFhYWIxYzJlNzVhOWRiZTIyNzhkNGY2NjljYjkyOWI1MzRiMTE0N2ZlMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmMTVjN2ViNWI5MTY2MmVhMGYwMTJkNmU5ZWIwOTJkYjQ1OGFlNDE1Nzg3YmEwMDdkOWFhNjk1YjExMjFiOTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJmZjU4ZmE3MDAzZDc0MWI1OTRiNDYyNjc5ZTgwNjUzZmI1NzY2MWU2MjNmOTRhMDE2OTI5ZTM3NTJkZGNmYWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFkYzk5ZGZiZjRmOWY2ZjM3OTMyMGEyMzlhNGVlYzg3N2FhNTYyYzVhNDExZjYyY2M3ZjA0Mjc2N2UyODA4MTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_678291e764c041ed9b7cc954e1501146",
+      "statement": "The filesystem document store lays files out by process then document number with the protocol's slashes replaced, and reports a document as existing only when its directory exists and is non-empty, so an interrupted write leaving an empty directory does not mask a missing document.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/doc_store.py#L10-L41",
+          "version": "repo-lines-v1:sha256:1f4af7a0017d985d828fcf9cc85ead8b0c08c63209ce24d95937937dd4cf1ed1:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0MjE1MjNlNmYxYmZlYTcyMTA0NmI2OTY1NDUxZTVmODFiMDg0NDNjOGVmZDkyZGIyOTdkMTA5YzYxNjNlYmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2NmVkZGU4ZmJlYzIzMmM5MmVjY2FmYjlkMWRiN2ExYTEyYmJiNmRjZjMzMTI0ZWZjMmU2YTlkYzkyODQwY2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5MWJmM2Q5NmYxYjExOTY4OGRlZWE5YTAwNGIyYjNmZWJiMTgwYmI4ZmIyMzQ0NjI1NjE0YWRjODU5NTYzYWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjllYTFmZGY2NTI1MGRjYjExZGIyNWEwZWExNGE2OGMxM2M0MGMyYmIyOTU4ZjE1Zjk4OWM1ZDRjNTVmOTQ4NjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3e9d2590e7394d48a459ec4a0378e76d",
+      "statement": "The document store is defined behind an abstract interface exposing only exists and put, which is what allows the download logic to be exercised against a substitute implementation.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/doc_store.py#L14-L24",
+          "version": "repo-lines-v1:sha256:23b2d0a7c73304b46c46fefe1cb541449e530714c835bb30a3fae194aef988d4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwNDc3Yzg4MWEwOGQyZTYyMjIwZjk5ZjAxZjM5NTA2YjYwY2E0NzRmNGE0NjRlMzZhYjE1ZjljNzI1MzY0ZDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhiYjgwMjdlNDYyZWQ5NGU3ZDgwYjFjNzNiZTRhMThjZDQyMDNmYjUzMWJhY2RlM2JjMWU0YzUyYmI1N2ZiMTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY3Y2E3ZWFjNTM1NmQ5MTFmZDkwMmUxYWVkOGViYTMzOTU1M2I5N2ZhMzdlNmJjMmQ0Mjc0NTg0NTEwYzE2ZTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8d600893d12c4178b0182005c852625c",
+      "statement": "Every parser returns a text and method pair where the method string records how the text was obtained, becoming the per-document provenance of the extraction.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/parsing/__init__.py#L57-L77",
+          "version": "repo-lines-v1:sha256:5997382bcadbbb89d2526d6c81047ad3eca87815c31b483bc466fb370aaae0fb:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZiODU2Y2QwNzEwNjdhZDYxNzYxZDI5ZjA3MmNhMzg5NWQ1YTFiYWQxN2M5N2JlYjcyYmM2MTc4ZjkyMTM2NjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkxMjg0YjU0N2U1ZGY0MjRlNDAxNWViOGVkOTgyMzNiMDc5NTJmNzkzNGEwNWViOTA0OWRlYTk2MjNiZjZmM2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE1OTllZmY2MjBjNWQxY2FjM2E0YTM0ODA0NzhjMzE0MWIwZjczNDMyY2I4ZjE2YzRiMTVhMmMyY2FmOTQ3YTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2486cfd8500d4e05a35f85538fd67be4",
+      "statement": "An unsupported file extension returns empty text with an unsupported method string rather than raising, so one unexpected file type cannot abort a parsing batch.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/parsing/__init__.py#L75-L77",
+          "version": "repo-lines-v1:sha256:1bc10c60b29cd33a5a1f1e0e8b8705c3b47ccf158f785597cc599c7d0542e594:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2FmMjI3ZjZhNGJlZmVhNzRmNTI4YzEyMGNkNGJlMWRiNzMwODczNDMzMWFhNGExM2Y0MWRiMGY0MTRiMGI2NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTEyODRiNTQ3ZTVkZjQyNGU0MDE1ZWI4ZWQ5ODIzM2IwNzk1MmY3OTM0YTA1ZWI5MDQ5ZGVhOTYyM2JmNmYzYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjQwNGEzNTIyOTY5MTFlNjVlZjIzMWU5NzgzMjdhOGJiNzY5ZDIzZGRiOGYxOWUzOTY1NDExYzU2YWEwYzllYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6fd8472ba2304018b65e4f54b55ac593",
+      "statement": "PDF parsing attempts native text extraction first and falls back to vision transcription only when the native result fails a quality gate, choosing the cheap deterministic route whenever it is adequate.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/parsing/pdf.py#L83-L99",
+          "version": "repo-lines-v1:sha256:72fa9963129622ad2838c2e1446aa31685143cf48ec89547e4b1afccc0c24c85:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjODBiZGRmNzUzZmQ3NTg1ZDYxNTU5MDUzMmViMDliMzRkY2RlOWU2ODBlMTJmMDU5MjMwNGJmYzE4OTViZmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY4MTI2ZDhhY2QyM2VlZWY5MGQxYjMzMjg3YTZlOWMxYTA4NDJhNmYzODA0NGNhNDgxMzQzYWMyMTRhNzkxNTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_aca72f795b98458d93d5b04ae2346171",
+      "statement": "Native PDF text is cleaned by removing runs of at least six consecutive short tokens where half or more are single characters, the signature of a broken text layer that yields letter-by-letter fragments rather than words.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/parsing/pdf.py#L51-L68",
+          "version": "repo-lines-v1:sha256:dc52e9243689c7a0ad31421e926f880ae4c17dda14a4e333f6c5c063409d2b8d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2OTI4ZjViNmVmM2U2OTY2MjU2OTM5NGNkZGMxNzUyYWEyZWQwNDdjNjBkMzFmODdjYWE5MDMyZDM4ODQ5MTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg4MWM5NmY0YzY3ZDk4ZDdmOGZlOGE2OGYxNGEyMTk3MjIzNjJiMjMxYjEzNjZlNDliNWFiODkwZmU1MDBjODAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVhOTBmYzZmM2Q2YTM4YWQzOGRiYTVhMjFkNWI1OWI2OWJlMDQxYmI1ZTg5M2Q2ZTZiMzAxODEyNzBiNDU0OTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_99e183a844da42cbb02a4fa9e8ebe177",
+      "statement": "Native PDF text is accepted only when at least one page was read, fewer than half the tokens are single characters, and the text averages at least one hundred characters per page.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/parsing/pdf.py#L36-L36",
+          "version": "repo-lines-v1:sha256:0c230f62d05d292f4d1f7a3e58e949811030bb410650e9a089ad77232c6eb650:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGMyMzBmNjJkMDVkMjkyZjRkMWY3YTNlNThlOTQ5ODExMDMwYmI0MTA2NTBlOWEwODlhZDc3MjMyYzZlYjY1MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGMyMzBmNjJkMDVkMjkyZjRkMWY3YTNlNThlOTQ5ODExMDMwYmI0MTA2NTBlOWEwODlhZDc3MjMyYzZlYjY1MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmEzY2Y1MTkyMzU0ZjcxNjE1YWM1MTAzNGIzZTk3YzIwZWRhOTk2NDNmY2FmNWJiZTZkNDFhZDU5YmQxMjE2NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmEyZGY3NDNkMjk2NWQxN2Q5YzQ0N2Y5YzU3OTViOTNlY2M0NGM4NDgyNmZhODQ2OGU0ZjI1NTYxMDE1NmRhZCJ9"
+        },
+        {
+          "resource": "repo://pipeline/model/parsing/pdf.py#L70-L81",
+          "version": "repo-lines-v1:sha256:29631e4304df9a8cb79c87481c89fb11b3c507e88a1c8220260fde48ed8c5df8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzNmZkNzA0MzFiMjkwMDQxZjQzYzY0ZGRmNjY3MTUyMGMwOTBlZDcxZmMyYTg5M2IwNGFlMjM5MjQ5MjFhZDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzZjFhODliN2U1YmY1YmI2MjE2Y2Y1ZjcwOTVlNTU3MzM0MDVmOGM5ZjJjY2Y5MDdkYWIzYjcxZjdkZmZkNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM4OGZmZWZmZDc4ZTZkMWM5NDg3NTRhMGVmZmI4NmQwZjQ3NzZlMTk3ZWMyMTA1M2IyMjJlN2M1MjIxNTgyMzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY0Mzc4OWQ4YThhYjMxYThjOGRhM2I0YzYxNTk3YjFhY2EzZWM4MzA5ZTZkZjA5ZWE4OTJmMTVkNWUwYThmMzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3c5e912c2a144763b98d55aec0cbdb2a",
+      "statement": "When no model client is available the PDF parser returns the native text regardless of quality under a distinct method string, so a document parsed without the vision fallback available remains identifiable afterwards.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/parsing/pdf.py#L94-L97",
+          "version": "repo-lines-v1:sha256:f586b643234c23216b03ebf8830b913c26a9a6a7ea399557ecc861ff3d96830d:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDE4OGU1MjY0ZjEzZGNjMzZmMTg5ZjRiMDMxYmM5ZjlkZjk1M2ZkMDkxZjg0NTc2Y2FhNjNiNWRhNTIyZGY4OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjU2YzBlM2MxN2NjOTM4ZTdlYjIyODVjNjA3MTI3NjI1NDg4NDgwMTk3NjhkNGIyY2VjOWEwYTc5ZDE3NGJhYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjQ0OGFmMTk0N2E2YjUzYWQ1MmNkOTZhYzdkZTkyYTk5OTFkYjJjMTY1MmEwYjIyMmY3MmMwNTNjNjc1NDZhMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGUyY2NiOTNhYTRlMmVlZGRiMjIxODJjNDBlZTM5MDhkOTI1NTU5MTQzZTY3NDk2OTI3YThjOWMwOWEzYWFiZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2f2331029eef4a458afa8859e41ff170",
+      "statement": "The HTML parser strips letterhead, routing fields, datelines, signature blocks and footer addresses through a sequence of targeted patterns, several of which are built from the deployment identity constants so boilerplate rules follow the same configuration seam as the rest of the codebase.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/parsing/html.py#L38-L131",
+          "version": "repo-lines-v1:sha256:a7b6135fbb5cb88abfbf7a7143b1281c1dcc748551bcd50924b878e8367c7688:eyJzZWxlY3RlZExpbmVDb3VudCI6OTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2ZDYzOGMxOTZiZGMyNmEzMTA5ZDk1Y2Q4MjEyNWY2NmVmM2NlNWEzMDBhNTJjZDE4ZGM3MDlmZTgzYjM3NGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2MTI2N2M4NjcwZjdkMDRkNzlkYmI0NTk1Y2FiNzFhYjAxMzhmYzM2YmFjYzk5ZTM5YmM0OWNkNzZlNzFkNjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEwMWY4ZjU0NGE3MGY3NjdiMDAyMmMzOGQ1MDQ4YTRhMGEyY2Q0ZjM1YjYxODNkYWYwNjMzZGVjMWExMDBmN2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiMGU4YTE2OWRmMWIxMDg4OTlkYTQzNzJlNDM2OWRjM2Y2ZGMzOWY0NTk2YWNlNDRjODZkN2ZhMGYyMmI0NTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_eefb27fdebe0439f8cc70cbb11a1ced2",
+      "statement": "Vision transcription encodes pages and images as base64 for an OpenAI-compatible chat completion endpoint under a transcription system prompt, resizing images to a bounded maximum dimension and resolving separate model settings for vision and text.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/parsing/vision.py#L34-L72",
+          "version": "repo-lines-v1:sha256:bfcff05715c7e35dbd425e14fc5a5b74da7b3f85d364f0aa66fc4e24b04abcbe:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwOTgwODZmNDUzMjRkZmU3OGUxMDY3OTk4MWQxN2Y0OWRjYWVhOTUzMjkzYzNhMWZiNDNiMTgxMzdiMjYyMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ1MzkzOWU3ZmI1OGI5MDg3MDM2OWQ4YjY4MmQ2NWZkZWE0NTQ2ZDM1M2RlMThhMzcwYTc1ZTJlMTAzNTc1YzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ2NDdmZGY3YzI1MjUyYmY2Y2MxNjMxODQwYzAwNDQ3NWY5MDkzZTQ5YzdlOTAxODJmMzMxZGUwYTdlY2YxZTkifQ"
+        },
+        {
+          "resource": "repo://pipeline/model/parsing/vision.py#L90-L115",
+          "version": "repo-lines-v1:sha256:2fdda2aa57cbc4e4035566450cad5ccc026d2dbcc0c6bfb256dd28800cace051:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg4ZTUwMTIwZjQyNjI0NDU1Y2MwMjY5MmFlOGQ2Nzc3NzFhMzlmODc4MzZlNDM2YWM2ZDc1N2NjZmZhNjA2YTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxNGU1N2E3OTZiOWEyYTQ0Y2Y3M2U5ODlhZTQ1Mzc1NzM1NzU4Y2MyOWU4NGEzOTE3YWE0YzFkYjg4OWE0YmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVhZjJiN2QzNjAzMzJkZTc0YzA0YjdiZWEyNzU5OTMyMTVkYmFkZWJiMWFhMjIxNTU3ZTQyYTFlNjI2MWFiNzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU3ODQ1MzhjNGEzZjkyOTBmZTU1MTE2NzJlMTJhZjQxMWNiZjQzOTZkNzIxNjE4ZDFmZWZlMTZkMmFkZDVlM2YifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_627e6811aa8f4f48a0d4b6373c002955",
+      "statement": "The parsed document iterator yields only directories that actually contain the requested text variant, so a document that failed to parse is absent from the iteration rather than surfacing as an empty entry.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/parsed_store.py#L41-L55",
+          "version": "repo-lines-v1:sha256:2334f69e743721623b5ee754c5dc647651978fe2ac2024142fac6c7009b8c413:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1ZmI3ZjRiZjg2YWRhMTcxMjA0ZGQ4ZjRiZDVkMTYxMzI2MWE2MjIyYjk4Y2NkNzY3MGQwZDRkMWZmMzllMTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNjY2ZhZDU5ZWExODc4ZWMzNmFmZmY5ZGNkOTczYzc4ZGQyMzAxYzdmMThkNTQ1ODBkYWUyNTA1MzFhYjI5NmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2cc1cf2d795f4ede8c453aa77e160bc6",
+      "statement": "The document-funnel stage counts surviving documents across the downloaded, read, anonymized and embedded steps and emits the attrition as a provenance-stamped artifact, replacing figures that were previously counted by hand at the moment a report was written.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/document_funnel.py#L13-L28",
+          "version": "repo-lines-v1:sha256:dc5aea038a94d58e9db674f2cacf854bf60f73d5561de7c54cb1b39000cb8655:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjOWZjMDEwYmQ2ZmZhM2JlY2ZkNTFhYWIxYzJlNzVhOWRiZTIyNzhkNGY2NjljYjkyOWI1MzRiMTE0N2ZlMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZTE3OTFjNjViNWE4MjJhY2RjNGVkMjAzZGQ2Y2E2NjhiNjAyZDNhNDMyMmRmZWJmZTUxN2VlODRjYmUxZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI3MDliMTVlZjkxODNhOGI2N2Y3YzM5MWM4OGI4NWE5MDc3NTcwNjkwY2Y0MDYzNmE1MDVlMjc3NTQzNGZlOWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcwZGFlY2UxMWY4YjUwNDBhMGJiZTlmNjM2OGIzNzdjYmU3ZWY5MzUxYzE1YmY4N2QyNmY1NzQ2ZmUyOGZlMjUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.0",
+    "at": "2026-09-10T12:46:32.229Z"
+  }
+}

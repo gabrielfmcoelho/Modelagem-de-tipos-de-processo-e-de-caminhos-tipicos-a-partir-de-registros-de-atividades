@@ -1,0 +1,270 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:cdb85a86ecbfa82a96f8bd6da7c86ebfd72300cbec6a834620e9bcd9a6f0ecef",
+  "claims": [
+    {
+      "id": "claim_ddcdbaa6c07141d591c31ac3cfc14f9a",
+      "statement": "Execution mode is a closed set of four values (neo4j, json-emit, json-replay, fs) that selects which concrete GraphWriter and GraphReader a stage receives, so graph-touching stages never construct a database connection themselves.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/_stage_base.py#L11-L11",
+          "version": "repo-lines-v1:sha256:365da3a2ebdcadefddb7a28aca11b23f95f5ad515b34831afb3f8436a98f0e01:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzY1ZGEzYTJlYmRjYWRlZmRkYjdhMjhhY2ExMWIyM2Y5NWY1YWQ1MTViMzQ4MzFhZmIzZjg0MzZhOThmMGUwMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzY1ZGEzYTJlYmRjYWRlZmRkYjdhMjhhY2ExMWIyM2Y5NWY1YWQ1MTViMzQ4MzFhZmIzZjg0MzZhOThmMGUwMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjk3NTNmNzAyOWNkMzcxOTE5ZDgxMjdkM2NhYWE3ZTkwZTJmYTU5N2UyNjRiMDA5OGRlZTM2NDVhMTJhY2Q2ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzc0NzdjMzNmNGU3OTE2YjdmMzk2NDVmZGZmMzM1ZGZiNzU4YTRlMzEwNGJmNzU1ZTBjN2MwMzQxMjQxNjVkNSJ9"
+        },
+        {
+          "resource": "repo://pipeline/core/runner.py#L96-L151",
+          "version": "repo-lines-v1:sha256:c7fe332029c6c344b189302f93729edb1dc52a1c7b814acc10a2e823fd9f6cef:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MWYzM2MxMzI1NjlhNzQ5NDZiMmZjZjU0NmNhM2M0NDI1ZGEwY2E1Y2Y2YjY4NmMyNjA5MGZhYTlkMTEyYjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhMjhkOTMzNGE2MmIzNjlmY2QzMTAwNzllNjU3YTBjOTk3YzkxMTNkZWY1MmE1NWM1ZDM2YzY3NjAyOTQ4YWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM0ZTQ2ZDQxMGI2NjgxNTNkYjQwZGViODMwNWEwZjlkMGYxN2VhNzRlZWQ1ODZiN2NmYjVmZGFlMmI5YTA5YzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMWIyYWM5MTQzZjdiMWE0ZWU0NWMxYTUyODY5NzhmY2MxMjFhY2NjZmFhMGU3NjM3NjlhMWYxYjE0ZTc0MmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8036dd1fbb7e46ac9e7707812af87696",
+      "statement": "pick_mode applies a fixed precedence: an explicit mode flag wins, otherwise a configured read directory selects json-replay, otherwise a configured emit directory selects json-emit, otherwise the default is neo4j.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/runner.py#L85-L93",
+          "version": "repo-lines-v1:sha256:ad28fb06e384f532c6b3de3a0ef06c7e38d3d1d4acd1bdacb5846fac286fe0b9:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGY1MDNiOGFiYzZhMzQwOTVhZGEyOTY5Mzc4OGFjMGI2MjA3ZmVhYmUxZTg3OGRhNDFlNmMyYjA2ODczYjUxZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTZkYzY0MDJmZWY1YjZlYzZlNGQ3Nzk5ZDc4NjQ5ODdkYjI0NTlkNmIyMDFhOGUwOTJhZGYwMGRiNTRiNDM3NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmRhMTNkZGEwNjQyNDM5NDhmYjVkMDYzNzQ4NzJmMTIwM2JkYTg4MGZjMTcxOWQ2NDNlNGM2MzcxYzhlYTg4OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzk3YjhhODhlNjNhNjY0ZDAzZTU3NTZhYmM4YmExOTBhNzJlZGM0NTU5MzA3ZjNhZmI0MmE3MWFmM2NjMzE3MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_04fdd0937e1441b9962ce54502f2a081",
+      "statement": "The run-level mode is only a preference: _resolved_mode_for falls back to a stage's first declared mode when the stage does not support the chosen one, so a single run can execute different stages in different modes.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/runner.py#L195-L202",
+          "version": "repo-lines-v1:sha256:b92cd456da3a22ae9883825cb7e959c08839e44de6557c5452b40c7c72faa9d6:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWNiMWNlMGQ0YjlhOTI0NGRmNzM3YzNkMzZiOTIzMDJhOTk1OTFhZjlkNzM0NGUxNGZjZjYxMjg3ZDE2NzQ1OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTkwOWE1M2E2MThkMDI4ZTFkMzAwMGMwYTdhYmNlZWNiZTVmYjM3ZjRlNTExZWZlNDY2NDNmYWQ2ZTY2ODcyZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTlhZGE5MTI0OTY4YmIzZjdjZDYxZDU1MWFlZjg4ZjM2NjM5NzVkYjA0MjdjZmJhYzFkMjhhYzgxYzhhNzk0YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWE4OWE4OGE2ODhkODZhMmUyYTFlMzNjNDZkZmJhNjdmN2ZjNjllZWMxM2MxZDZmNzE5NGI4YjQxZjY1MmRjOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2029a2314cf64cf98a1839e11b055bce",
+      "statement": "A stage that declares no modes at all is a hard error, raising IncompatibleModeError rather than being silently skipped.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/runner.py#L197-L202",
+          "version": "repo-lines-v1:sha256:75bc3ad50bc71b08f8db535657f95be511139d6fb742ad5c5ad4790a6ed735ac:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjc5MmZmZTQ5MWY0ZDk5ZmZjMTRjM2U2NDRlODM4OGM0YTkzNTNkMzUwNmU5NjVkMDBkN2Q0ZjIzY2EwZmI2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTkwOWE1M2E2MThkMDI4ZTFkMzAwMGMwYTdhYmNlZWNiZTVmYjM3ZjRlNTExZWZlNDY2NDNmYWQ2ZTY2ODcyZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmJkNzlkYTAyNGIxMDk1NGU2MGJhZjA3ODYxOTdhNTFjYTRiNjFlMzRlYTU4ZDg4OTc2YmMzNDk4NWQ0MTNkMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWE4OWE4OGE2ODhkODZhMmUyYTFlMzNjNDZkZmJhNjdmN2ZjNjllZWMxM2MxZDZmNzE5NGI4YjQxZjY1MmRjOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0ba881cd4b07493095821e734d85b06f",
+      "statement": "The runner enters the _io_for context manager once per stage inside the execution loop rather than once per run, so each stage receives a freshly built driver, writer and reader that are torn down before the next stage begins.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/runner.py#L278-L291",
+          "version": "repo-lines-v1:sha256:c662d431ac6bfa1d334ffe756bc90a44d611d0ac10100a0ac204f610e1d7d048:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3M2E5MDY4ZjdhYmM0NTY1NmI5ZjQ1YThlMTRiMTkxMDJhOGIwZjIxOWJlMGI2NTY1MTY3ZTM5ODUzZmEyNDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ2MjcyODU2YzQ3MThhYmNmNWI2YWJiMDljNmUzMDcyMGE0YzE4MTVkMzhhMjUxZThiYWYwM2M1MDVkYTdjMWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUzMGQ5OTVmM2VhOWRmMDBjOTQxZTJhZDAwNjgzZDFhMzQ3Y2M5MjVkOWY1NDIwNDY0MWE0ZTI1Mjg5YjE0N2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNmZDk3NjgzZjA1MTRmNzI3ZmM3ZmIwM2MzYTRmNjg2NTAxYTdjY2Q5OWY5NzNmZjRjNzM4OGQwYzc3M2RmMDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1af8c707043046858e8643129f915415",
+      "statement": "_io_for closes writer, reader and driver in its finally block with each close wrapped in its own try/except, so a failure releasing one resource cannot prevent the others from being released.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/runner.py#L153-L168",
+          "version": "repo-lines-v1:sha256:447db7ce542ebbcf4b7bfb43a134a3149210908ab909b1a5bc4f55b547d3d6e7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3MGRhMDMyZmJmZGJkMWI0MjRlODE0YzIxMmFlNTg0ODRlNzZmNTdkYzU2ZGJmZDEzYmY4MDM3MzZkMzI0YjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBlZWM1MGM5NjU0NDFlMGUxNWQ3ZjI3ZDc5M2QxZTg0NjhjY2M5MzczMWI5OGJiNDFhOWEwYzY2MDUxMDhjNWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBiZmUxZGQ3NGRmZDMwN2Q2NzNkNDFiNzg3MDg0NGUxOTYxMDllOGZmN2E5ZmQyNDUxMjdjNGYxMzJkMTYwZDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI0ZDM2NDgwNWI4ODhhMDBkM2FhZDhhM2M4YWU3ZTEzNDkzODM2ODc5NzNmMmZiOTVhODFhYmUzYWY3ZTliMGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c87ebf86263c4de98d1f228c2adb2160",
+      "statement": "_io_for tracks whether it built the Neo4j driver itself via own_driver and closes only a driver it owns.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/runner.py#L100-L140",
+          "version": "repo-lines-v1:sha256:f98c42b91b336afb3e9e39360ceab21852c4d30342dc635bbb6d9b78d2c433a9:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwMDkyNDBhMzFmYmRjYzBhNmVmMzU5NzlhYmViOWY1ZTg3YjE0YzZhNDk3MTBhZTkwMTFkYjkwMjcyYTZkZGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyN2ZkOTFjZjViOThlMzUyYTQ4OTAyMDJmYjZmODIxZDUyMGQ1Y2VmYTM0YWI4MWVjZThhMTlhNGE5NmZlMTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI4Y2UzY2FmZDc2M2U5ZmIwMjAwY2Q5YjVkMTViMDI4ZTY5NjYyZGI3NjNjYzNmYTQwMDQ1Y2VkMGRiYWJjM2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY5YmI1OWU3YjgyMjkzODRmOGRiMzYyZDlmNmMxNDE1Mzc0YTI3ZWY3NTE1NjBiNDU1YjVhYWVkYTE2MDk0ZDcifQ"
+        },
+        {
+          "resource": "repo://pipeline/core/runner.py#L164-L168",
+          "version": "repo-lines-v1:sha256:d3b5b582cef864903d8f3d54b3e37c87c999a0d1f9b8fe6647c5552fea459010:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGRlOGMxMmM5YTJiMTg2ZjkwMWYxMGMyNGU3ZTI2NzQwYzJmMDkzNGU4MDhmZTU5OGFlZGRjMmUwYWZjZDY5ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGVlYzUwYzk2NTQ0MWUwZTE1ZDdmMjdkNzkzZDFlODQ2OGNjYzkzNzMxYjk4YmI0MWE5YTBjNjYwNTEwOGM1ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzIyMzk0Mjg5ODM3ZmJkYTAxMDZjM2U1NzM3MTM5OTE5NDQ1MmQzNTc2NWFlYjNmMjRiMjZjOTU3OTBkMzcyYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjRkMzY0ODA1Yjg4OGEwMGQzYWFkOGEzYzhhZTdlMTM0OTM4MzY4Nzk3M2YyZmI5NWE4MWFiZTNhZjdlOWIwZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_64d8e08c3ba042a19366807f40196ec3",
+      "statement": "RunContext exposes require_writer, require_reader and require_driver, which raise with a message naming the mode flag that would have supplied the missing side, converting an absent reader or writer into an actionable operator error.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/_stage_base.py#L83-L104",
+          "version": "repo-lines-v1:sha256:f3dde9f61a3b1e14ce03d38f9c18fcbbc2fef6083728189a889d2c988c241de9:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyMGI4ZTUzMTQ4ZmIzZjFiY2MwNTU5NzBiYTA3MWU2YzBhY2FiYjljZDQ1MzhjMTM5ZDg0NzY3YjI0MTliMDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM4MzUyZDMwOWQwMmRjMWEyODllZTg2YTc3ZmRmYWZiMzdkMzg1NWYyNmU1NTZkMDk0ZmY1ODQ4ZmMxZjE4NTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY0Y2EyNzQ1OTZkZjVkNTVhMTI3N2I4MTBhYWM2NDA0ZDk1ODQ4OTBkOTZiMTNjNTcyYjQ4NWU3YzIxZmU1MjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEyZjJhZTc0NzVkYjU3MDc0ZjhlYWRiZjk5ODE4ZWQyY2RiMmIzZDJjOTIwOTFhZWJiMzA1YTIxNjFhYjZlOTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d45faa81f0484166a0a115e271917a5e",
+      "statement": "Both graph writers validate structural preconditions identically, raising WriterError when write_nodes receives no key fields or write_edges receives an empty from_key or to_key, and both return zero without writing for an empty row set.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/writers/json_writer.py#L100-L144",
+          "version": "repo-lines-v1:sha256:fc0fed9a1ad29826a85a5502e7c073029a7a1cbfea7cbafd68d33c949b9ca467:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyODIyYjI3MTU4NTBlYTcxYWE2MzEyNjJhYjdiMzg4MTYwOTRjMTBkMTJiZjFkNjU0NTE0ODA4NTQ3MzgwMzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1YWNiNTUyYmVmNjYxM2I4YjEyZDgzYTY1OWRiNTdlMjQyNjBhN2U0YTAwZTAwMjQ1MTdlNWZjZmM5NTFhYjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY3YWM0YzdhNDQ5Y2Q4Zjc3YjRjMTVhOGQ3MzQyNmU5ZTQ2NWZjY2Q5ZWM3MTE1MzAyZTBjZmY0ZjBlNjFjN2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyZWQ0MTNkMGQ3ZDg1OWYyMzE1MzdiYjFiZWU2MGI4NjU1NjZiMDNkMGM2NzA0ZjIzYzFiMmU4NzMzYzM5MGYifQ"
+        },
+        {
+          "resource": "repo://pipeline/writers/neo4j_writer.py#L78-L106",
+          "version": "repo-lines-v1:sha256:457297bfde92e064ba38c4128f44fd630eec1d8c7289b281f0b7cb3d7d5021d7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYxZGRkNDJlNGEzYWYxYTI1ZWNjNTQ3MWI4MzI5YjhjYjg0M2RjYmQ0NzhhZTM4NGRiMWU4ODNlMDllYWRlZjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1YWNiNTUyYmVmNjYxM2I4YjEyZDgzYTY1OWRiNTdlMjQyNjBhN2U0YTAwZTAwMjQ1MTdlNWZjZmM5NTFhYjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY3YWM0YzdhNDQ5Y2Q4Zjc3YjRjMTVhOGQ3MzQyNmU5ZTQ2NWZjY2Q5ZWM3MTE1MzAyZTBjZmY0ZjBlNjFjN2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNhNGQ2OGU5ZWU1ODNjOTEyOTQyMWZmZjgyMDNkYjE3NGViYzI4OTFlYzFiNzZjNmIzOWRmOWE4ZTYwOTRmZjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3ff186c5ea30459ab476f2cecef38739",
+      "statement": "When the props argument is omitted, both writers infer the property list from the first row alone, so a field present only in later rows of a heterogeneous batch is silently dropped.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/writers/json_writer.py#L106-L110",
+          "version": "repo-lines-v1:sha256:e83083d42c0b8917d0ca5d23e81f28662adcc7dc73a177bf79978ca133db12b6:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTA1OWUxZTE2ODBlYzdlOGRkNTRkMWQyYjM1ZmEyNjE3MDI1NTc1Y2JjOWNiODIyNzQ0YTBhMjk5NzQ0YjI5NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODI5MzA0NWJjMDdmZWEyM2QzNjE3MWEwNTE1YjdiMmFjZWRlMDc3ZDUzZjdhMjdiNzYzZDY1NWEzYTVhMTIyZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjE0NDA2NzJmNTI0YTQ4Mzg5NGYwYTBkMzQwNWM4YWU3MDBkOTAwNGM1ZWRlYmU0ZjIxYzE4N2U2YTUyMWM5YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGYwYzI1NzcyZmYyODM1NDA4YTc0ZjIyNWM5Y2U0MzYzMTg2ODgwZjAyZjYxYjViOTEzOTZkMmM5MDEwZjA4NyJ9"
+        },
+        {
+          "resource": "repo://pipeline/writers/neo4j_writer.py#L83-L85",
+          "version": "repo-lines-v1:sha256:96f4c6cb459b1a542a0a4cb4ad4ac2041901e21943216a4b6ec9a2193b5b3837:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDY2ZDEwZmQ3NzIxYjI5YjdiYTk3M2Q2MTRlOThhMzU0ZGNjOGIxOTdmMWE5MWU1ZDZmNzE3ODA4MDIwZDY0MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTMwNDIzNjgzOGI4MTFjNTllZGFkNDA1ODYwMTQ2YjUyMmNmYWQ2ZjBmNjE2NDFhYWM4OThjNmRmNGU5ZjZiZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWU0ZDU0YjY4NGE5MTY1NDExNWQwYmIyNDcxMmY1ZjhlOGEyZjQ2NWEzOTc2NmM5ZDE4MjYxZGI4YjI0NzdkOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTYyNzdiZjYyYzk0NzFkMDFiYmY2NWZmNDVlMDU4YTUzOGQ1YzQ4ODRkZDFkMTM5OTdhMmI2YWNkOTY0Mzg2YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_748b5c7080804ad2a2f70506bb0df70b",
+      "statement": "DirectNeo4jWriter compiles node and edge writes into UNWIND statements whose primitive is MERGE on the declared key fields rather than CREATE, which is what makes re-running a stage against a populated database update instead of duplicate.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/writers/neo4j_writer.py#L34-L66",
+          "version": "repo-lines-v1:sha256:eb98774b6c0c746dbdf584115ec3763e2f56b1278b78bb5060d71a56aee48b65:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxYWJjZDBjYzY5MTNkNGY1MWViMjFlNGY1YWZjMmU5MGY4NmQzNmE0NTBiYjQyY2IwNWM2ZjNlMGQ3MDZmOGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0OWU5OWI5N2VlNGVmMWJmN2FkNjhkYWE1NmUzODVjNjUxZmExZGVlY2M2Mjk4ODVlYjQ4Y2FkMDcwYjFlNzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhMjhmMzA0MGRmYmViNjhjYzk0NjA4NDdiODVkYjU5ZDNlMGFkNzA5Nzk5NzFhNzM0YzQ5NWEyMTBiOWViN2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFmNDU1NzU2Zjk2MWY4OTMxZmI1MDM5MzFmNGUxNjUxZGI5MTE5NmM5YmM3ZDk3Y2EyMmY2ZWUyNTM5YWM1NmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4026fa67fbee4d15b63efe82ed4002d0",
+      "statement": "Every Cypher statement issued by the direct writer goes through run_with_retry, which retries Neo4j TransientError up to twenty times with exponential backoff plus random jitter capped at ten seconds, absorbing the deadlocks caused by concurrent MERGE on shared nodes.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/neo4j_driver.py#L16-L48",
+          "version": "repo-lines-v1:sha256:08af0481d69285b44f37ac8a441a28e238d71f1b0a12ff74a06c990e9fd06b22:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYxYTA0ZTVjODFjMGQ2OWRmN2U5MWZjYmZjNTZjMmI0NjkxYzYyNDE4ZDU5YjI5ODY1NjU2MDRmZmNkZDdjNzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjYzU5Y2JmZTJlYjQ2NjBmNzUwNWVhYjBiNWJmZDZhNzMwNGNiZGJmNWEwN2Q3OWQ0NWI2OGJjZDJmYWQ5ZWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwNDRjMjdmYTFlOWUzZGFkZjliYTA1NWExN2E0MWFhNzMwZGFlM2ZmOWRmZjQxZmE3MzhhNDg4MzgzYTljYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://pipeline/writers/neo4j_writer.py#L112-L128",
+          "version": "repo-lines-v1:sha256:3b16823698f8f23748bae8ab90fbeedbaac001b210d770048d959a86c4e79204:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0NTQ1YTRkZTViNDkwMDZhZjQ3MmEyZGZkOTljNDcyN2Q3MGFhM2IwZGIzMTY0N2MxOTU3NTEyODU1NjQ0ODciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhZGMyNjU1ZTFlM2JhMGRjNzI3ZGFjYzQ2ZDRmNjk2MTI5MTcxNTkxOGRmMTNlZGUyNGJkNDllOGYwN2M2YmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFkNDgzYTZjOWUzZmMyOTcwNWY3ZjEwNjc0MWVmODFkYjY0MzJlYzlkNzgxM2MyYWQ2NDFlODg1YWZkYjg2MGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6cb80f10fde0458caa57c825f609fbfb",
+      "statement": "In edge writes the from_key and to_key mappings are read as row-field to node-property, so the mapping key names the incoming row field and the value names the property matched on the node.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/writers/json_writer.py#L151-L164",
+          "version": "repo-lines-v1:sha256:32d79d5fe07003d4ce6c7f92b30b1fbfb708eeadcdf175cd11e94e0319507f53:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ1OWE1NmZkYmJlYTgzMTFiMzM5M2Q2ZDY1M2I5MWVlM2I1ZmU0NDBiNjQ3NjgzMGYzYjc1YzdiY2E1MGVlZDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhYTM0NzExNmQ2NjFlZDExZDY1NjNiZTQ2NzM3Mzg3YTJiOWY4YWFjOTQyNGFjNzQ5YTVhY2E4MWM1YTU5MmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkzNTY2ZTBmMmEyNWFlZDNiMDNkZjBjNTk0ODJhNmM4MTFlZWE4NTMzOWJkMTZmMTUxYTM5MjcxYTkxNWRhOWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUzYjUzZmI2NWU0YTY3YTU3YTJhODVlZWM1YTgzYTE1YTBmMDEyN2FhNzdhMjIzMzM2MTVmYzQxOGIzNTBmYTIifQ"
+        },
+        {
+          "resource": "repo://pipeline/writers/neo4j_writer.py#L46-L56",
+          "version": "repo-lines-v1:sha256:d7de0a8dcd309e0a4243cb6829beda9b3248613dabab82dc0c206b703eda8f0b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxYWJjZDBjYzY5MTNkNGY1MWViMjFlNGY1YWZjMmU5MGY4NmQzNmE0NTBiYjQyY2IwNWM2ZjNlMGQ3MDZmOGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxNGEwNjMwZDI3NjU2ZmM0YTNlNWM0ZjMwMzA1NmVjNTBkYzBjZTVlNDkyODU3NTNjMWI2MDNhNGIyNzllOGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI2ODc5MTAwYzA3MTgyODdmMzJjNjQ2NmI5MTcyMzFiNGVlOGM3NzEwZTNmNDZhOTcxYmM4YjYyMzgzZTdiNDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJhNTBkOGEyMDdlYTM3Yjk0ODAwZjNjMzY4YTIyMDRhYWFhN2FkNmVlOTM2OThmMjdkMzcyMjIyYWY0ZDJhOGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c882d52a7b4e45a1bcbe53c6711da6c4",
+      "statement": "JsonFileWriter maintains a manifest.json carrying schema version, timestamps, in-progress and completed phase lists and per-label, per-relationship and per-template counts, rewritten on every phase transition and on close so an interrupted emit still describes how far it got.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/writers/json_writer.py#L202-L209",
+          "version": "repo-lines-v1:sha256:67178388cbf076a77a399c3373b0636dd37bc9c36d49a710c07e0dcb44a7d723:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzRiMDg1MzNiMDNiNmVlNDAzOWQ4MDJjNDQ1NTdkOTA3YmVjZDU5MzNlNTcyMzdlYTIyYWZiMzdlMjc5NTA4NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTkwOWE1M2E2MThkMDI4ZTFkMzAwMGMwYTdhYmNlZWNiZTVmYjM3ZjRlNTExZWZlNDY2NDNmYWQ2ZTY2ODcyZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTJiYWM3NzEwOTI0MGI2NGNlNDQxMjgwM2ZlZTJjODFmZTM5NmYyZGY1OWFjYWM4ODNkYTMxYjhhMzI5ZWYyZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://pipeline/writers/json_writer.py#L41-L88",
+          "version": "repo-lines-v1:sha256:87181c802d632eaad1acd6756571095b1f2da4497d37f6868df45c33e8762c34:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlMjc1N2YzMGZmMjY4ZGQwMWI3ZjYwM2VhNTQyZGI3ZDBmMWRlNDkxMjVlNTg3ZGE5MDczNzM4ZjRhMGUzNDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0NTIyOGE2NWFiNDY1NDk5YmQ4MmRkYzFhNTg5MWRlNGU3YmNkMGNlMmY4ODlkMjVlMzI4NTk3Y2ZiY2FjNTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzZjI3NGRlOWU1YjdjMGFlYTgyMjc1OGM2N2IxMWRjNTdhYmY1NjlmYmM5ZmRhOTI2Y2FhMThmYWRkMWJmYzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFmNDU1NzU2Zjk2MWY4OTMxZmI1MDM5MzFmNGUxNjUxZGI5MTE5NmM5YmM3ZDk3Y2EyMmY2ZWUyNTM5YWM1NmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0a71d55b9b5f4fe8adc0fcfbd4b95f83",
+      "statement": "JsonFileWriter guards handle creation, row writes and manifest updates with a single lock, caches append-mode file handles per path, and flushes and fsyncs every open handle when a phase closes, tolerating OSError from fsync so it remains usable on filesystems that do not support it.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/writers/json_writer.py#L196-L201",
+          "version": "repo-lines-v1:sha256:b49bbf939ba2c473a6a69d7a200329b50d8f888ba0c2ea7b2c7451b5514aaf2a:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzExYWFlYjY4MmI1YWVkNTFjZTgzNjE5ZTg3NzFiMzk3M2ZmNmUxNGNlMGYwMWE4NDQ1MjUyMjQ4NTM3ODA4NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmE1MjVlZjU4ZTg0YjU1YTJkMmRmMTBlZmJhNzU2NmQxMDMxMzdlZGE0MjFjYWY3ZjkzNGE5YjdmMzdlMjNhNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODQ2ZWU4YTNjNjdjYWU3YjgxMmJiZGVhNDFkZTIwYTIwMDgyZjllMjczNDNmOGFkOGY5YmMwZDU3NzY3NGRiZSJ9"
+        },
+        {
+          "resource": "repo://pipeline/writers/json_writer.py#L62-L88",
+          "version": "repo-lines-v1:sha256:4b1f2e3786f2881281ff4f3b516563b14cbb1df6616719251a7760271c16b1b4:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkNjYwMzI1NmU1OGRmNjg5YTdmZjJlNzE4YjBiZDRlMDQ0ZDQzZjExMzYyOWM5ZjdmNTc2M2RkYWRjNGZkZjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0NTIyOGE2NWFiNDY1NDk5YmQ4MmRkYzFhNTg5MWRlNGU3YmNkMGNlMmY4ODlkMjVlMzI4NTk3Y2ZiY2FjNTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI1MzI2M2U3M2RkNjhjNjZkYzJjYTRmYTM5N2MyMDQwZDFjM2MzMzMzNjhkM2Y1ODZlYWE0MzllMWU4YTJiNjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFmNDU1NzU2Zjk2MWY4OTMxZmI1MDM5MzFmNGUxNjUxZGI5MTE5NmM5YmM3ZDk3Y2EyMmY2ZWUyNTM5YWM1NmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2fdb2fb0c8154359a55b56afcf4b5920",
+      "statement": "Shard file names are derived by splitting camel-case boundaries, lowercasing and replacing any remaining character outside [a-z0-9_] with an underscore, so arbitrary labels and relationship types yield safe filenames.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/writers/json_writer.py#L19-L25",
+          "version": "repo-lines-v1:sha256:48fde48fe10b2cba3262e1d46ea482e13012769763ca702806fbc92cba0a0433:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODY5NDhkYjc5YzQ2YzU1NWY1YjA2ZGMwMThiMjljY2I4MWY4MzYzZWY0Yjg0MDEwYWY3ZTIwZWEzMzBlNzc4MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjQ4MjdjZGQwODUzODRmZmNiNjVmZWUzZGY0ZjFiMmJmZjljYjkxMTg5YzZjNjNkMWQ3YmE0OGU5NDk2NDdkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2QyODZhN2E2MmM3ODlkOGJlNzdmZjgyZTRiMjZkY2Y4YjE5M2VlYTk5NGY1ZDFkNGM0ZmJmY2E0Y2FlYmNmYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTU4MDA3MWQ0NGZkNDUwOTg4M2I3ZmY5NThhOTFiYTA5MjU2MTZkZmZkYTgzYzA4MzkxMGMyMzAxZjdkMmNkYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_de54a78f4bda4cd3bac834c709ffc3ce",
+      "statement": "The GraphReader interface is deliberately narrow — count_processos and iter_processo_batches — and both implementations yield the same ProcessoTimeline value type, which is the shared contract that makes JSON replay substitutable for a live database read.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/readers/base.py#L14-L42",
+          "version": "repo-lines-v1:sha256:41ce6795e960563a0c44833e4c3e734e57f7ec2af5ff3fc44eb53c5a857532d8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2ZmJhZTBiOTFkNDRmYzBkNDlmNWRlNjkxZGE2ZmM0MzFmMjYwMTM0YmY3MzFlMGUyMWY3NjQ4MDk0MzM0Y2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYwNjJlNThlYTBiMGZkMTk1YmEwNzY2MTNiNjMwZDU5ZTY3YmQ0NzBiYjE5ZTk3YTIwYzkwMjM2NmU1YmEwZTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg1NDEyNzMwOWZkZTJiZWUxOWQzODY1MWRkOWU5ZmJiZmQzM2E5MGM2Yjc1ODk4NjY4MzM3N2U1YmNjNzUyOWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_91ca8807e383436695836a5d7ee25535",
+      "statement": "Neo4jReader paginates with SKIP and LIMIT over processes ordered by protocolo_formatado and matches the sending unit with OPTIONAL MATCH, so activities lacking a source unit are retained rather than dropped from the timeline.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/readers/neo4j_reader.py#L14-L69",
+          "version": "repo-lines-v1:sha256:cb66861fdb06b52fe9c103ded98c3edd0caf811f6b104a0dfa48fa3b0d377fe8:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ2ZmUzMmMwMTAwZDNmYTViM2Q0MTYyMWIwMzc2YjI4N2JjYzM4YmQ5NTkwNTA0NjFkYmQ0NjZhYzBmMTA0YTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1Y2FhYWVmMGZjMzYzODFlM2IyODhlMTdlZTU3ZDIxZjA0ZjU5YTcwMjE1M2M1ZjI3YWJiYWNiMDYxZDI2ZGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBjMWEzNTExZWYyYTA1ZGNhMGZjMzQ4ZGI0YmY5ZTFiMjg0ZWU0OWE2ZThjOGFhYmE5ZWVmNTg5ODY3Yzg5MDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYyOWJlOTg4YWZhMzBmZmJjMTk1MGZjNGEzMTk4YWMwYTdlMDkxYmExYTk2NzQzOTJhNGEzYjA2ODMyZjQ5ODQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_caccd84457a74bc087f2de558abb790f",
+      "statement": "CohortNeo4jReader subclasses Neo4jReader and overrides both read methods with cohort-scoped queries traversing MEMBRO_DA_COORTE, letting downstream stages consume a cohort through the reader interface they already use.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/readers/neo4j_reader.py#L72-L134",
+          "version": "repo-lines-v1:sha256:a3daeaeebc1f5e86dc6195f1352c84373e7f2ffa89d010ae276277d75c932342:eyJzZWxlY3RlZExpbmVDb3VudCI6NjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0YmE0OTFjYTBmZjAwYzE2ZjY5MGQ2OTNhODQyNDlkZjUyOGMwMTFkYzQ5MGZmMzkwZDM5NWNmYWZhMzNmZTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1Y2FhYWVmMGZjMzYzODFlM2IyODhlMTdlZTU3ZDIxZjA0ZjU5YTcwMjE1M2M1ZjI3YWJiYWNiMDYxZDI2ZGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3MTM4MDg3NWIzYmVhY2M1OGZmZWFjNzdiMmM5MWZjMzEyNTYzOTE1Y2QzZjAzM2RiMTFiOTljY2Q2Mzc5MTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4dd367ce9d0541839a9b75b61112e763",
+      "statement": "JsonFileReader reconstructs process timelines exclusively from templates/load_atividades.ndjson rather than from the emitted nodes and edges shards, regrouping the captured statement parameter rows by process.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/readers/json_reader.py#L49-L86",
+          "version": "repo-lines-v1:sha256:b949b0e6f88c35b5d7a79bd33b2373cc2f468a26c2d89aaf389f215921110b5d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE0OGYxNGYzNGI1MDY0MTg3OTZiNTE3MzIwZWU5ZmMyYjQzMjNjYjM4MjhjYTRmODIzMzM0M2ZiODUxMmU3YTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhYWU4YTBjYTc2Zjk4ZjdiN2RjNzk4NDk1MWQ2M2U1N2RiM2M2NDU1NzljYTUxYmFkNmE1MzlkNjE0ZWRiYmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhiOTRmYjZmYzk2MTU3ZDUyYzBiNGViYjdhMjgxZWViODRmNTg3ZDc1NGJkYjllNzhmZjIwYzZhMjQ3NDg4MWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNmNjlmMjQ3YzRiZTY1ZTc2MWE3Y2M1OTYwYmVlYjI4OTM2YWI2NDljZjM3YWQzMmFhNjZmMDM1NWU3MzE1ZTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2b9c71174d3a41bca2acc49662176aca",
+      "statement": "A missing activity template file causes JsonFileReader to raise ReaderError naming the file and the command that produces it, rather than yielding an empty result that would be indistinguishable from an empty database.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/readers/json_reader.py#L53-L58",
+          "version": "repo-lines-v1:sha256:bc9d3838a952e0e396a5798e6feae44f832f0be1b8ae1111306d41d284d612d0:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjJkYjYyMTdhY2JkNzZhNDk3YWZlZGE2Yjg2Y2Q1Mjk2M2ViMTRmN2E3MzUzNDU5YWIxOTg0YjgxYmJiMGI0NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTUwMzJlOTY0ZDA5MzIzNTFlNWQxODUyNjkyODFiMTcxYTNhMDliMDhiMjg2ZTY2MWVhNDcwMzIzYzgyZWI0ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTA5NWQ3OTUxMzg4YTMwYWZlMTM1ZTAzMjVmNTU4MzFhOWY0ZmI4YjM4M2FjMGI0YWRkODQzZGI4YTkzMzAwMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2E2ZWQ0YjEwNTBkM2YwN2NiOWRiNWZjZmY4ZjQ5NjVkYTNkNzlmNmYyZDI3MmJkMjUxMTQ0MzJlYmUwM2EzYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e7b199faa8ed4e8f83e92d66fe1c4085",
+      "statement": "JsonFileReader reproduces the ordering the Cypher query imposes by sorting each process's activities by data_hora then source_id and returning processes in sorted protocol order, and it caches loaded timelines in memory until close drops them.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/readers/json_reader.py#L29-L34",
+          "version": "repo-lines-v1:sha256:f548b18da642baf240a014478cc793a0edc3c7c9bfd4c1ab647d54414a5ee590:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTNlOGE4NGYwMTU5YzFlZmE1M2UzYTc1YTIyZTM0M2EwNjc5NTVkMTRjNDZmOWRiNDg2ZGIzYWEzMDdhOGRlZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTAwMTY1OTQxMGMxZDhkMjNjZTdiYWExNWYwMTc0MTZhNjI2OTM2OWM0Y2UwNTMyMmY5NjYwMjU4ZDYwYzEzYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGYzYTdiMWMzODIyNDhjYmZhOTM2NzYzMDRkZDQ5OTAwY2IyZmUwNmZhYjMzMjI2MDU4Mjk1MDdhOWViMmVmYyJ9"
+        },
+        {
+          "resource": "repo://pipeline/readers/json_reader.py#L80-L92",
+          "version": "repo-lines-v1:sha256:c02acc03ed5b69387fe97a3d739f709d68d426d365f80beb41384da482f9f435:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzMTdjMzExMDhlMTY2ZmZjZWJiNzRmZmFjMTkyNDZkYTI5ZTE1MzU3M2I1N2ExYmUxYjI4MDk1OGFjODE2YzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZjZDFiNGY1N2FhN2YzZDdiZWRhOTkzOGNmZjRlNWIzMTVmNDAzZTZlODY2ZjkyMmIwOGFmN2ZlMTJmMmM4MDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc5MTNjYWQwOTA3ZWFlMDFmMmIwOTY1OGJjZWI0ZDkyYTZmYjI0MjExZDBiMzgxMWQwZTYxZDljZDQxOWE2YzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://pipeline/readers/neo4j_reader.py#L27-L27",
+          "version": "repo-lines-v1:sha256:5334d29c68b0c930ab0d20678ae7353050122e8d2517399e90e9d019e2582451:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTMzNGQyOWM2OGIwYzkzMGFiMGQyMDY3OGFlNzM1MzA1MDEyMmU4ZDI1MTczOTllOTBlOWQwMTllMjU4MjQ1MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTMzNGQyOWM2OGIwYzkzMGFiMGQyMDY3OGFlNzM1MzA1MDEyMmU4ZDI1MTczOTllOTBlOWQwMTllMjU4MjQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWFhYzVhM2E5OTRjNzM5OTVhZjkzNTZkNzczNDBiMzVlNDgxNTAzMDNkOTY3YTEzNzE0OGM3NTUwY2NmZmQ4MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGRkNGI3YmIyMDBkODExMTY4OWU4ZTg0ZTAwOGYzYzUzOGU3ZDY1MWU2YjBkMGNmYmJlYmZlMjE4MTM5YmQ5NSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.0",
+    "at": "2026-09-10T12:46:32.229Z"
+  }
+}

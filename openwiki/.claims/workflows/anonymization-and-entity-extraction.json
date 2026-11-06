@@ -1,0 +1,314 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:559ae8bdd0e4b661d236897b0261baf013405cab7310c36843c8a61ff500c1aa",
+  "claims": [
+    {
+      "id": "claim_4ba94dc86de94dad8e7ffce8ca9c5214",
+      "statement": "Anonymization combines two independent detection sources — checksum-validated regular expression matching and filtered NER model output — whose results are concatenated before replacement.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/anonymize.py#L117-L145",
+          "version": "repo-lines-v1:sha256:4f274e463bccf5f2030c69772e1e57dc5fe9844af4794fa271f8ef8e66613711:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNiMDY0MjMyYTdiYjE5NWY1YTAxNWM5MDQ2MjZkYjU3OWRhOTJlMDk5YmM3NWE1ZDBjNjBiMDEyMzdmYTA4NzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyZjYyNTMwNTY1MTI4YjJjZDE5NTI3MDg3MzA3ZjdiZGIxNWE2YWNmYjQyMDljNzkyZmM0MmIxNDQ0YjRlOTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYzZDZiZTUzODkzNzJkYTIyY2M4YmFiYjljMzU1NzI4Y2ZjNjkyMzNkYmZiM2E4NjEzOTU4YmQ3YWVjM2ViYmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBiNDY4YWQwYWJkNWRmODYyMGJiOTRiZGZmZTg1ZjQyMTEwZWNkYThhZjc2NGE0ZDVjM2JhMDZiYWE1Zjc3M2YifQ"
+        },
+        {
+          "resource": "repo://pipeline/stages/anonymize.py#L96-L97",
+          "version": "repo-lines-v1:sha256:902528a3ec17f1c2899cb0dd0536957a2d66df342663cb26397581329a767e60:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmI3YTJkNzBmMzljYjkzODM0ZWViNDNhZjA5NjM0ZmU5NGNmYmE2OGNlYzk2ZTRkZGYxYzJmOGViMzlhOWNkZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGUxNjAwNjczMzc4ODMwM2Y1MDNhNDMwMDRmY2YwNTYwOGQwOTZkMWY2MTc0YzRjOTI3YjFkNDg2ZDQ0NjMxZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTk4YTE2Y2JkNzEwODc1MWQwOGQzNWI3NjgxMTE3ZGM5NDI1MDJhOTc5NjNhZGM3OTA0MzIwMjA3Nzc0ZDdjOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzY4ZTBjZDhkYTI1YzcyYjRhYzQxM2U3MjM1ZmRlODEyZGM1NGYwOWY3ZjA5ZWE3OGY4OTBhY2M4YzEyYWNlYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9ac4caae48b344568e5d64c909d5c0cd",
+      "statement": "CPF and CNPJ candidates are redacted only when their check digits validate, and both validators additionally reject sequences of a single repeated digit, so a bare digit run that is not a valid identifier is left in the text rather than redacted.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/anonymize.py#L128-L139",
+          "version": "repo-lines-v1:sha256:c1f31a8eebc8727a3f5beed2db7b270a631bb59572e46f4c18d0b8ff0d2d4920:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0OTQwNDBjNzBkNGU4MTQ0NWU4OWZiNTNhZDgzYmRmMzA3NGJmNTg1YTQzNjFkMjVkN2Y0ZTI2M2U4M2QwNzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2MzZlNGViMDE1MmIzYjQ1ZWI0YTFmOTE3ZGJhY2E2OWFmMTliYWFmZTYzNDNmZmJhYjMxZGY0YTQ1MmQzMzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU5OTFhNGE4OWQ5NDIwM2FiNzY2MjJlYmIwZGEyOTY5ODFmNjA1N2NiMmJhYmVhMGIzMzhjMmQ0NjgzMzFiZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNkMDEzYTkyZmE0NjNlYTRjNjViODM5M2UzNjVjY2FlNGNlMjE5NTc1OTFjODQyZjk4ZjQ5Zjc1MjE2MmQ2M2EifQ"
+        },
+        {
+          "resource": "repo://pipeline/model/anonymize.py#L74-L100",
+          "version": "repo-lines-v1:sha256:29f8a963a406eb542b513f249c91e66471d1a2b942f978d3e3008adecd7d75b6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkNTdmNmExMDIyZmE1ZjNiODIxNmZkZGMzMzk2NzU2MTQyYTFkYTJkZjU5MjY5MmQ5OGJhNjgxOTdkN2Q4YzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwZTJhNDY1MDA5NWZhOTVkMGUyYmI0MWIyZGIyOTA5NGQzNDA0ZDI4Y2UxMjMzOWVjODhiYjRiNWM1YmU4ZjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjMWYwMmZkN2VjMWQ0NjJjMGNiODE4Yjk0OGZmZTRmNzE1YjJjMmM0MzI2MzBjMjMyZGZlMzRkNDI3NDNmYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5MTQ0OWZhYjg5M2E1MTkzYWE4YTQ2OTUyODg3MmMxNDc5NzZjNDFkZDFlYmNkNjU5ODVkYjgyYmM1ZTM3MmQifQ"
+        },
+        {
+          "resource": "repo://pipeline/tests/test_anonymize.py#L39-L41",
+          "version": "repo-lines-v1:sha256:251af62ab6278e4f7d0f74868d2f8e5b728aaa2fc399257f59d3dc8dca964d06:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWZhYjIzNGU3MTY2MzA4ZGQwOGE5YzU4MTdlODM2ZmRkNTFhN2Y1YTk2MDM5OGNjYmYwYTNiMmMyZDEyZDNmZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjgzYTE5MzY1NjU2MTE2NGZlYzE3ZTY2NTc2Y2EyMGZjYjI3NWRmY2I1ZjdhOWRjZTBkNGQ4NTZlMjhjYzJjNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWVjZDE4ZmM5ZDQzYzBhMjE5NjcyNDNhYjBkOTcyNGY4YjEwYjFkMDM0NDhiOTEyYWEzZGRmNWI0ZjEyN2Y0NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmU5MDA1MDRlODhlY2M2N2U2YzI0M2UyZWIyNmEzYWM5NGI5MTRmODA3YTIwZmY4MmY2NDJmMzJiY2I0ZGQ1OCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d96b1ee513714751a308bff9978da1a3",
+      "statement": "Staff registration numbers are detected only in the presence of the literal keyword context and when the captured span carries at least five digits, since the number alone is indistinguishable from other identifiers.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/anonymize.py#L12-L16",
+          "version": "repo-lines-v1:sha256:ed84685b81009555246f5c4420d52d65cc0d91c53e1dec75b179e83ac654f1fb:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjE3NzJkMjdhYTgyNmRkODdjMjlhZDEyMDBmOTU3ZmI1ZDk5NjcwNTYwOTVlOWQwYzU4MTFiMzExZDllNzZhYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWRkNGFhYmMxYjBjNzNhOGNlN2FiZjZkZmQ0YTlhMWZmMWJkN2E3NzFlODRjYjliZjZjNmRjOGRiNzRkMzA0MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDk5OTZhNmFhMjFjZjA3NzcwMTc2MWY1M2EwMjlkN2FjMTZjMGQ1YWExY2FkMTM5YTg5Mzc5MjRjYmQ2MzIzYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWMyNDkxYTIxODRhZWVlYWRlMWM1MzFkMzkxZDk2ODNmZjY3YmRjYWZhNTE4OGNkMmQzYzdmYTIyYzdlOWY0YyJ9"
+        },
+        {
+          "resource": "repo://pipeline/model/anonymize.py#L141-L145",
+          "version": "repo-lines-v1:sha256:e2a740dfcfe10985acf775e59a368db62bce3d9541d21d71dc1cf72dd0b696dc:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2RhMzhhZGM2Mzk3OTkzNTM1ZGFjZWZmZDZkYzI4NWIyY2JlMGNkMjExYWYzNThiM2JlNjk0OWQwMzczM2RiMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjJmNjI1MzA1NjUxMjhiMmNkMTk1MjcwODczMDdmN2JkYjE1YTZhY2ZiNDIwOWM3OTJmYzQyYjE0NDRiNGU5OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGFmNjUyZDI5ODk1MjY2YTFjODU1NDI5MzcxYTY5ZTAxMjMwZDQ5MzhjYTIwZGE3MzIwYTM0YmMxODg1ODU5ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGI0NjhhZDBhYmQ1ZGY4NjIwYmI5NGJkZmZlODVmNDIxMTBlY2RhOGFmNzY0YTRkNWMzYmEwNmJhYTVmNzczZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a27feca4180242a6a14e0dcb0c71e455",
+      "statement": "Model-proposed spans pass three gates before becoming redactable: the label must map to a known placeholder class or be dropped, the span must reach a minimum length, and the span must actually occur in the source text when compared case-folded — a guard against a model proposing an entity that is not present.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/anonymize.py#L149-L173",
+          "version": "repo-lines-v1:sha256:0fb09e922b18c5dde80925fae57fc1b474d5fab148af1f712bd0e5518577a7a3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhNGRkNTE4NjcwNDE5MGU4YWM1YzhjODJlNzcwMTQxOTk1M2JhN2Y3ODkzMGY4NzQzN2RhN2EwNzY3ZjM5YmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0NTI2YWZkNzhlMmJiZGM0N2QwODZmNjliOTdhZjYwZTQ5MjAzZDNjNDlhMTAwMDNmNTQxNzEyODlmOTYxZTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBiNDY4YWQwYWJkNWRmODYyMGJiOTRiZGZmZTg1ZjQyMTEwZWNkYThhZjc2NGE0ZDVjM2JhMDZiYWE1Zjc3M2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYxNWRhYjU0NmM0NjUyN2UzNmQyYTdkYzA1MTNmNzcwNDljZjk1ZjU2NGI1YzI1YWI5NDc2NjZmOGM5ZTE5YTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3181bb6c710d402a9816cccb99aaa107",
+      "statement": "The label mapping deliberately folds a long tail of Brazilian document types — identity cards, driving licences, social security and professional registrations, bank accounts and vehicle identifiers — into a single generic DOCUMENTO placeholder class.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/anonymize.py#L19-L57",
+          "version": "repo-lines-v1:sha256:5812c7abc368927accf4c6ce35a3d00d8203e8ce4ec3e48fd34d78d6c782c3ae:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzMzVkYjFiOGIyOGNhMWJhYjBjZmQxNzdiMTc0NmIyZDk4OGQ4Y2Y5Y2U2ZDhiYmIxNGI2M2FhZjAxZTcxNDUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc5OTJjNzAyZGI3YjYxMThjNTgxM2QxNTZlZWI2N2RiMDQxMzE1NzBhNDM2NTI4MzBjMTMyNWQyNmIyMDRmZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJlNTZhOTVjM2RkMmZhMDg1YjZkMjQ5OTQ0MjJkZjcwYTYwNTgwNWJlYjFlMmE1NDc4ZjBlODk2YTNkNWU4MjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_24d5ad224fe7475082f7a3f2944a9db8",
+      "statement": "A placeholder is the entity class name plus the first eight hexadecimal characters of a SHA-256 over the label and canonical key, so the same entity yields the same placeholder in every document while the placeholder alone does not recover the original value.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/anonymize.py#L111-L115",
+          "version": "repo-lines-v1:sha256:a73702be5976987f9ca2b38ed97c01492efa09c3087608833a8a04e0dd8bdd9f:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzgzOGE3YjIwMTBiNjk2NWMxNDNkNjI1Y2Q3NDVmYTQ5ZWI1ZTA0NjgyNjQ0ZDVmMDM3N2JjOWU5MmViY2Q4ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWQ0M2RhZGRiM2ZiODI2NmU0ZDcwN2Q3ODFkODdiYTAwNTE1OTE0NWUxOWI3ZGYyNWNkNGZlMTRlMzBjN2Y2OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmE1YWM4N2YxZjQzMDNjN2ExODVjMjY0NmY4MDliMDk0MWU5MjBmN2M0YTc1ZDc2MTI2NTI3YzYyNmU1ODgzYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ff40b2fc036a4677ad70f872ecbd36f4",
+      "statement": "Canonicalisation differs by class: digit-bearing labels are reduced to digits plus the letter X and uppercased, while text labels are NFKD-normalised, stripped of combining marks, whitespace-collapsed and case-folded, so formatting, accent and casing variants converge on one pseudonym.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/anonymize.py#L103-L108",
+          "version": "repo-lines-v1:sha256:dc1c0a6f95bce9c23b003600cbfb58d1561ac33b9ad5228948cb3596e4da3563:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmJlNTkwODcxNGFiZmU2NjdlZmFjMTAxMTU3MGIyN2RkMzY5MTc0YmFiOGFjN2ExZmI0YmE2NjJkOTJhYTVmZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmI1YjJmZjBhNTZlYzkxYTg4NzBjNmM0M2FmNDhlODE3NWQwMTFmYTE3MjY5MTRiZjdlZGZmYTE0YjEwMTAxOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGU3NTc1YzNiNzc3NmNmMmY5YzJiZmJjYTQ0ZjIxNDgxM2E3ODI3ZWFhOWMzODQ1NGM3MDNiNjg5YTc0NDM4NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGI5YTM2NTJlNTE3Y2I1OWU4MDRiZjlkNTJjYzdlMzU3OWNiMjdlNmEzODY4YjZmY2E0OTZhN2RkNmQ5NzBkMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_67ab1c9bad4847d7a4ad208324a9ae2c",
+      "statement": "Replacement processes entities longest-first and rejects any match overlapping an already-claimed interval, which prevents a shorter entity such as a surname from corrupting a longer one such as the full name containing it.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/anonymize.py#L175-L201",
+          "version": "repo-lines-v1:sha256:a1bb3ae9f0e144eacd6d997d03d83b032961edbfe078f5740dc48bd08f216db4:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmZGU5NjE3YjM3NGM0NjE0MTc4ZWRhYjgwNDhlMDdjMmI3ZjMxODU4Njk4YmM0MzZjM2IyMmRjZTRkYTAwNmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEyZTIxNmJmZjMxNzgwMjBhODAwMjRiOGY5ODFjYzAyMjlmY2Q2YTVkMTk0NTc2ODYzODg4MGZmMjYzMGI5ZjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiMWYyYTVlYTZkYTU2YzY1MDM2MzE3YjM1ODhkNWVmYzViY2Q2NTU0OTc3ZDM5ZjA4NzQzZWU1NTVmY2FlYWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4afcd901c7ab46f1b0c9b26a3cbd3629",
+      "statement": "Each label class receives boundary guards suited to it — no adjacent digit for digit classes, an email-specific character class for addresses, and word boundaries otherwise — with case-insensitive matching.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/anonymize.py#L184-L193",
+          "version": "repo-lines-v1:sha256:5e7bb25a36a1c31fa6901d4912ba44338f69be450e29a9e7f649861a7b977701:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0OTliYTY5MzUwNjdkMmY2MDRiMmVmY2MzNDRhNmY2ODEyZGZjMTM1YTQ3ZTljNjM0OGFkZjg2NDZkM2JmNjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwNDU5NzE5MWNiMmE5ZWQzN2JkYmFmZTY5ZmI5NmM0YjE5NGYyNGEzN2NhMTEwZmJhOGU5ZmI0NjQ2NmYzZGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0YWZmMWIwZmY1MGM0YmFkZDM5NzA3OTkyMzU0ZmE4YTVjZDRlZWYwZjJiYmViNzNmNTJlZjY3NzJjMjg3OWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxYWZiNDQzYmEwNzc4OTA4MTdmZTE1NGY0ZGJmOTQwNjA5ZjI4Y2M4YmNmNzJmOTdiOWI2ZmY1OTllOWFmMmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d4411eab2e8342ae9d5200996a78691e",
+      "statement": "The anonymized text is assembled in a single pass from the sorted non-overlapping claimed intervals rather than by mutating the original string.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/anonymize.py#L200-L209",
+          "version": "repo-lines-v1:sha256:263f191b7c547d8def449ac59dd3912a6321f33d64716718c1d9c766ee1c9e25:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlNjg0NjNjYWI5MjRiNjUwYzQ0YmZkNDM5ZWE2NTYwYTIyZGEzYjMyYTI4N2EzMTNkNThkMTRlOTFkMDMzNjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyMzU1Njg0Yzg0Y2RjYTdlMDY4YTQ0N2VkOGVjZjA0MGIxZjI0Y2NhNmIwZWE3NGI5MWUyMWQxMzI5ODVhODUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU5NDVjNGI0MDMxMTBkMmQ4MGMzMmQxMjNiMGU0MDY4ZWFmZjAyNGNlYTYzMWFhYzBkNDc2OTEzNzliZTUzYTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_06f8a959556a467496f26f895ef883a3",
+      "statement": "The anonymize stage hard-depends on parse but only soft-depends on ner-extract, so it runs without NER results and records in each document's metadata whether a payload was available.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/anonymize.py#L101-L110",
+          "version": "repo-lines-v1:sha256:dc161d9e3fc02f44c4c69673b6294e20131a8a7f92f8676e06c14afca35221cc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwOGU5NGIyNWI2YmZiYzI5MWZjZjkyZTlmODQ0OTk4ODU0MjJhM2YxNTY5MGViNGQ5NzhhMGVmNDdmZGZhMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwOTFkZTMyZjA4MjdmYjU3YmJlODgyYWQ5ZjU4ZDVlMGQ0Nzc5ZWM2YWJmMmE5Y2I2NTc5ZmU0ZmIwNjI3MzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM2OGUwY2Q4ZGEyNWM3MmI0YWM0MTNlNzIzNWZkZTgxMmRjNTRmMDlmN2YwOWVhNzhmODkwYWNjOGMxMmFjZWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0ODJiODZhZDVmZjM0YjBiMmQ2Y2I1NzQxNDhiMGQxMTU4Y2YzNWU2OTAwMDg2M2RjY2EzMmNiODlhMTIxZWEifQ"
+        },
+        {
+          "resource": "repo://pipeline/stages/anonymize.py#L32-L43",
+          "version": "repo-lines-v1:sha256:8d706ee9733995418f3bce41a4f4c4c24ba89d0fa1c3c865f462a94e74beaa17:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjOWZjMDEwYmQ2ZmZhM2JlY2ZkNTFhYWIxYzJlNzVhOWRiZTIyNzhkNGY2NjljYjkyOWI1MzRiMTE0N2ZlMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZTE3OTFjNjViNWE4MjJhY2RjNGVkMjAzZGQ2Y2E2NjhiNjAyZDNhNDMyMmRmZWJmZTUxN2VlODRjYmUxZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg5OWMyZDBiYmJkYjk3MTcxZmVmYzY5NmQ0MjBmOWM3NTczOWJkYTA3ODQyMjNiNTdkZGFjMjJhYjE2NzRhZTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZiODYwZWUzMmRlOWE0OGMxNzI1MGQxMjNhMGYyZGVmOTA1NzliNTdlMDBlY2JhNDk1Njg2NjBkNjJlZTc4MDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_da22f1ccf63044668ccfc56152ced62a",
+      "statement": "The stage writes an anonymized text file and a metadata file beside each parsed document using the variant filenames the parsed store defines, so downstream consumers select an experimental arm by requesting the raw or anon variant rather than by pointing at different directories.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/parsed_store.py#L41-L55",
+          "version": "repo-lines-v1:sha256:2334f69e743721623b5ee754c5dc647651978fe2ac2024142fac6c7009b8c413:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1ZmI3ZjRiZjg2YWRhMTcxMjA0ZGQ4ZjRiZDVkMTYxMzI2MWE2MjIyYjk4Y2NkNzY3MGQwZDRkMWZmMzllMTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNjY2ZhZDU5ZWExODc4ZWMzNmFmZmY5ZGNkOTczYzc4ZGQyMzAxYzdmMThkNTQ1ODBkYWUyNTA1MzFhYjI5NmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://pipeline/core/parsed_store.py#L8-L13",
+          "version": "repo-lines-v1:sha256:1064a64dfca3c1d41b0944528b1e02f2700d5284775cb10c2d75ef27bf823b37:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjExMDhlNDM2ZTA5Yjg0NjEyMzVjNzA0ZWI1ZjY0NjY5OTgwYzUzMWQ2ODI2NDNlOGY5ZDNiYTJlYTJlMjhhMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODJjM2Y1ZjUwNGM1ZmRlZDM2YWE2ZjAyM2MyYTg3MzRiN2VlYTlhYTM4ZTFiMTI3NzM2MjViODI5NWRiMDc0ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDM5ODkwYjlhNjAzNDBjMjg0MjgxODc3MjU1OWQ0NzE3YWM4NjMxMjZmMmJlZWFmNmE0ZDI3OWY3YzZkZjQ3MyJ9"
+        },
+        {
+          "resource": "repo://pipeline/stages/anonymize.py#L83-L84",
+          "version": "repo-lines-v1:sha256:c05c16f2f7817d91f0437063bc4f5260d447628d88907885d0e6961ea45988e5:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmM3NDE0NzI1YTIxYmMyMmMyNGQxZGY1YzViOGFhNjBiMzBhZTc2NjBmNzRhZWE3MWI2ZGIzNzI3ZmNkNWNiOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTI2MTlhZjg4YzExN2I5NTM2MmQ2MTk4ZjcyZWRlNTRlMjQyNGVlZDM4MzU1ODAwMmIxZDg0MWVkODVlYWUxZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGQ4NTM0MDYwNTU5ZWQxMGRkMjI2NmRlMzYwZWJjZDljMDIzODQ4YTQ3ZGFjZGNlYTcyNzNmNDg2NWZkMjcxYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODM0NmFmOGY0OWE3NzYwNTcxMmQzYjViNjhlNDk3YTdhNGJiZjgwZjRiZGU2ZmQyZTM2MjYzYWFkYmE3MmQ4MiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b4cae288ff7741f1a4ee19cee6c3fd68",
+      "statement": "Beyond the stage checkpoint the anonymize stage keeps a content-addressed per-document skip rule, reprocessing a document unless the stored metadata records both the same source text digest and the same NER payload digest, so new NER results regenerate exactly the affected documents.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/anonymize.py#L81-L94",
+          "version": "repo-lines-v1:sha256:71b0d9b52f29a8e6791651a75ee559371d0c0a279ade30452db5787969157e1e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmNTM2MWYwYjNiZmNjOWE1NWU1YzE1MjA0MDY3NzJlNDE0NDE5ZTBkZTU5YzM1NjMyZmUwZTZhOGQwMTAwNTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkOGE5ZTljMzI1MjgyMGM2NWE4MTY1MjBiOGRiNDkzMjI4MDg0OWVjOGM3ZDJlYjYyNzJhZmRmZWJlMDU5YzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJkYTA4OTcyMzQyZGNiMDE2OGMyNGNlMTg4YzM3NmI3ZmJjM2M1OTgwMTcwZTA1Nzg0MjBhNTgyYWMyYWYzMzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVjZmY0YWI3NDZmMDY3NzQ0NDU0MGU2ZmMxZGVhOTk0ZTBhYjZkMWJhYjMwZDQ5ODFkNGVhZjc3MDQ2YWQyZmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f6879902748147069e0a562b47560696",
+      "statement": "Anonymization degrades rather than aborting: an unreadable or malformed NER payload leaves that document regex-only with a warning, a missing NER directory puts every document on that path, and the stage counts how many documents were degraded.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/anonymize.py#L112-L116",
+          "version": "repo-lines-v1:sha256:4321fdc84d2a30f06de027aa74059819e8834be7aad338228154e51ac722b27d:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDdmZGU1NDk3NDMxOTk1OTA2NmZmN2YzMGVhMWQ4YjY3ZTRkNWZlZjFiMjU1NWZjMTYyOTZkNDMyOTNjNmE3NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDA5OGI3Y2ViNTU5MDc5MTBkMDFiYWViYTBlNjA4NTlhZmY0MTMwMWFmZTQwODY4YTA5MmYwMjE0MWIwNTAzYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjNjNDAwNDUzY2VhYzYzYWNkZDcyMmYzYjAzYjg5ZGYzM2Y2NTAwMWU0N2ExYTg4MTM5YmYzYjBlNDI4MjUyNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGY2Y2ZkYTQ5ZmVmOWI1NjNiYmU0OGMzMzkyM2IwMzkzOTY2YWJmYjA4YzNlYTFhOTdkMjBiMTE1OTU3Y2VlZCJ9"
+        },
+        {
+          "resource": "repo://pipeline/stages/anonymize.py#L21-L29",
+          "version": "repo-lines-v1:sha256:77fd77adec5f8675fa197baefc99ce45c7fabefbdb7b92a586edd75653f678dc:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGNhZjJiYjczMjExYWNmMjY4NWM5MTNiZWRiMWVmN2E4ZTYwYjU3MWQwMGY2NTFlMDEyMjU1NmFkZWZjZmVjOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjMzZTA4MjZlZDFmNjgxYmVjMDEwZGMzYjRhMDc2NGZkODFmNjUwNjJmZjA4YTcyNmNlODM4NmFlODNkYTI1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTgwNjc3ZDEzZWMzNTBjNDFhMmIzYTIyYWQ1NzQ4OGQzMWMxMWVmNTBkZThhMGUxMjM5ODBjZDBmMzFiM2FkMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDI3ZDc5NjdlNjlkZTQ5N2IzYTdjYzhkMmQwMzdiYWRhYmI4MWRmYmRjODRlYjQ2N2Y0OTE2M2NiMGFjMzA2MiJ9"
+        },
+        {
+          "resource": "repo://pipeline/stages/anonymize.py#L55-L56",
+          "version": "repo-lines-v1:sha256:0fe3d4499b726de8760a809c87a02095246ea522ffc0750ee464bbd76ee5baf4:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2IyMTBjYTc4YzM0Y2E1M2E2NThhZGE3N2JkNGRjM2MzMjJlNmE5NjViODg3MzBhODUyOWY5M2ViZTBjNjkxMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzU0YmQ1YmEzM2JiYmRmYzM3N2RmYTljMTZjODRkMjRiMGIxYmU0N2U3MmQ4ZjhlYTJkNzFiOGViNWI5YzUwNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWYzZjcwOWNiN2ZkODEyZmI3OTE3MDI2MmQyOGU5ZWZkODUxYTAwYTFjNzkxNjQ5ODU5MGRiN2U4NzNmZGRhNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGNlZDYyMzUzMWUxMjZkOTU4MWVmOGQ4NjMyZDc0MDFiZDhjYWU2Y2VhMjZjOTJiOWJhYjViYTk5ZTcyMGQ4ZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7fb2a031ef2b49248a3b18208bb880cb",
+      "statement": "With the verify flag the stage re-runs its regular expression detectors against its own anonymized output, counting and logging residual hits at error level as a self-check on the guarantee it exists to provide.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/anonymize.py#L117-L119",
+          "version": "repo-lines-v1:sha256:df6cfda49fef9b563bbe48c33923b0393966abfb08c3ea1a97d20b115957ceed:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGE2ZDYyYjZlZmFjMmI1MDVmYjFkODc3ZDk1NjcxMTI4ZjUzMWY5YmZjMjU5ZjU1MGRhYWVjZGVjY2YyNzkyNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjAwNDU2ODAxYTA0ZjQ5YmRkMTY1MmRlZDFmN2NjYzk3Mzk0MjlhY2RlMmM4NTVjNGM2NTc4MDhiNjE0MDFjNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGFiYWM2NjEyNTUxZTU3NDUyY2Q2NjFmNmQxNWQ0N2JkYTVmZTIzMDgwOWFkYTkwNWY2OWQ4OGY3Njk5MzIxZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWZjMDZjMTYzMTQzMGNlZDcxZGY3ODc1M2QwNGI3YzFkZDU2MWViZDA5NTgxYWMxZjgwYzRjNGNmMmExZTdlYSJ9"
+        },
+        {
+          "resource": "repo://pipeline/stages/anonymize.py#L49-L49",
+          "version": "repo-lines-v1:sha256:c175813d2b5eee9629ee0976679be4d7b7a6222b6afa3f520186d490e8a5a45b:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzE3NTgxM2QyYjVlZWU5NjI5ZWUwOTc2Njc5YmU0ZDdiN2E2MjIyYjZhZmEzZjUyMDE4NmQ0OTBlOGE1YTQ1YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzE3NTgxM2QyYjVlZWU5NjI5ZWUwOTc2Njc5YmU0ZDdiN2E2MjIyYjZhZmEzZjUyMDE4NmQ0OTBlOGE1YTQ1YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzUxMGFlNjdhNTEwODEwYWJiYzU2MTkzODVjMTE3N2E4MzAxMTJlYWFkNTRkMzkxNzU5NTIzZGRlYTg1ZGE3MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjNjZWY4MzYxMTdkYWQ5NWUyMTJhOTdmMGIzNGY3MWFhNjcxNWI0ZTI3MDAwYWJjOWEzNzdhZWI2OTQwMjRkMyJ9"
+        },
+        {
+          "resource": "repo://pipeline/stages/anonymize.py#L98-L98",
+          "version": "repo-lines-v1:sha256:91139b6e1f01472182233608245ea1c20376b033b0eeae1dc7cf34750c5f7cc2:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTExMzliNmUxZjAxNDcyMTgyMjMzNjA4MjQ1ZWExYzIwMzc2YjAzM2IwZWVhZTFkYzdjZjM0NzUwYzVmN2NjMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTExMzliNmUxZjAxNDcyMTgyMjMzNjA4MjQ1ZWExYzIwMzc2YjAzM2IwZWVhZTFkYzdjZjM0NzUwYzVmN2NjMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWNmZjRhYjc0NmYwNjc3NDQ0NTQwZTZmYzFkZWE5OTRlMGFiNmQxYmFiMzBkNDk4MWQ0ZWFmNzcwNDZhZDJmZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDVmMDliZjQzYWQyMDViMjE1MjQ1MDU4M2NmYzczYWVmZGIyNmRhZjg1ZWJmNTM3NWIxNzc2OTkzZjlhOGQ4OSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_025ed36d46ee4ae1af06d3897135d219",
+      "statement": "The NER labels are natural-language descriptions carrying worked examples rather than short tags, which is how the zero-shot extractor is steered, and the examples interpolate the deployment identity constants.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/constants.py",
+          "version": "repo-file-v1:sha256:52aa2563572dc07566ce670b97e748d91dc35b1b0ca00a7b92b64ad75123a4b4"
+        }
+      ]
+    },
+    {
+      "id": "claim_b6465637b52a42ceb6e49ae5363ece5a",
+      "statement": "Long documents are chunked with a character overlap so an entity spanning a chunk boundary is still detected, and extracted entities are deduplicated by a merge that keeps the longest surface form and absorbs entries that are prefixes of one another.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/ner/gliner.py#L1-L2",
+          "version": "repo-lines-v1:sha256:382219ca03ce966be6282c217f869eda36d192b2023c9ca21455e1e3d8e16b9b:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmNkOTk3Y2RiM2RkYmI1YzRkOWU2NjEzN2U2ZTcwMzQ0ZTdjZTJkMjhkZjlmZmFiZTAyY2EyOGE0ZjMzYmE0MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWZkOGY2NTQ3N2MzNjk3MGUwZTUwNzM4YTNmMWM4NzJlMjU5ZGNhMDgxZDA3MTI4NTY0MzkxNGU3MWFlM2FkMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGMwNzI2NWE5MzMxOTMyYWYyYWI4YTQzZDRiOTliODg3YjM3YWQ4YWUzMGRhNGNhNDJhZjk1YjIwYmZhZGE2ZCJ9"
+        },
+        {
+          "resource": "repo://pipeline/model/ner/gliner.py#L52-L75",
+          "version": "repo-lines-v1:sha256:1033422a97969c454f85cdf3e665882248157fe62712570bd78e0867553ba965:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0MGY5ZDU1NDE3NzRmZDM3NzUxNDNjOWVhMzc1MjQzYWQwNTI2ZmIzYjc4OWNmNDlhZjY3MDE2M2YzMmI4ZDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQzZDE3MWRlNzU0MzFhMDIxYTBkOTRmYTc2ZmFiZjBkNzEzOWM4OThjMWEwYjQ0YjQzY2E2MDkwM2ZhMWI4NDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE3N2MzOTEwYWViZGMyZjQzMDgyZWM1MzRhNjdiMDFkODU0MTkyMzA1YjNiNmYzMGU0ZjVjMTEyNGNhYWY3MDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fc58c058765147d593455c7c1bf0be8a",
+      "statement": "The ner-extract stage declares itself conditionally deterministic with the recorded reason that its output is fixed only while the GLiNER2 model version is unchanged.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/ner_extract.py#L399-L410",
+          "version": "repo-lines-v1:sha256:f331ddf9de126f39c68575dca79093e92042bf07897be4306b8c2a1fc86e1309:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjOWZjMDEwYmQ2ZmZhM2JlY2ZkNTFhYWIxYzJlNzVhOWRiZTIyNzhkNGY2NjljYjkyOWI1MzRiMTE0N2ZlMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZTE3OTFjNjViNWE4MjJhY2RjNGVkMjAzZGQ2Y2E2NjhiNjAyZDNhNDMyMmRmZWJmZTUxN2VlODRjYmUxZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJmZjU4ZmE3MDAzZDc0MWI1OTRiNDYyNjc5ZTgwNjUzZmI1NzY2MWU2MjNmOTRhMDE2OTI5ZTM3NTJkZGNmYWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM1ODdlZjdhYjNlZGI0NDNhYTA2YWFhMDAyZWM0MjY1YzYwYmE5NjJjNjdhZmYxZGE3NDRjYzdkZGI2ZmJlNTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e8df0c7c44394b8ebc18f33234b52beb",
+      "statement": "The twenty-one-label entity taxonomy is defined canonically in core/constants.py but duplicated as identical literal lists in both pipeline/model/ner/gliner.py and pipeline/stages/ner_extract.py, and no invariant test guards those copies against drift.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/constants.py#L5-L30",
+          "version": "repo-lines-v1:sha256:a3a698f703aeac68eace17293d6d600b795aeff0c3ac473617981336457da97f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwMzFkYzEyZjdjYTI4MjE1OGQ1ZWE0NTJiZWE3ZjM2NWUyNzJiNDZhNTU4NDMwY2ZjYjViYzliNWY2NmQ4ZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxMzFjMDY4Njg2NWVlNWUwNzYyNTk0MmJlNmY5ZDQ3ZTFhZWE4YzExMTczZDViNDFlNWEzZmM1Y2Q3YTQ4NjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA3MzYyODY5YmZjYmZhOWRkNDU5OWE1NzE3OGNlYzg3ZGRjOTdmNDliOGRiYmRhNzQzNWNmODJlOGYwODI1YmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://pipeline/model/ner/gliner.py#L27-L49",
+          "version": "repo-lines-v1:sha256:c713905aec93e3d6c42d2d496e5c5f5bb6a82039f0d4490c42e3508f82669f56:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4NDNjYmQ1YTg1MDViZmE5NTczZGFjODljMWVjNjA0MjhjZjNjNmEyMDA1OTNmZDBlZTJmZGQwOTRjYjMyMWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5NDE2ZTA5Zjc4YmEzMTZjMDMyNTY4MjEzYjg1NWVlNzU2ZTQxNTY1ZDkxOGYwOTUxOWM4MWZkNjIwZjQwNjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlmZTU2ODQ3ODBiNDBiY2Y1ODc4YjdmNWYyNzkxMGEzNWNlMzNhMDMyNzFiNWU1ZTU1ZWUzMWFlOWQ1Y2RlN2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI2MTU1M2I2ZDE1NTRjOWRhMDU1OWMzOWIxODc3OTU3MThhMjg1Y2U2YThiMGIyOGZkYzFiMjAyMTY4NGE1NGYifQ"
+        },
+        {
+          "resource": "repo://pipeline/stages/ner_extract.py#L33-L33",
+          "version": "repo-lines-v1:sha256:6843cbd5a8505bfa9573dac89c1ec60428cf3c6a200593fd0ee2fdd094cb321f:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjg0M2NiZDVhODUwNWJmYTk1NzNkYWM4OWMxZWM2MDQyOGNmM2M2YTIwMDU5M2ZkMGVlMmZkZDA5NGNiMzIxZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjg0M2NiZDVhODUwNWJmYTk1NzNkYWM4OWMxZWM2MDQyOGNmM2M2YTIwMDU5M2ZkMGVlMmZkZDA5NGNiMzIxZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWZlNTY4NDc4MGI0MGJjZjU4NzhiN2Y1ZjI3OTEwYTM1Y2UzM2EwMzI3MWI1ZTVlNTVlZTMxYWU5ZDVjZGU3YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTI1MTU1ZTRiMGIyMjc4ZTU0YmExMTliOWQ0ZGUzZGVjYTdmN2VlNGU1YzYzMTQxM2EzNDlmOTIxNmFiOTAyMyJ9"
+        },
+        {
+          "resource": "repo://pipeline/tests/test_no_comments.py#L463-L466",
+          "version": "repo-lines-v1:sha256:fed4f8659c7852fca66380e00db3d67200567c958a47ba1ddd391900307d6a1b:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmI1MDIyYWM0NGNmOWNjNzYzYjhjMzBkZTk2MjQzMDYzOWU4M2I3MjRhNzgzNzcwZGE0NzUzNGQ5YzliMDA2NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTUyMjlkZDc2ZDVlZGU4ZDVmNjdhMzMyMzY4OTA1MDRmNWI0Zjc1YmIzNjI3ZGVlN2NhYTFiZmFhMjEyNzIwYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmI2MjA5MjJlOTY3ZTlkNDEwN2JiNmNjZTkyODU4Njc0NTkwNDZkZmIxZDEwZThmMDRhZDZlNGQ5YmM3NTMwMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c9b350beef1a4e17a69fecb8d3da4ab7",
+      "statement": "Entity nodes for people, organisations, roles, legislation and contracts are keyed on a normalised name protected by uniqueness constraints, and are merged rather than created.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/cypher/ner.py#L3-L9",
+          "version": "repo-lines-v1:sha256:1842a64c880718f55dad0c14792b7921e0c467824960bd802d1f014455a733d6:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTRkZTFhMjcxYjc1MWM4ZDBhYzY2Y2NiOTU0OTZmNmZiZmViOTdkNWY1YzhjN2RjYzU1MGJiYzBmYzQ1M2QwMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjk0MTZlMDlmNzhiYTMxNmMwMzI1NjgyMTNiODU1ZWU3NTZlNDE1NjVkOTE4ZjA5NTE5YzgxZmQ2MjBmNDA2MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2M3ODc4OGVhMGZiOGI0NjhiZjE2ZjIxNWQzODVjY2NhNzEzZTMxYjBkNjYyNWRhOWMxYzRlMWY5MjBlNWI5MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTc5NmI2ODBhNWE1YWE5M2ZiYTI0YzNkNjg0MTNlOGY3MDIzMGQ3NWY4YTYxYjBlNmRhNDI0ODUzYjYxNmZkNCJ9"
+        },
+        {
+          "resource": "repo://pipeline/core/cypher/ner.py#L31-L49",
+          "version": "repo-lines-v1:sha256:a0d97a2beae6730c349300ab0d2a48d8acab78233313d637e9e70b700a9e425a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwN2QwYmRkZGZkMGEwNmMwYWZhY2ViMmQ2ZWMyZDgxNDNkMWE3YjZkYTllMzNmZjM3ZTQ2ZDBiNTNkZGNiMGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzMDNlY2RkNGE0ZDEwZjE5YzczZmQ0MmZkMTI0MzdmZDMzNTRhODI2ODE2MDVkYTUyNTVhOTdhMzkwNjhkYmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFiMzRlZTgzNzNiOThhMDU0MDc0NGZlYjM0ZWM0ZjdkYzc5NTJkMmE5YjU4YmUwODQxMDg5NDQzOTZjNDJmZjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI1ZTYxOTA5YTIwMGY5Njc5MTlmYTFkOTVmNmZiNzU0N2IzOGExM2RjMDM3ZjAzYWI2OGFjNDU3OTVjNGQzZjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_705e7b81ccbb4a3189042cab3363216f",
+      "statement": "When merging an existing entity node the stored display name is replaced only if the incoming surface form is longer, so an abbreviated mention cannot overwrite a fuller name already recorded.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/cypher/ner.py#L34-L46",
+          "version": "repo-lines-v1:sha256:0f79d84a9bce2641b71e3bc039be18c1953aa0670abba691defcd66c2d72a613:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhZjFmNzAwM2I4NzhmM2IyM2E1ZTVhYzVjMjEwN2VhZTEwODM2M2RiMDEwMGEwNzg0MTE1NGMzNzgwNzZkOTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ODc3NWJhNmEzZDZmZjcwODBhZTYyNWI5MGZhNmZhOGMyNGNkYmE5NTM1MTM5YmYzMDA2ZTZjNzdlZDJlN2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQyNzc5MDVhOWUzMmFhNTY5ZWVlYTAxOTIwZjEzMzRlYzkxNjY3YTMxYjA1OGUxY2RjMTdlY2Q3YTFlMjc1MzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEwNGFhYjE3MzFmMGEyODJjMTlkMWMxYmI1YmE2Yjc4MTQ3NjBhY2Y5ZDlkZmNkMDhiMzJjMWNmN2I3ODkzZmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8c9bfcdf4bc84a42b9d7b40bdf4578dd",
+      "statement": "Each entity relationship records a source property defaulting to the extractor name, keeping graph edges derived from document text distinguishable from edges built out of the event log.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/cypher/ner.py#L37-L57",
+          "version": "repo-lines-v1:sha256:2d4240c7ef5b63683272b271e60fba369f0a3f63cddfb815cf0a33be2cd85ad2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmNzM0YjVlMTY2N2E5MTcwZDcxZTlhNzMzYzNjZjk2MDVjMmQyZjIzMWEwOWI4YjlmNWU0Y2ViZWJiNmQ1MjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzMDNlY2RkNGE0ZDEwZjE5YzczZmQ0MmZkMTI0MzdmZDMzNTRhODI2ODE2MDVkYTUyNTVhOTdhMzkwNjhkYmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiOGY4ODJmZDY5ZDIzYTViNjY3MjYwOWY0MGM1MjczYWMwMzI2OGI1Njg5ZjkyNWExNjUwMTI3ZTJlYTQyNmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcxYzQ5YTdkZWZlNmY1NTAyMTg4MTU1YzBlOGE0ZjEwYzMwNzg4ZjQxOWIwZmYwNGJhYjU4ZGY2MWEzNGYzNWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2ad5278213954922996fc560e82cf739",
+      "statement": "Scalar and list findings such as emails, identifiers, monetary values, dates, addresses, document type and subject are written directly as properties on the Documento node alongside the extracting model name and extraction timestamp.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/cypher/ner.py#L11-L29",
+          "version": "repo-lines-v1:sha256:75f625c201ea7c2ad2b7b3c70fa210c4c91f1421e6ce1aa1a1b7347f0103dc12:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1NjAxZmJiMDFiZWQ1ZGVlMmMxYWMzMjJlYzc5MmQ2ZjQ3ZGJiNzBkNTIxY2VkODAwNjFiYzg2Yjc0OWY0NmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzMDNlY2RkNGE0ZDEwZjE5YzczZmQ0MmZkMTI0MzdmZDMzNTRhODI2ODE2MDVkYTUyNTVhOTdhMzkwNjhkYmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE1ZWIwZmIzMjI3N2IyNDM0MzM2YTgwYTQ2NjRiMzg2NTAwMzgwNmM5MjUxYzEwNzNlYmE1YmY5ZGZiMzFkMTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU1NmFhMWYxMTgzMzlhNTljYTBmNDZmZmI0M2Q5MTY0MTY4ZjAwOTE3ZjljYjYyOGY1OGI4N2QzOWY5MGQ0ZDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_890a2e0efa0d44f4a4c360b296734bab",
+      "statement": "The ner-load stage soft-depends on atividades because the Documento nodes it matches are created by the graph phase, so running it early matches nothing rather than failing.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/ner_load.py#L367-L378",
+          "version": "repo-lines-v1:sha256:00bdb9fef4d351a6b72fe4c6a06a60ae2e5d410f12a666f3c40a87337a4f3a6e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjOWZjMDEwYmQ2ZmZhM2JlY2ZkNTFhYWIxYzJlNzVhOWRiZTIyNzhkNGY2NjljYjkyOWI1MzRiMTE0N2ZlMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZTE3OTFjNjViNWE4MjJhY2RjNGVkMjAzZGQ2Y2E2NjhiNjAyZDNhNDMyMmRmZWJmZTUxN2VlODRjYmUxZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJmZjU4ZmE3MDAzZDc0MWI1OTRiNDYyNjc5ZTgwNjUzZmI1NzY2MWU2MjNmOTRhMDE2OTI5ZTM3NTJkZGNmYWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFiOWU4ODcwNmZhOWIwYjM2MDFjNDI0NTQ5ODA3Mzc5ZDY4YzM3OTg3ZDU1Mjk4MDA1Zjc5NTRhMDQ0MzI3N2YifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.0",
+    "at": "2026-09-10T12:46:32.229Z"
+  }
+}

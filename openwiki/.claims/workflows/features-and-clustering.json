@@ -1,0 +1,342 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:d186cc015fba6666c925d4a2ac04ff081e1d27a44741eb33caf5d31a50586261",
+  "claims": [
+    {
+      "id": "claim_2e2be51abbd541c191aedf0dd6936963",
+      "statement": "A process feature vector is assembled from six independently weighted blocks — semantic document embeddings, first-document topic, unit unigram and bigram TF-IDF, activity-type histogram and keyword TF-IDF — each carrying its own multiplier defaulting to one, which is the structure the ablation stage manipulates rather than editing the feature builder.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/processo_features.py#L264-L290",
+          "version": "repo-lines-v1:sha256:b52f8f0f11df8aaabb4d148d3df4673b283860623a56716fa2f49b7c1c45bb09:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2MjQ5NWQ3ZjU2MWRlZWNjMmQ3ZDNhM2VjNzZmZmU5ZjBlZmEwMzg3Yjk5YmMwNDlmN2VhY2ZmMzRjYjM2NDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyM2YzOWM0ZWY4ZmQwMDE2NmVlNjJmMWY1OGQxNTk2MjlkNTVhYmIwYmE1Yjk1ZmVlYjJlZjcxZTZkZWQ4MzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg3ZWI1NjVmYTU1MDg1ZWVlYzY0YTAzZmM5ZDI5NjE3YWExOGE4ODkwZjBkNWM5Y2U1ZjViMTc5NjM2MWNhMGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEzZmY5ZDFiZTIyNDk3Y2VlMTE1NTRiMTYwZWUzMTk0ODVjNzZmYzlkNzc1ZWE4MTdjODA3NDk4MWZlZTE2ZWUifQ"
+        },
+        {
+          "resource": "repo://pipeline/model/processo_features.py#L53-L60",
+          "version": "repo-lines-v1:sha256:af2b34ade2adf33334c909fad1914f78e22700ebd02d298a3c115d498bafa8d5:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjZmYmFlMGI5MWQ0NGZjMGQ0OWY1ZGU2OTFkYTZmYzQzMWYyNjAxMzRiZjczMWUwZTIxZjc2NDgwOTQzMzRjYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWIzOTU4YzYxNDI0YzgwMGVjZWI5ODQyNTlmMDg3ZDhkN2RkZTY3YWI1YjY5NDA3OTA2YmY5ZmQ5Njk2YjUxNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTE1NDg2NzEyNmY5MmVhMjk4MWFlYmE3ODVlNWFlMDhiZTc1ZTFkYzcwMzA2YzBkOGY5MjRmMWE4ODY4ZTRlNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2IyYzFkMjFhZmE1MDI0NmIwNjZlZjg4NzI1Nzc5YWQ0YThiMmUzYmQyMzU3ZWIwNTM0YWEyMzliNzA0NTIyNiJ9"
+        },
+        {
+          "resource": "repo://pipeline/stages/ablation.py#L16-L18",
+          "version": "repo-lines-v1:sha256:1879ac18ef087ba28490325fc1205f917af3ad61eec4e88198f6e36e6c3be92b:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWUyOTVlNDFjMmI2OTU3MDkzMWFmMzViODJiNDk1ZDk0MGE2YmY3NWEyNDg3OTc5ZjJmOTVkMWJmMGE3YjFhNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTk0NDg5ZDcwN2FiMGM0NWVhZWY2OTRmZjJlYzA5YjU0NmUzZWQzYjY4NmRkMDMwYmFiYWRiYzU5ZDczOWFhYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDA0NGMyN2ZhMWU5ZTNkYWRmOWJhMDU1YTE3YTQxYWE3MzBkYWUzZmY5ZGZmNDFmYTczOGE0ODgzODNhOWNhOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjNhZTMyMjIwNjJiYjEwNTBjMThlYmY3ZjFhNjhiYTgxZDIyNWI2MjMxYWNlMmY4OWJkNDY0ZTg4OTk5ZWQzZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5b82c13e037f49c799ccf75e3566f574",
+      "statement": "Documents are not weighted equally inside the semantic block: the first document carries triple weight, documents up to rank three carry one and a half, and the remainder carry one, so the opening document dominates the semantic representation.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/processo_features.py#L45-L51",
+          "version": "repo-lines-v1:sha256:9ac561df49f46f4e73cbf7f4d115f7efd36dc72d8da5acd5d9d3769e09c60764:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjZmYmFlMGI5MWQ0NGZjMGQ0OWY1ZGU2OTFkYTZmYzQzMWYyNjAxMzRiZjczMWUwZTIxZjc2NDgwOTQzMzRjYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWE5YWZmMWM0YWRlYmUyNTU2YTdlM2Q5YzFhZjFjZGQ4NGYwOTZiNWIwNDAzZTgxN2E5NzI1MGZiYTcxZTU1MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzhhNzIwNjVmNjQxZWUxODg0MzhkYjg0YmFjZjZlNzkzNmQ2NGU1NDk4MTAyZGRmYzAyMGFiM2U4ZDU1NmUyNSJ9"
+        },
+        {
+          "resource": "repo://pipeline/model/processo_features.py#L90-L96",
+          "version": "repo-lines-v1:sha256:4cd341580ce8a5e6a49b74db52ee96e8fbab61351bdb2a0798c42c81b69df941:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjMwMGUzMzhhMWFlNGNiM2FkNTViNWU4YzNiNTBjYTEzYWY1YmY4MzQ4ZGU0YTliODNlMDhiNGJkNjcxYTc3YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTAwNzc0ODI4OGYyNjIwODUwMDY0MjEzOTMyNDY0OWNmZTg3OWM4NjU0Zjc3ZmNjNTU0NDI5MTMwYWJjNzJkMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzk1MzRmMTQ4NTQ1YjdlNTlhMGFmNThlZTgyMmI1Yjg3YjhiMWQzZDlhNWU5NThkMDMwMDdmYTZlMzQzNzY5ZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8466dd93ff414cf8a730d8183f1d6e7e",
+      "statement": "The activity-type vocabulary is built by sorting task groups and their tasks and appending a catch-all bucket, which keeps histogram dimensions stable across runs and prevents an unrecognised activity type from shifting every other dimension's index.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/processo_features.py#L19-L31",
+          "version": "repo-lines-v1:sha256:2cf50db356656aa39b1ef7c9ecf26c0cc07534ca182ea324c9b8d5e519fc3560:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVkNDMwMmY1MzQwYjc4NTdhMTYyMDQ5NTg5YTIxYzdjZGUyZjVhNDUxMmE5MTM2MDAyMDQ2YTM3ODNmMWM0Y2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwMTg3MDg2ZjRiNGFhYzBjNzIxMjA2YTIzNjE0ODhhOThkOGNmZTYyYjM0N2I5YTRkN2QwNDdkOTYyZjFhNTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM1MTA5NzYzM2RlM2I4NzA3MTg4YWE2ZGM2ODJkMGI2NDFjYjk3NDc3MDEwZDNlN2NmYzU2NjA0MTIzNDM5MDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fc29cb9233604700b701691811eaffd2",
+      "statement": "Unit sequences are stripped of consecutive repeats before bigrams are formed, so a process that remains in one unit across many activities does not generate a run of self-transitions.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/processo_features.py#L98-L110",
+          "version": "repo-lines-v1:sha256:18d9727b1784225de94df58799ae836df861b21a66174acdb5e1e4a9cfbd079f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIzMjgxZjk1YjUxODgzMTBjMzJmNjVjMjA3ZDg3YmRjMTI2MDA1YjllNjMzOGIxODg5MmI3YjY1NTQyOTk3MTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiODZjYTc4YWFiNGViMjUwZjI4OTQ3OTgyMTYzMTNkNzQ4OGU4ODIwNzM3NmU0ZTJiODg3Nzk5MDc3YTdiMTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIyMjVmZDE3MWI2MjA1NWRmZTllMGU5YWY0MjNkMTA4NjQ3MzdmNTY0MTVkMGY4N2Y3N2QyMTFkY2ZjZDJiOWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_366623e563154f1a9c3cac75488fe322",
+      "statement": "Feature blocks are L2-normalised before combination so that no block dominates the vector through raw magnitude alone.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/processo_features.py#L63-L74",
+          "version": "repo-lines-v1:sha256:281ab043057f41ce5e326270a7bde9b595bd7b413cad99e262d4ce8975d6df2e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0MDdhM2ZiZGY1M2YyNTQwMDMyMTdlOTk0ODc5Y2QzNDRkZWUxZWU4NWU1OGNiY2IxMDk4ODRmOGZjMTEzNDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ3MjY1MTA0OGI5MmM5NmRhMGNiMzllMDY3MzBmNTc1Yzk0OWMxNTNhOGYxYzEwNmNkNzY3NGNlYTc5MDA0YmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUyMDlhMzJkYjQ1ZWU0NWFmYTBiYThmMDI1ZjgzYzA2ZTIwZGY3YTZjYmFlZmY0Y2QzMzJkOTI5ZDQ2NWI5NGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_abcd87f7b7484ec6965390dd26d5e157",
+      "statement": "feature_hash digests the algorithm version, every weight, the per-document embedding hashes, the sorted set of visited units, the deduplicated chronological unit sequence and the sorted activity-type counts, so re-embedding a document or changing a weight invalidates the cached vector.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/processo_features.py#L190-L245",
+          "version": "repo-lines-v1:sha256:763e6bc19535dc2f922dc8824be457dbe39d6bd1f095902888a27612b9ddcbe2:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0NmQxOGQyZTk4ZDBlNDZlNTcxZjJjMDYxMDk0ZWUxYTI1NThmMmM0MmEzYWE4MmIzYmE5NGI4NzJjYWEzZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI0MjA0ZTdiZjZlYjJiZGZiYTVmYmMxMDNjNzkyMzJlNTkxYTIxNTc1Yjg0MTlhNWNkZGIzMDk3YzgyZTIwMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQwMWJhMjIwMDc2MTRmOWQ3YzEzMDBhMmFhMzI1ZTljZTY1ZWU4MmRkYzRjZTFjYjc4YmRkYjRhNzVmNjU3MjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBmM2E3MDRmODI2ZmU2NTc2ZDViNzljZmRjODlhMzI1NzI2MDMwNTRmYzE1MTU4NWJmYWJhNWI0Y2U1ZDE4MmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_384942e9329145bcb209e3badd9df0d4",
+      "statement": "The keyword block weight and the temporal cutoff enter the feature hash only when they differ from their defaults, a deliberate backwards-compatibility choice that kept previously computed hashes valid when those parameters were introduced.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/processo_features.py#L215-L220",
+          "version": "repo-lines-v1:sha256:5403c931e351d870a7c8192960a6c382f4d7b67438444eeab9d16fb42c7b946a:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGEwOTViZWE1M2NiZTNmNzcxMWZhNmMwMGE3Yjk5MDhkM2QxYmU0ODU0MDk5N2I4NWZhNjU3NDM1MjUyYmViOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjI3NmE3ZjdiYjZjMjJhMzFmZjE3MDRhNTJkNzFlMWIyZmJkNGVkNTEyMzI3NTNhNjlkMjg1ZGViNmZiNTk0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjFjZDBjN2ZjMTYwZGFjNjZlNTRiNmQyYjBjM2I4NmY3MjI3NjcwNjA1ZDdhNGMxYTY3MGVmNjU5MWY5ODM5YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmM1YzBhZjUzMDY2YjNjMDI2MWY5M2M0YTc5M2Y5Y2M1MWNhZGEzZmI2N2ExZDhlNDU3NDU2NTBjZjcxYTdiMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_56334b4f999b4f9dbbb765bafb9a2d05",
+      "statement": "Embedding backends conform to a Protocol requiring a model name, dimension and batch method, with a remote OpenAI-compatible client and a local sentence-transformers implementation behind the same interface.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/embedding.py#L19-L24",
+          "version": "repo-lines-v1:sha256:44e7b04aa901cc9ca6d609994bc28dadf07db7aef48a9bc59a2009761a7071b2:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDhkOWIyYmUxNTMwMzYzYTQ1ZGFhMjIzZThhYTc2NzVlYWRkNTEyNDEyNzUyMmRmNmI0ZGVlNTA3NTM0MTM1MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTQzNjgzNjAxNGUxOTM3ZTU4NzY0NzVkNDBkNGVjYjNlYWY0MWIzNzE5MDBmMDllOTY4Mzg1M2NlMTNjODJjMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTQ1NzIwN2I4NzhhZmQyM2M0OThmYjQwZTI4MGE4OWI1YzAzYTRlMjAyYzQ2MzE1ODNlNGIyODUxNWM4OWNmNyJ9"
+        },
+        {
+          "resource": "repo://pipeline/model/embedding.py#L35-L45",
+          "version": "repo-lines-v1:sha256:7cedeecd0cddfb5d21de40d3e151f23c70217cea0e911d54597b9ab86df719e4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmMmIxNmFhNzg4ODJlYTRkMzE2YjM4MjlkYjQ3NTIyN2ZjMTEyNjMwNzgwMGMyZWJhMTg1ZDkzOTRlYTBkYTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY3NTY3MTdkOWE4ZDNkMmIzNDljYjc0MGI1OWM1YmM2ODY0YTY4Y2E3MmRlMDE0Mzc1YzA1NjQ4YjUxNWUxYWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBhZDU4ZThhZmY0ZmNiYTRmNTJiMzAxM2ZjOGQxZGQ0YTA4NzJjOWIxN2QzYmU4ZjQzODAyM2FmZGZmMzgzMjgifQ"
+        },
+        {
+          "resource": "repo://pipeline/model/embedding.py#L65-L65",
+          "version": "repo-lines-v1:sha256:a1c9a1a0280f19643d16ec0d268caae2e56789c3a577146b27c63469d5bd09f7:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTFjOWExYTAyODBmMTk2NDNkMTZlYzBkMjY4Y2FhZTJlNTY3ODljM2E1NzcxNDZiMjdjNjM0NjlkNWJkMDlmNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTFjOWExYTAyODBmMTk2NDNkMTZlYzBkMjY4Y2FhZTJlNTY3ODljM2E1NzcxNDZiMjdjNjM0NjlkNWJkMDlmNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDBkYmZlZjg1MTk5ODgwNzE1NDA1YjY1NTJlNTEyNGQ2MDllNzkyMzUxZTBmYzg1Y2NjNTg5MzI1ODFjNjVhZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWM4YmViNWQwNGNkYTk2NWIyYWE2NTYyZDQxYzZkOGVjNzNmYmE4ZGNkZDhiNTAzYzcwMmZkMTJmYzdjOGVkNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f2add33ce5bf453ca7c51287f434ad1d",
+      "statement": "The remote embedder discovers its vector dimension by embedding a probe token against the live endpoint rather than trusting the declared constant, so a server-side model change is detected instead of assumed.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/embedding.py#L46-L50",
+          "version": "repo-lines-v1:sha256:5bca383540ea27091b082f124f9eb4383676910b56afdc226c5c1d4aacbe9982:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDAyOTM2YzM2NGJjODFhMWI5ZjVlZmZhMzhlZmU0M2UzNTU4MTMyNjUyNDcyYjIxMDgwNGRjNjg0NmJhOWNjNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzJmOGFlYWQ4NTM5ODU0YjJmOTQ4NDM3YjI2N2NkYzFjMzI4ZjY2NGFlY2E1ZjYwNWUwNTM1MTdiM2UyOWJkYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjBkYWVhMjI5Zjk1ZGE1NGYyZTE4YzZhOTFlMjAzNzQ1MWYwYzc4MDhhZDNlMTI3N2RlMzBiZDFhYzcwZTI1ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzFmNGI5Y2U5ZDc4MjZjY2FiNjZkMDk4MmMyYmVmMzQxY2ZmYzhlMDEwNThiYjU1ZjE5NTMzNzhiMmNkMTdiYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5a83caf013144ab598396d2974176ff6",
+      "statement": "Text sent to the remote embedder is truncated to a configured character budget before the request is made.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/embedding.py#L32-L32",
+          "version": "repo-lines-v1:sha256:797bd2ed9080b310adf1b9266a9349741a9c06ef986809d1dd984c3b1d6c45f9:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzk3YmQyZWQ5MDgwYjMxMGFkZjFiOTI2NmE5MzQ5NzQxYTljMDZlZjk4NjgwOWQxZGQ5ODRjM2IxZDZjNDVmOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzk3YmQyZWQ5MDgwYjMxMGFkZjFiOTI2NmE5MzQ5NzQxYTljMDZlZjk4NjgwOWQxZGQ5ODRjM2IxZDZjNDVmOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTg1YjIxNTM3ZDk0MWU5ZGU2NTVlYmU0NmVmNGRhZmMyODIwNmJjNmQ4MTc2ZjQ3YTk1ODEwMGUwNjcxNWNjYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTkwMDFlNjI3MGM5NDA1MzBlZTYwOGUzMTI5YzA2NTNiYjg4MjA5ZDczYjYxOWYzMjBmZWU5ZjMwNThhZmM0ZiJ9"
+        },
+        {
+          "resource": "repo://pipeline/model/embedding.py#L53-L57",
+          "version": "repo-lines-v1:sha256:71fbd9787f72f5bf77c9dcef346a446c20478f63f4fabd8f78a178754e52491c:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTZmZmY3OWE4ZmVkZTBlZmUxNTUxYWFhNjM2NzY5NDQ2MGIyMjM4MWVhZjg1ZWNkZTMyMDVjMGQxOGQ3Yzk5NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGNhMjQwZGZjMWNlYzQ0YjUzZWQ4ZDRiNzk1NGRiY2JjYzIzOTliZmMwZGEwMmFlZGZmOTRjOTJhOGQzM2UwMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGQ1MjhlOTE3OTQ4ZDY5YjcyZmFiY2Q5NDkyOGExYjY5NDI0Yjg1ZDc4NzdmMTU0NmQwNTI3MTgyMzRiZjk2MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjQzZTM0NjViNDI3M2M0NzdmOThlNWE1YmFlZjIzMWEyZmI5NThlNzBmN2E4YmY1ZmQwNzdlNDJiNzU0MDU4NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ca7a30ba68644c359bbdc752b72c3620",
+      "statement": "Feature matrices are persisted as compressed npz files carrying the protocol list, the matrix, a feature digest and the text variant they were built from.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/cluster_eval.py#L38-L43",
+          "version": "repo-lines-v1:sha256:95345ccbee0a107d1c030932604ab15d2fcb95670960078b39edd543a45655fa:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjc2MWExMGQ0N2JhMGNhZGFiMjFjYTdkODgwNjY1NjNiOGFhYWQ1NDEzMWUxNGFmNzQ3NzBlMmE1MzBjNTk0MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGUzOTNkYTQ1ZWIyZThmZjg4ZmUwZTdmYzRhNGMyYzBlZTNjM2YyY2U3OTY1NDYwNWQzYmJlNThkZTY4MWU2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODBlNGEyNzBiMGY5MThjMjBmZTIyZGM5NzlhZDkzYWJmNzRhZTA2YzFkMGFhNDJhMTAxMThhNTc5M2FkMTExMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWIwNzRiOGFlNWU4MDYzNDUwYmIzYjg5YWQyMDAxODFmMmQ5YmRkMmUxYWY5OTgxZTdkNTg4YjNhOTNjMmI4YyJ9"
+        },
+        {
+          "resource": "repo://pipeline/stages/processo_embed.py#L47-L59",
+          "version": "repo-lines-v1:sha256:d34b6311fc4a9830c951dcb7b6617b438330fe1861ed283dece2ec8f617a7172:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhMmU4ZWIzNDRkNDgyOWM2NjAyYzc0YzBlMTcyOWNjNjJjZjlkNzAyNmQ0MzcyMTQzMWJjOWE3MmI5MzcwYzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM1NjI1YWRkMzUxMjNkODBhZmU4ZTY1YzllMDgyYzlhMTUzMTRmMWE3NzcwNzc5MzY4MWQ1OTBlZDBmNTdlNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzNTU1Y2YyMDVhMjg3NGFhNTk3MmVhY2EwODA1MmExYWZjMzY1MzExZjhiY2Q5Y2Q1MjMyMjc2M2ZkOWJmZTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlhYTczMTk5MWM3MGJkMzk5YzRmNjJmNDRkNTM3YjI1NmY0ZmZlNDk1YTFkNTMzZDNjODQwNzhjNGJlZWEwYWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2645ba71b172429a8c3531cbdb760e14",
+      "statement": "Both select-k and cluster-eval derive the expected text variant from the run id and raise when the feature file declares a different one, refusing to select parameters or cluster on the wrong experimental arm.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/cluster_eval.py#L152-L157",
+          "version": "repo-lines-v1:sha256:d7448b5b6aa6307c30eaa8a926cfca87236d0a4d046d999ff8174dede18ae0e7:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGVhN2RiYmRjM2U4ZjhhYjU0NzQzMDE2MzY4ZDUzMWQxZjJjZGQ2NDg2ZDcxYTM2NmQ3MDE2ZTg2ZjRiYjI5YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjc0OWFmZWQ3ZWNmYzliNDQyNzA1OGJhMWUzYjJmMGM3NDEwMjBhOWQwNDRjYWE0YTZhMmNlZWFlYjQzOTlmZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzRkMjg4ZGM5NDFiZDMwZDIzOWQ0OTQ3YTVhYjcyZjNiMDk0OWM5NTcxZjZmNjA0NDhjMTQwMTEzMTUzYWQwYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2Y1MzEzMjU2NmEyNjhiMTExZWYzODM4MWUwNDU4ZWNiODNlYzFiZTE5OTdkNmI4ZDg0M2UyYzRhNjkxYzM5ZSJ9"
+        },
+        {
+          "resource": "repo://pipeline/stages/cluster_eval.py#L24-L36",
+          "version": "repo-lines-v1:sha256:d1e87cc52b13a6c372493b6b3a91bcaee9fbf1344fdde3c921de44741dac0546:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxZTI5YjdmODlkN2YyZDc4YjU5NGIxNjM3OGFhMzVmM2FhNjcwNzgzOWFkODExZWE4Mjk1NTJhMWQzNDc4NDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMxZTY1N2Q0YWQxOGU3OTkyNWYzYTNhMDk2NmJiZGM1MjVlMWYwZmY0OGRjODZmNDkxNzE3N2U0MDJkNjczNjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBiM2ZhY2Q4ZjYxNjk3ZTQ5Nzk5MjQ0Mzg1YzE3MTVhMjQ0Zjk4M2M1YWExY2M1MDhiMTMxNmY2Y2ExNjQwZDcifQ"
+        },
+        {
+          "resource": "repo://pipeline/stages/select_k.py#L44-L50",
+          "version": "repo-lines-v1:sha256:db79a6c1537bd81d5cba02295b0e5707a0020e7bb8dde28e6ea77d64a2b35810:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGM5NTIxYjQ3ZTUwYzc4YWYyNDQ1MjA2MjY0YjU4MzJkYzY0OTIxNjkxOTYwMGFjZjM1YjNjZTA5ODc5NjczMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTkwOWE1M2E2MThkMDI4ZTFkMzAwMGMwYTdhYmNlZWNiZTVmYjM3ZjRlNTExZWZlNDY2NDNmYWQ2ZTY2ODcyZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzFhOWE2NDAyNTg2MGE2OWE5ZTQ4NjhjMTU1NmFjYjljMDdjMmYzZjliM2UyMDYwODkwMWY0NzIyZjBiYmYzYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjkyNTlkZTQwMWUxMTRhMTU5ZWQ1NjQ4ZGNmMTU5Y2ZmOGIyYTNiNTQwOGIzNmIzNDc2MmJjMWU4MGRhMGI1MCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_87de3ba1d1c246358ca2b3b06d0b3777",
+      "statement": "select-k raises with the exact expected feature-file path when a run id names an arm but no feature file was supplied.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/select_k.py#L37-L43",
+          "version": "repo-lines-v1:sha256:e38246c6fa1f51977d29a58dfad7cecbde9d256c2f4792d787a80fc4d15872ce:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTQ5MWMzYzI0Nzc2MmRlZDY4ZDViM2NhNWUwZmVjOTJlN2QzNmU1YjkyNjRkOGY0MzRlNTk3OTUxZWE4MTM3OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTkwOWE1M2E2MThkMDI4ZTFkMzAwMGMwYTdhYmNlZWNiZTVmYjM3ZjRlNTExZWZlNDY2NDNmYWQ2ZTY2ODcyZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzIzZjI3NWQyNTYyNWZiNzBjOGZjNWFlODg3OTdjYjFkOTY4ZDE0MTUzYjRkODdhYjM4MjVlNjc0MzAxZDAxZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGFlYTFiMGZlZjVlYWNiOWRjMjYxMjVkYTBiYjBhZjUyYTcxMTBjY2NhMTRjZGJkMDE4NjZhNzUyMjBlN2VkOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6a21991ffdf94d7d85d124e60b55e172",
+      "statement": "select-k sweeps k-means cluster counts and Leiden resolutions over configurable grids, reporting the inertia elbow, the best silhouette and a combined criterion that penalises silhouette by a redundancy term.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/select_k.py#L52-L82",
+          "version": "repo-lines-v1:sha256:c4194097fd31dd57c3d8e64e26474d10f29893eabe2ad4fa97c685f16593d736:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YWIwYmE4OTkzODcxMTMzZGQxYmFiY2FhNDQ2MDM2YTU2NTY0NDNlNTFmZWEwODAxMTMyNjBkZTQ3YWJiZjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3NWY1ZDlkNGFhZjRjMGU2ZmIzMzcwMjEyZTk0MWE5Y2E2YThlYjU5MDBhOGUyNjIzZDZiMWRhMTU5OTBhNjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU5MTUwYjQ5NjgyNzdlYWIyNmUzNGNmNzU3ZmExOTlmNjdjZDg4ODZmM2U4Y2ZjY2ZjZDE0ODdlZGNlZTNiNzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZjZjZhZTBhNTg2YmM1MmFhMjQwOTAzNmM3YTk2NzI3OTEyNDA1MTZjMTMzZTkzYjJiZGU5NjIwNTQzNmU1ZTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_04c81a9ee48a4e378e73fc4bd04e68a3",
+      "statement": "select-k records for each selection whether the chosen value landed on the boundary of the searched grid and warns that the sweep should be widened before the result is trusted, since a selection at an edge is evidence the optimum lies outside the range.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/select_k.py#L83-L100",
+          "version": "repo-lines-v1:sha256:a71a626200eceb9fcd4d4bbc413982efbe48c05b665daddbba0a06da5af4cfa4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkODJjYTNkYTJkNDBhN2I4ZjBhMTQwNmY1NTU4NWI1NjE2MWQ3ZTk5MGEwZDJiMmRmNzZlMmVhZjFmYjdkYTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2MzcwNzJjMmYxYjYwODVmZjhhY2YxMGE4OTA0YTA4ZDIzYzhjOGFhNmFiN2Y0YjBlNzlkZmQ4ZTAwYWZkMzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ1YjRlMDgwZmRkY2FjZTk0MTA4ZmU0NWFlZTRjMWFkMGYwYWI3MDYzNzFiZmYyMWFkYWMzMTUwZmZhZGFmODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZlNWE3ZDYzMzBmMTJiMWExNzQ0OGU4ZjAzZDM3NDMyZjRjNWEyOTAwN2E2NzRhZjMxNDZjOWRjNWQ3YmMxYTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_559fde4294424caa94e7c5c1de506a79",
+      "statement": "All clustering backends share one signature taking a feature matrix and keyword parameters and returning a result carrying the algorithm name, labels, per-point strengths and the parameters actually resolved rather than those requested.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/_result.py#L49-L55",
+          "version": "repo-lines-v1:sha256:659fd0bb7217d2b1226c35216e7f074afbe9e0fa83f0ddac829b57890f8a1f7a:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjZmYmFlMGI5MWQ0NGZjMGQ0OWY1ZGU2OTFkYTZmYzQzMWYyNjAxMzRiZjczMWUwZTIxZjc2NDgwOTQzMzRjYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGJiMGMxZGJiYjMwZmZmNGMxYzMxZWVlN2FhZjhmOTg5YzhjNWMyMjhlZjg4ODVlMDdiNzI5MGM0MTMxOGY0YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDRkMzYwNWJkNTA2ZDIzMWE4MzJlMDYxOWE2MjYxODY5Njc4OGY1OTA1NWUxNDQxY2FkNDE2MDJkZTk0NzZmOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://pipeline/model/clustering/hdbscan/hdbscan_model.py#L8-L22",
+          "version": "repo-lines-v1:sha256:97536faa95610b82a39dcaef1e5722fe27e83e44e0473b685f36493866672c4b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0NzM2Y2Q4M2JlMmUwNDQ4OTY4MmIyMTU4ZTAyYjE3ZjEyOTY4MWVkNjZkOTZmMzcyMjNhYTBjNGJjMThkMDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyMGIwNjc3MjJjOTdhZDMxZDk5MTc5ZmQ4N2E1ODliZDlkOWE0NDBiOTQxNzg5MDcwZjBmNTUxYzQzMGE4ZTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNkZTZjODhlMDAyMDg5MjczMjkyOWRlZDJiMGY4Y2Q1NDJkYTk2ODBmYmE3N2RlZWE1YzMyN2UxMzAyZTQ1ZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE0MTEzZTk0Y2IyN2MyNDcyOTlhMjA4NzQ2ZTY1MDUyZmRmYzJkMjliYmFkNGE5OWU4ZTRlZDdlOWUxYmQ3MjMifQ"
+        },
+        {
+          "resource": "repo://pipeline/model/clustering/kmeans/kmeans_model.py#L8-L17",
+          "version": "repo-lines-v1:sha256:2f89d58ed4d3016aedb3e3591f7d213bf8aeb73ab71432424c59d4ec6eb5ed16:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0NzM2Y2Q4M2JlMmUwNDQ4OTY4MmIyMTU4ZTAyYjE3ZjEyOTY4MWVkNjZkOTZmMzcyMjNhYTBjNGJjMThkMDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwNGZhMjI3OWUyOWI1N2IzZGJmY2JiMjUzODY3YjM1ZGZjM2NiZmZjNTg5ZDFjMDZlNzk5MGU3MTI5NDEzYWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNkZTZjODhlMDAyMDg5MjczMjkyOWRlZDJiMGY4Y2Q1NDJkYTk2ODBmYmE3N2RlZWE1YzMyN2UxMzAyZTQ1ZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0d9de947a9654c7a9855d709f28de2ba",
+      "statement": "Backend dispatch is a name lookup that raises listing the available algorithms when the requested one is unknown.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/clustering/_dispatch.py",
+          "version": "repo-file-v1:sha256:a8da5c1755c2a335238eafd3e68e9548301421536bdcc573dadaa197ab817d64"
+        }
+      ]
+    },
+    {
+      "id": "claim_56c85c3d7e704e1db83d3c9eb3231ee8",
+      "statement": "HDBSCAN returns an all-noise labelling rather than raising when the population is smaller than its minimum cluster size, so a small cohort yields an empty partition instead of an exception.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/clustering/hdbscan/hdbscan_model.py#L18-L22",
+          "version": "repo-lines-v1:sha256:e79f62c0f9c3886042b26db1ee8af8ba821db02d2b4f91f2eacac0c6a81f2749:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjNlNDRmZTIxZmNmZGY1MmM2NmMzNjU5NmUzNzdjMmM2NTU2NDdiMzZiMmYwMjQwMzRhYzg2YzM4YjMwMzk3ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTIwYjA2NzcyMmM5N2FkMzFkOTkxNzlmZDg3YTU4OWJkOWQ5YTQ0MGI5NDE3ODkwNzBmMGY1NTFjNDMwYThlMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmIzYWUyN2MyMTMxNGUzYjFkMTYyMmQ0YzhiN2I1MmFlYzYwMWU1NzI2YzY2YmI4NjMyNDY1NzQ1YzgzYTJjNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTQxMTNlOTRjYjI3YzI0NzI5OWEyMDg3NDZlNjUwNTJmZGZjMmQyOWJiYWQ0YTk5ZThlNGVkN2U5ZTFiZDcyMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_cc69c461d9d94357bea8901680e7968d",
+      "statement": "HDBSCAN is the only backend whose per-point strengths are meaningful, returning membership probabilities, while k-means and Leiden return a vector of ones.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/clustering/hdbscan/hdbscan_model.py#L33-L35",
+          "version": "repo-lines-v1:sha256:7256868885045968ca8768525eee7545b331b4c79d958549a68be720426443cb:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDczNDU3OGRjMmVkOGY1Y2NjMzVhYmQ5MDAwNjljM2Q5NmUzMWQzNzI2MzQ2ZmVhMzA2ZTQ5ZGI0YjQ5ODdkOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzU5ZTQ3MzhlZDk4ZGI0ODYyNmY1NGExOTQ2MzQ4MGUyOTg4M2I5NTk1ZGQ3YmJlZThjYmI3NDI0NDAxZTYyZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTE5MjU5MTYzMDA5MGVkNDU4YTM2OGM2MTNmNzk1MDFjZDEwNzU3YjhmNTllZGE4YWFmMjIzNTYzODBiNzAxYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://pipeline/model/clustering/kmeans/kmeans_model.py#L16-L16",
+          "version": "repo-lines-v1:sha256:d8090dccd85d632547c97875c8ef6494afb0692b0d0c7e51359b6b5ea0de0c94:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDgwOTBkY2NkODVkNjMyNTQ3Yzk3ODc1YzhlZjY0OTRhZmIwNjkyYjBkMGM3ZTUxMzU5YjZiNWVhMGRlMGM5NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDgwOTBkY2NkODVkNjMyNTQ3Yzk3ODc1YzhlZjY0OTRhZmIwNjkyYjBkMGM3ZTUxMzU5YjZiNWVhMGRlMGM5NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzU0MjJiOGU3MjBmN2Q5MjE5YzhkMDA4ZmVhOTNmOGRlOTRjMjY2M2EwYTRmNjMxZjI0ZjdhOWY1Y2IyOTZlMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTA0ZmEyMjc5ZTI5YjU3YjNkYmZjYmIyNTM4NjdiMzVkZmMzY2JmZmM1ODlkMWMwNmU3OTkwZTcxMjk0MTNhZSJ9"
+        },
+        {
+          "resource": "repo://pipeline/model/clustering/leiden/leiden_model.py#L35-L35",
+          "version": "repo-lines-v1:sha256:21f4927eff447802c42db97ccb1e59a3924a7186fc3c9050e32932548f932cb4:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjFmNDkyN2VmZjQ0NzgwMmM0MmRiOTdjY2IxZTU5YTM5MjRhNzE4NmZjM2M5MDUwZTMyOTMyNTQ4ZjkzMmNiNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjFmNDkyN2VmZjQ0NzgwMmM0MmRiOTdjY2IxZTU5YTM5MjRhNzE4NmZjM2M5MDUwZTMyOTMyNTQ4ZjkzMmNiNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGM5NWMzOGIwNDljMjM1NzE0ODQ5NzE5ZDU5NzY2ODVjYjc5YTcwNzVjY2Q2NjZkN2ZkMmJiZTc2MGFkMmIwMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGZmOWMyMTU2MDZlY2QxZTk1YjU3ZTVkMGJmM2YzMWE2Y2VlZjJkZGE1MmI3ODdjNzM1YThlZWI3NmRmNjM4ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3d0debb9e7c34641be679d7a2fc0c206",
+      "statement": "The k-means backend raises when called without an explicit cluster count, stating that no default is assumed, because the number of process families is the parameter the study must justify rather than inherit from a library default.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/clustering/kmeans/kmeans_model.py#L9-L11",
+          "version": "repo-lines-v1:sha256:6bd415e583268be6286ffd5e515c77b09cd7e249810c3827d4eb4921e3cac5af:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTU2MWM2MjdhZDhmZWMwYzdkYWU2NDcwNDhhODAwNzNlMmVkNDgyYmEzNTI2NDhjMTg0NjI2MjA4YjQ1MTAwNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTlmM2VlMGI1MmFhZTg2ZDMzNWFkMzYxNDY1NTRhNjRiNDI1NzJjMDFiZWYxZGIyMTBkZWMxM2QwNTFiMjllMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTVkYmNhMzQ1ZWM3MTJkMTJiOGNhYjNhNjRlOGZmYzE2MzYxODQyNjY5OWExMjEzYjFlN2IyNTIyNmUzMDUzMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTUzYWE4OWIwODg2YTZmNDNhODk5NGI3N2RhMjI4NmYwNTVkMTgwMzgyMzYyN2JlNDI3MjNjYzJhN2I0NjgzNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4a7ad1edb6a4439fbbd4555256484ce3",
+      "statement": "The Leiden backend builds its own graph from cosine nearest neighbours with edge weights of one minus the distance floored at zero, then partitions it with the RB configuration objective at the requested resolution under a fixed seed.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/clustering/leiden/leiden_model.py#L8-L39",
+          "version": "repo-lines-v1:sha256:e95cb54f34fded7afb305c733a79d64841e015d21a3b69e9af41849a601f8cf5:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0NzM2Y2Q4M2JlMmUwNDQ4OTY4MmIyMTU4ZTAyYjE3ZjEyOTY4MWVkNjZkOTZmMzcyMjNhYTBjNGJjMThkMDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNkZTZjODhlMDAyMDg5MjczMjkyOWRlZDJiMGY4Y2Q1NDJkYTk2ODBmYmE3N2RlZWE1YzMyN2UxMzAyZTQ1ZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bf7c7a0c46814ee286181b4a2d91a2e7",
+      "statement": "The consensus backend clusters the other partitions rather than the features, stacking one-hot label blocks scaled by the inverse square root of the number of algorithms and running k-means in that co-association space.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/clustering/consensus/consensus_model.py#L11-L40",
+          "version": "repo-lines-v1:sha256:eb978678e3ce97a705d2f60a83943a655fe7e13f6b763b83683600f164fdad21:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwN2I4MzY3ZTE1NzY1OWQyMTg5MzYxYzI3ODVmOGU2ZTU3M2JmMTUyMTdhMTcyY2I4M2JmNjc0NjAyNGY2YjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhlYjM0NmQyNTA4NjI2NWIzNTdiNjU4M2E4ZTRkNWZlNmZiMDcyYzUyYTkzNTE0NjJjNzkyYTA4N2FmMWZjMWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEzYjNkYmFhYzk0NjU3MzI1NDE4ZWI1YjMzMGIyM2M0NjA3OWQ4ZjI0MjIzNWU2MmVmNDY4MTgwMTQ1NzZmYTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE4Mjk1NzMxOTE1NjU0MDA5YmZkM2VhNzMxNTJiOTVjODhhYzdlMTU2MWRhNGRmNTg0ODg1ZWM1MjA5MWNhYjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fc9d79b208ff44488da792cb00cc8926",
+      "statement": "In the co-association encoding a noise-labelled process contributes an all-zero row rather than a column of its own, so an unassigned process is not treated as evidence of agreement between algorithms.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/clustering/consensus/consensus_model.py#L11-L19",
+          "version": "repo-lines-v1:sha256:8e9380fc4ecc34181850b90b70364d4c466ab51f01886c4626ccc0d9b27b8c3f:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjA3YjgzNjdlMTU3NjU5ZDIxODkzNjFjMjc4NWY4ZTZlNTczYmYxNTIxN2ExNzJjYjgzYmY2NzQ2MDI0ZjZiMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTQ1MjZhZmQ3OGUyYmJkYzQ3ZDA4NmY2OWI5N2FmNjBlNDkyMDNkM2M0OWExMDAwM2Y1NDE3MTI4OWY5NjFlNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTNiM2RiYWFjOTQ2NTczMjU0MThlYjViMzMwYjIzYzQ2MDc5ZDhmMjQyMjM1ZTYyZWY0NjgxODAxNDU3NmZhMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmIzYjhkY2NlZGY3MzUyMzEwYjU0MDU5MTg1ZWM0OTY2YjUxOTE5MzJlMWQ2NjJlZjNlZjQ0NWU0M2E4OGE2MCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b708eff7718040298d27589b108c4aef",
+      "statement": "The consensus sweep skips values of k that meet or exceed the population size and leaves validity metrics undefined when a value yields a single cluster, and its selector returns a human-readable justification alongside the chosen k.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/clustering/consensus/consensus_model.py#L43-L71",
+          "version": "repo-lines-v1:sha256:c0936cfcdfd73761d316cf4152d96c710f3d79d131760b66721979192ee00f1e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIzYjA3NmE2YWEyZGNhZWE4ZTZjZmRjYzJmOGZhMDZiNTg1NzIyNGI3M2YxNDQ3MzFkMjdiNmQxOTI2YjEwN2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5M2JlNDcxYmMzMjg3N2NlNWJiZTc0MDYxMzk5NzBhZGJjNTAzMzcxNjQ2MThmODg2NDM2NDZhYmUzNzFiMTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmZjNjYWMwNjdiNTYwMmE2OTIxOTlhODU4YmNhNjkwYjA3Y2I4MDJlNzU3NzUxMGFiYzM0NDgwZjY5MGUzM2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6d0dc80e30aa437596ff9943a7bd1d94",
+      "statement": "Silhouette, Davies-Bouldin and Calinski-Harabasz are computed only over assigned points with noise excluded and are left undefined when fewer than two clusters survive, while DBCV is computed across the whole labelling.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/cluster_metrics.py#L46-L68",
+          "version": "repo-lines-v1:sha256:2d9e97d01ca78b81152e1dfc22b986c0c3441a645a07f57233ba6f1b3bda58c8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhMDA0MzFjMGY2YzI4OWY5YWNhZTk0YWU5ZDhhMGI1ZDMxYWJmOTg3NWQ0YmMzODhlOThlNGFlNTZkM2NhNTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkMDFiOWU5NWRmOGFmMWJlNzQzZTJlODk1YzFlOWEyNWJmODk0MTIzODM2MzYyNTc0ZTFlNjIwODg4YTJmOTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk0NTMyZTFhYzBlYjgxNmRkODlhYjIwNTM5NGZlNjE5ZTcwZGExYmQ0NzVhNWE3ODExMGEwOGE0OTM1NTM1MTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNkZjQzYzlhODhhODA0OGZiNWY2YzIxZWY5NTIzMTBhMDE2NDczNTE2MGM0YmJlMWQwYjljYjA0YzJmZDI3YWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_61b817eec9d94de1aa620e3b0d07a6ef",
+      "statement": "Every internal metric report carries the noise ratio, cluster count, sample count and an explicit label for the space it was computed in, so a score is never reported without stating its space.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/cluster_metrics.py#L67-L76",
+          "version": "repo-lines-v1:sha256:da678f330b532d7e0a741719a1dc6354b00af437422ee3b3ec3b652d0222fb46:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2NzdmZTFmMWNkMWJhMmNmY2M3MGE2NjFlZWIxYWI4YTljMmY0ZTJkMTJhOWVmMjRkNTE5ODY2NDJjMDE3OWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI4YWFmN2ViNjU1MWViYzgwMzg5MmY0YmQ2N2E4MmM4OThhYWM1YmZhNWM0ODUxYjc2N2EzMzFhY2ExMDQyYzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYzMzU1OWMyYTgzMGFlZDM3ZWRkMWY1MGE4ODFiNWM2YzlkYmU1NGQwOTAwNGMyYzZiZjNlOTc2OTFlMGU4OTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6e72157916ba45b6ae0bff6ba358121e",
+      "statement": "full_population_metrics makes density and partitional methods comparable by reassigning every noise point to the nearest cluster centroid by cosine similarity before recomputing, and reports how many points were reassigned; when there is no noise it short-circuits and reports zero.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/cluster_metrics.py#L179-L207",
+          "version": "repo-lines-v1:sha256:88e5e750774490372993e2aed9755fdcbd541efec97e33073576412169f4af43:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkNjMyMDQxNzZmOGIwNTRiMjNmYjVhMzU4M2M1YTczOGZmNTQ3MDllMDEwZGUxNzkwNDU1ZDg0MWYwNjQxODQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhM2NmNTE5MjM1NGY3MTYxNWFjNTEwMzRiM2U5N2MyMGVkYTk5NjQzZmNhZjViYmU2ZDQxYWQ1OWJkMTIxNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM0MDQ5OWViZWQxZGI3Y2MyNDdlMDc0MTZiNTFlM2Y2NjUwN2Y5ZjEwMWE4NDA3N2ViNzMzYmM1YjZlNWYxYTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3a074ef6e26e42dc996fa00220cf33c2",
+      "statement": "cluster-eval declares itself conditionally deterministic with UMAP and HDBSCAN pinned by a seed recorded in its artifact parameters, and never reuses a checkpoint.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/cluster_eval.py#L115-L127",
+          "version": "repo-lines-v1:sha256:2a9d065955715f00104469f211e36bd8bcec8f206d3a33c7bf6628bc6bc17450:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjOWZjMDEwYmQ2ZmZhM2JlY2ZkNTFhYWIxYzJlNzVhOWRiZTIyNzhkNGY2NjljYjkyOWI1MzRiMTE0N2ZlMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZTE3OTFjNjViNWE4MjJhY2RjNGVkMjAzZGQ2Y2E2NjhiNjAyZDNhNDMyMmRmZWJmZTUxN2VlODRjYmUxZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjliOGNiZjRkNWU4MGJiZTVlNDhjNTdmNGZjYjczNTY3M2Q2MDc3NDBiNDJhN2FiNmM5MjM2ZTM3MmE5ZjUzZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAzZWNkMDFmY2YwOGIyMWFjNTUxZDQ2MWQ2MDM5MmE1MjdiMWRhZjA4NDdlNjBmOGI5MjllZmIwZDc4OTM2ZGEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.0",
+    "at": "2026-09-10T12:46:32.229Z"
+  }
+}

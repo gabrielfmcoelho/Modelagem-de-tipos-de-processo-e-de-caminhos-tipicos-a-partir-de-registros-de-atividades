@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:d7de6beaa391258a28a2b8884181a2067b1699ef3dd9acb97d8e694a05a3a72e",
+  "claims": [
+    {
+      "id": "claim_4ac600c3c92e419c9c45f85a6b240ff7",
+      "statement": "Every composed evidence artifact carries a four-part envelope naming its point in the experimental grid, the population it covers, the members it aggregated, and the results themselves.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/compose/envelope.py#L52-L53",
+          "version": "repo-lines-v1:sha256:098dfc40b8f127f12e573796e153cf704d38aaa8991f565c1deb2203e81008d5:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmNjOTQ3NjllZjY2ZDAyZWE0MmMzMjgxMDhlOWZlZGEyZDM1MzlkNTdmOTUxYjIyOGMxN2U2MGRiZDM3MjM0NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGU1YWRjYmEzY2Q1MzRkNTZiZTk3MTc0Mzk1ZjBhZDM1NjZkY2ZmNWJkYjc3NjI5ZTMyNDFmODRlMDQzMzVjNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjBlYTY3NGY2MWZlZjczOTVjMjFhMWMyMzMzMzZjY2VkZDA2NTFiZWQ4MDhiMzdiYTQzOTQ4YzAyN2FmZmMzOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTI1OWZlMDkxYWI2NjY2Yzg2YTQ5NTdjOTNjMjViMjliYjZmNmY1MzY5ZmYxM2Q2YTk1YjM1Yzc5M2MwYWYxYiJ9"
+        },
+        {
+          "resource": "repo://pipeline/stages/compose_evidence.py#L57-L73",
+          "version": "repo-lines-v1:sha256:261498a1cb70f4e9784d694d5f5650b782a8f92804bdcf809cba87dd44bf85fc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjOWZjMDEwYmQ2ZmZhM2JlY2ZkNTFhYWIxYzJlNzVhOWRiZTIyNzhkNGY2NjljYjkyOWI1MzRiMTE0N2ZlMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZTE3OTFjNjViNWE4MjJhY2RjNGVkMjAzZGQ2Y2E2NjhiNjAyZDNhNDMyMmRmZWJmZTUxN2VlODRjYmUxZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM3ZmNlZDBkM2RkNjM4MjI3MTdjNzUzMDUwMzJhMTI4YTdmMjViOTUwZDAxZWU5ZWIwMjliYWEwNDJmNjk1OTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNmYmFkYWQ2NDIxMzgzM2NkNzNhODFkYWU1MDcwOWM4OTU5OGViZDI0YzAzYmJkZDgzOTA3YzEwYzQ1OGNlOWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_58b04b13742a4e6e8ec31a0ef4ec9e9d",
+      "statement": "members_block raises IncompleteAggregate when an aggregate covers fewer members than expected unless the omission is explicitly declared, on the stated grounds that a silently shorter denominator is how a skipped evaluation cell becomes a headline number.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/compose/envelope.py#L22-L39",
+          "version": "repo-lines-v1:sha256:0bf37f0c07bb6508383c144fc2dbeb8fddea05d7465e9fbc0acfb1924b201ba4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmN2EzY2QxNjRiMzE3MWJjYTdlNTYzMTc1ZmZjN2I0YzdkNTJkZjk2NTVkZjA4ODhhMDg2Njk4NWMwMjk3YjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiYjM4YjFhYzU5Y2JmMjRlMDM4Zjg1NThkNGJlZDI4NzZkNjE0N2U5YmJiYjFhOTJiZDE4ZmQwYjI4ZjZhNjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5ZjkzMDgzYzE5NzEyMWI5ODI3MDBiYThhZmFiZDE3MjJjZjFkM2U3NDA0NTA5ZTgwZWZhMjcyNDdmNjJmMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE3NmVhZTY4MWZkMjBhODQ2NzU5MWIzNzc3OWJlNzA0M2M5YjY3ZGZlZDVkODRiMDQ0MGYzNjAyZTgwYzk5NDgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1861137114c44e5499852b7c4fd95e49",
+      "statement": "population_block rejects a population that is neither one of the declared case sets nor accompanied by its own definition, because the population is the most consequential choice in a comparison and must not be left implicit in a key name.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/compose/envelope.py#L42-L49",
+          "version": "repo-lines-v1:sha256:ec42805ada7f909dbb1e4e8800b2916e13285a98de36ec12e3ca233fbb638b47:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTU4Mzk1ODUwNDMxYTdhMTk1ZGEyMmU5ZTRhN2M4ZDNkMDAxZWE3MjE0MmQ5YTFkMTI0NmJiNmVjMmU4MzE2ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjliODExY2QyZjJlNDkyNDc5OWI0OWEwZWRhYTU0MzcyZGI2NmViZGM5MmExOWI1MjJmMDdhMmI2OTM3ZjBiZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGE0YzNmYzE5M2E2MzM2YmUxNWVjNTI3MWZhNzJhZmE1OGE4Yzk1OTUxZTE5ZDFjMzU4ZDA0ZDJmOWI1MmEwNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjc4NWE0NWNiZDM3NmQxMjUwNTJkZDc4MThkMjdmMGIyOTdmOTllNTQ3NmU2NTljYzJhNjE4ZjE1ZDVmZjU3MCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_16af58c8362c4e0b825dee9f95f72362",
+      "statement": "The declared populations include a main-cells set that excludes both shuffled controls and ablation variants, so an arm or model difference cannot be confounded with a deliberately degraded run.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/compose/envelope.py#L11-L19",
+          "version": "repo-lines-v1:sha256:1ffaf5c22c0fa38509ce6ee8cbf8340d4156c4095b7155ec9887f99392ab99dc:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDViYTkzZDM1NjBlNDQzZGQyMjBjMjNlMmM5ODM2Y2JmYTZiYjI5N2I0ZDM3MGRkZWVmN2NiMzdiMDI3NWNhYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjY1MjAzMDU3YTUzOTZhZmZlODQ0Nzk5ZTI0MWQ1ZDM4ZjRlZjI4MTgzNWFkZDhkMDlkMDNhY2Q5YWFjZTJhMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWE0NzQ2OTI2MDI1N2ExYWFmZGNiMzY3ZTZjYjdlMWYwMTQ2MjBhZGFkOGUxMjE1MTIwMjdhYjQ1M2JjYzRkNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_32c5977aa6df4adba8422295154ed69e",
+      "statement": "The compose-evidence stage derives per-arm summaries, inter-clustering agreement, per-cluster indices, per-model and per-alphabet slices and the cross-cutting comparisons from the evaluation cells, with every artifact declaring its grid point, population and aggregated members.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/compose_evidence.py#L57-L73",
+          "version": "repo-lines-v1:sha256:261498a1cb70f4e9784d694d5f5650b782a8f92804bdcf809cba87dd44bf85fc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjOWZjMDEwYmQ2ZmZhM2JlY2ZkNTFhYWIxYzJlNzVhOWRiZTIyNzhkNGY2NjljYjkyOWI1MzRiMTE0N2ZlMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZTE3OTFjNjViNWE4MjJhY2RjNGVkMjAzZGQ2Y2E2NjhiNjAyZDNhNDMyMmRmZWJmZTUxN2VlODRjYmUxZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM3ZmNlZDBkM2RkNjM4MjI3MTdjNzUzMDUwMzJhMTI4YTdmMjViOTUwZDAxZWU5ZWIwMjliYWEwNDJmNjk1OTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNmYmFkYWQ2NDIxMzgzM2NkNzNhODFkYWU1MDcwOWM4OTU5OGViZDI0YzAzYmJkZDgzOTA3YzEwYzQ1OGNlOWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b37ccfb20e3f4e68a4e1df2c67ac9679",
+      "statement": "The results stage produces three outputs that must agree: the aggregated figures artifact, the generated table blocks inside the research results document, and the LaTeX tables under both the English and Portuguese manuscript trees.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/results.py#L20-L33",
+          "version": "repo-lines-v1:sha256:41c9f4e9f19ccfa859d78a8a53d88b0560237414092ab7a35ddcbea6ee138fa0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjOWZjMDEwYmQ2ZmZhM2JlY2ZkNTFhYWIxYzJlNzVhOWRiZTIyNzhkNGY2NjljYjkyOWI1MzRiMTE0N2ZlMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZTE3OTFjNjViNWE4MjJhY2RjNGVkMjAzZGQ2Y2E2NjhiNjAyZDNhNDMyMmRmZWJmZTUxN2VlODRjYmUxZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRhZjIzZGEzYmVmYTViZGVmYWY5ZDk0ZmI4NWRiZmU2ZWM4MTBjM2I2Yjg2MmYwMDg5NzExMGNlNmNmMjI1YzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0YzhjZDg2ZmUzYzVhNTE1ZTI1NWE1MGM4N2IxMTJlYjE2MjM3ZTI0ZGRiZDEzMzQyMzJiOTJkNjkzOWFlMTYifQ"
+        },
+        {
+          "resource": "repo://pipeline/stages/results.py#L86-L95",
+          "version": "repo-lines-v1:sha256:c1ece261d837ab3e6ac5ccb0944128d6312c559f923fb7e62fb712b48c1f309c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiNzEyOWU5NzI1MmQ0ZGU3MGI5ZjFkYTY4NDBjYWM4MTlmZDYxNTIzMzgyZjJlM2I0NzFhNDNhNjQzNWM1ZDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjMjU5ZDliZDY0YjBjYWVkYjA3OWVkNWE5YWUwYzBkYmRlZTllNmEwYWRjNzdkZjFjZTAwYzNiOTRmNDExODQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5MzkwZDI3ZjgzMzBmODk2ZGFiYzVmOWJhZGI0MjBiNmFmYzU4ZjE4MjRjOWI3MGZhNDAwZTVhZmE3YWJjODQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRhZjdjM2RiNzgwMzA5YTc2ZWE2NDRmODEzZDAxOTU4ZTE5YWNjN2FiMTYzY2RjOWU5OWVmNTMwNTk4OGE0YjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8d53fe2139c94b03924d196f902c0fc1",
+      "statement": "The results stage refuses to run when no evaluation cells are found, because proceeding would regenerate every table as empty and erase the results.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/results.py#L39-L43",
+          "version": "repo-lines-v1:sha256:6edb6b261d369c638692f84149a2685c39dc68020000b5d3cb0085a1dac0088f:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzczNzVlMjNiYmNiNzQyYzJhZjU3ODRiYTM0N2E5YmY4Mjc4Y2IyMDdhZjk2NGU5NTg3ODA4YTE4NWMwZDdhYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWFlZGFiNGFmN2ZlNzNkYjMwYmJkY2U0NDgzOThmYzA3OWNkZGNmZDYwMGEzYWQwODQ5MDhiYjkxNDg5YTZhMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzlhNmFiMTk5ZWQxODgyMzEwZThhM2Q4YzQ1ZjIwZmE4MmVjMTM5ZmUwNjQzYmUwZDAyNzRlNzg3N2I5YWRhNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmMwOGEzNTUyNjk3ZjIxYjgzNjkxMmZiZGZhMjlkZTA5ZjljYWIxNzk3ZDIwMjA2MTU1MGVkMjdkY2FkZTg4NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_94f6bf8ebd294a3faea18b97601b031f",
+      "statement": "Generated blocks in the results document are delimited by paired fig markers, and the stage raises when any registered block's markers are absent, so a table cannot be quietly retired by deleting its marker.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/results/results_doc.py#L45-L58",
+          "version": "repo-lines-v1:sha256:f17e1e7e8675eac139b7505815c33fea80fdcd3f0064bb3a117f86a350f5cf97:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5MDM2ZGMyOWIzMWVhZmZkY2ZmODI2ZjJmZjQ0M2JmMjc3MzA2ZmUyMDY2OTg4NDdjNzk3YWJiYTI3YTU3ODYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyYzMwOTZjNDE4N2ZlZTc1ODc1ZmY2MzY0MjI0NWVjNmQ5NDY5NmMyYTc1Nzk2NmFkNjFkN2E3ZWFjNzQyNTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5ZjkzMDgzYzE5NzEyMWI5ODI3MDBiYThhZmFiZDE3MjJjZjFkM2U3NDA0NTA5ZTgwZWZhMjcyNDdmNjJmMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU0OGQ3NDgzZDA2MGYxNzIyZTI0NTM2ODg4MzM0MjU2YjU0OTBlOGJiZTg2OTgyMDY3NmNhOWVhZjM1MDljYzkifQ"
+        },
+        {
+          "resource": "repo://pipeline/stages/results.py#L45-L51",
+          "version": "repo-lines-v1:sha256:a7ec35ab3e775b937d4def419c75d17d39310b7de6d00a37b8f4e4c10c10b40a:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOThjN2QzMThiMzcxYTU4ZjdiZWMxOTAzNzI5NTgwMGFhYzg1YmIyMzBlNjZlYzNkYWZkN2MxMzlkZGExYjAyZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmNlZmI4YTNkY2UzNTM4Y2I5OGIxMzM5NDA4ZDczMzBlYTc5ZTlmMmI5MTE3YjI4YjRjNzQ2ZGM4ZTljODEyZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjhmOWNmNGE2YWZlZGU4NmQ1ZDc0ODI1NGZkMTE3OWU5OGQ5ODQ0ZDNhNzRkMjgzOGQ2N2NkZDI5ZDQ1MDgwYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2VkYTkxYWEyZWZiOTRhY2VjMTAxZTBkODYzMzQxZGFmMDgwYjMxMDJmZmYwZmFhOTVmMDA1MDU2MWIyNzQxYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6f34a171a7de431388567d16fa7edefd",
+      "statement": "A LaTeX table that renders to empty text raises rather than being written, so an empty tabular cannot reach a manuscript.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/results.py#L57-L60",
+          "version": "repo-lines-v1:sha256:189c19cb34fed751dee3554a49bd9d67cda6d18f572b7081687fd16ebe306db2:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTUxZTlkNTY5ZTkxY2E3MWNjZGRkY2JmZTJhYThjY2QxNjI5NzM2Zjk2Y2VhYjQ4YjNmMzlmMTIyOTM1YTNlOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWZlODM0MWI1YWJkMDc2MzEwN2UxMDFjYmI2ZjVlZmZkYzI0MTcyMTM3ZmRmNDk2NjJlZDE0Mjc3ZjM4ZmRiYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODI5MDc4YjBiZjgxOTFjOGQ3ZWI1NzQxOTJkNzA2NTVkZDg3ZGM5YWNkYTYzZjgzZTUwODY5ODc5YTQxZjhiMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDY2YmIxYjFmMGRmMDg5ODMwYjhkYjI2ZmE1OGUxNjZlOGI3MDM4YjkwZTk3YjI3ZmMxM2FiN2VlNGEyZjYxMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ab473d90476a466c8ea3fa63f0c9d283",
+      "statement": "With the check flag the results stage renders everything in memory and raises when the markdown would change or any table file is absent or differs, writing nothing — which makes the currency of the generated tables a verifiable statement rather than a claim.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/results.py#L67-L84",
+          "version": "repo-lines-v1:sha256:2ea7b6f96fee77f4395172cfc1dda6ca3b9bfc201de0822d7758b98f22a856da:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlN2QyYTUzOGJlNDY1OGJmNWMyNDhhZTU5NWRhODMwYjNhMjk2ZmU2Nzg0OGZmZTE1NzI5ODgxYmJhMTA1OTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiNWM4MjYzMmZjODJkNGIyYzM0MGY0MjU1OGJhM2RmYTMxYzc2NTVkZjZmY2MxNjhiNGZkY2U1N2ZhYzYwNDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQxODY2ODU4OGIyNTgwOTQyZDQ3NTIwMGY4NGI1ODFiNWM5MjAxOWE5NmIwNjhiYzE1MGQ4NTlhZjgyMjZlOTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhMzI2M2E5NGFmZjQ2YzE3ZDMxZTE3NmM1Mzk4NGM0Y2Y1YmZmYjFkOTQ0ZmNlZTc3M2Q5ZGE0YTVmYTJlYTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1489aa5641de44f79449ad551ae8da7c",
+      "statement": "Every generated LaTeX table file carries a header comment declaring it generated by the results command and not to be edited by hand.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/results/results_tex.py#L22-L22",
+          "version": "repo-lines-v1:sha256:367f1eaba258a38ee763e85392a650f39716ef35af3523d047014a4b92c09b00:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzY3ZjFlYWJhMjU4YTM4ZWU3NjNlODUzOTJhNjUwZjM5NzE2ZWYzNWFmMzUyM2QwNDcwMTRhNGI5MmMwOWIwMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzY3ZjFlYWJhMjU4YTM4ZWU3NjNlODUzOTJhNjUwZjM5NzE2ZWYzNWFmMzUyM2QwNDcwMTRhNGI5MmMwOWIwMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzUyMWVmNzlmYTJhYTRkMjUwZWQ1Njc5YTA0YmI5NTcyOGUzY2E5ZWMwMTFlNTM5ODRkNDI2NzU4ZTBiYjNkNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmE1YWI4NGVkY2E2YTIxMmFjOGI3MjJmZDViOGNlOTc3ZDZlNmRkYmVkOGI1MjRhNTJlNmRiOWRhYjc3MzQ1MyJ9"
+        },
+        {
+          "resource": "repo://pipeline/stages/results.py#L61-L65",
+          "version": "repo-lines-v1:sha256:9bb223b0ee3037d32d8f97c2466185a4d7e6639905d36f5b6725a13bcc8be652:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDg4YWI5ODZjMzU3YTIwZjhmNTZmM2IwYTViMDIyZjVlZDlmOTlkMjIyMmViYmU3MjZkZWM4N2MwY2ZmMDNiNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmM3MTQwZDQ4ZjkwNmRlYjVhYTZhODZiMjlhZjU1ZWEwOTBhMzM0NzU2M2Q5MzgxMDRkMzM5Nzg0MTJhZTRiMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTBlNzgwMDdkNjUwYmU2NDkwZjdiODhjNmViNWFjNjY3MTI5NjRiMTJlNzk5NzJhMWMwNDFjOGFjMDZmNDNkNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTNmNzU3YzUxMzg1NDAxODQ3ZjU1ZjYwYWVlNzA0MDY0NjZhOTVlODRjYjAzZDBmOTI4YzgwZDcxMGIwMGMzNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4374e0c6641a4a65a979e5a8e83f8032",
+      "statement": "The figures artifact is written through the provenance stamper rather than as a plain file, so the numbers the manuscripts cite carry the same envelope as every other artifact.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/results.py#L91-L94",
+          "version": "repo-lines-v1:sha256:be34bc2cb308c67a13baa549cc811ffa1cee219596b932e833f14d2c3182a2ab:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQzMjJhNzE1Y2ExMWE1YjNkZDczOGJhOWU4ZTkwYTY2MzUyZTZmYjdkNDcxYjVlOTUyMzI4ZDM0YWU4NGE1YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjE4NjA1ZjI4M2I3YTI1Njk0OWE5MmQ2MzA1OGZkMTM2NWE0OWYzYjc2MjYyNmEyYjM0NjQ2NDg4YjQxOWRjMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTQ2MjAxYTcxMmI5NGI2ZTNlNTcwMTgzNDkwZGQ1YzUxMDdiYjRkMDkyZGE0NmY3NzBjZjMxNWQ2MWZjNTg0NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGQ2OTQwNGEyYWQwY2ZjZmI4YWU4YzA4MTlmMjk4NTE5ZGVjY2Q3NWE0OGNiM2FhZmFiOThhYzE4MmZiMzk4ZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d778d2e3a45e4478925c1285d8f14886",
+      "statement": "Both manuscripts draw their numbers from one figures artifact, with each table body rendered once in English and then translated for the Portuguese build rather than maintained twice.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/results.py#L56-L65",
+          "version": "repo-lines-v1:sha256:cf2ba5d4e4af95950a3f8b41c0d28427d82f63b300d600e56c3d1afba7620544:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkNDcyNDI1YjQ2YjFiNGE2Mzk1NGIyZjAxN2I5Y2FmZjg2NjYwMGQ2MmZhODFkYjQ3NTNmZDRlYzNiZjRiYTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjNzE0MGQ0OGY5MDZkZWI1YWE2YTg2YjI5YWY1NWVhMDkwYTMzNDc1NjNkOTM4MTA0ZDMzOTc4NDEyYWU0YjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlNGY1M2MzOTFkNGJjZjA4MDEyZTk2ZTg3OWVlMmM1ZmUyZTJjYTdiZmRiZjY0ODlmZGM1NmY0YzRhNWM5ZDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUzZjc1N2M1MTM4NTQwMTg0N2Y1NWY2MGFlZTcwNDA2NDY2YTk1ZTg0Y2IwM2QwZjkyOGM4MGQ3MTBiMDBjMzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_98ee63fb61914e1b95c5bd99de348c25",
+      "statement": "Translation protects LaTeX macros and cross-references by substituting placeholders before applying the phrase dictionary, converts numeric formatting to Portuguese conventions, restores the protected spans, and adjusts layout for tables registered as wide.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/results/results_tex.py#L25-L29",
+          "version": "repo-lines-v1:sha256:94c36f9525b28131363f1e506cf6905150df8a99b1108f66a3dfcc0afe0e2ddb:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmEyMzcwNWJiMjc0NWQ5ZWE5YjgzMjUzNDg1ZGIxYmFiZTY5MDYzYWM1OTBmZGU2OTc0OTMxM2ZiZGNlZDYwYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjY5ZDcwZjg4YzdkZmI5YmUxZGYzNjI0YTgwMDI1YmI4OTRhMjRkNjZhNDQxNDYzYWQ5ZTBmYTUyMWI2M2RmNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjQ0YTA3YjlmNTI0MjJjZjJhY2RkMjNkMjY3N2VhYTFkODg5NGRiN2JkNDM2NjhlMjdkNjEwZmY2MzNlNGYyNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDA1ZWY2M2E2MzJjZDZhOTZmN2U1ZjFlMGU1OTAwZmZlM2VhMTZkNzkzN2NmMjRiNWQxYWE2Mjg1Mzk3ODFjNSJ9"
+        },
+        {
+          "resource": "repo://pipeline/evidence/results/results_tex.py#L735-L744",
+          "version": "repo-lines-v1:sha256:ae78fa4ea1f96f7cb4f9921456ed37925e6085dfef594d98c48e4b54312b0bd3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZkYTRmZjI3Y2I0YzhmNjZkYjhjMWNkNmIxYzQwN2I3ZTlhYjZhODBhMWFkNDZiYjQ3YzRjM2JhNGM2NjRjN2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgyOTQ0ODlmODQyMzUwNzk3ODQ3MGFhMzkwNDI0Zjc5MDkzMmMzZWQ4YjI3NGM3ODRmZTQ2MzY0NDk1MmZhYTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE3NGU2M2Y3ZDhhYjY3OTFhYTljNjBlMDY1ZTEzZTFjNDk5NjdkYmFlYzYyZTc3ZTFiNzU3Y2I0MDRkYzdjNDUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0a7e2006fe114a3b95b7cd5b869fe8d9",
+      "statement": "Translation coverage is measured rather than assumed: captions, header cells and notes are stripped of every phrase carrying a dictionary entry and the residual words are reported, which the results stage logs as warnings without blocking generation.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/results/results_tex.py#L757-L771",
+          "version": "repo-lines-v1:sha256:ad6f989ae5d6a56303e25b8c5be8b0192eec27410f49497dee933046617a21a2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYxZTk2ZTc2NjYxMmRkZGM2ZjMyZDA3YTllNDFiMWMxOWU4ZDMzM2M5OTMzZjQxNDI4OWRjNmQ4ZDcxM2IwYjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjM2QyMmY4ZTMyMjg5ZWExZmMwYWVhMDc5NmYyY2UwYjIyOWZhNTUxNzk4YWNjOThhODM1NzA0ZmU2MDZhNGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA1N2NiMDJiNjA3NWMxNDEwYWQwOGIzZjQ5YzIyOTdjNTU1MGQ5ODA5NzEyYzg5N2QyM2I5MTU1YTMzNzljMjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU0OGQ3NDgzZDA2MGYxNzIyZTI0NTM2ODg4MzM0MjU2YjU0OTBlOGJiZTg2OTgyMDY3NmNhOWVhZjM1MDljYzkifQ"
+        },
+        {
+          "resource": "repo://pipeline/stages/results.py#L62-L64",
+          "version": "repo-lines-v1:sha256:76822ea62db708fcdc2d4ab85373381baad79c36cd708e28289cce04d2067a8c:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDIwODY1MGU1Mjk1NmIzM2MzMWJhYTkzYzIyYmViN2FhYzE4MWJlZWNjNWEzN2ZiOGM1ZDJkNDNkZjlhZDkzYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDU5YmRjYjMxZTAyOTg2MGIwZTRkNzBhOWVjNmMzZmZmOWYzMDQ5NDYzZGM0NDYyNTgxNWZjMzc2M2NhZjE0NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODVkODkzYmM3NjFhMWU1MzlhNDQzNGUzNzY4ZjllZjcxZjY0OTNjNGVjODYwOTNiMzNmNDFmYmE5MmE3OTlhNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODFhYjc0YTRjNTVjZmQwYjE0YzI5OTU1ZTE5NzczNGZhNDliYWU5OWJhYmE4OTQ1MmU1MTcxODRmMTA5MzcyNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5191f182009c4d918d0135e4f2bf4de8",
+      "statement": "Blinding replaces an entire string with an explicit redaction marker when it contains any identifying token for the agency, state or capital city, and otherwise substitutes individually the uppercase tokens matching known administrative unit acronyms.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/shared/blind.py#L36-L46",
+          "version": "repo-lines-v1:sha256:e6f8119fac3f4e8af27f26e4d02cc9207a4b9446d655110fff6e2f6ffea2a7ec:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2NDBlMmNjMTRmOGY0NWY4ODNmODIwN2NlNjU3ZGQxYjYwZGQ5YTY1NzlkMDhmOWQ0NmE5OWQ2MzFkNDg1ZTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhYjhmNGY0MTM1OWY2YzBiZjdhYmMwNDdkNGM1Nzc0NTcyMjMzNGY1ZDJkNmU3MmUxNjZhNTViM2EwOTc0NzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBiNDY4YWQwYWJkNWRmODYyMGJiOTRiZGZmZTg1ZjQyMTEwZWNkYThhZjc2NGE0ZDVjM2JhMDZiYWE1Zjc3M2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://pipeline/evidence/shared/blind.py#L9-L9",
+          "version": "repo-lines-v1:sha256:78d11104d869aa0abd409b26de52bc4f358547e7e84f606c192f82090fc60220:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzhkMTExMDRkODY5YWEwYWJkNDA5YjI2ZGU1MmJjNGYzNTg1NDdlN2U4NGY2MDZjMTkyZjgyMDkwZmM2MDIyMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzhkMTExMDRkODY5YWEwYWJkNDA5YjI2ZGU1MmJjNGYzNTg1NDdlN2U4NGY2MDZjMTkyZjgyMDkwZmM2MDIyMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODIxYWM2MWFmNzI1YWUzZGMxMmIxMTlkOTM1ZDQyZWQ3OWYwZmMxN2JkMzI0MGQ0ZTIxZmMyNDA2NmFjZGU2NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmE5YWMxNDYyMzkxZGE1MTc1ZjhiYjE3NWRjZjdjNTgxOWEyODMwOGFmZWY2Mzc1NmVlZTY4NWVjMzVmY2YxMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f5f7d5ae3e2045d5a8f1cf95135a26c5",
+      "statement": "The set of unit acronyms to blind is derived at build time from the exported traces artifact by splitting the lane component of each state, rather than being maintained as a hard-coded list.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/shared/blind.py#L15-L33",
+          "version": "repo-lines-v1:sha256:f205f35c7d1a19484db68cb12a7dbb99d2b04e60e83bc29c6a007dc98de4e30c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5YzVhNTYxZWZhMzRjN2YwNjQyMWEyMWRjMDYzZDM2YWY5ZDI4ZjI1NzA1NDgwZDA5MmU0YWVhNzhlM2JjOTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0NTI2YWZkNzhlMmJiZGM0N2QwODZmNjliOTdhZjYwZTQ5MjAzZDNjNDlhMTAwMDNmNTQxNzEyODlmOTYxZTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRmZGU2MWI3OGQxNTg1ZDFkYzg4OTA2Y2VhYjk0ZDAwNWFhZGM3NWU5YzNkNDVlNjdlYTExOWIxYTkwNzEzYWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJhYzNiNDg3YjUzNWVhYjRhNzNiNWEzZmQ2NjdhYmQxMTAzYmNiNmFiZWQ2ZTY5MmYwNDIyMTk1NmZkYzUxYTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_feb425cecac0476e93dd6e8d7da32b3f",
+      "statement": "Blinding fails closed: when the traces artifact is missing the acronym lookup raises instead of proceeding, because otherwise the double-blind manuscript would be built with unit acronyms intact and nothing would report the failure.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/shared/blind.py#L16-L21",
+          "version": "repo-lines-v1:sha256:638d58163c43da841f9686a5408e9c2e1b2634cfe172ad074f33efe8036378f9:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODZiMzQ3ZmZlOGExNzIzZWJlMjUwODkwMjYwODg1NzlhZjE0Y2Q2MzA0NTlhZDYwYWJlODZlODc2ZGFlNzlkNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzUxMGQxNDQzYjVhOTQ5MWFkMjljYTBmMTczNTZiZTU5ZjkzNWNmODZmNjZmMzA3ZjM5NDUxMDM2N2NkM2MxOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWIyMTZlZDVlY2M3NTVjNGE2MDRjZTI1MjY3MGNmZTFlNGExN2M1YmQ4YTA4ZmUyNTk0ZjBhOWI4OTQzYWNjMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTVmMDI1N2NhZjY5Yjk1YWIzN2MwYjA5N2ZjNWQwOTkxMWUyMjBlNDExMGIwMWM0ZDAzOGI5ZjY0MDBhOWM4YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ee25bfa7cfcc4133abf98e2f0187ce85",
+      "statement": "The noninferiority stage runs a process-by-process paired bootstrap between the raw and anonymized arms against a pre-registered margin, declaring itself conditionally deterministic with the seed recorded in its artifact parameters.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/noninferiority.py#L26-L42",
+          "version": "repo-lines-v1:sha256:d7b0e07a617dd3bf3a202aa26d82d8c2ea25ba038e684cd3d6d26b35f9eb9b1d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjOWZjMDEwYmQ2ZmZhM2JlY2ZkNTFhYWIxYzJlNzVhOWRiZTIyNzhkNGY2NjljYjkyOWI1MzRiMTE0N2ZlMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzOWE4M2NiOTU3OTc5MWM4YmRhZTQwN2M4MDI2MWJlZjRkZThkNGFhM2M5ZjA4MDAwMmE0NzllNTc5MDAyZmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5OGIwNjNkOWI0N2U2NTM3OTYyNTU3MmNjZTE5NzY2OWQ1NzY3ZTEyYzE4YmUwNzU2NTJiOGNkOTgxY2U4ZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEwY2FhOWMyMTRkNjJkOGMzZjYyYjdiMmJkNGJhYzIwM2FhM2IyYWEwZDM2ZGY2ZDAwMmQ2ZGU5NTcyNWU1ZmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a5b22316c41f49b7a6ade262d76645b7",
+      "statement": "The stage registry reference document is generated from the live registry and carries a header declaring it generated and directing editors to change the stage and regenerate rather than editing the file.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/stage_doc.py#L26-L51",
+          "version": "repo-lines-v1:sha256:9beeca5db15e69d454446b30c350b9a8f8a6bfbb88d8da106a1808de5a90ecc2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0ZTYxYzI4YmE2MjkxNDIyMjY2YmI3Y2FkNTRhOWJkNmU0OWRmMzJiOTllMmQzYWY3OWZkNjU3MmY0Mzc3NjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmNjE0ODJiYTA0OTI5MmM4NDRkYjc5MDAyMzY4OTZkZjcxYTU2NWRiNzUxYzg1NjJiMTlhNWMwNjk2ZGFlNDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdjNjkwOTQ2MjFhMjU5M2VlY2NkYzdmMWUyYWQwZmUyYzI1MjY1YTFkZjU4ZDBjNzVkNTYyOWZiOTk1OGMzNjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkwZjljM2E5MjVhMzZjOGQyOTcyODAzNWQzNzg4OTYyMThmMzJhYjYwODFkY2FlZjU3YzczZmNlNTM3ZDFkZDQifQ"
+        },
+        {
+          "resource": "repo://pipeline/evidence/stage_doc.py#L7-L22",
+          "version": "repo-lines-v1:sha256:525115d0b8b811f36499f8bb4f7c655f60213203bfec9dc3b684e91fd6a4f00a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmOTJkOGFlZjczNTdkZWNkNWQ2OTIxODBkYTQwNTA2OWY3ODBiMTM1NzQzN2JkMjhjZGMxM2FlYTQ5NWQzNzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzMDNlY2RkNGE0ZDEwZjE5YzczZmQ0MmZkMTI0MzdmZDMzNTRhODI2ODE2MDVkYTUyNTVhOTdhMzkwNjhkYmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI5ZjMwM2NmN2U2NDQ0NWQ5Y2I1NjM4YmNhMTU2ZTZlMWQ5N2ViYzJlZWFlZjlmMTFmNGI1YzRlMTViMWZiZTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdjNjkwOTQ2MjFhMjU5M2VlY2NkYzdmMWUyYWQwZmUyYzI1MjY1YTFkZjU4ZDBjNzVkNTYyOWZiOTk1OGMzNjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ec969bb16d6e49cdb4e2813a8abf27d7",
+      "statement": "The generated stage reference includes a dedicated sources-of-non-determinism table listing every stage that is not fully deterministic together with its recorded reason.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/stage_doc.py#L53-L59",
+          "version": "repo-lines-v1:sha256:85ecb021d5d02df7babe2826e9201cd86413aaa495c24a46834d194b085e554a:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWUyZjUwZWNlY2I3ZjVjOTBhMTM1MThmZDU5NjY3MmYwMjE1ZjdhN2MwMjVkNGM1NjMwOWZmYjZlMWQ1NzllNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjg0MjhlMDY5MTM3MDFjOTcwY2JlYTI1MzAwOGE4NzAxOTg5ZDRjNDEzY2E1ZDVjYmUwMGRjNWYyZDczMjU0MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzBkMTY3OTVmNjIwYjYyYjRhY2E1YTU0OTk5NTQ1ZjVkMDRhYzkyZjczYWQxOTQ3YTU2ZGQ0MmJlNzVmNTY5ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTFjZWE0NzBhNTVkNjZiNjRkNTU5NjMyNTc2MzJmODM5YWQxODZkOWViNWNmYzhkMTA1NTc0YjBlNTQ3MzM5YyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_419a8c8a8e35439e8fd51b177ed91e8f",
+      "statement": "The generated reference defines the three determinism levels precisely: true means byte-identical output for identical inputs and parameters, conditional means deterministic given the seed the stage records in its artifact metadata, and false means output varies between runs and therefore informs interpretation without pinning a number.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/stage_doc.py#L16-L21",
+          "version": "repo-lines-v1:sha256:1dd3de714b56a743782dbb2e36447f7725aaf1a31e3bf3a9273a5fc699452fb0:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDZiNzExMjVjNDJkZDEwMDBmZTgwNzhjM2RjYzViZjc3ZmI1NjkwNTA5ZjViOTYzNTI4YTRmYWVkZGJmMzExNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTExODE1MGVmODJmY2NhOWNiZjljYzg3NGY2Y2Q0NTk1ODZjNjkxNTI4ZTJhZDg5OTc1MTVkZDEzMzk5Zjk2MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzdlYjdkMjg5OTQxMTZjMzkzMTkyZDNkMjAyYzhjODRkZTBlYTBjMjhkYzg2NmRhNzMwYmU5ZDkzYzE1Njk5YSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.0",
+    "at": "2026-09-10T12:46:32.229Z"
+  }
+}

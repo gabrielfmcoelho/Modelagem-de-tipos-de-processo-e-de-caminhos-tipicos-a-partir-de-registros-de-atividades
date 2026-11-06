@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:e2df9ab334d1e5eae9107025910803485028f5cab7b27636981123640b8e9e49",
+  "claims": [
+    {
+      "id": "claim_550e5a9aea834be3b9e5d99f169f9530",
+      "statement": "A stage is registered by decorating a RunContext-taking function with @stage(StageMeta(...)), which inserts a StageDef into a module-global registry keyed by name and returns the function unchanged.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/_stage_base.py#L112-L112",
+          "version": "repo-lines-v1:sha256:c1d5d5058f6ed58b545a6637550720693acf2565b5d18f50cab51444b3e2e368:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzFkNWQ1MDU4ZjZlZDU4YjU0NWE2NjM3NTUwNzIwNjkzYWNmMjU2NWI1ZDE4ZjUwY2FiNTE0NDRiM2UyZTM2OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzFkNWQ1MDU4ZjZlZDU4YjU0NWE2NjM3NTUwNzIwNjkzYWNmMjU2NWI1ZDE4ZjUwY2FiNTE0NDRiM2UyZTM2OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGIzM2YxYmMxNmVlMmU3ZTY5ZjY3ZTUxNmFiMzE4M2FmZWE0ZDEwMDQ4NjlkNmE1ZDc2YjE0MDhlMmE4OTlhYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDI3ODllZGY4OGI1ZDAzM2ViMTU3OWNiMGNhMmJjZmI5YmJiYWM2M2E4OWNkZTk0MWVjODYxN2MyMjhlOTU0ZiJ9"
+        },
+        {
+          "resource": "repo://pipeline/core/registry.py#L10-L31",
+          "version": "repo-lines-v1:sha256:ebf7bf53dbe764740e0da78e95468fb10f5f28421895c055fbe83a34e0a5984b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2ZmJhZTBiOTFkNDRmYzBkNDlmNWRlNjkxZGE2ZmM0MzFmMjYwMTM0YmY3MzFlMGUyMWY3NjQ4MDk0MzM0Y2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1MDFiYzg4ZmNkMjgzNTU4NjBiZWI3ODYzM2I3ZjBjNzQyZTE1NDU4MDZjMmIzM2Y4MTg2MGZiZWJlYjY0YjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNjZjQ2MGQyM2FjZDVlZmJjOTYzZTQ1MmYyYjllYzAzNjZkZTNkYzk5ZGIxNzljZjNlNGUxYTExMDY5YTJjNDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImViY2UyN2U4NjYyNzNjNDM4ZTMwYWM0ZDhlMmMzODY0ZjZiMjMzNjdmMzgwZTViNTA0YjE3ZmZmNzlkMGVjZjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b5b8ac17e671410598dcc3e8ddc073b9",
+      "statement": "Registering two stages under the same name raises RuntimeError naming the function that already holds it, turning a collision between stage modules into an import-time failure rather than a silent shadowing.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/registry.py#L23-L29",
+          "version": "repo-lines-v1:sha256:912cd394ef17e0f1dace2abbf53b8f0b509c627a45a0d7d80b0fdbd86560a76c:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTYwZWEwODYwYTM3NjJhZWM5NDdhMjY2ZGU3OTIzNDIwYTQwMDc1ZmNkYWNlNGE1ZjMwMGZjMTVmNDM0MGE0MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDk0MjhmYTYwNGYyNjU0MGQ5YzYwOTRhMzQyNTk3YzhjNzVmN2RjMmU3OWMwODdlNzM0OGY3MmRjNDRiZTkyNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTRlODg4OWRkMGU2MGMwNjM4MmU3OGI5NDgzM2JkYWQ4Nzk3NWE3MzY2ZGRhMjlmYTIyYWM1NTlhZDc0YWFiZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTUyMTM4NGU0NjIyZDYwYmY0YjUyMDcyOGZhYjYxYjQ3ZmQxMjI0ZTU2MzI5MDk3NjZhOTQ1YzU0MDlhZjk5MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d1506fb2a2f1434a9f5f10355eb929d5",
+      "statement": "The registry is populated purely by import side effect: pipeline/stages/__init__.py imports every stage module for that purpose, and pyproject.toml records a ruff F401 exemption for that file and for pipeline/app.py to mark those imports as load-bearing.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/app.py#L1-L24",
+          "version": "repo-lines-v1:sha256:39d85dd791498a6defd13817418befe5103149991a3c84a5c3e4f1f3bd4f1992:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUyMmFiNTg3OWEyYjc2MjZjN2IzMzI2OWYyYjMyYjQzZTFhYTBkNGI2ZTRiYzU1ZDgyZmEyMWY4MjU0YmQ1ZjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNkNDEzNDBjYzIzOWExNTljZTliNjAyMmU5ZjYzMjI4MzJlMmVhZDc2Y2FlOWU0NzU0ZDIxMGViOGZiNmQ1ZTgifQ"
+        },
+        {
+          "resource": "repo://pipeline/stages/__init__.py",
+          "version": "repo-file-v1:sha256:2e6dcd15d9a329108aee70f056687eb982efc2e32cd59c4da0f3a48da73c22c4"
+        },
+        {
+          "resource": "repo://pyproject.toml#L29-L35",
+          "version": "repo-lines-v1:sha256:e44dc57908c18a6e52b558bde0f8dcbebe6fefa451c6ae8fc1881b3907923ddb:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTM3N2U5MDUyNDMzNDY4ZDJlZGVjMzkzNzI0YWM2YzE0ZGIxZjBjYTMyMjliMzk4ZDBjMTcxMjIwNmU5NGEyZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzZjYjk1ZGE2NjNhMzg5ZjBlZmQxMzcwODZlZDlkY2QxZDViZDA1ZDE5NWIwOGJmYjQ0NTE2NjQzYzFiOGI5YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2IxZmU0MWI3ZTM2OTdhZjUwZjkyM2ExNDc5M2M5MjQ3ZjNhMDY3YWFjMDNkYzZlY2I5NjMxZTk1YjU1MjkxNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDIzODY4Zjc0MTNlNmFkZDE1YjZjZDhhNTc0MzllYjNmOGRjNTRmM2UzYTVlNDQ3ZWE4OWIzMTMyNDMzMzU5ZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a6e9ae6677544f60b4ca6544cd1db448",
+      "statement": "StageMeta is a frozen dataclass, so a stage's registered metadata cannot be mutated after registration.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/_stage_base.py#L45-L59",
+          "version": "repo-lines-v1:sha256:2275ca6a6d8005fdd2fbebdde8d36dea6970d042607fa609ccf689ff961ec1f5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2OWExMzk3NWMyNTZlYzgzMjBlMjAxNjA4M2M5NmRmNjM3Y2EzZDM1YmViZGUyMzE0YmVlM2E0NzExYjU2Y2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzNGMwZTUwN2Q2YTQ2NmFkZDdkM2ZmMTBkOGM4MWI0YzY4ZWMwMzYwOGVhNzVlMDhiMmE2OGJhZDYxODIxZDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5ZjkzMDgzYzE5NzEyMWI5ODI3MDBiYThhZmFiZDE3MjJjZjFkM2U3NDA0NTA5ZTgwZWZhMjcyNDdmNjJmMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxOTZiZDg3ZmY2MmI5ZDViOGI3NWNhMjY4NGFjYmY5ZDIyNzM4N2Y4ZjBjNTFhYmYxMTAzNGUzMTZmNjQyY2YifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c646a0f448664a819232a7a0d93f2510",
+      "statement": "StageMeta carries a reproducibility declaration — a deterministic field that may be a boolean or a string plus a nondeterminism reason — which the runner copies verbatim into the stage ledger and the artifact provenance envelope, so a stage's reproducibility claim is read from the same declaration the code registered.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/_stage_base.py#L58-L59",
+          "version": "repo-lines-v1:sha256:9ff39248d3882fcb1fccb882409f8406b5f053207e4a23e3e757c05a7725ba37:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzlhZWU0ZDk0ZWMxODYwNGZiNjcyZmI5MDg3MDVhOTFlMTYzOTUyODkzODkzMjMyYWZlODQ5ZGIwOWFjMGFmNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTM0YzBlNTA3ZDZhNDY2YWRkN2QzZmYxMGQ4YzgxYjRjNjhlYzAzNjA4ZWE3NWUwOGIyYTY4YmFkNjE4MjFkOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTZiZjBlY2Q2Njk2YmU0Y2NkYjE1ODM3NTJjYTEzYTdlODE5ZjgwYzBiODFlYTlhYTdiNDUwYWU4OGUxZGQ0ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDE5NmJkODdmZjYyYjlkNWI4Yjc1Y2EyNjg0YWNiZjlkMjI3Mzg3ZjhmMGM1MWFiZjExMDM0ZTMxNmY2NDJjZiJ9"
+        },
+        {
+          "resource": "repo://pipeline/core/runner.py#L48-L50",
+          "version": "repo-lines-v1:sha256:a021e6543e8cef49d7d947ec260f4dba33e04df05f82b8671c687aead7c87e6b:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2JlNDRmMGZmOTUxNzIxNDAwYjgwODMxNDA3OTdmYjgwNTEwMDJhOWMyNjYxZWMxNjhlYjljYTVhZDk2N2E5NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDNkMjI2MDRjOTY0MGViYmFmNTZkNzM1OWY3Y2Q1ZDUwNmVkYTVkMDVjNTAyMzYzYjBhZGI5Zjc3MjdkNTgxNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWQwOGE5ZWU3MDJkYmZmODE3ZDkzNjIyODBmODMzM2RhOWYxMGNmYTA0MGU4NDg4MzUzOTRlZmRiYzU3ZGI0YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjY0YWJkNjQwNWQwYWQ4MTM5YTE5MTUzMTc4MzNhNjIzNTE4MGVhODNlYjI1MTA5ZDU0YTc0OGJkMDE5NWYxOSJ9"
+        },
+        {
+          "resource": "repo://pipeline/evidence/artifact.py#L66-L70",
+          "version": "repo-lines-v1:sha256:eecf6cb6937a0c8f98e9a9983a07c049b6a4827f517a9d5820133d95174af655:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzY3N2ZlMWYxY2QxYmEyY2ZjYzcwYTY2MWVlYjFhYjhhOWMyZjRlMmQxMmE5ZWYyNGQ1MTk4NjY0MmMwMTc5YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmQ4MWRmMTdhOTE0NzJjODVjNzYzYzBhNzIxYThkZTcyMTE3OGU4NGM3MDk2NGM2NjQzOTNmNmNlNjJmMjNlMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjg3M2ZmZWJhMjFiMDcwNGI3ODgzNzE4NTdhMDdhZDBhODE0MjBlMmQxM2ExMzBkNWEyOTIxYjU0ODFiYTFhZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzdjYzliYWMwNWY5ODhmOGMyYzRjNWIyNzA1YmQ1MTdiNDAzMWRjZGIxYmMwMzEwZWFjNmFlNDkyNGZiZmQ0NyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6ddd43dd6a5e478eafa43c7904fa67e3",
+      "statement": "Phase is a closed literal of nine research phases ordered by PHASE_ORDER, each mapped by PHASE_QUESTION to the research question it answers, written in Portuguese while code identifiers remain English.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/_stage_base.py#L15-L42",
+          "version": "repo-lines-v1:sha256:ea11824827eae48ffb7b4036a67a14a5e22ae7d59931f0cb8f2e438f5f3758bc:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ1NmJiOTg2YzE2YWYwMTE0MDc2NTUyYWYyNDcyZDNjYTAxMDgzMGE2ZjBlOGEwY2RkZmYwNjEwNjc4Njg3MGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3NDc3YzMzZjRlNzkxNmI3ZjM5NjQ1ZmRmZjMzNWRmYjc1OGE0ZTMxMDRiZjc1NWUwYzdjMDM0MTI0MTY1ZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcwY2UzZjI0YWI0N2MyZjVhOWQzMzdmMzc3ZWQ4NTczZmE1NjU4NDA3NjQwMmYxYWYwNTRhM2RlZDYxOTQ2MmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f25f6e7abb6f48d09351e9c6aa9c18e2",
+      "statement": "The stage documentation is generated from the live registry by walking PHASE_ORDER and PHASE_QUESTION, so the documented phase structure cannot drift from the registered stages.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/stage_doc.py#L30-L42",
+          "version": "repo-lines-v1:sha256:e4524cdd94d0cfe037408e3cbdc5a7a14637eb6bec0ccb58bbf0e19d8214b5c5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0Y2I0YWZmMGExYjc3YzQ0NDUzYTQ5YTNmZGM0ZDE4ODA3NjVhOWI5NmZhZmQ3MWQzMDg4MzhmYTk5NzUyYmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwM2M3YjkxMzliYjc0MWVkMGNhOWY1OThhYTBmNGY0MWRjYzlkNzFmMjBlMzFmYjFmOGY1Njk3YjI5YmI4ODUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMwODcyMTAyMmEwYTE3ZDkxODBkMGY2ZDlhNTU1YzMwZTYyOWYzOWIyYzVjZTBlNmM4YjE5OGU5NDQwNDAyN2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk0MDUyNmE5NTQxZTZjZjkwNGM1NGViMDUzZTc0NjEwZDdiYTA0N2RmMTY1NzQ3YTYyM2RkMzYyNmRkNTcyMGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_40b7b694d685443e8288952f4b1dbaed",
+      "statement": "resolve validates every requested stage name against the registry before traversing, so an unknown name raises StageNotFoundError before any partial plan is constructed.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/registry.py#L62-L67",
+          "version": "repo-lines-v1:sha256:da5148f35ca9c11b50fc401c1932083954f83985b11b5b59f62e4742719f20d9:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWEyYmQ0Y2ViMDZiZjE0M2I4MDczYmM5Mzg4M2M4YzVhYjU1ODZjMjllMGExMDAzODk4OGRiNzJiYTFkMGMzNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGY3ODczYjlhMTBmYTc3NWYyNGQ1ZDNhMWMxMWRiZGQxYzZhODNkMDAxMzUwNTI0YjA2ZWVjYjhkY2YyZGVhOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODU0MTI3MzA5ZmRlMmJlZTE5ZDM4NjUxZGQ5ZTlmYmJmZDMzYTkwYzZiNzU4OTg2NjgzMzc3ZTViY2M3NTI5ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTczOGVlODhhOWUxYzAzZjE0ODUwMGQzODkxNWZkNTYyNjBiMGFkZDY2MDM0OWY5YmU2YjU5OTAxMjQ2YWVlNSJ9"
+        },
+        {
+          "resource": "repo://pipeline/tests/test_registry.py#L46-L48",
+          "version": "repo-lines-v1:sha256:351291b1674e381d965d7bd42c6e7148024cbbff07d796cda3727af44515bdc5:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWZmNTZjMGZiMzliOGU5YWU4ZDQ2MTdmNjU5NDcyNjliZDJjMWVkNGE0NTU0ZTVmMjUxMGNjNTQ0Y2U5MjZlMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTI0MmEwMzBiZmIxMGM1OGQwMTUxMjdlYmNjMzEwNjdhMGI4YzZlMGI5MThlYTc2MTI1OWZkOTEwMjg0Zjk5ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjc5YTU2ZjY3MjRlN2M3NmI3NDQ4OThhY2Y2ODY2NTM4ODNjNDMxN2RhYWM1NjE3ZjAwM2U1NmNhOGNiMzFiZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4e0ebb7718b84fc1a059e71b5a563072",
+      "statement": "Dependency ordering is a three-colour depth-first search appending nodes in post-order, where re-entering a grey node raises CyclicDependencyError naming that stage and an already-black node returns immediately so a diamond dependency appears exactly once.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/registry.py#L69-L92",
+          "version": "repo-lines-v1:sha256:bc282a5e7f2b29b69459c1491672ad331c437ee0735062d1e2f3f307156eefe6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2YWY0NzA5NzRiMGI5OTdjMTU3YTgzODU0NjZmMTg1MjhmZWQzZDE2ZTU3OTQyMzYwYWFjYTljYTg5NTFjYTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5ZjYwNDMwMmZkNGFjMGNiZTkxMWIwZmQyYjI4OWIyOWFmYmZjYjZiZjY3ZTEwODZmYWVjOTQwY2I2ZjIzOWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE0NzFhZjFlNDVmZjA4ZmIyNjQzZmE0NDExZjQyMDBlNjc3MjdmZjU1MThlMjc0NTRiNWU0N2FkM2VjNTlkMDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZiZDY2NGNhZjZhYTYxZTE1MGY5OWQxOGI1ZDhiNzU5OTliYzc1MjMwMDVjMjEzYjYxOTRhNzI2ZGQ2Y2MwMmQifQ"
+        },
+        {
+          "resource": "repo://pipeline/tests/test_registry.py#L28-L31",
+          "version": "repo-lines-v1:sha256:66c4aac65a32d9c1597c40660c3ecb5c4fa7e5a71311b32e06060dc0f8b04a9c:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmQ5N2FkZTJjYTRhYzNiMjMxNTY2ODhlMDk2YmE0MjNmNGFiZGRmMGEzMGM0MTY2MmJjNDE1MjEyMDhmNzIyNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTU1ZjllOTNmN2VmZTVjMjcwOGZhYmE5NGE5M2U2NDQ4ODZjNjVjOTBkNTIxMDUxYjcyYjNhODMwYTA0MDBiNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2E4YzVhMjIxMDQ5MmI0MTk0ZTk3YzVkYzAyYTc5MjQ4YzU1NGRkOGUxY2FlZjk1YWQzZmExZDg1MjVjZTk4ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmE1ZGI3MzI1NmNjMDU2Zjg3ZjQ0OTcxZGI1YzI2Mzg3ODA5YjRkOTQ5MTMyMmZkYWMxMmRlM2I1M2NlY2NmMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_28b4e62da78443aa88d8777ddf836af2",
+      "statement": "Passing include_deps=False suppresses pulling in absent dependencies but still visits a dependency that is itself among the requested names, so several stages named together with --no-deps remain topologically ordered relative to one another.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/registry.py#L83-L85",
+          "version": "repo-lines-v1:sha256:84bb74aa3f4a9aee5c3b6e9afc2d1490ca61006c9badfb86c09defcc318ed6de:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTlkMjhiOTUxNTRmNTBiMzcyOGQwOWI0ODQ4MzllY2E1ZGY3YzMxZTg1NDhkNzdiZjNkMTEzNTYyN2U2YjkwZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGViY2JiYjQ4NTYwYWJkYTJjMmFjZGZiMmUxYmJlYTg1NzM0OWYxYjAyYWMxODM0OGJhMTgzM2E4MzI5YWUyMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjU0ZjY4NjlmYzQ0MGI3OWFmN2I3ZWYyZTk0YTQwMTlkNTZmYjg1Y2RlZDhhOTIwM2QyNDE4YTZhZjdlMGFkMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzVjNDZkMTVkNzliZjg2ODMxMmI0NTU3YTA5NzE2ZjBiNDYzODY5NzA4ZWUwOTNhZTVjYjY4ZGUyMTdiMmM4MCJ9"
+        },
+        {
+          "resource": "repo://pipeline/tests/test_registry.py#L34-L43",
+          "version": "repo-lines-v1:sha256:3305da0a1462ded5e563f638f6d7d778f1ba32079a3eeacc285cc02f96bc8090:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzYTJmNTM3OTk5ZjA3YmQ5N2UzMDM2NGNiYjVjYTRkNGNlM2I2YWNmOGMyMGU5ODYxNTAzNzEwZTU5ODM1OWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmYjI1ODZjZDMzZDIxNmYwNDdiMDQ4YmE3ZTI4OTZjNTVkMmI2M2JkZTllYmI3NWQyZTAxYTU0MzA3NTRhNDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ0MDg0ODVkODQ2YmZlMDBhNWM0ZWQwOWIyZmYwZjY1ZTE3YzI3ZTU5ZDExNmJiYWQ1OThkMTIyZjkwN2FlYzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU3NjNmODJlYjVmZDZjM2JhMjQxY2Y2YTYzMWE5YjgzZDMzNDhkYzUyMzJjM2IzMmEzYjdlNDQ5ZGVlNTViMWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4ef7e794a50949bc833cc67be98922ae",
+      "statement": "Soft dependencies are advisory only: soft_dep_warnings reports selected stages whose soft dependencies are absent from the selection and the runner logs them as warnings, never affecting execution order or failing the run.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/registry.py#L103-L109",
+          "version": "repo-lines-v1:sha256:badeeb0797d9338e837a3189fef0990bea7dcee531347ffe093af8f9efbb3749:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmE2MjlhZDYwYzRiMGY1ZmM4NjZhZDdmNmJlM2FiODIwZGUxNmU3NzRkMzBkNDRlOGFmZWE0ODFmOGZmYjE3YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGFjMDA5OGZiMTM0YzdlNTY4ZDFkMWI1MTNhMTA5NTUxNmRjNTE3MTMzYTRlZjFjMjA1M2E3MGFlOWNkM2VlMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjM3MmRhNmZlYjI4YWQ2OWU0NGMzNGNhMjFjYzJiMzhmZDY1ZjlkOThhMGE0OWMxZjA1MTdjNGNhYzEyMzI1ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGMwYzkxZWJiZGVjNjU4MTFlZmYzNGY2ZmJkZWM0ZjE2YzA5M2Y2Mjg0ZTk4NTRkOTA0YmE1MzllYTk3ZDMxNiJ9"
+        },
+        {
+          "resource": "repo://pipeline/core/runner.py#L204-L209",
+          "version": "repo-lines-v1:sha256:59371e217c4e307bfd8831ef357955b578d341f94e9919c7437aa078069419e4:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzNmMDg4MDQ3NzYxZjBmZTRkZmM1NjljY2NiM2NiY2IzYmMyZmNhMzdjNzk1ZWQxMzExMjYwZGM4ODQ1ZDVjNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTkwOWE1M2E2MThkMDI4ZTFkMzAwMGMwYTdhYmNlZWNiZTVmYjM3ZjRlNTExZWZlNDY2NDNmYWQ2ZTY2ODcyZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTIyMWQwYWI2NTk2ZjMxYWRmYzk3ZTVkMzQ1ZGVhMGEwZTE4NzkwMDdmZjFhNDQ2MGVlMTgwMWZhZjg3MjE0ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGM1MzA0MzljZDhmOGU4YzI2NmExZDU4NWJkMjk2MDg0ZWQ0YjlhZmMxNjFjMWNjYzQwYTZlMzlmMDlmNWZiNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_91882cca8bc242ada30436b736bd13f6",
+      "statement": "The hard/soft dependency split encodes degraded-quality operation: processo-embed hard-depends only on embed while soft-depending on permanencia, atividades and evaluate, so it can build a feature vector from document embeddings alone and a richer one when graph-derived signals exist.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/processo_embed.py",
+          "version": "repo-file-v1:sha256:4b7d192830563f61241902c18fcba06058c22eb0d3599806056741bd2e8586d0"
+        }
+      ]
+    },
+    {
+      "id": "claim_a2c0e8aa05cb42d9bd7e05b9d12b98e3",
+      "statement": "registry.check_mode is defined to report stages incompatible with a given mode but has no caller; the runner instead resolves each stage's mode individually, so a plan is never rejected wholesale for mode incompatibility.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/registry.py#L95-L100",
+          "version": "repo-lines-v1:sha256:3ca08314b2a5c34b4c61083f062b51509274f5e7ce0cfe3a79e66145c84d711d:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmVhYWRkZjgyNDZmNTY2OWQyOTEyNGZiMTg1N2NkMzY5Y2EyZmJhN2M4NDhiNTQyODVkMDllMjViYzgyYmExNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2Q4MGVkYTRkYzBhYTg1NWU4MzEzMzg1ZmQ2NWZmYzgwOWIwMWNhMzkzZjFjNDljNjBhY2M3NmRjYTc3MzllZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGQ3NTE3NmRhYzYwODk2NWRiZmRhMzcwODY5N2RkOGRkNTdhM2JhNTIxNDY0YjZjMDlmZTdkNDBkZjEzOWUxZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDAzMWVjMGYwMjIzYmJkYTk0MzlmM2VlYzNmNWNmY2FkMjViMzk3YTY0N2I0OTgwZjEyOWFmNDE5MTU3NzU5YiJ9"
+        },
+        {
+          "resource": "repo://pipeline/core/runner.py#L195-L202",
+          "version": "repo-lines-v1:sha256:b92cd456da3a22ae9883825cb7e959c08839e44de6557c5452b40c7c72faa9d6:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWNiMWNlMGQ0YjlhOTI0NGRmNzM3YzNkMzZiOTIzMDJhOTk1OTFhZjlkNzM0NGUxNGZjZjYxMjg3ZDE2NzQ1OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTkwOWE1M2E2MThkMDI4ZTFkMzAwMGMwYTdhYmNlZWNiZTVmYjM3ZjRlNTExZWZlNDY2NDNmYWQ2ZTY2ODcyZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTlhZGE5MTI0OTY4YmIzZjdjZDYxZDU1MWFlZjg4ZjM2NjM5NzVkYjA0MjdjZmJhYzFkMjhhYzgxYzhhNzk0YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWE4OWE4OGE2ODhkODZhMmUyYTFlMzNjNDZkZmJhNjdmN2ZjNjllZWMxM2MxZDZmNzE5NGI4YjQxZjY1MmRjOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_59e970dc0e1748b181ecfba505a97b39",
+      "statement": "The macro stages etl and etl-full are registered stages whose functions return None immediately; their behaviour is entirely expressed by depends_on, so running a macro is resolving its dependencies and the macro cannot drift from what it claims to run.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/_bootstrap.py",
+          "version": "repo-file-v1:sha256:e94dc084c9a77b1f8e4bf00376d1d60902a3b9415bdca5f38f5cc71b9c0923b6"
+        }
+      ]
+    },
+    {
+      "id": "claim_af351cab7db442da8b6ffe1ed1a2b1df",
+      "statement": "etl-full declares itself non-deterministic with the recorded reason that it includes LLM steps, stating the full pipeline's non-reproducibility at the point where the composition is defined.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/_bootstrap.py#L23-L39",
+          "version": "repo-lines-v1:sha256:b0d95e58a5d262ebdd866fce5c13b0b7d1c5280850188a00f85b040772da762d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjOWZjMDEwYmQ2ZmZhM2JlY2ZkNTFhYWIxYzJlNzVhOWRiZTIyNzhkNGY2NjljYjkyOWI1MzRiMTE0N2ZlMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTYwMGE3M2QyZTAyZjM1MmI5MGZlZjFkOGQ2MzgxMWJhNGE4ZWUwYzFiZWFhN2FlNDY1OGYzNmFhMmUxOTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3MDE0OWUwNjlhZDY3ZWNjZjQ3MzY0NmZmMWM3NTAwNTBkMzI5ZDExMDAxOGRjNTc2Njg3OGVhZmExZDYwN2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4bb21352558e49ff85370130aee263f5",
+      "statement": "RunContext is the entire surface a stage sees — settings, resolved mode, flags, state directory, shared cache, writer, reader, driver and a progress handle — and is constructed fresh by the runner for each stage.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/_stage_base.py#L71-L109",
+          "version": "repo-lines-v1:sha256:a3b76082e38801d90e867e23c9c9808b328021c428d23c9544fd469753483614:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2ZmJhZTBiOTFkNDRmYzBkNDlmNWRlNjkxZGE2ZmM0MzFmMjYwMTM0YmY3MzFlMGUyMWY3NjQ4MDk0MzM0Y2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4ODE1YWQzNDIwM2FhM2IwMmIyZjJmMWI4YzA2YjAxZmQ0NjdiNWJiOGNhZjMwM2YwZjJhM2JkMTZjODdiYmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhMjhmMzA0MGRmYmViNjhjYzk0NjA4NDdiODVkYjU5ZDNlMGFkNzA5Nzk5NzFhNzM0YzQ5NWEyMTBiOWViN2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRlNmJkNWVkOGViMGFiMjBlNjQ3MWVjNzBlY2FjNjk2ZGFhNGM0M2QxOTY1MWI4YWNkMzJlOGVkOGM5NGI2YTkifQ"
+        },
+        {
+          "resource": "repo://pipeline/core/runner.py#L279-L291",
+          "version": "repo-lines-v1:sha256:334038c3c0fb09c2346055c4b199ee4afdb429420ed8315ca57c9b6ec66db0ef:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1N2U1ZWE5ODNjNzI1NWEwY2FiNzhjNzQ5M2VhOTU1NWMzYzFlNWFiMjk5YTg4MjA1MTViMWM3NGY2ZjEwNDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ2MjcyODU2YzQ3MThhYmNmNWI2YWJiMDljNmUzMDcyMGE0YzE4MTVkMzhhMjUxZThiYWYwM2M1MDVkYTdjMWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAyNWFmZDg3OGNhMmRjOWYwNDk2MzNlZWU2ZjNhOGZmM2NmNTY4MmJkODBjY2ZiMDEwMDVkMzU1NzA5OGY1ZTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNmZDk3NjgzZjA1MTRmNzI3ZmM3ZmIwM2MzYTRmNjg2NTAxYTdjY2Q5OWY5NzNmZjRjNzM4OGQwYzc3M2RmMDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fd9ac2b6dc834bf8a2db3562d5faa20d",
+      "statement": "Stage progress is reported through a StageProgress abstraction whose base implementation is a no-op, with _RichProgress adapting it to a Rich progress bar, so a stage calls set_total and advance without knowing whether any renderer is attached.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/_stage_base.py#L62-L68",
+          "version": "repo-lines-v1:sha256:02110f0f7445ae94100516556df8216058cc529cf905285bbd9da17dd161cc91:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2M3MGI2OTc1ZWUzZWNjZTY1NzY5MzZmM2QxMTM0ODYyNzdjZTE4ZTQ4MjA0ZTc4NGYyY2ZlYjhkYmNjMWFhZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjA2MmU1OGVhMGIwZmQxOTViYTA3NjYxM2I2MzBkNTllNjdiZDQ3MGJiMTllOTdhMjBjOTAyMzY2ZTViYTBlNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDhlMTRkMjM1Mjc3ODZkYzRjYWU5NjNkNmM2MjRmNWJiODM1MTgyZDNmZDJjZDdjMDM2N2EzM2JkYjhiMmE5MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmMxZjAyZmQ3ZWMxZDQ2MmMwY2I4MThiOTQ4ZmZlNGY3MTViMmMyYzQzMjYzMGMyMzJkZmUzNGQ0Mjc0M2ZhOSJ9"
+        },
+        {
+          "resource": "repo://pipeline/core/runner.py#L72-L82",
+          "version": "repo-lines-v1:sha256:fd9d4774f9fd491840a1f8c91e3412089900e388c8f501353014146c0593f140:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1ZTFjZGI5ZDM5NDY5MmIxMmI4MmMzYWZiNTdjZmEyNGE3ODEwMzgyZDU3YWIyOGNmYTUxMGYyMTlhMDhhNTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2NDc1MTBiM2VhYmMyNTA2NjNkMDEzZjM5NjQ3ZjkzMGY1NWQ4ZTBjYmJiNTNhMmJiZTJjNDM0YzI2MDRlNWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM5OGE4MTdmNjg0OWUxYTJlMWMwZTYwNjU1ZWFkZWI3MWE2YTA2MjI2ODZhMWUyNDhhMTgzZWM3MmU1ODI2YTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImExNTExOTY2MWVlMmM5ZWNiMTA0Njg3ZGIwY2YxOTRkYjhhMzRiOWVmNGNmY2QzMjY1MzI3YzM2NmMyZjczNjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_df5f49252aff40228ad4182e5a66c365",
+      "statement": "The DAG can be inspected without executing it: pipeline list tabulates registered stages by type, pipeline graph prints the resolved topological order and defaults to every non-bootstrap stage, and --dry-resolve prints the plan annotated with checkpoint status and the mode each stage would actually use.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/apps/list.py#L14-L40",
+          "version": "repo-lines-v1:sha256:6b4eea62b48e3d635c689ebf6126de929e556465079e95d3227e6df458de752e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3OWI2YWM0MTdmOGRiZjRjMjFmNmVlNjhjY2IxODNhMzdiNzJlNzIyMGVjOGVjNGU0ODEwYWFkMmIzNjU2NDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzNGMzN2EwZjEyMWUyMDZhODE5ZDdkYTZkOWU4N2VjNTI2Yzg3MWJmZjQyM2ZmMjQ2NzFjNmQzMDNhN2Y0NzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBiNTZkZTRlZGU4MTEyNThjY2ZlMDg3MWNlNDQwZGNlN2Q0OGNjYmE5ZTRkYWQzNzQyNGM4OTYyYzQ5MGFjNWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://pipeline/core/runner.py#L221-L229",
+          "version": "repo-lines-v1:sha256:f83cf64c407883b3bc110609d9e6721a4770ba8322fde06564d8b3249a1bc14e:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTk0MjY1OWE5YWYyMGE0OGQ3OGIxMjM3MTY0YTFkZjk1MGRjOGQ1ZDFlZjZkNDRkYzZjMzI4MjJkMjM4NTAyNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWU4OWNhZTYxNTg2ZGQ2ZDU5ZjFkMDQ4NTdhNzcwMDQ5OTgzYmY3ZDc0ZjE0OGViOTcxNjQ1MDE5OTVhZWYxYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTEzZDg3MTMxMGRhYzRmZjUxY2Q4MTkzYzY2OGNmZmRmMmQ1NDQ4ZWIwZWZkZjJkMWI0ZDQzOTI4ZTU4NDRhZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDFmNjhiZjhiYzZmNDdlZTM1Njc2MjBmYjRkNGYyOWMyOGM2MjM4MTBlOGI0ZjM1OWY3ZWU1Zjg1MDhiNzFjZSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.0",
+    "at": "2026-09-10T12:46:32.229Z"
+  }
+}

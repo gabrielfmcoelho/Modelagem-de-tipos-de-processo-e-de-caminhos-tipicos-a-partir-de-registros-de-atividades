@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:0f23becd2a826decc09bdd8359e47e12f874cd228fb927bf8453dcea03b32347",
+  "claims": [
+    {
+      "id": "claim_21ba6417d70c4dbeb4b9c94c4a3932a6",
+      "statement": "build_meta refuses to stamp an artifact for a name that is not in the stage registry, raising ValueError with the rationale that an artifact must name its producing stage so its question and determinism are read from the registry rather than guessed.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/artifact.py#L56-L65",
+          "version": "repo-lines-v1:sha256:012190f7237cd7ddd3a37b627028b129094bc791466b24bb1c11d2d626ba34bd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3NWZmNzY1YWQyNDI0NGM4YTI2ODRlZTQzODZjZjViNmFlZDAyNjQ3NDdjZTlkMDU2ZTM5ZWU1ZjAyZTNkOTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwNzM3Mjg2OTlmNTNhMmJlZGQ2OTZmNmUxMjkyYjkwM2E0NDRhNGM4NDExMmRlZDI0ZTk2N2MxMjczMTZlY2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ3YmE3MjA2YTMzNDlmZGNlNmY4MWQ3NjlmNzI1ODhhNmI4NGNjZjA2YzI3YzM0MTYwODNlNTcxMGYxMDZjNjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY1OTBiZjA0N2M1NzJjMDZmYzNkNjY3OWEwYTIwYjg0YjczYTUwMTljMDQwZjBjYTk3NDVlMTAxN2I1MDg1ZDEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e04cceee79a34ae489a0e04d52049ae4",
+      "statement": "The artifact provenance envelope copies the producing stage's question, deterministic flag and nondeterminism reason directly from its registered StageMeta, alongside a UTC timestamp, git commit, caller parameters, hashed inputs and library versions.",
+      "evidence": [
+        {
+          "resource": "repo://docs/research/artifact-contract.md#L44-L57",
+          "version": "repo-lines-v1:sha256:a1291fc9d660edb95d22ed2c84f932f914b408cae537e0651cbfbead698680d0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ3OWQzM2M4M2MwZTY3MTBjZWRlYzljZTAwNmQzNjYwZjUwOGJiYmJhY2JhMWViZDFmNjY1Y2NhZmZjZWExMzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyZGRhNDJmZDExYmMzNDFkNjQ1MDhmY2VjNmVkZWE4ODY1Y2U2M2Q4M2MzNjc4MTQ1ZmE3ZjMyZmE1MGM5YTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjllNjRhMWM1NzNmZGE3OTc2ZGNiYmEwNmI0ZTEyODZhNzRiZDU5Y2VjODg2MTYzMjY0NWFhZDY1OWU5ZDFmNmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk2ZDczZjZkZWZiNGYzMDFmYzQ2YTNhNzFkZTIzZDlkNDg5ZGEyYjgxZTJiZDg2NmYyOTU0OTE3N2Y2MGMxMjAifQ"
+        },
+        {
+          "resource": "repo://pipeline/evidence/artifact.py#L56-L76",
+          "version": "repo-lines-v1:sha256:faa026aac19cee3597a8be9d05419e2336c0055bddfd614da4e9481d468f409e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3NWZmNzY1YWQyNDI0NGM4YTI2ODRlZTQzODZjZjViNmFlZDAyNjQ3NDdjZTlkMDU2ZTM5ZWU1ZjAyZTNkOTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ3YmE3MjA2YTMzNDlmZGNlNmY4MWQ3NjlmNzI1ODhhNmI4NGNjZjA2YzI3YzM0MTYwODNlNTcxMGYxMDZjNjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5Y2UyNmRjNjA1MGExYWRkZTk3ZmU3NWNmMzdmYjliMzlmMmYzMjFiMzc5MzM5NDhkNWRjOTZmZDk5M2FhYTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_36d23f8bb95144dbb79e9603531e67d6",
+      "statement": "Library version capture probes a fixed tuple of tracked scientific distributions and silently omits any that are not installed, so the envelope records what was actually present rather than failing on a missing optional dependency.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/artifact.py#L13-L25",
+          "version": "repo-lines-v1:sha256:f855ab2db288116f2e6b27fbd141ad7af9eb1b4f588a4dc1ac1e6548f8fb60b1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhODViMWMyNWNmNzRlNWI0NWQwZTMyOTEzYWUyNDE3ZGUyOGQ4ZTMyN2JkNWE4OWQwMWI1MjE1ZGIzNzlkMGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0NTI2YWZkNzhlMmJiZGM0N2QwODZmNjliOTdhZjYwZTQ5MjAzZDNjNDlhMTAwMDNmNTQxNzEyODlmOTYxZTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJmM2UzYzJjZGI0ZmM2NDNiNzgyNDU5N2VjNmMwNTExYmRmOGQwYjU3ZDA3MjJlYzJhOTdkZWNiOWQ5NjQ4ZjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ1MzE1ZjA5MDQwMDNhYzExMTk2OTMxOTAxOGM4NWY4MGVmYWI0MWNkZGEzNGE3MDhhMzUxNWRhZjE2MTJlOTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6d5d13dbd0174d53b8a20a5fb0be0b3d",
+      "statement": "Commit capture runs git rev-parse with a five-second timeout and check disabled, returning null when it fails, so an artifact generated outside a git checkout is stamped with a null commit instead of raising.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/artifact.py#L28-L34",
+          "version": "repo-lines-v1:sha256:abbfc6950ffd1aba6359a704ade4f88c49748963a36510be1e8d92cff0517d1c:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGE0NDEwMDNhNjNiMjgzOGE0ZjVjODIyYmY2OGI1YjlkYmU4ZGViZmRkMjE4ZTA4MzUyM2E5YTZiMjY2MGY0YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjcxNDYyYmQ3NWI2MmVjMWZiYTFkOTZlMTUzYzI2MmMwZTQ2ZTViZjg3ZGI0NWY5ZDI5ZmMwNDhjYTYwZTZjNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGI0NjhhZDBhYmQ1ZGY4NjIwYmI5NGJkZmZlODVmNDIxMTBlY2RhOGFmNzY0YTRkNWMzYmEwNmJhYTVmNzczZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDkyMmQ0Mjg5OGNmZjAyOGYxMzFlYjY4ZDBkOTEwOGY1ZGZkNDE3YmMwZjMxMzNiZjQ0YjE0YjBhMTMxMWJlOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9bb066cc208b40f682f4287ada3fc626",
+      "statement": "Artifact digests are computed by streaming SHA-256 in one-mebibyte chunks and return None for anything that is not a file, keeping the hashing of large model and embedding artifacts memory-bounded.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/artifact.py#L37-L45",
+          "version": "repo-lines-v1:sha256:22331cf8edc7c2bba0dab0fe5607efb192cb2d4e0f65c3c7516ddb34f622cb72:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmFmMzQ4OTUzNDIxZGI5Nzk1MzQ3NzRkMTk1NzAxNjE3ZjczNmFlMDFkYTJiNWJlMmNhMjc5YTVhNTFiMjNmNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTM4OTMzNjdiZjA4MDg3MjIzYWYyNmRmYTRkYTA3ZjFkMTNlY2E1ZmNjNDA5YTBmNWViMWIyYjc5NDZmM2MwMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWY2MWViMjYxM2UwNjVmNDdkNTJhNWMwYWQyN2JjZWYyZDQ3NTg4NWJiNWVmNGZiOGNiMjE2OGM4MGQ3Y2Q2MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTdjNjUwMmU1NzY5MTQwNTlmYjU0MTY0MDY1M2NiMjJkMTEzNzEyZDVlNzAyN2IwZWRmZWQ5Y2EzM2FkMjg5MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5bdfda6e60714d328fb2ca3f3e71646a",
+      "statement": "Recorded artifact paths are rendered relative to the repository root, falling back to the raw path string for targets outside it, so provenance records stay portable across checkouts.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/artifact.py#L48-L53",
+          "version": "repo-lines-v1:sha256:946cf38848a9f5f08d0126cc29015fe83612dc692c5aaa315f63c7fc2d0a84f9:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTFkNjUyMGMyMDE2MjZiZWI4YmUxNjYxMGIzMjkwYjMxYzEzYTU1NDhjNTBiN2ZiNDg1MTNjMTY2YWMzOWJlNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmExMzU0YmQ2YmZlMGI1Nzk3ZmMwYWI1MzE3MDgyZDkxY2ViMmZjZWY4OTlmZThiMDc0NjdlNmQwNWFlMDM4YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGYzYTcwNGY4MjZmZTY1NzZkNWI3OWNmZGM4OWEzMjU3MjYwMzA1NGZjMTUxNTg1YmZhYmE1YjRjZTVkMTgyZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTBhNmNlNDY4YjE4OGFjMTA3ODVjMmRjY2MzZDUyNDU2MjdkYjc4Y2UxMjBhMzFmMGM0OTJmNWFiNWExZTA3NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_75d7565dd9094e6ea2a0811e544b4528",
+      "statement": "JSON artifacts carry the provenance envelope inline under a _meta key merged with the payload, while binary artifacts are described by a separate <name>.meta.json sidecar carrying the envelope plus the describes path, digest and byte size.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/artifact.py#L79-L114",
+          "version": "repo-lines-v1:sha256:681630c6021169d6e5b73865a4c0da7cf0b2f720d090f5fd6a2f8e290773a5b6:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJiOTUyZDI0MmFjOWJlMjVmNTQ3MThlNzUxODIxYWE3NjFhMjkyOGE5ZWNmZTY3NzcwZGVjZGZhNjZmMmRmODUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0NTI2YWZkNzhlMmJiZGM0N2QwODZmNjliOTdhZjYwZTQ5MjAzZDNjNDlhMTAwMDNmNTQxNzEyODlmOTYxZTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmYmQwMDkzMTRiYzI3MDg0MTY3MzRhMDJhZTVmZjM5YTFlNDhhMDUwYmU5MWY0M2IyZmFhOTIwMDJjNjJiZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI4MTFlNjg3MTVjOTE0NDg5OGE3MWE3Nzk0ZDJhMDkzNjkwNzg5YzlmY2ZjYzhlMzE0M2JmOGY4ZTZhOGNhOTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_384daef3a7ec49dd89f33aa6844def20",
+      "statement": "write_sidecar enforces a write-then-stamp ordering by raising FileNotFoundError when the target does not yet exist, on the stated grounds that the sidecar records the digest of the bytes actually on disk.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/artifact.py#L84-L90",
+          "version": "repo-lines-v1:sha256:da76d1e957bcfbd07db91d88869b026ce7f3d56aac13109559abc00532830d9e:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmQ1MzQ4ZjI2NGI4OTNhNTAwNDMyODc5Zjc0MzUwZjAzZWJlYmI0MTU3OTg2MTk1Y2JmNGMxOTNjZTQ2ZjFlMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWE1ZWIzNDI2MmU0MDI5NjgyNjQ5ZWY5NzFlY2MzODliNmQ3MmJiZDIxZGMwODI2ZTEyMGYwYzI5NGFkZDA1YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmM4ODQxZjYxZjYzMDJmNTgyN2I3MmI3MmZiN2RmYjQyMGJhYzBkNTZiYWE0MmNmZDhhNmVlNzJmOThmYzA3MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTFhNmM5Y2FlMzY5NzZiZmEwMWI4MDcxN2YzMGI0M2U1N2VmNGU3MDIwNDdiOWZjNDMxMzBhZTc3NTVkNWI4ZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0c8363e6d0a144cfa5d0f33eb3e76b6d",
+      "statement": "write_artifact called with force disabled refuses to overwrite an existing file with FileExistsError, which is the mechanism for freezing an artifact that must not be clobbered.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/artifact.py#L102-L108",
+          "version": "repo-lines-v1:sha256:872d680580cc5f6b1613d3b9179e00d91ccdab14b25da133fd9300677a6a8142:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTM0ZDExOTE2MDRjOWJjMGM0ZDc0YWI1ZDNlMDMxMzY2ZDYzMGYzYThiMGVlM2U1OWRlZjIyYmJiZTQwOWMyNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzYyMTcwNDEyODc0ZGI1NWU3YzQwYTQ3YjE3Y2FhZWMwZTMzYTcyOGE4YjRmNTJiNjM4ZjIyYmQyODk3ZjI3MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjBkNzNjM2Q2ZGQ3MmU1OGVlY2U5MjU3ODI0MWY5Y2NkNTQzNjdmYmE5Y2YxZjhhZWU5ODVjNGQ4ZWRiNDIyZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTE4NWRhMTkyNGU4ZGE5NTM3MDA1ODdiMzViYWY2MjNkNzM1YWY1YjE3ZDdmNjYzZmM3MmI4M2M1Nzc3ZmQxMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_55f19efaebf64693b83d6bd8d98731c4",
+      "statement": "Both stamping paths call record_write, pushing the artifact path, size and declared inputs into the process-wide write buffer that the stage ledger drains, so stamping an artifact is also what makes it appear in the run audit trail.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/artifact.py#L113-L113",
+          "version": "repo-lines-v1:sha256:3161d3baa7f0080d1fe8fa07412a571957b1c7916feab8284e1415e86c5a0a27:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzE2MWQzYmFhN2YwMDgwZDFmZThmYTA3NDEyYTU3MTk1N2IxYzc5MTZmZWFiODI4NGUxNDE1ZTg2YzVhMGEyNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzE2MWQzYmFhN2YwMDgwZDFmZThmYTA3NDEyYTU3MTk1N2IxYzc5MTZmZWFiODI4NGUxNDE1ZTg2YzVhMGEyNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmY4MGFjMThjZWViMzM2ZWFlZDcxNTI1OTRhOGJkN2ViYTIwZmIxYTdjM2E2YTcyN2ZlMjM2NTFkM2Q1YzQzNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGI0NjhhZDBhYmQ1ZGY4NjIwYmI5NGJkZmZlODVmNDIxMTBlY2RhOGFmNzY0YTRkNWMzYmEwNmJhYTVmNzczZiJ9"
+        },
+        {
+          "resource": "repo://pipeline/evidence/artifact.py#L135-L141",
+          "version": "repo-lines-v1:sha256:5042168bd86cff4dc4e36a466da107371d37c964a11cbfcc3242daa1f822deb7:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjVhZmE4YjUxZjQ1MWVjMDdhZTg1YzQ2NzVmNTc5NGQzNmU2ZTJlNGRiNjFmMTNjZGM3MGZkOGQxMTQyYjRjMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWExYmMyOTBhNmQ3N2NkZmZlNWJmNDI0MzhkMGU5NDY5MjY0MTY5NWVhYjNmYzBlMGE1YTUyYzc2MGE3MDMyMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDJiOWZhMDFhYWRhMThjNTZlZWVkZTlkMTg4MzkyMzVhMWZkYmEyMDQ1Mjg3MmZkOTA4ZmRjNzlmNDkxMWM4OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://pipeline/evidence/artifact.py#L98-L98",
+          "version": "repo-lines-v1:sha256:ab67413f83aa87e51634fcd8547122201a28b9261d61d3b241030ba872f96d5c:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWI2NzQxM2Y4M2FhODdlNTE2MzRmY2Q4NTQ3MTIyMjAxYTI4YjkyNjFkNjFkM2IyNDEwMzBiYTg3MmY5NmQ1YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWI2NzQxM2Y4M2FhODdlNTE2MzRmY2Q4NTQ3MTIyMjAxYTI4YjkyNjFkNjFkM2IyNDEwMzBiYTg3MmY5NmQ1YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjIyOWQwNGYzNzYzZDBhYjk3NTg3Nzg0M2RhMGNiYzYzYWU2M2UyMDkxY2FhYTNhZGQxNTA3NDAwMzU4OWRhNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjBkNzNjM2Q2ZGQ3MmU1OGVlY2U5MjU3ODI0MWY5Y2NkNTQzNjdmYmE5Y2YxZjhhZWU5ODVjNGQ4ZWRiNDIyZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_862592994b5c45b09ce583f671754cd7",
+      "statement": "inputs_match re-digests each input recorded in an artifact's envelope and returns the paths whose hashes no longer agree, allowing an artifact to be checked against its inputs without recomputing it.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/artifact.py#L125-L133",
+          "version": "repo-lines-v1:sha256:8be400693a40a894cf7bb4d1c9e3e8035add5a71e11f2633241b02aecd22adf9:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjAzMTllODQ2MzkxMTRiMjQ1MDE4YTdiOGE0YWViYWQ5YTMwNDU2MzM5ODIzYjQ4MWE2Y2NkNzVmZDY1MGNjMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjljOTE5NTY0ODU1OThjODJjNGM4NWM2MTAyYTYwMmZlNzg1ZjlmZWIxZDI1MGI0MjFhYWI5YWZkYjIyZGJjZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmI1NWJjZTIwNTljYzdjYWUxYmE4ZjQwYzAxYmJjMDBiYzFmZjA0YWE3OWI4MDkwYmQ4MWQzMzQxZWRkYTdhOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0951d6bbfe6547f3abd6cda658b0248e",
+      "statement": "The artifact-audit stage declares can_skip_when_done as false so it never reuses a checkpoint, because a cached audit result would not reflect current disk state.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/artifact_audit.py#L41-L56",
+          "version": "repo-lines-v1:sha256:75d0605fd42de6eed90ca38a152f6a0cbd4fdce60e916437c320d0dc14bca916:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjOWZjMDEwYmQ2ZmZhM2JlY2ZkNTFhYWIxYzJlNzVhOWRiZTIyNzhkNGY2NjljYjkyOWI1MzRiMTE0N2ZlMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZTE3OTFjNjViNWE4MjJhY2RjNGVkMjAzZGQ2Y2E2NjhiNjAyZDNhNDMyMmRmZWJmZTUxN2VlODRjYmUxZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkzYzg2NzRhYjRjZGVkNThiOTcxOTE2MDY4NjI3YmQ4NWFhMDRiMTA5YWYzN2MxZjM2NTEzNmU5MDJhY2Y1YjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZmNmI2NGYyNGNmZDcyZDhlMTBkYWFjMGE0YWJmMzZlNGQzYTNmODc3NGYyYzQ3ZTJiZjYzYWNjNDQ0NGM5YzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1ac961c969684792bd2b860e1fe29ea3",
+      "statement": "The audit excludes backup directories, log and archive suffixes, and the .meta.json sidecars themselves from its candidate set, since a sidecar is provenance rather than an artifact requiring its own.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/artifact_audit.py#L14-L26",
+          "version": "repo-lines-v1:sha256:d024f5cc101af03a437d36b211fae88ebb648a0b3395b4261d169985ec264380:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1YzQwZjhlMGE1NTVkNGIyYjcwYmVjNjE2ZjFiYjBkMTgwYmQzMmFhYzQyOTg1NDY1NzEyZjc3Mjc3NmY4ZDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5OWNkMGUzMTZiNGU1MzlkODM5ZDE3MjE3NjNhZjgyMGFkNjMzYzFmOTczNTM2NzUyNDUzZmUzNjkwYzk5MGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwNDRjMjdmYTFlOWUzZGFkZjliYTA1NWExN2E0MWFhNzMwZGFlM2ZmOWRmZjQxZmE3MzhhNDg4MzgzYTljYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhYjRlNmY4MGIzMDA4NTBlYmVhMGRkNmVlYjAyNmZkY2JmODkzNTE4ODU4ODU3Yzc2MzY3MDFkNTI0MzI1NTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_249f90729e8349598ad2b37b39cd62cf",
+      "statement": "A file counts as stamped when a sidecar exists for it or, for .json files only, when it parses as a dictionary containing the _meta key; JSON that fails to parse is reported as unstamped with the exception type as the reason rather than being skipped.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/artifact_audit.py#L29-L38",
+          "version": "repo-lines-v1:sha256:7208ed17de5b7ccc523ef44c83ef4c5c900285a29aae1f6c2d8f0b818e6db4a0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJlZWVkYzU3OTk3ZmNjMzM1ZWQwOThmYTM5NmJkYTk0NTE2NzJlMGUyNDM1MDE5Yjk0YTEyMDk5MmFhZTJjN2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzZDdjM2Y0YjJhMGIxYzk4OWJmMDUyNzQ3NjhhNjk2NTYxMTE3Nzk3ZmZiM2YxOTBlYzljOTM2MTAzOTkyNTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2NTYzNWQ1YThhY2I2YzRjYWNkZTk2NzQ4NGNjY2U5YTc5MDU0N2Y2ZjhjNjVkZjFhMTc0MzFlYTkzZWYyYzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAyN2Q3OTY3ZTY5ZGU0OTdiM2E3Y2M4ZDJkMDM3YmFkYWJiODFkZmJkYzg0ZWI0NjdmNDkxNjNjYjBhYzMwNjIifQ"
+        },
+        {
+          "resource": "repo://pipeline/stages/artifact_audit.py#L62-L72",
+          "version": "repo-lines-v1:sha256:7e2f7a8cddd0b0998c3f8a298b1043fdba6d46d5c90000b0fe7a2da38bcd2f2e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViMTYyMjA5ZGIwOTAzYTRmYWQzMjg5YzNkMDI2M2JkZmQ1ZmYxY2Y0NTJlMTE4ZDRiYjhjMmRhNjU3NjQxZDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczMDNjNmFkMWQ5NjU3OTQxMDU5ZWI4YjIyNjYzYWM0MjIwZDA4NmNlMTg5MGJhNjA3MmFlNzVhMjdjMGNjMjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyZTdkYTRmYmRjNWUzYmJlZGQ5YTgxNDc0MmE1MzA3NTZmYzE0ZjFhZTcxMjA0N2I2NmJmY2EyZmQxMjFiMGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBiYzY3ZjE1NmFhNTlhMDdjYmVmYTM4NmNkNTkyNzg1YjJkYjFmNWUxOGFjMjBlOWE0MDVjNjlhMGQ1N2Y2YzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a3371272d75949fa940e80c245c49cae",
+      "statement": "The audit reports in two registers: by default it writes stamped, unstamped and drifted counts to the shared cache and logs warnings for the first twenty unstamped files and every drifted one, while strict mode raises RuntimeError pointing at the artifact contract document.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/artifact_audit.py#L74-L87",
+          "version": "repo-lines-v1:sha256:c713d8bb1bbdf9a0f3dfdab8fd4dcd9d5fef1e122e7b1a75895af05cfb03816d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkMjVmOGMyMmQzNWZiZTA5YWY0NmU0ZWEzN2I1Yzg5N2NjNjJhYTE5MWY3NGI3NGYwZDQyYjM1Mzg1Y2ZkZGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzYmI3NDBiODk2ODQxMzUxYTNmZjE1OTdiNTljYjczMDg1NzkyMGYyYjc3OWFkNWU2MzUxMGJmZTQ3ZDllYzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJlYTI4ZmZkYTA5NWVjNzNlNzlmYTRkMDY5Yzg0YTZjNGYyNWE1Y2ViOTFmZjJkYWY3NmNkNTBkMjAxYzVjMzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4ef41f87c2e9457dac4b28580da5a168",
+      "statement": "The audit root defaults to the repository artifacts directory and can be redirected with a root flag, so a subtree can be audited in isolation.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/artifact_audit.py#L58-L59",
+          "version": "repo-lines-v1:sha256:1b5b4bae6da011806baa71fbb46d80059c29faf10b0d95dd77859ab8779418eb:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODk2YThkN2YyZjllYzE0NGFmZjU0OWY1MGVhNjRjM2FlZDlhNTc4MGE0YzMyNTQ4MDNjNDRhNjEzMWY4ZDJlMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmRmMzFjZDcyZDRlYTc3NTJhZjg2N2M1ZTEzZjZkNTQ2YWVjZGZjMTY5NDZkZDFlNjA3MTdmZmQwMTcxMzg2MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTY4MjM0YjZiZGNlYmZmZDZjNDIyZGEzZmYyYjNiM2ExM2NjYjM3ZWFlZTg0NWYzZTk3MjlmMWY2NzZhODI4YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzFlOTgwM2Q5N2MyY2Y5NjA0OTg3M2Y2YTk2MzQ5OTg0ODZmMmQyOWYxNzU4ZTRkOTlmOGY3NGY0OTI1YTM5MyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4744d56d345845d19ad58185b3d18785",
+      "statement": "The artifact contract fixes the direction of evidence — an artifact answers a question and the text interprets the artifact, never the reverse — and was written in response to an artifact found in the repository with no producer whose reported values matched what the argument required.",
+      "evidence": [
+        {
+          "resource": "repo://docs/research/artifact-contract.md#L5-L40",
+          "version": "repo-lines-v1:sha256:a65e10ab40cc9667ce93277892c188a7eb17f142fb9187026728af476b33fe5b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjMDJiZDNiNzgzODA5ZTZlZjkxZTFiMWQzYzQ3NWQ1NjY1MTU0MDliNGM0OTgzYzFiMzk2MDU3MTE3MTAyYWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU1YWQ3Y2ExOTJjN2NlZTE3ZGFhOTFjN2M1YjQ4YjM5OGZkZWJkMTc1NmZhNDc1ZDRkOTkzNDAxNGEzMTEzODMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjllNjRhMWM1NzNmZGE3OTc2ZGNiYmEwNmI0ZTEyODZhNzRiZDU5Y2VjODg2MTYzMjY0NWFhZDY1OWU5ZDFmNmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ae191458e11f4cb2a184131181325abf",
+      "statement": "Provenance stamping is applied broadly rather than in one subsystem: roughly seventeen stage modules and eight evidence modules call write_artifact or write_sidecar, which is what lets the audit expect provenance across the whole artifact tree.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/etl/export_traces.py",
+          "version": "repo-file-v1:sha256:797b8b05602fdb39015f3181d528d2dbeaa439319aa8296476461bbae8255c6f"
+        },
+        {
+          "resource": "repo://pipeline/evidence/typical_path/run_typical_eval.py",
+          "version": "repo-file-v1:sha256:104f85ad66c8c5c2288b7a15e0f84f3c0d5910a8ac2ed16e57d32dbab709965c"
+        },
+        {
+          "resource": "repo://pipeline/stages/cluster_eval.py",
+          "version": "repo-file-v1:sha256:2110c28cf3978f289ab58afb6cdc2ce97906502b41985b9f25684eb87d88a67f"
+        },
+        {
+          "resource": "repo://pipeline/stages/results.py",
+          "version": "repo-file-v1:sha256:9cc43d7407064bd90051f74d2c7e3cd31d2bb569e9e77d4018cd37c5426392a0"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.0",
+    "at": "2026-09-10T12:46:32.229Z"
+  }
+}

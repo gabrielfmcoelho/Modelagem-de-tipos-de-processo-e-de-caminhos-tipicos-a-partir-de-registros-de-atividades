@@ -1,0 +1,258 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:aa93566f03511a18dbb2e646880294ee12b29d0e57d50a5080eb69c025c68e7a",
+  "claims": [
+    {
+      "id": "claim_0bded4f4655d48949af6761435d7dbdb",
+      "statement": "The CLI is one Typer application onto which four sub-application modules register the interactive, run, list and status commands, reachable both through the pipeline console script and through python -m pipeline.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/__main__.py",
+          "version": "repo-file-v1:sha256:d6626049768aa21880b043456025506efec24171b8be1395b05a2426ed1d9a7c"
+        },
+        {
+          "resource": "repo://pipeline/app.py",
+          "version": "repo-file-v1:sha256:8d637646a1fe68cbe8b00f45f7fb48f9d23579b774e1e1f0b45712b1b510d09e"
+        },
+        {
+          "resource": "repo://pyproject.toml#L9-L10",
+          "version": "repo-lines-v1:sha256:11e01270a4ac6452591ae9aa243a44fa72dc72033c132adc0502006516fbc192:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGVhYjRlYzYzZGU1MTdkYTRjZDhlNWM4MzA3ZmIyYzc3MzdkMzkxOTBhYjY5ZjMyYTVlOWVmODFlYTQ0MTZkZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTFlYjdmYzRhYTU4YjRhMmYwODA5NTQ2M2Y1ZGMwZDIyNjEwNWIxNzBkMTc1OGYwNzgyYjdlMWM0ZTk1ZjNlMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzZjYTIyN2RlY2FmNTJmMmFmMDZhMzM1NjkyYTJiNDY1MGQzYzFmNDY1ZmY4ZTNiMjdiMjlhNDU0ODY4NmQ1OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTk0ZGM1NGU3Njk2YzJkZTAxNzA1NWMyYWFmZTI2OGFiMmQ3ZjRlNzZjODBkMzA0NTdkMTVhOWU0MzUyZTQ5NCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2ac2cadad2594dc99e345c7881db2f7e",
+      "statement": "The application sets no_args_is_help to false so that an invocation without a subcommand falls through to the interactive wizard, which registers a Typer callback with invoke_without_command enabled, rather than printing help.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/app.py#L9-L14",
+          "version": "repo-lines-v1:sha256:4f8d0e9263280da4cf3ee2f26b5d4255840f57358836e10dc01326610fd5655a:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzc0MTM0MjEyODdhNDM3ZTdhZWU1OTNlYTE4MzRhYTljYTNiOGRlMzRmZTFiOGY5ZTU0ZmZkYTU1OTNiN2I4YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmFmYmEwNTI3YzM5NTNjNGI2ZTBlNWI1NzM5YmE4MzYxMmY4MDUzYmNkYzk0NjY3MzAxOTNjZDFkNTkwYjQwOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjk1YjljNTRlYzFiMDhkY2UyYmIxNDM3MDkyZDgzNGViNjIxNWY1Y2QwMzEwMGYxYjU5NjkxOGY4NDVhOTliMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTQ2MzczMmM4NDcyYTFkNTEwZTkwN2RhMGNhY2I3YjQ2OTg1ZWJjMjE4Yjg3ZmI0OWU4NTViZmM0N2E0NjAyYSJ9"
+        },
+        {
+          "resource": "repo://pipeline/apps/interactive.py#L46-L52",
+          "version": "repo-lines-v1:sha256:22f4e2394cdd995065823e7db2cbc96f0c88f6f44ea244088df78570739693c9:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzc5YjZhYzQxN2Y4ZGJmNGMyMWY2ZWU2OGNjYjE4M2EzN2I3MmU3MjIwZWM4ZWM0ZTQ4MTBhYWQyYjM2NTY0MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWRkMzYzYzkyOWU4Y2VkZmU5Nzg0NjgwN2ZiMmViNTA4OWIwZTExNzY0NWQzNmMxMmJkOWY0NjE5ZTAyZDE2NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWE3MzMxMWJkYjI3MzJlZjFkMDUwM2Y0N2FlMWUyNjA4YTViYzIzMzk0OGY5NzNkNzU0NDA3NjdjMWVjMzJlNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDM3OTVlMGI3N2I0MjFkODgwYjgxNzk2YjhiYTIyODJkN2U4OTdmZTdiOGU1MzIyYjhjNjcyOWQ4OGUwNjljNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_23a7a64098ec4905ab73797633d5301a",
+      "statement": "Stage-specific options are supplied through a repeatable --flag KEY=VALUE parameter whose parser rejects a value lacking an equals sign as a BadParameter, and the parsed pairs are merged into the same flag dictionary as the standard options so a stage reads both uniformly from ctx.flags.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/apps/run.py#L42-L47",
+          "version": "repo-lines-v1:sha256:1cb916032613680cfcc29b69ac9d77dfaa7d1065c89053d04698dbb5be9faa80:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWQyMDE0ZmNhN2Q0NDM3NTQwYTk0MmM5ZDkwZjcwZDUwM2Q2YjI2YWI2NzM3Mjg0ZmU2Y2M2ZDZmYWI4NjhhYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2ZjZDMzYjdmODdiODdiMDljYTJiMjc3MzFlY2U2OGExMmE4MzFjYTZjZDYwY2RjMGQxMmM3NmZiMDYxY2U3NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTNlNzQzMjcwZjc5YjUyNjBkNDRlMzQwZWY1ZDhlNjljYTUwNmM2ZmY1ZjNkNDcwNTQ4OGQ4ZWM5NDc4N2U3YSJ9"
+        },
+        {
+          "resource": "repo://pipeline/apps/run.py#L88-L100",
+          "version": "repo-lines-v1:sha256:f818ce13ff9fd54aaaf23373eddf6e75e199bf7857ee67228128eef72fb4f458:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0ZjIwMGIxNDQ0ZTVkYTA4M2Y2MDM0MmM0YWMyNWEyMWU0MjYwNTY4ODJhZTVmNzEyOTgzMGYwYmM2YjNhZjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlZTBhNGFiOTc4ZDljNWRkMjYxYTE2MjdmYTFkNWIwNDRjYzliMzk3Yzk0MDBkNzQzOTgxMjc5NmZlZjgxM2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3MTY5ODY1M2NkMjc4YzJhOTg3MTU0NWI4NTIyNGQ3MThhNGYzYzA1M2FmMGE5M2YzYjljN2QyMDVkMmQxODAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU1ZjNiMTE3ZjFhOGEyOTgzNDgzNGRjMTgyNTc3NWY1MjE5YzUwNjQ4N2EyZWZhY2Y4OWViZDc0ZTcxMjVhMzAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_eb69b3e9af3a4506810294b43ec1077e",
+      "statement": "The run command translates an unknown stage name and a mode incompatibility into operator-facing messages exiting with status 2, the former pointing at pipeline list, rather than surfacing a traceback.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/apps/run.py#L115-L121",
+          "version": "repo-lines-v1:sha256:9fff5399a55ae98c02e12af6c2db39776fd16b462f6f4fd19f0231a09d38ee91:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTUxZWUzN2IyMWEwODgwMTE4OGVhN2UxOWVjOTBmMmMzOWU4OTM2NDM4OTMyZWEzOGQ1YThiMDQzODUyMGJjZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWNhYjNkOTAzN2NmMTc0ZjBlYWQ2MDk2NzQ1MWRjYWI5Nzc1Yjk4YjcyZTcwNDZiMjA1M2RmYzNhYjBiOGVkOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmNkZDljMGQ3ZDkxZTlmNzU0YzU4ZTczN2E0ZGM5OWE3YTU2YzI0NzI4MWQ4Y2JiZWVjNDUyZWJiNjUzNGM0MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2caad4e8452c46da9ae7c348c93843fa",
+      "statement": "The --dry-resolve flag prints each planned stage with its checkpoint status and the mode it would actually run in, then releases the lock and returns without executing anything.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/runner.py#L221-L229",
+          "version": "repo-lines-v1:sha256:f83cf64c407883b3bc110609d9e6721a4770ba8322fde06564d8b3249a1bc14e:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTk0MjY1OWE5YWYyMGE0OGQ3OGIxMjM3MTY0YTFkZjk1MGRjOGQ1ZDFlZjZkNDRkYzZjMzI4MjJkMjM4NTAyNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWU4OWNhZTYxNTg2ZGQ2ZDU5ZjFkMDQ4NTdhNzcwMDQ5OTgzYmY3ZDc0ZjE0OGViOTcxNjQ1MDE5OTVhZWYxYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTEzZDg3MTMxMGRhYzRmZjUxY2Q4MTkzYzY2OGNmZmRmMmQ1NDQ4ZWIwZWZkZjJkMWI0ZDQzOTI4ZTU4NDRhZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDFmNjhiZjhiYzZmNDdlZTM1Njc2MjBmYjRkNGYyOWMyOGM2MjM4MTBlOGI0ZjM1OWY3ZWU1Zjg1MDhiNzFjZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f9e10e48d0bd49f8b9d9abe01f24275c",
+      "statement": "The interactive wizard annotates each stage choice with its checkpoint outcome and date read from the state directory, and after selection reports which stages were auto-added as dependencies so the operator sees the true scope before confirming.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/apps/interactive.py#L20-L33",
+          "version": "repo-lines-v1:sha256:ef039db3da22ec0754b31debd4b94f0424b889780b0f3b026e2e5fa3ead22141:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE4NDNlMjViYmQ3MGNkMzM5NGYwYmY0OGI0MWYxOTYwY2Y3YmQzZThkNTRhZDY3YmIwMTRhYjdmMWViMDUxM2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiY2ZmMDNjZWIyN2U2ODg1NGUyMmIzMDNmNjMyMzVkMWEyZWQwNmNiZmJkY2IwNzk2YzFmYjJjM2QwZTE1ZGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBiNTZkZTRlZGU4MTEyNThjY2ZlMDg3MWNlNDQwZGNlN2Q0OGNjYmE5ZTRkYWQzNzQyNGM4OTYyYzQ5MGFjNWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQwOTY3NTE5ZjJkYThlMTRmNDIyZTFjNDY1YWI3ZTYwMDdiYTZlNGFjOWY3NjZkMDI5NDAwMDM1Mzc0MWMxMDEifQ"
+        },
+        {
+          "resource": "repo://pipeline/apps/interactive.py#L70-L74",
+          "version": "repo-lines-v1:sha256:cb579a97cb7f1d7b4856d7734b9b4b0bf5340bed26b43087c8444b51bb791256:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmQ2NGI3OTkyMDUxMmNjNzIxYzZhMzYxNmRiYjc4OWE3ZGVjZDJiZjc5MDQxNzk1YTQ1MWZhZjViMTc0Zjg3NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGI4MjQyM2ViZDBhZDIyYzNkMmIzMmVmZDhiMjVmNjc1NWFhYTNhM2RhMTYwMGRhZWRmNDU0Yzc1YzZhM2E3MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYThiZDkxYTQyYzExZWEzZjlmZDZiZTAxMjIyNmZmNjY5ZDdlMDE5YTVmZjhjMmQ4ZWEzMjA3MDI0MDg1ZGViMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmNiZjkxYzlhMWMyOTI4OGUxNDEyODZhYjAxNjRmZWJlODliMjUzOTU5MmUwNTEwNjQyOGMwYzFkMjU3Mzk2MiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_32083364580d4f28b1464e87c1e72d7f",
+      "statement": "The wizard offers only execution modes supported by every stage in the resolved plan, computed by intersecting their declared mode sets, and refuses to proceed when that intersection is empty — a stricter rule than the run command, which instead falls each stage back to its own first declared mode.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/apps/interactive.py#L36-L43",
+          "version": "repo-lines-v1:sha256:3ff75d77ec6533a8a8b21266f14b74ecda6717492be629b557a8e4aa477a24de:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTNjNWQ0OTQ1NDNhOTdmYzczMDFmMTEzYjA1YmM2ZWU2ZGU3MWM2MTQ2ZjVhNTI4MmNmYmJiZmYzNjI4NDc3NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDQ1YmY1ODFkZWE1NmMwNDJkYjAyZjdmNGI0YWE3MDJjNjkwNWU3OTdhNzVhNWYzNjlkODdmODQ4NmMyZDc0YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmM1NTI3NGVkOTY3ODdmNjRmOTgwMTFkYjJhODA3OGNmMTQ3ZDA5MDcxY2QxMjk0MWI1NDQwOGJjODViM2M3MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTNlNzQzMjcwZjc5YjUyNjBkNDRlMzQwZWY1ZDhlNjljYTUwNmM2ZmY1ZjNkNDcwNTQ4OGQ4ZWM5NDc4N2U3YSJ9"
+        },
+        {
+          "resource": "repo://pipeline/apps/interactive.py#L76-L81",
+          "version": "repo-lines-v1:sha256:cd1dbb4835f0b9c1670eeb3e7317721cf7ca5ba927db3814bd190aa0c2d6e5f3:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzdmZmM5YjFiMjBiZDc4NDY5ZWQzYTk5Y2I3NGYzYmIxNGFiYWQyZjgyYjg5ZTZkNWQwOWJmMzZhZmQyYzk5YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWFiYmZhOWZiOWZiODlmZWJjMGUwNDI5ODUyNDRlMmQwNzcyMmQ4Zjk0ZTM3NTAzODNhMDg4ZDliNGExZmNkMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWZmMTY2OTRmMTE0NGE5MmNjYTE5YTlhZWU5N2U3YTJhODlkMDU0YjIwZmJhYTk2YjExZGJlMWRjYmFkZGU5YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGJhYWEzMzE4ZTdmZTFmMGFmNjA4ZTllYjA0ODU4MDE2MjQ2Njg0Zjk1ZDMyYmMyZmFlN2MwNGE5ODZlODMzNyJ9"
+        },
+        {
+          "resource": "repo://pipeline/core/runner.py#L195-L202",
+          "version": "repo-lines-v1:sha256:b92cd456da3a22ae9883825cb7e959c08839e44de6557c5452b40c7c72faa9d6:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWNiMWNlMGQ0YjlhOTI0NGRmNzM3YzNkMzZiOTIzMDJhOTk1OTFhZjlkNzM0NGUxNGZjZjYxMjg3ZDE2NzQ1OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTkwOWE1M2E2MThkMDI4ZTFkMzAwMGMwYTdhYmNlZWNiZTVmYjM3ZjRlNTExZWZlNDY2NDNmYWQ2ZTY2ODcyZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTlhZGE5MTI0OTY4YmIzZjdjZDYxZDU1MWFlZjg4ZjM2NjM5NzVkYjA0MjdjZmJhYzFkMjhhYzgxYzhhNzk0YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWE4OWE4OGE2ODhkODZhMmUyYTFlMzNjNDZkZmJhNjdmN2ZjNjllZWMxM2MxZDZmNzE5NGI4YjQxZjY1MmRjOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a03da5d1220c4860bb9844c230de7ca4",
+      "statement": "The wizard prompts for a date window and worker count only when the resolved plan contains a stage that consumes them, and requires an explicit confirmation after printing the numbered plan with each stage's estimated duration.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/apps/interactive.py#L95-L120",
+          "version": "repo-lines-v1:sha256:4c216a970c38b3a50bd82795c2a6de53ebc6310423b736e5f88656cb8c7ca42b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5YjM5OTlkNmQzNDM2Mzg1ZWFhZWQxNDY1YTA3OWFmYTI1MzUyNTA2N2MwODMxZjliMTJmNDU0NWVkZjIyNWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiNWM4MjYzMmZjODJkNGIyYzM0MGY0MjU1OGJhM2RmYTMxYzc2NTVkZjZmY2MxNjhiNGZkY2U1N2ZhYzYwNDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ2YzQ4OGM1MzAzZjljN2E4OThmYjJhZDhhYzRhMDZlYzMwNGFlYjM2NGFhMGU0YjUxNDE5NGZlZDI2NTY4ZTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU5ODk4ODg2ODNiYzk4ZTIwZDQ1NjRjNDQ5ZjU3NTNlYTUzZTNiOWI5N2ZkOTI4NzU0NWU4MWRhN2VmMTIxMmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c78f3714e94d447da51ae87a892242c3",
+      "statement": "The clean stage deletes relationships in batches of five thousand and nodes in batches of ten thousand, looping until a batch returns zero, which keeps the deletion of a multi-million-element graph within transaction limits.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/clean.py#L30-L58",
+          "version": "repo-lines-v1:sha256:5ba0bd458c760e24072e47117b0d89a3d0e01a69bb48fdc486caea3a2a0f28c1:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5Zjk1NTI0ZmVkY2Y3YmU3ZjliZGYzY2VmMjc1Y2Q3ODg4ZTVlM2NiYWZiNTdiYmY2Y2Y0MjJhYjFhMGFkYjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2YjI3ZDQwYzdjMTYxYjE4ZmJjYmEyNWQzYmRhNTA5ZTU2NzlkMzhiNDBiYjI5ZTYyNjlmZTJhOTZkZDUyZTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc4MGFjZTJiOTNkNDA2OGU2MDNjYmYwYWQzNDc0ZWVkYTY1MzRmZjY2YzYyMTIyNTJiZDM4NDJmNjhhZGI5NDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZmMDE1YzRiMjNlZmZmZmNiMzk5YjI1MDc2N2M2YWM5ZWFkYzg3M2Y1M2YyYTI4OWI4ODQ2ZmE4ZDI4Y2JjM2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_62773507a56b48aa81a884e4d2c4f4cf",
+      "statement": "After deleting graph data, clean drops every constraint and every index except those of type LOOKUP, which Neo4j maintains itself.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/clean.py#L60-L74",
+          "version": "repo-lines-v1:sha256:5612ed84adb60f70841b8840dccda7c0c4c477edcd6773532d87141a749c655e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5OWMwOTc1MzgzNGFkMGQzZWY1Mjk5ZDc2MTc3ZDJjYjdhMGQ0NjdjOWY3ZDgzMjk5NWUxZGRjN2RlYzdhOWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4Yjk0OTM1MTVlMzc0NzM4NzAwMjc0YmE0ZmQ2YzUzNmI3YjE2MzJmMGRjYzNlZWMxZTQ2YzEyZTBlYWQxYzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBkNzRkNWVhNjdkNjA1OTBhMTZhMTVkOGQzMTY2NTY5NjNmZWUxNjhmMzJlYTQ3MTg1ZDAyZGEwNWRlMGJjZTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBhMGQ5NDc4NjhkODEwNjhmYjQ0YzA4MDljMDAwODZhMTk2Zjc4ZjZlM2IxNzNlZmJkZTE1M2JmNjdmYTc3MGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_03521b3871fd4075844fd9e7194d0f41",
+      "statement": "Interactive confirmation before destroying data exists only on the clean module's standalone main entry point, which requires a literal y unless --force is passed; invoked as a stage through pipeline run clean there is no prompt and deletion proceeds immediately.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/clean.py#L128-L149",
+          "version": "repo-lines-v1:sha256:2396403e54a1b60c9422cb44e468fefa8f17d78fff3e3e1e60150e1d5473a6d6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjViMzYyYjdjNmU3NDU3N2FkZTg1ZjFmZTc4OTUxMzVmNzRlZTUxYjYyYjc1MjFhMDAyNTI0ZTIzOWEyOWYxMmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAzMmU2OTIyNTE4NDY1ZGVlOTg3MGU3NjAxNjU0YWVkZWI4OThiODQ5ZmJmNmMzZjA0OGM4YzE5MmY3M2JmMGUifQ"
+        },
+        {
+          "resource": "repo://pipeline/stages/clean.py#L96-L125",
+          "version": "repo-lines-v1:sha256:40ea72cbee00d77e1bcef0bed36b4b0f8607ef7fedfd82e5587f1b665c784736:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3MGRhMDMyZmJmZGJkMWI0MjRlODE0YzIxMmFlNTg0ODRlNzZmNTdkYzU2ZGJmZDEzYmY4MDM3MzZkMzI0YjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjczNDQ0YzZhMGI4YjIwZmI4OTIzNzEzMjBmMGZiYjMwNTI0Mzk4MGYxYTBhYmYxNDEzZGYzMmJhZDEyMmJhMWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMxNTc4MmViMzUyYjRmMmU2NDUyMDgwMTIwZTM5NGY4MjdjYjYzODJjYWMxNDE5Y2Y1ODcyZWI0YTc4ZTM4MDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e484236f74ae4e0fb81c3e778ef33d67",
+      "statement": "The clean stage removes the emit directory tree in JSON modes and clears the database in neo4j mode, choosing between them on the resolved mode rather than on a flag.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/clean.py#L141-L149",
+          "version": "repo-lines-v1:sha256:52c0086f1bd730958eb7db9823918aecbbd365806d0856cf1305565e8ec5a472:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmY0ODg2MmFlNzA5M2JlMmE2MjNjOWEyMWMyYzRiZmE0YWVmOGMwYmYwMGNjOWU1ZjY1ZGNkMDcyYWViMmQ1YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWIwYWViOTZiZDBmZWMzNDc0NDIwMTU1Nzk0YjNkZTJhNzhmMmM4NzcyMmY0NjI0YTI5Mzk2NmEyMmVlYjZmYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDMyZTY5MjI1MTg0NjVkZWU5ODcwZTc2MDE2NTRhZWRlYjg5OGI4NDlmYmY2YzNmMDQ4YzhjMTkyZjczYmYwZSJ9"
+        },
+        {
+          "resource": "repo://pipeline/stages/clean.py#L87-L94",
+          "version": "repo-lines-v1:sha256:2528e14481acc8062b0fea9719d6a4608a639ca1cf067bfd74f0c20b380efff8:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjkyNjNhOTAzYjFlY2EyYTcyZmRjNzZlMzBjN2QyMzU1ZDc3YWMxODgzMzk1MzFiZmJhMjFiMTgwZWE3YjI5YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWQ3NTNhNGZmNzFlZDY3Y2I0NGU2YTEzM2RhMTg3ZWEwY2JjODQ3ODU0OTUyYzBmOTE5OGJjZGZhMzk1ZTU0MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODkzYmQ2NmUyYmI3MWYzYjhhOTI0MDY0YmJmN2IwN2M1OTAzYTc3M2ZhNGY4YzM1NDYwNjAzODY2NzFkM2E3MyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c74171571cb74e10ad89f53cb49e3819",
+      "statement": "All three operations-phase maintenance stages — clean, graph-health and resumo — declare can_skip_when_done as false, so they always re-examine current state rather than reusing a checkpoint.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/clean.py#L128-L138",
+          "version": "repo-lines-v1:sha256:78fe76279d0242149404f2f7a5032e455600037946b671499fa457ea286cf9f7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4YTY5M2IxOWY0MjUxOGMxYjFmZTFlMzJmZWMwNDY4M2JjN2I3MDQ2NDcwMzIyOTg4Y2I2ZTk5NzUyNjYwZmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjViMzYyYjdjNmU3NDU3N2FkZTg1ZjFmZTc4OTUxMzVmNzRlZTUxYjYyYjc1MjFhMDAyNTI0ZTIzOWEyOWYxMmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE2ODIzNGI2YmRjZWJmZmQ2YzQyMmRhM2ZmMmIzYjNhMTNjY2IzN2VhZWU4NDVmM2U5NzI5ZjFmNjc2YTgyOGIifQ"
+        },
+        {
+          "resource": "repo://pipeline/stages/graph_health.py#L163-L175",
+          "version": "repo-lines-v1:sha256:4ea11855b1e267d08259f2466250554a373ea11bae03abc7d31d811f55e44a7c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjOWZjMDEwYmQ2ZmZhM2JlY2ZkNTFhYWIxYzJlNzVhOWRiZTIyNzhkNGY2NjljYjkyOWI1MzRiMTE0N2ZlMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZTE3OTFjNjViNWE4MjJhY2RjNGVkMjAzZGQ2Y2E2NjhiNjAyZDNhNDMyMmRmZWJmZTUxN2VlODRjYmUxZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYwYjg2YjI2MjIxYTcyYTEwMTVhODk5OWRjZWRiMzBjYzQxOTQxZTZlYWRiZTliYjg1MDIzMDY0ODE3ZGFhMTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVlYmE1MDE5OWE2OGE5M2E3ZTM0NjY5MWU3MGZlYmE3ZGUwNGU3YzBjZTY3ODkzZjJiZWNhNmU0ZDgzYjg5YjcifQ"
+        },
+        {
+          "resource": "repo://pipeline/stages/resumo.py#L82-L93",
+          "version": "repo-lines-v1:sha256:c8c20f90c21aa10d1a2f94a158d9aa8f375dee0a3884e9df33793abdd34ee339:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjOWZjMDEwYmQ2ZmZhM2JlY2ZkNTFhYWIxYzJlNzVhOWRiZTIyNzhkNGY2NjljYjkyOWI1MzRiMTE0N2ZlMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZTE3OTFjNjViNWE4MjJhY2RjNGVkMjAzZGQ2Y2E2NjhiNjAyZDNhNDMyMmRmZWJmZTUxN2VlODRjYmUxZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJmZjU4ZmE3MDAzZDc0MWI1OTRiNDYyNjc5ZTgwNjUzZmI1NzY2MWU2MjNmOTRhMDE2OTI5ZTM3NTJkZGNmYWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQwNjNkNjU5MmI3OWQxOGQ3ZTExODM2NWY1N2JiNTQ3OWM5NzhlNTQ2OTNlNTVmYTdjZWQ4OGVhYjRkODQwNTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_caa7b798395d4335ac8b0ea9e6e4351d",
+      "statement": "graph-health is a read-only connectivity report over isolated nodes that soft-depends on timeline, the stage that builds the flow edges it inspects.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/graph_health.py#L163-L179",
+          "version": "repo-lines-v1:sha256:30f6fceb1fa2ad5b08f69e5ffa0a644292b29c465a7d4732d4c847b0ce35342b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjOWZjMDEwYmQ2ZmZhM2JlY2ZkNTFhYWIxYzJlNzVhOWRiZTIyNzhkNGY2NjljYjkyOWI1MzRiMTE0N2ZlMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5NGYyZTljMjM3NzU1NmVkYjEzMWQyZWJhNjRlNGE3NWE3ZDdkY2FiOTMxY2I2NjkwNWQ2MTFlZGU3ZmU2ZWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYwYjg2YjI2MjIxYTcyYTEwMTVhODk5OWRjZWRiMzBjYzQxOTQxZTZlYWRiZTliYjg1MDIzMDY0ODE3ZGFhMTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIxOTRkMGQzMGI1ZDU5NzNlZTYwOTQ0NmU4OTk2OGNhODFiMTk2NzQ2MjBkMTBjYTgyODFjNmZjNzRlYjJmMzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0ac285b9e2bb4f7d8054d52b440977a5",
+      "statement": "The resumo stage supports neo4j, json-emit and json-replay modes, offering a reduced statistics subset when reading from a JSON emit directory rather than a live database.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/resumo.py#L82-L98",
+          "version": "repo-lines-v1:sha256:326187c202d3a7a5f14440ed5b6e7f0fdd0a4f127797a91d060939d000c761de:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjOWZjMDEwYmQ2ZmZhM2JlY2ZkNTFhYWIxYzJlNzVhOWRiZTIyNzhkNGY2NjljYjkyOWI1MzRiMTE0N2ZlMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3MWU1OGE4YmZkMjUxMGE5ZWZmM2U5ZjUyZWUxMzY0MGM0NDNmNTExOTcxYjI5ZDhmZjM3YTg1OTIwZTU2Y2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJmZjU4ZmE3MDAzZDc0MWI1OTRiNDYyNjc5ZTgwNjUzZmI1NzY2MWU2MjNmOTRhMDE2OTI5ZTM3NTJkZGNmYWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1YTE4YzNiMmE0OTQyNGNmYTcyOWJlZDM4Y2Q5MDgwNjMwZTA4Yzk5ZGZkMmJlMzFjNDM4NmViMDlhOGM1MzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_45d1826a9554458aa67e1763048a9ece",
+      "statement": "The compose pipeline service is gated behind a runner profile so it does not start with docker compose up, waits for the database to report healthy rather than merely started, overrides the Neo4j URI to the compose network name, and bind-mounts artifact directories and the source tree.",
+      "evidence": [
+        {
+          "resource": "repo://docker-compose.yml#L31-L52",
+          "version": "repo-lines-v1:sha256:1dd7b7e43e24d89e2a92105fe66f448ff98c30bd0b0fb2b4b63a49e5c307ff6a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhjMjA4ZThiOWZiMDc0ZTc0YTA1MGM0NTM5NGM1MmVhMTFkOTBiY2E0Njk5M2EzNzNkY2VhYTZlMTViNzA0ZjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0ZjRiMmEyZTRjNDQyOTlkMmQwZGFjMTZmMzM3ZDNlNDVmNmNiZjEyOTBjNWY0NmY5M2VlYmJiNDY1N2M0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNiZjUwNTAyYTcxMDNiNmQ5OTc4MDA0OGZiODRjMGZmMWY4OGFjYzZmMTYxYmYyZmIxZWQ2NzA1MTAyN2ZjMTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU2YjFjZGZlMjYzZjIxMDIzYzQ3MmEzOTA0ODA2MzU1ZjM3NjNlOWZiOWE3MjIxNDBiNjI5YjEzYzY1NWY3YWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_150253c7723045209df1bc9a6e42f21e",
+      "statement": "The Neo4j service's heap and page-cache sizes are set explicitly and annotated with the bulk activity load they were sized for, together with guidance to lower them on smaller hosts and never exceed host memory.",
+      "evidence": [
+        {
+          "resource": "repo://docker-compose.yml#L14-L20",
+          "version": "repo-lines-v1:sha256:f94cc04bb1968de72592e63bfb20809012e7f36241586112799b15ba390dfa38:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWM3YTRiOTZjY2Q2Y2RhZThhMWJlYzEyMDk0NWE4MTExM2Q0YzQ0Nzg5ZGRkYjhiZjY4YjZkYjYzNjY0ZWJjNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjdlYmE2MjdiMTgxZGI3OWM4MmYxOGQ3Nzg4NDY3MTA3MjM2MDhlMTBmYjQ5OTFmMWQ5N2RiOWZkYzMyYWZiNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDI5NDIzMjg3NTBkZTM2M2EzMWFlMmJkNTY5MjhlNmY2Njc4NWE4YTY1YWIwN2QxZWE5YjA0MWVkZTJlNTBmMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTcyYjJmZDVhYjVkYmJiMzhlNzVlMjUyN2IxYTFiNGYyMzNiMWYyZTY5ZDgzMTcxNTZlMTRiNTY2ZjcwNDAyNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9bb164fcc42044a5959528442ce7fb66",
+      "statement": "The image installs poppler-utils for PDF rasterisation and build-essential for packages that fall back to source builds, copies requirements before source so the dependency layer survives code changes, and entrypoints on python -m pipeline with --help as the default command.",
+      "evidence": [
+        {
+          "resource": "repo://Dockerfile",
+          "version": "repo-file-v1:sha256:a46fa122d2929496bc0dc0bc5e5508a25468ba00dcf3a97c5b80ca0e9df5aa3c"
+        }
+      ]
+    },
+    {
+      "id": "claim_e7abbc4d42a34307b6930782503ed277",
+      "statement": "Only two stages benefit from an accelerator: embed on its local sentence-transformers path, which must be selected explicitly because the default remote embeddings backend performs no local compute, and ner-extract running GLiNER2; both resolve their device through the shared device-selection module at load time.",
+      "evidence": [
+        {
+          "resource": "repo://docs/operations/gpu-acceleration.md#L1-L25",
+          "version": "repo-lines-v1:sha256:5bc89e4b7ba78e0dd6e9cfc38879fffc85d0e46d2c0c1c2f1bbdba61df2d0d59:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhM2VmMmM3NDhjYThiOWZmNzk0NWZmMDBhYTcwM2NiY2RlNTQ0N2IzMjBkYmZiNTYxYmEyOGMzYWY2YTMwNzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxMDdjZDQ0Y2M0MzQ3ZDgyNDk0MTU5Nzc0N2Q3YzE0NWYwZDE3MWU5ZGY5MmFjYzkyZTUzMjczZWY2ZGZhZWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI3OTI0NjU4YWIzYjExMmEyNGI0NzMyMWUwY2UwODU1YzgxYTIwZTliYTNjYTUyMDI1NTljNGE5MGNkODIyODQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_eb182cba606c4daf8c155c0049e8660c",
+      "statement": "The ner-extract stage does not trust load-time device placement: it verifies the model parameters actually landed on the selected device and falls back to an explicit move and then to CPU when they did not.",
+      "evidence": [
+        {
+          "resource": "repo://docs/operations/gpu-acceleration.md#L20-L24",
+          "version": "repo-lines-v1:sha256:c1d1a006a914818753c8378435b81e08bed2fb843998b5878b61053929dcf968:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTM5MGQyNjVhZWViNmY0MTNhM2EwNGQyMzlhOTEzYTg0YjhjYTY4NWEyNjg3YTA3YTlkOWJmZDE0MDljOWEwMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2RhMDI2ZjQxMjJlNTIwNjk5ZjcyN2ZhNGI3ZmY0NDlmMTU5ZmM0YTk0MjVlYWI2MDM4YzAzN2IyNmMzMTliZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTQ0ODJlNWUyNGUxNzliZDQyMGYxNzE4NmRmMGUyOWM2OTg0ZGI1MTRmMzhmM2E3OTIwYTAwMDFhYzg3YTMzZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzg4ODY4Y2I0MzA4NzJhNjJhOGE1NmI4YTJjOTNiZTE1MTdiMzkxZDU4YmZmOTgwN2I4YWY3MzhhOTA3Yjk1NSJ9"
+        },
+        {
+          "resource": "repo://pipeline/stages/ner_extract.py",
+          "version": "repo-file-v1:sha256:b9f090750b4598598d75072870bff87c3ab8b2189c455307151b7405c9e02183"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.0",
+    "at": "2026-09-10T12:46:32.229Z"
+  }
+}

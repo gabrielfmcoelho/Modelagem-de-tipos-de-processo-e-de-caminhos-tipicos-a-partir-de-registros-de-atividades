@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:772bb037772c4bf1a4f9e21ff4558affeaa985334e9303c0ebf0220da77d0901",
+  "claims": [
+    {
+      "id": "claim_60d0aea2e79743bb850eb903cef4eb15",
+      "statement": "Settings.from_env loads a .env file at most once per process, probing the current working directory first and then the repository root, stopping at the first file found and loading it with override=False so real environment variables take precedence over file values.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/config.py#L20-L31",
+          "version": "repo-lines-v1:sha256:bb66051990aba49d396e6613baf8be539832b48ee6eed0e2f73b99c8b8d3835a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwYTM2N2M0ODc5NjQ3ODJiYzVhMWNjMWI1NjZjNzRkZWMwOTE1YjUyOTZhNGYwZjA1ZDViMjE2NTVmMzczOWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlN2JjZDM2ZWY1M2I0NDUyM2U2NWU5OGQxOTQ0OTkzZTBmZjE3NDZmNTUzNmMxYTUxMTc0NmYzZTAxZTc1NmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg1NDEyNzMwOWZkZTJiZWUxOWQzODY1MWRkOWU5ZmJiZmQzM2E5MGM2Yjc1ODk4NjY4MzM3N2U1YmNjNzUyOWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjliNmRhYjUxMjNjOTJiMmIzNTA1YThlMzhkZGNkY2FhMWU4NGI2MzVlOTMxNThiNWNiOTk0NGFiNzJlMjViNDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a03c7c12db8048698fb81715425555cd",
+      "statement": "The _env helper treats an empty-string environment variable identically to an unset one and returns the dataclass default, so a blank assignment such as TRINO_HOST= behaves as an omitted setting rather than configuring an empty value.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/config.py#L34-L44",
+          "version": "repo-lines-v1:sha256:5a0361d50a39e3fb428fadc19101e67d08ce0ce332a9099f0bb6fe994bbf9da6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyYzU1NzBlMGZjNzEyMGRhODNhMTJhOWY0ODNkOWRlZTMxMjkwYmMzNTUzZjZkYjBlOWNhMDAwYjU1OTBkYWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM2NDJjNGUxMDRhMmYxZGQ0YmI4MmE1Nzk5NTRlMTIwYjFjOTEzY2IzOTljMDE4OTljZjhhMzVhN2UyNmQ2ZjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYzNzMyYWExOGE2OGViODBiZWQzODU1MzA0NmJiMzgxZTg1MTQzMWUzZmEwODdmNDMzYjNiMjYxNmRjM2RjOGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZjMWYwMmZkN2VjMWQ0NjJjMGNiODE4Yjk0OGZmZTRmNzE1YjJjMmM0MzI2MzBjMjMyZGZlMzRkNDI3NDNmYTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_52e51eb58e1d4cbe9c98b116ea01fb6f",
+      "statement": "Environment booleans and stage flag booleans are parsed by different vocabularies: config._env accepts {1, true, yes, on} while _stage_base.truthy additionally accepts 'y' and the Portuguese 'sim'.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/_stage_base.py#L114-L118",
+          "version": "repo-lines-v1:sha256:8f87ab46381a60de5b9770711fa3a8052f754fc8b5a153a0b50daba796b7a0a9:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjBlYjVhZmJlMTg1NjkyODIzMzYzNWM4YjE1YzE0ZGM1OGVhMTE2NWE2YTgzNmVmMzkxOTI0M2M4YjMxMTg5YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDFmMTk0NWNiYTgyN2NiM2YzYjIxMTE0NTdhYWE5Y2NhODMxM2ViODYzMmExNzg5MDhjZWJhYmRiMjgxNzQ2OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzdhOGU4NjhmNjBiNzY2OTExYzVhODZlY2E4ZDQ5MGI5NTkyNGM0OTMyN2I5YmNhMzYxNTQ4ZWM2MTE0MmMwOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmRlZTZhZDkwZDgzODUyMjRiMjFlMDBkNDY4OTQ0ZWM4YWUxZTA4ZTYwN2RhZDIzM2QwZmY1MTgzYjYyZWY2YiJ9"
+        },
+        {
+          "resource": "repo://pipeline/core/config.py#L42-L43",
+          "version": "repo-lines-v1:sha256:b90a7b94bfb9b4312b706a6aae2c4701e75299075c593bf8e9bd4a8cd5421aad:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzlhM2I3ZDVjNmZmZDQ0Mzk0MmMwZjhlMzYyNDRkODliYzY2NWIyZDkxYTYyZGVhMTk3ZGE0ZDhkN2RjMjhmMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGM5MGM0OTYyYTdhYjMyNzFlZjIwZDgzNWRiM2ZlMzMwYzBmMTkxYzgzNmI2ZDI2Y2M5YjczYThhYTE5YTAwOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGNhNmJiYjRhMmY5Yjc4OTMyNzZmNWVjMzJhMTNmYTM3NmU3OTRkMDQyMGI2YWNjYTI3OTQ1MmQ4OTI0NzM1OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjA5YjFjOGIyYjVkMGQ4NWQzOWEyMTYwY2Y3NDlkZTAwMGVhZDIzNDY2MGU0NjRjMTJiMzllMzU3NTUzZTYwZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_58ecfcb73e9e485e8754f2df7b3ef7e3",
+      "statement": "Settings.overlay ignores overrides whose value is None, so an unsupplied command-line flag cannot blank out a value already resolved from the environment.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/cli.py#L31-L43",
+          "version": "repo-lines-v1:sha256:70446120d4fd78831e21135497801925c1dc7ba9b1af116ba229fb5e8f29b11a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk4NjQ0NzkxYTJkZjY2NzU3MDg1NDU3ODg0YWZmZDk2MzM1NmIxOWYwZTRkNWFmMGM5OGYwZDA2OTg5Y2I1YjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg1YzgzOWFjZmNlOWRjNWIxMzE5MjdkZTQwZmI4MDdkMGMzNGM0MzE4ODJkMzJmMWZiMmU0ZDMwZTZkMWIyNWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://pipeline/core/config.py#L134-L143",
+          "version": "repo-lines-v1:sha256:0b6965d59bd622e205b7203727a40c902200977e76ae0f621011b0d751ba2633:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4NzI2OTA4YTYyNzE4OGZjYjdkYmUwNjhkNjBjNGZkYmIyNjEwYmViZGRjOWI1YWFjMWZjOWMwYzFiNzRhZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhjOGI5OGFkMjg0MTZjNDU1MDQyYTJlOTI3OTJkNzRjMjE2Mjc3MjFiY2M4OWQ2MzE0MjllNGU4Yjc0MTRiODgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM5NzBlMDgzMDFjODZmZGY2ZDViNGYzYjRjNDYyMWU2N2ZiNWRhOWE4MmE3N2Q5MTk3ZGNhYTFiNzY1MDhhZjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhhNmUwZWViMjA4ODE1NmVmMTMxZDkwM2JjNGM1N2FjZGI4MmMyY2E4MTNkYzBkMjg0ZDU3ZDhiOTNiZDBjNGIifQ"
+        },
+        {
+          "resource": "repo://pipeline/tests/test_config.py#L8-L13",
+          "version": "repo-lines-v1:sha256:91d69d3b2bbfb7846a270bfdeb42d00a150ab8fc7bbb47716bb5042092fb68b0:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODJmMjRmNGMzMmYwZjIzMTQ3NDJiOTRmMzFiNzRlMjljZDNmNGRlYThiNGYxOGE4ODc5M2MwMDk5ZTAzMTFkMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmJiZmZhYzQyMjA2MDQ1ZmQ1NDc0OTU2OWM1MzEwZjQ3ZGFkZjhhMGZjOTRlMDljZjNiMWU2NjYxMTBhYzMyYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2U5YzBkNzdiYzE2NDIzMjczMTJkNWQ5MTA1OTlhZjJiNjc5YzdjNTczZGQ1ZDlhZjAzZmU0ZGExYzJjOGNmYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjE5MzE4OTg0OTAzNzM4MmQ3MjgxMTQxM2Y0MjVlOTljODZkMWNlMTdiZDU4NDdiMzgyM2MwMzI4M2YxNGQyMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_53aa9cc4f9314fc1bf3955f62fdfc1ce",
+      "statement": "Settings.overlay routes any key that is not a declared dataclass field into the extra dictionary instead of raising, allowing ad-hoc values to pass through without widening Settings.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/config.py#L138-L141",
+          "version": "repo-lines-v1:sha256:e4083b2dfbd9b90f715aee2d3ca3d88a29aa29ea0d189bd033759a4eed9e46b5:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWQ4YTllOWMzMjUyODIwYzY1YTgxNjUyMGI4ZGI0OTMyMjgwODQ5ZWM4YzdkMmViNjI3MmFmZGZlYmUwNTljMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWQ4YTllOWMzMjUyODIwYzY1YTgxNjUyMGI4ZGI0OTMyMjgwODQ5ZWM4YzdkMmViNjI3MmFmZGZlYmUwNTljMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDhlZDZjYzEwZGNiNzQyODBkZjdkZWE0NDVjZTQ1NTU1MzVhYzRjZGNmYmQ0MzBlZWJkZWVlZWRjMzg1MWJlMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWQ0MzI3Mjc3NmFjNjFiMjU3OTZjMGQwNzVhOTJiYjgyMTY2M2Y1OTcwZjQ3ZGI4YTFhMTA0NTZjN2I5YjljMiJ9"
+        },
+        {
+          "resource": "repo://pipeline/tests/test_config.py#L16-L18",
+          "version": "repo-lines-v1:sha256:cd1b0d25fb654df65a60c8a89cb50e40ef22569fbe319624329bf2b6a134fb79:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGI2ZjRlNWIzNjhhNDdhNTE3YmRkM2M0NzM2Y2NmMjk1MmFiNzExMzNkMTJlN2M5N2QxNzA0NmZhYzkwOWFkZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmM4NGY0ZjcyMWYwOThiZWFhMzMyMjk0NmZkZDQ5YmVkYjk2ZTZiZjNkOWNkZWIzNzA4OGMwZTg0ZmYyMzVjNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzhiOGRlZGZjYTM1NDdlMzJlMjc4M2Q4NjhlZDg4MWZhMjQ4MTU4YmM1NGRkYzc4MWRjNGYxOTAzMzYxNDE3ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzdiYzUwZjhjNWM3OWNmMWZiNTg4ODBiODhlZDBkODM2ZDU5MWM1NTg5YWI1Y2U0NTY1Nzk0OGIwMzcxYTg3MCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a6eb78caff864ded9da5c54379532f23",
+      "statement": "Settings performs no validation at construction time; credentials are checked only by explicit require_neo4j and require_trino preconditions, which lets filesystem-only stages run in a process with no database credentials configured.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/config.py#L146-L163",
+          "version": "repo-lines-v1:sha256:7217fea9bc8dbebed76410beb444a50ce77adbebd9c546f3bddf94b6ad2e0985:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzNmFmNDM3MDJlM2Y5MjM0NDMwMWQ3ZGUwZGRmOGFjOGJjOTNkMzk3YzRlYWQ4ZTNkMTRlZmM0Yzc4ZmM3MTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MDMyZTk2NGQwOTMyMzUxZTVkMTg1MjY5MjgxYjE3MWEzYTA5YjA4YjI4NmU2NjFlYTQ3MDMyM2M4MmViNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBhOThmNjllMWRkMWJjYjc3ODM1NzQzYzZiNjdjZjY4Zjg1YTI2MjU0NmQ2ZTM3N2Q0Mzg3NDdkZjg5YmRjODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIifQ"
+        },
+        {
+          "resource": "repo://pipeline/tests/test_config.py#L21-L38",
+          "version": "repo-lines-v1:sha256:3828e936e5c03de8102a744edad85a52676a93329436ec743b9a2b127019f422:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwZDU4ZWY2ODg5MGU5NzliMTY4NDFmZWIxYzVjNDRhY2VlNzM1NWFkZjA1MmM5OTMzMzMwNTNmODJkNDBkYmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0ZjlkYmFlOWE1NDM3NTI0YTVhNTBlNGMwNGRkYTUyZDMxNjhjMjZlNzEwNGM3YzgyMWIxMTYwNzliZjEzMzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIyODQ3YjE1ZDNmNDkxYmMwNzc3NWMwNTAzYWIzMWE5NmRiNjRhMmZiZjJjZDlhZWEwMGRkNDljODMwZTMzMTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVlMTg4OWY5M2U2OTEyZWU2NWVjMjkzOTU0OWRlY2Y5YWQ1MDZhZTgwNDA1YTJkMzE4YWQ5NjYxODhlMzUxNWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_513eabc9b4bc44f88153af42ecbb49b9",
+      "statement": "require_trino collects every missing Trino setting and reports them in a single ConfigError message rather than failing on the first missing field.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/config.py#L153-L163",
+          "version": "repo-lines-v1:sha256:699a5c6c141f8078730f84d4f00d12b155d464b95c3d02fbecd64071f78510ef:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1ZjA5ZmU0YWQ3MTI0NmFlZTFiMGE4NGUzNDc3OGRiZWE5ZTJhZGM3MDYxNzUxMmUyNDI5ZWVkNDYzMTY0ZDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MDMyZTk2NGQwOTMyMzUxZTVkMTg1MjY5MjgxYjE3MWEzYTA5YjA4YjI4NmU2NjFlYTQ3MDMyM2M4MmViNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcxZGY1MGE1ZTMzZDg4NGY0ZTExMDVkNGYyOWFjZGYxZjZmYTUzNzgwOWI3YTQ2NTg1MDEyNWEyZTM2OTc5YzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a418659701b04b0a8f5ec5d4046b4891",
+      "statement": "In neo4j mode the runner converts a ConfigError raised while building the driver into IncompatibleModeError, whereas in the JSON modes the same ConfigError is caught and only logged, so a missing credential is a mode failure only where a live database is actually required.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/runner.py#L107-L144",
+          "version": "repo-lines-v1:sha256:5a75a8573104574ee1d9fd04452e851df2f240fcbd21e004c28aad621993ba83:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzZGZmMDQyZjVhY2E4ZjVkMTk3MTQzZGY0NGI5OWQwN2UyNTgyNjgxYWI4ODllYTEzMzU2Yzg1OWNjNThiMGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJjMmYxNDgyMGYwYTY0YWExNzM2MmY1ZTNlMjlkNzIxMDA4N2VlZDliYmIzOTI4NmE2ZWU0NGRkM2NkMzY3YjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMxZDY0ZGYzZDcxYTEyMzVkOWVhZGFiMDhjYjhlMGJiMGI2YjhkNTU4MjYwMDA5YTFlY2ZmNTA2NTUwODkwNTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fff78f00c4494cbcbe487137f5eae6c4",
+      "statement": "Settings.__post_init__ normalises openai_base_url by stripping a trailing slash and appending /v1 when absent, so the model host may be configured with or without the version segment.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/config.py#L90-L93",
+          "version": "repo-lines-v1:sha256:fefb6887cc8bb3938f8419c3af99e8bf22c58026c453efe2c056000d712a41fc:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmZlNDc3MzAxN2NlMjMzMjliZWZmYWNjY2YwZjlkYWNlYTU2YTZiZjA2ZjE2YjI3N2Y0YmRmMTU3M2I4YzFiNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDU1NWE4NDIxZDk4OGFkNzk5NWFhOWVjMjIxNTA0ZThlMGRhOWE4MGNiMzFmZmZmODcwODQxYTA5OTg5ZWU3NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmMxY2MxMzIxOTE5ZTM3NWJiZThhZjk5NDFiMzFiYjRmOTUwODM5OTMxNzg4MWM2MmUzNDExZTJjMWRhZDMwNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmVjYzBkYjYzZThlYzc5MzVlMzcxYzM4NTg2NGY1OGJlZTA4OGFjZjMxN2ZiMmU5ZmY3MTliNjJjMmZjMTMyNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8c52bd78faec4f458df655efc851caed",
+      "statement": "select_device degrades rather than fails: an explicitly requested cuda, xpu or mps accelerator that is unavailable logs a warning and returns cpu, and the default 'auto' probes CUDA, then XPU, then MPS, then CPU.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/devices.py#L57-L88",
+          "version": "repo-lines-v1:sha256:42792f4a0e42e41bb20dd0d4a8859095dff57395246a80e1f138da977f5662e9:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhOWZjNTk4MjQ3NmJjNWFjYjAxNmQzZTkzNmJkZGYwOWRiY2ViZDNkYzA2OGZjYzg2NzI2NzljYmQ2OTM3NjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3NTBkMTJhNDUxM2I0ZWU3NjczNDc2NGIyZTQyNGE2ODE2ZDVlMzBhY2NjM2RmNzNmMTMzOGQ2NGQ2Njk2YmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkxMDhlYmE5ZGIyM2U3NWIzZmYzYTJiMGRhNzBlOTJmZWExMTdhZmVjZDlhYWZiYjQ0MTc4NDk3YjZiOGQ4ODMifQ"
+        },
+        {
+          "resource": "repo://pipeline/tests/test_devices.py#L26-L37",
+          "version": "repo-lines-v1:sha256:0e77ea29da3c557607497cef44a36c5bd4de9987e33d2f39c5811ee1e38f0c38:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZlMjljM2U5ZDc5ZmQ1ZTRjYTQ2OWNlMWMyMGY3Yzk4Y2MwOTVjZDkyZGQwZjk5ODY3NjJiYzhiM2ZlMWExMmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmYmI0NmMyZDNjOWEwOGVlY2Q0ZjE4ZWJkNGY2NTg2NTBhYzk2NDUxOGMyNjUyNDdmZDFjYmFjNTMzYTIwM2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZmMzQyMzdiYzFlZjZhMjA5MjAwNjVkZjZkYjgxZTI2MzZiMmRjMTFlZDYzMTNmYTE2M2QyNjgxZWNjN2JkNDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFiYjk4MGE5NWU4MzdmMjY2Y2JjZjM0ODBiM2RiMjM5ZWU3OTExOWQxY2YwMjljYjlkOTUxZDNmNjBiNzcwNDEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e192e290a5df4e8db9e1148fa48f456d",
+      "statement": "Device availability probing catches the RuntimeError raised when torch is not installed and reports the accelerator as unavailable, so a missing torch dependency surfaces as 'no accelerator' rather than an import failure.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/devices.py#L131-L138",
+          "version": "repo-lines-v1:sha256:46bc9a9183c42eb9b4592de049b1cf2f20d9084827ea7ea159ece33405588282:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWNlYmMzMjIwNGZkNTA2OTU5N2QxODQxMGViMmU2ODYxMmRlZWE0N2ViYmIxNjYwMDZjZjc2YmU2YWQ3ZGZhNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTY5ZDk2MmQzOTAwYTAyYzBiMDJkZDY1NWM3NzE5ZWQ1ZjQ0MjI0ZDdiOGVlYzk2MDRjMTkyOGE3Mzk4MDQ4NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWFiYTliY2RmYjNlOGMxZGM3M2IxNTAxMmZhNzZiMjY0MWQxYzY0OWU3MDM0MDcwYjQ2NmM5NDlhOTZiMGNjYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjQyYzIwNzI0Yjg3NTFjYmM3ZWIzYWU2ZjBkZTM1NGI1ODZiNDc1YWI5ZTU1NzYwYjdhYTMxMGQ4Y2Y4YWVmNyJ9"
+        },
+        {
+          "resource": "repo://pipeline/core/devices.py#L17-L54",
+          "version": "repo-lines-v1:sha256:f046ca930b80a9c05a58290fbea186bcf769b8c2744c1b0779c0da86b91cccd1:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxNTc1NDk4MzNjYjg2NjI4M2Q2MmFlMTYxNTRiMzdjZTZmZWRhYTEzMWE5ZDZjMjQ2NDBiNGZjN2YwZjlmNjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ3ZjM2MmZjMDRlNGJhYTE0MzU5NTljN2QwY2M4ZTlkMDdlYjYzZDQ1ODQ2YzRhMjdiZjY0MzQ3ZDJhOWU5ZmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg3ZmIzZjFmMWE5NjM1YTk3ZDUyMjRiYWMxZWI3OGI5ZTVlMzQ5ZWI2YjZjMGZjMjkyMTc5ZTE5NDY4MTEyY2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cc08d898f9d94d0fb9808d3a82a4e141",
+      "statement": "autocast_for yields without entering torch autocast when the device is neither cuda nor xpu and when the configured dtype is full precision, so callers may wrap model code unconditionally.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/devices.py#L111-L128",
+          "version": "repo-lines-v1:sha256:a9d07ecac37ef5046cc3497a96880c6577fe39fce4cbb37c934e78a31830b1a5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmNzI5ZWU3MjczMDVjMTI1NjAzOWZkNWRlYjc4Zjc3ZTE5N2FiNGE0ODA2MTVmMWYwNmI3YjM3ZTVhNTQ1OWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJiNDQ2MGRiOTA0NDY3Y2U1NWRhMDZlYTU3YTY4YjFhN2QzMDllNzMwMzBiMDE5MGVhZDQ3NTcwZjk3NmYxNTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFjZDljMzQ2OTQyOTZkYjYzODQ5ZmZkMTIwZGYzZDYxMWQxZGY2ODU2YmUzYzM4ODI4MGQ4ODQ0YWM2NjY0ZjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5ZDhkMDI1NDAxMzM1ZWFlYWJjNzkxNmVlOTMyMWFjNjZhN2IwOTFjNGRmNjVhNWQ1ODYzY2JlYjQyNzViMTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c0fb6ade77064eb89a66f52cb2f1cac0",
+      "statement": "select_dtype falls back to bfloat16 with a warning when the configured dtype string is not in its alias mapping.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/devices.py#L91-L108",
+          "version": "repo-lines-v1:sha256:2fc5f8f4d932ac27b461c76a5e7180ff8d7347a61b67f4c52b93e4d7d9178aa2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjMjlhYWUyMjU4MDVlNTNmOWVhNTMwYWIwN2M3NGMxM2IwZmZiYWQ2MDUzZjJjMTAyMTY4OTA4MmEwMzE0YzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNjNzUyYzIxYTI2YWYxNTU4MDljNTA2MjQ3ZjFlZjA0ZjYzNGYzYWJhOWZjNTkxN2QxMDA5MmVmOTY5ZGVkOTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIxMTE5Yzg5Y2Q2Y2FkOTQ1YTgzYmU4NGQ1ZTZjNTgwYWVmNjJkZDQ2YjM4Njk0NDQ1NjE2MDBkODM2ZmYzNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFmNmYyMzA3OGNiNWEwMjYxNjMxN2Y2ZmQzMTM3MjM2NjBkMWE3N2FhMDMzNjM4N2Q1M2VjMmIyODY1MDQ0NjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6731bf7fdd224066bf6ae7ce7fe70935",
+      "statement": "pipeline/core/deployment.py centralises the deploying institution's identity as PIPELINE_ORGAO_* environment-overridable constants, making redeployment for a different administration a configuration change rather than a code edit.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/deployment.py",
+          "version": "repo-file-v1:sha256:11fc4d7fcdaf9d5d2f41b74975b9320e5453752e2474f42cd5924a0ba3859bc3"
+        }
+      ]
+    },
+    {
+      "id": "claim_da54792a7bd341559d154ef58140c480",
+      "statement": "The deployment identity constants are consumed across the model and stage layers, including NER prompt exemplars, document parsers, cluster naming and the CLI help text, which is why institution-specific strings do not appear inline in those modules.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/app.py#L6-L14",
+          "version": "repo-lines-v1:sha256:4c65b12b154cfb0da7165a2c8647eb9b369bc4fb586679e35d3f924aaff883e0:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTY0MjE0MjdlMmZhNWFmNmRiMjkxODM2MGZiMWM2ZmU5ODIxYjllMjA2ZjZmYjc3Yzc3MDU3YmYxNTc5MDc2NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmFmYmEwNTI3YzM5NTNjNGI2ZTBlNWI1NzM5YmE4MzYxMmY4MDUzYmNkYzk0NjY3MzAxOTNjZDFkNTkwYjQwOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODdiY2RjNDdjMDYyMTRkNjJiZDNhNGUzOTQ1M2NjZjQ1Njg1MDMyMjkxNzQyYjA2OGEzNjM3YzQ5NjkwMmU5OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTQ2MzczMmM4NDcyYTFkNTEwZTkwN2RhMGNhY2I3YjQ2OTg1ZWJjMjE4Yjg3ZmI0OWU4NTViZmM0N2E0NjAyYSJ9"
+        },
+        {
+          "resource": "repo://pipeline/model/clustering/naming.py#L18-L18",
+          "version": "repo-lines-v1:sha256:d49cd01ec837a32d6d0f18c5e4b7428e9254ce9a249797e4ed416c4668f2d822:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDQ5Y2QwMWVjODM3YTMyZDZkMGYxOGM1ZTRiNzQyOGU5MjU0Y2U5YTI0OTc5N2U0ZWQ0MTZjNDY2OGYyZDgyMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDQ5Y2QwMWVjODM3YTMyZDZkMGYxOGM1ZTRiNzQyOGU5MjU0Y2U5YTI0OTc5N2U0ZWQ0MTZjNDY2OGYyZDgyMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmEzY2Y1MTkyMzU0ZjcxNjE1YWM1MTAzNGIzZTk3YzIwZWRhOTk2NDNmY2FmNWJiZTZkNDFhZDU5YmQxMjE2NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDA0NGMyN2ZhMWU5ZTNkYWRmOWJhMDU1YTE3YTQxYWE3MzBkYWUzZmY5ZGZmNDFmYTczOGE0ODgzODNhOWNhOSJ9"
+        },
+        {
+          "resource": "repo://pipeline/model/ner/gliner.py#L18-L18",
+          "version": "repo-lines-v1:sha256:d2ecb0d6a1247de6e6bbe4dc3d2e3d36721fb122ffd76c168fcdf7d2203401ac:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDJlY2IwZDZhMTI0N2RlNmU2YmJlNGRjM2QyZTNkMzY3MjFmYjEyMmZmZDc2YzE2OGZjZGY3ZDIyMDM0MDFhYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDJlY2IwZDZhMTI0N2RlNmU2YmJlNGRjM2QyZTNkMzY3MjFmYjEyMmZmZDc2YzE2OGZjZGY3ZDIyMDM0MDFhYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjhkYWI3Y2M5ZjBjYWRiNzJhODRkYTg0MmZhZDNkOGVjMWQzZDE4MWVjNmEyNWYwOGVjNjk5NGY4OTU2YzkzZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzQ2MmU5NjM4OGY5MmY0ZTk3N2UwNGQ4MmRmOWE2YWZiMGRkNDQ5ZWVhZmFlZDRkNmNiN2Q1NjVmOGFmNWE0OCJ9"
+        },
+        {
+          "resource": "repo://pipeline/model/ner_llm.py#L15-L15",
+          "version": "repo-lines-v1:sha256:49dbd801e877e9214c89ac7930cfe0f222a9774afcc3078951280e3b5c51e273:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDlkYmQ4MDFlODc3ZTkyMTRjODlhYzc5MzBjZmUwZjIyMmE5Nzc0YWZjYzMwNzg5NTEyODBlM2I1YzUxZTI3MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDlkYmQ4MDFlODc3ZTkyMTRjODlhYzc5MzBjZmUwZjIyMmE5Nzc0YWZjYzMwNzg5NTEyODBlM2I1YzUxZTI3MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDIwZTAwZDM1NWU2NjMwZDAzNDExMmVlYjFiMmE1ZTBmY2EyODBkOTIxOTM2MDVjMjg4ZWQ4MjQxN2M3ODk0MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDA0NGMyN2ZhMWU5ZTNkYWRmOWJhMDU1YTE3YTQxYWE3MzBkYWUzZmY5ZGZmNDFmYTczOGE0ODgzODNhOWNhOSJ9"
+        },
+        {
+          "resource": "repo://pipeline/model/parsing/pdf.py#L15-L15",
+          "version": "repo-lines-v1:sha256:5f373a7783d455dc80e99d0214db6639faad521498365c5064b9ad1223538bc1:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWYzNzNhNzc4M2Q0NTVkYzgwZTk5ZDAyMTRkYjY2MzlmYWFkNTIxNDk4MzY1YzUwNjRiOWFkMTIyMzUzOGJjMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWYzNzNhNzc4M2Q0NTVkYzgwZTk5ZDAyMTRkYjY2MzlmYWFkNTIxNDk4MzY1YzUwNjRiOWFkMTIyMzUzOGJjMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWQ4ZTRjMGY0ODYzMGUwNTcwMWMzNzdmZTM3MDU1YTU2YzBiMGFhYTkzYjk4YWNjMzE1YTllOTAyYTg5NDg5NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTNlZWQ4ZGM0MTdmNjRmOWQyZWNlODVkNWY5OWM1NGQ3NzdhOGFhZTY1OTZiMmIxYzhhYjEzMDMzNDcwODQzNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1d2bbe2750654b39a4bcb8e6d51b4f68",
+      "statement": "configure_logging is idempotent: it installs a RichHandler only when the root logger has none, and when installing it first removes every pre-existing root handler, so repeated calls from different entry points converge on a single handler.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/logging_setup.py#L13-L32",
+          "version": "repo-lines-v1:sha256:b385a8709389970fc88aca327d1a9c82a1f4c1e273364e8066c261d7f2be47d3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyZjQ3Y2I2ZTBhMTg4NDg4MjM3NjBhOGQ5YjZhMjgyN2EyYjZhNjFjMjNhYTFmODMxYTkyN2RkYmI1M2ZmOTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4NjdhMGY4NTM5YzA5MTQxOTIxZWVlODhkZTI1Y2IxOWNiOTA3MzdiZmZhZDgyOTU4ZDRjMTYzYzBmMjEzMWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjExYmE3Y2Q3Mzk0MGMyZmIwYzQwNmUwMmFhZGJmM2I5MDM4NjFiZDc1N2FiZDY4Mjc1YzFlYTlhN2M1NjcyYWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f7712837a7904f7ba3532b3411a6d191",
+      "statement": "Repository directory constants are anchored to the package file location rather than the process working directory, so artifact and document paths are stable regardless of where the pipeline is invoked from.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/paths.py",
+          "version": "repo-file-v1:sha256:e6598a2e0328f1770edd9388a3fbd86972eeb4ca789d34d228327ea5542190bc"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.0",
+    "at": "2026-09-10T12:46:32.229Z"
+  }
+}

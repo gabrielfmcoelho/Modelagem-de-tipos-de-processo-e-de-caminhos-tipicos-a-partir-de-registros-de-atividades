@@ -1,0 +1,280 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:6556cadb1f517701ad9fd3bee508262db459492b382e224a297fdb1f4cb07ab3",
+  "claims": [
+    {
+      "id": "claim_e1e193752eff425a9ba3a7169939d510",
+      "statement": "Trace states combine an action type and a unit lane, and three alphabets project them differently, with a declared axis map recording that the unit alphabet retains both action and unit, the itinerary alphabet only the unit, and the procedure alphabet only the action.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/typical_eval.py#L23-L29",
+          "version": "repo-lines-v1:sha256:633a62eddd8207d0a30efbc01634352795ca4f38c479cede5da0c2749e55923c:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzBkZDAyNjQ2ZTkwMDAwNDdlYWMwNDFlMjgxZGRhNGRkZmY0NjNiNjgxZmI0ZWQxMTE2ZTRmYjc1YTgyM2JhOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjEwNGRhMDk2NGFmMGM3MGI0ZTkwMDRiZmIzNzQ3Njc4N2FlNjFlMmRiY2RmNzVmNWNhMWFhMGNjYjcxM2Y4NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWFkMzU5ZTMwMmY2M2IzM2IyMjBmZGNjODc1YmU5NzY4YzY3ZTI1NDkxNzQwYTFmMWMxM2IzODQyZTA2ZjQ5ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGNlYWU4ODMxZGZkYzFkYzI5NDIxOGJkZDM2NTVhN2I4M2EyMjk0ODkxOTA2NzI1YzMyNjM1ZmMwZTNhOTE5MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b6e784d77d114c70bfdd75d5da197cf6",
+      "statement": "A single predicate is the only place alphabet composition is queried, so downstream code never re-derives which alphabet carries a lane.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/typical_eval.py#L28-L29",
+          "version": "repo-lines-v1:sha256:4e197399a35cc9fac8af8b86d7656a6920a308fbffedc8255b2bf71b1e3fd3c4:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODdhMzVmMzg3MTk3MDUxMmRiNjIxZjcxMjkxOGU3MWU2NjYyMjZkOWExMzY1NzlhZGJiMTNhMGM1YjQ5Y2Y0NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjEwNGRhMDk2NGFmMGM3MGI0ZTkwMDRiZmIzNzQ3Njc4N2FlNjFlMmRiY2RmNzVmNWNhMWFhMGNjYjcxM2Y4NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWRiN2M1NTJiOWExNmI5YzYzYzVmYjE4MDVlMzcyOTBmNDkyYTk4MTJiZGIzZWIzNmJjNDcwYjI5OTlkYWM2MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGNlYWU4ODMxZGZkYzFkYzI5NDIxOGJkZDM2NTVhN2I4M2EyMjk0ODkxOTA2NzI1YzMyNjM1ZmMwZTNhOTE5MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_485ad5bb001944289f189e77303eea34",
+      "statement": "Families with fewer than a minimum number of traces are dropped rather than modelled, applying a minimum-support rule before any model is fitted.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/typical_eval.py#L155-L161",
+          "version": "repo-lines-v1:sha256:fa41e5d139db2b1c88dfc6d85045031a8a83346b3ea873949d4260642bb808c7:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzM4Nzg5ZTI2Nzc3NmUwZTE2Mzc3YzcwNmNiMTYwMjU0ZjFmYmMxMmFjOTY3MzVlNTg0Y2I4MDZjZDk3MjA5MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDYwMGYxMTdiZjhiMDAwYzM1YmQyMDhkYTQ4MDkyY2E2ZGJhZGE2NzIwMmQyNGU4MjJlOWRiMTZkYWViNWVkZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGI0NjhhZDBhYmQ1ZGY4NjIwYmI5NGJkZmZlODVmNDIxMTBlY2RhOGFmNzY0YTRkNWMzYmEwNmJhYTVmNzczZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTRmM2E0NDI4MDFhMThmY2I0MmNmY2U0YmEyNTk1OTZiY2U4N2Y5ZWNhOTI2MmMyNmYwNzk0YTViN2MwZjU5OSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d0cc9854a9af438db5514e4dc36865fa",
+      "statement": "The model factory validates requested model names against the canonical registry and raises listing the valid choices on an unknown name.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/typical_eval.py#L74-L81",
+          "version": "repo-lines-v1:sha256:39f6196b86e48d9fa0f6d6d937b4149e637e50f384306d3d42e499fffd851143:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTJlYzJmOTIxNDg4OGRjMjBjYjBjOWU0YmY2OGRlZWJlZmNlMDdjMDdmMTUwZWM4MzY5ZTk4MDQ2ZjY0ZmU5OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDYyMjFhYWZiZjRjY2JlMzI2MWZlZjY0NWNjODMyMWVhYzNhYWM3OWQ1YmZjOGVhYjhjNjFlN2RlYWUyMjIwZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGY1ZTc2NmM2OGE3MTg0N2E0ZDA4ZWI1ZjcxMjAzYjkyMzAwNTMxYmJhNDAxYTE0MTIzNWFmM2E4ZGVkMGRkOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTlmNTVmNmNjNmYzMWE4NmJkZTlhMzhhMzhjODdlMTJkNTU5NDc4OWM4YmIzYzkwNjI0OTUzY2RiZDFmZDAyMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_91ace76618fe484b8d16d321d5fed93d",
+      "statement": "The Markov model is a back-off n-gram rather than a fixed-order one: it maintains a separate count table for every order up to its maximum and falls back from the longest available context to shorter ones when predicting.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/typical_path/markov/markov_model.py#L10-L46",
+          "version": "repo-lines-v1:sha256:48b3b86c3de67891a8d2e8f0b87c90c996625465352d271eda09df6c07f38756:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjYjBjYjU0ZTIxMzNhMDQwYWY5MmIwMzQ4MWE3ZDVjZGYzNTM5ZDAyNjYyODczODRhYWUyMDVlNGI4NDJkY2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmOTY0YWEyY2E1NWZjZmNlYjc2NGVmY2M3MDAyMzgwM2Y1N2YxNzI5ZjI4ZWQyNTk1NTkyMzdkMjkyNGYyMjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAxM2JiMjk3Y2E2MzlmMTUxNTZjYTI2NThhZDBhNTg5MTc1ZTk5ZTg3MjJmNTlkZWY1MjZlZmNkOTdmN2FhYmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBkNzViOTllOTFmZmVhNTIwZDliOTUxZjZkZmNlZmNmZGY1ZmJhOTAwYmZlMjJhNjM4MjdmNjQyYTM3Y2RkZTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_952c08f8c6b7454cac8ce2a4381cd9a2",
+      "statement": "The directly-follows model subclasses the first-order Markov model and fits in two passes, first counting how many distinct traces contain each transition and keeping only those above a coverage floor, then counting transitions over the surviving edges alone — making it a frequency-filtered first-order chain and therefore a like-for-like baseline against the higher-order model.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/typical_eval.py#L31-L31",
+          "version": "repo-lines-v1:sha256:43f1d6957737f62376b19605bda97545721fde68fdcb7c9497632a03d17bcf2f:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDNmMWQ2OTU3NzM3ZjYyMzc2YjE5NjA1YmRhOTc1NDU3MjFmZGU2OGZkY2I3Yzk0OTc2MzJhMDNkMTdiY2YyZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDNmMWQ2OTU3NzM3ZjYyMzc2YjE5NjA1YmRhOTc1NDU3MjFmZGU2OGZkY2I3Yzk0OTc2MzJhMDNkMTdiY2YyZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDQ3ZjI4MWNlYWY0M2JiNTU4MmQ2ZDdkZDhhZWQ1YTNkNzk1YTFhNDQ1Yzg1ZjYzMTRkYTcwZDk4YjhmNGViMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODk1YTc2YzU3ZTYzMGNiYTQwYjZjYzNkMWE3NzdlN2I0MGZhNTViMDFhNDQ2Mjc2Zjk3YjU3Y2FhNzNiYTczYiJ9"
+        },
+        {
+          "resource": "repo://pipeline/model/typical_path/dfg/dfg_model.py",
+          "version": "repo-file-v1:sha256:569f23ee5caa447034a2222ca7521a9e2219d772c953dc9f9f7004b6ce1f5988"
+        }
+      ]
+    },
+    {
+      "id": "claim_d275f4ae91d640c787e88f69d332a8bf",
+      "statement": "The three neural sequence models share a common torch base that reserves padding and unknown at vocabulary indices zero and one, encodes a fixed-size left-padded window of recent states, and resolves its device through the shared device selector.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/typical_path/_torch_base.py#L8-L47",
+          "version": "repo-lines-v1:sha256:3390dd9fd9466ccfb82aad5f8922420b1fbe946026a2ffc0d4260c0fcab722c5:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAyNzg5ZDI4NTA0OTU3MjBiMzQzNTRmNWM0NTEzODkwMmQ0NWE2ZGZlNzUyMTRiZmU1ZTdjNmIyYTUwYTc3NTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5MWY2N2VhMjU3N2VjM2MxZGEzNjNlYjY5ZThlN2RkMDA5MDg5ODFlMTFmZjQ4YTRmODg4ZTllOWM5YWRiYzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM1NzFlNDMyYjYyNDhiYmU2OWI0NDRhNDE2OGMxMTRjODA3NzVjN2IyYjE3MDg0YWQ3ZmU3MGQ3NWE5YjhkNzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ1NjQ1YmQwNDk1N2M2ZDRiNDU5MWFlYjkwODFjYmRkOTkxNjFmY2RlOGQ1MzJlYzlkZjM4ZWJhYTI0ZGY0ZmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_46b958dd62aa4ba783d4205fbe024a72",
+      "statement": "A failure importing torch sets the neural model unavailable and records the reason instead of raising, so a missing dependency degrades that model rather than failing the evaluation.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/typical_path/_torch_base.py#L33-L40",
+          "version": "repo-lines-v1:sha256:7624ae7d3f2c38f53ab5c9f89ff54438775f476c28fe75c3b9c6a17acf7e04f0:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmU0MjY1MzgxOGFjZDYwMzgyYzkzZWNiZGI3NDcyMjc4ZjcwNjc3NGYxNjk4OWFkNTJjYmZhZmIxMTg0MjYwNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWQ1NzBjZjE0MmFhNDU0MTE3ODViNTdmMWU4M2NjNjA2M2MzMWI2NmZhNmMyMWY3YWU4ZGU3Y2Q3NGY5NGY3YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWE2ZjdjZmM2NDUzZTBjNWM5MGYxMjU4MTM4NWJjM2UwOWZjODFmMThjNzkxN2IwNTBiZTRiYWJhMmY1Y2YwYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ff265951cc8f4170bec12caab9dc6077",
+      "statement": "The three neural model families declare a GPU requirement, and when no accelerator is available and CPU execution has not been permitted they are omitted from the specs and returned in a skipped map with the recorded reason, so a cell evaluated without them says so.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/typical_eval.py#L82-L101",
+          "version": "repo-lines-v1:sha256:2f4d01794244fb52cff2845b9a035fe6186b5902200923b34b2bf67be7372ee4:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4NTE4M2RmYjBkMWRhODA0NTE1MWRkZTRjOWVkZTgwZGU0YzQ5ZGZkNWVjYjQ2ZTQzMGNlNmEyYWVmYzNlODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyZGNhMGI4Yjg3MDk4ZDJiMjUyOTk3MGQ1ZmJmN2RhZTY1OTBiNmY5NmY2ZGViNTA4ZjdiYmU5YmVmZWQyZmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFiOWI1NWMzZWIxMTVjYzU3M2RjOGFkNzMyNDU2MGYxYTJjZGYxMjc2NzU3MTUxYTY3MTgzMDhiMjNkZjE2ZWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkyMjRlOTIxYjEzOTc1YzkwYjU1NWIxYWUzMmI1NmY0NDc2NmUzNmQ3ZjhmZmFjNDA3NDU1NTMyMGYzZDk5M2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_de75b0eeba7e4ed4bf65cfc2dbbe9637",
+      "statement": "The flow automaton tracks whether the process has started plus two sets of units — those where it is open and those with a pending unacknowledged dispatch — and from that state decides which transitions are legal, always permitting the terminal token.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/constrained.py#L20-L63",
+          "version": "repo-lines-v1:sha256:5c979cc35fb032aab2833d2a3c4de0a649dcf52a4cc5f8a13af1901d25761fc1:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmMjA0MjgwYzgzOWUxNzQ0MWJmN2U3ZjI1YjIwMzhiOGNjMGE5YjJkZGM3MzViM2QzZGViMjBjOTNmYWExOGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhOGFjZTg4Y2FjOGIxMzA3NjM4OTBjOTg1M2VlNTMyMGE1NjBjNDEwOTU0ZTVhOTUyOTQ3ZWYwY2M0YmU1ZTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0OTgwNDA1MTU5ZDgxODYxYTE5NDZiMzlmNzIzYzEyYTNkZGM3OWU0M2MwMTZhOWE3OWVlNWY0YTA5MDljY2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1d9c639630614676845906b2ac5ced34",
+      "statement": "Constrained generation filters the model's next-state distribution to states the flow automaton permits, truncates to the top candidates and samples, stopping rather than emitting an impossible step when nothing legal survives.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/constrained.py#L65-L85",
+          "version": "repo-lines-v1:sha256:2de6ce963eed29617ca37352e9550aba652bb4c1ff3894fef5fc2c97458854fd:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiNjY0NmZjOWE0YmIxMzFkYmE3MGM2MzRiNmMxMDY5MjNlNWYxMDc3MGI0NTdlYTRkOTRjMDkwNDRlZWYwNTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0ZTVmY2UzMGU2ZjQwYzBlMWVjNTRlMjA0Zjk5ZGYwNzhhZWI2NmNhYjQ3M2ZjODRmM2QzNzQ5M2ZmZDgxNjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRlOTllMWMyNjhlZTJmZjA0NGU3Mjg4ZWJkYTJjMmJhMTAxOTkwMTVjYWU2YzlhZTY5NWNiY2UyZWIwZDRmNDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYxMGM2ZDdlZTNmODM4OTg0MjI5MDIyY2UxMDFhM2Q1ZWUwYTMxMzQ1NGIyMjgxNjE2YjJkZjI4MTE0ZTJiM2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f248d385aaab40dab6c24386ad7d87ec",
+      "statement": "Because constrained generation consumes only the next-distribution method, the flow constraint is a property of the decoder rather than of any model and applies uniformly across all six.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/constrained.py#L65-L82",
+          "version": "repo-lines-v1:sha256:eb1a42fe3aa4fced99ccb01641729093887a02e52cb09ca10ba47811e640355f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiNjY0NmZjOWE0YmIxMzFkYmE3MGM2MzRiNmMxMDY5MjNlNWYxMDc3MGI0NTdlYTRkOTRjMDkwNDRlZWYwNTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyODhhYTMxZmYxNjRmMWRhZmIxMTIzMjVjNDk1NTk1YWZkZTllMDljYmU3NGE2MmNlNDM2MTMxMTIyZTQxMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRlOTllMWMyNjhlZTJmZjA0NGU3Mjg4ZWJkYTJjMmJhMTAxOTkwMTVjYWU2YzlhZTY5NWNiY2UyZWIwZDRmNDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkYzJhNzNhNjAxYWZjZWJmN2NhZGZmMjdhOTk3NmZlYzE4NDY5M2IyYjMxMTQ3ZTY0Y2ZiYzQ5OWRmYTkzZjkifQ"
+        },
+        {
+          "resource": "repo://pipeline/model/typical_path/markov/markov_model.py#L43-L46",
+          "version": "repo-lines-v1:sha256:b6b7a4fe73c1ed5e604b5c721bdfc944e7485e48bb3b53eedafbbc1a49d18af2:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzdjOWQ3OTllN2JiNzc3MmJkYTBkZDA2NWIzN2M4MmRjMzBlNGY0N2QyNDczMTA1MDkzYjM1NGMzYzc2MmM5MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2Y5NjRhYTJjYTU1ZmNmY2ViNzY0ZWZjYzcwMDIzODAzZjU3ZjE3MjlmMjhlZDI1OTU1OTIzN2QyOTI0ZjIyNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTEyZDUzOTc2ZGU0YWY4ODU5NzIyZDI4YTAyNGU5ZDUxN2RiOWZjM2JiYmYwMTgwZTQ1YTZkOGFmZWE3MjM5OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGQ3NWI5OWU5MWZmZWE1MjBkOWI5NTFmNmRmY2VmY2ZkZjVmYmE5MDBiZmUyMmE2MzgyN2Y2NDJhMzdjZGRlNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5ee1f57f6e3a4c5689a37c18770c7f3d",
+      "statement": "The same flow automaton is reused during neural training: with a non-zero auxiliary weight the torch base builds a per-step legality mask from it while encoding training data, so decoder and training loop share one definition of a legal transition.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/typical_path/_torch_base.py#L12-L20",
+          "version": "repo-lines-v1:sha256:6793cc5c1e1129770fa23b706d040bab3ad261bbfb1419612a2cfe5884d333f4:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGYwZmQ5MmM5MTU4Mjk1MWYzOGVlM2M5M2JkZDAzYTVmYzE4MDM5NDVkMjdmN2RjOTFkNTdkY2E4ZjhlNjI5MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2UyZmFjOWJmMDZmYzUzOWYzNTEwNGU0ZjYyNDM4ODY2NTA0NDUzNDFlNmQ1OWM3YzExN2ZkOTc5N2Q5N2E5MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjM5ZDM2NGJkMTMwYjA3ZjVmOGY4MjQyMjU1ZTcwNjRlMjhlNWEyZjExOTYwYzZlY2UzNjc0Y2IyMDIyZWM4MyJ9"
+        },
+        {
+          "resource": "repo://pipeline/model/typical_path/_torch_base.py#L48-L60",
+          "version": "repo-lines-v1:sha256:2935214e0fda22905398972a24fec765901e6fa576995f40f609d981c819e480:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5NzEwYzdlNGE1YjMyNzZiZDMwMmNlYjcxNGY0YWU0Nzc0NmVhMDE2Mzg3ODI1YTM0MjZjMDAxNmEyYjNlMzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ4NjJlYzIyZTJjZGVhODNmZDMyYzk2ZWY0NTYyNzE2OTZhYzM3MmJkNTlmMmY3YWJjMWEzM2I1NDk1YzQxMmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJjZmZlYzM4ZTVjOTA4NDc2ODlhMWQ0ZTYxMDM1MmVjYTMzNDQ2NjkwZGFjNzI4NGYwNTc1ZTFmZDFhMWEyZjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_efe7ef4f9bab4527ab0a59b99712c727",
+      "statement": "Model metrics report next-step accuracy at ranks one and three, the edit distance between generated and true suffixes, and the generated-to-true length ratio.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/typical_eval.py#L164-L179",
+          "version": "repo-lines-v1:sha256:db5c073a11205286dd1458f301f68208325262a75482ff65f7e35657dbb50628:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwZmE1ZGNjZGYzYzQ3ZWE2NmQ1ZTUwMDk1N2M3YTFjNzFmMWZmNzRiMWExMzhhNjA2MWM3YTdiMjlhYjA1NjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0NTI2YWZkNzhlMmJiZGM0N2QwODZmNjliOTdhZjYwZTQ5MjAzZDNjNDlhMTAwMDNmNTQxNzEyODlmOTYxZTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUyYmY1YzY0MTgyYzg5MWI5YzAwYjNhOTUxODZhZDM0ODIwMGZmMGYzNjZhNjEyMjc2MmQwMmNkYmYwNjg0MDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE4MzFkOWY3ZGNhNWY1YWMyNzJhNmQwNmJjNGI5NzViN2Q2NGYzMTU4MjEyYTM1NTc0Nzg4ZjdiMDg3ZGI2NjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_444ecb727f85459389d0244c80995fef",
+      "statement": "When constrained generation is enabled the metrics carry a second suffix distance computed with the constraint applied alongside the unconstrained one, which is what makes the cost of the flow constraint measurable rather than assumed.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/typical_eval.py#L170-L179",
+          "version": "repo-lines-v1:sha256:fb0cf99a09f1e89637fbc9c0c313d65ec29e1b3ee5b9506af6c14f3791ac7000:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFjMTJmYWI5NDEyZjI1OGZjOTJmMTYyNmM0MDZkMjc4ZmY1ZGE1MGQ4M2Q3OTcxZGJiMGFmZjA4ZWM0ODE4MzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0NTI2YWZkNzhlMmJiZGM0N2QwODZmNjliOTdhZjYwZTQ5MjAzZDNjNDlhMTAwMDNmNTQxNzEyODlmOTYxZTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFhYzAzNGQ5ZDZiM2I2NGIyMGM0YjI5ZDNmNjRhYzQzM2ViNGU2N2E3NDZjNTI3Zjc1MDgyYzM1MzMzOTQ3ZjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE4MzFkOWY3ZGNhNWY1YWMyNzJhNmQwNmJjNGI5NzViN2Q2NGYzMTU4MjEyYTM1NTc0Nzg4ZjdiMDg3ZGI2NjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_384f76fc4729446689a906da32d0389a",
+      "statement": "Edge coverage, edge usage and their harmonic mean each return undefined rather than zero when there is nothing to divide by, keeping an empty cell distinguishable from a genuinely zero score.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/typical_eval.py#L48-L72",
+          "version": "repo-lines-v1:sha256:0a7a77b3668108e948c76c3e0f122b9e8875af35c351a0814a5b3b892be48f67:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwN2QxMGY0MDhhMDAxYzM4MGE4M2Q4ODY5NDhmNTBiNzc1YzU2Y2FlOGRiYTdlYWE5ZDJiMjI1NjU3Zjc2YmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhM2NmNTE5MjM1NGY3MTYxNWFjNTEwMzRiM2U5N2MyMGVkYTk5NjQzZmNhZjViYmU2ZDQxYWQ1OWJkMTIxNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY2MGYxODkwMjEyNzliODRhOTEyYzIzY2M2ZjVmMDU5ZTQ4MDUxYjNjZWIxNzE3ZWQ3YTgwN2E4OTMxMTQ0ODYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cf9e6cf4badc4f328aca0053cd89e5c6",
+      "statement": "The representative path is a medoid rather than a greedy decode: fifteen constrained samples are generated from distinct seeds, traces ending in a conclusion state are preferred, and the medoid of that set is returned.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/model/typical_eval.py#L196-L212",
+          "version": "repo-lines-v1:sha256:c65440ab3c68c4d088ee35cc7856c030472468aa43d7b7f8b047c2a217e01412:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE3MzQxMjFiNTVlN2Q3MTBjN2ZhNWMyMTVmMjk1MzhhNDIwNzAxNDZhMTJmODAyMzRjYmNkMTQzNTdkNWRmMWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1YTlhYjhjMTExOGZkYjIwODYxZjE5MjYwYjAyYTJhOThjYzExMmEwM2MyYzk3YTk3Y2QwMzU5MmVlY2I4YzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM5Nzk1MWVmODgwOTc3MDZkNGU5ZDE2Zjc5YjY5YjdlYTQ3ZjQ4NTk2MTg3ZWQ3MzY1OGI3YmNlZTYxYzM3ZGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczM2FhNGZlMzMyYzg3MzFhMWNmYmRiYWRjYzcxNGVhNmM3YTc2OGRmNmVhMTA2NjllNGFiNThkYTA3OTAzN2QifQ"
+        },
+        {
+          "resource": "repo://pipeline/model/typical_eval.py#L32-L33",
+          "version": "repo-lines-v1:sha256:384e75cd96eb4dd75e4ee430a51c20a99cd5b364630f26feeeed779844936518:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTdiM2UyOTAwODRkMjUxOWYyMzE4YjVkMjZmY2RiYjFmYzliY2FhNjAxODVjMzNkM2RmMTgzOWRiYTgxMDcyMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTVkZWMyNzIzMjBhNTIwYWQyMzZjNGE4ZDYyY2Y5YzE3MjgxNmZiZWM5ZjkyYzkwNGIxY2UwMTU3OTBlZTFlMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjJiZGRiOWY3NzdiZmU3MTZhODMzOGNiY2FiYzAzYjBhYTY0ZWYzNzA4NDllYmYwYjlkNDg2YjAyYTY2NWI3NyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c3f8455244c14de2b9877fa1dc9b5415",
+      "statement": "The paired bootstrap compares two arms only over the processes both evaluated and raises when that intersection is empty, rather than comparing populations that are not the same.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/typical_path/paired_bootstrap.py#L43-L47",
+          "version": "repo-lines-v1:sha256:21337cbc6589938d34c23fe6cd53101fa1df41ca45b3f6b219f9d915a9eccf72:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTAyNzQ5ZmE0YzllNzRmYWUxYzNhYWRkNjZkYTYwNTMxYmJmMDAxMmVkMTU2NGNlYjhjMGNjN2M4MDU3MTUyOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTI3MTA5MzI2ZjBmNGJjOWQ3Mjc0ZjMwZTE5OTE2ZDUzMzYwYzAxMmI2M2M4YTVmNjhiYzIzM2QxY2Q2MjNhYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDllZTVlNGUwYjY4MTAxNmE2ODVhNzQwNWM3ZWY5ODNiOGRiZmMzZDQwMTQyZjQwYzAwNTUwOGE1OTg0ZDNhMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWE3YTg0OTlhMzgwYjIzYjNjZmNjYTUyNWZlMjA1Y2U3MTY2YzkxNWQ0MjExM2VkMWQ0Njk3YzM1YTJlZGY1ZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7d06f0ded0874cc1a39b5c06f7555047",
+      "statement": "Pairing is verified rather than assumed: when a cluster's protocol list and per-trace row count disagree the run aborts reporting both counts, guarding against comparing one process's result against another's.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/typical_path/paired_bootstrap.py#L20-L34",
+          "version": "repo-lines-v1:sha256:9d4f64adbf9d46b0eae8eace78908d9b02a30b6e56521af423ced52dbec41d20:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhYjU2YjUyMTg0MzFiM2EzNmI0MmNmNWExMzBjNGYwNTc5MjEzOWRhYzFkYWQwNDk2NDI3MmY3OWRkMDE0NDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0NTI2YWZkNzhlMmJiZGM0N2QwODZmNjliOTdhZjYwZTQ5MjAzZDNjNDlhMTAwMDNmNTQxNzEyODlmOTYxZTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhiYzU4MjI0NTJkYWUyMjliYjY3NWRkMzI2ODAwMzU1MmVjMjZkNjA3OGMyYWY4NDExYzQ5Y2Y5MmFjYjBlNDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNkNzBiNDYyNmU1Yjk0MjEyY2FjYTc2MzYxYTYyYjY5Y2UyYmIzNzg4MzA3Mjc3YmQwZjUzYzYyODQyMTIxMTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_507da35ad8ab4b8992bf9482875727ee",
+      "statement": "Accuracy in the bootstrap is micro-averaged by summing hits over summed totals rather than averaging per-process rates, so a longer trace contributes in proportion to its length.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/typical_path/paired_bootstrap.py#L37-L41",
+          "version": "repo-lines-v1:sha256:7266a04419e57d784c52364719a2ac19e611fd7577176a278c1b9446c4cf7400:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDUzODRjZDFmMTVmYjkzYTFhN2ZjYzA0MmM1NzcwOWNmYjcyNDQ0MjI4MTY0N2ZjMTIwMmY5NmExNmYzNTc2ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGI0NjhhZDBhYmQ1ZGY4NjIwYmI5NGJkZmZlODVmNDIxMTBlY2RhOGFmNzY0YTRkNWMzYmEwNmJhYTVmNzczZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTE0YmNjMmIyMGMzZjZiZjBlYmY3OTRhNGNhNTJkYjU5MGNlYzdkZjQzYzM0OWY2YWQxNWY5OTg3YmFkMTFjMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a049ecc5f15d4234a1bbf93e7110bfc0",
+      "statement": "The bootstrap resamples processes with replacement over a configurable number of replicates under a recorded seed and reports point estimates with ninety-five percent intervals for each arm, the same for their difference, and a one-sided ninety percent lower bound on that difference.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/typical_path/paired_bootstrap.py#L47-L77",
+          "version": "repo-lines-v1:sha256:c209819423f330899b47764cb78fe439b52bd3c57fd8303bb5b21292c4eb4378:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEyNzEwOTMyNmYwZjRiYzlkNzI3NGYzMGUxOTkxNmQ1MzM2MGMwMTJiNjNjOGE1ZjY4YmMyMzNkMWNkNjIzYWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA2MDljZDg5ZDlmOWM0YTRlOGY1NWQ1MDM3NmE2M2ZlM2Q4ZmE1NDQ1ZDUyOWQ5YjRiMmFmNDkyMmM5ODZhZjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg5ZmIzNmQwMzUzNWFlMTQwNTMyMGQ4NGY0Yjk3Y2IxMzM2YmZhNjE1YzkwMzI1ZTY4ZGM2NzdjZmVkYjhjY2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ccd2103fc6144925bd5f2b5a124669c1",
+      "statement": "The one-sided ninety percent lower bound is the quantity compared against the pre-registered margin, with the arm judged non-inferior when that bound exceeds the negated margin.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/typical_path/paired_bootstrap.py#L100-L108",
+          "version": "repo-lines-v1:sha256:5db909825f4903729bdca4b3daf7ea1cf5902caf731b322c8898818fa98823c3:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGZlM2UxZDAzZGMyZDMxNjJjNWE4MWU0YTFiODk4NmFkMzBhN2IzYTM5YTUzYWMzYWFmY2ViNDY4MTgwY2YxYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGIxY2UyMmQ3OGVmZDVlOTVmNzMxZTMxNTcwYTIyYzg3M2NhYmMxOGMzMDk0ODBmYmQ4MDU3NjgyMTBjNzA0MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDZmOGZhZjNhMzJiMmEwNzU5NWU3YTI2YmNhOGYzNGY1ZTY4NTg2ODRjZGU1OWZiYWQ4ZmFkYzNjMjRmZjViZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWU1OGU5MDJiNTA3NjQ3Zjk0NjJmYWExYTY4YTgxNDRmNGEwMGZmM2RjMmE0ZDJiOTFkNTRiOGU5ODk4MmRhZCJ9"
+        },
+        {
+          "resource": "repo://pipeline/stages/noninferiority.py#L26-L42",
+          "version": "repo-lines-v1:sha256:d7b0e07a617dd3bf3a202aa26d82d8c2ea25ba038e684cd3d6d26b35f9eb9b1d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjOWZjMDEwYmQ2ZmZhM2JlY2ZkNTFhYWIxYzJlNzVhOWRiZTIyNzhkNGY2NjljYjkyOWI1MzRiMTE0N2ZlMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzOWE4M2NiOTU3OTc5MWM4YmRhZTQwN2M4MDI2MWJlZjRkZThkNGFhM2M5ZjA4MDAwMmE0NzllNTc5MDAyZmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5OGIwNjNkOWI0N2U2NTM3OTYyNTU3MmNjZTE5NzY2OWQ1NzY3ZTEyYzE4YmUwNzU2NTJiOGNkOTgxY2U4ZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEwY2FhOWMyMTRkNjJkOGMzZjYyYjdiMmJkNGJhYzIwM2FhM2IyYWEwZDM2ZGY2ZDAwMmQ2ZGU5NTcyNWU1ZmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b186ed8f16d24af9b466782bcad45bd2",
+      "statement": "The cohort stage materialises a curated cohort from processes born in the agency within a date window, restricted to selected clusters or an explicit list and capped by count, and never reuses a checkpoint.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/cohort.py#L35-L53",
+          "version": "repo-lines-v1:sha256:59d87beeb086fdf966c77b82cb59a5c9dfebcfc3c298c4f92d9ecaee704f8515:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjOWZjMDEwYmQ2ZmZhM2JlY2ZkNTFhYWIxYzJlNzVhOWRiZTIyNzhkNGY2NjljYjkyOWI1MzRiMTE0N2ZlMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhOWI2OGRhMDliMmI0M2JmNTMzZDc4MDNmMTQ1ZTMwNzY2OTgwN2MwZDkyODRlNjcwNTU4NDRmNzQ0MjYyZTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFhZGNmYWJlNzJjNDJhMWUwYmQxMDRjZTkzMjQyODQ2MjM1ZGYwYTc5OGNiNmY3ZmUwYTlhZWE0ZDFkMjMyYzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU1MzY0ZGIzODEyOTEyYWNiNGZjMjhmYTRmMDU4ZGJlYzQyZjk5OTk4MDg3YjI0ZTAwZGI5YjQ1Nzc1ZTM0MDEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_01edd650ee964d668cf183aa93fa5398",
+      "statement": "The dfg-build stage constructs the cohort's aggregated directly-follows graph with activity types as nodes and frequency plus scores as edge weights, depending on the cohort together with the link-score and document-band enrichments.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/dfg_build.py#L19-L30",
+          "version": "repo-lines-v1:sha256:ee0f17b00f451d533bd371b2560e2811a62727878bdac1e47e16fa31b4574f66:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjOWZjMDEwYmQ2ZmZhM2JlY2ZkNTFhYWIxYzJlNzVhOWRiZTIyNzhkNGY2NjljYjkyOWI1MzRiMTE0N2ZlMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZTE3OTFjNjViNWE4MjJhY2RjNGVkMjAzZGQ2Y2E2NjhiNjAyZDNhNDMyMmRmZWJmZTUxN2VlODRjYmUxZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI3MDliMTVlZjkxODNhOGI2N2Y3YzM5MWM4OGI4NWE5MDc3NTcwNjkwY2Y0MDYzNmE1MDVlMjc3NTQzNGZlOWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZhMDdjZDA5NmQ2ZWM0NDA0ZWZiODFkZjYwYjZlZjM2YzRkNTI3ODQ4ZDhkZTRiYmE0YmZhZjNiMDZjMGM4ZWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_81959b04dfb4481ba17f30e4eafe650e",
+      "statement": "The matrix stage is resumable at cell granularity, skipping any cell whose metrics file already exists, which matters for a stage documented as taking on the order of a day.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/matrix.py#L30-L45",
+          "version": "repo-lines-v1:sha256:87c9c6d072e2736c2fb15f603af90a2977acf65d60c8a2b7fa410fb20d37e0cb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjOWZjMDEwYmQ2ZmZhM2JlY2ZkNTFhYWIxYzJlNzVhOWRiZTIyNzhkNGY2NjljYjkyOWI1MzRiMTE0N2ZlMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZTE3OTFjNjViNWE4MjJhY2RjNGVkMjAzZGQ2Y2E2NjhiNjAyZDNhNDMyMmRmZWJmZTUxN2VlODRjYmUxZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkwOTdiYTRlMWJkY2JhNmNhYjgyNmFmZGI3OTViNTMxZDA1YTdkNzBlYmNhNDFhYTg1MWYyMzBiMjhjMGIyZmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0ZTFmZDU1Y2MzZTJmMjhmYjgyMTYyNDQwMmEwNzM2MmFhMmZmNzcxZjc3NWZhZDA2NjBhNDM3NjhhZDg3ZmUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.0",
+    "at": "2026-09-10T12:46:32.229Z"
+  }
+}

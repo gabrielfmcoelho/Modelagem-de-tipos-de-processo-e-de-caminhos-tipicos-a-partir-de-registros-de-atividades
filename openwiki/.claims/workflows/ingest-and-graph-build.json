@@ -1,0 +1,238 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:dea2c8dbaf78b94f23895c21a78a44033957be1468885861c8e1e92c9e18ddfc",
+  "claims": [
+    {
+      "id": "claim_ab801c22417945f981d5df32d2b69278",
+      "statement": "Query templates are held as named constants with placeholder slots for filter fragments in a dedicated SQL module, keeping SQL text out of the stage logic.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/sql.py",
+          "version": "repo-file-v1:sha256:03d8048a4f0738237d4da14bb750d1da39435d57971447813c91a3973014d2a9"
+        }
+      ]
+    },
+    {
+      "id": "claim_216de743afc646b4bb3f7b753f235667",
+      "statement": "A process enters the study through a single predicate matching the process-generation event description, so the corpus consists of processes born in the window rather than processes merely active in it.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/sql.py#L10-L27",
+          "version": "repo-lines-v1:sha256:d77a819635cda418b891efa2f898a9c34540727a243fd48333ddd8e024b8ab16:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczNjdmOWU5NzNhM2U2OWMzYzA1NDI4OTE4NTc5YTU0ZDQ5MmM4MmJkMGZkZDMzNjIzMGFiMTg1ZmM2MTVjOGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzMDNlY2RkNGE0ZDEwZjE5YzczZmQ0MmZkMTI0MzdmZDMzNTRhODI2ODE2MDVkYTUyNTVhOTdhMzkwNjhkYmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE1Yjg5NDczNTJhMDI3ZGZhNGM0YjkzNjBjMDRjNWJhMzc5MjEwNTgzYzkzN2I3YzAyOGM5OThiOWU2ZGRiZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFjZjliZWM0MGRjOTYzNDk5ZDY2YTMzZTU3MTQxNzU2YjczOGQ5MWVkMWIyYmE2MDU4MDFhNDNjYWVmZTZjNmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a39675867e9d4337abacab9dc659eb9a",
+      "statement": "Status filtering is applied through a subquery against a gold-layer process metadata table rather than by joining it into the main query.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/trino_source.py#L82-L110",
+          "version": "repo-lines-v1:sha256:c9af8704091a850f13916ea9e3cc6f8f65be9a6e92ec65da16412d62549675c7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzNTIwMmExMTViOGZhODJiMjgwYzdlNTE1YmNlYTQyOTgyYWY4ZTNiNzQyOTAzMDgwZTJlMzUzZGI2ZDc4MjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM3NzM0ZGU2NzA4NTk4NTg4MjJlNDZkNTY3NmJlNTJjYTAyMThmNzZiNzQwZGQ5MmEwNWIwY2IwNjQ3Y2YwNDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVhOGNhYWI1OGE0YzA3ODMxZmNjYTYwMWIzNDMyNTg2YzFhODdkNzVkOTcyOGZhMmE3YjBjNjE4ZTQ2YzE5YTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_185223b70a134cc4b6c6e2e1484bb37d",
+      "statement": "Date, agency and status filters are built as parameterised fragments returning placeholder SQL together with a separate list of parameter values, with bare dates padded to midnight and full timestamps preserved as given.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/trino_source.py#L59-L79",
+          "version": "repo-lines-v1:sha256:e6d29ef3ce053d6702cd727fdf888d9bb59a3d941e53819b26e4993e8d3536fb:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyMzRkMWVlZmI4ZmQ3MDlkMDRmMzM0OTFhMjg1N2E1ZmRjMDZlZjI5ZGE2YjM0NDcxNGU3OTdlZTk0ZjVhYzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhMjhlYWU4NWJhY2MzYmVlNjI2ZmIxMjJhMzNlYjdlMTg1ZDU5MmZiZGI1M2RkMzgwYTA4MDVlMDFjMmRlMzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ0MDhhMmMyMjY1MGMwODQxMzA2ZDdmNWFhNGU2MmRkYTkyMDEyZjA0MTE0YTkzNDM1ZTY0ZjQ1ZDU1M2NjMmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU1OTQ1M2JhZjhkMmJmMWIzNDhjOWVhZWVjMTYxNTI3YmY0NjM5YjgzZmE5ZmY4YTg0MDBhZTFiZDhmZGU1ZTUifQ"
+        },
+        {
+          "resource": "repo://pipeline/tests/test_trino_source.py#L18-L35",
+          "version": "repo-lines-v1:sha256:f7386a87f6700e9aa6bbb65b74c0c2b1411a3c4f82760d6716d04bea92631aa9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmYWIyYzk5MmExM2JjZTMzMWIzMTY5MGIxNTRkNDhkZjcxOGE0MDY3NzZkOGZiNzhlYTMzMmU2MmMyNzk2MTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQxMjZlZTAwOGU2OTdhNDk2ZTk3Y2Y4MTNiYmExYzNkOGQwYTRkYWY2N2ZhY2I4MGQzMGE1YWM5MDQwODEzOWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJjNGNiZjI3ZWIxOTdkNGE4M2UwZDNkZmY1ZDlmMjZjZTk1YjI5Mjg5ZDExYzI5ZTE2N2I2NTU0NjVkZDhmNzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f597e445cf8a4c1da6a1a87df47e2e36",
+      "statement": "Where a fragment must be embedded directly into composed SQL and a placeholder cannot travel, the value is validated against a strict date-or-timestamp pattern and rejected with an explicit unsafe-literal error, so validation substitutes for parameterisation exactly where parameterisation is unavailable.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/trino_source.py#L113-L119",
+          "version": "repo-lines-v1:sha256:2862b5915d1a45fb03324e6398ef984a1396061572337ce0d5731d099f16e936:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjBkZWFiODc3ZDg3NGExZTVmMTYwN2NhNDVmYWIyNjUwYzM2MzQ3NTQwMDVkZGI4MzE3MzMyZWQ4YTVkNWNmZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWZkNmJhMTliMzUwZWQ1ZWE1YTlhNzVmN2IwNWY3OGFiYjA2YWQ5YjAyZDNlNDMyMWQ3YWVlNjViZmVkM2Y0MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGNjNGE3ZDFjYzc5NmFiYTNlNDY3MjMzMjdmNTE3ZTlmODExOTgyZDI1MGYwNzAyOTg2ZTRiNTc2NGFkOTU4OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://pipeline/core/trino_source.py#L85-L92",
+          "version": "repo-lines-v1:sha256:c25bf7b6518d558f8ce63580cbe9bbe4f11b8c13886a7440979958794f84d5a0:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTdiNWFjOTU1ODdjYmQ5ZWVkYTU5YjY5NTk4MDgwYzBlNTdhNTU5ZGIzYjMzNTQ4ZTI0ZGViN2NhYzkxYzBjYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjJhZTdjMGU4ZGJhZmIzOWY2MDQyZTkxZGZkOWFiMGNjN2NhMDAzN2U5ODhiMzZkMzI2YjAxZTMyNzFhNWRhNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjRhOTc2Y2ZiMDA0MDE3MTM2MjFiOTg3YmQ2MjFmOThkNDVjYjVjMThiNjkzMDRiN2VjY2IxNWQyYTE2YTc1ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjZiMjIzOTRkZDNjZWVkNmQwYTJhMjE3ZTk0NTJmNzBhMmMwMmUxYmEyZjVlNjU5YTU3Y2Y4YzhmZWZmMmE4YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c3260146746a487eb36ff74c4fafb39d",
+      "statement": "Identifier lists are quoted by doubling embedded single quotes and an empty list renders as the literal NULL, so an empty selection yields a query matching nothing rather than a syntax error.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/trino_source.py#L53-L56",
+          "version": "repo-lines-v1:sha256:901887c886e8c70fb89c8a799a7e3b4c2e59bc224634b07f0160ec567547c951:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTdhZGJkM2E5M2RkZDRkOTZlYjYwYjdkOTNmYzA0MjFlM2Q4YWQ3NDg5NTFlODBmMWRlZjg1ZDMyMGRhOGI4NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjk2YmUzYTRjNmE1MGY4ZGZhNWJlZjA1MDc5YWU3YjAwZTk1NGI2OTI1MGNmYTc3MzUzOWMwY2Q3MWVhZjQ1ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWVlYmI3NDhkZmNiYjljOWE2ZjU3ZmJkYTEwYWUyMTExMjc2NDY3OTIzNWY1MDkzZTNlMThmYjhmZTY4ZTk4YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjYwMzY0MTAyMzBlZGVhNDcxMmQ0ZjYwMGZmZjQzODAwYzMwZTI5ZmQ1MGJjNDFlNzEwNDU4ZDZiNzdjYWRjOCJ9"
+        },
+        {
+          "resource": "repo://pipeline/tests/test_trino_source.py#L8-L15",
+          "version": "repo-lines-v1:sha256:9ff24469fae2f660cf87709d59dcd46a69a868402bf8fd2a893e5124c4b098d8:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjFhMjhhYTdmYzc1ZDg5YzVlMDliN2I0NTgxN2E4MmM1YWY0ZGEyMzBlYTgwMWEwZWE1MDA4NWExMDI5MWJhYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODczZmY3NGQ3NjNhMjFjZGUyMTY5OTAzMDNlNzdjYTc1YjA3NmM1NjY2MTVjNzMyMmU3ODMzNjY4NWNiMjM1MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWVmMmRlZGY5MzU5Y2NhNzg1YzFhMTQxZWRiMjA0M2RhZjY1NWVhMTRkMDVmMzNmOTE3NjQ5ZDIyZDFkN2E4MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmM2MzYyNDY4NjhmYWJjOTFjYjY0ODlhZmRlYjI1NzQ4YzUzN2RlNDQ5ZGIxZWE2NGZhNTgyN2I0YmVhYzc5OCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_69c336cdef38424e881ca31a8f6e1809",
+      "statement": "The precreate stage creates the schema and all dimension nodes serially before any parallel loading begins, because the concurrent activity load merges edges against those shared nodes and simultaneous merges on them are the principal source of deadlocks.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/cypher/precreate.py",
+          "version": "repo-file-v1:sha256:66e5caf7d005e9d93eba5e59eafa222a1dbe687e434eed9ab0217c126c3f569c"
+        },
+        {
+          "resource": "repo://pipeline/core/neo4j_driver.py#L37-L48",
+          "version": "repo-lines-v1:sha256:83e1964a6ff6b41bf2c38f18c96405568870965a45acbb360a0d72425ffa8800:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzNGY3M2NkNTk0NTg1MjhmNTZiZjg4MDdjMTYyZDNmNjZjNTRmMjVmNGU4MGYzN2RmZWYyYTNkZmI0N2U3MzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjYzU5Y2JmZTJlYjQ2NjBmNzUwNWVhYjBiNWJmZDZhNzMwNGNiZGJmNWEwN2Q3OWQ0NWI2OGJjZDJmYWQ5ZWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgwMTBlMTYxMjdlMThlNmEwZDU2NTBiMzEyOWFiNjZlMjk1OWEyZjk5NWU4MzM5MjE4Nzc3MDFhYmY3MzhjNDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://pipeline/stages/precreate.py#L154-L165",
+          "version": "repo-lines-v1:sha256:b04d56a8ff817065e91bcbf254674b61f05eaa370d301eca7180dae72477ac7d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjOWZjMDEwYmQ2ZmZhM2JlY2ZkNTFhYWIxYzJlNzVhOWRiZTIyNzhkNGY2NjljYjkyOWI1MzRiMTE0N2ZlMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZTE3OTFjNjViNWE4MjJhY2RjNGVkMjAzZGQ2Y2E2NjhiNjAyZDNhNDMyMmRmZWJmZTUxN2VlODRjYmUxZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ0ODJjNTE3YjM4NjU1MzU5YTUwNjI3MDNhZjE1NTJlNjk5Y2I2M2YzMWJjOTcxZTNiODRhYzllNzhjZTk4NzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUzNDUxOGM4YjQ0MmQ5Y2ExOWUyMGNjYzM4YTA0ZGE1MjFjZmYxNTViNDUwMzUzZDY2M2Y3NGVjZGJhZTY3NmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cb8689c2bd7b4bc2af640628fd4623f2",
+      "statement": "The graph schema is declared as a single list of roughly thirty statements covering uniqueness constraints for every keyed label, lookup indexes on filtered properties, and relationship-property indexes.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/cypher/__init__.py#L4-L38",
+          "version": "repo-lines-v1:sha256:544c1ba33a60f9d46d42b316ebc98416d4a3a0ae2b30ad214942efb348bb547e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjZjMzYTExMGI3NWYwMzYzMjRkNDk3ZTQxZjRjMTU2YjZjMDkwZjA2NWIzYTE4ZmExNWUxMzc0NWI1YjE5ZmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5NDE2ZTA5Zjc4YmEzMTZjMDMyNTY4MjEzYjg1NWVlNzU2ZTQxNTY1ZDkxOGYwOTUxOWM4MWZkNjIwZjQwNjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU1YjZlODcwNmI0MzA0N2YyYTZkYjY3ZjEzMjYzODU5NTYwNGU2N2YzNjk2Njg3NmNlMDE1OGYwMDUzZTZiZDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFiYWRjNDE0ZTA5YjNmYzczYzQ3MDQ0MTdiNzhhZWQ3YTI4YmI1MjJmNzYzODJjZGMzYTJjNGQ0ZWYyZjExYzQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8a760f3890de46f0916891eb78e36a86",
+      "statement": "The schema pins the document embedding dimension at 1024 with cosine similarity through a Neo4j vector index, making the embedding dimension a schema-level commitment rather than only a model default.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/cypher/__init__.py#L21-L26",
+          "version": "repo-lines-v1:sha256:0586aa667aaf090d6ea4a45588b5d27898719870d2aecf3aaf64766e86af88f9:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2UzNjAwN2ZkOWMyZWRiZDAzNDYzNzI0M2Q3NDI1ZTQ1ODg3ZmZhMTZjYWZlODFhNjc2MzkyMjIxYzQzM2M2MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWMxNTJjMGFhMzVmNmNlZWM5NjgwODRmNjg1MzFkYmUzMDBjZjcxOTQ1OTkxMGNmMDY5Y2JkMzA1MTE3YjZlOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTkwYWI4MGNiN2U1MGM5OGNhOTEzOWI1MzRjYmEyNWFiZGYzODE0MmNhYzI2ZTM3ZWJjMjRmNTM3MDdkN2I4MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjBiODUzNGU1ZTBhOTRlMjA2NDI1ZDUwMjkxYTg0NGI5NzUwNmI3YTM1NTAzN2FkZDFjZWZjY2VmZmVlMTkyMiJ9"
+        },
+        {
+          "resource": "repo://pipeline/model/embedding.py#L15-L16",
+          "version": "repo-lines-v1:sha256:1e88de162b54a03cd018c76eec2b04aaf46e85674f087e28a736f9822cbf29a9:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTVmYjNkYmYxNjFlNTBlMDUwY2Y2NmQ4OTc2NmIxMjYzODYwNTZlNjllNGFkNjJhNDVjMDM4MzY2MDYyYzc4NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDU0MDE5MTE1ZmI5YjBjMTQ0NTQ2ZWY4ZmYzODQxNGI4YjY4NTk2ZGIyNTY2YjhjZDA1ZGE3M2I5Y2Y1ZTA2NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDA0NGMyN2ZhMWU5ZTNkYWRmOWJhMDU1YTE3YTQxYWE3MzBkYWUzZmY5ZGZmNDFmYTczOGE0ODgzODNhOWNhOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmEwZGViYzQzN2JmYjI3YWM4OWJhNGY1NzcyZGQ4ZDY0YTllZjQxMGMzMjM3ODYyMzEwYjA0N2Y5ODlhOTAzMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d0abf4a860ab4291a6bce5b56e8389fc",
+      "statement": "The activity load partitions work by process rather than by row, grouping process identifiers into chunks dispatched to a thread pool, with each worker opening its own Trino connection and closing it in a finally block.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/atividades.py#L100-L119",
+          "version": "repo-lines-v1:sha256:408a78af4c96ecbc08722e7b5d51eefe9c6a7e91c04fd7f3f46ff3b8f6f3bbe2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyZTYwZGE1NmYzNmJhOTMyMmM1NWUwNmIwNjUyNTJjNDg0N2MyNzY3NGM0NTFiNDJkMTY4NTA0YTkyMGY5NTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEyMGI2ODQwNGRhMjcyMDMxOTE3ZjNhNjRjN2I0YzM4Mjg2OGJmNjhhMTZhZGIyNGRlYTkxMjMyNGYzYjZjMWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE3M2FhYjcxNTliNGM1MjA1NTVkNjZhN2VmYWM2ZmJkNGIyMjlhNGQ1NTA4N2JhMjBiMzE0OTI1ZWU4ZTY0MmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVjZmE2ZGM1NTlhNWNiZThmMTk2M2I0Zjc3MmMyMmY1OGMyYWE1NTRkNTViMzVkM2RjY2IyN2UxYWIxY2ZlOGMifQ"
+        },
+        {
+          "resource": "repo://pipeline/stages/atividades.py#L195-L219",
+          "version": "repo-lines-v1:sha256:a77d8923394f709b34d9d128c80f39bb32cdc77eec510825d11f9073a697c4a7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlNDZkOTMwNjQ5MTVlYjIzNmI5NThlMmQzOTkxMTNkMjkwZDNmYmYyMzA5MzU4YWQ2OGU1YTU1Zjk4MjhkOTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYwODhiMTNjYjdmZmFiNTI5NjJlZmVjOWViNmY3MjQ3YWYyOTQzNWY1NmJmZTFjODY4YjQ4Y2YwZWY0NDY5ODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVlOWJkZThkODI2Yzc1YTE1NTZhODdkZTBhZjY0ZjkxODljZjUyNDM4NWIwYjRmYWY5YjdkMTI1MzA2MTY0NzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_47d7cbef9ad3445b8d1b72a4c437f122",
+      "statement": "Chunking by process is what makes per-process sequence numbering correct: each activity receives an ordinal assigned as rows are consumed and the fetch query orders by process then timestamp, so every activity of a process is numbered chronologically within one worker and no counter is reconciled across workers.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/sql.py#L54-L61",
+          "version": "repo-lines-v1:sha256:8599ca77cc43b34af37ad4d9762e8ef5ce49ba0607efff16f1c234c857517c3d:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGY1ZTcyOTM3ZmYyOWJmYjM0N2NiMmFkNmJkMWZjYzk2NmMyMDE2NjUwYzY2MDY4ZGMyNTg5N2I5ZGRjZTQ4MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTMwM2VjZGQ0YTRkMTBmMTljNzNmZDQyZmQxMjQzN2ZkMzM1NGE4MjY4MTYwNWRhNTI1NWE5N2EzOTA2OGRiYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGVlZTVkZDVjMzRlZWMzMDk3NzNkODc1NGUxODEyMGZjNTA1YmJkY2NkZjhjNzYyZTA5MzViNWYzMjgwN2NiMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmNkY2JhZWNkMGY0Mzk3YzMxMDk2ZDcxNDU4Nzk2NzIxYWYwMTczNGZmMzUyNTJkYTVhZmM3MjZlNmYxNDZhZCJ9"
+        },
+        {
+          "resource": "repo://pipeline/stages/atividades.py#L129-L137",
+          "version": "repo-lines-v1:sha256:e1a6a1f3f258a0380efad9480680f76f727f172ad789f851fb6a059ddac332f6:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWNmZGM5YzQ3ZjY3M2UxYzQzODk2M2Y2ZTNhMjkwYjNhN2MxYzRkMDgxNDk0YzQ3MzM4ZWY3MTk0MGY1ZTdhMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDllZjNkYWMyNTE3Y2NkYzRhNzE0MWVlN2MxOWI1YjE1MjM0MmJhOTY3MzRhMGU4Y2QwNmNhOTRhOGUwODU3MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDEzZDYwODk4M2IxNDAzMmFmZWJlMzI2OWExYmMwMjI4Y2RkMzc3Njc4MWM3NTAzZWIxZWM1MmQxYWM5YjMyMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGY4MDA4M2FlY2E0YmU1ZTJiMWQ3ZDJjMjViNzBiZGI3YjkwZGE0MGM5ZTlhNzI2MWI0YWY0ODI5MjZiM2IyYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7ae6bb0c11124567b8618339046e19ea",
+      "statement": "A failing chunk is logged with its traceback and counted while the remaining chunks continue, and the stage reports the failed-chunk count so a partially loaded run is visible rather than silently short.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/atividades.py#L213-L236",
+          "version": "repo-lines-v1:sha256:f5c94c7c604952b461880541ac444562f0d65458a90096bc3e7afe5e2b0dbe14:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3NjNlOTcxNDE4YmJkY2NkY2I1ZGYxOTNiMjM0NDM0ZDZmMWViMjRlODNhODI5MDNhOTY2NDcxOWZmNWFkMTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZmNzBjYTJiYzVlNWQ4YzVhMTZiNzkxNjc0MjVjNDE0MTQyYjAzOWMwZGNhODFhZjdkZjJjOTEyODA4YmFmMjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM1ZjMzNmQ5YTA4MGQ1ZWY4NjMwOGUxNmNmYjQwZjNlYzlhNjZhYzE1MTIxZTU1ZjAxZTU5ZjQ0YWQ3MmEwNjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA4MDJmMWM3MWQzZDk2OGM2YWRmZTRiZmQ2M2NiZmE5ZjUzODM4ZDM4M2Y5ZWFmNWRhYzYyZmI0YjE0ZmY5ZjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6849e9fd626b4f48aff2b874c3b758e7",
+      "statement": "Activity descriptions falling into the catch-all action type are sampled as a bounded set of distinct truncated descriptions and reported, so an unrecognised description pattern surfaces as a finding instead of silently becoming the catch-all.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/atividades.py#L128-L146",
+          "version": "repo-lines-v1:sha256:3e69610aba9b33fe76ea992b145a73aa25b7cd9a0e587934d76e95b700a94897:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliNjM0NjI2NWI1NWMxZWQzMzMyYzllMTgzNDA1ZjQwM2Y0M2I4ODkyZGIxMTc0YTAxYmViMDU5ZDJkYzI2ZWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmN2ZjY2JhODM3MTZhZDI0NTRhZmU1MjBkYjBkM2QzODU0NzI2M2I1ODRmYTkxYWE4ZjE1MWJiZWEwYjA0OGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZkNTY5MmUzOGM0MTg1MDM1NDRiYmQ2YmVkYTliN2U4YmVjZGI5MjM1MzA0NTA2ZDFkYWI2Y2ViOTEwYzFmZDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEzZjI1MGU0NGQ2NmQyMDFmNWMyYTM5MDM1YTc0ZThlYTY2Yjc5MGU1MmY2ZTJhNGQ3YmY2NGFkZWI5NmZiMjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7babbc9e4c1947f2a8d441cc465ea47b",
+      "statement": "The activity load declares itself conditionally deterministic with the recorded reason that the lakehouse is under active curation and the result is fixed only for a given snapshot.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/atividades.py#L162-L173",
+          "version": "repo-lines-v1:sha256:b59e4d5ecec3924627acae8dd1dae1fa94f908a4478323ddbce4a82b752c49d8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjOWZjMDEwYmQ2ZmZhM2JlY2ZkNTFhYWIxYzJlNzVhOWRiZTIyNzhkNGY2NjljYjkyOWI1MzRiMTE0N2ZlMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZTE3OTFjNjViNWE4MjJhY2RjNGVkMjAzZGQ2Y2E2NjhiNjAyZDNhNDMyMmRmZWJmZTUxN2VlODRjYmUxZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRlNDFhOGVlYTQyMTA2NmM2ZGM4ZGM3NTg1OGJmMGRjMDA3NTNhYjA4MjgxOGUxZGIyOTU4ZmY4MDQ1NmQzZjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUzNDUxOGM4YjQ0MmQ5Y2ExOWUyMGNjYzM4YTA0ZGE1MjFjZmYxNTViNDUwMzUzZDY2M2Y3NGVjZGJhZTY3NmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4465ca6f444143c89f8127ec05d2ff5d",
+      "statement": "The three derived graph stages — timeline, permanencia and situacao — all depend on the activity load, all declare themselves fully deterministic, and all support json-replay alongside the live modes so they can be re-run offline against a captured emit.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/permanencia.py#L102-L112",
+          "version": "repo-lines-v1:sha256:090810fd8927f9cde55c6f5d5047bd421b0a1ed394a2d988f01a8ab538b52d0d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjOWZjMDEwYmQ2ZmZhM2JlY2ZkNTFhYWIxYzJlNzVhOWRiZTIyNzhkNGY2NjljYjkyOWI1MzRiMTE0N2ZlMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZTE3OTFjNjViNWE4MjJhY2RjNGVkMjAzZGQ2Y2E2NjhiNjAyZDNhNDMyMmRmZWJmZTUxN2VlODRjYmUxZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNiMjY2ZWM1ZTBjN2ZlMjg3YjgyYmMyNDQ2YzAyYWMwMzk0MWNkZDNiZGIzYmRmNmEyNDNjYTUyNjQxZjFlNjUifQ"
+        },
+        {
+          "resource": "repo://pipeline/stages/situacao.py#L165-L176",
+          "version": "repo-lines-v1:sha256:ff472815bc95ef5e3838e5429a2c266ded70dd0f4ef1dcc083693fe5a9bca138:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjOWZjMDEwYmQ2ZmZhM2JlY2ZkNTFhYWIxYzJlNzVhOWRiZTIyNzhkNGY2NjljYjkyOWI1MzRiMTE0N2ZlMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZTE3OTFjNjViNWE4MjJhY2RjNGVkMjAzZGQ2Y2E2NjhiNjAyZDNhNDMyMmRmZWJmZTUxN2VlODRjYmUxZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmYmQwMDkzMTRiYzI3MDg0MTY3MzRhMDJhZTVmZjM5YTFlNDhhMDUwYmU5MWY0M2IyZmFhOTIwMDJjNjJiZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNiMjY2ZWM1ZTBjN2ZlMjg3YjgyYmMyNDQ2YzAyYWMwMzk0MWNkZDNiZGIzYmRmNmEyNDNjYTUyNjQxZjFlNjUifQ"
+        },
+        {
+          "resource": "repo://pipeline/stages/timeline.py#L101-L111",
+          "version": "repo-lines-v1:sha256:f18f06c66c1dd9ae2b7332da14f48391a8eefe1c67bac3279f481134743021e8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjOWZjMDEwYmQ2ZmZhM2JlY2ZkNTFhYWIxYzJlNzVhOWRiZTIyNzhkNGY2NjljYjkyOWI1MzRiMTE0N2ZlMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZTE3OTFjNjViNWE4MjJhY2RjNGVkMjAzZGQ2Y2E2NjhiNjAyZDNhNDMyMmRmZWJmZTUxN2VlODRjYmUxZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNiMjY2ZWM1ZTBjN2ZlMjg3YjgyYmMyNDQ2YzAyYWMwMzk0MWNkZDNiZGIzYmRmNmEyNDNjYTUyNjQxZjFlNjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ec3b59d8052244b78b96e7d8993c1fc1",
+      "statement": "The situacao stage soft-depends on permanencia, so status derivation runs without the residence cycles but is sharpened when they exist.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/situacao.py#L165-L176",
+          "version": "repo-lines-v1:sha256:ff472815bc95ef5e3838e5429a2c266ded70dd0f4ef1dcc083693fe5a9bca138:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjOWZjMDEwYmQ2ZmZhM2JlY2ZkNTFhYWIxYzJlNzVhOWRiZTIyNzhkNGY2NjljYjkyOWI1MzRiMTE0N2ZlMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZTE3OTFjNjViNWE4MjJhY2RjNGVkMjAzZGQ2Y2E2NjhiNjAyZDNhNDMyMmRmZWJmZTUxN2VlODRjYmUxZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmYmQwMDkzMTRiYzI3MDg0MTY3MzRhMDJhZTVmZjM5YTFlNDhhMDUwYmU5MWY0M2IyZmFhOTIwMDJjNjJiZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNiMjY2ZWM1ZTBjN2ZlMjg3YjgyYmMyNDQ2YzAyYWMwMzk0MWNkZDNiZGIzYmRmNmEyNDNjYTUyNjQxZjFlNjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_345f84361f5c4773bd966068218f7811",
+      "statement": "Each derived graph stage obtains its reader and writer through the require accessors and wraps its work in a named writer phase opened and closed in a try/finally, and those phase names are what appear in the NDJSON emit manifest.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/permanencia.py#L113-L120",
+          "version": "repo-lines-v1:sha256:5555c019495d78324241de2d02e59b5675d35f0a4a3b5d877e3945093902daf9:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmY0ODg2MmFlNzA5M2JlMmE2MjNjOWEyMWMyYzRiZmE0YWVmOGMwYmYwMGNjOWU1ZjY1ZGNkMDcyYWViMmQ1YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDJjYjFmZjlmODlhNWY3MGYyNWVkMDIwYzg4ODVkNTZjYjQyNTM2MWI2YzdlMThiNTkyNmJmYjNmZTZmMjgwNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2Y2ZmQ5ZWNjMThjOGE3NzQyNzQyMmUxZjM4YWU2NDhmMTJkMTEzYmVlMzEwZDAzZWJiZGQ1ZTczMTNjZmVjOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://pipeline/stages/timeline.py#L112-L119",
+          "version": "repo-lines-v1:sha256:c3b9222d7b9c9d3e09712663b76b39746b4532ddcde78049f995422e1c916dab:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmY0ODg2MmFlNzA5M2JlMmE2MjNjOWEyMWMyYzRiZmE0YWVmOGMwYmYwMGNjOWU1ZjY1ZGNkMDcyYWViMmQ1YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzlkMzFmMGQ1OWM0OTY3MzI5OGI3MGQxOTExZjc4MzU2NTIzOTgxNmU0ZTAyM2NlZDM5NzgxZGE1ZGZmNjcwZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2Y2ZmQ5ZWNjMThjOGE3NzQyNzQyMmUxZjM4YWU2NDhmMTJkMTEzYmVlMzEwZDAzZWJiZGQ1ZTczMTNjZmVjOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://pipeline/writers/json_writer.py#L55-L75",
+          "version": "repo-lines-v1:sha256:bb49d27098a9436318b5e21ca8758740278e512eea149978fef051acc61c2925:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwN2JlMTIzMjE5MWQ3MTE2NGNjNWNkNjFkNDQzMjljZWZlY2M3ODdjNmNiNjI4ZjY4ODZhYTNmMGI3OTY1ZmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1OTIzYjJmNDE5ZDc4NzkxZjExYjU0NjQ3ZTRlZDhlMzRkNmFjNmZmMjExNGVjOGQzNzcyYjM0Y2E4ODIwYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2YWY5ZTNjZjU5ZmM1M2NhYjMyNzZkZWQxNDRhYzhhNmI1MjJmZjYwZjQ4NWIwZWQ1MzdlYzE2ZDBlOTJiYjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ3MDliMWI4OWIyNjg1Y2EwNWY1NTBiN2MzNDA5MzhiMTY1MTJmMTAxZGE3ZjE1ZjQ0YTVmNzNhZjNlMjAyNjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6b94e77b6d584668873dd864de6ebc00",
+      "statement": "The chunk loader is tested against a fake Trino connection and cursor that record an event trace, so the execute, fetch and connection-closing sequence is verified alongside the written rows with neither Trino nor Neo4j present.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/tests/test_atividades_chunk.py#L1-L40",
+          "version": "repo-lines-v1:sha256:d8c177a963b41c833ceb02508de80546d03ec3f5b39c1b068df54b9765d777aa:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZmZDhhOTMxMWMzNDliOWVhMDE0ODExYmY1YjZlOTNlYTEyNDg3NjY3MzYxYmFjZDQ3OTA3NTlmYmJhOTIzODkifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.0",
+    "at": "2026-09-10T12:46:32.229Z"
+  }
+}

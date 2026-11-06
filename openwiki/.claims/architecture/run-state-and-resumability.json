@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:fecdd624fcbfc4ad46cdad0f6f43b33a27e93d3f82a09a349a2b58846a658a36",
+  "claims": [
+    {
+      "id": "claim_e6d711fbead247b3b619b0a54f00dac9",
+      "statement": "The pipeline keeps control state and audit evidence in two separate places: checkpoints under the state directory decide whether a stage may be skipped, while ledger entries under artifacts/runs describe what a stage did and are never consulted for control decisions.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/runner.py#L248-L299",
+          "version": "repo-lines-v1:sha256:59f46ad71ebcf8123ffa4ea9c8113b096ed05b03db05a00bd1b6ad411257e9f2:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM2Mjg4NGFkMDVjZDliMzViZWZlMzRlYTIwN2U5NDhjMmVmNDY5OTU5N2VlZGFlM2IzYzJiY2NlY2JhNWQ3ZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiOTgzMWZlNTI2Yjk1ZjRmN2ZlNThhZTFlNzllMGY4NzFkYWM2M2VkNWJiOTc5ZGI4NzVhZmM1ZGM3OGNiNzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI0MDYyODJiNjBkOWI4ZDk3Y2FhYmVhZDI5NDU0MTVmNzkyMjdjOTQ4YzFlOTE2YmIyZmNiYjZkMWRmMDJhMjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZjZTg0OTNkYTBhOTU1ZmI2YTc0OWZjNThkNjA0MTE4ZjJkNzkxMzQ1NTFkYTZjZTZjNzQ5ZDViOGMwZWFiOGMifQ"
+        },
+        {
+          "resource": "repo://pipeline/core/runner.py#L33-L69",
+          "version": "repo-lines-v1:sha256:728744ddda9444d15dd1c162b8209b963565b1aaa1f26cec97ad0d7c58584c81:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhM2I5YzNkZGFiOTY3MDNlNGE2YTBkMGZiNGRhNjQ1MjRiZGUwOTEwZWNmOTY5ZWRhMzNkNDNmNTVjZmNmMDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE2MjMwYzJmY2MzZjZjNDEwYTkwN2U5YTFiYjZlZDg0Mjk2MzVmYzE4NmQ3N2JmNDJhZDg0MmI3MGZlNDA2MWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwNDRjMjdmYTFlOWUzZGFkZjliYTA1NWExN2E0MWFhNzMwZGFlM2ZmOWRmZjQxZmE3MzhhNDg4MzgzYTljYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhkMGJmN2U4NjBlNWMwMjY1OGE0N2I2ODQ4NjU5NGZlZjk2NTc3ODAxNjZmYzdmNGQzOTNjMDU1Zjk2NTkzYTIifQ"
+        },
+        {
+          "resource": "repo://pipeline/core/state.py#L30-L44",
+          "version": "repo-lines-v1:sha256:5ef7e3688038f121e6a5a8fbdb9ef32ffa8dfe3989bb916ffdbb2821727db40a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3ZWQxNDllMzVhNjE4MTQ0ODZkYjUxODA0NmJhMjJmYWM3Yzk2OGEzNmU0MTY5NGZmMWFhZDM3Mzk5YTZmNGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiNmM0MDU3OGU4MWFjOWEwMjM0MDdjZWI3NjFjOTBmMjE4NzFkYzJhZTlmZjllMTQ0YjAxNzE3Y2MzYmY0MmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmYTA2YzUzMWNhZWEzYTkxNjA2OGFkNTUwZDUxYjU5OGI1MGQ2ZWUyMjVhN2NlOTllNWFiNWQzMTUzMDkyN2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIzNjQwYzIwM2UwOTQ2MDUyNzhiMGVmZGNiNDI5YjExMDJjNzgwZDkxOGJlZjkyMDMyNTA0MmI1NmFlMjcxNzQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4f49b1b2283247fdb000a98ecbc56d38",
+      "statement": "StageRecord.is_complete requires completed_at to be set and failed_at to be unset, so a record encodes three distinguishable states: never run, running or failed, and done.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/apps/status.py#L98-L113",
+          "version": "repo-lines-v1:sha256:62315067e32a0cc00c21a414437d7b0843ebfc808e3eb310c0707f5f84765b08:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxMjYyMTA3YzcxZmJkOGM5NDE1MDEwNjJhNWEyZGEzM2Q0MmY3MTNiOGQyMzI3NzZjY2RhZmI1ZWNlOGRkYmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1MjM1OTMwYmQ4ZjI2ZjgwYTQ1NDE1YTFlZjIzNjFmOTlkNTg5NGY5MzY1ODQ1MmMyYjRmYjQzYzIxZTgyNTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIyMDI4ZGQwZmY1ZmEzYjU2ODc1NTY2MmE2MmUzNWFlNzc4Mjg4ODRiNjRmNmJkNjcyZWZjZjk1NTFhNGM4NGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM5YWI2MjU4YThkYjdhODRmNTUwMTUxMGRmY2I5MjMxMDI5MTcwMjg5YzRjZDcxYWU2YTE4NTkwNTJkN2MyMWYifQ"
+        },
+        {
+          "resource": "repo://pipeline/core/state.py#L14-L27",
+          "version": "repo-lines-v1:sha256:39caa1cb9b25bda4a0c7d9f65e8555cdd78b9875c0b97785a6ab9b3a2cf5bca6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2ZmJhZTBiOTFkNDRmYzBkNDlmNWRlNjkxZGE2ZmM0MzFmMjYwMTM0YmY3MzFlMGUyMWY3NjQ4MDk0MzM0Y2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllMGExZjRhMjk4Yzk0ZjY2NDljZjk0ZWE2MWIxMzYyMmIxZmJiYmExODUxMWI4ZTM3NjQ4OWQwZjg1OGQzZTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlkMzdhMzNkMDczYWI4ZGEyOWRjNzRjZTZhODkxMzE4MThhNTJhNWMxNjVkMTZmMzFkOTkxOTk3ZjBlNjZjZjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUwMzliYTY5YTU1ZDg5NTRmMmY0YTllZTJhYmNhMzkyYjNkNDRiNTI3YTJlNTFhZTUwZDEwMmU5NzI2ZDQxNGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a68e36fdeaff49e48753bb5845c24511",
+      "statement": "Checkpoint writes are atomic: write_stage serialises to a .tmp sibling and then replaces it onto the target path, so an interruption mid-write cannot leave a truncated checkpoint to be misread on the next run.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/state.py#L54-L59",
+          "version": "repo-lines-v1:sha256:8deeee9875a99593e676a6c4aad2d73e33cb60bbdd3baa4c604330f865f2d318:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGRkNmY4OThmYjNjZTRiNGM2MGRhNmJhNmYwZTVmMGFiYzJlZTk3YTk0OTEyNjRlZjE3MDgwMmNkMmQxNGY3YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2ViMjczYWJjNjE3MGMxNzE4ZmZkZjI2Yzc3ZDY3OThjY2YxZjdiMWNlMWEyOGIwNDFjMzhiMDJjNmI0NzY1YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODdmY2NjM2MwMjZjNGYxYTg2M2M2MzM5ZDAxNzc2MDMyNGM5MDdmYTlhNmUxZjQ2NTBkYWFlNjMzZWNjMTIyZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTc4NGJhOGQ1Yjk0ZmM1ZTlkY2ZiMGU1ZDgxYWY3ZmFjNmE1YjJmYjI3M2QwMTliMTM3OGEyNzhkNWNlMTE4NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2539cfb5d98c48a3b8c0cb87053e1a6d",
+      "statement": "Checkpoint reads fail safe toward re-running: read_stage returns None on invalid JSON and all_records skips records that fail to decode or carry unexpected fields, so a corrupted checkpoint causes the stage to re-run rather than crashing the pipeline.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/state.py#L44-L52",
+          "version": "repo-lines-v1:sha256:4ea2c221554a5e45a66faba30d64cdc74df24ceae475f802d0d240163daf4f48:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGI2YzQwNTc4ZTgxYWM5YTAyMzQwN2NlYjc2MWM5MGYyMTg3MWRjMmFlOWZmOWUxNDRiMDE3MTdjYzNiZjQyYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjM2Y2RkNWJhMTY1Zjg2Zjg5YTQ1Mzg5ZDE3NjQ1NTFlNTA5NDk4N2U0OWM4M2MyMmFlNWNhMTY3ZDU2MGRkNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2ZmMWMzNWUyOWE2NzJiMzJmNmYyMmU3MDcyMDY3ZjM0MWExZTZhNjExMWE2MDhmNTg4YmFiOWM1MzQxNzQ4MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzY0OWJhOTgzMWM4MzNlYjQ1ZjIyYTUxNGViNjY4OGJjYjYyY2NiOWE4NDQwZTgyYmE0MGE5MjJiM2Y0NTE5ZSJ9"
+        },
+        {
+          "resource": "repo://pipeline/core/state.py#L77-L88",
+          "version": "repo-lines-v1:sha256:edffbb49bea3167fa38fb968c79f0f07341d4910926f2e99215329eaf3932063:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliNzU5OGM5Mzg2MDg3MDYzMTIyNjcxOTA4ZDEwMTEzNjhhNDEyNzY4NWMyMTgzNDJjZTQyYzRkZjRhMWRkODYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJiYjU0MmE5MDcwY2FhNGM5OTg5ZmQxN2U0NGE5NmIwMmViNTBmY2JjZWQ2N2VhMGU0N2FjODgzZTg5NjgwZGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlhM2U1NWI2ZGU4ZmQ1ODNkNDMyODkyMWQyZjNlMWExNTIzY2I3MjAwNzY0YjQxZTJjZDI1ZDQ5MmMwODE4NDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhlNDNkY2QxYzcwMmUxMjEwOTJkZGFkN2MxMDUyYTAwZWYzZGVhNWY2ZjlmMDRmODZiNzI5OTE5M2U5YWE2MDUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_256b92b34c074e56b45d1dfd8497141e",
+      "statement": "try_lock implements a PID-based single-writer guard with stale-lock recovery: it probes the recorded PID with signal 0, refuses the lock when that process is alive, and takes over the lock when the PID is dead or the lock file cannot be parsed.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/state.py#L107-L120",
+          "version": "repo-lines-v1:sha256:89798873eb096a301b0ca55499c695a8d306506661abbe8e8c1102bf4c1dce0b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiMDQ0M2VhYmQ2NGY0YzgxYTc5NGIzODI0ODk2NDNkNGU3MmZjYjUwNWIzMGEwYjBmYzJkODVmZWM5MTNjMDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxMDQyNGJkZTNhZDkxZmY4ZGFlYTgxYTRhYTUwNGIyZmU5ZDM3OTIzZjU5Mzc5MTUyZDU0M2Q3YjRkZWFmNzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIyMmY0OThkODdhMmRjNmQ1MjY3MmQ2NWY3NjFiYjE4YjcxOWUxYzgyZTBlMjI4MzA5MTBjMmNhN2E4ZGNhM2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhmZGI5MTk5YWY3ODFjNjAyZTViZWY0OTdjNzFhMGIwOWFiM2Q4ZDMyZWJhOTUzNjU1YTk1NWM4NmIzYTgyYjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0f7a271fbd604bad88a98077bcb4c1ea",
+      "statement": "The run lock is acquired before any stage executes and released in the finally block that also appends the run history, including on the early return taken by a dry resolution.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/runner.py#L211-L229",
+          "version": "repo-lines-v1:sha256:ee7662273d69bcbb17a80627554e129abc99a09b29557ee882a5c4c717ae4598:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5NGFlNzUxNmY3MjE2NDBlYTc3Y2FiNTJkOWQ0MjQwMTFkYjk0YjIxZTIyMGU5NDUwYmNmNTg1MWQ0MTYzODYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlODljYWU2MTU4NmRkNmQ1OWYxZDA0ODU3YTc3MDA0OTk4M2JmN2Q3NGYxNDhlYjk3MTY0NTAxOTk1YWVmMWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3ZWRiZDliODM2YWY3YzgxMjgwOGU1ZWY0NDg4YWNlYzliYWQ3ZmQ4NWQ4OTk5YzI4MDUxYjFkMTIyOTMxZTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxZjY4YmY4YmM2ZjQ3ZWUzNTY3NjIwZmI0ZDRmMjljMjhjNjIzODEwZThiNGYzNTlmN2VlNWY4NTA4YjcxY2UifQ"
+        },
+        {
+          "resource": "repo://pipeline/core/runner.py#L316-L328",
+          "version": "repo-lines-v1:sha256:fa4d2343f83486a324aaf0a9a0392e0b041b8e1c9b6ef1c02b07bbd7ac63fd5b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3MGRhMDMyZmJmZGJkMWI0MjRlODE0YzIxMmFlNTg0ODRlNzZmNTdkYzU2ZGJmZDEzYmY4MDM3MzZkMzI0YjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkNzZjZmUzOWZiN2ZkOTFhZTAwODEwMzIyZTAzNjA1NjY3ZTNkZWE3OGNhMjdmZTg1ODIzYzg2ZjhjM2RmODgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYxOThjNDI5MmFkYzUwMDA0MTYyOTdhNTg4MTkwYzMyM2I4ZDNjYTJjNjQ3NjNiODRiODk2NGVhMGM3OGYzYjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU5OTAyYjhmMTNkOTA1MDIwYjE0N2ExOGZlOTE3N2MxMzM1YTE5NDBlYjMzMTQ5ZjNhZDg3ZTdlMDdlZDNjZmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5203910340804816980bb3503f06cbe2",
+      "statement": "The run lock compares process ids on the local machine only, so it does not coordinate concurrent runs across separate hosts or containers sharing a mounted state directory.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/state.py#L107-L120",
+          "version": "repo-lines-v1:sha256:89798873eb096a301b0ca55499c695a8d306506661abbe8e8c1102bf4c1dce0b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiMDQ0M2VhYmQ2NGY0YzgxYTc5NGIzODI0ODk2NDNkNGU3MmZjYjUwNWIzMGEwYjBmYzJkODVmZWM5MTNjMDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxMDQyNGJkZTNhZDkxZmY4ZGFlYTgxYTRhYTUwNGIyZmU5ZDM3OTIzZjU5Mzc5MTUyZDU0M2Q3YjRkZWFmNzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIyMmY0OThkODdhMmRjNmQ1MjY3MmQ2NWY3NjFiYjE4YjcxOWUxYzgyZTBlMjI4MzA5MTBjMmNhN2E4ZGNhM2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhmZGI5MTk5YWY3ODFjNjAyZTViZWY0OTdjNzFhMGIwOWFiM2Q4ZDMyZWJhOTUzNjU1YTk1NWM4NmIzYTgyYjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2fd866f81f5247219270c1cf4983a9f0",
+      "statement": "A stage is skipped only when its record exists and is complete, the stage declares can_skip_when_done, neither force nor force_stage names it, and the recorded arguments are compatible with the current flags.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/runner.py#L250-L263",
+          "version": "repo-lines-v1:sha256:2d46e8a4f822283cfe76cb64f86741210e6176859a91e88afda7438a017a6465:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzMDE4MDIyM2VmNmQ5MzQyMDc3OGU5MDdkNzM2MzA0NjMzZjMzZDM5MmE3NjljNDcyYWJmMzFiNDcyOTNmZmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyNmU0MzY4ZjIxZjg4OTFjZWQyNGNmYWY3Y2EzYmY5OTg1YjNmNDY5ZDRhNjgyNTZlMTYwOWQ2NTZmMWE3OWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQxOTYwNDQwNTIwYzNhNjAxOGEwYTgzM2M3Y2I1NDcwZmVhMDhhZThiOTI1MTMxMjU5MTc5MDdjM2FiMzMyNjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxY2IyMjJiZjkyZWEyZDZkODY0YTc3ZWUyOGUyZDM0M2M3Mzg0MWU0MjJjZDdkZDYyNGQ3ZTE0NzcwNmMwMzMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ed442163768042a496b1fb06ced595b3",
+      "statement": "args_compatible compares only a fixed tuple of corpus-defining keys (from_date, to_date, limit, from, to, orgao) rather than the full flag dictionaries, so changing any other flag does not invalidate an existing checkpoint and the operator must pass force-stage explicitly.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/runner.py#L257-L257",
+          "version": "repo-lines-v1:sha256:5aadfb0f780f67af67207a75da6dc6f1b3926d1d69c7b06820983e8e8e4755e1:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWFhZGZiMGY3ODBmNjdhZjY3MjA3YTc1ZGE2ZGM2ZjFiMzkyNmQxZDY5YzdiMDY4MjA5ODNlOGU4ZTQ3NTVlMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWFhZGZiMGY3ODBmNjdhZjY3MjA3YTc1ZGE2ZGM2ZjFiMzkyNmQxZDY5YzdiMDY4MjA5ODNlOGU4ZTQ3NTVlMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTQ5MjRjNDExY2I2MmZiZTE3YjUxMjQ1MjU5M2Q3OTAyMDgwNWRiYjRkMDIxZmI5OTJlNjVlODU3MmI5MzM0OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjJhNDYwM2ZkY2M3ZjM0YjQwYzVjZWE5OGNkNmViMjM5OGFhMWIzMWJlOTA4NjQ2MWI4YzgzOGI1MWFlZjg0OSJ9"
+        },
+        {
+          "resource": "repo://pipeline/core/state.py#L134-L137",
+          "version": "repo-lines-v1:sha256:24ed4d2cd6832c1a27a4d8b0c5f1b1a2d125aeadbcd110a30fbdf17e0f075f3d:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjFiMDc4OTdhNGMyZGUyOThmNzFlMGI0OWZlNTY0OWE3YmJkYjc2Y2ZkNjJlMzM4ZDk3ZjM1ZTYwZmE3YWY3NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2ZjYWZlZDMyNzBmMzA4MzFhMDQyNzA5MGU0MzYwOGU5NmY0ZjE5OTVjZTA5ZWIwZDFhNzY3MTlhOTQzZDVlYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2UwZmM0OWQ5YWYwMWYyNDgxMzlmYzMwYWRiYjI1Y2MwZTdmNWNmN2ZmNDE1OWI2ZDY3NWI2MWU0NzJiMTcwZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmMxOTg5ZDllNDhlODMwOTc3ZTM4NTRmZGMzODlkZDkzMjViZjc2MzgyNDZjNGFkNjk2MGI4YmQ1NzVjOTY1YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6a82f292b9f0451a9f7d577b393d7f43",
+      "statement": "A stage reports its metrics by writing a cache key named after itself with hyphens replaced by underscores and a _summary suffix; the runner reads that key out of the shared cache and persists it with the checkpoint.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/runner.py#L293-L296",
+          "version": "repo-lines-v1:sha256:1af85e3361eb47ed450b191f69b0006b5bf9878fca02d9aef155f8403974dc87:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWQ0YjY4ZTJlZTk0ODhkODUzNWY5ODAzZDYzNTE3YzA5NzM3OWNlZThjYmU5MjUyMmIzZmNlOWM0YzRlODY2ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjhiNTRlMGY4ZWQ0YjI2MGRmYjc2MjU4ZmI0NGRjYmE4Mjg2YWNmNGZhNmM0N2Y4ZmEwMzBlY2JkMWUwODEwZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGYzMDE0OWFhZjYzZjQ5MmEwMzQwMmIxNDczMThkYWM5MDU5M2UyYTFlYjU3YTZhODY2ZDIzNGFkZjY0ZTE1MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmZmNmQyNDgxYjMxOTQ5ZTQ4NGE0OGI4YzA3OWJhNWZlN2QzYTc5MzJkNThiYzJmMjdkZDRmZjc0OTUxODNmOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_486f2d0f017844f19ec7ca6637cb8221",
+      "statement": "A single shared cache dictionary is created once per run and passed to every stage's RunContext, so ctx.cached lets consecutive stages compute an expensive value such as a loaded model or corpus at most once per run.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/_stage_base.py#L106-L109",
+          "version": "repo-lines-v1:sha256:dbe9277e128c63aa6c223a540eb73fa0d402f248f578654958c5009f1a19bca6:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzhhNWM2NjRmMTg3ZmQzNDJkMWU3YWQxMDJjYTQzZjNkOTM3NWMzY2UyYzAxYzU4M2IwNGYwYjYyYTQ5ZjgxYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTg4MTVhZDM0MjAzYWEzYjAyYjJmMmYxYjhjMDZiMDFmZDQ2N2I1YmI4Y2FmMzAzZjBmMmEzYmQxNmM4N2JiYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjkzMTUzNzU1ZTBlNTdjNzM3ZjBlOTdhMThjOWUyNzMyODU2MWNiZDAyYWYyODI0MTc5MjAzZDkzNGRkMDFiMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGU2YmQ1ZWQ4ZWIwYWIyMGU2NDcxZWM3MGVjYWM2OTZkYWE0YzQzZDE5NjUxYjhhY2QzMmU4ZWQ4Yzk0YjZhOSJ9"
+        },
+        {
+          "resource": "repo://pipeline/core/runner.py#L234-L234",
+          "version": "repo-lines-v1:sha256:f021ea8751a073a8e5fd442ab0eff576a0ea9758c2194027e8ba77c79e019ff9:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjAyMWVhODc1MWEwNzNhOGU1ZmQ0NDJhYjBlZmY1NzZhMGVhOTc1OGMyMTk0MDI3ZThiYTc3Yzc5ZTAxOWZmOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjAyMWVhODc1MWEwNzNhOGU1ZmQ0NDJhYjBlZmY1NzZhMGVhOTc1OGMyMTk0MDI3ZThiYTc3Yzc5ZTAxOWZmOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDkyZjY1OGU2ZjU2MTk0MTQzYzI5YWYzYWI3Y2I1YTEwZDdlNGM5ZjM1ZDc1ODhmOWI4N2MzNGI1NTBjMjljZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGJjZDBkMDMzNjBmN2ExNjk4OGNiNzdiODJlZjBmZWQzYWY0MWQ1NTM4YjdmZWIxZTA3NDJlMWYyYmMxNGE0OSJ9"
+        },
+        {
+          "resource": "repo://pipeline/core/runner.py#L280-L290",
+          "version": "repo-lines-v1:sha256:948ac98cc97ca04a7610d10be91f2403a6141299d4d86618b0056cf6b94d440a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ2NjBhOWYyZGY5ZTQwNjBjMjY2MWM4NjEwMzA0MDUwNDZmNGZjOGMxODkzNjc4NWUwMGEwMDk3MDFiMjFjMzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhZDZjOGVhYTg1M2RmYjcwNzIwNTFhNWY1OTYyOWJiNzZmMDJkMTMzMDQyZjY0MTQzNDNmYTAxOWFiOGU2ZDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFjOGYyN2FlNzljODBlNzM2ZGNkYzQ1ODE3Yzk0ZjhiODIxMDZlODhiN2RhZWE2MDU3Y2Y0N2QzMzdkMGNhNDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMwN2FlODgzOTBjOGZkNDFiMmE2NjYwYjRiODU4YTEzMGM5ZDg0MTg0NDRhZTY4MWVjOWEwMzg2N2EwMzg5ZWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b6621dfc62dd457cb3fc6f126f501d28",
+      "statement": "On failure the runner checkpoints failed_at, the error string and the formatted traceback, writes the ledger entry, and then re-raises, so the plan aborts without running later stages while the next invocation still sees a non-complete record and retries that stage.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/runner.py#L301-L311",
+          "version": "repo-lines-v1:sha256:f42a67b0a4c3f08d73c72aa4416a45657fb1667813a2a2f9a605985d35d15449:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE4YzRkOWYxMmMwZWVmYzE0ZTZmODM0ZjU3MTI0YTY4ZGRjNzMwZDE3ODkyM2QwNGYxMDZhMGMwMWExNDllMDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiZjA0N2JhMzVjOGQ4Y2Y3YjA4ZmFlMDc1ZTkxMzRkYjc2N2IwNTc5NjkxNjZlMTExYWI5NmE1NDBmZDU3NzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhNDE0Nzk1ZjJmNTBmMzdiZTliMmQ5YWUzNDc1YzU1Y2E2MmU5NTQ2OGYyZDQ2MTA4ZWRlMWZmNzMzN2E5MmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQyZmZlMWY1NTdjOWNkZmRjOTdlM2Q5Y2JjNGRjOGQyZDhjZDFmNDliNGJjMDA4NzMyYTI4NGUxZWI5Njk0MDUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_098683383c724ee7a319b90af91b5bbc",
+      "statement": "The stage ledger copies the stage's phase, research question and determinism declaration directly from its registry metadata, so an auditor reads a stage's determinism claim from the same source the code registered rather than from a separate description.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/_stage_base.py#L45-L59",
+          "version": "repo-lines-v1:sha256:2275ca6a6d8005fdd2fbebdde8d36dea6970d042607fa609ccf689ff961ec1f5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2OWExMzk3NWMyNTZlYzgzMjBlMjAxNjA4M2M5NmRmNjM3Y2EzZDM1YmViZGUyMzE0YmVlM2E0NzExYjU2Y2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzNGMwZTUwN2Q2YTQ2NmFkZDdkM2ZmMTBkOGM4MWI0YzY4ZWMwMzYwOGVhNzVlMDhiMmE2OGJhZDYxODIxZDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5ZjkzMDgzYzE5NzEyMWI5ODI3MDBiYThhZmFiZDE3MjJjZjFkM2U3NDA0NTA5ZTgwZWZhMjcyNDdmNjJmMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxOTZiZDg3ZmY2MmI5ZDViOGI3NWNhMjY4NGFjYmY5ZDIyNzM4N2Y4ZjBjNTFhYmYxMTAzNGUzMTZmNjQyY2YifQ"
+        },
+        {
+          "resource": "repo://pipeline/core/runner.py#L45-L61",
+          "version": "repo-lines-v1:sha256:40be257b585be10682d6c093f3eb029c0b38d9693c7184be39469dd3cf77b0d4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlYTEzOTY0NGZmZjkzYjhlNDBlMjEyNmIzOWJmMjk4NDEyODRlYTI4OTE3YzE5ZTc4OTQ4MjU2YmFjYWI2ZTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzOTU3YmFkNzg4NzhiM2EwZDRhMjE2NjBkOTg5NTI1OWIwYjM0ZmMzMTI3MzcwNzg4NWZhZjc3Y2RiMmY4MDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZiMDZjM2JmOTc5OWY2NTA0YWE1OTUyNDJiZGUxNWYyZWNlMWQxNjI2ZjBjZDFhY2VmODdlODg0NTdkMTEzMTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_15b5cb7522e54288a73035755d9ba2ce",
+      "statement": "Ledger inputs and outputs come from a process-wide write buffer populated by record_write and emptied by drain_writes under a lock, with inputs deduplicated by path in first-seen order.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/runner.py#L38-L57",
+          "version": "repo-lines-v1:sha256:c097b00a32e3772718f11758bba4f7605cb52e022e511d017f53c02551d8df26:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1ZmQwNjQyODU2MDFlYmU4YThiODI2NmUxNTNjYjgzMDY5ZWYxNmMyMzQ4YzIwMTc5MmQ2OWE1ZDZmNjk2MGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljOGQ4Yzc2YzJiOGRlNGNhYTU3ZGUyNTA2MWU0MmE0OGI3Y2Q1MWQ0NWIyZTJlMTVmM2U3MGJlMGFmNjk3YTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE2ODljMDhjYTQ4MjcyMDAwZmRjNzZkNjU3OWU1NzNiNDk1Y2E0NDU2NjJiNmY1ZWRmMjUyNjQ5OTEzNzdkZWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ2YWI0YTNkMjU1MjRkNjYwNTNjN2EzNzljMGYzNzZkNWUxZWI3MmU0NmU5NmMxODRkZGFhMzUwMDBmOTY4NjgifQ"
+        },
+        {
+          "resource": "repo://pipeline/core/state.py#L140-L153",
+          "version": "repo-lines-v1:sha256:4f13929a90d98827db88f942624c0c0ac14653b780125f0235c4b4d10f29ec74:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQwZDE2NTVkZWExNWVjMzg5Njc0NGIwNjAzNWUxODgzNGYwYjY2YmRkZmZkMTczNGMxMDI0OTRmY2U0YzYwOWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzYzMxNjRkNDc0MTgxNDBmNmU2YzUwNmI0NjdlZWVlNTVkNTU3MDBjNDM3YzY2YzhiOGY4NTFmYTJhNTY4YWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA2MzgzNmY0OTk2ZTY1MTJiMzVmN2UxZmVkNmUwYTIwM2UyMWE2OGYxMzIyN2IwZWVhNzNhZTRjNzc1ZGM4YjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU0NTI2YWZkNzhlMmJiZGM0N2QwODZmNjliOTdhZjYwZTQ5MjAzZDNjNDlhMTAwMDNmNTQxNzEyODlmOTYxZTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b422d149f0e24a84a8da93981885800c",
+      "statement": "Ledger writing is best-effort: an OSError while writing artifacts/runs is caught and logged as a warning, so an unwritable artifacts directory degrades the audit trail without failing the run.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/runner.py#L64-L69",
+          "version": "repo-lines-v1:sha256:9e2abed1b8b55edf14eac143e328d7f367c2d427891ca5c4607a9da1380afbec:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWRhNWM2NmUxN2IxNDUzOTc4MzRiOGM4NTRkYzQxOTNlMjEyNTE4MGE4OTk2YTE0YzMxODgzMzI2YjJlZmJjZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTYyMzBjMmZjYzNmNmM0MTBhOTA3ZTlhMWJiNmVkODQyOTYzNWZjMTg2ZDc3YmY0MmFkODQyYjcwZmU0MDYxYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTJhNzJkYWNjNTk3MjJkNWY4MWYyZDVlYjllNDY3YmM5NGI2YmJmZWZkMjA4ZjFlNzk1N2U0YWM5MmJkOTQzYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGQwYmY3ZTg2MGU1YzAyNjU4YTQ3YjY4NDg2NTk0ZmVmOTY1Nzc4MDE2NmZjN2Y0ZDM5M2MwNTVmOTY1OTNhMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_30e7fcb8d9d34396b0b8e1545017d948",
+      "statement": "One line is appended to runs.jsonl for every invocation from the finally block of run_stages, so the history records failed and interrupted runs as well as successful ones.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/runner.py#L316-L328",
+          "version": "repo-lines-v1:sha256:fa4d2343f83486a324aaf0a9a0392e0b041b8e1c9b6ef1c02b07bbd7ac63fd5b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3MGRhMDMyZmJmZGJkMWI0MjRlODE0YzIxMmFlNTg0ODRlNzZmNTdkYzU2ZGJmZDEzYmY4MDM3MzZkMzI0YjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkNzZjZmUzOWZiN2ZkOTFhZTAwODEwMzIyZTAzNjA1NjY3ZTNkZWE3OGNhMjdmZTg1ODIzYzg2ZjhjM2RmODgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYxOThjNDI5MmFkYzUwMDA0MTYyOTdhNTg4MTkwYzMyM2I4ZDNjYTJjNjQ3NjNiODRiODk2NGVhMGM3OGYzYjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU5OTAyYjhmMTNkOTA1MDIwYjE0N2ExOGZlOTE3N2MxMzM1YTE5NDBlYjMzMTQ5ZjNhZDg3ZTdlMDdlZDNjZmQifQ"
+        },
+        {
+          "resource": "repo://pipeline/core/state.py#L90-L93",
+          "version": "repo-lines-v1:sha256:893dad6cc0d38118515c8364574f3885dc7eb97a845708728afbf757d1a3c0d9:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTE3ZDhhYzY1YzkyMGU1ZjY3M2VhODI3MjdiMjY3NjU1ZGU4NzlhMzI2M2E2NjU2YmRhZThiNjRiZmVhZWIzYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjRjZGRmNDE4MzAwMGQxOTExOTE4YjY1ZDVkYzM3YzU3NDU4ZjI4MTM0Y2M4M2Y2NTA1MDBiMjhkYjhkZjZjNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjIyZjQ5OGQ4N2EyZGM2ZDUyNjcyZDY1Zjc2MWJiMThiNzE5ZTFjODJlMGUyMjgzMDkxMGMyY2E3YThkY2EzYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTE3Zjc0YWVjZDgwNjdlZjg4NTAzNzQ3OTQ2NmViOTMyMjhlOTQ0MDFlZjMxMjMyYTBhNWQ5NzlhNDAzMWJjNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f6f4155dbd224ac7a4d7f290c35788bd",
+      "statement": "The status checkpoint table iterates the stage registry rather than the state directory, so stages that have never run are listed explicitly instead of being absent from the view.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/apps/status.py#L89-L114",
+          "version": "repo-lines-v1:sha256:ae275674767bcc1848516d24a8ede4e73d3a33a41b88717933498577bb690123:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhZDgyMGM3MDQ4M2YxZTAzYTAzZTNhZGM3MTMxODhjMjc5MWM5YTgyZWUxZjc1MzIxNWRmNGRkZGE5ZDAyMWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhOGM2ZmI1NDBjODlkYTEwNGI0Y2JjYTQxODc0YzRmMWNkZjg1YjZhM2M0NmMxZDc3ZTEwOTQ5YzNhNDIwZjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFhNDE1NjdiYWFkYjY2MDE1Yjk5MWEwYjcxM2QxMGU4OWNiNDU2MjNmNjYzZmIzZmI4YTUxYTkxYzU0ZWMyMDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEzZTc0MzI3MGY3OWI1MjYwZDQ0ZTM0MGVmNWQ4ZTY5Y2E1MDZjNmZmNWYzZDQ3MDU0ODhkOGVjOTQ3ODdlN2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_724548e1e17e4667aeb09d9c5bde43a5",
+      "statement": "The status filesystem view distinguishes a missing directory from an empty one by returning a negative sentinel from _safe_count and rendering it as a dash rather than a zero count.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/apps/status.py#L20-L46",
+          "version": "repo-lines-v1:sha256:0f112c62cd50a4ef3b1d6e0369bc28262ae0d66c82d638b03e220477d4b396a0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhjY2ZhYzg0NWE3OTlhNjAwZDZmODMzMmI5Y2UxNDUwMzFhYmIzNGViYTJiOWM2ZTY5MDI2ZjM5OGVkMGJiZTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhOGM2ZmI1NDBjODlkYTEwNGI0Y2JjYTQxODc0YzRmMWNkZjg1YjZhM2M0NmMxZDc3ZTEwOTQ5YzNhNDIwZjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBiNTZkZTRlZGU4MTEyNThjY2ZlMDg3MWNlNDQwZGNlN2Q0OGNjYmE5ZTRkYWQzNzQyNGM4OTYyYzQ5MGFjNWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY2NWM0YjY0MGZkNWQ0YzkxMWNhYjk3ODRmN2RiNzcwNTg3ZGNkMTNjOGMyZGIxYjg2MTNkNGZhYzk4ZjE5MzQifQ"
+        },
+        {
+          "resource": "repo://pipeline/tests/test_status.py#L19-L20",
+          "version": "repo-lines-v1:sha256:983994e8223599d9bbc3b3392a2c549d340d3b5bba0c2d09d19f9caf3a92f1f1:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTIxNTNjMzJhYTVkY2RkNjJmNjhhYTg4YjNhYzNmN2JhZWU1OGJlMjA4NTA0ZDk3NzFlOWRkNGRjZTRjNzk0OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDJkNjQzM2ZkOTAzM2Q5ZTdkOGI1MTFhMzFhNTEzYzZlYmZjMjhiMDNiZWNkYjEwNTYyMmI5NDUwYWQwNDcyMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjNhOTJiODk2ODZkMzJlY2Y3NmI2ZTFkZDE1ZTFlMjRlZmY1NjVhODgwNjJjZjUyZjgzMjAyNTQ5NGQzNDM3MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_888e00388a8b4173bb5631f4a85d75ad",
+      "statement": "The status Neo4j view degrades in two distinct steps: unconfigured credentials yield no table and a configuration hint, while a configured but unreachable database yields a table titled UNREACHABLE carrying the connection error.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/apps/status.py#L136-L140",
+          "version": "repo-lines-v1:sha256:06d8ddfa9e65ba045000d7203ea42c0b256d02a71db0a78069477489e434a032:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzY1NGNmMTBmYWJiODZjOTE0OGU3NmI5MGVlYTYzODRiZmMzZDg3ZDA4YzlhYjQzYzAyM2ExYjA4NjdiZTU5YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGYyMWJjZWQxMDhhYWM5NzYyM2UwNWJiZDk0YmY3NzYyZDNiM2VlZDBjOWMxNjY2OGQ5OGU0MjUyMzdlOWQ0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODc3ZTQzNzI5N2JlYTU4ZDE5NjNiNDE5MmFlZTZjYTMyOTNkZjExMTM4YmI2YzE2MTgyMTM3Mzg2ZmFlM2U4NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmExMzdjZmI2ZDk3NDJkNWEwMGQ1Yzg5OWQzOTYxNjEwNWUxZTQ5MWI5NDgyYTliNWFiMzg0OWYxOWQ0ODk2YiJ9"
+        },
+        {
+          "resource": "repo://pipeline/apps/status.py#L49-L59",
+          "version": "repo-lines-v1:sha256:3573be24183d676092004188f9fca8daa790e279c1a8626a311719979447abb2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0OTA0OTQzNDYxYmE0OGVkYzMyMDdiYWI4YmYzNTc4YWZmZjg1ZDBmYjFmY2I5Y2YyYzQ4MDI0ODQxOTJhYmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyM2QzMDQwNDJmMjljODE2YjBhMTRlNjI4MTA4ZGQxYjdkYjkwODY5Mjc2MGRhZTBhYzg3MjA1ZDExMGUwNzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5YWI2MjU4YThkYjdhODRmNTUwMTUxMGRmY2I5MjMxMDI5MTcwMjg5YzRjZDcxYWU2YTE4NTkwNTJkN2MyMWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM0Y2NjYTllYjhkM2Q1ZjNiNjM0M2UwMjlmYzJjNzdjZTFiOWUyNzFlYmNjYmRiY2Q0ZjliODZiZGVmZTMxODIifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.0",
+    "at": "2026-09-10T12:46:32.229Z"
+  }
+}

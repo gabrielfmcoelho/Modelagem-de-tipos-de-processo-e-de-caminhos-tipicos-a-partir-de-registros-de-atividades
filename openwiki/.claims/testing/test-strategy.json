@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:8d124607108fd011f95cc0b58be9a589bd1263cd8abc7401e8b774a899fca937",
+  "claims": [
+    {
+      "id": "claim_543de22eea1147d49bc2abd1b2d3c531",
+      "statement": "A session-scoped autouse fixture snapshots the modification time and size of every file under the artifacts tree before and after the test session and fails if anything changed, preventing a test from silently rewriting published evidence with fixture data.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/tests/conftest.py#L13-L36",
+          "version": "repo-lines-v1:sha256:9e78315149794653f2d74284e97f2fb141f25fc78a1f9e584d1e94dfdfbd1bc3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkOGNiOGMxYjBmM2Y3YmY0YzhiYzE4OWM3ZmIwYzY3ZGJlMmM3ZDcxYTMyMGQzMTQyMzAyMDM2NmE4NzZiNTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ1ODE2Yzk3MjQ5ZWM3NjI3Y2U5Yzg5NDk0ZjcyNzdjMjhjZTQ3YmYxNDNlODI3OGY4NmJhNDZkNGQ4YzkyM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiNGExMzRhZTU0ZGM0NWM4NzUyOTdmMDM2NmIyYjFlYTFmOTQyYTI3MTcxMThiYzUzZGE5ODAwZDJjNGQ2ZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4be74b92cefc47e68d4e83c68b9e673e",
+      "statement": "The artifact read-only guard's failure message records the incident that motivated it — a module-level path constant escaping monkeypatching and clobbering a real cached artifact — and instructs that the test be fixed rather than the guard relaxed.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/tests/conftest.py#L32-L36",
+          "version": "repo-lines-v1:sha256:9ce364307272c7f0771f41389ac6fdb7373e3c8911150bb7d71d77e44b5ffd8d:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzQyNTM2ZTk3YzBkN2U1Y2Y3YzdlMjI5MzRmMWM5NTVmMTUyYjFiMzhmNWUxNDJiNGMwOWM0NzgyNTg5MTUwZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDU4MTZjOTcyNDllYzc2MjdjZTljODk0OTRmNzI3N2MyOGNlNDdiZjE0M2U4Mjc4Zjg2YmE0NmQ0ZDhjOTIzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjIwNGE4NDk3MWNmZmE1ZjhiNzJjNTJiYWZiMTdiZDA3MzNhMGEyOGE0M2U5ODhmNjMwY2JkNGY3OGUxYzZiYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_89d6cee4280d4903b5f3c7ac9f29ac42",
+      "statement": "Neo4j writer tests use a hand-rolled recording driver whose sessions append the Cypher string and parameters to a list, letting the tests assert on the exact generated statement without any database.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/tests/test_neo4j_writer.py#L11-L45",
+          "version": "repo-lines-v1:sha256:5f5b2e3f2362c23889d0f62319e405b320398aebdb34a67b4c596bf05a211d63:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmOGJhNzBiYmE1ZTUwMTA1ZDYwY2E0NDJjYjQ5MDhhZjYxNTAxYzc1NzE1M2IzYTQxMmU4NjdlMGRjZjIwOWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJmODQ2ZGQ5MmJlMGE0MTQ3ZDE5NjE2MDNkODA0M2FhYjgyOWYzYmQ1NWE1ZTE3NWFjYWI5MTdhNDMwMjIwZjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVkMjFlZmE5NmI1ZGE4YzNmZTBmMDUyMGY5MDg2ODEzMGJhMzVlOTlhMmYzYmJkNTVjYzhjODg2YTA5YWEzYmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3524d4f3e16d4b8896523e1fdfbee54d",
+      "statement": "The writer tests pin the generated Cypher shape directly, asserting the MERGE-on-key form under UNWIND, the absence of a SET clause when no properties are written, and that parameters carry the rows verbatim.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/tests/test_neo4j_writer.py#L34-L45",
+          "version": "repo-lines-v1:sha256:3386ae4a7b61d0037ffebdf3cd389575ea1f20c15a3756ca63c098e49d8b6002:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRjMDA3NGJhYzI0ZWE1NGY1M2IyNzEzZWYyNTlmM2EwNTMwYTE5NzU3YzlmNTliNTcwMzc0Zjk3ZWUwYTEyZTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhM2NmNTE5MjM1NGY3MTYxNWFjNTEwMzRiM2U5N2MyMGVkYTk5NjQzZmNhZjViYmU2ZDQxYWQ1OWJkMTIxNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVkMjFlZmE5NmI1ZGE4YzNmZTBmMDUyMGY5MDg2ODEzMGJhMzVlOTlhMmYzYmJkNTVjYzhjODg2YTA5YWEzYmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_44f8a320ad2a4961aa7d229cedd6e4b5",
+      "statement": "The JSON capture-and-replay contract is verified end to end in a temporary directory by writing rows through JsonFileWriter and reading them back through JsonFileReader, including that out-of-order input rows are reconstructed in the expected timeline ordering.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/tests/test_json_reader.py#L12-L35",
+          "version": "repo-lines-v1:sha256:77b778242f96679b9a48cc4c735bca1a8e9ac0085684297ed9c50af9c6bf8162:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiM2E4YWRiMjE1MjIyZDhiNTc5OWE1N2EwYzIyZTVkMzVlMmYxMjllZjg1OTk1ODY3M2EzOWEzOGQ4MzEwOTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ2YTY3YjVhYTdlYTI4ZGFmMzA5NmVjM2Q0MTlmYWFlN2Y0YzIzZDc4NjBiM2VmNWIyMTM5ZWUzNmVhOTdhNTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM5NTIwZWMxNGViZTQzM2QxOWQ3ZTVjY2E3NTkyOWNhMmNiMDMwZmYwMzQzODczMGMwZjU5NWI4OWVmZGJjNTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjViZDZkZmM2Mjg5NDgwNjBlZTk0ZTUyZGQ0OGVlMmI2OTVhNDQ3MTNmYjEzMDUzNDY0MTc2OTkxZTYzOWJlMmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fb46300b22a5466386a6314413376c56",
+      "statement": "Tests that register their own stages isolate the module-global registry by saving it, calling registry.clear, yielding, and restoring in a finally block — the purpose the clear function serves.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/registry.py#L46-L47",
+          "version": "repo-lines-v1:sha256:2c6ce484c69ae63d81c705c1283f86c8b516ce138a48b65383ea277ec3c60b14:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2JkOGQ3ZGExZWRlZDU2MGIwMDdhY2FhMjNmYzNjZWMwOTI2YTk5NDVlYTY0MWQwOTc3N2IzZWJkOGI5ZTZmNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzAyNDEyNTFhZWU4MWE0MTQwNjViY2FlNjI1MTQ2ZTA3YWY4NGIwMTlhNzZlZDYyMDM1MDBkODUzZDc2NjMzOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGMzZGExNDRkM2Q5N2ZkYjIwOGY0OWUxOWRiMTI3MTg5ZTM1OTkyNjc4YmE2YzdiZjQwOWE3ZjZkOTQ5YTQyNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmNhZWM0ZDQ4NmRkMjZiYmZhOTQ2ZmI3N2ViZTRjMTQxOTlhMDEzM2I3ZGM4NWNiNDUzMGUzMDg3MTU1NzdkNCJ9"
+        },
+        {
+          "resource": "repo://pipeline/tests/test_registry.py#L9-L25",
+          "version": "repo-lines-v1:sha256:94761d83221b570cddfdac1db425b8adb3d4ffc8efa24ea25711664e1f8ace87:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzZjM2NmI5YmQ5YThkMGYzNDBhMmJjMGJlMWUyMmVlYTIwNTY4ZGQ3OGE0NTI4MWI3MjFiMzBmMjJkMDg3ZjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmN2Y0M2QzMzZlNjNkZmE0NGMxZTIzYTFhYWE0YzRmMjdhZTkwNjZjNThmOGNlYjVmOTRlYjg0ZGIyYzFlNDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBiOGUxNjA2ZGI3NzZjNTRiNzdiMDQxYTY0YWJiYzI5MjgyNTlhYWE1YWU4ZTQ5MDM3NzkwYzZkYzRmOWYyN2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk2ZTAxZGEyOTA2ZjU0MDFiNDllYmJiOTNkZjk0ZjJkMDQyZWUzMTAzNTRlMmI0YTkwYWNhMjNjZDA5ZGUxZDgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_eed727b93e904331afe61b10fb697f68",
+      "statement": "The repository forbids comments and docstrings across the pipeline, reports, scripts and article figure trees, enforced by tokenising for comment tokens and walking the AST for leading string expressions, parametrised per file so a failure names the offending path; shebangs and encoding declarations are preserved.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/tests/test_no_comments.py#L13-L53",
+          "version": "repo-lines-v1:sha256:1110fa4c51533ac34638f1cc7b629dca440665c4de73feb265fa4a83da1bb8bc:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2NDcxYTBhZDRkOWMzM2YzMzg2ODFmODFjZThiYmMyYmMyZTY3MTJiOTY4YTdlMzE0NTkzYzA4NzNjN2I5NTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2MmExZTJhY2UzYmVlZTI3YjM0YjY5YTczY2FjOGRlNTEyNjU0MzRkOGQ0NWViZmQxNjg5YzZjNzUyOTgzYzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJlNzAyMDc5M2JhYTNmZWYzMTU5NWE4ZDk5OWIzZTk4MjUxMmI5YmY3ODQ0M2IzOGVlZDk2ZTY1N2EyNGZiZjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlhMWI2Y2ZmYjNmNWUyY2RkZDhhNmYzNzVhNzg3ZGQ3NzVlYTdkZWI4OTc0MzZmYzU2NGIzZWZhNGJjMTU4NmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5ddea2d091fc40ec9df2806c612f340f",
+      "statement": "A test imports every pipeline module and fails any that exposes a ROOT or _ROOT attribute differing from the actual repository root, requiring modules to import ROOT from pipeline.core.paths rather than deriving it from file depth, with a third-party allowlist so a missing optional dependency skips instead of failing.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/tests/test_no_comments.py#L56-L84",
+          "version": "repo-lines-v1:sha256:50e79d80eb6a8f232fe42dcb2aa70402461d15ce0161acc30bfb513ff9fdc73f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhNWRmMzg2YTY1NzU2MjM2YzM0YTVkMmJhMjIyMTczODAxMWQxNDZiODg5NWM3ZjZhYjYyMDc4OWI0ZGY3YTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwMzJhNjk0YmI3MDNlMjM3YTMzNTA3YTM3MjY1MjQ5MjM2ZTEwZjI3NmQ0OWY2ZmEyNDFhNTZlZjk1MzQ2NjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcxZjhlMTQxNDkyYjhhNDc4YzY3Y2JjMTFlNzhiY2RlY2ZlM2RmYmMxMmI2NmRhMjljY2NlNDgxZmQ1OTczZGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRhNTZlYWZhNTdjMzU0MTcyZjQ1ODQ2NTllNTI0M2FhNDBmYWRmNmM5Zjk1NWFhNGIxOTA1YTViOWY2MzFiOTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_63e7e8241465413481ba5e0e0b5ef6d6",
+      "statement": "Scripts outside the package are checked statically rather than by import: the test walks the AST computing how many parent levels each root assignment climbs and compares it against the file's actual depth, because such scripts cannot import the shared paths module without side effects.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/tests/test_no_comments.py#L313-L357",
+          "version": "repo-lines-v1:sha256:c7cf30c2e5a148ce892f4402c3cda5e5bb0cd86a635bcd09cf47821483415399:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExNDVjNWY2ODEwOWIwZDIxYzdiYzdhNDMxYmNlZjg4OTE1ZTg5NGJjNzc0M2YxM2I4NTE5NTFjYjRmMTg2N2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlODI0OWNkNTQ4ZGNiNzcyYmZjYjVlNmM4ZDlkMzhlY2I1MGVkYTJjZTMxMjhiNjMwYjM2ZDRlODhiZWYyODAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFjMGM1NjNlZGY1Njg0YjgzMGI2OWRlMjI5YWFlM2NmYmNkMTM0YWM2Yjk3MWY0MzlkMjgzMTAxM2RkZGM0MTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU3YmZhMWIzMTdmZjU4ZTI5MmUxNTdiNjEzNjRlNTE4Njg0ZGE4MDAwODFjMWEzYzliZDZiNWEwMWVhNGU0MzQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_62990c2d74f546c683d6812781cf304b",
+      "statement": "Every module defining a main function must carry a __main__ guard, because without one python -m on that module imports it and exits zero having done nothing, which a subprocess caller would read as success.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/tests/test_no_comments.py#L403-L421",
+          "version": "repo-lines-v1:sha256:51a9f90d6da541693450dbda4bc5794c01b19669cc78e066e99e625858292e04:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE2NjZhNjMzNTNjM2ZlY2QxZmJjMzNkNWRlMWVlMWRjMTRlZGI4ZTNkNDdhNmFkZDg3MmJlODQyYmRlNjI3ZTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxNjg1OWU5YjE2NDkzZDk3NzZiOTFmMzg2ZDZhNzA2YTIyMTY5ZGVhMjJjYTRiZmUxNmE3MDBhMGUxN2I2YzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI1NjJhYTc2MmI5OTVkZjMyNmMyYmI3YjA3MzIzZmViMWQ2YWE5NDYwNjg1NjIxNDZmMDY5ZTkyNmQ2YzY2MDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE1MDJiZTljYjc1ZTJiZTUzM2UxZTA5ZWRmNWYyZThiM2QwZDFmZmExMzEzNGQ0MzU2YTFkNTM3NTU2NjRiMTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6926da642c164f5592395160d1345d06",
+      "statement": "String literals that name a pipeline module must resolve to an existing file or package, since such references are invisible to import checking and would fail only when the line executes.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/tests/test_no_comments.py#L360-L387",
+          "version": "repo-lines-v1:sha256:5e730387b27e6e5c23ecc085c93601c6baeceb15ead2f5abd9e92b6794eacea0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmMzc1MTNiMGIxZGQyZGIzM2NiNGM3OTY4YjRiMGZiZWY1M2JhNGI5OWYzMmM1ZGEzNTgyOGE4YzNjOWI5MzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzZTMwMTc4MDVkZmE3MzdjNGJjOTcwZGRlMzA4MDVhOWIxMGE4MjE2Nzg4NWZiYTVmNTlmN2Q3MjYwODQ0NWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5ZDhmOTgwYTUwYmU2NmI3Y2Q4OThkMTgxM2EzZTk5ZGU3ZjQwOTQ2ZTZiZGRhN2I4OTE0OTY2ZWE1MWFlMTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY4ZjNiOTI4YjFjY2ViNzVlMjdiZDY1OGI2ZWRjMGRmYmY3ZDUxMDVkMzNkMDVkZjNlNWNjNzIwOTgxNTgyMTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bae4933725bf40d5be195aa011a6f322",
+      "statement": "Each architectural package must carry a markdown note named after itself explaining why it exists and what it may import, on the stated grounds that the layering rule is only enforceable if written next to the code it constrains.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/tests/test_no_comments.py#L87-L105",
+          "version": "repo-lines-v1:sha256:bc9af5b6e6d1f00e2f0b966a3d69228c700988e3a7f32f2deac28a90d700b6b2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE1MGRiMTg0ZDc0MmUwMGNmMmU2YWI3ZjkwNjYyNDkzZmIxY2JmZDRhNjE2MjI3Nzc3NDNmMTZkYTQxZTYwNDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmODk5MjVkODdiOGFkZmU5YjMzNzQ2ZjM2OTUxYjNhMjgxM2U4ZmNmOGNlNDZjMjYzYmFjMjQ3YjYxZDQ3OGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEwYWM5NTgzMjA2OTEwNDdmZDRhN2E5NTZkZGY5MWEzZWI3MjFlNWEyMDU5Mjk5ZTQ0NWE4MDM4MDhhOTU3YzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5YTVjNjJhMDFmY2Y4MmNhY2NiZTg4MDJlZTUyMDc0NTQxMDRhMDQwMTMwYzRjZjE2YWYwMGJkODY3ZGU2M2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e853585830454a02ba9ba7de11d46f38",
+      "statement": "The layering rule is machine-checked from the AST including relative imports: core may import only core, model and io may import core, evidence may import core, model and io, stages may import everything below them, and apps may import anything.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/tests/test_no_comments.py#L108-L183",
+          "version": "repo-lines-v1:sha256:21a408e9c66f5dff8f1f6c61d3daa13bef8943f7a564a5cb8b8d82d8a9657c42:eyJzZWxlY3RlZExpbmVDb3VudCI6NzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5YWYwNzgxZTViOTY2ZTcyYTIzMzk1YjA0NzY0Yzk5MTg3MjU2ZjZmZGEyMmZjNmExMjMxNDhiN2M3YTI5ZWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzMjlkODcwM2JlNmRjNzUwNmU3ODA4OThjN2YzZjAzNjAwODkzOThlY2MzM2MwNmE0NzQ5NDFmNjNlZGMyMzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5ZjNmOTFhYjQxNGIzMjcyYjM5ZjNiZmE1ZGE1YWZmNGQ0YjZiOGI2N2MwYzllMDZiM2U2MGU5NDg2YTA5NGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU4ZTI0MGMwNGE2MTY0ZjU0MjgxYmQ5MmFjMjNmOWQ2MDE5N2ZhZDMzNjRjYzQzMWNlM2U3NzQwYjVhMGZlMzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_92c91f5d2b344ea98193247095ea4426",
+      "statement": "Two layering inversions are recorded as explicit exceptions carrying their rationale in code: evidence importing stages because the provenance stamper must resolve a registry populated by import side effect, using a function-local import to avoid a cycle; and core importing io because the runner selects reader and writer from a stage's mode, flagged as a module to relocate.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/tests/test_no_comments.py#L127-L135",
+          "version": "repo-lines-v1:sha256:dba5df43a0588a5f270859f529b460cb5146ba90d73b599612512f01cf4ec9e2:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDk3MmE2M2I0NjA1MTg3NTJlYTYwZTJhMjczY2U1YWU4NTZjZDQxNjQxZWMxNGI2OWI2NTdmOWQ4NmQxOTc0ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGQwZTMxNDY4MWE2MWVkMzViMTVhNzdmZmQ1ZGE3YmFlMDczY2M5ZjNlMzU1ZmJlMGM4ZjIxMDhjNjIzNzYwZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWVhODY0YWQ3NjA0ODU3OTFlZDg3ZWQxODkyM2VkMGYyYzBlMWQ2MjBkNTJiZmRiNzY1Zjc2OGU2OTZmODE2ZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0c68699e71b845e184da94f3a64385ab",
+      "statement": "The suite asserts that no module inside the deployable pipeline package imports pm4py, whose AGPL licence is contained by confining it to a script reached through a subprocess so the licence does not attach to the pipeline.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/tests/test_no_comments.py#L186-L207",
+          "version": "repo-lines-v1:sha256:314b6ee3e6665177711e2127b44c3ae2db5c7a566e38bcbbee17b0861afb6f6c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0ZTIxY2Y5ZTNjYzlmMjQwYmE4ZDZhNDgzNjI5YTI0NjM5MzdmZmJkMjg5N2IzZmFmOGNmNGEyOWJjZWE0ZTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4YzlmMDBlNDAxZjFlMWNhNjY0Nzc5YTNmYjcxMDkxYzY5ODMxZGQ3Njk1MTNmNWYwMGUzMTc1MjZiZTI1ZGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5OTZhNjI2ZmUzZDY1Nzk3ZjVkZWRiOGFmNzgwYzQ0YzgwYWVhMWE4YmNkOGRkNWJlMmYxZTUzMzhkODE3NGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM5ZTUzNTU1MTBlY2EwNzUzMmE3NTYwOGI5ZGZmNjM4YWUxYmRkZWFjYmNmODA2ODAzOGYyYjNhYWJkMGNkZTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e7cc4f813b6d49a8a910b20217c8fcdc",
+      "statement": "No stage may be left in the default operations phase except four explicitly allowed operational stages, because a mis-phased stage disappears from the generated phase view.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/tests/test_no_comments.py#L210-L222",
+          "version": "repo-lines-v1:sha256:3e54e87715102e4bcd235dcbfd7a6bda1ae2adfa9acfab4759d064082b14763d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzZDkxMDMxMTdiNTQxNjkxODhhNGM2MTcwMWZhMGQ1NmI5OWVkNTlhY2ExZmU4ODVjM2UxYjQ3ZmY0ZDJkZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNiM2NkN2IxZGU0YTAyMzQyOGIwM2U1YmU1MWJkZGZmNWMxZGY2OWExNWY0NjU5OWJjMGJlOGU1ZmNiZjZjZjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFhZDhkZGI1MDMyN2MxOWFjNDYwYjI5YWM0YjA0MmVkYzczNWI4NjdhMmM1YTM4YzU2NWI4YjhlNWNkMzMyMTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUwN2MyNTY2ZDJlOTM4N2VhZmFmNjJiMmU1N2IxN2ZkNTU2MGMxOTg0MjdmZGFhZjJkMDdlYTQzMjA4YjQxZDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_23921595e1e441718152f14c21ee1d3b",
+      "statement": "Every registered stage must be mentioned in three named reference documents, so that no stage is discoverable only by reading the registry.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/tests/test_no_comments.py#L225-L246",
+          "version": "repo-lines-v1:sha256:9b2f167c35cfaae468b7234ca97b70a1cff8abe904e349ecf4664a0f1212a2f4:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0YWI3NTA0OWYwNTc2MjE5YzJkODI2ZDEyMzQ5ZGE0YjViMTA4OWFkMWEzZDdiM2RhYjdhMjkwOWU1N2ZlYzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRjZDlkY2ExNDBhN2FlNzVlN2RiMmQ2ZDJkYTM1ZTIyMTkxZjYzYjk0YjI4ZWM3ZWY3MDQ5NzdlNDliNTY4MTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUyMDk4MmMzZGNmZWJlYjM5MjEyOGJkNDRhZGUwM2ZjZGEwYmZmZjUwNDIwNGFkOTBmOGNhMjI5N2U1ZmZkZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ3Yjc1NGNiNGNjMzA0ZTg1NjlmNTgyNmVkNzdhNzZjNjE4NTAzMTcyNTE2MWY1ZTA4MWMzZWI4ZTc2NjkxNmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_68fb2cebc478408a89eb511727cc2158",
+      "statement": "Live documentation is scanned for references to Python modules that no longer exist, exempting historical directories and any paragraph stating that the module was deleted in a named commit.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/tests/test_no_comments.py#L249-L279",
+          "version": "repo-lines-v1:sha256:9436f4e8608f2dfbcea21d9dd6c84f148c73484f0096ac35124d9609df989db4:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmYmZkZmQ2MmE5OGMyZDhjYjRhMzY2ZGQwMDVhNzFmNDA3MzE4OWU5ZTQ1NjNiY2Y4YmY5ZTZhZmQ1NDQyOWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2MDIzYTI1NmJjYjc5Yzk5ZTE1OWJhYmJkNWExM2E2NWYzNWY5NjUyNTM3YjM4YjM3ZTFlOGQ0ZTg1NzFkMzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ2NmE2ZjRhNTdhYzY4ZDYzMjBiNzgwMzU5ZWY3Y2I3OWIzNmJhOTFiMjg0ODE2ZjIyZTc2NThjMjQ5NDk3NWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY0YzlhNWE1OTE1NmJkZmIyNTMwMzk2Njg4NjEwNTg5M2RjZGNhZGMzZmRiZjMyZGJjMGE4NzE5ZTEzYzI5MjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4f33aa16c75e4e7b8b70e353fcfbbb88",
+      "statement": "A test forbids a package __init__ from defining a name and then re-exporting a different value under that name from a submodule, a shadowing bug that previously caused the precreate stage to create five NER constraints instead of the twenty-eight schema ones.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/tests/test_no_comments.py#L282-L310",
+          "version": "repo-lines-v1:sha256:2329f99ab03ef4c47c737430186513a206ef6b29bfb61f403c2949f73050ebbf:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiNzI4YmM4Y2YxNzRhOWExM2JjNGJjNTkzNjQxNzY5NWU0MzljNGQ5NTExYzVmYWQ4MDRkNDViNjc2ZjVkZTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE0OWY5ZjA1OGE5ZTZiMGZmYzYyZDBmY2QwNGQ3N2ZjMDk4Mjc0ZmU3M2JlZWRkMzNhOWZmODAxYWM1OTNkYmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcxYjk3ZWE1ODlmNjFmNTk2NTI0YzgyMGZlNGI1NTA0ZDU1NTMwNmJmY2MyMmEzMmRiY2ZjMjM2ODNjNmJkODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImExNWExN2NkNzA4OGNmNjQ0YmU0NDIyMDJkM2YzNTRlNGFmMDY4MjA3ZmZiOTU5NDY3ZjdmMjI0ODkzNTRjNzQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8fe3820f53b6485b8b128755a60bd35d",
+      "statement": "The package-import test requires at least forty-seven registered stages with no duplicate names, catching registration breakage that neither compilation nor static name resolution would detect.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/tests/test_no_comments.py#L390-L400",
+          "version": "repo-lines-v1:sha256:fb46470b9da726d83844fe7c0c0d09960517ac96291883f3058ecaa177b0aa2c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmMWY4NTQ5ODExNTcyYzc5NGRhNDY2MTZkZTNmZDU2OWVjMWU0NDA3NGRmNDI1YWM5YmMzODhmOWJhZjBiZjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxYzA4NmJiNzM0NDlkNWMxMGFmYTExMGQ2NmNjYmY1OTIwNDVkYmFmYTYwZGUwNWM3YWE1ZDQ5YjkzYWZiOWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc4NDI4YmI5ZDhjMzQxMDZiOGNmMDhjNTdmNTBiNjRkMDRkYmMxMmRlZTg2ZGE5OTQwNmM5NDQzZTZmOTM4ODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYxZWY0MTI0YTcxZWIwYjdhMWI4ODEyNDg5NGE4OTgyYTJiNTA2YjhjMjFmMDA3MTJlNzNiZTUzNWRmN2JhN2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_39e8128d602b441d859739f39dee0e4f",
+      "statement": "Every downstream model list across the figure, table, block, lattice and non-inferiority modules must cover the canonical MODEL_NAMES registry, a guard added after a newly registered model was carried in evaluation cells while every table and figure silently ignored it.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/tests/test_no_comments.py#L424-L442",
+          "version": "repo-lines-v1:sha256:b4ab50b7845bdf30e99ce5fc488d63b685d9370ef288ef8a210ed337b4bb4e82:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2NDM3ZGFiMmM0YjA4NzkyMDc5ZTY5ZDEyNGRhNTRhZmQwMzg5NjRmOTI4N2YxMmQwZDU3ODMzYmE1YTBkODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjM2I3Yzk5NTJmMmJhOWQ1NjFjYjk5ODNiYjJjMmJmZTI1YThmMTRiYTM5Yjk2OWEyNjU2MjE5YTMxZTViODIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI4MWZkYTQ1ZTVhZDE2YTUyZDc2NTI1ODFmMTdlM2JkZDY0ZDg2NDc1NTdjMzg4MTliYTA2MWI5YmE2Mzc1M2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE3MDYzZTgxYmVkMWJkYjdmMmQwYzJkMTYwMTUzMjk4ZDcyNTE4MDMzNjU2ZDViNjYzMjczOTBjYTM0ZTdiYzAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ba288b6a3d784abe971ab02cd15477b7",
+      "statement": "A general scanner fails any string tuple, list, set or comma-separated literal containing two or more members of a registry without containing all of them, checking coverage rather than exact equality, with three partial enumerations exempted by a table carrying written justifications.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/tests/test_no_comments.py#L445-L499",
+          "version": "repo-lines-v1:sha256:66be59d3052714fe08f85a4b33c61902a7f3946cec2c1f26403bb51cf690baa3:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk4OTg1MTExOGM1ZjkyMzczMTM0MjllNTQxNDlkMDIzMjdkYmVlZTNhYjE4NzBmZGExNzkwNDhkNjdlNTk3ZDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5OGViZGY1Mzg2MmZkNGZjNTM1ZmRhZDAyMWM5YzNlZTdjMmEzMzhjYmZiYTZjZWJlOTY1YmVhMGZjM2U0MDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkzODIwN2ZmZDUxZGQ5ZmFmZTY4ZTc5OWFmNDFhZjExNDFmODJmMjEyN2Q2ZmRiYTkyZjNjNTk0ZTMwNmQ3M2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3c0dbdd2ca7c4c77af067e9b9ecd50cc",
+      "statement": "The manuscript claims test binds published prose to generated evidence: each claim pairs a dotted path into the generated figures artifact with the exact rendering expected in the LaTeX source and an optional anchor phrase that must appear near it.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/tests/test_manuscript_claims.py#L26-L55",
+          "version": "repo-lines-v1:sha256:aa51262f77528cac0a90a07a734015b76922b79fbb06151bf7292c5973b931ae:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViZDQyZDIyYWZkYTUwMDViNGI3MTJlYjExYzllZDBkZmU1YjZiMmY3ZjY1YzY4MmExYjcyYTg1ZDBhYzc1NjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJjZTQ4MzBkM2RjNTBlYmI4YjBiNTRhMGZkNDY5ZDU5MTg1YjIwMDgyZGE3Yzk2NGNhYzFiYTJlMGE1YThhYTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNkZjJiOTJkY2VkMGI0MjE5NjhhMGRiZmY5ZDJiMWFmMzFiNzIwMTNiNzhiNTVlOGRjYzI1OTMyNjcxMzdkYjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3b19a534d0fa4f5a967d4fded0adf161",
+      "statement": "The Portuguese manuscript is checked against the same underlying figures with comma decimal separators, so both language builds are verified against one artifact rather than against each other.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/tests/test_manuscript_claims.py#L125-L149",
+          "version": "repo-lines-v1:sha256:8daa15144b35cded757d98e84b3ba3bb4e2e5ab8aba9c52b02b592fae9a31eb4:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc5Y2E0MWQwMWYzMDA3ZDJlZWM1Y2UwNWMxMzQ5MjdmMWUwZjZkM2QzMDBkYTA5MGZhNDE5YmQ3Mjc0MWMzNGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwOGI4ZTUzYTM4YWNkNGM3NDRlMzU2Y2FmNzY1ODlhZWExNWY5YzZiOGY2MTI3ZjllOGViMTFkZTIzNmY4ZTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5ZjkzMDgzYzE5NzEyMWI5ODI3MDBiYThhZmFiZDE3MjJjZjFkM2U3NDA0NTA5ZTgwZWZhMjcyNDdmNjJmMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQzZDE3MWRlNzU0MzFhMDIxYTBkOTRmYTc2ZmFiZjBkNzEzOWM4OThjMWEwYjQ0YjQzY2E2MDkwM2ZhMWI4NDUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a73126400b3347aa8c5e96078cd8f341",
+      "statement": "Registered correlation paths are additionally guarded for sign, failing when a value flips from negative to positive or the reverse, because the prose describes a direction rather than only a magnitude.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/tests/test_manuscript_claims.py#L110-L122",
+          "version": "repo-lines-v1:sha256:b9d63d6c110e90c9442ee4ff2a514c25da7513618c08bb7276db5b06b586e06e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5NDE2ZTA5Zjc4YmEzMTZjMDMyNTY4MjEzYjg1NWVlNzU2ZTQxNTY1ZDkxOGYwOTUxOWM4MWZkNjIwZjQwNjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI0YWZiNWQ3YWEwZDQ3ZWM4NzRmYjUyZjA2MzVmOTAyMDNkY2ExY2FmMjZhM2NmZjlmMmI2NDY5ODMwZWRhMzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYzN2M2NmQ1NmU4MTZlYWVhZGJiN2U1Y2NkYTZlMTZjODFkNjRhOWYzY2IyNDc1ZDhkMjA1OGFkZTg2NjRjZWYifQ"
+        },
+        {
+          "resource": "repo://pipeline/tests/test_manuscript_claims.py#L193-L200",
+          "version": "repo-lines-v1:sha256:101393d61cb06ae42b0b628ce1cfa585015f848f2fc7d9d78bef7a97e2303f44:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTc5ZDMwNzQ1N2IxZDlkOTcxNjMxNTM5ODA3NjQ5ZWYwNjEyOWI3ZTljYjY1NWNhOGQ1MjcxYTJmZTg4N2FjNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTE5YTZkNGRjNjg3NzhmNGQxY2NlYjk0MzgwYWRkYzBhNWRkZjliYWU2MDgzNWNiNjIwOGEzYTc0OGVjZTRiOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmMyZjZlMTJlYWZkYTUwYjVhNTZlMWMzN2MzODRiMDdkMGE2NjM2NTM1MmJkZDVmMWQ2YWMxNDliNjhhODM4MCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_40bb0612e98349379bf54ad978561fbc",
+      "statement": "Specific numbers from retracted claims are forbidden from reappearing in the manuscript, each annotated with the claim it used to support.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/tests/test_manuscript_claims.py#L152-L156",
+          "version": "repo-lines-v1:sha256:46f8bb5b0c8ca1e7d908b6ae211dce511f1e3893743849c81442a37667bd1f20:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjgxMGZhNzkwMDRjYWFjMmY3MjRlZDg0YWQ0NmRiNWFkODMzZWY2YzQ5YzRkODdjM2E5NjA1MjJiZjg0YzQ5YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2RjYzdmZTFjYmRlOTQzYmMyNTA3YzUyZjVlNjBjZjk4Mjk5M2NlNTA1NTAyZTk3M2ZhNTYyN2IyZmQ5OGY1YyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_eee1aabd11ac44dc84341c5071bdd27a",
+      "statement": "A caveat table requires certain legitimate figures to appear near a companion value, recording that stating a selected-best gain without the family-matched figure nearby reconstitutes a retracted claim because part of that gain comes from per-cluster model selection rather than from partitioning.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/tests/test_manuscript_claims.py#L158-L165",
+          "version": "repo-lines-v1:sha256:fd71e9c9e42613c14e5662876d5f9533df81a81f2c33bca1269c8850a0b0ffc9:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTRjMjlhMmEzYWJmNzcwNGM1ZjJmYjMzNTU2ZDMyZDA0NjM4MTYwM2UzYWEzNTYzMDkzOWQ5MjBlYTgzY2FiZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDEyMGM1YmYwMWRhYzNmOTNkNDRiNmQ5MmVjZjU4MzE5YzRkN2NmN2UwODA3YzhiNWI0ZWE5YWQyMzc1N2FjOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzNkMDZkZmIyOWNkYWEzNTk3OTEyNzExNTc1Zjk0ZTVjOTcxODMxZjhkNDI0OTA0MmQ0N2I5ODM3NWEyYTJlYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9918770a652c46f7af11761744156939",
+      "statement": "The claim checker accounts for how a float may legitimately be rendered in prose by generating the value at several decimal precisions, as a percentage, and in absolute value.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/tests/test_manuscript_claims.py#L182-L192",
+          "version": "repo-lines-v1:sha256:92c95fe87f16ddf11d03b5e5bcc348c25c9a635542f8ca9a3dde7d5fbf755179:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyM2NkNjg4MzllYjJmNjIxNGNmNTk3MjBmZTY1Nzc5ZGRmOTY2OTI3ZDFiOTZiOWFiYjljNjRjMTJhNWVjNjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0NTI2YWZkNzhlMmJiZGM0N2QwODZmNjliOTdhZjYwZTQ5MjAzZDNjNDlhMTAwMDNmNTQxNzEyODlmOTYxZTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEzYTYzMWI4MjdmYTRmM2E1M2Q1MjI0YjU2NGEwMzM5NjI5ZGUwZmY1N2FiNjFlNDgwNGVlYjQyNzNjN2RjNjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI4NDYyNjEyOGIxODJmMmEzMzIzMDliZGJkMjI5N2Y3ZWQ0ZTgwNzFhYmE2ZTM4ZWVlNmRlYzljMjMwZGEwYTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1df7ffebc33c43d396040e62afd11a5d",
+      "statement": "The manuscript fixtures skip rather than fail when the generated figures artifact or the manuscript sections are absent, keeping the suite runnable in a checkout that has not been through a full pipeline run.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/tests/test_manuscript_claims.py#L167-L180",
+          "version": "repo-lines-v1:sha256:607427a31ea73dc906968b031a3236fd7f64fd6183252d0555cf61f975ceb01e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzYjIyMjUzNWQ0MzMyYWVhYjNkYWFlNzk5MDFlN2FhMmIzMDcyMzY1OWEzMjNkMjk1NmE4MTUwYzYzODhlNGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5ZjkzMDgzYzE5NzEyMWI5ODI3MDBiYThhZmFiZDE3MjJjZjFkM2U3NDA0NTA5ZTgwZWZhMjcyNDdmNjJmMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhZTkzYTgyM2RlNDdjYjE1NjJlZTIwMzNjMTM1ZmU4MmZjOWM0M2ZkNjVhNTcwYjRmNzQ0MzI1ZTcyMWY0MWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4e4be322a4004c9983f1b18352b4b539",
+      "statement": "Test discovery is configured to two directories, pipeline/tests and reports/tests, and runs in quiet mode by default.",
+      "evidence": [
+        {
+          "resource": "repo://pyproject.toml#L41-L43",
+          "version": "repo-lines-v1:sha256:a5c4d1de8df4fbc93528a9690cb34b0a8db1e9038f6e52a89447743077fc13a4:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTM3YThiYWZjYTVmYzM4N2YzMDkxODAzNDFhNDg4ZDYwNzRiNDg5ZWM3MjBhM2VlZWQwYjU4YWQyMzNjMzI0NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmYwODhhMGE0NzRmMThjZTdjMGVjMDAzNTE0NTA1N2E3YzRmNjU5ZDM1OWZiMGU4OWYxMzQ1NzI1NzM3YjIyNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTQ3ZDk2OGYwZjgzOGFiODg3OWU5MTgwYWY5ZTdlMDY5NDQzN2MzNmVhMjRjNWEwNzhiOWRhNjIyN2ZjYmYyNiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.0",
+    "at": "2026-09-10T12:46:32.229Z"
+  }
+}

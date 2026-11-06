@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:4791bfe2da7eb3538eae287419fbf952df4289ba85ca34f0e78bb6702af34681",
+  "claims": [
+    {
+      "id": "claim_b504704165634bd480bba5afc7d0ac87",
+      "statement": "The repository is the reproducible artifact of an undergraduate thesis and produces two write-ups of the same study with opposite identity requirements — a double-blind English submission and an identified Portuguese thesis — which must never be edited to match each other.",
+      "evidence": [
+        {
+          "resource": "repo://CLAUDE.md#L7-L19",
+          "version": "repo-lines-v1:sha256:0b38a913e4f7c507526520a1fd655e2eeca1ceb88f7e9babc3594c2d489e63fc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdiMGUyZjRkMzIzY2IzNTkxZTJkNDBiODZkZjIwMzlhYzIwYmYyMmU2NDU3NGY3ZjBmZTg2Mzk4NjA0M2VkMzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE2ZDgxMDMzY2U1OGQzYWM5MGY2NmE3Y2YyOGIwZjM2NjQ3NzBkZjBhYTQ0MmIyNTUwOTg4YWI2ZGE3YTkxM2IifQ"
+        },
+        {
+          "resource": "repo://README.md#L13-L25",
+          "version": "repo-lines-v1:sha256:b22550ecb63085e5a4be4a8d3fc35885281b1e58fee998ea16fdf1aceddbd161:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0MzE3ZWRhNTY4M2RlYzBlNmQ2OGE4MDdmODlhMGQ5YzUyMWFjYTRmOTI2ZjA5Y2MwZmI0MDJhMTQ5MTgxMjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1MmQ3MTExMDNkNTBhNDM3ODMwYzZmYmNkMDRmYjRiYWI0OWEwZjgyZjZkMjZkMWM3OTFjNmU4NDg4ZGQwOTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFhYjU1MjUwYjE1NjUzNDNlM2ZlNWZkM2JlZTRiMGEwNzNiZTRjYWFlODljZTE2NzVhODdkOGJmNjQ1ZDUwZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE4MTk0YzlhOTQyOGY2N2NmODgyMWMyYzY2NzBmMzc4NmZmY2NlYTZjZDNhN2JhOWQ3YWJmMDcxNGI0NDVhMTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_33b8cb0129a64809809f2cb66d0b8f1a",
+      "statement": "Running the pipeline requires Python 3.11 or later, Docker Compose, access to the Trino/Iceberg datalake holding the activity log, an API key for the OpenAI-compatible model endpoint, and at least 16 GB of RAM, with a GPU optional.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L75-L81",
+          "version": "repo-lines-v1:sha256:996c12160a0103d93483d835d164c9b8af19bf38964848bd3f01eb0ce682101f:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODZjNzVkMGU0Y2NjZjE0ZTgxMDFiOWIyNWYzZWFmZDAxZmFhNjgyMDFiMDM3N2Q1NGI0YzYyN2U5YjIxZjRlNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzk4YmVhMjQyM2E3ZjFhZjlhY2NjYmQ5OTdkZDA1ZDQ1ZDc2NDMzNDlkOTlkY2UwZGYyY2JkNDIzNjgyYjU3MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGFhNjU4ZWE4NzQ0NjA3MzNmZDA4ZGE2YWVkYmRiNDcxMWVhYWNhZWE3MmFhNmI0MDMxNmNkMzcyNzYwZDZkNiJ9"
+        },
+        {
+          "resource": "repo://pyproject.toml#L6-L6",
+          "version": "repo-lines-v1:sha256:baae3b1ff1baf861ce10a5212ecf3c6a1eaf5c45d84edb4ff32070e5cae394cc:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmFhZTNiMWZmMWJhZjg2MWNlMTBhNTIxMmVjZjNjNmExZWFmNWM0NWQ4NGVkYjRmZjMyMDcwZTVjYWUzOTRjYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmFhZTNiMWZmMWJhZjg2MWNlMTBhNTIxMmVjZjNjNmExZWFmNWM0NWQ4NGVkYjRmZjMyMDcwZTVjYWUzOTRjYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTg2ZWUyNjE3NTA4NzJiYzZlMDI5ZmNjYzU1NjFlZDg2ODczODg3ZmYxZGQyYzExMTllYzAwMDgwZjY0MjNmNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGQxNzdiNGQxZjMxNmViZmY2YjcyZWM2NmViNDNiMWQxN2RjYTMxY2E5ZWJiZTk4ODQxYTFjNGUxZDMxZGExOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_accaa66dc2f94869a95ee97d2184aac6",
+      "statement": "The README's setup instructions direct the reader to copy a .env.template file that does not exist in the repository, so a contributor following them cannot complete the configuration step as written.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L90-L92",
+          "version": "repo-lines-v1:sha256:493337c4ce655cd67f0a6ad0abfbd6658d143456cc78cdc7973bc042d848da8d:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTAyMzMyMzE0YTFkYTliZWIyNjIwZjZkYmQ1NmE0NTgzNjkwYjU5NGY5OTRkZTlkYzc5ZjEyNzM0OWI3ZDI2NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTEyY2VkYzc2N2NiMDZmNzhiM2FlYTVjYTc0MWE2YmJkNDc5OGIzOWZlNmJlMDIwOGU5MzVmZGEzY2Y2Y2U0NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDM1OGUwNTI4MjhhZjZlYzMxZTA5YWI1YWY4ZGQ0MTI0YzEzMzZjMTg3N2IyNmMzY2NjZTdlN2U4ZDUyZWRhMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODc2MzQ2NmNmNmQ4ZTk1MTQxZDUyYTRlNWU3Y2UxNTUzMGFjNzZlMDcyZjI0ODAwYWM2YWY5ZDExMzI1MGQ3NyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e22f27f99287421a924b5bbbfa3416eb",
+      "statement": "The authoritative list of every configuration setting and its default is the Settings dataclass rather than any documentation file.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/config.py#L47-L132",
+          "version": "repo-lines-v1:sha256:9ad8af080210d9c89fd6c7685803a0e5b5953849d7d84ca0e5671514dd112213:eyJzZWxlY3RlZExpbmVDb3VudCI6ODYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2ZmJhZTBiOTFkNDRmYzBkNDlmNWRlNjkxZGE2ZmM0MzFmMjYwMTM0YmY3MzFlMGUyMWY3NjQ4MDk0MzM0Y2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYwOWIxYzhiMmI1ZDBkODVkMzlhMjE2MGNmNzQ5ZGUwMDBlYWQyMzQ2NjBlNDY0YzEyYjM5ZTM1NzU1M2U2MGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVkNjMxZjlkYjEzNzU4NTA4MjFhMDY1ZTJiNWEwNmEzYWQ2NzA3MzVhNDk5NzY1N2ViNzEzYTM2YzRjYzhlZjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1506593d351948278a9ba761a9c6ad02",
+      "statement": "The repository distinguishes two independent force levels that are easy to conflate: runner-level flags that bust a stage's completion record, and a stage-internal force flag that busts a stage's own per-document or per-cell skip.",
+      "evidence": [
+        {
+          "resource": "repo://docs/operations/runbook.md#L37-L46",
+          "version": "repo-lines-v1:sha256:b7bf4b70e59c7fc8ec3bdad28269487eb13d8f6cee07680bd30fac1dac3a2734:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzMDg1MjU0MDIxOWE0NGIyMzUyZDEyNzMzZmQ4YzE1OGEyNTY0MmJmNjFkNmZkZDE0N2E0YWM3MDNkM2Y2NTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ4YWY5ZTM2ZjgyY2ZhNmRiNGRhZDY4MTczMTA2MDM0ZjRlODQ2YTM0ZDYyYWZiMzI0MzFhZGQ0YjIyOWM1ZDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRmYzkxYzI2OTJhMDNlNjU2ZDQ5MGMyN2VmYzFhOTMwODMxYjkxMDgxZjI2MzUxZDU0MjMzYTJiNDE5YmU2YWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fd33b9eb7d8d4cf5855113463da2b6a5",
+      "statement": "Runner force flags do not affect stage-internal skips, so re-entering a stage with --force still skips every document it has already processed unless the stage-internal force flag is also passed.",
+      "evidence": [
+        {
+          "resource": "repo://docs/operations/runbook.md#L41-L46",
+          "version": "repo-lines-v1:sha256:1ac7e3d35d8ceb8a07336dfa773ffe3778a64867c1856e7a28621cabf733d3c9:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzQ3YTJhMGZhNTA5ZmZlMjcxMGVhOTI1ZWZjOGI2ZjViOTJlNTU5OTNiODVjOGZkZTIzNzEwNGFhYWZmM2UwZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmYwMGM3YjE2OGVjMDkzMjQyNjZkMjJlNzYyZGI1NzY5MGFhZjgxNWUzOTU2ZDI0Nzk3NzJlZTBjNjVhOGNkOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGZjOTFjMjY5MmEwM2U2NTZkNDkwYzI3ZWZjMWE5MzA4MzFiOTEwODFmMjYzNTFkNTQyMzNhMmI0MTliZTZhYSJ9"
+        },
+        {
+          "resource": "repo://pipeline/stages/anonymize.py#L86-L94",
+          "version": "repo-lines-v1:sha256:dbab7dc34b345842a1518161cbf5952c4957b1699c42d80f59e405270986903d:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGVkZDU3YmMxMTEwMzJjYjkyNzlmM2ExYTYyOGUyYjJmMGY0ZmI2MTAyMTM4ZTZhOTAyNWY1ZjhmNDNjOGIyMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWQ4YTllOWMzMjUyODIwYzY1YTgxNjUyMGI4ZGI0OTMyMjgwODQ5ZWM4YzdkMmViNjI3MmFmZGZlYmUwNTljMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmY2ZmEwMjllMDdiMjcxYWQ1N2Y5YWYzNDZmOTFjOTU0NDQ4YzY1N2JkZGEwNzBmZjc3ZjA5NzljNTAyYzRlMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWNmZjRhYjc0NmYwNjc3NDQ0NTQwZTZmYzFkZWE5OTRlMGFiNmQxYmFiMzBkNDk4MWQ0ZWFmNzcwNDZhZDJmZSJ9"
+        },
+        {
+          "resource": "repo://pipeline/stages/matrix.py#L36-L41",
+          "version": "repo-lines-v1:sha256:236634d50193e35864f207763cc376b023614a25f1bedd101ce54c97d0ffa2fe:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzliZDU0Zjg1NWZlNTY5N2IzNDc2ODBkZGY4ZGYzMzBiZGI1ZDQ1ODQwZjI1MDRiZGIxMzhkNjliMWRhMDQzNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDQyZmJhMTRiYzY4ZDk3YjEyZmQwNDUxM2EwNGU0MzNlMjhmYzk4MTQzNzU5YjgxMjlkZWJkYzM3NmNhMTFkNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDI0M2RjODNiNTI4ZGUxNjVjYjdhY2E4NWU3ZmEwMjYxYmIzYTMwZWMxYWEyYmYzZDVjYTNiZmIxZTUyNWVlMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTEwNjJmYmVhMTNmODRiZTYxNDA4YjEzYTg4MjQ4MDkzMjQ0NTRhOGE5MzlmY2U4OGQ4ODYwNzVjYWU4YzQ2NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4612e90dc4c146cebb4e4b860aa5bb1d",
+      "statement": "The default checks are the pytest suite, the stage listing that confirms the registry imported cleanly, the DAG listing, and a LaTeX build of each manuscript.",
+      "evidence": [
+        {
+          "resource": "repo://CLAUDE.md#L68-L74",
+          "version": "repo-lines-v1:sha256:4be6d852bf75b2f7edca461d0594d26acf38dcef96c8ec037f6cb46e55fe8df1:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDdjMDZjNTYxZDVjMzI3MzQzNjg1MjY4YTQ2YjMzOTFmMzk5OGVlZTg5MGQyYmU1MWYwZDIxY2M0YTUzYWU2ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzFlNDAxMGQ5ODNmOWFhODQ0MTY4ZWEyYjE3NTFmMzFhYTYxNzM2MzgyN2I4ODA5MzNjNjMyN2Q1Mzc1ZDY0ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTA2YjczOWNkNDM3OWE1YTljOWM4MmEwNzkzMGM3ZDQ5ZDU1NTBjMTg0ODdhZGQyODg5NjJkN2ZkMjg2MDU2ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzA4OWRmOTNmOGJhNTdhNGRkYmZkOGYwMTM5NjJjMzk3OGNlNGRiNjgxOTljNGRhNjY2NjQ5YjA5OTZjZWRhOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f58a8d56c72e420d9ce0914f2d0e8e7f",
+      "statement": "The test suite is not only unit tests: it also enforces repository invariants including the layering rule, licence containment, naming conventions and the correspondence between manuscript prose and generated numbers, with each failure message naming the incident the check exists to prevent.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/tests/test_manuscript_claims.py#L26-L55",
+          "version": "repo-lines-v1:sha256:aa51262f77528cac0a90a07a734015b76922b79fbb06151bf7292c5973b931ae:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViZDQyZDIyYWZkYTUwMDViNGI3MTJlYjExYzllZDBkZmU1YjZiMmY3ZjY1YzY4MmExYjcyYTg1ZDBhYzc1NjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJjZTQ4MzBkM2RjNTBlYmI4YjBiNTRhMGZkNDY5ZDU5MTg1YjIwMDgyZGE3Yzk2NGNhYzFiYTJlMGE1YThhYTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNkZjJiOTJkY2VkMGI0MjE5NjhhMGRiZmY5ZDJiMWFmMzFiNzIwMTNiNzhiNTVlOGRjYzI1OTMyNjcxMzdkYjIifQ"
+        },
+        {
+          "resource": "repo://pipeline/tests/test_no_comments.py#L145-L183",
+          "version": "repo-lines-v1:sha256:8e6f09502c4ef83caaa6f48dd82ae224a2e87698ba42588c7fc79b6d6de3f189:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwMjM5MWNmZmJjYjcyYzgwYjdhN2YxOTJhOWYzYTg2ZTlhZmUwOWVjZmQzYTY3NTk5MjAwYzRkMjRiYjY4ODIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzMjlkODcwM2JlNmRjNzUwNmU3ODA4OThjN2YzZjAzNjAwODkzOThlY2MzM2MwNmE0NzQ5NDFmNjNlZGMyMzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3MDE0OWUwNjlhZDY3ZWNjZjQ3MzY0NmZmMWM3NTAwNTBkMzI5ZDExMDAxOGRjNTc2Njg3OGVhZmExZDYwN2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU4ZTI0MGMwNGE2MTY0ZjU0MjgxYmQ5MmFjMjNmOWQ2MDE5N2ZhZDMzNjRjYzQzMWNlM2U3NzQwYjVhMGZlMzIifQ"
+        },
+        {
+          "resource": "repo://pipeline/tests/test_no_comments.py#L186-L207",
+          "version": "repo-lines-v1:sha256:314b6ee3e6665177711e2127b44c3ae2db5c7a566e38bcbbee17b0861afb6f6c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0ZTIxY2Y5ZTNjYzlmMjQwYmE4ZDZhNDgzNjI5YTI0NjM5MzdmZmJkMjg5N2IzZmFmOGNmNGEyOWJjZWE0ZTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4YzlmMDBlNDAxZjFlMWNhNjY0Nzc5YTNmYjcxMDkxYzY5ODMxZGQ3Njk1MTNmNWYwMGUzMTc1MjZiZTI1ZGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5OTZhNjI2ZmUzZDY1Nzk3ZjVkZWRiOGFmNzgwYzQ0YzgwYWVhMWE4YmNkOGRkNWJlMmYxZTUzMzhkODE3NGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM5ZTUzNTU1MTBlY2EwNzUzMmE3NTYwOGI5ZGZmNjM4YWUxYmRkZWFjYmNmODA2ODAzOGYyYjNhYWJkMGNkZTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ec4b26ac51c34a789f9550aa746d57a3",
+      "statement": "The codebase deliberately carries no comments and no docstrings, enforced by a test across the pipeline, reports, scripts and article figure trees, with explanation living in documentation and assertion messages instead.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/tests/test_no_comments.py#L9-L53",
+          "version": "repo-lines-v1:sha256:6b12f1d642e0128f2f83d542457ae74936f480640d9dfe1c24c7cdea0ec19c63:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ1NjdmNDEwNmIwZmJhYzU0NGFhOGE5OGFjYTQ4OGJmZjA2N2MzN2QyODI0Y2JjZTc3ZTQyZGJjMzFiMzNhYjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2MmExZTJhY2UzYmVlZTI3YjM0YjY5YTczY2FjOGRlNTEyNjU0MzRkOGQ0NWViZmQxNjg5YzZjNzUyOTgzYzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYyNjI2ZjhiZDNmNTI0ODJmNTI3NzY1NDNlOTQ3MTRmZDczNGRlZjBiNGRmYmUxZTQ2MDBlYzFjYmE5NWUwYWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlhMWI2Y2ZmYjNmNWUyY2RkZDhhNmYzNzVhNzg3ZGQ3NzVlYTdkZWI4OTc0MzZmYzU2NGIzZWZhNGJjMTU4NmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9470c85100de4c5d91035287c7ae4ed6",
+      "statement": "Identifiers and module names are English while stage descriptions, research questions and generated research prose are in Portuguese, the language of the study.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/core/_stage_base.py#L32-L42",
+          "version": "repo-lines-v1:sha256:518f385c43f047cf219a1489dec6d1db37be6f441fb15f1d04953d7bf8f7aaf6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUyYTYxNzcwZmE0YzEyMTBkZmZkOTUzOTRlNDEwZGFhZGExODBhMGFlZDhlMjQyZTZjYmVjMDhlZmU2YmVkZjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUxN2QyZThiNTMwZjk5MjBmYmVjYjM5MjA5NDEyYmQ0ZDVlMzNhZDJiNDQyNDBiODlhZWZkN2JjYTUzNTUyYmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcwY2UzZjI0YWI0N2MyZjVhOWQzMzdmMzc3ZWQ4NTczZmE1NjU4NDA3NjQwMmYxYWYwNTRhM2RlZDYxOTQ2MmYifQ"
+        },
+        {
+          "resource": "repo://pipeline/stages/atividades.py#L162-L173",
+          "version": "repo-lines-v1:sha256:b59e4d5ecec3924627acae8dd1dae1fa94f908a4478323ddbce4a82b752c49d8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjOWZjMDEwYmQ2ZmZhM2JlY2ZkNTFhYWIxYzJlNzVhOWRiZTIyNzhkNGY2NjljYjkyOWI1MzRiMTE0N2ZlMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZTE3OTFjNjViNWE4MjJhY2RjNGVkMjAzZGQ2Y2E2NjhiNjAyZDNhNDMyMmRmZWJmZTUxN2VlODRjYmUxZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRlNDFhOGVlYTQyMTA2NmM2ZGM4ZGM3NTg1OGJmMGRjMDA3NTNhYjA4MjgxOGUxZGIyOTU4ZmY4MDQ1NmQzZjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUzNDUxOGM4YjQ0MmQ5Y2ExOWUyMGNjYzM4YTA0ZGE1MjFjZmYxNTViNDUwMzUzZDY2M2Y3NGVjZGJhZTY3NmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c297642d8f434419a0d25d88581d430a",
+      "statement": "The artifacts tree is generated and must never be hand-edited, a rule backed by a session-scoped test fixture that fails the whole suite if any test writes into it.",
+      "evidence": [
+        {
+          "resource": "repo://CLAUDE.md#L36-L36",
+          "version": "repo-lines-v1:sha256:caeb9007367be6029c6941cb69d94c97f7d560380fd6ec0ed33d51bcf34d66ae:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2FlYjkwMDczNjdiZTYwMjljNjk0MWNiNjlkOTRjOTdmN2Q1NjAzODBmZDZlYzBlZDMzZDUxYmNmMzRkNjZhZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2FlYjkwMDczNjdiZTYwMjljNjk0MWNiNjlkOTRjOTdmN2Q1NjAzODBmZDZlYzBlZDMzZDUxYmNmMzRkNjZhZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDQ5OTc5ZTBlZDk2NGU2YjRkODQ1NmQyZTEyYjY1MDllZWZiNDc2YTBhZDJhZTgzYTE3YTc1MmMzZDVjZWMzYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWI3NTcwZjk5NTBmZjY1OGJhMjkxZjEyOThiYTcwY2JlMjc3YmM3MTYyNzk2NjJmOGQ5OTgwMzgwYjE0MDc3MiJ9"
+        },
+        {
+          "resource": "repo://pipeline/tests/conftest.py#L24-L36",
+          "version": "repo-lines-v1:sha256:2de281e5fbf1c3beb2845c30ebc952dc90a3f96975e899b3ccd91cdbe34a838a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2ODgyNDQ3MDY4YzMzYjJmMzJlNDVmYWM0Y2UxYWZhYzQ5ODNkYzA3MzBlNmZhOWEwMzdlYWM5Y2ZhMjM3NzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ1ODE2Yzk3MjQ5ZWM3NjI3Y2U5Yzg5NDk0ZjcyNzdjMjhjZTQ3YmYxNDNlODI3OGY4NmJhNDZkNGQ4YzkyM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBiNDY4YWQwYWJkNWRmODYyMGJiOTRiZGZmZTg1ZjQyMTEwZWNkYThhZjc2NGE0ZDVjM2JhMDZiYWE1Zjc3M2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ad022431bf3d4a2ca286e78994bdbba0",
+      "statement": "Markdown under docs is draft material while the LaTeX under article is what ships, so when the two disagree the LaTeX is authoritative and the Markdown is simply stale.",
+      "evidence": [
+        {
+          "resource": "repo://CLAUDE.md#L38-L42",
+          "version": "repo-lines-v1:sha256:062586a6acbf9a588b4395338ed9a8bd5ccf61e4c4f6d3379a811db6249a03d0:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmEzYTU1YmE5MjJjMTliMjgwZWU2NTY3MDNhNjM3NzJjNTViYWZjNjFlZTZiMzExMGM4NThjOGY0YjJlYTI5MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjU5YzYyMmE0Mzc5ZTJhMjFjYmZjZDc3YzZkNzdmNGJkMTI2ODBiNWE1MDcyMGM5MWVlYWFmMDYwNWNmNGE4ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTcxZDk2OWJjNzI1YmVhOWZmZDU5MWU4OWMzMjlhNTVlOTVkZDFiZjA0MTQ0OTgxMTUxY2Q3MmI0M2NkZGE2OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTE5NGQ4OTMxNGM3ZTA1ZDcyZGI3NWExYjhiZDYwYWY0NWM4MjBiZGQ1YjQyMTdkMzU0ZTE1MTJlOGNmOTVhMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_613af16efbe44c909a8598af6acdc7b2",
+      "statement": "The pipeline is invoked as a module with subcommands, where listing shows every registered stage and running a macro stage such as etl builds the knowledge graph.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L98-L104",
+          "version": "repo-lines-v1:sha256:34b44a39193d0ec22c30fe9cc93f192c0325f8bfdd14dfe92a49c04078cf04b5:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWE5YTQyODc3ZmFlZGI2MjRkYzgzZDgyZTE2MWUwZjQyY2FhNzI4ZGJlZjNhMDFmY2MzMDkyODhmNzRlN2U0MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDdjMDZjNTYxZDVjMzI3MzQzNjg1MjY4YTQ2YjMzOTFmMzk5OGVlZTg5MGQyYmU1MWYwZDIxY2M0YTUzYWU2ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmMyZDI4ZmNjOWQ5NTQ1ZGU3ZmVmNDIwMmVjNmRhNDhlMGRjYWNlOWUzZjdmYzIwZTViMDNjYzA3NTJkZWNkYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGFlMDFmNTc4ZDM4ZjdlOTMwNjdiZDQzYzg5MmMyZmMxMDVkYTdhZmVhYjBhZDVhYTQxNjFmNDhmMzc4OWI5NSJ9"
+        },
+        {
+          "resource": "repo://docs/operations/runbook.md#L7-L11",
+          "version": "repo-lines-v1:sha256:0389a099338ddb324f9094358f22eda1b8f20274b86f843914c2f16f17cba264:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDdjMDZjNTYxZDVjMzI3MzQzNjg1MjY4YTQ2YjMzOTFmMzk5OGVlZTg5MGQyYmU1MWYwZDIxY2M0YTUzYWU2ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmFiODBkNGYwMWJmMzJhY2U2NTQwMjY4MzQ0YjVjMjMwYmRiNjA5NGY0ZmMxZmQ4M2U5MGUwN2IzOGRmNWM2MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDZmZTNhZjE5NTE4YTIzOGVlYjE0MmM2MzFkYzc4NzVmZjZmZjY1NjgwZTE4YTE4OTE2NzYyNjk1NDQxYTYwZCJ9"
+        },
+        {
+          "resource": "repo://pipeline/__main__.py",
+          "version": "repo-file-v1:sha256:d6626049768aa21880b043456025506efec24171b8be1395b05a2426ed1d9a7c"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.0",
+    "at": "2026-09-10T12:46:32.229Z"
+  }
+}

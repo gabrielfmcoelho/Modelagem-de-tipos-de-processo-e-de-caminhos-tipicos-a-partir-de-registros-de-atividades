@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:7b4fd9e0ab8aeada4e40b95ccfece9f8cae530bcb783bf6cfea27541103ed729",
+  "claims": [
+    {
+      "id": "claim_b49a9ae134a848d193e1c0258ede83ca",
+      "statement": "A run id is compositional, formed as exp-<arm> with an optional parameterisation suffix, and the artifact path places the algorithm on the level below the run id rather than inside it, so a run id names an experimental condition and every algorithm applied to it lives underneath.",
+      "evidence": [
+        {
+          "resource": "repo://CLAUDE.md#L55-L55",
+          "version": "repo-lines-v1:sha256:e9a4a3b47cfd925c3400b7089df4928171026038d31b769ed78398741815535f:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTlhNGEzYjQ3Y2ZkOTI1YzM0MDBiNzA4OWRmNDkyODE3MTAyNjAzOGQzMWI3NjllZDc4Mzk4NzQxODE1NTM1ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTlhNGEzYjQ3Y2ZkOTI1YzM0MDBiNzA4OWRmNDkyODE3MTAyNjAzOGQzMWI3NjllZDc4Mzk4NzQxODE1NTM1ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWVlNzcwYTExNDllYzcxNTAwNDMzYTI0NTFjNmI2OWEzZmZmODY5OGU5YjY5NDBjZGIyNTMyNDg1Y2M2NjZlOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWI2ZDJlOTM2NGUyYmU5ZjVkNjRlZTBhMGFkMmI2NzYxZGMzYjU1ZjdhMWNhNjg1ZTc1NTNhMzZkMDdhZjE1NCJ9"
+        },
+        {
+          "resource": "repo://pipeline/stages/cluster_control.py#L32-L34",
+          "version": "repo-lines-v1:sha256:1a85eee90b06831d3d6e0d17ec22f34338611f34dfad4ddeee4edc9576f20f0b:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGI4NWFmYzdhMTA2NTAzZDMzOWNhNzA0ODhiMDc5NDRhMmM5NzYyODk2MTE0M2UyZWQ2ZjJkYjE2MmU3NWEwOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjQwNjA4MDFkNjMwM2VhYzlhNzYyOWUyYWY4OTk0ZDEwNzhjOGI3MzRiMGY3NDBiNzJiMmU5OWRjZGYyMTk5YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzNkMDRmNzU0NmUzYzRmNzExNzJmNmQ1NzEyOWJhZDNmNGEzZWM0MDEzMDcyZjg5NmI4ZjQ4YzMwYmEzNDUwMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTNmZDA1YTBjMDI3ODQwODJhMmYxNzM5MWJiZWVhY2M1MjE2MTViNmJmNzM5ZWViYWZlNWEwZTA2YTIxZDdkOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b70f640cdda3482885d3999dce82fd48",
+      "statement": "The two experimental arms are exp-raw and exp-anon, representing the same processes from raw and from anonymized document text, and the -shuffled control suffix composes on top of any parameterised run id.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/shared/paths.py#L18-L22",
+          "version": "repo-lines-v1:sha256:4a490797a05f311cd98d5d4fe2b4d65d3f5fe68caf0e270787988b2879c4b879:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTIxMTNiMDhjYTdjN2Y4ZjIxNDJlZmNmZjA0MzhkOGJlMTUyYWRlMzE2OTkyYmFmNzFhNTk4YzAxOWU0ZjM5ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjgyNmNiNWEyNzc3NDRiZjZlMDIxMDljZTM3ZDcyMmUwNTg1NzBiOTZhM2IyMDdjNTNjNTlhODY2MjAyNDFhNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzNmM2NjYmVjOWViMGJjODE2MWUzNjM2N2MwNTgxZTcyZWUyOGZjZjhjZWZkN2M4MWFjNjA4ZmIyMDBiZGRhOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://pipeline/stages/matrix.py#L17-L26",
+          "version": "repo-lines-v1:sha256:efcc98e5a03b95fc259867e952e58ced2176c5abd0c2813a6afe654a8775af43:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxY2M4MzliMWNkMGZiOTAyYTQ3ODhjMDVlYjZiNmQzODEyNTQzZjgyMTdhYTJkNGVhNWNjYzIxZGI5MzUyNzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwY2RjNDZmODQ3MWIzNWE0NzMyOTFlNzRjNzMzOTdjMzA2NjViZTFmZDljYmRjNWIzZWFmZWQxYjMzMjc1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwNDRjMjdmYTFlOWUzZGFkZjliYTA1NWExN2E0MWFhNzMwZGFlM2ZmOWRmZjQxZmE3MzhhNDg4MzgzYTljYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkwOTdiYTRlMWJkY2JhNmNhYjgyNmFmZGI3OTViNTMxZDA1YTdkNzBlYmNhNDFhYTg1MWYyMzBiMjhjMGIyZmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cc34008cf62d4a9c938321c74381ca0f",
+      "statement": "pipeline/evidence/shared/paths.py centralises the artifact roots that evidence code resolves against, the shuffled suffix constant, and MAIN_CELLS, the six primary cells formed by the two arms crossed with the three base algorithms.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/evidence/shared/paths.py",
+          "version": "repo-file-v1:sha256:b627d69977767f440fe5bc47d3237f0f1aec14280b957ca5014e36dca59bad58"
+        }
+      ]
+    },
+    {
+      "id": "claim_cb9e414e095c44d4b060dbdf178b5630",
+      "statement": "REAL_CELLS enumerates fourteen run-id and algorithm pairs covering the two arms across three base algorithms plus each arm's four parameterised variants, and CELLS is derived by appending the shuffled suffix to every real cell, so a newly added real cell automatically acquires its matching control and the pairing cannot drift.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/matrix.py#L17-L26",
+          "version": "repo-lines-v1:sha256:efcc98e5a03b95fc259867e952e58ced2176c5abd0c2813a6afe654a8775af43:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxY2M4MzliMWNkMGZiOTAyYTQ3ODhjMDVlYjZiNmQzODEyNTQzZjgyMTdhYTJkNGVhNWNjYzIxZGI5MzUyNzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwY2RjNDZmODQ3MWIzNWE0NzMyOTFlNzRjNzMzOTdjMzA2NjViZTFmZDljYmRjNWIzZWFmZWQxYjMzMjc1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwNDRjMjdmYTFlOWUzZGFkZjliYTA1NWExN2E0MWFhNzMwZGFlM2ZmOWRmZjQxZmE3MzhhNDg4MzgzYTljYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkwOTdiYTRlMWJkY2JhNmNhYjgyNmFmZGI3OTViNTMxZDA1YTdkNzBlYmNhNDFhYTg1MWYyMzBiMjhjMGIyZmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_63d7430e1f0b482cbc1b0e63436ccf4e",
+      "statement": "The matrix stage evaluates each cell once per alphabet and documents the resulting scale as eighty-four cells taking on the order of a day of compute, and it is resumable because a cell whose metrics file exists is skipped.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/matrix.py#L30-L45",
+          "version": "repo-lines-v1:sha256:87c9c6d072e2736c2fb15f603af90a2977acf65d60c8a2b7fa410fb20d37e0cb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjOWZjMDEwYmQ2ZmZhM2JlY2ZkNTFhYWIxYzJlNzVhOWRiZTIyNzhkNGY2NjljYjkyOWI1MzRiMTE0N2ZlMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZTE3OTFjNjViNWE4MjJhY2RjNGVkMjAzZGQ2Y2E2NjhiNjAyZDNhNDMyMmRmZWJmZTUxN2VlODRjYmUxZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkwOTdiYTRlMWJkY2JhNmNhYjgyNmFmZGI3OTViNTMxZDA1YTdkNzBlYmNhNDFhYTg1MWYyMzBiMjhjMGIyZmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0ZTFmZDU1Y2MzZTJmMjhmYjgyMTYyNDQwMmEwNzM2MmFhMmZmNzcxZjc3NWZhZDA2NjBhNDM3NjhhZDg3ZmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e10fab77b69347b8bc2c4de6b4842747",
+      "statement": "build-arm has no default arm: it requires a run_id flag and raises ValueError naming the expected values when it is absent, rather than silently building a default arm.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/build_arm.py#L50-L53",
+          "version": "repo-lines-v1:sha256:79a44d126bfda674cec10a458c485fab04dcf37d36fcad22ca47f5b4fe70f2e4:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmY0ODg2MmFlNzA5M2JlMmE2MjNjOWEyMWMyYzRiZmE0YWVmOGMwYmYwMGNjOWU1ZjY1ZGNkMDcyYWViMmQ1YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTZkMDgyNDkzNWVkMWNlMGExZDRmNGIwZDU1ODM0YmQxYzgzZGQ3MmY4NDc1ZmU3YzAzOWI4ZDkwYjY4MjMyMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODVlNDg5ZTlhM2M3NTFmZDkzODFlMDI2M2Y4OTc3ZWRiZmU0NzM0OTdiYmE4MjFmNjY5N2FkZmQ2OGNmYTE3YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2U1MzBjOTZiN2NkZGMxYjFkNGE2MjAzOTE3NmUwZmE1ZTU1YzdhM2IzOTEyMmVmMWFlMDJmNTg3ODFjZDNiMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_327d32a87e0e4dec82e6818f11a702f6",
+      "statement": "build-arm runs one complete arm as features, parameter selection, five clusterings comprising the base configuration and four parameterised variants, then stability analysis and the cluster audit.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/build_arm.py#L59-L99",
+          "version": "repo-lines-v1:sha256:7dce6921893ff7b44a44e395312cdfc9ef31eb65cc3c1b61d53bd738a3a165f3:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE3OTJkYWMyYzU4MWZjZWE4MTk4NzAwMmJiMmI5OTcxZTMyMjU1ODZhNTYyYWUzOTliYTViOGYzYzdlYTMzOGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyOTA3YTk4MDk3YTc0MmY5N2VjOTRkMGIzZDgzN2I1NWY4YWJhNmMzZTE2NjUwZjc2ZmRjNDljY2Y5OTc1MjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFhNzI1YjEzMWIzMjg4NWQ0NWMxNDU0Yjc4OWZkNTU0MTJhNGY3ZmU5MTU4NGRjNjY0NDZmOTk5NTVjMGQ2NWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY0NjlmZDhkYWRjNGI1ODZmOTI3NjAzMjNkMGU5ZGM5YTRmYmFhNGI0ZDA0ODUxOGJjMzMxMDhkZjVkNzc2YWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b78f4523e8ce4861bee54440a99469e7",
+      "statement": "The parameter values for build-arm's four variants are read from the selection.json that select-k wrote rather than hard-coded, and the stage fails with an explicit error when that file is absent.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/build_arm.py#L69-L83",
+          "version": "repo-lines-v1:sha256:846a844bb45f9232622d683f198d4f52bae127be2890bda851b7dced9fdb0a99:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkNWM0OWRmOWY0YmMzMzZmMDMzMTIzNjlkOTM1YzM2ODc3NmZhNWIyZTBjNWEwM2YwYmQ4MzkzMzU5NDc5MjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1MmU4MjE2Nzg1YzE3OTZhMTkwMTgxNWVlZjJiMTA3YTg2ZDE0ZDA2ZDhmYzQ0MzYwYTdkNWU2NzExMDE4N2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVhZWY0MzAxODBhMzZlOTI2N2U2ZTUxMzVmMGQzMDY5OGFlY2RlNWE0Zjg4NmVlMDJiY2JlODAxMzFlYzIyZDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY4ZTA5NTY3NDUzNTM5MTFlNTEyNGM5NmI2YTFmZDI2ZDE3YmE4MGE4NTJhYTY0MjRkMWFiNTkzMjY2ZGRiYWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_adb36dac0a1e4c81b9f7e452d96d5e08",
+      "statement": "build-arm inspects the selection's at_grid_edge map and warns that the sweep must be widened before the arm is trusted when a chosen parameter sits at the boundary of the searched range.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/build_arm.py#L78-L81",
+          "version": "repo-lines-v1:sha256:f4c907cc468f0ffa7738cb98a49b64ece27568362d55c1c445d3556d912d3605:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODZlNWE5ZGY3YjhjMzdjZDlmOGM4MTc1ODg0YWE1ZjJiNmM5MGI2NTA0Y2M0Y2UwMWE3MmE3YmEwMzdmZTE5MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWFlYjg2ZGRlOGU0ZjljNzZmMWUxNDFlNjVmNDM2MDUxMWFhMjQ1MjUyZWI0MWViY2MxMzEwNjM4NDdiODI5MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjE2YzJiMDBhYmZjNDYzNTMxNDFmNTE2ZDZmNzFjZjE0MmExZjQyNDliZDBmZmIwNDkxYTgyZWVhMmQzMzFjNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTk0N2Y2MjIwNjAyNjA4YzNlZWQ4MzFjZjI1OWU3MzVhM2U0MmZhNjRmOGFiMzc3OThmNzQ1ZTA5MDkwMDQ1ZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_cc3373bd7ed44d2fb199bd09d302be57",
+      "statement": "When reusing an existing feature file via skip_embed, build-arm verifies the file exists and raises FileNotFoundError rather than proceeding to fail later in the pipeline.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/build_arm.py#L57-L63",
+          "version": "repo-lines-v1:sha256:51dc23879ed67b269b73803591af4d4c71c03971742932573b3825112aa44890:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTQ0NjlmZjU0MGY2YjdiOTI4MjE4NGMxYjljMDE1M2IzMmIwNTA5YTBmMjEzOTAwMGM2ZjYxYmNkOTA4YmZiYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmVjNmFlNDAzYjVhNWQwM2QxZjJkYmQ5YmMzN2RkYmI3ZDc4ODNhYWVjNzJjNDQ0OTlmOTFmMjNmMWUyMDdkZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2U1MzBjOTZiN2NkZGMxYjFkNGE2MjAzOTE3NmUwZmE1ZTU1YzdhM2IzOTEyMmVmMWFlMDJmNTg3ODFjZDNiMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWZlYzgwZWY3NTBmZTgxY2NiZTBlMzZlNDA3N2NjMzZjZWQ3YzJkMjU5MGU1MDE1YmNjM2NiZTg5NzcxZDg4YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_acd101dce91f4c8a94bef5bfd651191d",
+      "statement": "The repository composes stages in two distinct ways: etl and etl-full compose through the registry by declaring dependencies, while build-arm and ablation compose by constructing a fresh RunContext and calling the sub-stage module's run function directly, bypassing registry resolution and per-stage checkpointing so the same stage can run repeatedly under different flags within one macro.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/_bootstrap.py#L8-L21",
+          "version": "repo-lines-v1:sha256:5b38a3475de7e9d00637e9cb51177312574afb8d43450ad01ae48461af395965:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjOWZjMDEwYmQ2ZmZhM2JlY2ZkNTFhYWIxYzJlNzVhOWRiZTIyNzhkNGY2NjljYjkyOWI1MzRiMTE0N2ZlMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJmZjU4ZmE3MDAzZDc0MWI1OTRiNDYyNjc5ZTgwNjUzZmI1NzY2MWU2MjNmOTRhMDE2OTI5ZTM3NTJkZGNmYWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIwMjA3ZGI5MGViZDk5NmU2ZmE1NWRmOTkwNjI4NTQxMTM4NGFhMGM0N2QzMmIxZjliNzI5NjUyMDIzZWQ4ZWUifQ"
+        },
+        {
+          "resource": "repo://pipeline/stages/ablation.py#L50-L57",
+          "version": "repo-lines-v1:sha256:ad8816626c40d244702591fba383eb93f442d9c29c0ce4d220c00299f15ad30f:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmFkYTg1ODkxZjg0MTg0MDE0OTkyMTliYmM0MGZkZTA4YmE1NjQ2NGZmZTUxN2JlMDUyNjZkYjg1Zjg0ZmRmZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODgzMTIzM2QyOGQ5NTM1ZDdiMzc2MWQyMWEzZTlhZTQzZDgxNjBmZDUxMDM1YTE1MzdkMDE4MmU4Njg4Zjg5YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODBjMzllOGFhNjI4NTFjNjc4ZDk0ZDliYjgzNjNmNWZmN2M2ZTQ1Njc0OTFmZjU2M2IyZmI4NmJlZWM0MzQxMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDI3ZDc5NjdlNjlkZTQ5N2IzYTdjYzhkMmQwMzdiYWRhYmI4MWRmYmRjODRlYjQ2N2Y0OTE2M2NiMGFjMzA2MiJ9"
+        },
+        {
+          "resource": "repo://pipeline/stages/build_arm.py#L25-L32",
+          "version": "repo-lines-v1:sha256:94a6990125baf68a4272798f595df01d91bc92e7099b31d28a95bbcc0ef38e76:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjViZmQyMDQ3OGRmNjg0YTYxYjE5ZDA2ODIyZmVjZTMwYTY0NWRlY2ZhYmQ1OWRmYmVkZTJkMzNhODMzNTE3MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODgzMTIzM2QyOGQ5NTM1ZDdiMzc2MWQyMWEzZTlhZTQzZDgxNjBmZDUxMDM1YTE1MzdkMDE4MmU4Njg4Zjg5YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjEwNzkxNmI5OWJiODhlNmZkOTU4NjQyMjMzMDFiZmY2ZTAxNTdlZWMxZmVjZDVjYzU4YmY1MWE4MTU4ZDMwZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDI3ZDc5NjdlNjlkZTQ5N2IzYTdjYzhkMmQwMzdiYWRhYmI4MWRmYmRjODRlYjQ2N2Y0OTE2M2NiMGFjMzA2MiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0f291279e13347c99c5927d38d50b427",
+      "statement": "Both direct-call macros declare can_skip_when_done as false, since their whole purpose is to re-execute constituent stages under varying flags.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/ablation.py#L70-L72",
+          "version": "repo-lines-v1:sha256:4c6dc4416c7e0cd2b84c06777514e46de970c72d8f3f0670acbc5b993266dbe6:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmQ4MmI5NWY4MTQ0NDYzNjRlNGNmNTg1YTdkYzFhYWVkNDE0OWQ2NzIxZjZlZmQ2YjhmNzZhNTYzODk4MzY1OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjZlOTI0MDE1ODk0NDczM2E0NDY3YTVhMWE1ZTk3MGFjYTBkOTFjM2FmNjgwMWE2ZWFkNDNjNDQ0YWIzMDM2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDE1ZmFlMzhlMzc1MzJhNGUxYjNmYjkwMDRhOGM3ZTg5Nzc5ZDMwZTMwZDdjNmE4YzgzMzcyYTQwYzQ5ZDE0NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTllOTQ3MDMxMDhhZjk1MWQ5ZDk0Y2E4NzcxOWQyYTM0NmQ1NTkzZGI1ZTQ5YThiMGEwNDhmMWI3ZmFlNGNlMiJ9"
+        },
+        {
+          "resource": "repo://pipeline/stages/build_arm.py#L46-L48",
+          "version": "repo-lines-v1:sha256:4a96e016f9f6b4a1f89677263c679949b0a3dc0d108626530736eb4b0e6d899c:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmQ4MmI5NWY4MTQ0NDYzNjRlNGNmNTg1YTdkYzFhYWVkNDE0OWQ2NzIxZjZlZmQ2YjhmNzZhNTYzODk4MzY1OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWM2MDNiMGJiMWU2NzI1NzcyNWU1OGRkNThhYmRkNTNlY2ExM2JmMWVlM2U1YmQ4MTMyNTJiYjRmYTRkMzVkNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzc2MjgwNjNiODRkZmExNzFjOTNlNzE4MzQwNmE4MTg2OWNlM2VkZjMwYjViZDg2NjMxZGU0OTUxNjhiYTUzMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmU2ZGY1MDQ3YmYyNTc2ZTIwOGNmN2ExODgzNGViNjBiMjkwY2M0MTA1NGQ2NjNjYWNjZGJjNjQ3YjIyNGIzMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f229275cf94c47e6b9dfe236b8b080e9",
+      "statement": "build-arm passes the run's shared cache through to its sub-stages while ablation passes a separate cache dictionary, isolating each ablation variant's computations from shared run state.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/ablation.py#L53-L57",
+          "version": "repo-lines-v1:sha256:e2d38981fb4e1e047bc68e1d165ee4106da058fe564e30c21243c39b8f3a2a2d:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzNmNDFkOWI5N2ZkOTI3MGRjN2ExNzFhNzI3NTMxOWE5OTQ2MzVhZDRlODA0MzdhZTdlOTU2NmI4MzU5MjFjYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODgzMTIzM2QyOGQ5NTM1ZDdiMzc2MWQyMWEzZTlhZTQzZDgxNjBmZDUxMDM1YTE1MzdkMDE4MmU4Njg4Zjg5YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTM0N2FmZjg0ZjkyYWIzMDk3MTEwOTJkNjI1OWQxYzM1OTg0Yzc3MDdjZDM1OGE1MDQzNWU1M2NhNGI5ZDk5NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDI3ZDc5NjdlNjlkZTQ5N2IzYTdjYzhkMmQwMzdiYWRhYmI4MWRmYmRjODRlYjQ2N2Y0OTE2M2NiMGFjMzA2MiJ9"
+        },
+        {
+          "resource": "repo://pipeline/stages/build_arm.py#L28-L32",
+          "version": "repo-lines-v1:sha256:342265c9e37ec3a7760c48e984a254017284e2c3de731fefea92d1c76b7388a4:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzNmNDFkOWI5N2ZkOTI3MGRjN2ExNzFhNzI3NTMxOWE5OTQ2MzVhZDRlODA0MzdhZTdlOTU2NmI4MzU5MjFjYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODgzMTIzM2QyOGQ5NTM1ZDdiMzc2MWQyMWEzZTlhZTQzZDgxNjBmZDUxMDM1YTE1MzdkMDE4MmU4Njg4Zjg5YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGRiOGMzNzQ5MmE2MGU5YjUyMDBlOWQ5OWNiMDE4MzFjNTA1ZDEyYTBkM2ExNzFhODMzZDk4ZjI3MGZlMTcxYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDI3ZDc5NjdlNjlkZTQ5N2IzYTdjYzhkMmQwMzdiYWRhYmI4MWRmYmRjODRlYjQ2N2Y0OTE2M2NiMGFjMzA2MiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_92f2cb8b22a6443abeb191e8ca974ab2",
+      "statement": "cluster-control builds a null partition by permuting label values across protocol-sorted processes with a seeded random generator, which preserves both the number of clusters and the distribution of cluster sizes so that comparison against it isolates which processes were grouped together from merely having that many groups of those sizes.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/cluster_control.py#L25-L29",
+          "version": "repo-lines-v1:sha256:2bb5e57edfe1341a9a3b9157ab459c1fb7d0190521dcdffd1ccf9ff241f280ba:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzE2OTdiYzNhZTY5ZDUxMTlkNWIyNWFkNDZkZDM2ZmIyNDE3YTIyMWRhMjc1MjJkYTNiNWFjZjg2ZWNlNGE3OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGNlYThlYzQ4OTkxYjFiYzdjZmMxOGIwMTdlZDZjYTYxMjdhMjkyZDNlYTdmZmU0YWE0NjFlYTJhNDBmNWVhYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGIwMzc2OWU1ZDE1Mzc4ZGZjMDIwNzI5ZjZhNDViYjFmODQ0ZmIzZjYzNmQ5YmU1OTA1YTBjZjNhZjU4MDExZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmI4OTc0MmRiM2IwMGUzNDNjZmIwYThjYWY3NTM4Mzg4NzQ1ZWJkOTU4ZjNjMjRjNzkwZmNlYjBlYmYzOGQwMyJ9"
+        },
+        {
+          "resource": "repo://pipeline/stages/cluster_control.py#L47-L54",
+          "version": "repo-lines-v1:sha256:d77483339a7435680926f4b134542d98853502d02f2f597496bff0dd0381341c:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGM5ZmMwMTBiZDZmZmEzYmVjZmQ1MWFhYjFjMmU3NWE5ZGJlMjI3OGQ0ZjY2OWNiOTI5YjUzNGIxMTQ3ZmUzNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDMwZTYyMTRjODE3ODI0NWRjNGRhMTE3MTExYWJiNzA5OGEyYjZhZGNlN2UzNWZlN2FkOTk3ZjUwMmU3NThiMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGI0NjhhZDBhYmQ1ZGY4NjIwYmI5NGJkZmZlODVmNDIxMTBlY2RhOGFmNzY0YTRkNWMzYmEwNmJhYTVmNzczZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWY2NDc5Y2IzOWE1ZDZkNWY0NDU4MGMyODQ4NTVmMzFkYTVkNGM1MzJjOTMxMjQwZmUyYjlmYzg0N2ZlYjUyOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f58a2459dd4e4db295dcd0dddd381bdc",
+      "statement": "The control's shuffle seed defaults to 42 and is recorded in the artifact's provenance parameters, which is the basis on which the stage declares itself conditionally deterministic.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/cluster_control.py#L40-L43",
+          "version": "repo-lines-v1:sha256:052e1ef4e3bd922949fba73c79cbe24402983db91c764a51f2430dd681cd55cd:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDRiZDQxY2FlMjE1YzA3NTViNDQyY2U1MzAwOTc1M2M0MTE5N2NjZDI4YWQwNDc3ODJiOWMzZGIzZTQxYzIyYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWI3N2Q0MDYxZThkYmVhZDBmNWM1Y2U2ODM4MzM2OGY5M2ExOTExMmYwY2JkNzJmZmZhMjEyOGZkYWY0NThjOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGZkYzg1OTgwZGQ4MDBjY2Q5YTM1ZGQzODYyNjg3ZjA4ZmZjYTMyODhiMzNiYWU1Yjc5YWQ3OWRhMTJjMzgzMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGI0NjhhZDBhYmQ1ZGY4NjIwYmI5NGJkZmZlODVmNDIxMTBlY2RhOGFmNzY0YTRkNWMzYmEwNmJhYTVmNzczZiJ9"
+        },
+        {
+          "resource": "repo://pipeline/stages/cluster_control.py#L51-L52",
+          "version": "repo-lines-v1:sha256:ab722339a65788fc8ac4456fe7c81fa21e04d238491848879377456e17f74502:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDgxMTE2YmViMjhlZmE5NzQzZjhlN2E1ZTc2MjhiMzU5YTRiOGEwNGYwMmI0NGU1ZWUzMDhhNzkwNGVhMDlkMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjcyMTQwOWZjZTY0ZmUwNmRiYTg3MmZhODQ2Mzk3Yzk0YzAxMmNmNDg1ZmJlNjUwZjQzZDA0YTc3NjQ2NzRkYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjhmOThiMDgwMmQ5ZDY3Y2U1ZmMwZDU4NmRlODJlMjE4MGQ2Njg4ZjkwNDBhMjJlN2RmMjI2OWNkNzQxOWQyZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzdkMTdhOGMyMzg2YTFkOTMyNDMwN2VhM2U2YzY4ZThhMTg2ZmExMTdkMjYzMGIzNGI1ZTk1NjI3NTQ1MTE1OCJ9"
+        },
+        {
+          "resource": "repo://pipeline/stages/cluster_control.py#L62-L62",
+          "version": "repo-lines-v1:sha256:e6ab0ba8993871133dd1babcaa446036a5656443e51fea080113260de47abbf4:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTZhYjBiYTg5OTM4NzExMzNkZDFiYWJjYWE0NDYwMzZhNTY1NjQ0M2U1MWZlYTA4MDExMzI2MGRlNDdhYmJmNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTZhYjBiYTg5OTM4NzExMzNkZDFiYWJjYWE0NDYwMzZhNTY1NjQ0M2U1MWZlYTA4MDExMzI2MGRlNDdhYmJmNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTY4MjM0YjZiZGNlYmZmZDZjNDIyZGEzZmYyYjNiM2ExM2NjYjM3ZWFlZTg0NWYzZTk3MjlmMWY2NzZhODI4YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2Y3OTk3OTRlNTU0NDAzNDUxOTkzZWU5ZjQxMWY4NWJhZGQ2ODI3MzEyZmI0OThkNjdhNGI0ZTk4MGNmYWQxYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f795749862bd459796b32b08459f778c",
+      "statement": "cluster-control refuses to proceed when a source partition file is missing, naming the cluster-eval run needed first, and raises when a shuffle turns out to be a no-op rather than emitting a control identical to its source.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/cluster_control.py#L69-L76",
+          "version": "repo-lines-v1:sha256:534c46e7bd18d3929da7737af3e351b698f6ffa05bea3ef979ef28234fc84731:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzUxZTZmYTA5NTY4ZDE2ZjNjNjQyZGExZjY5MGQ2ZTAzYzU4NjQ2NTZkZDcxMmE5OTY4M2MwMDYwOGI0MjczZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjA4MGMxMmRhMGJjYzc1YWY3YTc0N2QwYzIyOWU3MzQwMDMyZmU5ZmM2NTQzZjY3MmMzNDQ4ZmViZmJhN2RhZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjRiZjIwYTFmNTk0NmUyYWUzZmYyNmYwMzgyYWI5ZTdmOWU5ZTNlYmQ0ODQ3MWI4ZmRmNDI4NTM0ZjZlY2ZiNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTVhM2NiMTJmOWJjYjRjMTBhNDZhODU5ZDJlNzkxYmFlNWE4ZTQ3ZmY5NDc4MWJiYTk2MDdiMTU0NzZlZTg2MyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_696c0ea65b9c46f49598531b75f5320f",
+      "statement": "Each control partition is written under the shuffled run id and stamped with the source cell's labels file as a hashed provenance input, linking the control back to the real partition it was derived from.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/cluster_control.py#L32-L44",
+          "version": "repo-lines-v1:sha256:c1381e56ca4ee791f5e1456d8807401d1ffb3c4949e85167ddf6eaa56318e866:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiODVhZmM3YTEwNjUwM2QzMzljYTcwNDg4YjA3OTQ0YTJjOTc2Mjg5NjExNDNlMmVkNmYyZGIxNjJlNzVhMDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0NTI2YWZkNzhlMmJiZGM0N2QwODZmNjliOTdhZjYwZTQ5MjAzZDNjNDlhMTAwMDNmNTQxNzEyODlmOTYxZTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjczZDA0Zjc1NDZlM2M0ZjcxMTcyZjZkNTcxMjliYWQzZjRhM2VjNDAxMzA3MmY4OTZiOGY0OGMzMGJhMzQ1MDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAyN2Q3OTY3ZTY5ZGU0OTdiM2E3Y2M4ZDJkMDM3YmFkYWJiODFkZmJkYzg0ZWI0NjdmNDkxNjNjYjBhYzMwNjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1c318942677e4891bd485e5f779158b4",
+      "statement": "The ablation stage's default variants either disable a feature block or truncate each process's history to a fraction of its length, and each variant specification must parse as name:flag=value or the stage raises ValueError.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/ablation.py#L16-L19",
+          "version": "repo-lines-v1:sha256:27002a5fb3d3ad178b36e4c3ad4b37608c8f1536d0cee9451b06b6e789c70fde:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWUyOTVlNDFjMmI2OTU3MDkzMWFmMzViODJiNDk1ZDk0MGE2YmY3NWEyNDg3OTc5ZjJmOTVkMWJmMGE3YjFhNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjI3MzM3Y2Q1MjNiZGE0N2E2NmJkYTAzYTViYjM2NzBjMDY5MjMzMThlODFlMGNjOTE0NTUxYTRlNGYwNjI3ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDA0NGMyN2ZhMWU5ZTNkYWRmOWJhMDU1YTE3YTQxYWE3MzBkYWUzZmY5ZGZmNDFmYTczOGE0ODgzODNhOWNhOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2ExY2YxOTdhNTZmNWJmNzQzOGZhZTM2MTIxNDEyZmYwZTgxYjAxMWFlMTdkMDk1YWZjZDMxMTcwMWE4NjZmOCJ9"
+        },
+        {
+          "resource": "repo://pipeline/stages/ablation.py#L86-L90",
+          "version": "repo-lines-v1:sha256:6a647efe9b9d48b1a2a65e04e2945d0a46f7a211d0e2014eb3e346fa0db72702:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzBiOGQ5MGY5NjJlOGQ3OGQzMjAxYTBlYzNmYTViOWE0MDI1NGUxZjlmNGNiNGFjZGFmNjUwYTZjNWJiYWE3OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2FhNmE0MzJhNjlkZDMzMzY2Y2I3OTJlMDUwNzRlYjI1ODQyYzgzYjRjOWUwMTVkYmNhZWZlNzAwNmZlNDg5OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjllMTk0Y2Y2ZDI0OGM2MWE3YWI5ZWQyMjQwZWE1MzU2ZjFlZTMwYTNlNWQyYjY3YzA5MDMwNzM5NmUxNDZlYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjRkMGNjMWNkNDk5NmY0MDMwODhkNWQ0MDdhODMxMWQ0NzI0MTEwY2NiMGQ2MjI0YTkyMzkxZWVkZjYyOTM4MiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9f98846616df4b0d9bfd28b1a8b59e6f",
+      "statement": "Ablation variants are compared against the reference partition by adjusted Rand index and normalised mutual information computed only over the processes both partitions contain, and the stage raises rather than reporting a figure when that intersection is empty.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/ablation.py#L24-L40",
+          "version": "repo-lines-v1:sha256:d930e935c30527185894dd841ef022a3b4c14167700860dab6a88c4d32e58b0b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliNTEwNGYxZmFmMmEwYjk2MzE3MjgxNjhhOGJjN2UzZjVkMDdhMjdhYzNkNzM1NzEzMjAzYWFlNTQwZjc3OTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFkY2U1OWRlYTZhZGYyMzk5YjVjMWQzNzRmMzliMWVkZWY4OWUxMTFhMjc0Y2JjNWM0YjQ4MzIyZWYxMDIzNzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY3MGJiNGUxY2ZlZGIwZDMzMGE3ZjU2YzI4NGIwNDc0ZjQ5YjJkZjEwMjVjNjM5YTNkYWRlNDBhZDI4YzBmZmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6cff753ca1024d22b935a09dd48f96ea",
+      "statement": "Ablation cluster counts exclude the -1 noise label that HDBSCAN assigns to unclustered points, while noise counts are reported as separate fields.",
+      "evidence": [
+        {
+          "resource": "repo://pipeline/stages/ablation.py#L36-L39",
+          "version": "repo-lines-v1:sha256:6ee33ea9eeff6ba970fa0d186db169295ce1c77188f6a4a20dbda3af982c85aa:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGU2NDVlZWYxMDE3Mjk3ZTZjZWU4NDRiYjM0YzU1ZTMxOTg5OWZmM2Y4MmEyYzg0NDZhOTBjMTFiNTJlMzMzMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjc5OWU1OWU2ZjJlNmQzNjdjNmExNDVlZGY5ZTNmZTAwOWU1ZWI5MGM1NTk5YTNlYjk0YzNhYzQzNTM2Njk5NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWVjOTNlMDVkYzM3YjYyM2Q5NDVkMDU3YWRkNzM3ZDc1ZmE4NTIzZjQ2MmNlNDM0ZmI2OWU4MjJhZWJjMTJmNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGZiZDAwOTMxNGJjMjcwODQxNjczNGEwMmFlNWZmMzlhMWU0OGEwNTBiZTkxZjQzYjJmYWE5MjAwMmM2MmJmYyJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.0",
+    "at": "2026-09-10T12:46:32.229Z"
+  }
+}

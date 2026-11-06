@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "pages": {
+    "/openwiki/architecture/configuration-and-deployment-seams.md": {
+      "pageVersion": "sha256:772bb037772c4bf1a4f9e21ff4558affeaa985334e9303c0ebf0220da77d0901",
+      "completedBy": "claude-code",
+      "completedRunId": "589993f0-eed5-48f0-9464-6ee7d00ce56e",
+      "gitHead": "d163539d3ce1494103dd0685eefd2531708855e5",
+      "sourceFingerprint": "sha256:30dbc7fab4df666577235d59ac1bf38da05a3d29ee1c42c11e04125b2802d197"
+    },
+    "/openwiki/architecture/execution-modes-and-graph-io.md": {
+      "pageVersion": "sha256:cdb85a86ecbfa82a96f8bd6da7c86ebfd72300cbec6a834620e9bcd9a6f0ecef",
+      "completedBy": "claude-code",
+      "completedRunId": "589993f0-eed5-48f0-9464-6ee7d00ce56e",
+      "gitHead": "d163539d3ce1494103dd0685eefd2531708855e5",
+      "sourceFingerprint": "sha256:30dbc7fab4df666577235d59ac1bf38da05a3d29ee1c42c11e04125b2802d197"
+    },
+    "/openwiki/architecture/run-state-and-resumability.md": {
+      "pageVersion": "sha256:fecdd624fcbfc4ad46cdad0f6f43b33a27e93d3f82a09a349a2b58846a658a36",
+      "completedBy": "claude-code",
+      "completedRunId": "589993f0-eed5-48f0-9464-6ee7d00ce56e",
+      "gitHead": "d163539d3ce1494103dd0685eefd2531708855e5",
+      "sourceFingerprint": "sha256:30dbc7fab4df666577235d59ac1bf38da05a3d29ee1c42c11e04125b2802d197"
+    },
+    "/openwiki/architecture/stage-dag-and-registry.md": {
+      "pageVersion": "sha256:e2df9ab334d1e5eae9107025910803485028f5cab7b27636981123640b8e9e49",
+      "completedBy": "claude-code",
+      "completedRunId": "589993f0-eed5-48f0-9464-6ee7d00ce56e",
+      "gitHead": "d163539d3ce1494103dd0685eefd2531708855e5",
+      "sourceFingerprint": "sha256:30dbc7fab4df666577235d59ac1bf38da05a3d29ee1c42c11e04125b2802d197"
+    },
+    "/openwiki/concepts/artifact-provenance-and-audit.md": {
+      "pageVersion": "sha256:0f23becd2a826decc09bdd8359e47e12f874cd228fb927bf8453dcea03b32347",
+      "completedBy": "claude-code",
+      "completedRunId": "589993f0-eed5-48f0-9464-6ee7d00ce56e",
+      "gitHead": "d163539d3ce1494103dd0685eefd2531708855e5",
+      "sourceFingerprint": "sha256:30dbc7fab4df666577235d59ac1bf38da05a3d29ee1c42c11e04125b2802d197"
+    },
+    "/openwiki/concepts/experiment-arms-and-run-ids.md": {
+      "pageVersion": "sha256:7b4fd9e0ab8aeada4e40b95ccfece9f8cae530bcb783bf6cfea27541103ed729",
+      "completedBy": "claude-code",
+      "completedRunId": "589993f0-eed5-48f0-9464-6ee7d00ce56e",
+      "gitHead": "d163539d3ce1494103dd0685eefd2531708855e5",
+      "sourceFingerprint": "sha256:30dbc7fab4df666577235d59ac1bf38da05a3d29ee1c42c11e04125b2802d197"
+    },
+    "/openwiki/operations/cli-and-runbook.md": {
+      "pageVersion": "sha256:aa93566f03511a18dbb2e646880294ee12b29d0e57d50a5080eb69c025c68e7a",
+      "completedBy": "claude-code",
+      "completedRunId": "589993f0-eed5-48f0-9464-6ee7d00ce56e",
+      "gitHead": "d163539d3ce1494103dd0685eefd2531708855e5",
+      "sourceFingerprint": "sha256:30dbc7fab4df666577235d59ac1bf38da05a3d29ee1c42c11e04125b2802d197"
+    },
+    "/openwiki/quickstart.md": {
+      "pageVersion": "sha256:4791bfe2da7eb3538eae287419fbf952df4289ba85ca34f0e78bb6702af34681",
+      "completedBy": "claude-code",
+      "completedRunId": "589993f0-eed5-48f0-9464-6ee7d00ce56e",
+      "gitHead": "d163539d3ce1494103dd0685eefd2531708855e5",
+      "sourceFingerprint": "sha256:30dbc7fab4df666577235d59ac1bf38da05a3d29ee1c42c11e04125b2802d197"
+    },
+    "/openwiki/testing/test-strategy.md": {
+      "pageVersion": "sha256:8d124607108fd011f95cc0b58be9a589bd1263cd8abc7401e8b774a899fca937",
+      "completedBy": "claude-code",
+      "completedRunId": "589993f0-eed5-48f0-9464-6ee7d00ce56e",
+      "gitHead": "d163539d3ce1494103dd0685eefd2531708855e5",
+      "sourceFingerprint": "sha256:30dbc7fab4df666577235d59ac1bf38da05a3d29ee1c42c11e04125b2802d197"
+    },
+    "/openwiki/workflows/anonymization-and-entity-extraction.md": {
+      "pageVersion": "sha256:559ae8bdd0e4b661d236897b0261baf013405cab7310c36843c8a61ff500c1aa",
+      "completedBy": "claude-code",
+      "completedRunId": "589993f0-eed5-48f0-9464-6ee7d00ce56e",
+      "gitHead": "d163539d3ce1494103dd0685eefd2531708855e5",
+      "sourceFingerprint": "sha256:30dbc7fab4df666577235d59ac1bf38da05a3d29ee1c42c11e04125b2802d197"
+    },
+    "/openwiki/workflows/document-acquisition-and-parsing.md": {
+      "pageVersion": "sha256:36bc7485a4330f1abd7018a6a6d99ecd30c97752461a65dffb352991ddc33468",
+      "completedBy": "claude-code",
+      "completedRunId": "589993f0-eed5-48f0-9464-6ee7d00ce56e",
+      "gitHead": "d163539d3ce1494103dd0685eefd2531708855e5",
+      "sourceFingerprint": "sha256:30dbc7fab4df666577235d59ac1bf38da05a3d29ee1c42c11e04125b2802d197"
+    },
+    "/openwiki/workflows/evidence-and-manuscript-delivery.md": {
+      "pageVersion": "sha256:d7de6beaa391258a28a2b8884181a2067b1699ef3dd9acb97d8e694a05a3a72e",
+      "completedBy": "claude-code",
+      "completedRunId": "589993f0-eed5-48f0-9464-6ee7d00ce56e",
+      "gitHead": "d163539d3ce1494103dd0685eefd2531708855e5",
+      "sourceFingerprint": "sha256:30dbc7fab4df666577235d59ac1bf38da05a3d29ee1c42c11e04125b2802d197"
+    },
+    "/openwiki/workflows/features-and-clustering.md": {
+      "pageVersion": "sha256:d186cc015fba6666c925d4a2ac04ff081e1d27a44741eb33caf5d31a50586261",
+      "completedBy": "claude-code",
+      "completedRunId": "589993f0-eed5-48f0-9464-6ee7d00ce56e",
+      "gitHead": "d163539d3ce1494103dd0685eefd2531708855e5",
+      "sourceFingerprint": "sha256:30dbc7fab4df666577235d59ac1bf38da05a3d29ee1c42c11e04125b2802d197"
+    },
+    "/openwiki/workflows/ingest-and-graph-build.md": {
+      "pageVersion": "sha256:dea2c8dbaf78b94f23895c21a78a44033957be1468885861c8e1e92c9e18ddfc",
+      "completedBy": "claude-code",
+      "completedRunId": "589993f0-eed5-48f0-9464-6ee7d00ce56e",
+      "gitHead": "d163539d3ce1494103dd0685eefd2531708855e5",
+      "sourceFingerprint": "sha256:30dbc7fab4df666577235d59ac1bf38da05a3d29ee1c42c11e04125b2802d197"
+    },
+    "/openwiki/workflows/typical-path-discovery.md": {
+      "pageVersion": "sha256:6556cadb1f517701ad9fd3bee508262db459492b382e224a297fdb1f4cb07ab3",
+      "completedBy": "claude-code",
+      "completedRunId": "589993f0-eed5-48f0-9464-6ee7d00ce56e",
+      "gitHead": "d163539d3ce1494103dd0685eefd2531708855e5",
+      "sourceFingerprint": "sha256:30dbc7fab4df666577235d59ac1bf38da05a3d29ee1c42c11e04125b2802d197"
+    }
+  }
+}
